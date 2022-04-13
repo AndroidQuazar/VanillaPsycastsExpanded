@@ -2,13 +2,14 @@
 <Defs>
   <HediffDef ParentName="ImplantHediffBase"> 
     <defName>VPE_PsycastAbilityImplant</defName>
-    <hediffClass>VanillaPsycastsExpanded.PsycastAbilities</hediffClass>
+    <description>Go away cheater</description>
+    <hediffClass>VanillaPsycastsExpanded.Hediff_PsycastAbilities</hediffClass>
     <initialSeverity>1</initialSeverity> 
     <minSeverity>0</minSeverity>
     <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
     <countsAsAddedPartOrImplant>False</countsAsAddedPartOrImplant>
     <stages>
-          <li>
+      <li>
           <becomeVisible>false</becomeVisible>
           <minSeverity>0</minSeverity>
       </li>

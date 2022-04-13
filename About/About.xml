@@ -1,6 +1,6 @@
 <ModMetaData>
-	<name>Vanilla Genetics Expanded</name>
-	<author>Sarg, erdelf, Oskar Potocki, Luizi, Reann Shepard</author>
+	<name>Vanilla Psycasts Expanded</name>
+	<author>erdelf, Oskar Potocki, legodude17</author>
 	<supportedVersions>
 		<li>1.3</li>
 	</supportedVersions>
@@ -17,18 +17,16 @@
 			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=1854607105</steamWorkshopUrl>
 		</li>
 	</modDependencies>
-	<packageId>VanillaExpanded.VGeneticsE</packageId>
+	<packageId>VanillaExpanded.VPsycastsE</packageId>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>
 		<li>brrainz.harmony</li>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
-		<li>sarg.alphaanimals</li>
 		<li>vanillaexpanded.achievements</li>
-		<li>erdelf.HumanoidAlienRaces</li>
 	</loadAfter>
 	<description>
 
 
-		</description>
+	</description>
 </ModMetaData>

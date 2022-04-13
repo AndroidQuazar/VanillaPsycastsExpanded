@@ -19,6 +19,9 @@ namespace VanillaPsycastsExpanded
         [Unsaved]
         public List<AbilityDef> abilities;
 
+        public string tab;
+        public int    order;
+
         public override void PostLoad()
         {
             base.PostLoad();

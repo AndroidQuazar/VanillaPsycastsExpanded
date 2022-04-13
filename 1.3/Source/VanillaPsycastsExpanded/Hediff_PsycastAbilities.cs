@@ -4,15 +4,18 @@
     using RimWorld;
     using UnityEngine;
     using Verse;
+    using Verse.AI;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
     using AbilityDef = VFECore.Abilities.AbilityDef;
-
+    
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
-        public float                  experience;
-        public int                    points;
-        public List<PsycasterPathDef> unlockedPaths;
+        public float                    experience;
+        public int                      points;
+        public List<PsycasterPathDef>   unlockedPaths;
+        public List<MeditationFocusDef> unlockedMeditationFoci;
+        public List<PsySet>             psysets;
 
         public override void PostAdd(DamageInfo? dinfo)
         {
@@ -54,6 +57,45 @@
             Scribe_Values.Look(ref this.experience, nameof(this.experience));
             Scribe_Values.Look(ref this.points, nameof(this.points));
             Scribe_Collections.Look(ref this.unlockedPaths, nameof(this.unlockedPaths), LookMode.Def);
+            Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
+            Scribe_Collections.Look(ref this.psysets, nameof(this.psysets), LookMode.Deep);
+        }
+
+        public void SpentPoints(int count = 1)
+        {
+            this.points -= count;
+        }
+
+        public void UnlockPath(PsycasterPathDef path)
+        {
+            this.unlockedPaths.Add(path);
+        }
+
+        public void UnlockMeditationFocus(MeditationFocusDef focus)
+        {
+            this.unlockedMeditationFoci.Add(focus);
+        }
+
+        public static int ExperienceRequiredForLevel(int level)
+        {
+            if (level <= 1)
+                return 100;
+            if (level <= 20)
+                return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.15f);
+            if (level <= 30)
+                return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.10f);
+            return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.05f);
+        }
+
+        public static int ExperienceRequiredForNextLevel(int curLevel)
+        {
+            if (curLevel <= 0)
+                return 100;
+            if (curLevel < 20)
+                return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.15f);
+            if (curLevel < 30)
+                return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.10f);
+            return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.05f);
         }
     }
 
@@ -66,7 +108,8 @@
             this.entropyGain * pawn.GetStatValue(StatDefOf.Ability_EntropyGain);
 
         public PsycasterPathDef path;
-        public List<AbilityDef>       prerequisites;
+        public List<AbilityDef> prerequisites;
+        public int              order;
 
         public float            entropyGain  = 0f;
         public float            psyfocusCost = 0f;
@@ -86,7 +129,7 @@
                 {
                     if (ability.pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def)))
                     {
-                        reason = "Not all prerequisites learned";
+                        reason = "None of the prerequisites learned";
                         return false;
                     }
                 }
