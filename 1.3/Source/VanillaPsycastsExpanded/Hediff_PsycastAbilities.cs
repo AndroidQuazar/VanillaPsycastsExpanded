@@ -17,10 +17,12 @@
         public List<MeditationFocusDef> unlockedMeditationFoci;
         public List<PsySet>             psysets;
 
-        public override void PostAdd(DamageInfo? dinfo)
+        public Hediff_Psylink psylink;
+
+        public void InitializeFromPsylink(Hediff_Psylink psylink)
         {
-            base.PostAdd(dinfo);
-            //this.bioticEnergy = this.pawn.GetStatValue(RE_DefOf.RE_BioticEnergyMax);
+            this.psylink = psylink;
+            this.level   = this.psylink.level;
         }
 
         public void UseAbility(float focus, float entropy)
@@ -32,24 +34,9 @@
         public bool SufficientPsyfocusPresent(float focusRequired) =>
             this.pawn.psychicEntropy.CurrentPsyfocus > focusRequired;
 
-        public override void Tick()
-        {
-            base.Tick();
-            //this.bioticEnergy += this.pawn.GetStatValue(RE_DefOf.RE_BioticEnergyRecoveryRate) / GenTicks.TicksPerRealSecond;
-            //this.bioticEnergy = Mathf.Min(this.bioticEnergy, this.pawn.GetStatValue(RE_DefOf.RE_BioticEnergyMax));
-        }
-
-        /*
-        public override IEnumerable<Gizmo> DrawGizmos()
-        {
-            //Gizmo_BioticEnergyStatus gizmoBioticEnergy = new Gizmo_BioticEnergyStatus { bioticHediff = this };
-            //yield return gizmoBioticEnergy;
-        }
-        */
-
         public override bool SatisfiesConditionForAbility(AbilityDef abilityDef) =>
             base.SatisfiesConditionForAbility(abilityDef) ||
-            (abilityDef.requiredHediff?.minimumLevel <= this.pawn.GetPsylinkLevel());
+            (abilityDef.requiredHediff?.minimumLevel <= this.psylink.level);
 
         public override void ExposeData()
         {
@@ -59,6 +46,7 @@
             Scribe_Collections.Look(ref this.unlockedPaths, nameof(this.unlockedPaths), LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
             Scribe_Collections.Look(ref this.psysets, nameof(this.psysets), LookMode.Deep);
+            Scribe_References.Look(ref this.psylink, nameof(this.psylink));
         }
 
         public void SpentPoints(int count = 1)

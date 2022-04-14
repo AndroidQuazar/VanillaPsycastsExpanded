@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\HarmonyInit.cs" />
+    <Compile Include="HarmonyPatches\Hediff_Psylink_Patches.cs" />
+    <Compile Include="HarmonyPatches\MeditationFocusTypeAvailabilityCache_PawnCanUse_Patch.cs" />
     <Compile Include="Hediff_PsycastAbilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsycasterPathDef.cs" />
