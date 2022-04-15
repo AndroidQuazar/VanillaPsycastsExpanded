@@ -4,20 +4,18 @@
     using RimWorld;
     using UnityEngine;
     using Verse;
-    using Verse.AI;
     using VFECore.Abilities;
-    using Ability = VFECore.Abilities.Ability;
     using AbilityDef = VFECore.Abilities.AbilityDef;
-    
+
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
-        public float                    experience;
-        public int                      points;
-        public List<PsycasterPathDef>   unlockedPaths;
-        public List<MeditationFocusDef> unlockedMeditationFoci;
-        public List<PsySet>             psysets;
+        public float experience;
+        public int   points = 8;
 
-        public Hediff_Psylink psylink;
+        public Hediff_Psylink           psylink;
+        public List<PsySet>             psysets                = new();
+        public List<MeditationFocusDef> unlockedMeditationFoci = new();
+        public List<PsycasterPathDef>   unlockedPaths          = new();
 
         public void InitializeFromPsylink(Hediff_Psylink psylink)
         {
@@ -36,16 +34,16 @@
 
         public override bool SatisfiesConditionForAbility(AbilityDef abilityDef) =>
             base.SatisfiesConditionForAbility(abilityDef) ||
-            (abilityDef.requiredHediff?.minimumLevel <= this.psylink.level);
+            abilityDef.requiredHediff?.minimumLevel <= this.psylink.level;
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref this.experience, nameof(this.experience));
-            Scribe_Values.Look(ref this.points, nameof(this.points));
-            Scribe_Collections.Look(ref this.unlockedPaths, nameof(this.unlockedPaths), LookMode.Def);
+            Scribe_Values.Look(ref this.points,     nameof(this.points));
+            Scribe_Collections.Look(ref this.unlockedPaths,          nameof(this.unlockedPaths),          LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
-            Scribe_Collections.Look(ref this.psysets, nameof(this.psysets), LookMode.Deep);
+            Scribe_Collections.Look(ref this.psysets,                nameof(this.psysets),                LookMode.Deep);
             Scribe_References.Look(ref this.psylink, nameof(this.psylink));
         }
 
@@ -85,79 +83,5 @@
                 return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.10f);
             return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.05f);
         }
-    }
-
-    public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
-    {
-        public float GetPsyfocusUsedByPawn(Pawn pawn) => 
-            this.psyfocusCost * pawn.GetStatValue(StatDefOf.Ability_PsyfocusCost);
-
-        public float GetEntropyUsedByPawn(Pawn pawn) =>
-            this.entropyGain * pawn.GetStatValue(StatDefOf.Ability_EntropyGain);
-
-        public PsycasterPathDef path;
-        public List<AbilityDef> prerequisites;
-        public int              order;
-
-        public float            entropyGain  = 0f;
-        public float            psyfocusCost = 0f;
-
-        public override bool IsEnabledForPawn(Ability ability, out string reason)
-        {
-            if (ability.Hediff != null)
-            {
-
-                if (ability.pawn.psychicEntropy.PsychicSensitivity < float.Epsilon)
-                {
-                    reason = "CommandPsycastZeroPsychicSensitivity".Translate();
-                    return true;
-                }
-
-                if (this.prerequisites != null)
-                {
-                    if (ability.pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def)))
-                    {
-                        reason = "None of the prerequisites learned";
-                        return false;
-                    }
-                }
-
-                float psyfocusCost = this.GetPsyfocusUsedByPawn(ability.pawn);
-                if (!((Hediff_PsycastAbilities)ability.Hediff).SufficientPsyfocusPresent(psyfocusCost))
-                {
-                    reason = "CommandPsycastNotEnoughPsyfocus".Translate(psyfocusCost, (ability.pawn.psychicEntropy.CurrentPsyfocus - psyfocusCost).ToStringPercent("0.#"), ability.def.label.Named("PSYCASTNAME"), ability.pawn.Named("CASTERNAME"));
-                    return false;
-                }
-
-                if (ability.pawn.GetPsylinkLevel() > ability.def.requiredHediff.minimumLevel)
-                {
-                    reason = "CommandPsycastHigherLevelPsylinkRequired".Translate(ability.def.requiredHediff.minimumLevel);
-                    return true;
-                }
-
-                if (ability.pawn.psychicEntropy.WouldOverflowEntropy(this.GetEntropyUsedByPawn(ability.pawn)))
-                {
-                    reason = "CommandPsycastWouldExceedEntropy".Translate(ability.def.label);
-                    return true;
-                }
-
-                reason = string.Empty;
-                return true;
-            }
-
-            reason = string.Empty;
-            return false;
-        }
-
-        public override void Cast(Ability ability)
-        {
-            base.Cast(ability);
-
-            Hediff_PsycastAbilities psycastHediff = (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
-            psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
-        }
-
-        public override string GetDescription(Ability ability) =>
-            $"{this.GetPsyfocusUsedByPawn(ability.pawn)} {"PsyfocusLetter".Translate()}".Colorize(Color.cyan);
     }
 }

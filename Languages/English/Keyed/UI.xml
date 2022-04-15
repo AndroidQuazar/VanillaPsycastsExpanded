@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <VPE.Psycasts>Psycasts</VPE.Psycasts>
+    <VPE.PsyLevel>Psycaster Level: {0}</VPE.PsyLevel>
+    <VPE.EarnXP>Earn psycaster experience by meditating.</VPE.EarnXP>
+    <VPE.Points>Available points to spend: {0}</VPE.Points>
+    <VPE.SpendPoints>Spend points on unlocking new paths, unlocking psycasts, unlocking meditation foci, improving stats, etc.</VPE.SpendPoints>
+    <VPE.PsycasterStats>Psycaster stats</VPE.PsycasterStats>
+    <VPE.Upgrade>Upgrade</VPE.Upgrade>
+    <VPE.FocusTypes>Focus types:</VPE.FocusTypes>
+</LanguageData>
