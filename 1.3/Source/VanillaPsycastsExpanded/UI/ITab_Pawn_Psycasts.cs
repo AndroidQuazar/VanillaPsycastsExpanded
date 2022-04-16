@@ -248,12 +248,7 @@
                     {
                         Color color = Color.grey;
                         if (this.compAbilities.HasAbility(abilityDef))
-                        {
-                            if (this.compAbilities.HasAbility(def))
-                                color = Color.white;
-                            else if (this.hediff.points >= 1)
-                                color = new Color(1f, 0.84f, 0f);
-                        }
+                            color = Color.white;
 
                         Widgets.DrawLine(this.abilityPos[def], this.abilityPos[abilityDef], color, 2f);
                     }
