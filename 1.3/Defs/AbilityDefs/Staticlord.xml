@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Bolt</defName>
+      <label>bolt</label>
+      <description>Hurls a weak bolt of electricity to strike a small target, inflicting minor burns on direct hits and area EMP damage.</description>
+      <iconPath>Abilities/Staticlord/Bolt</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.01</psyfocusCost>
+          <entropyGain>6</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>ChainBolt</defName>
+      <label>chain bolt</label>
+      <description>Projects a living bolt of electricity to a target which can then follow up with 5 more nearby targets, inflicting small burns and EMP damage.</description>
+      <iconPath>Abilities/Staticlord/ChainBolt</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>20</entropyGain>
+          <prerequisites>
+            <li>Bolt</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Thunderbolt</defName>
+      <label>thunderbolt</label>
+      <description>Summons a bolt of lightning to strike a target, inflicting burns on direct hits and a larger area EMP damage.</description>
+      <iconPath>Abilities/Staticlord/Thunderbolt</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.02</psyfocusCost>
+          <entropyGain>12</entropyGain>
+          <prerequisites>
+            <li>ChainBolt</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>StaticAura</defName>
+      <label>static aura</label>
+      <description>The caster designates a nearby target to receive an aura of surging electricity, which will inflict EMP effects on anything foreign that they approach, including structures, pawns and electrical objects.</description>
+      <iconPath>Abilities/Staticlord/StaticAura</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>2</level>
+          <order>3</order>
+          <psyfocusCost>0.18</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>ChainBolt</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Recharge</defName>
+      <label>recharge</label>
+      <description>Carefully and delicately tunes a stream of electricity to a touched battery to charge it with 100kW or the equivalent of 100 Wd/s. The duration of charge depends on the caster’s psychic sensitivity.</description>
+      <iconPath>Abilities/Staticlord/Recharge</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>3</level>
+          <order>2</order>
+          <psyfocusCost>0.25</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>ChainBolt</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>BallLightning</defName>
+      <label>ball lightning</label>
+      <description>The caster compresses a ball of condensed electricity which will slowly move to a designated location. A few seconds after release, it will start discharging into nearby surrounding targets with living bolts of electricity.</description>
+      <iconPath>Abilities/Staticlord/BallLightning</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>3</level>
+          <order>1</order>
+          <psyfocusCost>0.06</psyfocusCost>
+          <entropyGain>30</entropyGain>
+          <prerequisites>
+            <li>Recharge</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>StaticPulse</defName>
+      <label>static pulse</label>
+      <description>The caster dumps a massive amount of voltage into the surrounding air, causing an EMP blast in a huge radius which is otherwise harmless.</description>
+      <iconPath>Abilities/Staticlord/StaticPulse</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>3</level>
+          <order>3</order>
+          <psyfocusCost>0.1</psyfocusCost>
+          <entropyGain>40</entropyGain>
+          <prerequisites>
+            <li>Recharge</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Vortex</defName>
+      <label>vortex</label>
+      <description>Manifests a gaping vortex of high-voltage electricity - redirected via skipgate from a nebula storm - at a target area with a large effect. Severely hampers movement and manipulating proportionately, with the strongest effect at the center.</description>
+      <iconPath>Abilities/Staticlord/Vortex</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>45</entropyGain>
+          <prerequisites>
+            <li>Recharge</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Hurricane</defName>
+      <label>hurricane</label>
+      <description>The caster forcibly changes the weather - using widespread differential-pressure skipgates - to a downpour with hurricane-force winds, which lasts as long as the caster can manage the heat accumulation and can instantly stop at-will. Those outdoors will experience progressively severe limitations to sight, moving and manipulation to the point they come to a complete stop.</description>
+      <iconPath>Abilities/Staticlord/Hurricane</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.5</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Vortex</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Flashstorm</defName>
+      <label>flashstorm</label>
+      <description>Use concentrated differential-pressure skipgates in the atmosphere to generate a localized flashstorm. The storm will strike the area with lightning for some time before dissipating.</description>
+      <iconPath>Abilities/Staticlord/Flashstorm</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Staticlord</path>
+          <level>5</level>
+          <order>2</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>65</entropyGain>
+          <prerequisites>
+            <li>Vortex</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

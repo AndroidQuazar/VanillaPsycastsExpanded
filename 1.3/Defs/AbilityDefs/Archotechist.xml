@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Burden</defName>
+      <label>burden</label>
+      <description>Slow the target for a short time by suppressing motor activity in the brain. Considered a hostile action and affected by the target’s psychic sensitivity.</description>
+      <iconPath>Abilities/Archotechist/Burden</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.01</psyfocusCost>
+          <entropyGain>8</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Stun</defName>
+      <label>stun</label>
+      <description>Momentarily disrupts motor function in the target's brain, preventing any movement. This lasts for a few seconds and is considered a hostile action.</description>
+      <iconPath>Abilities/Archotechist/Stun</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>1</level>
+          <order>2</order>
+          <psyfocusCost>0.01</psyfocusCost>
+          <entropyGain>12</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>PsychicShock</defName>
+      <label>psychic shock</label>
+      <description>Psychically shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage and is overtly hostile.</description>
+      <iconPath>Abilities/Archotechist/PsychicShock</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.02</psyfocusCost>
+          <entropyGain>15</entropyGain>
+          <prerequisites>
+            <li>Burden</li>
+            <li>Stun</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>NeuralHeatDump</defName>
+      <label>neural heat dump</label>
+      <description>Instantly dump all your neural heat into a conscious ally. As a side effect, the target will fall into a debilitating, harmless coma for about a day. The target must actively accept the psychic invasion, so only conscious allies can be targeted.</description>
+      <iconPath>Abilities/Archotechist/NeuralHeatDump</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Burden</li>
+            <li>Stun</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Berserk</defName>
+      <label>berserk</label>
+      <description>Induce a berserker psychosis in the target's mind, causing them to attack anyone nearby. They regain rationality after 15 seconds, depending on their psychic sensitivity.</description>
+      <iconPath>Abilities/Archotechist/Berserk</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>3</level>
+          <order>1</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>40</entropyGain>
+          <prerequisites>
+            <li>PsychicShock</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>AggressiveHeatDump</defName>
+      <label>aggressive heat dump</label>
+      <description>Instantly dump all of your neural heat into a target, causing them to explode with an area of effect relative to the heat lost and the target’s psychic sensitivity. A good declaration of war.</description>
+      <iconPath>Abilities/Archotechist/AggressiveHeatDump</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>3</level>
+          <order>2</order>
+          <psyfocusCost>0</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>NeuralHeatDump</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>BerserkPulse</defName>
+      <label>berskerk pulse</label>
+      <description>Generate an overwhelming rush of undirected rage in everyone near the target point. Considered an overt act of aggression and lasts several seconds.</description>
+      <iconPath>Abilities/Archotechist/BerserkPulse</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.06</psyfocusCost>
+          <entropyGain>65</entropyGain>
+          <prerequisites>
+            <li>Berserk</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>PsychicDrone</defName>
+      <label>psychic drone</label>
+      <description>Creates a massive psychic drone aura around the caster tuned to hostiles, frequently driving them insane until they overcome the break. Duration scales with the caster’s psychic sensitivity.</description>
+      <iconPath>Abilities/Archotechist/PsychicDrone</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>4</level>
+          <order>2</order>
+          <psyfocusCost>0.06</psyfocusCost>
+          <entropyGain>65</entropyGain>
+          <prerequisites>
+            <li>Berserk</li>
+            <li>AggressiveHeatDump</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>NeuralHeatDetonation</defName>
+      <label>neural heat detonation</label>
+      <description>Efficiently but indiscriminately dumps all of the caster’s neural heat into an explosion away from themselves, the size being both relative to the heat lost and their psychic sensitivity.</description>
+      <iconPath>Abilities/Archotechist/NeuralHeatDetonation</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>4</level>
+          <order>3</order>
+          <psyfocusCost>0</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>AggressiveHeatDump</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Neuroquake</defName>
+      <label>neuroquake</label>
+      <description>Find a discontinuity in the psychic field and unfold it, releasing a massive amount of psychic energy. Every creature in range but outside of the safe inner circle will be driven violently insane. Casting this takes 12 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing neuroquake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
+      <iconPath>Abilities/Archotechist/Neuroquake</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Archotechist</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.5</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>PsychicDrone</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

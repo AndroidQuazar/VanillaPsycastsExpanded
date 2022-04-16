@@ -10,7 +10,7 @@
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
         public float experience;
-        public int   points = 8;
+        public int   points = 500;
 
         public Hediff_Psylink           psylink;
         public List<PsySet>             psysets                = new();

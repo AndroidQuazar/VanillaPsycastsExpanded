@@ -8,4 +8,9 @@
     <VPE.PsycasterStats>Psycaster stats</VPE.PsycasterStats>
     <VPE.Upgrade>Upgrade</VPE.Upgrade>
     <VPE.FocusTypes>Focus types:</VPE.FocusTypes>
+    <VPE.PsysetCustomize>Customize Psysets</VPE.PsysetCustomize>
+    <VPE.PsysetDesc>Drag and drop learnt psycasts into psysets that you can cycle between ingame.</VPE.PsysetDesc>
+    <VPE.CreatePsyset>Create Psyset</VPE.CreatePsyset>
+    <VPE.Unlock>Unlock</VPE.Unlock>
+    <VPE.ClickToUnlock>Click to Unlock</VPE.ClickToUnlock>
 </LanguageData>

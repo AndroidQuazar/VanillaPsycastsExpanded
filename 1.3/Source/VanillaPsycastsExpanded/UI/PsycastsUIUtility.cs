@@ -33,15 +33,19 @@
             float height = Text.CalcHeight(label, listing.ColumnWidth);
             Rect  rect   = listing.GetRect(height);
             float width  = icon.width * (height / icon.height);
-            Widgets.DrawTextureFitted(rect.TakeLeftPart(width), icon, 1f);
+            GUI.DrawTexture(rect.TakeLeftPart(width), icon);
             Widgets.Label(rect, label);
             listing.Gap(3f);
         }
 
         public static void StatDisplay(this Listing_Standard listing, Texture2D icon, StatDef stat, Thing thing)
         {
-            listing.LabelWithIcon(icon, stat.LabelCap + ": " + stat.Worker.GetStatDrawEntryLabel(stat, thing.GetStatValue(stat), stat.toStringNumberSense, StatRequest.For(thing)));
+            listing.LabelWithIcon(
+                icon,
+                stat.LabelCap + ": " + stat.Worker.GetStatDrawEntryLabel(stat, thing.GetStatValue(stat), stat.toStringNumberSense, StatRequest.For(thing)));
         }
+
+        public static Rect CenterRect(this Rect rect, Vector2 size) => new(rect.center - size / 2f, size);
 
         public static Texture2D Icon(this MeditationFocusDef def) => meditationIcons[def];
     }

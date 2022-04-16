@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Def>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceBreath</defName>
+      <label>breathe ice</label>
+      <description>Breathe forward a stream of psychic entropy, the resulting cold cutting and inducing hypothermia scaling with the caster's psychic sensitivity.</description>
+      <iconPath>Abilities/Frostshaper/IceBreath</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.02</psyfocusCost>
+          <entropyGain>8</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceSpike</defName>
+      <label>ice spike</label>
+      <description>Condenses vapor with psychic entropy into an icicle launched at a target, the damage scaling with psychic sensitivity.</description>
+      <iconPath>Abilities/Frostshaper/IceSpike</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>1</level>
+          <order>2</order>
+          <psyfocusCost>0.01</psyfocusCost>
+          <entropyGain>8</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceShield</defName>
+      <label>ice shield</label>
+      <description>Creates an aura of psychic entropy around the target for several seconds, preventing them from experiencing cold and inducing hypothermia on any who try to attack them in melee.</description>
+      <iconPath>Abilities/Frostshaper/IceShield</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>1</level>
+          <order>3</order>
+          <psyfocusCost>0.02</psyfocusCost>
+          <entropyGain>25</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>FrostRay</defName>
+      <label>frost ray</label>
+      <description>Push forth a concentrated stream of psychic entropy for a few seconds, rapidly inducing cuts and hypothermia. The duration scales with the caster’s psychic sensitivity.</description>
+      <iconPath>Abilities/Frostshaper/FrostRay</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>25</entropyGain>
+          <prerequisites>
+            <li>IceBreath</li>
+            <li>IceSpike</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceCrystal</defName>
+      <label>ice crystal</label>
+      <description>Creates a node of psychic entropy in the form of a crystal, sapping the heat from the room for the next 5 days.</description>
+      <iconPath>Abilities/Frostshaper/IceCrystal</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0.22</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>IceSpike</li>
+            <li>IceShield</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>ColdZone</defName>
+      <label>cold zone</label>
+      <description>Cause an area to manifest nodes of psychic entropy for the next 24 hours, drastically lowering the temperature.</description>
+      <iconPath>Abilities/Frostshaper/ColdZone</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>3</level>
+          <order>1</order>
+          <psyfocusCost>0.45</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>FrostRay</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceBlock</defName>
+      <label>ice block</label>
+      <description>Combining nodes of psychic entropy and a skipgate linked to an ocean, creating a large block of ice to form in the target location. Fragile and can melt if the temperature is above freezing.</description>
+      <iconPath>Abilities/Frostshaper/IceBlock</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>3</level>
+          <order>2</order>
+          <psyfocusCost>0.02</psyfocusCost>
+          <entropyGain>35</entropyGain>
+          <prerequisites>
+            <li>ColdZone</li>
+            <li>SnapFreeze</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>SnapFreeze</defName>
+      <label>snap freeze</label>
+      <description>Creates motes of psychic entropy and miniature skipgates to water reservoirs above all the targets in a small area, encasing them in ice. Victims will experience hypothermia but the ice can melt prematurely if the temperature is above freezing.</description>
+      <iconPath>Abilities/Frostshaper/SnapFreeze</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>3</level>
+          <order>3</order>
+          <psyfocusCost>0.03</psyfocusCost>
+          <entropyGain>30</entropyGain>
+          <prerequisites>
+            <li>IceCrystal</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>IceWall</defName>
+      <label>ice wall</label>
+      <description>Combining nodes of psychic entropy and miniature skipgates linked to an ocean, creating a circular wall of ice to form around the caster. Fragile and can melt if the temperature is above freezing.</description>
+      <iconPath>Abilities/Frostshaper/IceWall</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.08</psyfocusCost>
+          <entropyGain>40</entropyGain>
+          <prerequisites>
+            <li>IceBlock</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Blizzard</defName>
+      <label>blizzard</label>
+      <description>Using differential-pressure skipgates, water-linked skipgates and nodes of psychic entropy, creates a swirling blizzard away from the caster. Those exposed to the tempest experience reduced sight, moving and manipulation, as well as hypothermia buildup and cutting cold. Duration scales with the caster’s psychic sensitivity and puts them in a 5-day coma.</description>
+      <iconPath>Abilities/Frostshaper/Blizzard</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Frostshaper</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.8</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>IceWall</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Def>

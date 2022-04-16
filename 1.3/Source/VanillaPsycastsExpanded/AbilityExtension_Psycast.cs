@@ -17,6 +17,12 @@
         public PsycasterPathDef path;
         public List<AbilityDef> prerequisites;
         public float            psyfocusCost = 0f;
+        public bool             spaceAfter;
+
+        public bool PrereqsCompleted(Pawn pawn)
+        {
+            return this.prerequisites == null || pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
+        }
 
         public float GetPsyfocusUsedByPawn(Pawn pawn) =>
             this.psyfocusCost * pawn.GetStatValue(StatDefOf.Ability_PsyfocusCost);
@@ -34,18 +40,18 @@
                     return true;
                 }
 
-                if (this.prerequisites != null)
-                    if (ability.pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def)))
-                    {
-                        reason = "None of the prerequisites learned";
-                        return false;
-                    }
+                if (!this.PrereqsCompleted(ability.pawn))
+                {
+                    reason = "None of the prerequisites learned";
+                    return false;
+                }
 
                 float psyfocusCost = this.GetPsyfocusUsedByPawn(ability.pawn);
                 if (!((Hediff_PsycastAbilities) ability.Hediff).SufficientPsyfocusPresent(psyfocusCost))
                 {
-                    reason = "CommandPsycastNotEnoughPsyfocus".Translate(psyfocusCost, (ability.pawn.psychicEntropy.CurrentPsyfocus - psyfocusCost).ToStringPercent("0.#"),
-                                                                         ability.def.label.Named("PSYCASTNAME"), ability.pawn.Named("CASTERNAME"));
+                    reason = "CommandPsycastNotEnoughPsyfocus".Translate(
+                        psyfocusCost, (ability.pawn.psychicEntropy.CurrentPsyfocus - psyfocusCost).ToStringPercent("0.#"),
+                        ability.def.label.Named("PSYCASTNAME"), ability.pawn.Named("CASTERNAME"));
                     return false;
                 }
 
@@ -73,7 +79,8 @@
         {
             base.Cast(ability);
 
-            Hediff_PsycastAbilities psycastHediff = (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+            Hediff_PsycastAbilities psycastHediff =
+                (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
         }
 
@@ -88,7 +95,7 @@
         public static AbilityExtension_Psycast Psycast(this AbilityDef def)
         {
             if (cache.TryGetValue(def, out AbilityExtension_Psycast ext)) return ext;
-            ext = def.GetModExtension<AbilityExtension_Psycast>();
+            ext        = def.GetModExtension<AbilityExtension_Psycast>();
             cache[def] = ext;
             return ext;
         }

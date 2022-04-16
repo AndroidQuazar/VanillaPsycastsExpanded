@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef>
+      <defName>EnchantQuality</defName>
+      <label>enchant quality</label>
+      <description>The caster concentrates on an item and attempts to improve its quality by reshaping the material slightly, but cannot imitate a master’s handiwork.</description>
+      <iconPath>Abilities/Technomancer/EnchantQuality</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.24</psyfocusCost>
+          <entropyGain>0</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Mend</defName>
+      <label>mend</label>
+      <description>The caster concentrates on an item and attempts to repair present damage by rebinding the material, with the effect scaling with their psychic sensitivity.</description>
+      <iconPath>Abilities/Technomancer/Mend</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>1</level>
+          <order>2</order>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>0</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>ConjureHeatPearls</defName>
+      <label>conure heat pearls</label>
+      <description>Converts a minimum amount of the caster’s heat into metaphysical pearls, effectively converting psyfocus into heat pearls. These can be thrown at other psycasters to induce massive amounts of heat on them, but are otherwise harmless.</description>
+      <iconPath>Abilities/Technomancer/ConjureHeatPearls</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.2</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>EnchantQuality</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Haywire</defName>
+      <label>haywire</label>
+      <description>Designates an area to experience psychic interference, effectively scrambling electronic systems’ IFFs while identifying the caster’s people as allies. Duration scales with psychic sensitivity.</description>
+      <iconPath>Abilities/Technomancer/Haywire</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0.04</psyfocusCost>
+          <entropyGain>18</entropyGain>
+          <prerequisites>
+            <li>EnchantQuality</li>
+            <li>Mend</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Power</defName>
+      <label>power</label>
+      <description>Metaphysically alters the designated equipment’s power input to extract energy directly from fluctuations in the quantum foam for a few days. Duration scales with psychic sensitivity.</description>
+      <iconPath>Abilities/Technomancer/Power</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>2</level>
+          <order>3</order>
+          <psyfocusCost>0.1</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>Mend</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>RockConstruct</defName>
+      <label>rock construct</label>
+      <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a stone chunk. This new rock construct is capable of performing simple chores, and breaking the crystal allows the heat capacity to be restored.</description>
+      <iconPath>Abilities/Technomancer/RockConstruct</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>3</level>
+          <order>1</order>
+          <psyfocusCost>0.24</psyfocusCost>
+          <entropyGain>20</entropyGain>
+          <prerequisites>
+            <li>Haywire</li>
+            <li>ConjureHeatPearls</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>SteelConstruct</defName>
+      <label>steel construct</label>
+      <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a steel slag. This new steel construct will follow the caster and defend them from harm, and breaking the crystal allows the heat capacity to be restored.</description>
+      <iconPath>Abilities/Technomancer/SteelConstruct</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>3</level>
+          <order>2</order>
+          <psyfocusCost>0.24</psyfocusCost>
+          <entropyGain>29</entropyGain>
+          <prerequisites>
+            <li>Haywire</li>
+            <li>Power</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>CraftPsyRing</defName>
+      <label>craft psyring</label>
+      <description>Psychically alters the form of a piece of eltex into the shape of a ring, which is imbued with psycasting knowledge of the caster. When worn by another psycaster, this temporarily allows them to use this knowledge to perform the stored psycast without practice.</description>
+      <iconPath>Abilities/Technomancer/CraftPsyRing</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.8</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>RockConstruct</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>WordofProgress</defName>
+      <label>word of progress</label>
+      <description>Speak words encouraging problem solving capabilities while psychically hypercharging the target’s mind with keen insight. The target will experience double research speed and intellectual skill gain for 5 days, scaling with their psychic sensitivity.</description>
+      <iconPath>Abilities/Technomancer/WordofProgress</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>4</level>
+          <order>2</order>
+          <psyfocusCost>0.45</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>SteelConstruct</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>ReverseEngineer</defName>
+      <label>reverse engineer</label>
+      <description>The caster concentrates on an object and attempts to unravel the knowledge needed to manufacture more of them. The long, intense concentration ends with the caster falling into a 6-hour coma.</description>
+      <iconPath>Abilities/Technomancer/ReverseEngineer</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Technomancer</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.8</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>CraftPsyRing</li>
+            <li>WordofProgress</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef>
+      <defName>PlantTimeskip</defName>
+      <label>plant timeskip</label>
+      <description>Grows all the plants in a radius around the caster to maturity.</description>
+      <iconPath>Abilities/Chronopath/PlantTimeskip</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.25</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>TimeskipMeditation</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>TimeskipMeditation</defName>
+      <label>timeskip meditation</label>
+      <description>Puts the caster into a self-inflicted coma for six hours as they earn experience to their next Psycast level and regain full Psyfocus. Biologically ages the caster by a full year.</description>
+      <iconPath>Abilities/Chronopath/TimeskipMeditation</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>1</level>
+          <order>2</order>
+          <psyfocusCost>0</psyfocusCost>
+          <entropyGain>0</entropyGain>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>WordofForetelling</defName>
+      <label>word of foretelling</label>
+      <description>Psychic whispers of things to come. Colony pawns are inspired, neutrals or friendlies improve relations, prisoners lose their resistance and enemies retreat from their doom.</description>
+      <iconPath>Abilities/Chronopath/WordofForetelling</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>1</level>
+          <order>3</order>
+          <psyfocusCost>0.4</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>TimeskipMeditation</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>CraftTimeskip</defName>
+      <label>craft timeskip</label>
+      <description>Using very precise timeskipping, moves the desired item to its finished state as if the creator had continued working on it.</description>
+      <iconPath>Abilities/Chronopath/CraftTimeskip</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.5</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>PlantTimeskip</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Age</defName>
+      <label>age</label>
+      <description>Very inefficiently siphons life force from a living target, de-aging the caster by 2 years and aging the other by 10. Very debilitating aftereffects for the victim and considered a hostile action by allies.</description>
+      <iconPath>Abilities/Chronopath/Age</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>2</level>
+          <order>2</order>
+          <psyfocusCost>0.3</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>WordofForetelling</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>RaidPause</defName>
+      <label>raid pause</label>
+      <description>Depending on the caster’s psychic sensitivity, slows all raiders on the map to a complete stop for up to five minutes. Attacking any single affected raider jolts all of them back into action.</description>
+      <iconPath>Abilities/Chronopath/RaidPause</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>4</level>
+          <order>1</order>
+          <psyfocusCost>0.1</psyfocusCost>
+          <entropyGain>40</entropyGain>
+          <prerequisites>
+            <li>Age</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>SeasonTimeskip</defName>
+      <label>season timeskip</label>
+      <description>Locks the entire planet into a season-long psychically induced slowdown, effectively skipping forward a season. Nigh instantaneous effect, very strenuous and puts the caster in a coma.</description>
+      <iconPath>Abilities/Chronopath/SeasonTimeskip</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>4</level>
+          <order>2</order>
+          <psyfocusCost>0.5</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>CraftTimeskip</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>TimeSphere</defName>
+      <label>time sphere</label>
+      <description>Psychically compresses the flow of time in an area. Rapidly ages living creatures, plants flourish and wither, and structures start to disintegrate from the bizarre stress.</description>
+      <iconPath>Abilities/Chronopath/TimeSphere</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>5</level>
+          <order>1</order>
+          <psyfocusCost>0.1</psyfocusCost>
+          <entropyGain>40</entropyGain>
+          <prerequisites>
+            <li>RaidPause</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>TimeReversal</defName>
+      <label>time reversal</label>
+      <description>Inefficiently siphons life force to a living target, aging the caster by 5 years and de-aging the other by 10. Has a minimum age, removes age related penalties and puts the caster in a coma.</description>
+      <iconPath>Abilities/Chronopath/TimeReversal</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>5</level>
+          <order>3</order>
+          <psyfocusCost>0.5</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>SeasonTimeskip</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef>
+      <defName>Timequake</defName>
+      <label>timequake</label>
+      <description>Find a discontinuity in the psychic field and compress it, releasing a massive temporal disturbance. Every creature in range but outside of the safe inner circle will experience rapid aging and structures will warp. Casting this takes 20 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing timequake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
+      <iconPath>Abilities/Chronopath/Timequake</iconPath>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>Chronopath</path>
+          <level>5</level>
+          <order>2</order>
+          <psyfocusCost>0.6</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>TimeSphere</li>
+            <li>TimeReversal</li>
+          </prerequisites>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>
