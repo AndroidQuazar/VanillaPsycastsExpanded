@@ -35,6 +35,8 @@
         private Pawn                    pawn;
         private Vector2                 psysetsScrollPos;
 
+        private bool useAltBackgrounds;
+
         static ITab_Pawn_Psycasts()
         {
             foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
@@ -111,8 +113,12 @@
             listing.Gap(3f);
             Text.Anchor = TextAnchor.MiddleLeft;
             Text.Font   = GameFont.Small;
-            if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate(), "VPE.Upgrade".Translate()))
-                Messages.Message("Upgraded!", MessageTypeDefOf.PositiveEvent);
+            if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate(), "VPE.Upgrade".Translate()) && this.hediff.points >= 1)
+            {
+                this.hediff.SpentPoints();
+                this.hediff.ImproveStats();
+            }
+
             listing.StatDisplay(TexPsycasts.IconNeuralHeatLimit,     StatDefOf.PsychicEntropyMax,          this.pawn);
             listing.StatDisplay(TexPsycasts.IconNeuralHeatRegenRate, StatDefOf.PsychicEntropyRecoveryRate, this.pawn);
             listing.StatDisplay(TexPsycasts.IconPsychicSensitivity,  StatDefOf.PsychicSensitivity,         this.pawn);
@@ -143,6 +149,7 @@
             Widgets.BeginScrollView(psysets, ref this.psysetsScrollPos, viewRect);
             this.DoPsysets(viewRect);
             Widgets.EndScrollView();
+            listing.CheckboxLabeled("VPE.UseAltBackground".Translate(), ref this.useAltBackgrounds);
             listing.End();
             if (this.pathsByTab.NullOrEmpty())
             {
@@ -200,8 +207,9 @@
             foreach (PsycasterPathDef def in this.pathsByTab[this.curTab].OrderByDescending(path => this.hediff.unlockedPaths.Contains(path))
                                                  .ThenBy(path => path.order).ThenBy(path => path.label))
             {
-                float height = widthPerPath / def.backgroundImage.width * def.backgroundImage.height + 30f;
-                Rect  rect   = new(curPos, new Vector2(widthPerPath, height));
+                Texture2D texture = this.useAltBackgrounds ? def.backgroundImage : def.altBackgroundImage;
+                float     height  = widthPerPath / texture.width * texture.height + 30f;
+                Rect      rect    = new(curPos, new Vector2(widthPerPath, height));
                 GUI.color = new ColorInt(97, 108, 122).ToColor;
                 Widgets.DrawBox(rect.ExpandedBy(2f), 1, Texture2D.whiteTexture);
                 GUI.color = Color.white;
@@ -209,7 +217,7 @@
                 Widgets.DrawRectFast(labelRect, Widgets.WindowBGFillColor);
                 Text.Anchor = TextAnchor.MiddleCenter;
                 Widgets.Label(labelRect, def.LabelCap);
-                GUI.DrawTexture(rect, def.backgroundImage);
+                GUI.DrawTexture(rect, texture);
                 Text.Anchor = TextAnchor.UpperLeft;
                 if (this.hediff.unlockedPaths.Contains(def))
                 {
@@ -217,7 +225,7 @@
                 }
                 else
                 {
-                    Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, 0.7f));
+                    Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, this.useAltBackgrounds ? 0.7f : 0.55f));
                     if (this.hediff.points >= 1 && Widgets.ButtonText(rect.CenterRect(new Vector2(140f, 30f)), "VPE.Unlock".Translate()))
                     {
                         this.hediff.SpentPoints();
@@ -261,7 +269,7 @@
                 {
                     Rect       rect = new(levelRect.x + levelRect.width / 2 + abilityTreeXOffsets[abilities.Length - 1][pos], levelRect.y, 36f, 36f);
                     AbilityDef def  = abilities[pos];
-                    if (def.defName == PsycasterPathDef.BlankLabel) continue;
+                    if (def == PsycasterPathDef.Blank) continue;
                     this.abilityPos[def] = rect.center;
                     this.DoAbility(rect, def);
                 }

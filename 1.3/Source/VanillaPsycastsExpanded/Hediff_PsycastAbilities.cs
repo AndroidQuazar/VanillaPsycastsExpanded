@@ -9,24 +9,59 @@
 
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
-        public float experience;
-        public int   points = 500;
+        public  float experience;
+        public  int   points;
+        private int   statPoints;
 
         public Hediff_Psylink           psylink;
         public List<PsySet>             psysets                = new();
         public List<MeditationFocusDef> unlockedMeditationFoci = new();
         public List<PsycasterPathDef>   unlockedPaths          = new();
 
+        private HediffStage curStage;
+
+        public override HediffStage CurStage
+        {
+            get
+            {
+                if (this.curStage == null) this.RecacheCurStage();
+                return this.curStage;
+            }
+        }
+
         public void InitializeFromPsylink(Hediff_Psylink psylink)
         {
             this.psylink = psylink;
-            this.level   = this.psylink.level;
+            this.ChangeLevel(psylink.level - this.level);
+            this.RecacheCurStage();
+        }
+
+        private void RecacheCurStage()
+        {
+            this.curStage = new HediffStage
+            {
+                statOffsets = new List<StatModifier>
+                {
+                    new() {stat = StatDefOf.PsychicEntropyMax, value          = this.level * 5     + this.statPoints * 20},
+                    new() {stat = StatDefOf.PsychicEntropyRecoveryRate, value = this.level * 0.05f + this.statPoints * 0.2f},
+                    new() {stat = StatDefOf.PsychicSensitivity, value         = this.statPoints * 0.05f},
+                    new() {stat = StatDefOf.MeditationFocusGain, value        = this.statPoints * 0.1f}
+                }
+            };
+            this.pawn.health.Notify_HediffChanged(this);
         }
 
         public void UseAbility(float focus, float entropy)
         {
             this.pawn.psychicEntropy.TryAddEntropy(entropy);
             this.pawn.psychicEntropy.OffsetPsyfocusDirectly(-focus);
+        }
+
+        public override void ChangeLevel(int levelOffset)
+        {
+            base.ChangeLevel(levelOffset);
+            this.points += levelOffset;
+            this.RecacheCurStage();
         }
 
         public bool SufficientPsyfocusPresent(float focusRequired) =>
@@ -41,6 +76,7 @@
             base.ExposeData();
             Scribe_Values.Look(ref this.experience, nameof(this.experience));
             Scribe_Values.Look(ref this.points,     nameof(this.points));
+            Scribe_Values.Look(ref this.statPoints, nameof(this.statPoints));
             Scribe_Collections.Look(ref this.unlockedPaths,          nameof(this.unlockedPaths),          LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
             Scribe_Collections.Look(ref this.psysets,                nameof(this.psysets),                LookMode.Deep);
@@ -50,6 +86,12 @@
         public void SpentPoints(int count = 1)
         {
             this.points -= count;
+        }
+
+        public void ImproveStats(int count = 1)
+        {
+            this.statPoints += count;
+            this.RecacheCurStage();
         }
 
         public void UnlockPath(PsycasterPathDef path)
@@ -82,6 +124,10 @@
             if (curLevel < 30)
                 return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.10f);
             return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.05f);
+        }
+
+        public override void GiveRandomAbilityAtLevel(int? forLevel = null)
+        {
         }
     }
 }

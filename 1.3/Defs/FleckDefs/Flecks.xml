@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <FleckDef ParentName="FleckBase_RandomGraphic">
+        <defName>VPE_Explosion</defName>
+        <altitudeLayer>Projectile</altitudeLayer>
+        <solidTime>0.3</solidTime>
+        <fadeOutTime>0.1</fadeOutTime>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <randomGraphics>
+            <li>
+                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastA</texPath>
+                <shaderType>MoteGlow</shaderType>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <drawSize>(10, 10)</drawSize>
+            </li>
+            <li>
+                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastB</texPath>
+                <shaderType>MoteGlow</shaderType>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <drawSize>(10, 10)</drawSize>
+            </li>
+            <li>
+                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastC</texPath>
+                <shaderType>MoteGlow</shaderType>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <drawSize>(10, 10)</drawSize>
+            </li>
+            <li>
+                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastD</texPath>
+                <shaderType>MoteGlow</shaderType>
+                <graphicClass>Graphic_Fleck</graphicClass>
+                <drawSize>(10, 10)</drawSize>
+            </li>
+        </randomGraphics>
+    </FleckDef>
+</Defs>

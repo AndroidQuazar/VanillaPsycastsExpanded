@@ -13,4 +13,5 @@
     <VPE.CreatePsyset>Create Psyset</VPE.CreatePsyset>
     <VPE.Unlock>Unlock</VPE.Unlock>
     <VPE.ClickToUnlock>Click to Unlock</VPE.ClickToUnlock>
+    <VPE.UseAltBackground>Use alternative backgrounds</VPE.UseAltBackground>
 </LanguageData>

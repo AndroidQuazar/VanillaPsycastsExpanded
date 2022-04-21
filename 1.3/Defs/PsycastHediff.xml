@@ -2,6 +2,7 @@
 <Defs>
   <HediffDef ParentName="ImplantHediffBase"> 
     <defName>VPE_PsycastAbilityImplant</defName>
+    <label>psylink</label>
     <description>Go away cheater</description>
     <hediffClass>VanillaPsycastsExpanded.Hediff_PsycastAbilities</hediffClass>
     <initialSeverity>1</initialSeverity> 

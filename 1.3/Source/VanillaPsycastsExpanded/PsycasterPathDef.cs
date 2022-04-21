@@ -8,32 +8,59 @@
 
     public class PsycasterPathDef : Def
     {
-        public static    AbilityDef       Blank;
-        public static    string           BlankLabel = "$$Blank$$";
-        [Unsaved] public List<AbilityDef> abilities;
+        public static AbilityDef Blank;
+        public static int        TotalPoints;
 
-        public AbilityDef[][] abilityLevelsInOrder;
 
         public string background;
-
-        [Unsaved] public Texture2D backgroundImage;
-
+        public string altBackground;
+        public Color  backgroundColor;
+        public int    width;
+        public int    height;
         public int    order;
         public string tab;
 
-        [Unsaved] public bool HasAbilities;
-        [Unsaved] public int  MaxLevel;
+        [Unsaved] public Texture2D        backgroundImage;
+        [Unsaved] public Texture2D        altBackgroundImage;
+        [Unsaved] public Texture2D        backgroundImageLocked;
+        [Unsaved] public Texture2D        altBackgroundImageLocked;
+        [Unsaved] public bool             HasAbilities;
+        [Unsaved] public int              MaxLevel;
+        [Unsaved] public List<AbilityDef> abilities;
+        [Unsaved] public AbilityDef[][]   abilityLevelsInOrder;
 
         public override void PostLoad()
         {
             base.PostLoad();
-            LongEventHandler.ExecuteWhenFinished(delegate { this.backgroundImage = ContentFinder<Texture2D>.Get(this.background); });
+            LongEventHandler.ExecuteWhenFinished(delegate
+            {
+                if (!this.background.NullOrEmpty()) this.backgroundImage       = ContentFinder<Texture2D>.Get(this.background);
+                if (!this.altBackground.NullOrEmpty()) this.altBackgroundImage = ContentFinder<Texture2D>.Get(this.altBackground);
+
+                if (this.width > 0 && this.height > 0)
+                {
+                    Texture2D tex    = new(this.width, this.height);
+                    Color[]   colors = new Color[this.width * this.height];
+
+                    for (int i = 0; i < colors.Length; i++) colors[i] = this.backgroundColor;
+
+                    tex.SetPixels(colors);
+                    tex.Apply();
+
+                    if (this.backgroundImage    == null) this.backgroundImage    = tex;
+                    if (this.altBackgroundImage == null) this.altBackgroundImage = tex;
+                }
+
+                if (this.backgroundImage    == null && this.altBackgroundImage != null) this.backgroundImage    = this.altBackgroundImage;
+                if (this.altBackgroundImage == null && this.backgroundImage    != null) this.altBackgroundImage = this.backgroundImage;
+            });
         }
 
         public override void ResolveReferences()
         {
             base.ResolveReferences();
-            Blank = new AbilityDef {defName = BlankLabel};
+            Blank       ??= new AbilityDef();
+            TotalPoints +=  1;
 
             this.abilities = new List<AbilityDef>();
             foreach (AbilityDef abilityDef in DefDatabase<AbilityDef>.AllDefsListForReading)
@@ -42,7 +69,9 @@
                 if (psycast is not null && psycast.path == this) this.abilities.Add(abilityDef);
             }
 
-            this.MaxLevel             = this.abilities.Max(ab => ab.Psycast().level);
+            this.MaxLevel =  this.abilities.Max(ab => ab.Psycast().level);
+            TotalPoints   += this.abilities.Count;
+
             this.abilityLevelsInOrder = new AbilityDef[this.MaxLevel][];
             foreach (IGrouping<int, AbilityDef> abilityDefs in this.abilities.GroupBy(ab => ab.Psycast().level))
                 this.abilityLevelsInOrder[abilityDefs.Key - 1] = abilityDefs.OrderBy(ab => ab.Psycast().order)

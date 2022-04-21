@@ -48,17 +48,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Graphics\AbilityProjectile_Pointing.cs" />
+    <Compile Include="Graphics\Graphic_Animated.cs" />
+    <Compile Include="Graphics\Graphic_FleckCollection.cs" />
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
     <Compile Include="HarmonyPatches\Hediff_Psylink_Patches.cs" />
     <Compile Include="HarmonyPatches\MeditationFocusTypeAvailabilityCache_PawnCanUse_Patch.cs" />
     <Compile Include="AbilityExtension_Psycast.cs" />
+    <Compile Include="HarmonyPatches\Pawn_EntropyTracker_Patches.cs" />
     <Compile Include="Hediff_PsycastAbilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsycasterPathDef.cs" />
+    <Compile Include="PsycastUtility.cs" />
     <Compile Include="PsySet.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="MeditationFocusExtension_Icon.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />
+    <Compile Include="UI\PsychicStatusGizmo.cs" />
     <Compile Include="UI\TexPsycasts.cs" />
     <Compile Include="VPE_DefOf.cs" />
   </ItemGroup>
@@ -72,7 +78,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Abilities\" />
+    <Folder Include="Abilities\Conflagrator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

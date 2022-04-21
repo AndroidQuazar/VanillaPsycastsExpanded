@@ -9,6 +9,9 @@
                 <li Class="PatchOperationRemove">
                     <xpath>Defs/HediffDef[defName="PsychicAmplifier"]/maxSeverity</xpath>
                 </li>
+                <li Class="PatchOperationRemove">
+                    <xpath>Defs/HediffDef[defName="PsychicAmplifier"]/stages</xpath>
+                </li>
                 <li Class="PatchOperationSequence">
                     <operations>
                         <li Class="PatchOperationAddModExtension">
