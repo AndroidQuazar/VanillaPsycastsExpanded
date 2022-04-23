@@ -92,6 +92,10 @@
       <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <range>4.9</range>
       <targetMode>Pawn</targetMode>
+      <targetingParameters>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
       <castTime>15</castTime>
       <durationTime>900</durationTime>
       <castSound>VPE_FireShield_Cast</castSound>
@@ -119,7 +123,10 @@
       <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
       <castTime>6</castTime>
       <range>12.9</range>
-      <targetMode>Thing</targetMode>
+      <targetMode>Pawn</targetMode>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+      </targetingParameters>
       <castSound>VPE_BreatheFlame_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -142,6 +149,12 @@
       <label>eye blast</label>
       <description>Generates two micro, unidirectional skipgates in front of the caster’s eyes which link to a nearby white dwarf. Targeting a location to prevent overshooting, the blinding energy shoots forth and sets a small area ablaze.</description>
       <iconPath>Abilities/Conflagrator/EyeBlast</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>15</castTime>
+      <range>24.9</range>
+      <radius>3</radius>
+      <targetMode>Location</targetMode>
+      <castSound>VPE_EyeBlast_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>
@@ -152,6 +165,9 @@
           <prerequisites>
             <li>Explosion</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_EyeBlast</projectile>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

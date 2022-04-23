@@ -101,7 +101,7 @@
             Text.Anchor = TextAnchor.MiddleCenter;
             int xpForNext = Hediff_PsycastAbilities.ExperienceRequiredForLevel(this.hediff.level + 1);
             Widgets.FillableBar(bar, this.hediff.experience / xpForNext);
-            Widgets.Label(bar, $"{this.hediff.experience} / {xpForNext}");
+            Widgets.Label(bar, $"{this.hediff.experience.ToStringByStyle(ToStringStyle.FloatOne)} / {xpForNext}");
             Text.Font = GameFont.Tiny;
             listing.Label("VPE.EarnXP".Translate());
             listing.Gap(10f);
@@ -180,6 +180,8 @@
             GUI.color = unlocked ? Color.white : Color.gray;
             GUI.DrawTexture(inRect.ContractedBy(5f), def.Icon());
             GUI.color = Color.white;
+            TooltipHandler.TipRegion(inRect, $"{def.LabelCap}\n\n{def.description}");
+            Widgets.DrawHighlightIfMouseover(inRect);
             if (this.hediff.points >= 1 && !unlocked)
                 if (Widgets.ButtonText(new Rect(inRect.xMax - 13f, inRect.yMax - 13f, 12f, 12f), "▲"))
                 {

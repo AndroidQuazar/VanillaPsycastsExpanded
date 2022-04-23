@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef ParentName="BaseBullet">
-        <defName>VPE_Flameball</defName>
-        <label>flameball</label>
-        <description>A ball of flame launched by a Conflagrator</description>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_Flameball</defName>
+		<label>flameball</label>
+		<description>A ball of flame launched by a Conflagrator</description>
 		<thingClass>Projectile_Explosive</thingClass>
-        <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
-            <texPath>Effects/Conflagrator/Fireball</texPath>
-            <ticksPerFrame>5</ticksPerFrame>
-            <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
-        </graphicData>
-        <drawerType>RealtimeOnly</drawerType>
-        <projectile>
-            <explosionRadius>3</explosionRadius>
-            <damageDef>Flame</damageDef>
-            <speed>20</speed>
-            <arcHeightFactor>50</arcHeightFactor>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Conflagrator/Fireball</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+		</graphicData>
+		<drawerType>RealtimeOnly</drawerType>
+		<projectile>
+			<explosionRadius>3</explosionRadius>
+			<damageDef>Flame</damageDef>
+			<speed>20</speed>
+			<arcHeightFactor>50</arcHeightFactor>
 			<ai_IsIncendiary>true</ai_IsIncendiary>
 			<shadowSize>0.6</shadowSize>
-        </projectile>
-    </ThingDef>
-    <VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		</projectile>
+	</ThingDef>
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>VPE_FireBreath</defName>
 		<label>fire breath</label>
 		<thingClass>VFECore.FlamethrowProjectile</thingClass>
 		<graphicData>
 			<texPath>Effects/Conflagrator/BreatheFlame/FireBreath</texPath>
-			<texPathFadeOut>Effects/Conflagrator/BreatheFlame/FireBreatFadeOut</texPathFadeOut>
+			<texPathFadeOut>Effects/Conflagrator/BreatheFlame/FireBreathFadeOut</texPathFadeOut>
 			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 		<projectile>
@@ -48,4 +48,27 @@
 		<dealsDamageOnce>true</dealsDamageOnce>
 		<minDistanceToAffect>2</minDistanceToAffect>
 	</VFECore.ExpandableProjectileDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_EyeBlast</defName>
+		<label>eye blast</label>
+		<thingClass>VFECore.BeamProjectile</thingClass>
+		<graphicData>
+			<texPath>Effects/Conflagrator/EyeBlastFirebeam/EyeBlastFirebeam</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(5, 1)</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>100000</speed>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+			<damageAmountBase>25</damageAmountBase>
+			<explosionRadius>3</explosionRadius>
+		</projectile>
+		<modExtensions>
+			<li Class="VFECore.ProjectileExtension">
+				<flashIntensity>100</flashIntensity>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>

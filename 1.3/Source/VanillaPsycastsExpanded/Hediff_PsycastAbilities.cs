@@ -32,7 +32,8 @@
         public void InitializeFromPsylink(Hediff_Psylink psylink)
         {
             this.psylink = psylink;
-            this.ChangeLevel(psylink.level - this.level);
+            this.level   = psylink.level;
+            this.points  = this.level;
             this.RecacheCurStage();
         }
 
@@ -63,6 +64,16 @@
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
+        }
+
+        public void GainExperience(float experienceGain)
+        {
+            this.experience += experienceGain;
+            while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
+            {
+                this.ChangeLevel(1);
+                this.experience -= ExperienceRequiredForLevel(this.level);
+            }
         }
 
         public bool SufficientPsyfocusPresent(float focusRequired) =>
