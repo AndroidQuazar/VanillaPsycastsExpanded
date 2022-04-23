@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofTrust</defName>
+      <defName>VPE_WordofTrust</defName>
       <label>word of trust</label>
       <description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
       <iconPath>Abilities/Archon/WordofTrust</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>1</level>
           <order>1</order>
           <psyfocusCost>0.6</psyfocusCost>
@@ -16,168 +16,168 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofProductivity</defName>
+      <defName>VPE_WordofProductivity</defName>
       <label>word of productivity</label>
       <description>Using words of motivation with a heaping boost to metabolism, makes the touched target a more productive member of society for the next few days. Considered a hostile action and duration is affected by the target’s psychic sensitivity.</description>
       <iconPath>Abilities/Archon/WordofProductivity</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>2</level>
           <order>1</order>
           <psyfocusCost>0.4</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>WordofTrust</li>
+            <li>VPE_WordofTrust</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>BlindingPulse</defName>
+      <defName>VPE_BlindingPulse</defName>
       <label>blinding pulse</label>
       <description>Induce noise in the visual centers of the brain, obscuring vision of everyone near the target point. Lasts for half a minute, affected by psychic sensitivity.</description>
       <iconPath>Abilities/Archon/BlindingPulse</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>2</level>
           <order>2</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>20</entropyGain>
           <prerequisites>
-            <li>WordofTrust</li>
+            <li>VPE_WordofTrust</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofAlliance</defName>
+      <defName>VPE_WordofAlliance</defName>
       <label>word of alliance</label>
       <description>Speak words of friendship and benefits to a close target using psychic suggestion, helping them realize that you’re not all that bad. Only works on those willing to listen and effect scales with the caster's psychic sensitivity.</description>
       <iconPath>Abilities/Archon/WordofAlliance</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>3</level>
           <order>1</order>
           <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>WordofProductivity</li>
-            <li>GroupLink</li>
+            <li>VPE_WordofProductivity</li>
+            <li>VPE_GroupLink</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>GroupLink</defName>
+      <defName>VPE_GroupLink</defName>
       <label>group link</label>
       <description>Creates a sphere of psychic suggestion around the caster, linking all pawns within to the caster and allowing any single target “Word of” psycast to affect all others. The effect ends when those linked move out of range.</description>
       <iconPath>Abilities/Archon/GroupLink</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>3</level>
           <order>2</order>
           <psyfocusCost>0.1</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>WordofProductivity</li>
-            <li>BlindingPulse</li>
+            <li>VPE_WordofProductivity</li>
+            <li>VPE_BlindingPulse</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofPain</defName>
+      <defName>VPE_WordofPain</defName>
       <label>word of pain</label>
       <description>Induces noise in the target’s pain centers of the brain and overstimulates their nerve endings, scaling with their psychic sensitivity.</description>
       <iconPath>Abilities/Archon/WordofPain</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>3</level>
           <order>3</order>
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>12</entropyGain>
           <prerequisites>
-            <li>GroupLink</li>
-            <li>BlindingPulse</li>
+            <li>VPE_GroupLink</li>
+            <li>VPE_BlindingPulse</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>MindBreak</defName>
+      <defName>VPE_MindBreak</defName>
       <label>mind break</label>
       <description>Using concentrated harmonic psychic noise, lobotomizes the target and turns them into a serving, restless thrall. Very much unappreciated by their former factions.</description>
       <iconPath>Abilities/Archon/MindBreak</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>4</level>
           <order>1</order>
           <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>GroupLink</li>
-            <li>WordofAlliance</li>
+            <li>VPE_GroupLink</li>
+            <li>VPE_WordofAlliance</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofProtection</defName>
+      <defName>VPE_WordofProtection</defName>
       <label>word of protection</label>
       <description>Using harmonic psychic noise, physically alters the target’s body to be more durable and resistant to damage. Lasts a long time and scales with the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Archon/WordofProtection</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>4</level>
           <order>2</order>
           <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>GroupLink</li>
-            <li>WordofPain</li>
+            <li>VPE_GroupLink</li>
+            <li>VPE_WordofPain</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>DrainPsyessence</defName>
+      <defName>VPE_DrainPsyessence</defName>
       <label>drain psyessence</label>
       <description>Targeting a downed psychically-talented pawn, induces intense harmonic psychic noise to liquify their flesh and convert it into psyessence to be absorbed by the caster as their own accumulated psychic talent. The final moments of psychic disintegration will be felt by everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
       <iconPath>Abilities/Archon/DrainPsyessence</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>5</level>
           <order>1</order>
           <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>MindBreak</li>
+            <li>VPE_MindBreak</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>MassHallucination</defName>
+      <defName>VPE_MassHallucination</defName>
       <label>mass hallucination</label>
       <description>Creating a massive burst of psychic suggestion, convinced nearby pawns that rooms are the absolute best they could possibly be. The resulting coma for the caster and the effect lasts for five days.</description>
       <iconPath>Abilities/Archon/MassHallucination</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Archon</path>
+          <path>VPE_Archon</path>
           <level>5</level>
           <order>2</order>
           <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>WordofProtection</li>
+            <li>VPE_WordofProtection</li>
           </prerequisites>
         </li>
       </modExtensions>

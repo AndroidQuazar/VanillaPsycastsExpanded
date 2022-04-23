@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <VFECore.Abilities.AbilityDef>
-      <defName>Mindcontrol</defName>
+      <defName>VPE_Mindcontrol</defName>
       <label>mind control</label>
       <description>Psychically dominate a target for a brief period, scaling with their psychic sensitivity, giving the caster a second body. However, it’s difficult being two people at once.</description>
       <iconPath>Abilities/Harmonist/Mindcontrol</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>1</level>
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>18</entropyGain>
           <prerequisites>
-            <li>PsychicGuidance</li>
+            <li>VPE_PsychicGuidance</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>PsychicGuidance</defName>
+      <defName>VPE_PsychicGuidance</defName>
       <label>psychic guidance</label>
       <description>Dampens the caster’s sight, hearing, movement and manipulation in exchange for overcharging the target’s own physical abilities.</description>
       <iconPath>Abilities/Harmonist/PsychicGuidance</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>1</level>
           <order>2</order>
           <psyfocusCost>0.14</psyfocusCost>
@@ -34,146 +34,146 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>TransmuteStone</defName>
+      <defName>VPE_TransmuteStone</defName>
       <label>transmute stone</label>
       <description>Designates an area of stone which will have its minerals swapped out for a single, randomized type from an underground strata.</description>
       <iconPath>Abilities/Harmonist/TransmuteStone</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>1</level>
           <order>3</order>
           <psyfocusCost>0.2</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>PsychicGuidance</li>
+            <li>VPE_PsychicGuidance</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>HeatFocus</defName>
+      <defName>VPE_HeatFocus</defName>
       <label>heat focus</label>
       <description>Initiates harmonic meditation which converts all accumulated heat in psyfocus after 10 seconds.</description>
       <iconPath>Abilities/Harmonist/HeatFocus</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>2</level>
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>Mindcontrol</li>
+            <li>VPE_Mindcontrol</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>LuckTransfer</defName>
+      <defName>VPE_LuckTransfer</defName>
       <label>luck transfer</label>
       <description>Creates a rift in karmic balance by shifting the negative karma from the first target onto the second target, as well as receiving their positive karma. Only affects combat and the duration scales with the first target’s psychic sensitivity.</description>
       <iconPath>Abilities/Harmonist/LuckTransfer</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>2</level>
           <order>2</order>
           <psyfocusCost>0.36</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>TransmuteStone</li>
+            <li>VPE_TransmuteStone</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>BendProbability</defName>
+      <defName>VPE_BendProbability</defName>
       <label>bend probability</label>
       <description>Creates a ripple of cosmic scale that will force something to happen.</description>
       <iconPath>Abilities/Harmonist/BendProbability</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>3</level>
           <order>1</order>
           <psyfocusCost>0.5</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>HeatFocus</li>
+            <li>VPE_HeatFocus</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>LocationSwap</defName>
+      <defName>VPE_LocationSwap</defName>
       <label>location swap</label>
       <description>Spawns two precise, single-use skipgates between the caster and the visible target, allowing them to trade places.</description>
       <iconPath>Abilities/Harmonist/LocationSwap</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>3</level>
           <order>2</order>
           <psyfocusCost>0.06</psyfocusCost>
           <entropyGain>35</entropyGain>
           <prerequisites>
-            <li>LuckTransfer</li>
+            <li>VPE_LuckTransfer</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>HealthSwap</defName>
+      <defName>VPE_HealthSwap</defName>
       <label>health swap</label>
       <description>Creates an imbalance between the life forces of two people, causing all negative health conditions to flow from one to the other. Conditions that can’t be transferred are healed.</description>
       <iconPath>Abilities/Harmonist/HealthSwap</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>4</level>
           <order>1</order>
           <psyfocusCost>0.35</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>BendProbability</li>
+            <li>VPE_BendProbability</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Transmutation</defName>
+      <defName>VPE_Transmutation</defName>
       <label>transmutation</label>
       <description>Utilizing the alchemical foundation of equivalent exchange, converts a targeted item or stack of items into an object of equal or lesser value. Otherwise extremely unpredictable and uncontrollable.</description>
       <iconPath>Abilities/Harmonist/Transmutation</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>4</level>
           <order>2</order>
           <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>LocationSwap</li>
+            <li>VPE_LocationSwap</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>SkillRoll</defName>
+      <defName>VPE_SkillRoll</defName>
       <label>skillroll</label>
       <description>Initiates a shift in the target’s knowledge and accumulated skills, attempting to rebalance them somewhat chaotically with some beneficial guidance. The strain puts the caster in a coma for a day, but can be reduced with psychic sensitivity.</description>
       <iconPath>Abilities/Harmonist/SkillRoll</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Harmonist</path>
+          <path>VPE_Harmonist</path>
           <level>5</level>
           <order>1</order>
           <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>HealthSwap</li>
-            <li>Transmutation</li>
+            <li>VPE_HealthSwap</li>
+            <li>VPE_Transmutation</li>
           </prerequisites>
         </li>
       </modExtensions>

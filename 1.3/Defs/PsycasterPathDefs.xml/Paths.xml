@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-        <defName>Empath</defName>
+        <defName>VPE_Empath</defName>
         <label>empath</label>
         <description>Empath psycasts are focused on enhancing the mood of others, one way or another.</description>
         <background>UI/Backgrounds/EmpathPath</background>
@@ -9,7 +9,7 @@
         <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Skipmaster</defName>
+      <defName>VPE_Skipmaster</defName>
       <label>skipmaster</label>
       <description>Skipmaster psycasts are focused on using skipgates to change the course of battle or the life of the colony.</description>
       <background>UI/Backgrounds/SkipmasterPath</background>
@@ -17,7 +17,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Conflagrator</defName>
+      <defName>VPE_Conflagrator</defName>
       <label>conflagrator</label>
       <description>Conflagrator path is focused on manipulating fire, heat and energy to eliminate enemies.</description>
       <background>UI/Backgrounds/ConflagratorPath</background>
@@ -25,7 +25,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Protector</defName>
+      <defName>VPE_Protector</defName>
       <label>protector</label>
       <description>Protector path is focused on providing aid and protection to your pawns, stopping them from dying and allowing you to escape from dangerous situations unscratched.</description>
       <background>UI/Backgrounds/ProtectorPath</background>
@@ -33,7 +33,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Warlord</defName>
+      <defName>VPE_Warlord</defName>
       <label>warlord</label>
       <description>Warlord path is focused on upgrading the warfare capabilities of the Psycaster and psycaster alone - as all the Warlord psycasts are to an extent self-cast.</description>
       <background>UI/Backgrounds/WarlordPath</background>
@@ -41,7 +41,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Chronopath</defName>
+      <defName>VPE_Chronopath</defName>
       <label>chronopath</label>
       <description>Chronopath path is focused on manipulating time, making things older, completing growth of plants, or de-aging your pawns.</description>
       <background>UI/Backgrounds/ChronopathPath</background>
@@ -49,7 +49,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Archotechist</defName>
+      <defName>VPE_Archotechist</defName>
       <label>archotechist</label>
       <description>Archotechist path is a special path locked only for Empire-based psycasters. It allows spreading insanity, using psychic shock to down any wrong-doers, and to offload neural heat to others, as well as use neural heat in combat.</description>
       <background>UI/Backgrounds/ArchotechistPath</background>
@@ -57,7 +57,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Necropath</defName>
+      <defName>VPE_Necropath</defName>
       <label>necropath</label>
       <description>Necropath is a path focused on distributing fear and death, whilst also gaining from death and corpses. You can resurrect fallen allies, prohibit them from dying and raise hordes of skeletons to fight for your cause.</description>
       <background>UI/Backgrounds/NecropathPath</background>
@@ -65,7 +65,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Staticlord</defName>
+      <defName>VPE_Staticlord</defName>
       <label>staticlord</label>
       <description>Staticlord is a path focused on blasting enemies with electricity, disabling electronics and controlling the storm itself.</description>
       <background>UI/Backgrounds/StaticlordPath</background>
@@ -73,7 +73,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Archon</defName>
+      <defName>VPE_Archon</defName>
       <label>archon</label>
       <description>Archon path is the path of a psychic leader, providing various buffs to the entire colony, but also ruling with an iron fist. It’s also a path that allows you to drain enemy psycasters and gain Psycast levels this way.</description>
       <background>UI/Backgrounds/ArchonPath</background>
@@ -81,7 +81,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Frostshaper</defName>
+      <defName>VPE_Frostshaper</defName>
       <label>frostshaper</label>
       <description>Frostshaper is a path about manipulating the elements, particularly the cold, to your advantage. Not only you get to use the cold to freeze and slow enemies, frostshapers also gain access to many utility psycasts that either construct shelters out of ice blocks, or create cooling crystals that can be used both as a temporary fridge, and a trap.</description>
       <background>UI/Backgrounds/FrostshaperPath</background>
@@ -89,7 +89,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Wildspeaker</defName>
+      <defName>VPE_Wildspeaker</defName>
       <label>wildspeaker</label>
       <description>Wildspeaker path is a special path locked only for Tribal-based psycasters. It’s all about controlling nature and animals for defense and survival.</description>
       <background>UI/Backgrounds/WildspeakerPath</background>
@@ -97,7 +97,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Harmonist</defName>
+      <defName>VPE_Harmonist</defName>
       <label>harmonist</label>
       <description>Harmonists are all about manipulating the balance of the universe. Their abilities are never a clear benefit or a drawback, and they always come with a price one way or another.</description>
       <background>UI/Backgrounds/HarmonistPath</background>
@@ -105,7 +105,7 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Technomancer</defName>
+      <defName>VPE_Technomancer</defName>
       <label>technomancer</label>
       <description>Technomancers are masters of technology, knowledge and research, capable of using psychic energy to aid in concept exploration, but also to breathe life into small-scale constructs that can help and defend them.</description>
       <background>UI/Backgrounds/TechnomancerPath</background>
@@ -113,14 +113,14 @@
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <!-- <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Animat</defName>
+      <defName>VPE_Animat</defName>
       <label>animat</label>
       <description>?????</description>
       <background>UI/Backgrounds/AnimatPath</background>
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef> -->
     <!-- <VanillaPsycastsExpanded.PsycasterPathDef>
-      <defName>Puppeteer</defName>
+      <defName>VPE_Puppeteer</defName>
       <label>Puppeteer</label>
       <description>Puppeteers Psycasts provide the ways to exploit minds and dominate others. They are the masters of subjugating enemies and creating mindless husks upon which they feed.</description>
       <background>UI/Backgrounds/PuppeteerPath</background>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
     <VFECore.Abilities.AbilityDef>
-      <defName>Painblock</defName>
+      <defName>VPE_Painblock</defName>
       <label>painblock</label>
       <description>Severely limit pain pathways in the target's brain for a couple of minutes. This can allow a person to move and act even with grievous injuries which would normally incapacitate them.</description>
       <iconPath>Abilities/Protector/Painblock</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>1</level>
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
@@ -16,13 +16,13 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofHealing</defName>
+      <defName>VPE_WordofHealing</defName>
       <label>word of healing</label>
       <description>Psychically stimulates a person’s regenerative capabilities into overdrive, effectively tripling their natural healing factor for a few days.</description>
       <iconPath>Abilities/Protector/WordofFortitude</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>1</level>
           <order>2</order>
           <psyfocusCost>0.3</psyfocusCost>
@@ -31,147 +31,147 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Stabilize</defName>
+      <defName>VPE_Stabilize</defName>
       <label>stabilize</label>
       <description>Temporarily puts the target’s cardiovascular system in stasis, which prevents them from bleeding out for two minutes.</description>
       <iconPath>Abilities/Protector/Stabilize</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>2</level>
           <order>1</order>
           <psyfocusCost>0.2</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>Painblock</li>
+            <li>VPE_Painblock</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>WordofImmunity</defName>
+      <defName>VPE_WordofImmunity</defName>
       <label>word of immunity</label>
       <description>Psychically stimulates a person’s immune system into overdrive, effectively tripling their immunity gain speed for a few days.</description>
       <iconPath>Abilities/Protector/WordofImmunity</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>2</level>
           <order>1</order>
           <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>WordofHealing</li>
+            <li>VPE_WordofHealing</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Overshield</defName>
+      <defName>VPE_Overshield</defName>
       <label>overshield</label>
       <description>Generate a spherical skipgate on a target that sends all incoming ground-level projectiles to some distant place, the duration scaling with the target’s psychic sensitivity. People and items are not affected.</description>
       <iconPath>Abilities/Protector/Overshield</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>3</level>
           <order>1</order>
           <psyfocusCost>0.05</psyfocusCost>
           <entropyGain>20</entropyGain>
           <prerequisites>
-            <li>Stabilize</li>
+            <li>VPE_Stabilize</li>
           </prerequisites>
           <spaceAfter>true</spaceAfter>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Focus</defName>
+      <defName>VPE_Focus</defName>
       <label>focus</label>
       <description>Psychically focus the target's mind for a minute, boosting their sight, hearing and moving capacities.</description>
       <iconPath>Abilities/Protector/Focus</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>3</level>
           <order>2</order>
           <psyfocusCost>0.03</psyfocusCost>
           <entropyGain>15</entropyGain>
           <prerequisites>
-            <li>WordofImmunity</li>
+            <li>VPE_WordofImmunity</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Skipshield</defName>
+      <defName>VPE_Skipshield</defName>
       <label>skipshield</label>
       <description>Generate a spherical skipgate that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected.</description>
       <iconPath>Abilities/Protector/Skipshield</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>4</level>
           <order>1</order>
           <psyfocusCost>0.04</psyfocusCost>
           <entropyGain>65</entropyGain>
           <prerequisites>
-            <li>Overshield</li>
+            <li>VPE_Overshield</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>Invisibility</defName>
+      <defName>VPE_Invisibility</defName>
       <label>invisibility</label>
       <description>Psychically manipulate the visual centers of everyone nearby, rendering them unable to perceive a particular individual for a short time.</description>
       <iconPath>Abilities/Protector/Invisibility</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>4</level>
           <order>2</order>
           <psyfocusCost>0.03</psyfocusCost>
           <entropyGain>45</entropyGain>
           <prerequisites>
-            <li>Skipshield</li>
-            <li>RegrowLimbs</li>
+            <li>VPE_Skipshield</li>
+            <li>VPE_RegrowLimbs</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>RegrowLimbs</defName>
+      <defName>VPE_RegrowLimbs</defName>
       <label>regrow limbs</label>
       <description>Induces a complex form of psychic rejuvenation that targets the subject’s limbs, namely those that are missing. The effect is gradual over a minute’s time and often described as “wildly uncomfortable” as it overstimulates their phantom limb syndrome.</description>
       <iconPath>Abilities/Protector/RegrowLimbs</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>4</level>
           <order>3</order>
           <psyfocusCost>0.5</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-            <li>Focus</li>
+            <li>VPE_Focus</li>
           </prerequisites>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
-      <defName>GuardianSkipbarrier</defName>
+      <defName>VPE_GuardianSkipbarrier</defName>
       <label>guardian skipbarrier</label>
       <description>Generate a spherical skipgate around the caster that sends all incoming ground-level projectiles to some distant place, lasting as long as they can manage the heat accumulation. People and items are not affected. It takes immense concentration to hold, as such the caster needs to be mindful of their steps.</description>
       <iconPath>Abilities/Protector/GuardianSkipbarrier</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
-          <path>Protector</path>
+          <path>VPE_Protector</path>
           <level>5</level>
           <order>1</order>
           <psyfocusCost>0.1</psyfocusCost>
           <entropyGain>10</entropyGain>
           <prerequisites>
-            <li>Invisibility</li>
+            <li>VPE_Invisibility</li>
           </prerequisites>
         </li>
       </modExtensions>
