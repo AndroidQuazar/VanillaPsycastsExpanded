@@ -208,6 +208,13 @@
       <label>meteor shower</label>
       <description>Introduces gravitational distortions in orbiting meteoroids and space debris to strike a location of the caster’s choosing. These come in groups of 4 to ensure optimal control and devastation.</description>
       <iconPath>Abilities/Conflagrator/MeteorShower</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Skyfallers</abilityClass>
+      <castTime>300</castTime>
+      <range>36.9</range>
+      <radius>22.9</radius>
+      <power>4</power>
+      <targetMode>Location</targetMode>
+      <castSound>VPE_MeteorShower_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>
@@ -219,6 +226,10 @@
             <li>BreatheFlame</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Skyfaller">
+          <skyfaller>VPE_SmallMeteorite_Incoming</skyfaller>
+          <rocks>1</rocks>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
@@ -226,6 +237,13 @@
       <label>fire beam</label>
       <description>Introduces glitches into a network of power-collection satellites to begin beaming power down in a massive column of electromagnetic energy. This lasts until the satellites detect the glitch and temporarily shut themselves down.</description>
       <iconPath>Abilities/Conflagrator/FireBeam</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_OrbitalStrike</abilityClass>
+      <castTime>300</castTime>
+      <durationTime>600</durationTime>
+      <range>45.9</range>
+      <radius>15</radius>
+      <targetMode>Location</targetMode>
+      <castSound>VPE_FireBeam_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>
@@ -237,6 +255,9 @@
             <li>EyeBlast</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_FireBeam</projectile>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
@@ -244,6 +265,15 @@
       <label>fire tornado</label>
       <description>Overrides the systems of a network of weather-control satellites to cause a massive air current disturbance. While the effect is active, the caster also inserts skipgates within the eye of the resulting tornado that spits out thermal energies from deep within the planet.</description>
       <iconPath>Abilities/Conflagrator/FlameTornado</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Conflagrator.Ability_FireTornado</abilityClass>
+      <castTime>300</castTime>
+      <durationTime>2700</durationTime>
+      <durationTimeStatFactors>
+        <PsychicSensitivity>1.3</PsychicSensitivity>
+      </durationTimeStatFactors>
+      <range>45.9</range>
+      <castSound>VPE_FireTornado_Cast</castSound>
+      <targetMode>Location</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>

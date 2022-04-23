@@ -48,6 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conflagrator\Ability_FireTornado.cs" />
+    <Compile Include="Conflagrator\FireTornado.cs" />
     <Compile Include="Conflagrator\HediffComp_FireShield.cs" />
     <Compile Include="Graphics\AbilityProjectile_Pointing.cs" />
     <Compile Include="Graphics\Graphic_Animated.cs" />

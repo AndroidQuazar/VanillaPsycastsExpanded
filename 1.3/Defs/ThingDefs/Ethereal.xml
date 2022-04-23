@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="OrbitalStrikeBase">
+        <defName>VPE_FireBeam</defName>
+        <label>fire beam</label>
+        <thingClass>PowerBeam</thingClass>
+        <comps>
+            <li Class="CompProperties_OrbitalBeam">
+                <width>8</width>
+                <color>(255, 87, 51, 242)</color>
+                <sound>OrbitalBeam</sound>
+            </li>
+            <li Class="CompProperties_CameraShaker">
+                <mag>0.03</mag>
+            </li>
+            <li Class="CompProperties_AffectsSky">
+                <skyColors>
+                    <sky>(255, 117, 24)</sky>
+                    <shadow>(139, 64, 0)</shadow>
+                    <overlay>(255, 255, 255)</overlay>
+                    <saturation>1.3</saturation>
+                </skyColors>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_FireTornado</defName>
+        <label>fire tornado</label>
+        <thingClass>VanillaPsycastsExpanded.Conflagrator.FireTornado</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <alwaysFlee>true</alwaysFlee>
+        <comps>
+            <li Class="CompProperties_WindSource" />
+        </comps>
+    </ThingDef>
+</Defs>

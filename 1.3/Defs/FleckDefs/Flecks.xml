@@ -32,4 +32,15 @@
             </li>
         </randomGraphics>
     </FleckDef>
+    <FleckDef ParentName="FleckBase_Thrown">
+        <defName>VPE_FireTornadoDustPuff</defName>
+        <graphicData>
+          <texPath>Effects/Conflagrator/FireTornado/FireTornadoPuff</texPath>
+          <renderInstanced>true</renderInstanced>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <fadeInTime>0.04</fadeInTime>
+        <solidTime>0.03</solidTime>
+        <fadeOutTime>1</fadeOutTime>
+      </FleckDef>
 </Defs>

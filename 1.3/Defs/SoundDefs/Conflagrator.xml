@@ -154,4 +154,52 @@
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>VPE_MeteorShower_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_MeteorShower_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_FireBeam_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_FireBeam_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_FireTornado_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_FireTornado_Cast_1a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
