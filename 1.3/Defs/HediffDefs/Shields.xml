@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>VPE_FireShield</defName>
+        <label>fire shield</label>
+        <description>A shield of fire, sets melee attackers on fire</description>
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>HediffWithComps</hediffClass>
+        <comps>
+            <li Class="VFECore.Shields.HediffCompProperties_Shield">
+                <compClass>VanillaPsycastsExpanded.Conflagrator.HediffComp_FireShield</compClass>
+                <graphic>
+                    <texPath>Effects/Conflagrator/FireShieldBubble/FireShieldBubble</texPath>
+                    <drawSize>(2, 2)</drawSize>
+                    <graphicClass>Graphic_Single</graphicClass>
+                    <shaderType>Transparent</shaderType>
+                </graphic>
+                <absorbAttackType>Both</absorbAttackType>
+                <absorb>
+                    <li>Flame</li>
+                </absorb>
+                <sustainer>VPE_FireShield_Sustainer</sustainer>
+                <soundEnded>VPE_FireShield_End</soundEnded>
+                <doDust>false</doDust>
+                <absorbedFleck>ExplosionFlash</absorbedFleck>
+                <damageOnAttack>Melee</damageOnAttack>
+                <damageType>Flame</damageType>
+                <damageAmount>3</damageAmount>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <Flammability>0</Flammability>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

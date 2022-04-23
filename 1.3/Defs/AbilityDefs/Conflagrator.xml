@@ -89,11 +89,12 @@
       <label>fire shield</label>
       <description>Creates a temporary incendiary vortex skipgate around a target that links to a nearby star that extends outward by a few inches. Anyone that attempts to attack the target in melee will be set ablaze, with the additional benefit of overpowering any other fire effects.</description>
       <iconPath>Abilities/Conflagrator/FireShield</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_Barrier</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <range>4.9</range>
       <targetMode>Pawn</targetMode>
       <castTime>15</castTime>
       <durationTime>900</durationTime>
+      <castSound>VPE_FireShield_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>
@@ -105,8 +106,8 @@
             <li>SelfExplosion</li>
           </prerequisites>
         </li>
-        <li Class="VFECore.Abilities.AbilityExtension_Shield">
-          <shieldTexPath>Effects/Conflagrator/FireShieldBubble/FireShieldBubble</shieldTexPath>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_FireShield</hediff>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -115,6 +116,11 @@
       <label>breathe flame</label>
       <description>Generates a brief, unidirectional skipgate within underground reservoirs of unrefined organic chemicals, along with a tiny spark in front of the caster’s mouth. Jets of blazing, unrefined chemfuel streak forth setting everything on fire.</description>
       <iconPath>Abilities/Conflagrator/BreatheFlame</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>6</castTime>
+      <range>12.9</range>
+      <targetMode>Thing</targetMode>
+      <castSound>VPE_BreatheFlame_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>Conflagrator</path>
@@ -125,6 +131,9 @@
           <prerequisites>
             <li>SelfExplosion</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_FireBreath</projectile>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

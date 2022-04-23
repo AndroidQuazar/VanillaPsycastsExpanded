@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conflagrator\HediffComp_FireShield.cs" />
     <Compile Include="Graphics\AbilityProjectile_Pointing.cs" />
     <Compile Include="Graphics\Graphic_Animated.cs" />
     <Compile Include="Graphics\Graphic_FleckCollection.cs" />
@@ -77,8 +78,6 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Abilities\Conflagrator\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

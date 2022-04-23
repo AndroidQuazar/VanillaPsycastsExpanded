@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef Name="PsycastProjectile" ParentName="BaseBullet" Abstract="True">
-        <thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
-    </ThingDef>
-    <ThingDef ParentName="PsycastProjectile">
+    <ThingDef ParentName="BaseBullet">
         <defName>VPE_Flameball</defName>
         <label>flameball</label>
         <description>A ball of flame launched by a Conflagrator</description>
-        <!-- <thingClass>VanillaPsycastsExpanded.Graphics.AbilityProjectile_Pointing</thingClass> -->
+		<thingClass>Projectile_Explosive</thingClass>
         <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
             <texPath>Effects/Conflagrator/Fireball</texPath>
             <ticksPerFrame>5</ticksPerFrame>
@@ -19,6 +16,36 @@
             <damageDef>Flame</damageDef>
             <speed>20</speed>
             <arcHeightFactor>50</arcHeightFactor>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+			<shadowSize>0.6</shadowSize>
         </projectile>
     </ThingDef>
+    <VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VPE_FireBreath</defName>
+		<label>fire breath</label>
+		<thingClass>VFECore.FlamethrowProjectile</thingClass>
+		<graphicData>
+			<texPath>Effects/Conflagrator/BreatheFlame/FireBreath</texPath>
+			<texPathFadeOut>Effects/Conflagrator/BreatheFlame/FireBreatFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>5</damageAmountBase>
+			<ai_IsIncendiary>true</ai_IsIncendiary>
+		</projectile>
+
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>100</lifeTimeDuration>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>2</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
 </Defs>

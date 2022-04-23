@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Def>
+<Defs>
     <VFECore.Abilities.AbilityDef>
       <defName>IceBreath</defName>
       <label>breathe ice</label>
@@ -174,4 +174,4 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-</Def>
+</Defs>

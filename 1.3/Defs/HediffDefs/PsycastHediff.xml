@@ -9,11 +9,5 @@
     <minSeverity>0</minSeverity>
     <keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
     <countsAsAddedPartOrImplant>False</countsAsAddedPartOrImplant>
-    <stages>
-      <li>
-          <becomeVisible>false</becomeVisible>
-          <minSeverity>0</minSeverity>
-      </li>
-    </stages>
   </HediffDef>
 </Defs>

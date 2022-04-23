@@ -2,7 +2,6 @@
 <Defs>
     <FleckDef ParentName="FleckBase_RandomGraphic">
         <defName>VPE_Explosion</defName>
-        <altitudeLayer>Projectile</altitudeLayer>
         <solidTime>0.3</solidTime>
         <fadeOutTime>0.1</fadeOutTime>
         <altitudeLayer>MoteOverhead</altitudeLayer>

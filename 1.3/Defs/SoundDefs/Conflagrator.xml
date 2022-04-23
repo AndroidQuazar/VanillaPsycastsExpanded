@@ -1,73 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <SoundDef>
-        <defName>VPE_Flameball_Cast</defName>
-        <context>MapOnly</context>
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-          <li>
-            <grains>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_Fireball_Cast_01a</clipPath>
-              </li>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_Fireball_Cast_01b</clipPath>
-              </li>
-            </grains>
-            <volumeRange>42</volumeRange>
-            <distRange>20~50</distRange>
+  <SoundDef>
+    <defName>VPE_Flameball_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_Fireball_Cast_01a</clipPath>
           </li>
-        </subSounds>
-    </SoundDef>
-    <SoundDef>
-        <defName>VPE_SelfExplosion_Cast</defName>
-        <context>MapOnly</context>
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-          <li>
-            <grains>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_SelfExplosion_01a</clipPath>
-              </li>
-            </grains>
-            <volumeRange>42</volumeRange>
-            <distRange>20~50</distRange>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_Fireball_Cast_01b</clipPath>
           </li>
-        </subSounds>
-    </SoundDef>
-    <SoundDef>
-        <defName>VPE_Explosion</defName>
-        <context>MapOnly</context>
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-          <li>
-            <grains>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_Explosion_01a</clipPath>
-              </li>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_Explosion_01b</clipPath>
-              </li>
-            </grains>
-            <volumeRange>42</volumeRange>
-            <distRange>20~50</distRange>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_SelfExplosion_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_SelfExplosion_01a</clipPath>
           </li>
-        </subSounds>
-    </SoundDef>
-    <SoundDef>
-        <defName>VPE_ExtinguishFlames_Cast</defName>
-        <context>MapOnly</context>
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-          <li>
-            <grains>
-              <li Class="AudioGrain_Clip">
-                <clipPath>Conflagrator/Psycast_ExtinguishFlames_Cast_01a</clipPath>
-              </li>
-            </grains>
-            <volumeRange>42</volumeRange>
-            <distRange>20~50</distRange>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_Explosion</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_Explosion_01a</clipPath>
           </li>
-        </subSounds>
-    </SoundDef>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_Explosion_01b</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_ExtinguishFlames_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_ExtinguishFlames_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_BreatheFlame_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_BreatheFlame_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_FireShield_Sustainer</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>1</maxVoices>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_FireShield_Sustainer</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+        <sustainLoop>True</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_FireShield_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_FireShield_Sustainer_Start</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>VPE_FireShield_End</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Conflagrator/Psycast_FireShield_Sustainer_End</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
