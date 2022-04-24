@@ -80,7 +80,7 @@
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Staticlord/Bolt</texPath>
-			<ticksPerFrame>5</ticksPerFrame>
+			<ticksPerFrame>3</ticksPerFrame>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
 		</graphicData>
@@ -105,10 +105,11 @@
 		<graphicData>
 			<texPath>Effects/Staticlord/ChainBolt</texPath>
 			<graphicClass>Graphic_Flicker</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
 		</graphicData>
 		<projectile>
-			<damageDef>Flame</damageDef>
-			<damageAmountBase>3</damageAmountBase>
+			<damageDef>Stun</damageDef>
+			<damageAmountBase>1</damageAmountBase>
 			<speed>140</speed>
 		</projectile>
 		<modExtensions>
@@ -125,4 +126,21 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+    <ThingDef ParentName="BaseBullet">
+        <defName>VPE_BallLightning</defName>
+        <label>ball lightning</label>
+        <thingClass>VanillaPsycastsExpanded.Staticlord.BallLightning</thingClass>
+        <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+            <texPath>Effects/Staticlord/BallOfLightning</texPath>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+			<ticksPerFrame>3</ticksPerFrame>
+			<drawSize>(3, 3)</drawSize>
+        </graphicData>
+		<projectile>
+			<speed>3</speed>
+			<soundAmbient>VPE_BallLightning_Sustainer</soundAmbient>
+			<shadowSize>0</shadowSize>
+		</projectile>
+    </ThingDef>
 </Defs>

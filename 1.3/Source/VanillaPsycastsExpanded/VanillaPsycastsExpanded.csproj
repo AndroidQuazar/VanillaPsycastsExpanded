@@ -48,10 +48,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conflagrator\Ability_FireTornado.cs" />
-    <Compile Include="Conflagrator\FireBeam.cs" />
-    <Compile Include="Conflagrator\FireTornado.cs" />
-    <Compile Include="Conflagrator\HediffComp_FireShield.cs" />
+    <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
+    <Compile Include="Paths\Conflagrator\FireBeam.cs" />
+    <Compile Include="Paths\Conflagrator\FireTornado.cs" />
+    <Compile Include="Paths\Conflagrator\HediffComp_FireShield.cs" />
     <Compile Include="Graphics\Projectile_Pointing.cs" />
     <Compile Include="Graphics\Graphic_Animated.cs" />
     <Compile Include="Graphics\Graphic_FleckCollection.cs" />
@@ -66,9 +66,9 @@
     <Compile Include="PsycasterPathDef.cs" />
     <Compile Include="PsycastUtility.cs" />
     <Compile Include="PsySet.cs" />
-    <Compile Include="Staticlord\Ability_Thunderbolt.cs" />
-    <Compile Include="Staticlord\BallLightning.cs" />
-    <Compile Include="Staticlord\Recharge.cs" />
+    <Compile Include="Paths\Staticlord\Ability_Thunderbolt.cs" />
+    <Compile Include="Paths\Staticlord\BallLightning.cs" />
+    <Compile Include="Paths\Staticlord\Recharge.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="MeditationFocusExtension_Icon.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />

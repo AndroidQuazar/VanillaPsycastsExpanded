@@ -10,10 +10,9 @@
     [StaticConstructorOnStartup]
     public class HediffComp_Recharge : HediffComp_Draw
     {
-        private static readonly SoundDef  sustainerDef = DefDatabase<SoundDef>.GetNamed("VPE_Recharge_Sustainer");
-        private                 Thing     battery;
-        private                 int       startTick;
-        private                 Sustainer sustainer;
+        private Thing     battery;
+        private int       startTick;
+        private Sustainer sustainer;
 
         public void Init(Thing bat)
         {
@@ -24,7 +23,7 @@
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            if (this.sustainer == null) this.sustainer = sustainerDef.TrySpawnSustainer(this.Pawn);
+            if (this.sustainer == null) this.sustainer = VPE_DefOf.VPE_Recharge_Sustainer.TrySpawnSustainer(this.Pawn);
             this.sustainer.Maintain();
             if ((Find.TickManager.TicksGame - this.startTick) % 60 == 0) this.battery.TryGetComp<CompPowerBattery>().AddEnergy(100f);
         }
@@ -44,15 +43,12 @@
         }
     }
 
-    [StaticConstructorOnStartup]
     public class Ability_Recharge : Ability
     {
-        private static readonly HediffDef hediffDef = DefDatabase<HediffDef>.GetNamed("VPE_Recharge");
-
         public override void Cast(LocalTargetInfo target)
         {
             base.Cast(target);
-            Hediff hediff = HediffMaker.MakeHediff(hediffDef, this.pawn);
+            Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.VPE_Recharge, this.pawn);
             hediff.TryGetComp<HediffComp_Recharge>().Init(target.Thing);
             hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = this.GetDurationForPawn();
             this.pawn.health.AddHediff(hediff);

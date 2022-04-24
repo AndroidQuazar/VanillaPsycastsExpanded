@@ -140,6 +140,10 @@
       <label>ball lightning</label>
       <description>The caster compresses a ball of condensed electricity which will slowly move to a designated location. A few seconds after release, it will start discharging into nearby surrounding targets with living bolts of electricity.</description>
       <iconPath>Abilities/Staticlord/BallLightning</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <targetMode>Location</targetMode>
+      <castTime>30</castTime>
+      <range>30.9</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -150,6 +154,9 @@
           <prerequisites>
             <li>VPE_Recharge</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_BallLightning</projectile>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
