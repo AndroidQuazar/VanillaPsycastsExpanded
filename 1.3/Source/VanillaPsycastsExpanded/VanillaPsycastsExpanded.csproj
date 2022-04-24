@@ -66,6 +66,9 @@
     <Compile Include="PsycasterPathDef.cs" />
     <Compile Include="PsycastUtility.cs" />
     <Compile Include="PsySet.cs" />
+    <Compile Include="Staticlord\Ability_Thunderbolt.cs" />
+    <Compile Include="Staticlord\BallLightning.cs" />
+    <Compile Include="Staticlord\Recharge.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="MeditationFocusExtension_Icon.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />

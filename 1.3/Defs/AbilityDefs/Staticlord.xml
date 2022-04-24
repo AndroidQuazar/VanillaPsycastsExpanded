@@ -34,6 +34,10 @@
       <label>chain bolt</label>
       <description>Projects a living bolt of electricity to a target which can then follow up with 5 more nearby targets, inflicting small burns and EMP damage.</description>
       <iconPath>Abilities/Staticlord/ChainBolt</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>9</castTime>
+      <range>22.9</range>
+      <targetMode>Pawn</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -45,6 +49,9 @@
             <li>VPE_Bolt</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_ChainBolt</projectile>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
@@ -52,6 +59,12 @@
       <label>thunderbolt</label>
       <description>Summons a bolt of lightning to strike a target, inflicting burns on direct hits and a larger area EMP damage.</description>
       <iconPath>Abilities/Staticlord/Thunderbolt</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Thunderbolt</abilityClass>
+      <castTime>3</castTime>
+      <range>22.9</range>
+      <radius>6</radius>
+      <castSound>VPE_Thunderbolt_Cast</castSound>
+      <targetMode>Location</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -70,6 +83,16 @@
       <label>static aura</label>
       <description>The caster designates a nearby target to receive an aura of surging electricity, which will inflict EMP effects on anything foreign that they approach, including structures, pawns and electrical objects.</description>
       <iconPath>Abilities/Staticlord/StaticAura</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <castTime>30</castTime>
+      <range>6.9</range>
+      <radius>6</radius>
+      <durationTime>1800</durationTime>
+      <targetMode>Pawn</targetMode>
+      <targetingParameters>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -81,6 +104,9 @@
             <li>VPE_ChainBolt</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_StaticAura</hediff>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef>
@@ -88,6 +114,14 @@
       <label>recharge</label>
       <description>Carefully and delicately tunes a stream of electricity to a touched battery to charge it with 100kW or the equivalent of 100 Wd/s. The duration of charge depends on the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Staticlord/Recharge</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Recharge</abilityClass>
+      <castTime>60</castTime>
+      <durationTime>180</durationTime>
+      <durationTimeStatFactors>
+        <PsychicSensitivity>2</PsychicSensitivity>
+      </durationTimeStatFactors>
+      <range>1</range>
+      <targetMode>Thing</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -124,6 +158,11 @@
       <label>static pulse</label>
       <description>The caster dumps a massive amount of voltage into the surrounding air, causing an EMP blast in a huge radius which is otherwise harmless.</description>
       <iconPath>Abilities/Staticlord/StaticPulse</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Explode</abilityClass>
+      <castTime>6</castTime>
+      <radius>60.9</radius>
+      <targetMode>Self</targetMode>
+      <castSound>VPE_StaticPulse_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -134,6 +173,11 @@
           <prerequisites>
             <li>VPE_Recharge</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Explosion">
+          <explosionRadius>60.9</explosionRadius>
+          <onCaster>true</onCaster>
+          <explosionDamageDef>EMP</explosionDamageDef>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

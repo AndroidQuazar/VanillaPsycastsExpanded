@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>VPE_Recharge</defName>
+        <label>recharge</label>
+        <description>Electricity is being channeled to a nearby battery</description>
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>HediffWithComps</hediffClass>
+        <comps>
+            <li Class="VFECore.Shields.HediffCompProperties_Draw">
+                <compClass>VanillaPsycastsExpanded.Staticlord.HediffComp_Recharge</compClass>
+                <graphic>
+                    <texPath>Effects/Staticlord/Recharge</texPath>
+                    <drawSize>(1, 1)</drawSize>
+                    <graphicClass>Graphic_Flicker</graphicClass>
+                    <shaderType>TransparentPostLight</shaderType>
+                </graphic>
+            </li>
+        </comps>
+    </HediffDef>
+</Defs>

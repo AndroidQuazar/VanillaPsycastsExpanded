@@ -98,4 +98,31 @@
 			</extraDamages>
 		</projectile>
 	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_ChainBolt</defName>
+		<label>chain bolt</label>
+		<thingClass>VFEMech.TeslaProjectile</thingClass>
+		<graphicData>
+			<texPath>Effects/Staticlord/ChainBolt</texPath>
+			<graphicClass>Graphic_Flicker</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Flame</damageDef>
+			<damageAmountBase>3</damageAmountBase>
+			<speed>140</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="VFEMech.TeslaChainingProps">
+				<maxBounceCount>6</maxBounceCount>
+				<damageDef>Flame</damageDef>
+				<explosionDamageDef>EMP</explosionDamageDef>
+				<impactRadius>0.9</impactRadius>
+				<targetFriendly>false</targetFriendly>
+				<addFire>true</addFire>
+				<bounceRange>3</bounceRange>
+				<maxLifetime>50</maxLifetime>
+				<impactSound>VPE_ChainBolt_Impact</impactSound>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>

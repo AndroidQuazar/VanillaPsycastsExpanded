@@ -13,7 +13,7 @@
                     <texPath>Effects/Conflagrator/FireShieldBubble/FireShieldBubble</texPath>
                     <drawSize>(2, 2)</drawSize>
                     <graphicClass>Graphic_Single</graphicClass>
-                    <shaderType>Transparent</shaderType>
+                    <shaderType>TransparentPostLight</shaderType>
                 </graphic>
                 <absorbAttackType>Both</absorbAttackType>
                 <absorb>
@@ -35,5 +35,29 @@
                 </statFactors>
             </li>
         </stages>
+    </HediffDef>
+    <HediffDef ParentName="PsycastHediffBase">
+        <defName>VPE_StaticAura</defName>
+        <label>static aura</label>
+        <description>An aura of static electricity, causes EMP damage to everything around</description>
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>HediffWithComps</hediffClass>
+        <comps>
+            <li Class="VFECore.Shields.HediffCompProperties_DamageAura">
+                <compClass>VFECore.Shields.HediffComp_DamageAura</compClass>
+                <graphic>
+                    <texPath>Effects/Staticlord/StaticAura/StaticAura</texPath>
+                    <drawSize>(13, 13)</drawSize>
+                    <graphicClass>Graphic_Single</graphicClass>
+                    <shaderType>TransparentPostLight</shaderType>
+                </graphic>
+                <damageDef>EMP</damageDef>
+                <damageAmount>5</damageAmount>
+                <ticksBetween>5</ticksBetween>
+                <radius>6</radius>
+                <sustainer>VPE_StaticAura_Sustainer</sustainer>
+                <soundEnded>VPE_StaticAura_End</soundEnded>
+            </li>
+        </comps>
     </HediffDef>
 </Defs>
