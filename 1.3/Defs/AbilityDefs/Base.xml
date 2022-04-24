@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <VFECore.Abilities.AbilityDef Name="VPE_PsycastBase" Abstract="true">
+        <castSound>VPE_PsycastCastingEffect</castSound>
+        <castFleck>VPE_Fleck_CastPsycast</castFleck>
+    </VFECore.Abilities.AbilityDef>
+
+</Defs>
