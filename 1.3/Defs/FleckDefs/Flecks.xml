@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <FleckDef ParentName="FleckGlowDistortBackground">
-    <defName>VPE_Mote_CastPsycast</defName>
+    <defName>VPE_Fleck_CastPsycast</defName>
     <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>
       <fadeInTime>0.03</fadeInTime>

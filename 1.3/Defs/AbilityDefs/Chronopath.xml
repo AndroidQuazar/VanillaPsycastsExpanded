@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_PlantTimeskip</defName>
       <label>plant timeskip</label>
       <description>Grows all the plants in a radius around the caster to maturity.</description>
@@ -17,7 +17,7 @@
           </prerequisites>
         </li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef>
+    </VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
     <VFECore.Abilities.AbilityDef>
       <defName>VPE_TimeskipMeditation</defName>
       <label>timeskip meditation</label>
@@ -33,7 +33,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofForetelling</defName>
       <label>word of foretelling</label>
       <description>Psychic whispers of things to come. Colony pawns are inspired, neutrals or friendlies improve relations, prisoners lose their resistance and enemies retreat from their doom.</description>
@@ -51,7 +51,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_CraftTimeskip</defName>
       <label>craft timeskip</label>
       <description>Using very precise timeskipping, moves the desired item to its finished state as if the creator had continued working on it.</description>
@@ -69,7 +69,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Age</defName>
       <label>age</label>
       <description>Very inefficiently siphons life force from a living target, de-aging the caster by 2 years and aging the other by 10. Very debilitating aftereffects for the victim and considered a hostile action by allies.</description>
@@ -87,7 +87,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_RaidPause</defName>
       <label>raid pause</label>
       <description>Depending on the caster’s psychic sensitivity, slows all raiders on the map to a complete stop for up to five minutes. Attacking any single affected raider jolts all of them back into action.</description>
@@ -105,7 +105,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SeasonTimeskip</defName>
       <label>season timeskip</label>
       <description>Locks the entire planet into a season-long psychically induced slowdown, effectively skipping forward a season. Nigh instantaneous effect, very strenuous and puts the caster in a coma.</description>
@@ -123,7 +123,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TimeSphere</defName>
       <label>time sphere</label>
       <description>Psychically compresses the flow of time in an area. Rapidly ages living creatures, plants flourish and wither, and structures start to disintegrate from the bizarre stress.</description>
@@ -141,7 +141,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TimeReversal</defName>
       <label>time reversal</label>
       <description>Inefficiently siphons life force to a living target, aging the caster by 5 years and de-aging the other by 10. Has a minimum age, removes age related penalties and puts the caster in a coma.</description>
@@ -159,7 +159,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Timequake</defName>
       <label>timequake</label>
       <description>Find a discontinuity in the psychic field and compress it, releasing a massive temporal disturbance. Every creature in range but outside of the safe inner circle will experience rapid aging and structures will warp. Casting this takes 20 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing timequake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.</description>

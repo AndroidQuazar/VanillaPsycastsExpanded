@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_EnchantQuality</defName>
       <label>enchant quality</label>
       <description>The caster concentrates on an item and attempts to improve its quality by reshaping the material slightly, but cannot imitate a master’s handiwork.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Mend</defName>
       <label>mend</label>
       <description>The caster concentrates on an item and attempts to repair present damage by rebinding the material, with the effect scaling with their psychic sensitivity.</description>
@@ -30,7 +30,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ConjureHeatPearls</defName>
       <label>conure heat pearls</label>
       <description>Converts a minimum amount of the caster’s heat into metaphysical pearls, effectively converting psyfocus into heat pearls. These can be thrown at other psycasters to induce massive amounts of heat on them, but are otherwise harmless.</description>
@@ -48,7 +48,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Haywire</defName>
       <label>haywire</label>
       <description>Designates an area to experience psychic interference, effectively scrambling electronic systems’ IFFs while identifying the caster’s people as allies. Duration scales with psychic sensitivity.</description>
@@ -67,7 +67,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Power</defName>
       <label>power</label>
       <description>Metaphysically alters the designated equipment’s power input to extract energy directly from fluctuations in the quantum foam for a few days. Duration scales with psychic sensitivity.</description>
@@ -85,7 +85,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_RockConstruct</defName>
       <label>rock construct</label>
       <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a stone chunk. This new rock construct is capable of performing simple chores, and breaking the crystal allows the heat capacity to be restored.</description>
@@ -104,7 +104,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SteelConstruct</defName>
       <label>steel construct</label>
       <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a steel slag. This new steel construct will follow the caster and defend them from harm, and breaking the crystal allows the heat capacity to be restored.</description>
@@ -123,7 +123,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_CraftPsyRing</defName>
       <label>craft psyring</label>
       <description>Psychically alters the form of a piece of eltex into the shape of a ring, which is imbued with psycasting knowledge of the caster. When worn by another psycaster, this temporarily allows them to use this knowledge to perform the stored psycast without practice.</description>
@@ -141,7 +141,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofProgress</defName>
       <label>word of progress</label>
       <description>Speak words encouraging problem solving capabilities while psychically hypercharging the target’s mind with keen insight. The target will experience double research speed and intellectual skill gain for 5 days, scaling with their psychic sensitivity.</description>
@@ -159,7 +159,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ReverseEngineer</defName>
       <label>reverse engineer</label>
       <description>The caster concentrates on an object and attempts to unravel the knowledge needed to manufacture more of them. The long, intense concentration ends with the caster falling into a 6-hour coma.</description>

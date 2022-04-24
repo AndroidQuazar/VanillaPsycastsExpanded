@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
         <defName>VPE_WordofJoy</defName>
         <label>word of joy</label>
         <description>Speak happy, calming words to someone while using psychic suggestion to implant a joyfuzz loop in his mind. The joyfuzz will suppress uncomfortable thoughts and sensations in the target to improve mood. This has the side-effect of dulling sensation and decision-making, which reduces consciousness.</description>
@@ -15,7 +15,7 @@
             </li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
         <defName>VPE_WordofLove</defName>
         <label>word of love</label>
         <description>Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This power can be used to connect two other people, induce love for the caster, or force oneself to love another.</description>
@@ -33,7 +33,7 @@
             </li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
         <defName>VPE_WordofSerenity</defName>
         <label>word of serenity</label>
         <description>Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.</description>
@@ -51,7 +51,7 @@
             </li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
         <defName>VPE_WordofInspiration</defName>
         <label>word of inspiration</label>
         <description>Speak words encouraging creativity while psychically hypercharging the target's mind with new ideas. The target will experience a random inspiration appropriate to them.</description>
@@ -69,7 +69,7 @@
             </li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SootheMale</defName>
       <label>psychic sooth (male)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects males.</description>
@@ -88,7 +88,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SootheFemale</defName>
       <label>psychic sooth (female)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects females.</description>
@@ -106,7 +106,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Bliss</defName>
       <label>bliss</label>
       <description>After a brief meditation period, induce a sense of serenity in the target that reaches maximum magnitude near the effect’s end. As the calming feeling becomes more pronounced, they will find it harder to concentrate but it is not considered a malicious action.</description>
@@ -124,7 +124,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_EnergyDump</defName>
       <label>energy dump</label>
       <description>Purges the build-up of fatigue in a nearby target and leaves them completely refreshed, in exchange the caster is left completely exhausted and needing a good nap.</description>
@@ -142,7 +142,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MindWipe</defName>
       <label>mind wipe</label>
       <description>Induce a harmless, instantaneous retrograde amnesia in the target, purging all memories, social bonds and skills acquired outside of their backstory. They also feel a strong kinship with the caster’s colony and joy at rediscovering the joys of life without commitment.</description>
@@ -161,7 +161,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ReunionFarskip</defName>
       <label>reunion farskip</label>
       <description>After a short meditation period and followed by a 5-day coma, taps into a target’s bloodline to skip all living family members to their proximity, knocked out through psychic shock. However, it does nothing to change their relationships and is considered rude by all other factions.</description>

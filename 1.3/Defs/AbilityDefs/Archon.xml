@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofTrust</defName>
       <label>word of trust</label>
       <description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofProductivity</defName>
       <label>word of productivity</label>
       <description>Using words of motivation with a heaping boost to metabolism, makes the touched target a more productive member of society for the next few days. Considered a hostile action and duration is affected by the target’s psychic sensitivity.</description>
@@ -33,7 +33,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BlindingPulse</defName>
       <label>blinding pulse</label>
       <description>Induce noise in the visual centers of the brain, obscuring vision of everyone near the target point. Lasts for half a minute, affected by psychic sensitivity.</description>
@@ -51,7 +51,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofAlliance</defName>
       <label>word of alliance</label>
       <description>Speak words of friendship and benefits to a close target using psychic suggestion, helping them realize that you’re not all that bad. Only works on those willing to listen and effect scales with the caster's psychic sensitivity.</description>
@@ -70,7 +70,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_GroupLink</defName>
       <label>group link</label>
       <description>Creates a sphere of psychic suggestion around the caster, linking all pawns within to the caster and allowing any single target “Word of” psycast to affect all others. The effect ends when those linked move out of range.</description>
@@ -89,7 +89,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofPain</defName>
       <label>word of pain</label>
       <description>Induces noise in the target’s pain centers of the brain and overstimulates their nerve endings, scaling with their psychic sensitivity.</description>
@@ -108,7 +108,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MindBreak</defName>
       <label>mind break</label>
       <description>Using concentrated harmonic psychic noise, lobotomizes the target and turns them into a serving, restless thrall. Very much unappreciated by their former factions.</description>
@@ -127,7 +127,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofProtection</defName>
       <label>word of protection</label>
       <description>Using harmonic psychic noise, physically alters the target’s body to be more durable and resistant to damage. Lasts a long time and scales with the caster’s psychic sensitivity.</description>
@@ -146,7 +146,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_DrainPsyessence</defName>
       <label>drain psyessence</label>
       <description>Targeting a downed psychically-talented pawn, induces intense harmonic psychic noise to liquify their flesh and convert it into psyessence to be absorbed by the caster as their own accumulated psychic talent. The final moments of psychic disintegration will be felt by everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
@@ -164,7 +164,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MassHallucination</defName>
       <label>mass hallucination</label>
       <description>Creating a massive burst of psychic suggestion, convinced nearby pawns that rooms are the absolute best they could possibly be. The resulting coma for the caster and the effect lasts for five days.</description>

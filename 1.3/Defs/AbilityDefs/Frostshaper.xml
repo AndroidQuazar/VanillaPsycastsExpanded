@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceBreath</defName>
       <label>breathe ice</label>
       <description>Breathe forward a stream of psychic entropy, the resulting cold cutting and inducing hypothermia scaling with the caster's psychic sensitivity.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceSpike</defName>
       <label>ice spike</label>
       <description>Condenses vapor with psychic entropy into an icicle launched at a target, the damage scaling with psychic sensitivity.</description>
@@ -30,7 +30,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceShield</defName>
       <label>ice shield</label>
       <description>Creates an aura of psychic entropy around the target for several seconds, preventing them from experiencing cold and inducing hypothermia on any who try to attack them in melee.</description>
@@ -45,7 +45,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_FrostRay</defName>
       <label>frost ray</label>
       <description>Push forth a concentrated stream of psychic entropy for a few seconds, rapidly inducing cuts and hypothermia. The duration scales with the caster’s psychic sensitivity.</description>
@@ -64,7 +64,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceCrystal</defName>
       <label>ice crystal</label>
       <description>Creates a node of psychic entropy in the form of a crystal, sapping the heat from the room for the next 5 days.</description>
@@ -83,7 +83,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ColdZone</defName>
       <label>cold zone</label>
       <description>Cause an area to manifest nodes of psychic entropy for the next 24 hours, drastically lowering the temperature.</description>
@@ -101,7 +101,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceBlock</defName>
       <label>ice block</label>
       <description>Combining nodes of psychic entropy and a skipgate linked to an ocean, creating a large block of ice to form in the target location. Fragile and can melt if the temperature is above freezing.</description>
@@ -120,7 +120,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SnapFreeze</defName>
       <label>snap freeze</label>
       <description>Creates motes of psychic entropy and miniature skipgates to water reservoirs above all the targets in a small area, encasing them in ice. Victims will experience hypothermia but the ice can melt prematurely if the temperature is above freezing.</description>
@@ -138,7 +138,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceWall</defName>
       <label>ice wall</label>
       <description>Combining nodes of psychic entropy and miniature skipgates linked to an ocean, creating a circular wall of ice to form around the caster. Fragile and can melt if the temperature is above freezing.</description>
@@ -156,7 +156,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Blizzard</defName>
       <label>blizzard</label>
       <description>Using differential-pressure skipgates, water-linked skipgates and nodes of psychic entropy, creates a swirling blizzard away from the caster. Those exposed to the tempest experience reduced sight, moving and manipulation, as well as hypothermia buildup and cutting cold. Duration scales with the caster’s psychic sensitivity and puts them in a 5-day coma.</description>

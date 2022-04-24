@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SpeedBoost</defName>
       <label>speedboost</label>
       <description>Psychically augments the muscle fibers, ligaments and joints in the caster’s legs, tripling their movement speed for roughly two minutes depending on their psychic sensitivity.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BladeFocus</defName>
       <label>blade focus</label>
       <description>Psychically augments the muscle fibers, ligaments and joints in the caster’s arms, doubling their melee attack speed for roughly two minutes depending on their psychic sensitivity.</description>
@@ -33,7 +33,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_FiringFocus</defName>
       <label>firing focus</label>
       <description>Psychically augments the hands, eyes and reaction speed of the caster, reducing their ranged attack cooldown by 80% for roughly two minutes depending on their psychic sensitivity.</description>
@@ -51,7 +51,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_PowerLeap</defName>
       <label>power leap</label>
       <description>Drastically augments the caster’s legs, feet and spine to be able to leap great distances and land without injury, the distance improving with the user’s psychic sensitivity.</description>
@@ -69,7 +69,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_AdrenalineRush</defName>
       <label>adrenaline rush</label>
       <description>Psychically induces a surge of adrenaline in the caster, blocking all pain and augmenting their sight, hearing and movement. Lasts roughly two minutes depending on the user’s psychic sensitivity.</description>
@@ -87,7 +87,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ControlledFrenzy</defName>
       <label>controlled frenzy</label>
       <description>Psychically augments the caster’s prowess and killing urges, doubling their damage output with all weapons. Each kill reduces the caster’s heat by 10 and resets the duration of the frenzy.</description>
@@ -105,7 +105,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_GuidedShot</defName>
       <label>guided shot</label>
       <description>Projects a psychic aura for 10 seconds that allows the caster to alter the path of any bullet they fire, effectively doubling their weapon range and guaranteeing hits for the duration.</description>
@@ -123,7 +123,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Beckon</defName>
       <label>beckon</label>
       <description>Psychically command the target to approach the caster.</description>
@@ -141,7 +141,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Killskip</defName>
       <label>killskip</label>
       <description>Teleports to the target and executes a melee strike, weakened or augmented by the caster’s melee skill. If the target is killed, teleports to the next closest enemy at no cost and attacks again, until there is nothing left to kill.</description>
@@ -160,7 +160,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MassBeckon</defName>
       <label>5</label>
       <description>Psychically command the targets within an area to approach the caster.</description>

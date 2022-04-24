@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SolarPinhole</defName>
       <label>solar pinhole</label>
       <description>Generate a microscopic skipgate linked to the core of a nearby star for a few days. Solar material leaks through the pinprick in spacetime, illuminating and warming the surrounding area until it closes. The light is enough to work by, but not enough to grow plants.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Chunkskip</defName>
       <label>chunk skip</label>
       <description>Skip the 5 chunks of rock or slag to scatter them near the target point. This is useful for producing cover during offensive operations.</description>
@@ -33,7 +33,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Waterskip</defName>
       <label>waterskip</label>
       <description>Douse a target in water, extinguishing fires. The water is archotechnologically skipped from distant bodies of water or underground aquifers.</description>
@@ -51,7 +51,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ChaosSkip</defName>
       <label>chaos skip</label>
       <description>Teleport the target to a random position near where he started. Stuns the target for a second and is considered a hostile action.</description>
@@ -70,7 +70,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Skip</defName>
       <label>skip</label>
       <description>Teleport the target to a desired position not too far from his starting point. This is considered a hostile action.</description>
@@ -88,7 +88,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Wallraise</defName>
       <label>wall raise</label>
       <description>Form a temporary wall by skipping rubble and soil up from deep under the ground. Decent range and useful in blocking line of sight and movement for a few hours.</description>
@@ -106,7 +106,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Smokepop</defName>
       <label>smokepop</label>
       <description>Skip dust particles up from under the ground surface to form a thick cloud. This reduces the accuracy of any shot fired through it, and prevents turrets from locking on entirely.</description>
@@ -124,7 +124,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MassChaosSkip</defName>
       <label>mass chaos skip</label>
       <description>Skip everyone near a target point to a random location nearby. Considered a nuisance as it can put allies in danger.</description>
@@ -142,7 +142,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Skipdoor</defName>
       <label>skipdoor</label>
       <description>Creates an opening to a network of skipgates which can be placed in any location with a permanent presence. The network is tied to a group’s collective consciousness, allowing others to use it and different psycasters can add to it. However, the entry points are sensitive to physical disturbances which can cause them to collapse.</description>
@@ -160,7 +160,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Farskip</defName>
       <label>farskip</label>
       <description>Skip the caster, along with anyone standing near them, to a willing ally at a distant location. This can send people far across the planet, and the skipped people will always appear near a random ally on the target map and be stunned for a few seconds from the journey.</description>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BrambleMaze</defName>
       <label>bramble maze</label>
       <description>Infuses a fertile area with chaotic life energy, causing it to sprout shoots of brambles that wither after 12 hours.</description>
@@ -15,7 +15,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_CropBurst</defName>
       <label>crop burst</label>
       <description>Infuses a fertile area with life energy, causing it to sprout plantable crops that finish growth in relation to the caster’s psychic sensitivity.</description>
@@ -33,7 +33,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofAnimals</defName>
       <label>word of animals</label>
       <description>Soothe an animal using psychic suggestion, either calming a manhunting animal or taming them.</description>
@@ -51,7 +51,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ManhunterPulse</defName>
       <label>manhunter pulse</label>
       <description>Drive animals in a large area into a manhunting rage using a psychic pulse, lasting a minute. Considered a declaration of war if it affects the animals in a caravan.</description>
@@ -69,7 +69,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TreeSprout</defName>
       <label>tree sprout</label>
       <description>Infuses a large, fertile area with potent life energy, causing it to sprout fully grown oak trees.</description>
@@ -87,7 +87,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ShieldAnimals</defName>
       <label>shield animals</label>
       <description>Generates spherical skipgates on all colony animals in range that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the duration scales with the caster’s psychic sensitivity.</description>
@@ -105,7 +105,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_AnimalAllies</defName>
       <label>animal allies</label>
       <description>Infuses a large area with harmonic life force that influences animal behavior, causing them to attack those hostile to the caster for a duration scaling with their psychic sensitivity.</description>
@@ -124,7 +124,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Shrineshield</defName>
       <label>shrineshield</label>
       <description>Generate a spherical skipgate on a nature shrine that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the size of the sphere depends on the size of the shrine.</description>
@@ -142,7 +142,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_EssenceTransfer</defName>
       <label>essence transfer</label>
       <description>Infuses the life force of another nearby person into a colony animal, linking them and putting the caster in a 6 hour coma. Should the linked person die, the linked animal will go to their side and transfer their own harmonized life essence to them, dying when finished. Should the linked animal die first, the effect is lost and there can only be one link at a time.</description>
@@ -160,7 +160,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TreeEchoSlam</defName>
       <label>tree echo slam</label>
       <description>Infuses a target tree with potent, excessive life force, causing an identical tree to grow inside it and destroy the old tree in a shower of splinters. Depending on the caster’s psychic sensitivity, the effect can jump towards multiple nearby trees that haven’t been infused before with the same energy.</description>
