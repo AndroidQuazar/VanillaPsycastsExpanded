@@ -73,4 +73,29 @@
 			</li>
 		</modExtensions>
 	</ThingDef>
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_Bolt</defName>
+		<label>bolt</label>
+		<description>A bolt launched by a Staticlord</description>
+		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Staticlord/Bolt</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<drawerType>RealtimeOnly</drawerType>
+		<projectile>
+			<explosionRadius>1.9</explosionRadius>
+			<damageDef>EMP</damageDef>
+			<speed>50</speed>
+			<shadowSize>0</shadowSize>
+			<extraDamages>
+				<li>
+					<def>Flame</def>
+					<amount>15</amount>
+				</li>
+			</extraDamages>
+		</projectile>
+	</ThingDef>
 </Defs>

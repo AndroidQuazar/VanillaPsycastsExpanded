@@ -5,6 +5,17 @@
       <label>bolt</label>
       <description>Hurls a weak bolt of electricity to strike a small target, inflicting minor burns on direct hits and area EMP damage.</description>
       <iconPath>Abilities/Staticlord/Bolt</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <castTime>3</castTime>
+      <range>16.9</range>
+      <radius>1.9</radius>
+      <power>1</power>
+      <castSound>VPE_Bolt_Cast</castSound>
+      <targetMode>Pawn</targetMode>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <canTargetLocations>true</canTargetLocations>
+      </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -12,6 +23,9 @@
           <order>1</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>6</entropyGain>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_Bolt</projectile>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

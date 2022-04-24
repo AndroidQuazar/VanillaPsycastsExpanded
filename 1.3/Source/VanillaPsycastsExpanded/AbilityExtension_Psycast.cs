@@ -47,7 +47,7 @@
                 if (!hediff.SufficientPsyfocusPresent(psyfocusCost))
                 {
                     reason = "CommandPsycastNotEnoughPsyfocus".Translate(
-                        psyfocusCost, ability.pawn.psychicEntropy.CurrentPsyfocus,
+                        psyfocusCost.ToStringPercent("#.0"), ability.pawn.psychicEntropy.CurrentPsyfocus.ToStringPercent("#.0"),
                         ability.def.label.Named("PSYCASTNAME"), ability.pawn.Named("CASTERNAME"));
                     return false;
                 }

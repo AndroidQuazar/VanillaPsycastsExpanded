@@ -3,7 +3,7 @@
     <ThingDef ParentName="OrbitalStrikeBase">
         <defName>VPE_FireBeam</defName>
         <label>fire beam</label>
-        <thingClass>PowerBeam</thingClass>
+        <thingClass>VanillaPsycastsExpanded.Conflagrator.FireBeam</thingClass>
         <comps>
             <li Class="CompProperties_OrbitalBeam">
                 <width>8</width>

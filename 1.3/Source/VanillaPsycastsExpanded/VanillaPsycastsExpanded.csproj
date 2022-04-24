@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conflagrator\Ability_FireTornado.cs" />
+    <Compile Include="Conflagrator\FireBeam.cs" />
     <Compile Include="Conflagrator\FireTornado.cs" />
     <Compile Include="Conflagrator\HediffComp_FireShield.cs" />
     <Compile Include="Graphics\Projectile_Pointing.cs" />

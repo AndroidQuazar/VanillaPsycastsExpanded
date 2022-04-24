@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="MoteBase">
+        <defName>VPE_Mote_FireBeam</defName>
+        <graphicData>
+          <texPath>Things/Mote/PowerBeam</texPath>
+          <shaderType>MoteGlow</shaderType>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+        <mote>
+          <fadeInTime>0.5</fadeInTime>
+          <solidTime>2.3</solidTime>
+          <fadeOutTime>1.0</fadeOutTime>
+        </mote>
+      </ThingDef>
+</Defs>
