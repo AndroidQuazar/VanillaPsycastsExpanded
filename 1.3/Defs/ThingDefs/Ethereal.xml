@@ -44,8 +44,13 @@
         <tickerType>Normal</tickerType>
         <drawOffscreen>true</drawOffscreen>
         <seeThroughFog>true</seeThroughFog>
-        <comps>
-            <li Class="CompProperties_WindSource" />
-        </comps>
+    </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_HurricaneMaker</defName>
+        <label>hurricane maker</label>
+        <thingClass>VanillaPsycastsExpanded.Staticlord.HurricaneMaker</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
     </ThingDef>
 </Defs>

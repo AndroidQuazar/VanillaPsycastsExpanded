@@ -220,6 +220,10 @@
       <label>hurricane</label>
       <description>The caster forcibly changes the weather - using widespread differential-pressure skipgates - to a downpour with hurricane-force winds, which lasts as long as the caster can manage the heat accumulation and can instantly stop at-will. Those outdoors will experience progressively severe limitations to sight, moving and manipulation to the point they come to a complete stop.</description>
       <iconPath>Abilities/Staticlord/Hurricane</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Hurricane</abilityClass>
+      <castTime>360</castTime>
+      <targetMode>Self</targetMode>
+      <castSound>VPE_Hurricane_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
