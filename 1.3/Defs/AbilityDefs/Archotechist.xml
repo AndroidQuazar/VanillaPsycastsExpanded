@@ -29,7 +29,7 @@
           <entropyGain>12</entropyGain>
         </li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_PsychicShock</defName>
       <label>psychic shock</label>

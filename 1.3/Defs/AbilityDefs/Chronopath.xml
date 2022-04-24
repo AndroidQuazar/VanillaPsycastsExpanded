@@ -17,8 +17,8 @@
           </prerequisites>
         </li>
       </modExtensions>
-    </VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <VFECore.Abilities.AbilityDef>
+    </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TimeskipMeditation</defName>
       <label>timeskip meditation</label>
       <description>Puts the caster into a self-inflicted coma for six hours as they earn experience to their next Psycast level and regain full Psyfocus. Biologically ages the caster by a full year.</description>
