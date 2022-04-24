@@ -2,7 +2,7 @@
 <Defs>
   
   <SoundDef>
-    <defName>VPE_PsycastPsychicEffect</defName>
+    <defName>VPE_PsycastCastingEffect</defName>
     <context>MapOnly</context>
     <subSounds>
       <li>
