@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <FleckDef ParentName="FleckGlowDistortBackground">
-    <defName>VPE_Fleck_CastPsycast</defName>
+    <defName>VPE_Fleck_PsycastDistortion</defName>
     <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>
       <fadeInTime>0.03</fadeInTime>
@@ -15,6 +15,21 @@
         <_brightnessMultiplier>1.1</_brightnessMultiplier>      
       </shaderParameters>
       <drawSize>2.5</drawSize>
+    </graphicData>
+  </FleckDef>
+  <FleckDef ParentName="FleckBase">
+    <defName>VPE_Fleck_CastPsycast</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.05</fadeInTime>
+    <fadeOutTime>0.03</fadeOutTime>
+    <solidTime>0.08</solidTime>
+    <graphicData>
+      <texPath>Things/Mote/PsycastCast</texPath>
+      <shaderType>MoteGlowDistorted</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Other/Ripples</_DistortionTex>
+      </shaderParameters>
     </graphicData>
   </FleckDef>
   <FleckDef ParentName="FleckBase">
