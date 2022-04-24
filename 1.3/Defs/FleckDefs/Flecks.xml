@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <FleckDef ParentName="FleckBase_RandomGraphic">
+    <FleckDef ParentName="FleckBase">
         <defName>VPE_Explosion</defName>
         <solidTime>0.3</solidTime>
         <fadeOutTime>0.1</fadeOutTime>
         <altitudeLayer>MoteOverhead</altitudeLayer>
-        <randomGraphics>
-            <li>
-                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastA</texPath>
-                <shaderType>MoteGlow</shaderType>
-                <graphicClass>Graphic_Fleck</graphicClass>
-                <drawSize>(10, 10)</drawSize>
-            </li>
-            <li>
-                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastB</texPath>
-                <shaderType>MoteGlow</shaderType>
-                <graphicClass>Graphic_Fleck</graphicClass>
-                <drawSize>(10, 10)</drawSize>
-            </li>
-            <li>
-                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastC</texPath>
-                <shaderType>MoteGlow</shaderType>
-                <graphicClass>Graphic_Fleck</graphicClass>
-                <drawSize>(10, 10)</drawSize>
-            </li>
-            <li>
-                <texPath>Effects/Conflagrator/Explosion/FireExplosionBlastD</texPath>
-                <shaderType>MoteGlow</shaderType>
-                <graphicClass>Graphic_Fleck</graphicClass>
-                <drawSize>(10, 10)</drawSize>
-            </li>
-        </randomGraphics>
+        <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Conflagrator/Explosion</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
+			<shaderType>MoteGlow</shaderType>
+            <drawSize>(20, 20)</drawSize>
+		</graphicData>
+    </FleckDef>
+    <FleckDef ParentName="FleckBase">
+        <defName>VPE_EyeBlast</defName>
+        <solidTime>0.3</solidTime>
+        <fadeOutTime>0.1</fadeOutTime>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Conflagrator/Explosion</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
+			<shaderType>MoteGlow</shaderType>
+            <drawSize>(7, 7)</drawSize>
+		</graphicData>
     </FleckDef>
     <FleckDef ParentName="FleckBase_Thrown">
         <defName>VPE_FireTornadoDustPuff</defName>

@@ -2,12 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Text;
-    using RimWorld;
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
-    using Ability = VFECore.Abilities.Ability;
-    using AbilityDef = VFECore.Abilities.AbilityDef;
 
     public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
     {
@@ -25,11 +22,9 @@
             return this.prerequisites == null || pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
         }
 
-        public float GetPsyfocusUsedByPawn(Pawn pawn) =>
-            this.psyfocusCost * pawn.GetStatValue(StatDefOf.Ability_PsyfocusCost);
+        public float GetPsyfocusUsedByPawn(Pawn pawn) => this.psyfocusCost;
 
-        public float GetEntropyUsedByPawn(Pawn pawn) =>
-            this.entropyGain * pawn.GetStatValue(StatDefOf.Ability_EntropyGain);
+        public float GetEntropyUsedByPawn(Pawn pawn) => this.entropyGain;
 
         public override bool IsEnabledForPawn(Ability ability, out string reason)
         {
@@ -52,7 +47,7 @@
                 if (!hediff.SufficientPsyfocusPresent(psyfocusCost))
                 {
                     reason = "CommandPsycastNotEnoughPsyfocus".Translate(
-                        psyfocusCost, (ability.pawn.psychicEntropy.CurrentPsyfocus - psyfocusCost).ToStringPercent("0.#"),
+                        psyfocusCost, ability.pawn.psychicEntropy.CurrentPsyfocus,
                         ability.def.label.Named("PSYCASTNAME"), ability.pawn.Named("CASTERNAME"));
                     return false;
                 }

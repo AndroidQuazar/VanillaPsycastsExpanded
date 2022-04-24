@@ -34,6 +34,7 @@
       <radius>14.9</radius>
       <targetMode>Self</targetMode>
       <castSound>VPE_SelfExplosion_Cast</castSound>
+      <castFleck>PsycastPsychicEffect</castFleck>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Conflagrator</path>
@@ -126,6 +127,7 @@
       <targetMode>Pawn</targetMode>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
+        <canTargetLocations>true</canTargetLocations>
       </targetingParameters>
       <castSound>VPE_BreatheFlame_Cast</castSound>
       <modExtensions>
@@ -179,7 +181,7 @@
       <abilityClass>VFECore.Abilities.Ability_Explode</abilityClass>
       <castTime>60</castTime>
       <targetMode>Self</targetMode>
-      <radius>34.9</radius>
+      <radius>16.9</radius>
       <castSound>VPE_ExtinguishFlames_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -211,8 +213,11 @@
       <abilityClass>VFECore.Abilities.Ability_Skyfallers</abilityClass>
       <castTime>300</castTime>
       <range>36.9</range>
-      <radius>22.9</radius>
-      <power>4</power>
+      <radius>9.9</radius>
+      <power>5</power>
+      <powerStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </powerStatFactors>
       <targetMode>Location</targetMode>
       <castSound>VPE_MeteorShower_Cast</castSound>
       <modExtensions>
@@ -235,11 +240,11 @@
     <VFECore.Abilities.AbilityDef>
       <defName>VPE_FireBeam</defName>
       <label>fire beam</label>
-      <description>Introduces glitches into a network of power-collection satellites to begin beaming power down in a massive column of electromagnetic energy. This lasts until the satellites detect the glitch and temporarily shut themselves down.</description>
+      <description>Attempts to recreate the power of a star inside a concentrated column of almost liquidized oxygen. The resulting emission of plasma is so powerful that only the most advanced weapons systems can hope to compare.</description>
       <iconPath>Abilities/Conflagrator/FireBeam</iconPath>
       <abilityClass>VFECore.Abilities.Ability_OrbitalStrike</abilityClass>
       <castTime>300</castTime>
-      <durationTime>600</durationTime>
+      <durationTime>180</durationTime>
       <range>45.9</range>
       <radius>15</radius>
       <targetMode>Location</targetMode>
@@ -263,7 +268,7 @@
     <VFECore.Abilities.AbilityDef>
       <defName>VPE_FlameTornado</defName>
       <label>fire tornado</label>
-      <description>Overrides the systems of a network of weather-control satellites to cause a massive air current disturbance. While the effect is active, the caster also inserts skipgates within the eye of the resulting tornado that spits out thermal energies from deep within the planet.</description>
+      <description>Attempts to recreate the power of a star inside a vortex of concentrated oxygen. The mess of reactions occurring creates flammable byproducts in its wake while also leaving its trajectory completely unpredictable.</description>
       <iconPath>Abilities/Conflagrator/FlameTornado</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Conflagrator.Ability_FireTornado</abilityClass>
       <castTime>300</castTime>

@@ -51,9 +51,10 @@
     <Compile Include="Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Conflagrator\FireTornado.cs" />
     <Compile Include="Conflagrator\HediffComp_FireShield.cs" />
-    <Compile Include="Graphics\AbilityProjectile_Pointing.cs" />
+    <Compile Include="Graphics\Projectile_Pointing.cs" />
     <Compile Include="Graphics\Graphic_Animated.cs" />
     <Compile Include="Graphics\Graphic_FleckCollection.cs" />
+    <Compile Include="Graphics\Graphic_Fleck_Animated.cs" />
     <Compile Include="HarmonyPatches\HarmonyInit.cs" />
     <Compile Include="HarmonyPatches\Hediff_Psylink_Patches.cs" />
     <Compile Include="HarmonyPatches\MeditationFocusTypeAvailabilityCache_PawnCanUse_Patch.cs" />

@@ -4,11 +4,12 @@
 		<defName>VPE_Flameball</defName>
 		<label>flameball</label>
 		<description>A ball of flame launched by a Conflagrator</description>
-		<thingClass>Projectile_Explosive</thingClass>
+		<thingClass>VanillaPsycastsExpanded.Graphics.Projectile_Pointing</thingClass>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Conflagrator/Fireball</texPath>
 			<ticksPerFrame>5</ticksPerFrame>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 		<drawerType>RealtimeOnly</drawerType>
 		<projectile>
@@ -68,6 +69,7 @@
 		<modExtensions>
 			<li Class="VFECore.ProjectileExtension">
 				<flashIntensity>100</flashIntensity>
+				<hitFleck>VPE_EyeBlast</hitFleck>
 			</li>
 		</modExtensions>
 	</ThingDef>

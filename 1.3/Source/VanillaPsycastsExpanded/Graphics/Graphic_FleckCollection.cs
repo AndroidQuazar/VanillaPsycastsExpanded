@@ -37,7 +37,6 @@
                                 select (Graphic_Fleck) GraphicDatabase.Get(typeof(Graphic_Fleck), req.path + "/" + texture2D.name, req.shader, this.drawSize,
                                                                            this.color,
                                                                            this.colorTwo, this.data, req.shaderParameters)).ToArray();
-            GenDebug.LogList(this.subGraphics);
         }
     }
 }

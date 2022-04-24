@@ -1,6 +1,5 @@
 ﻿namespace VanillaPsycastsExpanded.Conflagrator
 {
-    using System.Collections.Generic;
     using System.Linq;
     using HarmonyLib;
     using RimWorld;
@@ -16,14 +15,12 @@
         private static readonly MaterialPropertyBlock matPropertyBlock = new();
 
         private static readonly Material TornadoMaterial =
-            MaterialPool.MatFrom("Effects/Conflagrator/FireTornado/FireTornadoFat", ShaderDatabase.Transparent, MapMaterialRenderQueues.Tornado);
+            MaterialPool.MatFrom("Effects/Conflagrator/FireTornado/FireTornadoFat", ShaderDatabase.MoteGlow, MapMaterialRenderQueues.Tornado);
 
-        private static readonly FloatRange    PartsDistanceFromCenter = new(1f, 10f);
-        private static readonly float         ZOffsetBias             = -4f * PartsDistanceFromCenter.min;
-        private static readonly List<Thing>   tmpThings               = new();
-        private static readonly FleckDef      FireTornadoPuff         = DefDatabase<FleckDef>.GetNamed("VPE_FireTornadoDustPuff");
-        private static          ModuleBase    directionNoise;
-        private readonly        List<IntVec3> removedRoofsTmp = new();
+        private static readonly FloatRange PartsDistanceFromCenter = new(1f, 5f);
+        private static readonly float      ZOffsetBias             = -4f * PartsDistanceFromCenter.min;
+        private static readonly FleckDef   FireTornadoPuff         = DefDatabase<FleckDef>.GetNamed("VPE_FireTornadoDustPuff");
+        private static          ModuleBase directionNoise;
 
         private Vector2 realPosition;
         private float   direction;
@@ -183,7 +180,7 @@
         {
             Rand.PushState();
             Rand.Seed = this.thingIDNumber;
-            for (int i = 0; i < 180; i++)
+            for (int i = 0; i < 90; i++)
                 this.DrawTornadoPart(PartsDistanceFromCenter.RandomInRange, Rand.Range(0f, 360f), Rand.Range(0.9f, 1.1f), Rand.Range(0.52f, 0.88f));
             Rand.PopState();
         }
