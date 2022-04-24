@@ -181,4 +181,24 @@
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>VPE_Vortex_Sustainer</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>1</maxVoices>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Staticlord/Psycast_Vortex_Sustainer_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+        <sustainLoop>True</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

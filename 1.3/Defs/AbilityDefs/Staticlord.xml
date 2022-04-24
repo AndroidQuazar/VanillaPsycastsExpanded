@@ -193,6 +193,12 @@
       <label>vortex</label>
       <description>Manifests a gaping vortex of high-voltage electricity - redirected via skipgate from a nebula storm - at a target area with a large effect. Severely hampers movement and manipulating proportionately, with the strongest effect at the center.</description>
       <iconPath>Abilities/Staticlord/Vortex</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
+      <castTime>30</castTime>
+      <range>30.9</range>
+      <radius>22.9</radius>
+      <durationTime>2500</durationTime>
+      <targetMode>Location</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -203,6 +209,9 @@
           <prerequisites>
             <li>VPE_Recharge</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Building">
+          <building>VPE_Vortex</building>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

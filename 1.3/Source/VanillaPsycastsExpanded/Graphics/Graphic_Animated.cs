@@ -22,6 +22,7 @@
 
     public class GraphicData_Animated : GraphicData
     {
-        public int ticksPerFrame;
+        public int  ticksPerFrame;
+        public bool random;
     }
 }

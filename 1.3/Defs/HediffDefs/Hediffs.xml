@@ -18,4 +18,11 @@
             </li>
         </comps>
     </HediffDef>
+    <HediffDef>
+        <defName>VPE_Vortex</defName>
+        <label>vortex</label>
+        <description>An electirical vortex is causing difficulty moving</description>
+        <initialSeverity>1</initialSeverity>
+        <hediffClass>VanillaPsycastsExpanded.Staticlord.Hediff_Vortexed</hediffClass>
+    </HediffDef>
 </Defs>

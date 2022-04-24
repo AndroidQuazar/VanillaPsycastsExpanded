@@ -36,4 +36,16 @@
             <li Class="CompProperties_WindSource" />
         </comps>
     </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_Vortex</defName>
+        <label>vortex</label>
+        <category>Building</category>
+        <thingClass>VanillaPsycastsExpanded.Staticlord.Vortex</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawOffscreen>true</drawOffscreen>
+        <seeThroughFog>true</seeThroughFog>
+        <comps>
+            <li Class="CompProperties_WindSource" />
+        </comps>
+    </ThingDef>
 </Defs>

@@ -10,8 +10,10 @@
         public override void DrawFleck(FleckDrawData drawData, DrawBatch batch)
         {
             this.startTick ??= Current.Game?.tickManager?.TicksGame ?? 0f;
+            GraphicData_Animated dataAnimated = (GraphicData_Animated) this.data;
             this.subGraphics?[
-                Mathf.FloorToInt(((Current.Game?.tickManager?.TicksGame ?? 0f) - this.startTick.Value) / ((GraphicData_Animated) this.data).ticksPerFrame) %
+                Mathf.FloorToInt(((Current.Game?.tickManager?.TicksGame ?? 0f) - (dataAnimated.random ? 0 : this.startTick.Value)) /
+                                 dataAnimated.ticksPerFrame) %
                 this.subGraphics.Length].DrawFleck(drawData, batch);
         }
     }
