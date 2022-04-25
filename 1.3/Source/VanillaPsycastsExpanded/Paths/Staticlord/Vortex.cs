@@ -22,10 +22,10 @@
             this.sustainer.Maintain();
             for (int i = 0; i < 3; i++)
             {
-                Vector3           pos  = this.DrawPos + new Vector3(Rand.Range(1f, RADIUS), 0f, 0f).RotatedBy(Rand.Range(0f, 360f));
-                FleckCreationData data = FleckMaker.GetDataStatic(pos, this.Map, VPE_DefOf.VPE_VortexSpark);
+                FleckCreationData data = FleckMaker.GetDataStatic(this.RandomLocation(), this.Map, VPE_DefOf.VPE_VortexSpark);
                 data.rotation = Rand.Range(0f, 360f);
                 this.Map.flecks.CreateFleck(data);
+                FleckMaker.ThrowSmoke(this.RandomLocation(), this.Map, 4f);
             }
 
             if (Find.TickManager.TicksGame - this.startTick > DURATION) this.Destroy();
@@ -37,6 +37,15 @@
                         hediff.Vortex = this;
                         pawn.health.AddHediff(hediff);
                     }
+        }
+
+        private Vector3 RandomLocation() =>
+            this.DrawPos + new Vector3(this.Wrap(Mathf.Abs(Rand.Gaussian(0f, RADIUS)), RADIUS), 0f, 0f).RotatedBy(Rand.Range(0f, 360f));
+
+        private float Wrap(float x, float max)
+        {
+            while (x > max) x -= max;
+            return x;
         }
 
         public override void Draw()

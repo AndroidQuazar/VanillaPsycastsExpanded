@@ -63,6 +63,9 @@
       <castTime>3</castTime>
       <range>22.9</range>
       <radius>6</radius>
+      <radiusStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </radiusStatFactors>
       <castSound>VPE_Thunderbolt_Cast</castSound>
       <targetMode>Location</targetMode>
       <modExtensions>
@@ -167,9 +170,13 @@
       <iconPath>Abilities/Staticlord/StaticPulse</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Explode</abilityClass>
       <castTime>6</castTime>
-      <radius>60.9</radius>
+      <radius>50.9</radius>
       <targetMode>Self</targetMode>
       <castSound>VPE_StaticPulse_Cast</castSound>
+      <targetFlecks>
+        <li>PsycastSkipInnerExit</li>
+        <li>PsycastSkipOuterRingExit</li>
+      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>
@@ -182,7 +189,7 @@
           </prerequisites>
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_Explosion">
-          <explosionRadius>60.9</explosionRadius>
+          <explosionRadius>50.9</explosionRadius>
           <onCaster>true</onCaster>
           <explosionDamageDef>EMP</explosionDamageDef>
         </li>
@@ -242,6 +249,12 @@
       <label>flashstorm</label>
       <description>Use concentrated differential-pressure skipgates in the atmosphere to generate a localized flashstorm. The storm will strike the area with lightning for some time before dissipating.</description>
       <iconPath>Abilities/Staticlord/Flashstorm</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Flashstorm</abilityClass>
+      <castTime>60</castTime>
+      <range>20</range>
+      <radius>14</radius>
+      <durationTime>9840</durationTime>
+      <targetMode>Location</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>

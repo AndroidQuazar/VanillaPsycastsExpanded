@@ -57,6 +57,18 @@
             }
         }
 
+        protected override void Impact(Thing hitThing)
+        {
+            GenExplosion.DoExplosion(this.Position, this.Map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, this.launcher,
+                                     this.DamageAmount, this.ArmorPenetration, this.def.projectile.soundExplode, this.equipmentDef, this.def,
+                                     this.intendedTarget.Thing, this.def.projectile.postExplosionSpawnThingDef, this.def.projectile.postExplosionSpawnChance,
+                                     this.def.projectile.postExplosionSpawnThingCount,
+                                     this.def.projectile.applyDamageToExplosionCellsNeighbors, this.def.projectile.preExplosionSpawnThingDef,
+                                     this.def.projectile.preExplosionSpawnChance,
+                                     this.def.projectile.preExplosionSpawnThingCount, this.def.projectile.explosionChanceToStartFire,
+                                     this.def.projectile.explosionDamageFalloff, this.origin.AngleToFlat(this.destination));
+            base.Impact(hitThing);
+        }
 
         public override void ExposeData()
         {

@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded.Staticlord
 {
+    using HarmonyLib;
     using RimWorld;
     using UnityEngine;
     using Verse;
@@ -24,8 +25,6 @@
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             this.caused.End();
-            this.Map.weatherManager.TransitionTo(WeatherDefOf.Clear);
-            this.Map.weatherDecider.DisableRainFor(GenDate.TicksPerDay / 2);
             this.Map.weatherDecider.StartNextWeather();
             base.Destroy(mode);
         }
@@ -49,16 +48,13 @@
 
         public bool Toggle
         {
-            get => this.maker != null;
+            get => this.maker is {Destroyed: false};
             set
             {
                 if (value)
                     this.DoAction();
                 else
-                {
                     this.maker?.Destroy();
-                    this.maker = null;
-                }
             }
         }
 
@@ -110,9 +106,11 @@
     }
 
     [StaticConstructorOnStartup]
+    [HarmonyPatch]
     public class WeatherOverlay_RainSideways : SkyOverlay
     {
         private static readonly Material RainOverlayWorld = MatLoader.LoadMat("Weather/RainOverlayWorld");
+        private                 float    rotation;
 
         public WeatherOverlay_RainSideways()
         {
@@ -124,5 +122,34 @@
             this.worldPanDir2          = new Vector2(-1f, -0.22f);
             this.worldPanDir2.Normalize();
         }
+
+        public override void TickOverlay(Map map)
+        {
+            base.TickOverlay(map);
+            this.rotation = Mathf.Clamp(this.rotation + 1f, 0f, 360f);
+        }
+
+        // [HarmonyPatch(typeof(SkyOverlay), nameof(DrawOverlay))]
+        // [HarmonyTranspiler]
+        // public static IEnumerable<CodeInstruction> DrawOverlyTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
+        // {
+        //     MethodInfo info = AccessTools.PropertyGetter(typeof(Quaternion), nameof(Quaternion.identity));
+        //     foreach (CodeInstruction instruction in instructions)
+        //         if (instruction.Calls(info))
+        //         {
+        //             Label label  = generator.DefineLabel();
+        //             Label label2 = generator.DefineLabel();
+        //             yield return new CodeInstruction(OpCodes.Ldarg_0);
+        //             yield return new CodeInstruction(OpCodes.Isinst,  typeof(WeatherOverlay_RainSideways));
+        //             yield return new CodeInstruction(OpCodes.Brfalse, label);
+        //             yield return new CodeInstruction(OpCodes.Ldsfld,  AccessTools.Field(typeof(WeatherOverlay_RainSideways), nameof(rotation)));
+        //             yield return new CodeInstruction(OpCodes.Call,    AccessTools.PropertyGetter(typeof(Vector3), nameof(Vector3.up)));
+        //             yield return new CodeInstruction(OpCodes.Call,    AccessTools.Method(typeof(Quaternion), nameof(Quaternion.AngleAxis)));
+        //             yield return new CodeInstruction(OpCodes.Br,      label2);
+        //             yield return instruction.WithLabels(label);
+        //             yield return new CodeInstruction(OpCodes.Nop).WithLabels(label2);
+        //         }
+        //         else yield return instruction;
+        // }
     }
 }

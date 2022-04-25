@@ -195,7 +195,7 @@
           </prerequisites>
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_Explosion">
-          <explosionRadius>34.9</explosionRadius>
+          <explosionRadius>16.9</explosionRadius>
           <onCaster>true</onCaster>
           <explosionDamageDef>Extinguish</explosionDamageDef>
           <postExplosionSpawnThingDef>Filth_FireFoam</postExplosionSpawnThingDef>

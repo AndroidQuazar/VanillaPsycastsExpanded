@@ -83,6 +83,7 @@
 			<ticksPerFrame>3</ticksPerFrame>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
 			<shaderType>TransparentPostLight</shaderType>
+			<drawSize>(2, 2)</drawSize>
 		</graphicData>
 		<drawerType>RealtimeOnly</drawerType>
 		<projectile>
@@ -117,10 +118,10 @@
 				<maxBounceCount>6</maxBounceCount>
 				<damageDef>Flame</damageDef>
 				<explosionDamageDef>EMP</explosionDamageDef>
-				<impactRadius>0.9</impactRadius>
+				<impactRadius>1.9</impactRadius>
 				<targetFriendly>false</targetFriendly>
 				<addFire>true</addFire>
-				<bounceRange>3</bounceRange>
+				<bounceRange>6</bounceRange>
 				<maxLifetime>50</maxLifetime>
 				<impactSound>VPE_ChainBolt_Impact</impactSound>
 			</li>
@@ -138,9 +139,12 @@
 			<drawSize>(3, 3)</drawSize>
         </graphicData>
 		<projectile>
-			<speed>3</speed>
+			<speed>4</speed>
 			<soundAmbient>VPE_BallLightning_Sustainer</soundAmbient>
 			<shadowSize>0</shadowSize>
+			<explosionRadius>5</explosionRadius>
+			<damageDef>EMP</damageDef>
+			<damageAmountBase>15</damageAmountBase>
 		</projectile>
     </ThingDef>
 </Defs>

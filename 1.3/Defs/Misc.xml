@@ -70,7 +70,7 @@
                 <hediffsToApply>
                     <li>
                         <hediff>VPE_Hurricane</hediff>
-                        <severityOffset>0.01</severityOffset>
+                        <severityOffset>0.05</severityOffset>
                     </li>
                 </hediffsToApply>
             </li>
@@ -83,6 +83,6 @@
         <description>A Staticlord is creating a hurricane.</description>
         <letterDef>NegativeEvent</letterDef>
         <canBePermanent>false</canBePermanent>
-        <weatherDef>VPE_Hurricane</weatherDef>        <!-- Initial -->
+        <weatherDef>VPE_Hurricane</weatherDef>
     </GameConditionDef>
 </Defs>

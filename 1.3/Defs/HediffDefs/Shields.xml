@@ -47,16 +47,17 @@
                 <compClass>VFECore.Shields.HediffComp_DamageAura</compClass>
                 <graphic>
                     <texPath>Effects/Staticlord/StaticAura/StaticAura</texPath>
-                    <drawSize>(13, 13)</drawSize>
+                    <drawSize>(14, 14)</drawSize>
                     <graphicClass>Graphic_Single</graphicClass>
                     <shaderType>TransparentPostLight</shaderType>
                 </graphic>
                 <damageDef>EMP</damageDef>
                 <damageAmount>5</damageAmount>
-                <ticksBetween>5</ticksBetween>
+                <ticksBetween>60</ticksBetween>
                 <radius>6</radius>
                 <sustainer>VPE_StaticAura_Sustainer</sustainer>
                 <soundEnded>VPE_StaticAura_End</soundEnded>
+                <hostileOnly>false</hostileOnly>
             </li>
         </comps>
     </HediffDef>

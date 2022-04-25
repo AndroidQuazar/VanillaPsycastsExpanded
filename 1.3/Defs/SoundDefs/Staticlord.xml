@@ -87,7 +87,7 @@
             <clipPath>Staticlord/Psycast_StaticAura_Sustainer_01a</clipPath>
           </li>
         </grains>
-        <volumeRange>28</volumeRange>
+        <volumeRange>19</volumeRange>
         <distRange>20~50</distRange>
         <sustainLoop>True</sustainLoop>
       </li>
@@ -159,7 +159,7 @@
             <clipPath>Staticlord/Psycast_BallLightning_Sustainer_01a</clipPath>
           </li>
         </grains>
-        <volumeRange>31</volumeRange>
+        <volumeRange>23</volumeRange>
         <distRange>20~50</distRange>
         <sustainLoop>True</sustainLoop>
       </li>
