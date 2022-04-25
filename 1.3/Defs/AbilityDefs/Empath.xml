@@ -171,12 +171,11 @@
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
           <level>3</level>
-          <order>1</order>
-          <spaceAfter>true</spaceAfter>
+          <order>2</order>
           <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-              <li>VPE_WordofSerenity</li>
+              <li>VPE_WordofInspiration</li>
           </prerequisites>
         </li>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
