@@ -25,7 +25,7 @@
         <iconPath>UI/Abilities/WordOfJoy</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 		<castTime>120</castTime>
-		<durationTime>300000</durationTime>
+		<durationTime>5000</durationTime>
 		<durationTimeStatFactors>
 			<PsychicSensitivity>1</PsychicSensitivity>
 		</durationTimeStatFactors>
