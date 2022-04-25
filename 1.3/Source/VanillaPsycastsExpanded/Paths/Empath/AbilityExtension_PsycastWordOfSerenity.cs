@@ -16,7 +16,6 @@
 		public List<MentalStateDef> exceptions;
 		public override void Cast(LocalTargetInfo target, Ability ability)
 		{
-			Log.Message("CAsting: " + PsyfocusCostForTarget(target) + " - " + target);
 			Hediff_PsycastAbilities psycastHediff =
 				(Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
 			psycastHediff.UseAbility(PsyfocusCostForTarget(target), this.GetEntropyUsedByPawn(ability.pawn));
@@ -61,7 +60,7 @@
 				if (exceptions.Contains(pawn.MentalStateDef))
 				{
 					if (throwMessages)
-					{
+                    {
 						Messages.Message("AbilityDoesntWorkOnMentalState".Translate(ability.def.label, pawn.MentalStateDef.label), pawn, MessageTypeDefOf.RejectInput, historical: false);
 					}
 					return false;
@@ -71,7 +70,7 @@
 				{
 					Pawn pawn2 = ability.pawn;
 					if (throwMessages)
-					{
+                    {
 						TaggedString taggedString = ("MentalBreakIntensity" + TargetMentalBreakIntensity(target)).Translate();
 						Messages.Message("CommandPsycastNotEnoughPsyfocusForMentalBreak".Translate(num.ToStringPercent(), taggedString, pawn2.psychicEntropy.CurrentPsyfocus.ToStringPercent("0.#"), ability.def.label.Named("PSYCASTNAME"), pawn2.Named("CASTERNAME")), pawn, MessageTypeDefOf.RejectInput, historical: false);
 					}

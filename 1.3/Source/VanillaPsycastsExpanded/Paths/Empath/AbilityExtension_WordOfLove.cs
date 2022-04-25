@@ -64,12 +64,6 @@
 			pawn.health.AddHediff(hediff_PsychicLove);
 			Log.Message("Added hediff to " + pawn + " - " + hediff_PsychicLove + " - target: " + dest.Thing);
 		}
-
-		public override bool CanApplyOn(LocalTargetInfo target, Ability ability)
-		{
-			return Valid(target, ability);
-		}
-
 		public bool ValidateTarget(LocalTargetInfo target, Ability ability, bool showMessages = true)
 		{
 			Pawn pawn = ability.selectedTarget.Pawn;
@@ -91,15 +85,15 @@
 			return true;
 		}
 
-		public bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
-		{
+        public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
+        {
 			Pawn pawn = target.Pawn;
 			if (pawn != null)
 			{
 				if (pawn.story.traits.HasTrait(TraitDefOf.Asexual))
 				{
 					if (throwMessages)
-					{
+                    {
 						Messages.Message("AbilityCantApplyOnAsexual".Translate(ability.def.label), pawn, MessageTypeDefOf.RejectInput, historical: false);
 					}
 					return false;
@@ -110,7 +104,7 @@
 				}
 			}
 			return true;
-		}
+        }
 
 		public override string ExtraLabelMouseAttachment(LocalTargetInfo target, Ability ability)
 		{
