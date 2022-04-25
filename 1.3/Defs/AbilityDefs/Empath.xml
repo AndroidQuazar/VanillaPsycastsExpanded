@@ -6,6 +6,15 @@
 		<targetMode>Humanlike</targetMode>
 		<range>999999</range>
 		<distanceToTarget>1.5</distanceToTarget>
+		<warmupMote>Mote_WarmupWordOf</warmupMote>
+		<warmupSound>Psycast_WordOf_Warmup</warmupSound>
+		<drawAimPie>false</drawAimPie>
+        <modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDef>WordOfApply</fleckDef>
+				<sound>Psycast_WordOf_Effect</sound>
+			</li>
+        </modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
     <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
@@ -35,7 +44,7 @@
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
         <defName>VPE_WordofLove</defName>
         <label>word of love</label>
         <description>Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This power can be used to connect two other people, induce love for the caster, or force oneself to love another.</description>
