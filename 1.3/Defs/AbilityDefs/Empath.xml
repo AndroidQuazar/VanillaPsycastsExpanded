@@ -5,6 +5,7 @@
 		<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
 		<targetMode>Humanlike</targetMode>
 		<range>999999</range>
+		<castTime>120</castTime>
 		<distanceToTarget>1.5</distanceToTarget>
 		<warmupMote>Mote_WarmupWordOf</warmupMote>
 		<warmupSound>Psycast_WordOf_Warmup</warmupSound>
@@ -24,7 +25,6 @@
         <description>Speak happy, calming words to someone while using psychic suggestion to implant a joyfuzz loop in his mind. The joyfuzz will suppress uncomfortable thoughts and sensations in the target to improve mood. This has the side-effect of dulling sensation and decision-making, which reduces consciousness.</description>
         <iconPath>UI/Abilities/WordOfJoy</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
-		<castTime>120</castTime>
 		<durationTime>5000</durationTime>
 		<durationTimeStatFactors>
 			<PsychicSensitivity>1</PsychicSensitivity>
@@ -71,22 +71,32 @@
 			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
         <defName>VPE_WordofSerenity</defName>
         <label>word of serenity</label>
         <description>Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.</description>
         <iconPath>Abilities/Empath/WordofSerenity</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
         <modExtensions>
-            <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+            <li Class="VanillaPsycastsExpanded.AbilityExtension_PsycastWordOfSerenity">
                 <path>VPE_Empath</path>
                 <level>2</level>
                 <order>1</order>
-                <psyfocusCost>0.3</psyfocusCost>
+				<exceptions><li>Jailbreaker</li></exceptions>
+				<psyfocusCostForMinor>0.3</psyfocusCostForMinor>
+				<psyfocusCostForMajor>0.5</psyfocusCostForMajor>
+				<psyfocusCostForExtreme>0.7</psyfocusCostForExtreme>
                 <entropyGain>0</entropyGain>
                 <prerequisites>
                     <li>VPE_WordofLove</li>
                 </prerequisites>
             </li>
+			
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>PsychicComa</hediff>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">

@@ -1,8 +1,9 @@
 ﻿namespace VanillaPsycastsExpanded
 {
-	using RimWorld;
+    using RimWorld;
     using Verse;
-	using VFECore.Abilities;
+    using VFECore.Abilities;
+    using static HarmonyLib.Code;
     using Ability = VFECore.Abilities.Ability;
     public class AbilityExtension_WordOfLove : AbilityExtension_AbilityMod
 	{
