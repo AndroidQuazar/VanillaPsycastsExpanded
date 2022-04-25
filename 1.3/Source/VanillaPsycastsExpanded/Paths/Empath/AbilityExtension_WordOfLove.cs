@@ -1,12 +1,9 @@
 ﻿namespace VanillaPsycastsExpanded
 {
-    using Mono.Unix.Native;
-using RimWorld;
-    using System.Security.Cryptography;
+	using RimWorld;
     using Verse;
 	using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
-
     public class AbilityExtension_WordOfLove : AbilityExtension_AbilityMod
 	{
 		public TargetingParameters targetParams => new TargetingParameters
@@ -17,18 +14,34 @@ using RimWorld;
 			canTargetMechs = false,
 			canTargetHumans = true
 		};
-
-		public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void PreCast(LocalTargetInfo target, Ability ability, ref bool startAbilityJob)
         {
-            base.Cast(target, ability);
+			startAbilityJob = false;
+			Log.Message("PRECAST: " + target.Thing);
+			Find.Targeter.StopTargeting();
 			Find.Targeter.BeginTargeting(targetParams, delegate (LocalTargetInfo dest)
 			{
-				if (ValidateTarget(dest, ability))
-                {
-					Apply(target, dest, ability);
-				}
+				Log.Message("STARTED 1: " + dest.Thing);
+				Find.Targeter.BeginTargeting(targetParams, delegate (LocalTargetInfo dest)
+				{
+					Log.Message("STARTED 2: " + dest.Thing);
+					if (ValidateTarget(dest, ability))
+					{
+						ability.selectedTarget = dest;
+						ability.StartAbilityJob(target);
+						Log.Message("STARTING JOB, SELECTED TARGET: " + ability.selectedTarget.Thing);
+					}
+				}, ability.pawn);
 			});
-        }
+
+			Find.Targeter.targetingSourceAdditionalPawns = new System.Collections.Generic.List<Pawn>();
+		}
+        public override void Cast(LocalTargetInfo target, Ability ability)
+        {
+            base.Cast(target, ability);
+			Log.Message("CAST: " + target.Thing);
+			Apply(target, ability.selectedTarget, ability);
+		}
         public override void Apply(LocalTargetInfo target, LocalTargetInfo dest, Ability ability)
         {
             base.Apply(target, dest, ability);
@@ -48,6 +61,7 @@ using RimWorld;
 				hediffComp_Disappears.ticksToDisappear = num.SecondsToTicks();
 			}
 			pawn.health.AddHediff(hediff_PsychicLove);
+			Log.Message("Added hediff to " + pawn + " - " + hediff_PsychicLove + " - target: " + dest.Thing);
 		}
 
 		public override bool CanApplyOn(LocalTargetInfo target, Ability ability)

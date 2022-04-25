@@ -62,7 +62,7 @@
     <Compile Include="AbilityExtension_Psycast.cs" />
     <Compile Include="HarmonyPatches\Pawn_EntropyTracker_Patches.cs" />
     <Compile Include="Hediff_PsycastAbilities.cs" />
-    <Compile Include="Paths\Empath\VPE_DefOf.cs" />
+    <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Staticlord\Ability_Flashstorm.cs" />
     <Compile Include="Paths\Staticlord\Hurricane.cs" />
     <Compile Include="Paths\Staticlord\Vortex.cs" />

@@ -53,6 +53,7 @@
         <label>word of love</label>
         <description>Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This power can be used to connect two other people, induce love for the caster, or force oneself to love another.</description>
         <iconPath>Abilities/Empath/WordofLove</iconPath>
+		<durationTime>8000</durationTime>
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
                 <path>VPE_Empath</path>
@@ -64,6 +65,7 @@
                     <li>VPE_WordofJoy</li>
                 </prerequisites>
             </li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_WordOfLove"></li>
 			<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
 				<interactionDef>WordOfLove</interactionDef>
 			</li>
