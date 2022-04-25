@@ -133,6 +133,7 @@
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects males.</description>
       <iconPath>Abilities/Empath/SootheMale</iconPath>
 	  <castSound>PsychicSoothePulserCast</castSound>
+	  <castTime>600</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>PsycastAreaEffect</castFleck>
 	  <castFleckScale>99</castFleckScale>
@@ -164,6 +165,7 @@
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>PsycastAreaEffect</castFleck>
 	  <castFleckScale>99</castFleckScale>
+	  <castTime>600</castTime>
 	  <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -183,11 +185,14 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_Bliss</defName>
       <label>bliss</label>
       <description>After a brief meditation period, induce a sense of serenity in the target that reaches maximum magnitude near the effect’s end. As the calming feeling becomes more pronounced, they will find it harder to concentrate but it is not considered a malicious action.</description>
       <iconPath>Abilities/Empath/Bliss</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <durationTime>1000</durationTime>
+	  <castTime>1200</castTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -199,8 +204,12 @@
               <li>VPE_SootheMale</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_Bliss</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_EnergyDump</defName>
       <label>energy dump</label>
