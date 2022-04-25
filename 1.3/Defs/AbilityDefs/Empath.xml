@@ -103,7 +103,8 @@
 			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
         <defName>VPE_WordofInspiration</defName>
         <label>word of inspiration</label>
         <description>Speak words encouraging creativity while psychically hypercharging the target's mind with new ideas. The target will experience a random inspiration appropriate to them.</description>
@@ -119,13 +120,23 @@
                     <li>VPE_WordofLove</li>
                 </prerequisites>
             </li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveInspiration"/>
+			<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
+				<interactionDef>WordOfInspiration</interactionDef>
+			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SootheMale</defName>
       <label>psychic sooth (male)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects males.</description>
       <iconPath>Abilities/Empath/SootheMale</iconPath>
+	  <castSound>PsychicSoothePulserCast</castSound>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <castFleck>PsycastAreaEffect</castFleck>
+	  <castFleckScale>99</castFleckScale>
+	  <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -138,26 +149,40 @@
               <li>VPE_WordofSerenity</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
+			<gender>Male</gender>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SootheFemale</defName>
       <label>psychic sooth (female)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects females.</description>
       <iconPath>Abilities/Empath/SootheFemale</iconPath>
+	  <castSound>PsychicSoothePulserCast</castSound>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <castFleck>PsycastAreaEffect</castFleck>
+	  <castFleckScale>99</castFleckScale>
+	  <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
           <level>3</level>
-          <order>2</order>
+          <order>1</order>
+          <spaceAfter>true</spaceAfter>
           <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
-              <li>VPE_WordofInspiration</li>
+              <li>VPE_WordofSerenity</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
+			<gender>Female</gender>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Bliss</defName>
       <label>bliss</label>

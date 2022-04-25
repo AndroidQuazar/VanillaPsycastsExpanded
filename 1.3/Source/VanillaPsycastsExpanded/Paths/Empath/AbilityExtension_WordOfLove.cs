@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+using System.Security.Cryptography;
     using Verse;
     using VFECore.Abilities;
     using static HarmonyLib.Code;
@@ -39,13 +40,6 @@
 		}
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
-            base.Cast(target, ability);
-			Log.Message("CAST: " + target.Thing);
-			Apply(target, ability.selectedTarget, ability);
-		}
-        public override void Apply(LocalTargetInfo target, LocalTargetInfo dest, Ability ability)
-        {
-            base.Apply(target, dest, ability);
 			Pawn pawn = target.Pawn;
 			Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicLove);
 			if (firstHediffOfDef != null)
@@ -53,7 +47,7 @@
 				pawn.health.RemoveHediff(firstHediffOfDef);
 			}
 			Hediff_PsychicLove hediff_PsychicLove = (Hediff_PsychicLove)HediffMaker.MakeHediff(HediffDefOf.PsychicLove, pawn, pawn.health.hediffSet.GetBrain());
-			hediff_PsychicLove.target = dest.Thing;
+			hediff_PsychicLove.target = ability.selectedTarget.Thing;
 			HediffComp_Disappears hediffComp_Disappears = hediff_PsychicLove.TryGetComp<HediffComp_Disappears>();
 			if (hediffComp_Disappears != null)
 			{
@@ -62,7 +56,7 @@
 				hediffComp_Disappears.ticksToDisappear = num.SecondsToTicks();
 			}
 			pawn.health.AddHediff(hediff_PsychicLove);
-			Log.Message("Added hediff to " + pawn + " - " + hediff_PsychicLove + " - target: " + dest.Thing);
+			Log.Message("Added hediff to " + pawn + " - " + hediff_PsychicLove + " - target: " + ability.selectedTarget.Thing);
 		}
 		public bool ValidateTarget(LocalTargetInfo target, Ability ability, bool showMessages = true)
 		{
