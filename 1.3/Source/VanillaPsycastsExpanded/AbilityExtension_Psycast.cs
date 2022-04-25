@@ -72,12 +72,11 @@
             return false;
         }
 
-        public override void Cast(Ability ability)
+        public override void Cast(LocalTargetInfo target, Ability ability)
         {
-            base.Cast(ability);
-
+            base.Cast(target, ability);
             Hediff_PsycastAbilities psycastHediff =
-                (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+                (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
         }
 

@@ -9,6 +9,7 @@
 		<warmupMote>Mote_WarmupWordOf</warmupMote>
 		<warmupSound>Psycast_WordOf_Warmup</warmupSound>
 		<drawAimPie>false</drawAimPie>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
         <modExtensions>
 			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
 				<fleckDef>WordOfApply</fleckDef>
@@ -41,6 +42,9 @@
 				<hediff>Joyfuzz</hediff>
 				<bodyPartToApply>Brain</bodyPartToApply>
 			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
+				<interactionDef>WordOfJoy</interactionDef>
+			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
@@ -60,6 +64,9 @@
                     <li>VPE_WordofJoy</li>
                 </prerequisites>
             </li>
+			<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
+				<interactionDef>WordOfLove</interactionDef>
+			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
