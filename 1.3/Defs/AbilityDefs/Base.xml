@@ -3,7 +3,7 @@
 
     <VFECore.Abilities.AbilityDef Name="VPE_PsycastBase" Abstract="true">
         <warmupSound>VPE_PsycastCastingEffect</warmupSound>
-        <castFleck>VPE_Fleck_CastPsycast</castFleck>
+        <warmupMote>VPE_Mote_CastPsycast</warmupMote>
     </VFECore.Abilities.AbilityDef>
 
 </Defs>
