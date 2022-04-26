@@ -231,11 +231,13 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_MindWipe</defName>
       <label>mind wipe</label>
       <description>Induce a harmless, instantaneous retrograde amnesia in the target, purging all memories, social bonds and skills acquired outside of their backstory. They also feel a strong kinship with the caster’s colony and joy at rediscovering the joys of life without commitment.</description>
       <iconPath>Abilities/Empath/MindWipe</iconPath>
+	  <castTime>300</castTime>
+	  <goodwillImpact>-25</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -248,6 +250,14 @@
             <li>VPE_EnergyDump</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_MindWipe"></li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_ThoughtOnTarget">
+			<thoughtDef>VPE_MindWiped</thoughtDef>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	

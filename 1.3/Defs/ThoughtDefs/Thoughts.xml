@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>VPE_Bliss</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>VPE_Bliss</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>10</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>20</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>30</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>40</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>50</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>60</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>70</baseMoodEffect>
+			</li>
+			<li>
+				<label>bliss</label>
+				<description>bliss</description>
+				<baseMoodEffect>80</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+  <ThoughtDef>
+    <defName>VPE_MindWiped</defName>
+    <durationDays>300</durationDays>
+    <stages>
+      <li>
+        <label>mind wiped</label>
+        <description>I don’t remember anything, I’m exploring everything anew!</description>
+        <baseMoodEffect>20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+	
+</Defs>
