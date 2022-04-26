@@ -126,7 +126,7 @@
 			</li>
         </modExtensions>
     </VFECore.Abilities.AbilityDef>
-	
+
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_SootheMale</defName>
       <label>psychic sooth (male)</label>
@@ -135,8 +135,8 @@
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <castTime>600</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
-	  <castFleck>PsycastAreaEffect</castFleck>
-	  <castFleckScale>99</castFleckScale>
+	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+	  <castFleckScale>9</castFleckScale>
 	  <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -163,9 +163,8 @@
       <iconPath>Abilities/Empath/SootheFemale</iconPath>
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
-	  <castFleck>PsycastAreaEffect</castFleck>
-	  <castFleckScale>99</castFleckScale>
-	  <castTime>600</castTime>
+	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+	  <castFleckScale>9</castFleckScale>
 	  <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

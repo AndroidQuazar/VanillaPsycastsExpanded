@@ -78,4 +78,21 @@
       <random>true</random>
     </graphicData>
   </FleckDef>
+  
+	<FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
+		<defName>VFEP_PsycastAreaEffectSlow</defName>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<fadeInTime>2</fadeInTime>
+		<fadeOutTime>6</fadeOutTime>
+		<solidTime>12</solidTime>
+		<growthRate>9</growthRate>
+		<graphicData>
+		<texPath>Things/Mote/Black</texPath>
+		<shaderParameters>
+			<_distortionIntensity>0.05</_distortionIntensity>
+			<_brightnessMultiplier>1.15</_brightnessMultiplier>
+		</shaderParameters>
+		<drawSize>2.3</drawSize>
+		</graphicData>
+	</FleckDef>
 </Defs>
