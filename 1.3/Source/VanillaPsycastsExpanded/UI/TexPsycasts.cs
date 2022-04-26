@@ -11,5 +11,6 @@
         public static Texture2D IconNeuralHeatLimit     = ContentFinder<Texture2D>.Get("UI/Icons/IconNeuralHeatLimit");
         public static Texture2D IconNeuralHeatRegenRate = ContentFinder<Texture2D>.Get("UI/Icons/IconNeuralHeatRegenRate");
         public static Texture2D IconPsychicSensitivity  = ContentFinder<Texture2D>.Get("UI/Icons/IconPsychicSensitivity");
+        public static Texture2D IconPsyfocusCost        = ContentFinder<Texture2D>.Get("UI/Icons/IconPsyfocusCost");
     }
 }

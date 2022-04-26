@@ -227,7 +227,7 @@
               <li>VPE_SootheFemale</li>
           </prerequisites>
         </li>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_EnergyDump"></li>
+		<li Class="VanillaPsycastsExpanded.Empath.AbilityExtension_EnergyDump"></li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	

@@ -66,11 +66,11 @@
         </skyColorsNightMid>
         <modExtensions>
             <li Class="VFECore.WeatherEffectsExtension">
-                <ticksInterval>60</ticksInterval>
+                <ticksInterval>100</ticksInterval>
                 <hediffsToApply>
                     <li>
                         <hediff>VPE_Hurricane</hediff>
-                        <severityOffset>0.05</severityOffset>
+                        <severityOffset>0.004</severityOffset>
                     </li>
                 </hediffsToApply>
             </li>
@@ -85,4 +85,29 @@
         <canBePermanent>false</canBePermanent>
         <weatherDef>VPE_Hurricane</weatherDef>
     </GameConditionDef>
+    <StatDef>
+        <defName>VPE_PsyfocusCostFactor</defName>
+        <label>psyfocus cost factor</label>
+        <description>A multiplier on psyfocus cost of psycasts.</description>
+        <category>BasicsPawn</category>
+        <minValue>0</minValue>
+        <hideAtValue>1</hideAtValue>
+        <defaultBaseValue>1</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>false</showOnAnimals>
+        <showOnMechanoids>false</showOnMechanoids>
+        <displayPriorityInCategory>3400</displayPriorityInCategory>
+    </StatDef>
+    <GameConditionDef>
+        <defName>VPE_PsychicFlashstorm</defName>
+        <conditionClass>VanillaPsycastsExpanded.Staticlord.GameCondition_PsychicFlashstorm</conditionClass>
+        <label>flashstorm</label>
+        <description>A freak localized storm is blasting a small area with repeated lightning strikes.</description>
+        <endMessage>The flashstorm is over.</endMessage>
+        <letterText>A freak localized flashstorm is striking a small area with lightning. This can cause massive fires.</letterText>
+        <letterDef>NegativeEvent</letterDef>
+        <preventRain>true</preventRain>
+        <canBePermanent>true</canBePermanent>
+        <jumpToSourceKey>ClickToJumpToFlashstorm</jumpToSourceKey>
+      </GameConditionDef>
 </Defs>

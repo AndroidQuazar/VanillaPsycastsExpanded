@@ -2,9 +2,12 @@
 {
     using System.Collections.Generic;
     using System.Text;
+    using RimWorld;
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
+    using Ability = VFECore.Abilities.Ability;
+    using AbilityDef = VFECore.Abilities.AbilityDef;
 
     public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
     {
@@ -22,7 +25,7 @@
             return this.prerequisites == null || pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
         }
 
-        public float GetPsyfocusUsedByPawn(Pawn pawn) => this.psyfocusCost;
+        public float GetPsyfocusUsedByPawn(Pawn pawn) => this.psyfocusCost * pawn.GetStatValue(VPE_DefOf.VPE_PsyfocusCostFactor);
 
         public float GetEntropyUsedByPawn(Pawn pawn) => this.entropyGain;
 
@@ -75,6 +78,7 @@
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
             base.Cast(target, ability);
+
             Hediff_PsycastAbilities psycastHediff =
                 (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));

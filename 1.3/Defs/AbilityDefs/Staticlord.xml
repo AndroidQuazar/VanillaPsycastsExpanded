@@ -255,6 +255,10 @@
       <radius>14</radius>
       <durationTime>9840</durationTime>
       <targetMode>Location</targetMode>
+      <power>40</power>
+      <powerStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </powerStatFactors>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Staticlord</path>

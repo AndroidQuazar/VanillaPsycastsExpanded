@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Paths\Empath\AbilityExtension_EnergyDump.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Paths\Conflagrator\FireBeam.cs" />
@@ -69,6 +70,8 @@
     <Compile Include="Paths\Empath\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_EnergyDump.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
+    <Compile Include="Paths\Skipmaster\Ability_Chunkskip.cs" />
+    <Compile Include="Paths\Skipmaster\Ability_Waterskip.cs" />
     <Compile Include="Paths\Staticlord\Ability_Flashstorm.cs" />
     <Compile Include="Paths\Staticlord\Hurricane.cs" />
     <Compile Include="Paths\Staticlord\Vortex.cs" />

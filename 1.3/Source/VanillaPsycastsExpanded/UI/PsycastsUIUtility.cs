@@ -34,6 +34,7 @@
             Rect  rect   = listing.GetRect(height);
             float width  = icon.width * (height / icon.height);
             GUI.DrawTexture(rect.TakeLeftPart(width), icon);
+            rect.xMin += 3f;
             Widgets.Label(rect, label);
             listing.Gap(3f);
         }

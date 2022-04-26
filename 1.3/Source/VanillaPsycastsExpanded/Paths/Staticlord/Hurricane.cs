@@ -1,6 +1,5 @@
 ﻿namespace VanillaPsycastsExpanded.Staticlord
 {
-    using HarmonyLib;
     using RimWorld;
     using UnityEngine;
     using Verse;
@@ -105,51 +104,35 @@
         }
     }
 
-    [StaticConstructorOnStartup]
-    [HarmonyPatch]
     public class WeatherOverlay_RainSideways : SkyOverlay
     {
-        private static readonly Material RainOverlayWorld = MatLoader.LoadMat("Weather/RainOverlayWorld");
-        private                 float    rotation;
-
         public WeatherOverlay_RainSideways()
         {
-            this.worldOverlayMat       = RainOverlayWorld;
-            this.worldOverlayPanSpeed1 = 0.015f;
-            this.worldPanDir1          = new Vector2(-1f, -0.25f);
-            this.worldPanDir1.Normalize();
-            this.worldOverlayPanSpeed2 = 0.022f;
-            this.worldPanDir2          = new Vector2(-1f, -0.22f);
-            this.worldPanDir2.Normalize();
+            LongEventHandler.ExecuteWhenFinished(() =>
+            {
+                this.worldOverlayMat       = TexHurricane.HurricaneOverlay;
+                this.worldOverlayPanSpeed1 = 0.015f;
+                this.worldPanDir1          = new Vector2(-1f, -0.25f);
+                this.worldPanDir1.Normalize();
+                this.worldOverlayPanSpeed2 = 0.022f;
+                this.worldPanDir2          = new Vector2(-1f, -0.22f);
+                this.worldPanDir2.Normalize();
+            });
         }
+    }
 
-        public override void TickOverlay(Map map)
+    [StaticConstructorOnStartup]
+    public static class TexHurricane
+    {
+        public static readonly Material HurricaneOverlay =
+            MaterialPool.MatFrom("Effects/Staticlord/Hurricane/VPEHurricaneWorldOverlay", ShaderDatabase.WorldOverlayTransparent);
+    }
+
+    public class HediffComp_Hurricane : HediffComp_SeverityPerDay
+    {
+        public override void CompPostTick(ref float severityAdjustment)
         {
-            base.TickOverlay(map);
-            this.rotation = Mathf.Clamp(this.rotation + 1f, 0f, 360f);
+            if (this.Pawn.Map.weatherManager.CurWeatherPerceived != VPE_DefOf.VPE_Hurricane_Weather) base.CompPostTick(ref severityAdjustment);
         }
-
-        // [HarmonyPatch(typeof(SkyOverlay), nameof(DrawOverlay))]
-        // [HarmonyTranspiler]
-        // public static IEnumerable<CodeInstruction> DrawOverlyTranspiler(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
-        // {
-        //     MethodInfo info = AccessTools.PropertyGetter(typeof(Quaternion), nameof(Quaternion.identity));
-        //     foreach (CodeInstruction instruction in instructions)
-        //         if (instruction.Calls(info))
-        //         {
-        //             Label label  = generator.DefineLabel();
-        //             Label label2 = generator.DefineLabel();
-        //             yield return new CodeInstruction(OpCodes.Ldarg_0);
-        //             yield return new CodeInstruction(OpCodes.Isinst,  typeof(WeatherOverlay_RainSideways));
-        //             yield return new CodeInstruction(OpCodes.Brfalse, label);
-        //             yield return new CodeInstruction(OpCodes.Ldsfld,  AccessTools.Field(typeof(WeatherOverlay_RainSideways), nameof(rotation)));
-        //             yield return new CodeInstruction(OpCodes.Call,    AccessTools.PropertyGetter(typeof(Vector3), nameof(Vector3.up)));
-        //             yield return new CodeInstruction(OpCodes.Call,    AccessTools.Method(typeof(Quaternion), nameof(Quaternion.AngleAxis)));
-        //             yield return new CodeInstruction(OpCodes.Br,      label2);
-        //             yield return instruction.WithLabels(label);
-        //             yield return new CodeInstruction(OpCodes.Nop).WithLabels(label2);
-        //         }
-        //         else yield return instruction;
-        // }
     }
 }

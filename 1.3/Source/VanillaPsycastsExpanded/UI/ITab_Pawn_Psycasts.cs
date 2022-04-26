@@ -123,6 +123,7 @@
             listing.StatDisplay(TexPsycasts.IconNeuralHeatRegenRate, StatDefOf.PsychicEntropyRecoveryRate, this.pawn);
             listing.StatDisplay(TexPsycasts.IconPsychicSensitivity,  StatDefOf.PsychicSensitivity,         this.pawn);
             listing.StatDisplay(TexPsycasts.IconPsyfocusGain,        StatDefOf.MeditationFocusGain,        this.pawn);
+            listing.StatDisplay(TexPsycasts.IconPsyfocusCost,        VPE_DefOf.VPE_PsyfocusCostFactor,     this.pawn);
             listing.LabelWithIcon(TexPsycasts.IconFocusTypes, "VPE.FocusTypes".Translate());
             Text.Anchor = TextAnchor.UpperLeft;
             Rect  fociRect = listing.GetRect(48f);

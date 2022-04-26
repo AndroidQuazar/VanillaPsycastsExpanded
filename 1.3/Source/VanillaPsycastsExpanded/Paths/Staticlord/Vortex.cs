@@ -31,7 +31,9 @@
             if (Find.TickManager.TicksGame - this.startTick > DURATION) this.Destroy();
             if (this.IsHashIntervalTick(30))
                 foreach (Pawn pawn in GenRadial.RadialDistinctThingsAround(this.Position, this.Map, RADIUS, true).OfType<Pawn>())
-                    if (pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_Vortex) is null)
+                    if (pawn.RaceProps.IsMechanoid)
+                        pawn.stances.stunner.StunFor(30, this, false);
+                    else if (pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_Vortex) is null)
                     {
                         Hediff_Vortexed hediff = (Hediff_Vortexed) HediffMaker.MakeHediff(VPE_DefOf.VPE_Vortex, pawn);
                         hediff.Vortex = this;
@@ -40,9 +42,9 @@
         }
 
         private Vector3 RandomLocation() =>
-            this.DrawPos + new Vector3(this.Wrap(Mathf.Abs(Rand.Gaussian(0f, RADIUS)), RADIUS), 0f, 0f).RotatedBy(Rand.Range(0f, 360f));
+            this.DrawPos + new Vector3(Wrap(Mathf.Abs(Rand.Gaussian(0f, RADIUS)), RADIUS), 0f, 0f).RotatedBy(Rand.Range(0f, 360f));
 
-        private float Wrap(float x, float max)
+        public static float Wrap(float x, float max)
         {
             while (x > max) x -= max;
             return x;

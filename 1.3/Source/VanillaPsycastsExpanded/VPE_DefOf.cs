@@ -24,5 +24,9 @@
 
         [DefAlias("VPE_Hurricane")] public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")] public static GameConditionDef VPE_Hurricane_Condition;
+
+        public static StatDef VPE_PsyfocusCostFactor;
+
+        public static GameConditionDef VPE_PsychicFlashstorm;
     }
 }
