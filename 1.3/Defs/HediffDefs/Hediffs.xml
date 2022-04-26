@@ -208,11 +208,12 @@
 			<li>
 				<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
 				<scale>0.5~0.7</scale>
-				<chancePerTick>0.03</chancePerTick>
+				<chancePerTick>0.01</chancePerTick>
 				<positionRadius>0.3</positionRadius>
-				<moteDef>Mote_DrunkBubble</moteDef>
+				<moteDef>VPE_Mote_Butterfly</moteDef>
 				<speed>0.18~0.18</speed>
-				<angle>10~80</angle>
+				<rotation>0~360</rotation>
+				<angle>0~360</angle>
 			</li>
 		</children>
 	</EffecterDef>

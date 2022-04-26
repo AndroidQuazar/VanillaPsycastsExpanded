@@ -25,7 +25,7 @@
         <description>Speak happy, calming words to someone while using psychic suggestion to implant a joyfuzz loop in his mind. The joyfuzz will suppress uncomfortable thoughts and sensations in the target to improve mood. This has the side-effect of dulling sensation and decision-making, which reduces consciousness.</description>
         <iconPath>UI/Abilities/WordOfJoy</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
-		<durationTime>5000</durationTime>
+		<durationTime>300000</durationTime>
 		<durationTimeStatFactors>
 			<PsychicSensitivity>1</PsychicSensitivity>
 		</durationTimeStatFactors>
@@ -53,7 +53,7 @@
         <label>word of love</label>
         <description>Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This power can be used to connect two other people, induce love for the caster, or force oneself to love another.</description>
         <iconPath>Abilities/Empath/WordofLove</iconPath>
-		<durationTime>8000</durationTime>
+		<durationTime>480000</durationTime>
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
                 <path>VPE_Empath</path>
@@ -77,7 +77,7 @@
         <label>word of serenity</label>
         <description>Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.</description>
         <iconPath>Abilities/Empath/WordofSerenity</iconPath>
-		<durationTime>250</durationTime>
+		<durationTime>15000</durationTime>
 		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.AbilityExtension_PsycastWordOfSerenity">
@@ -189,7 +189,7 @@
       <description>After a brief meditation period, induce a sense of serenity in the target that reaches maximum magnitude near the effect’s end. As the calming feeling becomes more pronounced, they will find it harder to concentrate but it is not considered a malicious action.</description>
       <iconPath>Abilities/Empath/Bliss</iconPath>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
-	  <durationTime>1000</durationTime>
+	  <durationTime>60000</durationTime>
 	  <castTime>1200</castTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
