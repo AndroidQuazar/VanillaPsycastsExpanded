@@ -33,6 +33,9 @@
                 <statFactors>
                     <Flammability>0</Flammability>
                 </statFactors>
+                <statOffsets>
+                    <ComfyTemperatureMax>1000</ComfyTemperatureMax>
+                </statOffsets>
             </li>
         </stages>
     </HediffDef>
