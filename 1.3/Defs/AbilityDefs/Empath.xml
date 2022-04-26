@@ -208,24 +208,29 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_EnergyDump</defName>
       <label>energy dump</label>
       <description>Purges the build-up of fatigue in a nearby target and leaves them completely refreshed, in exchange the caster is left completely exhausted and needing a good nap.</description>
       <iconPath>Abilities/Empath/EnergyDump</iconPath>
+	  <distanceToTarget>3</distanceToTarget>
+	  <castFleck>PsycastPsychicEffect</castFleck>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
           <level>4</level>
           <order>3</order>
-          <psyfocusCost>0.6</psyfocusCost>
+          <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
               <li>VPE_SootheFemale</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_EnergyDump"></li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MindWipe</defName>
       <label>mind wipe</label>
@@ -245,6 +250,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ReunionFarskip</defName>
       <label>reunion farskip</label>

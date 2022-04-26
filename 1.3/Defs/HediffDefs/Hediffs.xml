@@ -212,8 +212,8 @@
 				<positionRadius>0.3</positionRadius>
 				<moteDef>VPE_Mote_Butterfly</moteDef>
 				<speed>0.18~0.18</speed>
-				<rotation>0~360</rotation>
-				<angle>0~360</angle>
+				<rotation>0</rotation>
+				<angle>0</angle>
 			</li>
 		</children>
 	</EffecterDef>

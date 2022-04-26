@@ -8,12 +8,6 @@
 
     public class Graphic_AnimatedMote : Graphic_Animated
     {
-        public override void DrawWorker(Vector3 loc, Rot4 rot, ThingDef thingDef, Thing thing, float extraRotation)
-        {
-			Log.Message(this.data.allowFlip + " - " + this.data.drawRotated + " - " + this.data.flipExtraRotation + " - " + this.data.onGroundRandomRotateAngle);
-            base.DrawWorker(loc, rot, thingDef, thing, 0);
-        }
-
 		public override void Init(GraphicRequest req)
 		{
 			data = req.graphicData;
