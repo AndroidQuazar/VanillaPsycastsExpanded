@@ -32,6 +32,7 @@
 
         public override void WarmupToil(Toil toil)
         {
+            base.WarmupToil(toil);
             toil.AddPreTickAction(delegate
             {
                 foreach (Mote maintainedMote in maintainedMotes)
