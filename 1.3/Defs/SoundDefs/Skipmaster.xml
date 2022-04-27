@@ -15,7 +15,7 @@
             </li>
           </grains>
           <volumeRange>53</volumeRange>
-          <distRange>0~15</distRange>
+          <distRange>20~50</distRange>
           <sustainLoop>True</sustainLoop>
         </li>
       </subSounds>

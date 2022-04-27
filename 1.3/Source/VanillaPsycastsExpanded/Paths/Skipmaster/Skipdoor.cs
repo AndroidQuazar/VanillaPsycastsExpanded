@@ -7,6 +7,7 @@
     using Verse.AI;
     using Verse.Sound;
 
+    [StaticConstructorOnStartup]
     public class Skipdoor : ThingWithComps
     {
         private const           string        SKIPGATE_TEXPATH = "Textures/Effects/Skipmaster/Skipgate";
@@ -120,7 +121,7 @@
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
             this.sustainer.End();
-            this.Pawn?.Psycasts()?.OffsetMinHeat(50f);
+            this.Pawn?.Psycasts()?.OffsetMinHeat(-50f);
             WorldComponent_SkipdoorManager.Instance.Skipdoors.Remove(this);
             base.DeSpawn(mode);
             Object.Destroy(this.background1);

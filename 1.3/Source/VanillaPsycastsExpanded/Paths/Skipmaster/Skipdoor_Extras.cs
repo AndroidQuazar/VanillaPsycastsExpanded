@@ -16,7 +16,7 @@
         public Dialog_RenameSkipdoor(Skipdoor skipdoor)
         {
             this.Skipdoor = skipdoor;
-            this.curName  = skipdoor.Name;
+            this.curName  = skipdoor.Name ?? skipdoor.def.label + " #" + Rand.Range(1, 99).ToString("D2");
         }
 
         protected override void SetName(string name)
