@@ -69,7 +69,9 @@
     <Compile Include="Paths\Empath\AbilityExtension_PsycastWordOfSerenity.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
+    <Compile Include="Paths\Skipmaster\Ability_Wallraise.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Chunkskip.cs" />
+    <Compile Include="Paths\Skipmaster\Ability_Smokepop.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Waterskip.cs" />
     <Compile Include="Paths\Staticlord\Ability_Flashstorm.cs" />
     <Compile Include="Paths\Staticlord\Hurricane.cs" />

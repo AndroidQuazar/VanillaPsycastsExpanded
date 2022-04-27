@@ -153,6 +153,10 @@
     <label>wall raise</label>
     <description>Form a temporary wall by skipping rubble and soil up from deep under the ground. Decent range and useful in blocking line of sight and movement for a few hours.</description>
     <iconPath>Abilities/Skipmaster/Wallraise</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Wallraise</abilityClass>
+    <range>25</range>
+    <castTime>60</castTime>
+    <targetMode>Location</targetMode>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -164,6 +168,34 @@
           <li>VPE_ChaosSkip</li>
         </prerequisites>
       </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Wallraise">
+        <pattern>
+          <li>(0, 0)</li>
+          <li>(1, 0)</li>
+          <li>(-1, 0)</li>
+          <li>(0, 1)</li>
+          <li>(0, -1)</li>
+        </pattern>
+        <screenShakeIntensity>1.0</screenShakeIntensity>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>25</clamorRadius>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+        <scale>1.55</scale>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+        <fleckDefs>
+          <li>PsycastSkipInnerExit</li>
+          <li>PsycastSkipOuterRingExit</li>
+        </fleckDefs>
+        <scale>1.55</scale>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
+      </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -171,6 +203,11 @@
     <label>smokepop</label>
     <description>Skip dust particles up from under the ground surface to form a thick cloud. This reduces the accuracy of any shot fired through it, and prevents turrets from locking on entirely.</description>
     <iconPath>Abilities/Skipmaster/Smokepop</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Smokepop</abilityClass>
+    <range>24.9</range>
+    <radius>3.5</radius>
+    <castTime>60</castTime>
+    <targetMode>Location</targetMode>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -181,6 +218,22 @@
         <prerequisites>
           <li>VPE_ChaosSkip</li>
         </prerequisites>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>15</clamorRadius>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+        <effecterDef>Skip_Exit</effecterDef>
+        <maintainForTicks>60</maintainForTicks>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+        <fleckDefs>
+          <li>PsycastSkipInnerExit</li>
+          <li>PsycastSkipOuterRingExit</li>
+        </fleckDefs>
+        <sound>Psycast_Skip_Exit</sound>
+        <preCastTicks>5</preCastTicks>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
