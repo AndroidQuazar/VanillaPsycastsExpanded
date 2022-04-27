@@ -52,6 +52,7 @@
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_Stabilize</defName>
       <label>stabilize</label>
@@ -76,11 +77,15 @@
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofImmunity</defName>
       <label>word of immunity</label>
       <description>Psychically stimulates a person’s immune system into overdrive, effectively tripling their immunity gain speed for a few days.</description>
       <iconPath>Abilities/Protector/WordofImmunity</iconPath>
+	  <castTime>60</castTime>
+	  <durationTime>150000</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -92,8 +97,12 @@
             <li>VPE_WordofHealing</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_Immunity</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Overshield</defName>
       <label>overshield</label>

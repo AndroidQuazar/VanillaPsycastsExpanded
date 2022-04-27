@@ -32,7 +32,7 @@
           <fadeOutTime>1.0</fadeOutTime>
         </mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GreenMist</defName>
 		<graphicData>
@@ -143,5 +143,18 @@
 			<needsMaintenance>true</needsMaintenance>
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_YellowSparkFlash</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.05</solidTime>
+			<fadeOutTime>0.1</fadeOutTime>
+		</mote>
+		<graphicData>
+		<texPath>Things/Mote/YellowSparkFlash</texPath>
+		<shaderType>MoteGlow</shaderType>
+		</graphicData>
 	</ThingDef>
 </Defs>
