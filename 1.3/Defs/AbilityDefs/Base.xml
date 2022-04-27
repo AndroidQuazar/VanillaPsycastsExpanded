@@ -6,4 +6,22 @@
         <warmupMote>VPE_Mote_CastPsycast</warmupMote>
     </VFECore.Abilities.AbilityDef>
 
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase" Name="VPE_WordOfAbilityBase" Abstract="True">
+		<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+		<targetMode>Pawn</targetMode>
+		<range>999999</range>
+		<castTime>120</castTime>
+		<distanceToTarget>1.5</distanceToTarget>
+		<warmupMote>Mote_WarmupWordOf</warmupMote>
+		<warmupSound>Psycast_WordOf_Warmup</warmupSound>
+		<drawAimPie>false</drawAimPie>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+        <modExtensions>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDef>WordOfApply</fleckDef>
+				<sound>Psycast_WordOf_Effect</sound>
+			</li>
+        </modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
 </Defs>

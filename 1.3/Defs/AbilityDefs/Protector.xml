@@ -4,7 +4,18 @@
       <defName>VPE_Painblock</defName>
       <label>painblock</label>
       <description>Severely limit pain pathways in the target's brain for a couple of minutes. This can allow a person to move and act even with grievous injuries which would normally incapacitate them.</description>
-      <iconPath>Abilities/Protector/Painblock</iconPath>
+	  <iconPath>Abilities/Protector/Painblock</iconPath>
+	  <range>25</range>
+	  <castTime>15</castTime>
+	  <durationTime>7200</durationTime>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <targetMode>Humanlike</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <targetingParameters>
+		<canTargetHumans>True</canTargetHumans>
+	  	<canTargetSelf>True</canTargetSelf>
+	  	<canTargetAnimals>True</canTargetAnimals>
+	  </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -13,13 +24,21 @@
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>8</entropyGain>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>PsychicAnesthesia</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofHealing</defName>
       <label>word of healing</label>
       <description>Psychically stimulates a person’s regenerative capabilities into overdrive, effectively tripling their natural healing factor for a few days.</description>
       <iconPath>Abilities/Protector/WordofFortitude</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <durationTime>150000</durationTime>
+	  <castTime>60</castTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -28,6 +47,9 @@
           <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>0</entropyGain>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_Healing</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">

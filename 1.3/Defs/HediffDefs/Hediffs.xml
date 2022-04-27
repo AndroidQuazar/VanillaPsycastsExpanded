@@ -110,7 +110,7 @@
 		</comps>
 	</HediffDef>
 
-	<HediffDef>
+	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Bliss</defName>
 		<label>Bliss</label>
 		<description>TODOPLACEHOLDER</description>
@@ -191,9 +191,6 @@
 			</li>
 		</stages>
 		<comps>
-			<li Class="HediffCompProperties_Disappears">
-			</li>
-			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>0.8</severityPerDay>
 			</li>
@@ -202,4 +199,16 @@
 			</li>
 		</comps>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Healing</defName>
+		<label>healing</label>
+		<description>healing</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>2.5</naturalHealingFactor>
+			</li>
+		</stages>
+	</HediffDef>
+	
 </Defs>
