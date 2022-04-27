@@ -260,6 +260,11 @@
     <label>skipdoor</label>
     <description>Creates an opening to a network of skipgates which can be placed in any location with a permanent presence. The network is tied to a group’s collective consciousness, allowing others to use it and different psycasters can add to it. However, the entry points are sensitive to physical disturbances which can cause them to collapse.</description>
     <iconPath>Abilities/Skipmaster/Skipdoor</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Skipdoor</abilityClass>
+    <range>5.9</range>
+    <castTime>120</castTime>
+    <targetMode>Location</targetMode>
+    <castSound>VPE_SkipGate_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -278,6 +283,8 @@
     <label>farskip</label>
     <description>Skip the caster, along with anyone standing near them, to a willing ally at a distant location. This can send people far across the planet, and the skipped people will always appear near a random ally on the target map and be stunned for a few seconds from the journey.</description>
     <iconPath>Abilities/Skipmaster/Farskip</iconPath>
+    <radius>4.9</radius>
+    <castTime>300</castTime>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>

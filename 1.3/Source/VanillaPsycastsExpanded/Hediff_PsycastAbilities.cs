@@ -12,6 +12,7 @@
         public  float experience;
         public  int   points;
         private int   statPoints;
+        private float minHeat;
 
         public Hediff_Psylink           psylink;
         public List<PsySet>             psysets                = new();
@@ -47,7 +48,8 @@
                     new() {stat = StatDefOf.PsychicEntropyRecoveryRate, value = this.level * 0.05f + this.statPoints * 0.2f},
                     new() {stat = StatDefOf.PsychicSensitivity, value         = this.statPoints * 0.05f},
                     new() {stat = StatDefOf.MeditationFocusGain, value        = this.statPoints * 0.1f},
-                    new() {stat = VPE_DefOf.VPE_PsyfocusCostFactor, value     = this.statPoints * -0.01f}
+                    new() {stat = VPE_DefOf.VPE_PsyfocusCostFactor, value     = this.statPoints * -0.01f},
+                    new() {stat = VPE_DefOf.VPE_PsychicEntropyMinimum, value  = this.minHeat}
                 },
                 becomeVisible = false
             };
@@ -83,6 +85,12 @@
         public override bool SatisfiesConditionForAbility(AbilityDef abilityDef) =>
             base.SatisfiesConditionForAbility(abilityDef) ||
             abilityDef.requiredHediff?.minimumLevel <= this.psylink.level;
+
+        public void OffsetMinHeat(float offset)
+        {
+            this.minHeat += offset;
+            this.RecacheCurStage();
+        }
 
         public override void ExposeData()
         {

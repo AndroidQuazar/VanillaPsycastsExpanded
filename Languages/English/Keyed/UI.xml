@@ -14,4 +14,9 @@
     <VPE.Unlock>Unlock</VPE.Unlock>
     <VPE.ClickToUnlock>Click to Unlock</VPE.ClickToUnlock>
     <VPE.UseAltBackground>Use alternative backgrounds</VPE.UseAltBackground>
+    <VPE.DestroySkipdoor>Destroy</VPE.DestroySkipdoor>
+    <VPE.DestroySkipdoor.Desc>Destroy this skipdoor. It will no longer be usable, but will no longer impact the max heat of {0}.</VPE.DestroySkipdoor.Desc>
+    <VPE.RenameSkipdoor>Rename</VPE.RenameSkipdoor>
+    <VPE.RenameSkipdoor.Desc>Rename this skipdoor.</VPE.RenameSkipdoor.Desc>
+    <VPE.TeleportTo>Teleport to {0}</VPE.TeleportTo>
 </LanguageData>

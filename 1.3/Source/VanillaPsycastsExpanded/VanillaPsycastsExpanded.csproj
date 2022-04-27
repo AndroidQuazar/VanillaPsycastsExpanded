@@ -73,11 +73,15 @@
     <Compile Include="Paths\Skipmaster\Ability_Chunkskip.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Smokepop.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Waterskip.cs" />
+    <Compile Include="Paths\Skipmaster\Skipdoor.cs" />
+    <Compile Include="Paths\Skipmaster\SkipdoorPatches.cs" />
+    <Compile Include="Paths\Skipmaster\Skipdoor_Extras.cs" />
     <Compile Include="Paths\Staticlord\Ability_Flashstorm.cs" />
     <Compile Include="Paths\Staticlord\Hurricane.cs" />
     <Compile Include="Paths\Staticlord\Vortex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsycasterPathDef.cs" />
+    <Compile Include="PsycastsMod.cs" />
     <Compile Include="PsycastUtility.cs" />
     <Compile Include="PsySet.cs" />
     <Compile Include="Paths\Staticlord\Ability_Thunderbolt.cs" />
