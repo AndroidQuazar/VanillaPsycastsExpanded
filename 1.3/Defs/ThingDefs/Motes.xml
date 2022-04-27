@@ -48,4 +48,116 @@
           <fadeOutTime>1.0</fadeOutTime>
         </mote>
 	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GreenMist</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionMist</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostA</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyA</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostB</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyB</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostC</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyC</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostD</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyD</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostE</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyE</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostF</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyF</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_GhostG</defName>
+		<graphicData>
+			<texPath>Effects/Empath/ReunionFarskip/ReunionFamilyG</texPath>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<fadeInTime>0.50</fadeInTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+			<fadeOutTime>3.2</fadeOutTime>
+		</mote>
+	</ThingDef>
 </Defs>

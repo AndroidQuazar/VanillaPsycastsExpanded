@@ -72,7 +72,10 @@ using System.Security.Cryptography;
 				Gender gender2 = (pawn.story.traits.HasTrait(TraitDefOf.Gay) ? gender : gender.Opposite());
 				if (pawn2.gender != gender2)
 				{
-					Messages.Message("AbilityCantApplyWrongAttractionGender".Translate(pawn, pawn2), pawn, MessageTypeDefOf.RejectInput, historical: false);
+					if (showMessages)
+                    {
+						Messages.Message("AbilityCantApplyWrongAttractionGender".Translate(pawn, pawn2), pawn, MessageTypeDefOf.RejectInput, historical: false);
+					}
 					return false;
 				}
 			}
