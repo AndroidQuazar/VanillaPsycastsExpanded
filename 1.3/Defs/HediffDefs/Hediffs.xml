@@ -202,13 +202,19 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Healing</defName>
-		<label>healing</label>
-		<description>healing</description>
+		<label>text.todo</label>
+		<description>text.todo</description>
 		<stages>
 			<li>
 				<naturalHealingFactor>2.5</naturalHealingFactor>
 			</li>
 		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_BlockBleeding</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
 	</HediffDef>
 	
 </Defs>

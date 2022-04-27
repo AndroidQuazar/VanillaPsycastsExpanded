@@ -52,11 +52,14 @@
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_Stabilize</defName>
       <label>stabilize</label>
       <description>Temporarily puts the target’s cardiovascular system in stasis, which prevents them from bleeding out for two minutes.</description>
       <iconPath>Abilities/Protector/Stabilize</iconPath>
+	  <castTime>180</castTime>
+	  <durationTime>7200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -68,6 +71,9 @@
             <li>VPE_Painblock</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_BlockBleeding</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
