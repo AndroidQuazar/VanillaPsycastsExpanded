@@ -234,4 +234,11 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Overshield</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
+	</HediffDef>
 </Defs>

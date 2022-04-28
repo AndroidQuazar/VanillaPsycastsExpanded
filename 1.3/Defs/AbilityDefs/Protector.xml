@@ -108,6 +108,11 @@
       <label>overshield</label>
       <description>Generate a spherical skipgate on a target that sends all incoming ground-level projectiles to some distant place, the duration scaling with the target’s psychic sensitivity. People and items are not affected.</description>
       <iconPath>Abilities/Protector/Overshield</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <targetMode>Pawn</targetMode>
+	  <castTime>60</castTime>
+	  <durationTime>600</durationTime>
+	  <range>5</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -120,8 +125,13 @@
           </prerequisites>
           <spaceAfter>true</spaceAfter>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_Overshield</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Focus</defName>
       <label>focus</label>

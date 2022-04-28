@@ -71,6 +71,8 @@
     <Compile Include="Paths\Empath\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
+    <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
+    <Compile Include="Paths\Protector\Hediff_Overshield.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Wallraise.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Chunkskip.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Smokepop.cs" />
