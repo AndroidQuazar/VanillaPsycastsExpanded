@@ -138,6 +138,10 @@
       <label>bend probability</label>
       <description>Creates a ripple of cosmic scale that will force something to happen.</description>
       <iconPath>Abilities/Harmonist/BendProbability</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_RandomEvent</abilityClass>
+      <castTime>360</castTime>
+      <targetMode>Self</targetMode>
+      <castSound>VPE_BendProbability_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>

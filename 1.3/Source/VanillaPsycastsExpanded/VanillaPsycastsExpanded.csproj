@@ -74,6 +74,7 @@
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
     <Compile Include="Paths\Harmonist\Ability_HeatFocus.cs" />
+    <Compile Include="Paths\Harmonist\Ability_RandomEvent.cs" />
     <Compile Include="Paths\Harmonist\Ability_TransmuteStone.cs" />
     <Compile Include="Paths\Protector\Hediff_Overshield.cs" />
     <Compile Include="Paths\Harmonist\HediffComp_MindControl.cs" />
