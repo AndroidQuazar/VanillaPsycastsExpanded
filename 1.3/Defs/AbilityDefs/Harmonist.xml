@@ -97,6 +97,11 @@
       <label>heat focus</label>
       <description>Initiates harmonic meditation which converts all accumulated heat in psyfocus after 10 seconds.</description>
       <iconPath>Abilities/Harmonist/HeatFocus</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_HeatFocus</abilityClass>
+      <targetMode>Self</targetMode>
+      <castTime>600</castTime>
+      <castFleck>PsycastPsychicEffect</castFleck>
+      <castSound>VPE_HeatFocus_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
