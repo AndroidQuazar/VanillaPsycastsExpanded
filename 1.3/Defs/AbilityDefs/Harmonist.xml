@@ -5,6 +5,12 @@
       <label>mind control</label>
       <description>Psychically dominate a target for a brief period, scaling with their psychic sensitivity, giving the caster a second body. However, it’s difficult being two people at once.</description>
       <iconPath>Abilities/Harmonist/Mindcontrol</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <castTime>60</castTime>
+      <castSound>VPE_MindControl_Cast</castSound>
+      <durationTime>360</durationTime>
+      <targetMode>Humanlike</targetMode>
+      <range>16.9</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -16,6 +22,17 @@
             <li>VPE_PsychicGuidance</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_MindControlled</hediff>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_ExtraHediffs">
+          <onCaster>
+            <li>VPE_MindScramble</li>
+          </onCaster>
+          <onTarget>
+            <li>VPE_MindScramble</li>
+          </onTarget>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -23,6 +40,12 @@
       <label>psychic guidance</label>
       <description>Dampens the caster’s sight, hearing, movement and manipulation in exchange for overcharging the target’s own physical abilities.</description>
       <iconPath>Abilities/Harmonist/PsychicGuidance</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <range>4.9</range>
+      <durationTime>360</durationTime>
+      <targetMode>Humanlike</targetMode>
+      <castTime>120</castTime>
+      <castSound>VPE_PsychicGuidance_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -30,6 +53,15 @@
           <order>2</order>
           <psyfocusCost>0.14</psyfocusCost>
           <entropyGain>0</entropyGain>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_ExtraHediffs">
+          <onCaster>
+            <li>VPE_PsychicGuide</li>
+          </onCaster>
+          <onTarget>
+            <li>VPE_PsychicGuidance</li>
+          </onTarget>
+          <durationMultiplier>PsychicSensitivity</durationMultiplier>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

@@ -15,6 +15,7 @@
         public static ThingDef VPE_Mote_FireBeam;
         public static ThingDef VPE_HurricaneMaker;
         public static ThingDef VPE_Skipdoor;
+        public static ThingDef VPE_Mote_CastPsycast;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
@@ -30,8 +31,8 @@
         public static StatDef VPE_PsychicEntropyMinimum;
         public static JobDef  VPE_UseSkipdoor;
 
-        public static FleckDef VPE_VortexSpark;
-        public static ThingDef VPE_Mote_GreenMist;
+        public static FleckDef  VPE_VortexSpark;
+        public static ThingDef  VPE_Mote_GreenMist;
         public static HediffDef PsychicComa;
         public static HediffDef VPE_BlockBleeding;
     }
