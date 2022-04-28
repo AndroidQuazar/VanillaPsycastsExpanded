@@ -15,7 +15,6 @@
         public static ThingDef VPE_Mote_FireBeam;
         public static ThingDef VPE_HurricaneMaker;
         public static ThingDef VPE_Skipdoor;
-        public static ThingDef VPE_Mote_CastPsycast;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

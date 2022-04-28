@@ -12,7 +12,7 @@
 			</li>
 			<li Class="VanillaPsycastsExpanded.Graphics.HediffCompProperties_Mote">
 				<compClass>VanillaPsycastsExpanded.Graphics.HediffComp_MoteOverHead</compClass>
-				<mote>VPE_Mote_CastPsycast</mote>
+				<mote>VPE_Mote_CastPsycast_Red</mote>
 				<color>(1, 0, 0)</color>
 			</li>
 		</comps>
@@ -67,7 +67,7 @@
 		<comps>
 			<li Class="VanillaPsycastsExpanded.Graphics.HediffCompProperties_Mote">
 				<compClass>VanillaPsycastsExpanded.Graphics.HediffComp_MoteOverHead</compClass>
-				<mote>VPE_Mote_CastPsycast</mote>
+				<mote>VPE_Mote_CastPsycast_Yellow</mote>
 				<color>(1, 1, 0)</color>
 			</li>
 		</comps>
@@ -102,7 +102,7 @@
 		<comps>
 			<li Class="VanillaPsycastsExpanded.Graphics.HediffCompProperties_Mote">
 				<compClass>VanillaPsycastsExpanded.Graphics.HediffComp_MoteOverHead</compClass>
-				<mote>VPE_Mote_CastPsycast</mote>
+				<mote>VPE_Mote_CastPsycast_Yellow</mote>
 				<color>(1, 1, 0)</color>
 			</li>
 		</comps>

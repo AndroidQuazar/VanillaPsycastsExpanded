@@ -28,6 +28,23 @@
       <drawSize>(20, 20)</drawSize>
     </graphicData>
   </FleckDef>
+  <FleckDef ParentName="FleckGlowDistortBackground">
+    <defName>VPE_PsychicWave12</defName>
+    <fleckSystemClass>FleckSystemThrown</fleckSystemClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.02</fadeInTime>
+    <fadeOutTime>0.55</fadeOutTime>
+    <solidTime>1.1</solidTime>
+    <growthRate>5</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.024</_distortionIntensity>
+        <_brightnessMultiplier>1.1</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2.5</drawSize>
+    </graphicData>
+  </FleckDef>
   <FleckDef ParentName="FleckBase">
     <defName>VPE_EyeBlast</defName>
     <solidTime>0.3</solidTime>
@@ -64,21 +81,20 @@
       <random>true</random>
     </graphicData>
   </FleckDef>
-  
-	<FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
-		<defName>VFEP_PsycastAreaEffectSlow</defName>
-		<altitudeLayer>MoteLow</altitudeLayer>
-		<fadeInTime>2</fadeInTime>
-		<fadeOutTime>6</fadeOutTime>
-		<solidTime>12</solidTime>
-		<growthRate>9</growthRate>
-		<graphicData>
-		<texPath>Things/Mote/Black</texPath>
-		<shaderParameters>
-			<_distortionIntensity>0.05</_distortionIntensity>
-			<_brightnessMultiplier>1.15</_brightnessMultiplier>
-		</shaderParameters>
-		<drawSize>2.3</drawSize>
-		</graphicData>
-	</FleckDef>
+  <FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
+    <defName>VFEP_PsycastAreaEffectSlow</defName>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <fadeInTime>2</fadeInTime>
+    <fadeOutTime>6</fadeOutTime>
+    <solidTime>12</solidTime>
+    <growthRate>9</growthRate>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2.3</drawSize>
+    </graphicData>
+  </FleckDef>
 </Defs>

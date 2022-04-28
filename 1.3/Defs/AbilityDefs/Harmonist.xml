@@ -70,6 +70,15 @@
       <label>transmute stone</label>
       <description>Designates an area of stone which will have its minerals swapped out for a single, randomized type from an underground strata.</description>
       <iconPath>Abilities/Harmonist/TransmuteStone</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteStone</abilityClass>
+      <castTime>240</castTime>
+      <range>23.9</range>
+      <radius>11.9</radius>
+      <castSound>VPE_TransmuteStone_Cast</castSound>
+      <targetMode>Location</targetMode>
+      <targetFlecks>
+        <li>VPE_PsychicWave12</li>
+      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
