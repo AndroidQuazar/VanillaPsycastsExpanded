@@ -8,7 +8,7 @@
       <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <castTime>60</castTime>
       <castSound>VPE_MindControl_Cast</castSound>
-      <durationTime>360</durationTime>
+      <durationTime>720</durationTime>
       <targetMode>Humanlike</targetMode>
       <range>16.9</range>
       <modExtensions>
@@ -42,7 +42,7 @@
       <iconPath>Abilities/Harmonist/PsychicGuidance</iconPath>
       <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <range>4.9</range>
-      <durationTime>360</durationTime>
+      <durationTime>3600</durationTime>
       <targetMode>Humanlike</targetMode>
       <castTime>120</castTime>
       <castSound>VPE_PsychicGuidance_Cast</castSound>
