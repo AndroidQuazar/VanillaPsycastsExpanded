@@ -242,6 +242,20 @@
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
 	</HediffDef>
 	
+	<HediffDef>
+		<defName>VPE_GuardianSkipBarrier</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_GuardianSkipBarrier</hediffClass>
+		<stages>
+			<li>
+				<statOffsets>
+				<MoveSpeed>0.2</MoveSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_RegrowLimbs</defName>
 		<label>text.todo</label>
@@ -249,15 +263,15 @@
 		<hediffClass>VanillaPsycastsExpanded.Hediff_RegrowLimbs</hediffClass>
 	</HediffDef>
 	
-  <HediffDef ParentName="InjuryBase">
-    <defName>VPE_Regenerating</defName>
-    <label>regenerating</label>
-    <description>text.todo</description>
-    <tendable>false</tendable>
-    <injuryProps>
-      <painPerSeverity>0.0125</painPerSeverity>
-      <canMerge>false</canMerge>
-      <destroyedLabel>Destroyed</destroyedLabel>
-    </injuryProps>
-  </HediffDef>
+	<HediffDef ParentName="InjuryBase">
+		<defName>VPE_Regenerating</defName>
+		<label>regenerating</label>
+		<description>text.todo</description>
+		<tendable>false</tendable>
+		<injuryProps>
+			<painPerSeverity>0.0125</painPerSeverity>
+			<canMerge>false</canMerge>
+			<destroyedLabel>Destroyed</destroyedLabel>
+		</injuryProps>
+	</HediffDef>
 </Defs>

@@ -173,6 +173,7 @@
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <durationTime>60000</durationTime>
 	  <castTime>1200</castTime>
+	  <castSound>VPE_Bliss_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -198,6 +199,7 @@
 	  <distanceToTarget>3.5</distanceToTarget>
 	  <castFleck>PsycastPsychicEffect</castFleck>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <castSound>VPE_EnergyDump_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -220,6 +222,7 @@
       <iconPath>Abilities/Empath/MindWipe</iconPath>
 	  <castTime>300</castTime>
 	  <goodwillImpact>-25</goodwillImpact>
+	  <castSound>VPE_MindWipe_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -252,6 +255,7 @@
 	  <castTime>720</castTime>
 	  <distanceToTarget>5.5</distanceToTarget>
 	  <castFleck>PsycastAreaEffect</castFleck>
+	  <castSound>VPE_ReunionFarskim_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>

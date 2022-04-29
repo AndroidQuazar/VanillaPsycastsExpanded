@@ -83,6 +83,9 @@
     <Compile Include="Paths\Harmonist\Ability_Skillroll.cs" />
     <Compile Include="Paths\Harmonist\Ability_TransmuteItem.cs" />
     <Compile Include="Paths\Harmonist\Ability_TransmuteStone.cs" />
+    <Compile Include="Paths\Protector\Ability_GuardianSkipBarrier.cs" />
+    <Compile Include="Paths\Protector\HediffComp_ShouldBeDestroyed.cs" />
+    <Compile Include="Paths\Protector\Hediff_GuardianSkipBarrier.cs" />
     <Compile Include="Paths\Protector\Hediff_Overshield.cs" />
     <Compile Include="Paths\Harmonist\HediffComp_MindControl.cs" />
     <Compile Include="Paths\Protector\Hediff_RegrowLimbs.cs" />

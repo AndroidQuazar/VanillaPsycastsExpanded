@@ -39,6 +39,7 @@
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <durationTime>150000</durationTime>
 	  <castTime>60</castTime>
+	  <castSound>VPE_WordOfHealing_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -61,6 +62,7 @@
 	  <castTime>180</castTime>
 	  <durationTime>7200</durationTime>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castSound>VPE_Stabilize_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -113,6 +115,7 @@
 	  <castTime>60</castTime>
 	  <durationTime>600</durationTime>
 	  <range>5</range>
+	  <castSound>VPE_Overshield_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -245,6 +248,7 @@
 	  <targetMode>Pawn</targetMode>
 	  <range>999999</range>
 	  <distanceToTarget>1.5</distanceToTarget>
+	  <castSound>VPE_RegrowLimbs_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -267,6 +271,10 @@
       <label>guardian skipbarrier</label>
       <description>Generate a spherical skipgate around the caster that sends all incoming ground-level projectiles to some distant place, lasting as long as they can manage the heat accumulation. People and items are not affected. It takes immense concentration to hold, as such the caster needs to be mindful of their steps.</description>
       <iconPath>Abilities/Protector/GuardianSkipbarrier</iconPath>
+	  <castSound>VPE_GuardianSkipbarrier_Cast</castSound>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_GuardianSkipBarrier</abilityClass>
+	  <castTime>300</castTime>
+	  <radius>9</radius>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -278,6 +286,9 @@
             <li>VPE_Invisibility</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_GuardianSkipBarrier</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 </Defs>
