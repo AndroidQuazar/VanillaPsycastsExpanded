@@ -142,6 +142,7 @@
       <castTime>360</castTime>
       <targetMode>Self</targetMode>
       <castSound>VPE_BendProbability_Cast</castSound>
+      <castFleck>PsycastPsychicEffect</castFleck>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -239,6 +240,14 @@
       <label>skillroll</label>
       <description>Initiates a shift in the target’s knowledge and accumulated skills, attempting to rebalance them somewhat chaotically with some beneficial guidance. The strain puts the caster in a coma for a day, but can be reduced with psychic sensitivity.</description>
       <iconPath>Abilities/Harmonist/SkillRoll</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_Skillroll</abilityClass>
+      <castTime>720</castTime>
+      <range>1.9</range>
+      <castSound>VPE_Skillroll_Cast</castSound>
+      <targetMode>Pawn</targetMode>
+      <targetFlecks>
+        <li>VPE_PsychicWave12</li>
+      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -250,6 +259,9 @@
             <li>VPE_HealthSwap</li>
             <li>VPE_Transmutation</li>
           </prerequisites>
+        </li>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+          <hours>24</hours>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

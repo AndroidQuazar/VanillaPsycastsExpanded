@@ -48,6 +48,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbilityExtension_PsychicComa.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
     <Compile Include="Paths\Harmonist\Ability_HeatFocus.cs" />
     <Compile Include="Paths\Harmonist\Ability_RandomEvent.cs" />
+    <Compile Include="Paths\Harmonist\Ability_Skillroll.cs" />
     <Compile Include="Paths\Harmonist\Ability_TransmuteItem.cs" />
     <Compile Include="Paths\Harmonist\Ability_TransmuteStone.cs" />
     <Compile Include="Paths\Protector\Hediff_Overshield.cs" />

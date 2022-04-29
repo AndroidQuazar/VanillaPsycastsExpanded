@@ -9,6 +9,8 @@
         public static HediffDef VPE_PsycastAbilityImplant;
         public static HediffDef VPE_Recharge;
         public static HediffDef VPE_Vortex;
+        public static HediffDef PsychicComa;
+        public static HediffDef VPE_BlockBleeding;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -30,9 +32,7 @@
         public static StatDef VPE_PsychicEntropyMinimum;
         public static JobDef  VPE_UseSkipdoor;
 
-        public static FleckDef  VPE_VortexSpark;
-        public static ThingDef  VPE_Mote_GreenMist;
-        public static HediffDef PsychicComa;
-        public static HediffDef VPE_BlockBleeding;
+        public static FleckDef VPE_VortexSpark;
+        public static ThingDef VPE_Mote_GreenMist;
     }
 }
