@@ -9,7 +9,7 @@
     {
         public static bool Prefix(Pawn p, MeditationFocusDef type, ref bool __result)
         {
-            __result = (p.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant) as Hediff_PsycastAbilities)?.unlockedMeditationFoci.Contains(type) ?? false;
+            __result = p.Psycasts()?.unlockedMeditationFoci.Contains(type) ?? false;
             return false;
         }
     }

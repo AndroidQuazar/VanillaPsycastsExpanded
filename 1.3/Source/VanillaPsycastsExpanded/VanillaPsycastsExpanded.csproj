@@ -52,6 +52,10 @@
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
+    <Compile Include="Meditation\FocusStrengthOffset_NearbyOfTechlevel.cs" />
+    <Compile Include="Meditation\FocusStrengthOffset_ResearchSpeed.cs" />
+    <Compile Include="Meditation\FocusStrengthOffset_Value.cs" />
+    <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />
     <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Paths\Conflagrator\FireBeam.cs" />
     <Compile Include="Paths\Conflagrator\FireTornado.cs" />
@@ -101,7 +105,7 @@
     <Compile Include="Paths\Staticlord\BallLightning.cs" />
     <Compile Include="Paths\Staticlord\Recharge.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
-    <Compile Include="MeditationFocusExtension_Icon.cs" />
+    <Compile Include="Meditation\MeditationFocusExtension_Icon.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />
     <Compile Include="UI\PsychicStatusGizmo.cs" />
     <Compile Include="UI\TexPsycasts.cs" />

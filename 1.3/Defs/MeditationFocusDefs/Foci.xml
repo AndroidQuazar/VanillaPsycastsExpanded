@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <MeditationFocusDef>
+        <defName>VPE_Group</defName>
+        <label>group</label>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                <icon>UI/PsyfocusIcons/PsyfocusGroup</icon>
+            </li>
+        </modExtensions>
+    </MeditationFocusDef>
+    <MeditationFocusDef>
+        <defName>VPE_Archotech</defName>
+        <label>archotechnology</label>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                <icon>UI/PsyfocusIcons/PsyfocusArchotechnology</icon>
+            </li>
+        </modExtensions>
+    </MeditationFocusDef>
+    <MeditationFocusDef>
+        <defName>VPE_Science</defName>
+        <label>science</label>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                <icon>UI/PsyfocusIcons/PsyfocusScience</icon>
+            </li>
+        </modExtensions>
+    </MeditationFocusDef>
+    <MeditationFocusDef>
+        <defName>VPE_Wealth</defName>
+        <label>wealth</label>
+        <modExtensions>
+            <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                <icon>UI/PsyfocusIcons/PsyfocusWealth</icon>
+            </li>
+        </modExtensions>
+    </MeditationFocusDef>
+</Defs>

@@ -35,5 +35,10 @@
         public static FleckDef VPE_VortexSpark;
         public static ThingDef VPE_Mote_GreenMist;
         public static HediffDef VPE_Regenerating;
+
+        public static MeditationFocusDef VPE_Group;
+        public static MeditationFocusDef VPE_Archotech;
+        public static MeditationFocusDef VPE_Science;
+        public static MeditationFocusDef VPE_Wealth;
     }
 }
