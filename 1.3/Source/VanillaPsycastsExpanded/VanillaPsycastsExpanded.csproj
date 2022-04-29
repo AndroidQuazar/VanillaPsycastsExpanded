@@ -54,7 +54,6 @@
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_NearbyOfTechlevel.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_ResearchSpeed.cs" />
-    <Compile Include="Meditation\FocusStrengthOffset_Value.cs" />
     <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />
     <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Paths\Conflagrator\FireBeam.cs" />

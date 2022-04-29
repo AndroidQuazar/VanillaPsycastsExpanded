@@ -45,15 +45,9 @@
                         focusTypes = new List<MeditationFocusDef> {VPE_DefOf.VPE_Archotech},
                         offsets = new List<FocusStrengthOffset>
                         {
-                            new FocusStrengthOffset_Value
-                            {
-                                offset = 1f
-                            },
                             new FocusStrengthOffset_NearbyOfTechlevel
                             {
-                                offset    = 4f,
-                                max       = 40f,
-                                radius    = 5.9f,
+                                radius    = 4.9f,
                                 techLevel = TechLevel.Archotech
                             }
                         }
