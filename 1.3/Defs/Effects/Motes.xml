@@ -202,4 +202,30 @@
 		<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_RedSparkFlash</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.05</solidTime>
+			<fadeOutTime>0.1</fadeOutTime>
+		</mote>
+		<graphicData>
+		<texPath>Things/Mote/RedSparkFlash</texPath>
+		<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_WhiteSparkFlash</defName>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.05</solidTime>
+			<fadeOutTime>0.1</fadeOutTime>
+		</mote>
+		<graphicData>
+		<texPath>Things/Mote/WhiteSparkFlash</texPath>
+		<shaderType>MoteGlow</shaderType>
+		</graphicData>
+	</ThingDef>
 </Defs>

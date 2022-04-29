@@ -2,6 +2,7 @@
 {
     using HarmonyLib;
     using Verse;
+    using VFECore;
 
     [HarmonyPatch(typeof(HediffSet), nameof(HediffSet.BleedRateTotal), MethodType.Getter)]
     public static class HediffSet_BleedRateTotal_Patch

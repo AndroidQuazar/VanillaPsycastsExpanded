@@ -18,7 +18,7 @@
 	</EffecterDef>
 	
 	<EffecterDef>
-		<defName>VPE_BlockBleeding</defName>
+		<defName>VPE_SparksYellow</defName>
 		<children>
 			<li>
 				<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
@@ -32,4 +32,33 @@
 		</children>
 	</EffecterDef>
 	
+	<EffecterDef>
+		<defName>VPE_SparksRed</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+				<chancePerTick>0.1</chancePerTick>
+				<positionRadius>0.3</positionRadius>
+				<moteDef>VPE_RedSparkFlash</moteDef>
+				<speed>0.18~0.18</speed>
+				<rotation>0</rotation>
+				<angle>0~360</angle>
+			</li>
+		</children>
+	</EffecterDef>
+	
+	<EffecterDef>
+		<defName>VPE_SparksWhite</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+				<chancePerTick>0.1</chancePerTick>
+				<positionRadius>0.3</positionRadius>
+				<moteDef>VPE_WhiteSparkFlash</moteDef>
+				<speed>0.18~0.18</speed>
+				<rotation>0</rotation>
+				<angle>0~360</angle>
+			</li>
+		</children>
+	</EffecterDef>
 </Defs>
