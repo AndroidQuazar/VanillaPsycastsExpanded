@@ -81,6 +81,7 @@
     <Compile Include="Paths\Harmonist\Ability_TransmuteStone.cs" />
     <Compile Include="Paths\Protector\Hediff_Overshield.cs" />
     <Compile Include="Paths\Harmonist\HediffComp_MindControl.cs" />
+    <Compile Include="Paths\Protector\Hediff_RegrowLimbs.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Wallraise.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Chunkskip.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Smokepop.cs" />

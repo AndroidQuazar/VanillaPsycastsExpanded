@@ -34,5 +34,6 @@
 
         public static FleckDef VPE_VortexSpark;
         public static ThingDef VPE_Mote_GreenMist;
+        public static HediffDef VPE_Regenerating;
     }
 }

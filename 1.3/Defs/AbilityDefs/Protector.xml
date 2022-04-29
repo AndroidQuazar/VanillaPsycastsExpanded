@@ -9,8 +9,8 @@
 	  <castTime>15</castTime>
 	  <durationTime>7200</durationTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
-	  <targetMode>Humanlike</targetMode>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <targetMode>Humanlike</targetMode>
 	  <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>
 	  	<canTargetSelf>True</canTargetSelf>
@@ -137,6 +137,17 @@
       <label>focus</label>
       <description>Psychically focus the target's mind for a minute, boosting their sight, hearing and moving capacities.</description>
       <iconPath>Abilities/Protector/Focus</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castTime>15</castTime>
+	  <range>28</range>
+	  <durationTime>3600</durationTime>
+	  <targetMode>Humanlike</targetMode>
+	  <targetingParameters>
+		<canTargetHumans>True</canTargetHumans>
+	  	<canTargetSelf>True</canTargetSelf>
+	  	<canTargetAnimals>True</canTargetAnimals>
+	  </targetingParameters>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -148,13 +159,25 @@
             <li>VPE_WordofImmunity</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>PsychicFocus</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			<bodyPartToApply>Brain</bodyPartToApply>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Skipshield</defName>
       <label>skipshield</label>
       <description>Generate a spherical skipgate that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected.</description>
       <iconPath>Abilities/Protector/Skipshield</iconPath>
+	  <castTime>60</castTime>
+	  <durationTime>900</durationTime>
+	  <range>25</range>
+	  <radius>4.9</radius>
+	  <targetMode>Location</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -166,13 +189,31 @@
             <li>VPE_Overshield</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+			<fleckDef>BulletShieldAreaEffect</fleckDef>
+			<sound>Psycast_Skip_Exit</sound>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Spawn">
+			<thing>BulletShieldPsychic</thing>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Invisibility</defName>
       <label>invisibility</label>
       <description>Psychically manipulate the visual centers of everyone nearby, rendering them unable to perceive a particular individual for a short time.</description>
       <iconPath>Abilities/Protector/Invisibility</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <targetMode>Humanlike</targetMode>
+      <targetingParameters>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetingParameters>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <castTime>60</castTime>
+	  <durationTime>900</durationTime>
+	  <range>20</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -185,13 +226,25 @@
             <li>VPE_RegrowLimbs</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>PsychicInvisibility</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_RegrowLimbs</defName>
       <label>regrow limbs</label>
       <description>Induces a complex form of psychic rejuvenation that targets the subject’s limbs, namely those that are missing. The effect is gradual over a minute’s time and often described as “wildly uncomfortable” as it overstimulates their phantom limb syndrome.</description>
       <iconPath>Abilities/Protector/RegrowLimbs</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castTime>120</castTime>
+	  <durationTime>3600</durationTime>
+	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+	  <targetMode>Pawn</targetMode>
+	  <range>999999</range>
+	  <distanceToTarget>1.5</distanceToTarget>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -203,8 +256,12 @@
             <li>VPE_Focus</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_RegrowLimbs</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_GuardianSkipbarrier</defName>
       <label>guardian skipbarrier</label>
