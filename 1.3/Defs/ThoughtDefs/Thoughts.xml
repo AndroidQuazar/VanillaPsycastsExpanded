@@ -9,42 +9,42 @@
 		<stages>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>Maybe it isn't all bad.</description>
 				<baseMoodEffect>10</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>I think things are getting better.</description>
 				<baseMoodEffect>20</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>Everything is improving, slowly but surely.</description>
 				<baseMoodEffect>30</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>I'm feeling good right now, things are looking up.</description>
 				<baseMoodEffect>40</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>I feel warm and fuzzy, just being alive feels great.</description>
 				<baseMoodEffect>50</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>I'm just about to burst with excitement. I love this colony, I love this world and all the lives on it.</description>
 				<baseMoodEffect>60</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>All the colors of this world are so vivid, the sounds are so tranquil, the air is so crisp. This life leaves me breathless.</description>
 				<baseMoodEffect>70</baseMoodEffect>
 			</li>
 			<li>
 				<label>bliss</label>
-				<description>bliss</description>
+				<description>This is it, isn't it? I've truly reached nirvana itself. Life itself is the very embodiment of happiness.</description>
 				<baseMoodEffect>80</baseMoodEffect>
 			</li>
 		</stages>

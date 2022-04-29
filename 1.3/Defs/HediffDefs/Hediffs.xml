@@ -3,7 +3,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Recharge</defName>
 		<label>recharge</label>
-		<description>Electricity is being channeled to a nearby battery</description>
+		<description>Electricity is being channeled to a nearby battery.</description>
 		<initialSeverity>1</initialSeverity>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
@@ -21,14 +21,14 @@
 	<HediffDef>
 		<defName>VPE_Vortex</defName>
 		<label>vortex</label>
-		<description>An electirical vortex is causing difficulty moving</description>
+		<description>An electirical vortex is causing difficulty moving.</description>
 		<initialSeverity>1</initialSeverity>
 		<hediffClass>VanillaPsycastsExpanded.Staticlord.Hediff_Vortexed</hediffClass>
 	</HediffDef>
 	<HediffDef>
 		<defName>VPE_Hurricane</defName>
 		<label>hurricane</label>
-		<description>A hurricane is causing difficulty moving and seeing</description>
+		<description>A hurricane is causing difficulty moving and seeing.</description>
 		<initialSeverity>0.01</initialSeverity>
 		<maxSeverity>0.5</maxSeverity>
 		<hediffClass>HediffWithComps</hediffClass>
@@ -112,8 +112,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Bliss</defName>
-		<label>Bliss</label>
-		<description>TODOPLACEHOLDER</description>
+		<label>bliss</label>
+		<description>Waves of serenity emanate deep from within, bringing peace of mind and lowering consciousness.</description>
 		<initialSeverity>0.1</initialSeverity>
 		<hediffClass>HediffWithComps</hediffClass>
 		<stages>
@@ -202,8 +202,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Healing</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic healing</label>
+		<description>Psychically induced healing boost.</description>
 		<stages>
 			<li>
 				<naturalHealingFactor>2.5</naturalHealingFactor>
@@ -213,8 +213,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_BlockBleeding</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic stabilization</label>
+		<description>Psychically induced stasis that stops any bleeding.</description>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_BlockBleeding</stateEffecter>
@@ -224,8 +224,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Immunity</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic immunity</label>
+		<description>Psychically induced immunity boost.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -237,15 +237,15 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Overshield</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic overshield</label>
+		<description>Psychically induced personal skipbarrier. Impenetrable by ranged projectiles.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
 	</HediffDef>
 	
 	<HediffDef>
 		<defName>VPE_GuardianSkipBarrier</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>guardian skipbarrier</label>
+		<description>Psychically crafted defensive barrier that generates large amounts of psychic heat in order to sustain itself.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_GuardianSkipBarrier</hediffClass>
 		<stages>
 			<li>
@@ -258,15 +258,15 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_RegrowLimbs</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic regeneration</label>
+		<description>Psychically induced tissue regeneration, which can close open wounds and regenerate missing body parts.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_RegrowLimbs</hediffClass>
 	</HediffDef>
 	
 	<HediffDef ParentName="InjuryBase">
 		<defName>VPE_Regenerating</defName>
 		<label>regenerating</label>
-		<description>text.todo</description>
+		<description>Regenerating wounds, new and old.</description>
 		<tendable>false</tendable>
 		<injuryProps>
 			<painPerSeverity>0.0125</painPerSeverity>
