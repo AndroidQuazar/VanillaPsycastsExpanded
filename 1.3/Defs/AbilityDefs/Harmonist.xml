@@ -196,6 +196,17 @@
       <label>transmutation</label>
       <description>Utilizing the alchemical foundation of equivalent exchange, converts a targeted item or stack of items into an object of equal or lesser value. Otherwise extremely unpredictable and uncontrollable.</description>
       <iconPath>Abilities/Harmonist/Transmutation</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteItem</abilityClass>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+        <thingCategory>Item</thingCategory>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
+      <castTime>360</castTime>
+      <castSound>VPE_Transmutation_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -206,6 +217,20 @@
           <prerequisites>
             <li>VPE_LocationSwap</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDefs>
+            <li>PsycastSkipInnerExit</li>
+            <li>PsycastSkipOuterRingExit</li>
+          </fleckDefs>
+          <scale>0.42</scale>
+          <sound>Psycast_Skip_Exit</sound>
+          <preCastTicks>10</preCastTicks>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+          <effecterDef>Skip_Exit</effecterDef>
+          <maintainForTicks>60</maintainForTicks>
+          <scale>0.42</scale>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
