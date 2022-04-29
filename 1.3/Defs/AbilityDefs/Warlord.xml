@@ -5,6 +5,10 @@
       <label>speedboost</label>
       <description>Psychically augments the muscle fibers, ligaments and joints in the caster’s legs, tripling their movement speed for roughly two minutes depending on their psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/SpeedBoost</iconPath>
+	  <targetMode>Self</targetMode>
+	  <castTime>15</castTime>
+	  <durationTime>7200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -13,8 +17,13 @@
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>8</entropyGain>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_SpeedBoost</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BladeFocus</defName>
       <label>blade focus</label>

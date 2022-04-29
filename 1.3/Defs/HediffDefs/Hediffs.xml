@@ -274,4 +274,22 @@
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_SpeedBoost</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>3</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_BlockBleeding</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>
