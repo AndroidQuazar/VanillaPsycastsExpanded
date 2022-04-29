@@ -242,7 +242,9 @@
       <iconPath>Abilities/Harmonist/SkillRoll</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_Skillroll</abilityClass>
       <castTime>720</castTime>
-      <range>1.9</range>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>2.9</distanceToTarget>
       <castSound>VPE_Skillroll_Cast</castSound>
       <targetMode>Pawn</targetMode>
       <targetFlecks>

@@ -18,7 +18,6 @@
 
         public static void Postfix(ref IEnumerable<ThingDef> __result)
         {
-            Log.Message("Running postfix!");
             __result = __result.Where(def => !def.defName.StartsWith(ThingDefGenerator_Neurotrainer.PsytrainerDefPrefix)).Concat(ImpliedThingDefs());
         }
 

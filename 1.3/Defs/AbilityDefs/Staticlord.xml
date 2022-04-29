@@ -123,7 +123,9 @@
       <durationTimeStatFactors>
         <PsychicSensitivity>2</PsychicSensitivity>
       </durationTimeStatFactors>
-      <range>1</range>
+      <distanceToTarget>1.9</distanceToTarget>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
       <targetMode>Thing</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
