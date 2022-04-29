@@ -40,5 +40,8 @@
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MeditationFocusDef VPE_Wealth;
+
+        public static SoundDef VPE_GuardianSkipbarrier_Sustainer;
+        public static HediffDef VPE_GuardianSkipBarrier;
     }
 }

@@ -19,4 +19,6 @@
     <VPE.RenameSkipdoor>Rename</VPE.RenameSkipdoor>
     <VPE.RenameSkipdoor.Desc>Rename this skipdoor.</VPE.RenameSkipdoor.Desc>
     <VPE.TeleportTo>Teleport to {0}</VPE.TeleportTo>
+	<VPE.CancelSkipbarrier>Cancel Skipbarrier</VPE.CancelSkipbarrier>
+	<VPE.CancelSkipbarrierDesc>Click to cancel Skipbarrier on the caster.</VPE.CancelSkipbarrierDesc>
 </LanguageData>
