@@ -107,6 +107,7 @@
     <Compile Include="Paths\Staticlord\Ability_Thunderbolt.cs" />
     <Compile Include="Paths\Staticlord\BallLightning.cs" />
     <Compile Include="Paths\Staticlord\Recharge.cs" />
+    <Compile Include="UI\Dialog_Psyset.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="Meditation\MeditationFocusExtension_Icon.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />
@@ -116,7 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3287</Version>
+      <Version>1.3.3326</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
       <Version>2.2.1</Version>

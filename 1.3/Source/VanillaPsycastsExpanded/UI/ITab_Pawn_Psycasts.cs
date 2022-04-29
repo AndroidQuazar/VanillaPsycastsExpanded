@@ -5,7 +5,6 @@
     using RimWorld;
     using UnityEngine;
     using Verse;
-    using Verse.Sound;
     using VFECore.Abilities;
     using VFECore.UItils;
     using AbilityDef = VFECore.Abilities.AbilityDef;
@@ -13,13 +12,6 @@
     [StaticConstructorOnStartup]
     public class ITab_Pawn_Psycasts : ITab
     {
-        private static readonly float[][] abilityTreeXOffsets =
-        {
-            new[] {-18f},
-            new[] {-11f - 36f, 11f},
-            new[] {-18f - 15f - 36f, -18f, 18f + 15f}
-        };
-
         private readonly List<MeditationFocusDef>                   foci;
         private readonly Dictionary<string, List<PsycasterPathDef>> pathsByTab;
         private readonly List<TabRecord>                            tabs;
@@ -71,21 +63,24 @@
         public override void OnOpen()
         {
             base.OnOpen();
-            this.pawn          = (Pawn) Find.Selector.SingleSelectedThing;
-            this.hediff        = (Hediff_PsycastAbilities) this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
-            this.compAbilities = this.pawn.GetComp<CompAbilities>();
+            this.pawn = (Pawn) Find.Selector.SingleSelectedThing;
+            PsycastsUIUtility.Hediff =
+                this.hediff = (Hediff_PsycastAbilities) this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+            PsycastsUIUtility.CompAbilities = this.compAbilities = this.pawn.GetComp<CompAbilities>();
+            this.abilityPos.Clear();
         }
 
         protected override void CloseTab()
         {
             base.CloseTab();
-            this.pawn          = null;
-            this.hediff        = null;
-            this.compAbilities = null;
+            this.pawn                       = null;
+            PsycastsUIUtility.Hediff        = this.hediff        = null;
+            PsycastsUIUtility.CompAbilities = this.compAbilities = null;
         }
 
         protected override void FillTab()
         {
+            if (this.pawn == null || this.hediff == null || this.compAbilities == null) return;
             GameFont         font         = Text.Font;
             TextAnchor       anchor       = Text.Anchor;
             Rect             tabRect      = new(Vector2.one                  * 20f, this.size - Vector2.one * 40f);
@@ -147,7 +142,7 @@
             Rect psysets = listing.GetRect(240f);
             Widgets.DrawMenuSection(psysets);
             Rect viewRect = new(0, 0, psysets.width - 20f, this.lastPsysetsHeight);
-            Widgets.BeginScrollView(psysets, ref this.psysetsScrollPos, viewRect);
+            Widgets.BeginScrollView(psysets.ContractedBy(3f, 6f), ref this.psysetsScrollPos, viewRect);
             this.DoPsysets(viewRect);
             Widgets.EndScrollView();
             listing.CheckboxLabeled("VPE.UseAltBackground".Translate(), ref this.useAltBackgrounds);
@@ -195,10 +190,27 @@
         {
             Listing_Standard listing = new();
             listing.Begin(inRect);
-            if (Widgets.ButtonText(listing.GetRect(70f).LeftHalf().ContractedBy(10f), "VPE.CreatePsyset".Translate()))
-                Messages.Message("Created!", MessageTypeDefOf.PositiveEvent);
+            foreach (PsySet psyset in this.hediff.psysets.ToList())
+            {
+                Rect rect = listing.GetRect(30f);
+                Widgets.Label(rect.LeftHalf().LeftHalf(), psyset.Name);
+                if (Widgets.ButtonText(rect.LeftHalf().RightHalf(), "VPE.Rename".Translate()))
+                    Find.WindowStack.Add(new Dialog_RenamePsyset(psyset));
+                if (Widgets.ButtonText(rect.RightHalf().LeftHalf(), "VPE.Edit".Translate()))
+                    Find.WindowStack.Add(new Dialog_Psyset(psyset, this.pawn));
+                if (Widgets.ButtonText(rect.RightHalf().RightHalf(), "VPE.Remove".Translate()))
+                    this.hediff.psysets.Remove(psyset);
+            }
+
+            if (Widgets.ButtonText(listing.GetRect(70f).LeftHalf().ContractedBy(5f), "VPE.CreatePsyset".Translate()))
+            {
+                PsySet psyset = new() {Name = "VPE.Untitled".Translate()};
+                this.hediff.psysets.Add(psyset);
+                Find.WindowStack.Add(new Dialog_Psyset(psyset, this.pawn));
+            }
+
+            this.lastPsysetsHeight = listing.CurHeight + 70f;
             listing.End();
-            this.lastPsysetsHeight = listing.CurHeight;
         }
 
         private void DoPaths(Rect inRect)
@@ -213,18 +225,10 @@
                 Texture2D texture = this.useAltBackgrounds ? def.backgroundImage : def.altBackgroundImage;
                 float     height  = widthPerPath / texture.width * texture.height + 30f;
                 Rect      rect    = new(curPos, new Vector2(widthPerPath, height));
-                GUI.color = new ColorInt(97, 108, 122).ToColor;
-                Widgets.DrawBox(rect.ExpandedBy(2f), 1, Texture2D.whiteTexture);
-                GUI.color = Color.white;
-                Rect labelRect = rect.TakeBottomPart(30f);
-                Widgets.DrawRectFast(labelRect, Widgets.WindowBGFillColor);
-                Text.Anchor = TextAnchor.MiddleCenter;
-                Widgets.Label(labelRect, def.LabelCap);
-                GUI.DrawTexture(rect, texture);
-                Text.Anchor = TextAnchor.UpperLeft;
+                PsycastsUIUtility.DrawPathBackground(ref rect, def, this.useAltBackgrounds);
                 if (this.hediff.unlockedPaths.Contains(def))
                 {
-                    if (def.HasAbilities) this.DoPathAbilities(rect, def);
+                    if (def.HasAbilities) PsycastsUIUtility.DoPathAbilities(rect, def, this.abilityPos);
                 }
                 else
                 {
@@ -249,65 +253,6 @@
             }
 
             this.lastPathsHeight = curPos.y + maxHeight;
-        }
-
-        private void DoPathAbilities(Rect inRect, PsycasterPathDef path)
-        {
-            foreach (AbilityDef def in path.abilities)
-                if (def.Psycast()?.prerequisites is { } prerequisites && this.abilityPos.ContainsKey(def))
-                    foreach (AbilityDef abilityDef in prerequisites.Where(abilityDef => this.abilityPos.ContainsKey(abilityDef)))
-                    {
-                        Color color = Color.grey;
-                        if (this.compAbilities.HasAbility(abilityDef))
-                            color = Color.white;
-
-                        Widgets.DrawLine(this.abilityPos[def], this.abilityPos[abilityDef], color, 2f);
-                    }
-
-            for (int level = 0; level < path.abilityLevelsInOrder.Length; level++)
-            {
-                Rect levelRect = new(inRect.x, inRect.y + (path.MaxLevel - 1 - level) * inRect.height / path.MaxLevel + 10f, inRect.width, inRect.height / 5f);
-                AbilityDef[] abilities = path.abilityLevelsInOrder[level];
-                for (int pos = 0; pos < abilities.Length; pos++)
-                {
-                    Rect       rect = new(levelRect.x + levelRect.width / 2 + abilityTreeXOffsets[abilities.Length - 1][pos], levelRect.y, 36f, 36f);
-                    AbilityDef def  = abilities[pos];
-                    if (def == PsycasterPathDef.Blank) continue;
-                    this.abilityPos[def] = rect.center;
-                    this.DoAbility(rect, def);
-                }
-            }
-        }
-
-        private void DoAbility(Rect inRect, AbilityDef ability)
-        {
-            bool unlockable = false;
-            bool locked     = false;
-            if (!this.compAbilities.HasAbility(ability))
-            {
-                if (ability.Psycast().PrereqsCompleted(this.pawn) && this.hediff.points >= 1)
-                    unlockable = true;
-                else locked    = true;
-            }
-
-            Color color = Mouse.IsOver(inRect) ? GenUI.MouseoverColor : Color.white;
-            MouseoverSounds.DoRegion(inRect, SoundDefOf.Mouseover_Command);
-            if (unlockable) QuickSearchWidget.DrawStrongHighlight(inRect.ExpandedBy(12f));
-            GUI.color = color;
-            GUI.DrawTexture(inRect, Command.BGTexShrunk);
-            GUI.color = Color.white;
-            GUI.DrawTexture(inRect, ability.icon);
-            if (locked) Widgets.DrawRectFast(inRect, new Color(0f, 0f, 0f, 0.6f));
-
-            TooltipHandler.TipRegion(inRect, () => $"{ability.LabelCap}\n\n{ability.description}{(unlockable ? "\n\n" + "VPE.ClickToUnlock".Translate() : "")}",
-                                     ability.GetHashCode());
-
-            if (unlockable && Widgets.ButtonInvisible(inRect))
-            {
-                this.hediff.SpentPoints();
-                ability.abilityClass ??= typeof(Ability_Blank); // TODO: Remove this (it's for debugging)
-                this.compAbilities.GiveAbility(ability);
-            }
         }
     }
 }
