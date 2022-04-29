@@ -142,7 +142,8 @@
       <castTime>360</castTime>
       <targetMode>Self</targetMode>
       <castSound>VPE_BendProbability_Cast</castSound>
-      <castFleck>PsycastPsychicEffect</castFleck>
+      <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+      <castFleckScale>9</castFleckScale>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
