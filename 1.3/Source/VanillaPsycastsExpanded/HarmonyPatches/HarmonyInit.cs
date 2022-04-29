@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VanillaPsycastsExpanded.HarmonyPatches
+﻿namespace VanillaPsycastsExpanded.HarmonyPatches
 {
-    using HarmonyLib;
     using Verse;
 
     [StaticConstructorOnStartup]
@@ -14,8 +7,7 @@ namespace VanillaPsycastsExpanded.HarmonyPatches
     {
         static HarmonyInit()
         {
-            Harmony harmony = new Harmony("OskarPotocki.VanillaPsycastsExpanded");
-            harmony.PatchAll();
+            PsycastsMod.Harm.PatchAll();
         }
     }
 }

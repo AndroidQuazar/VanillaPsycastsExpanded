@@ -52,6 +52,7 @@
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
+    <Compile Include="HarmonyPatches\ThingDefGenerator_Neurotrainer_ImpliedThingDefs_Patch.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_NearbyOfTechlevel.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_ResearchSpeed.cs" />
     <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />

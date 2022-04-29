@@ -2,9 +2,10 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using RimWorld;
     using UnityEngine;
     using Verse;
-    using VFECore.Abilities;
+    using Ability = VFECore.Abilities.Ability;
 
     public class Ability_TransmuteItem : Ability
     {
@@ -46,5 +47,17 @@
 
         public override bool CanHitTarget(LocalTargetInfo target) => this.targetParams.CanTarget(target.Thing, this) &&
                                                                      GenSight.LineOfSight(this.pawn.Position, target.Cell, this.pawn.Map, true);
+
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
+            if (!base.ValidateTarget(target, showMessages)) return false;
+            if (target.Thing.MarketValue < 1f)
+            {
+                if (showMessages) Messages.Message("VPE.TooCheap".Translate(), MessageTypeDefOf.RejectInput, false);
+                return false;
+            }
+
+            return true;
+        }
     }
 }
