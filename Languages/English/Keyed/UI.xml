@@ -21,4 +21,10 @@
     <VPE.TeleportTo>Teleport to {0}</VPE.TeleportTo>
 	<VPE.CancelSkipbarrier>Cancel Skipbarrier</VPE.CancelSkipbarrier>
 	<VPE.CancelSkipbarrierDesc>Click to cancel Skipbarrier on the caster.</VPE.CancelSkipbarrierDesc>
+    <VPE.Edit>Edit</VPE.Edit>
+    <VPE.Rename>Rename</VPE.Rename>
+    <VPE.Untitled>Untitled</VPE.Untitled>
+    <VPE.Remove>Remove</VPE.Remove>
+    <VPE.Contents>Contents:</VPE.Contents>
+    <VPE.ClickRemove>Click to Remove</VPE.ClickRemove>
 </LanguageData>

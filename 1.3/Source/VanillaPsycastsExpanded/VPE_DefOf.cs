@@ -43,5 +43,8 @@
 
         public static SoundDef VPE_GuardianSkipbarrier_Sustainer;
         public static HediffDef VPE_GuardianSkipBarrier;
+        public static EffecterDef Interceptor_BlockedProjectilePsychic;
+        public static StatDef VPE_MeleeAttackSpeedFactor;
+        public static StatDef VPE_RangeAttackSpeedFactor;
     }
 }

@@ -217,7 +217,7 @@
 		<description>Psychically induced stasis that stops any bleeding.</description>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
-				<stateEffecter>VPE_BlockBleeding</stateEffecter>
+				<stateEffecter>VPE_SparksYellow</stateEffecter>
 			</li>
 		</comps>
 	</HediffDef>
@@ -250,7 +250,7 @@
 		<stages>
 			<li>
 				<statOffsets>
-				<MoveSpeed>0.2</MoveSpeed>
+					<MoveSpeed>-1</MoveSpeed>
 				</statOffsets>
 			</li>
 		</stages>
@@ -273,5 +273,60 @@
 			<canMerge>false</canMerge>
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_SpeedBoost</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<MoveSpeed>3</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_SparksYellow</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_BladeFocus</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<VPE_MeleeAttackSpeedFactor>2</VPE_MeleeAttackSpeedFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_SparksRed</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_FiringFocus</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<VPE_RangeAttackSpeedFactor>5</VPE_RangeAttackSpeedFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_SparksWhite</stateEffecter>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>

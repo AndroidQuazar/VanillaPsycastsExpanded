@@ -8,7 +8,7 @@
     public class Hediff_GuardianSkipBarrier : Hediff_Overshield
     {
         private Sustainer sustainer;
-        public override Color ShieldColor => Color.blue;
+        public override Color ShieldColor => new ColorInt(79, 141, 247).ToColor;
         public override float ShieldSize => 9;
         protected override void DestroyProjectile(Projectile projectile)
         {
@@ -18,19 +18,25 @@
         public override void Tick()
         {
             base.Tick();
-            if (this.pawn.IsHashIntervalTick(60))
-            {
-                AddEntropy();
-            }
+            AddEntropy();
             if (sustainer == null || sustainer.Ended)
             {
                 sustainer = VPE_DefOf.VPE_GuardianSkipbarrier_Sustainer.TrySpawnSustainer(SoundInfo.InMap(pawn));
             }
             sustainer.Maintain();
         }
+
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            if (!sustainer.Ended)
+            {
+                sustainer?.End();
+            }
+        }
         private void AddEntropy()
         {
-            pawn.psychicEntropy.TryAddEntropy(1f);
+            pawn.psychicEntropy.TryAddEntropy(1f, overLimit: true);
             if (pawn.psychicEntropy.EntropyValue >= pawn.psychicEntropy.MaxEntropy)
             {
                 Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);

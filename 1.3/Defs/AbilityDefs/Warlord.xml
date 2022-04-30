@@ -5,6 +5,11 @@
       <label>speedboost</label>
       <description>Psychically augments the muscle fibers, ligaments and joints in the caster’s legs, tripling their movement speed for roughly two minutes depending on their psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/SpeedBoost</iconPath>
+	  <targetMode>Self</targetMode>
+	  <castTime>15</castTime>
+	  <durationTime>7200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castSound>VPE_Speedboost_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -13,13 +18,23 @@
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>8</entropyGain>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_SpeedBoost</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BladeFocus</defName>
       <label>blade focus</label>
       <description>Psychically augments the muscle fibers, ligaments and joints in the caster’s arms, doubling their melee attack speed for roughly two minutes depending on their psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/BladeFocus</iconPath>
+	  <castSound>VPE_BladeFocus_Cast</castSound>
+	  <targetMode>Self</targetMode>
+	  <castTime>15</castTime>
+	  <durationTime>7200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -31,13 +46,23 @@
             <li>VPE_PowerLeap</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_BladeFocus</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_FiringFocus</defName>
       <label>firing focus</label>
       <description>Psychically augments the hands, eyes and reaction speed of the caster, reducing their ranged attack cooldown by 80% for roughly two minutes depending on their psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/FiringFocus</iconPath>
+	  <castSound>VPE_FiringFocus_Cast</castSound>
+	  <targetMode>Self</targetMode>
+	  <castTime>15</castTime>
+	  <durationTime>7200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -49,8 +74,13 @@
             <li>VPE_PowerLeap</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_FiringFocus</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_PowerLeap</defName>
       <label>power leap</label>

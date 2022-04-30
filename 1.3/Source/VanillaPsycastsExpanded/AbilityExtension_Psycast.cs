@@ -20,9 +20,11 @@
         public float            psyfocusCost = 0f;
         public bool             spaceAfter;
 
-        public bool PrereqsCompleted(Pawn pawn)
+        public bool PrereqsCompleted(Pawn pawn) => this.PrereqsCompleted(pawn.GetComp<CompAbilities>());
+
+        public bool PrereqsCompleted(CompAbilities compAbilities)
         {
-            return this.prerequisites == null || pawn.GetComp<CompAbilities>().LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
+            return this.prerequisites == null || compAbilities.LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
         }
 
         public float GetPsyfocusUsedByPawn(Pawn pawn) => this.psyfocusCost * pawn.GetStatValue(VPE_DefOf.VPE_PsyfocusCostFactor);
@@ -80,7 +82,7 @@
             base.Cast(target, ability);
 
             Hediff_PsycastAbilities psycastHediff =
-                (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+                (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
         }
 
