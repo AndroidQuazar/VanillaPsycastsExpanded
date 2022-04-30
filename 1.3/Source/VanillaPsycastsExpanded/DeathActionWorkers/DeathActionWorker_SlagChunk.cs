@@ -1,12 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RimWorld;
+using Verse;
 
-namespace VanillaPsycastsExpanded.DeathActionWorkers
+
+namespace VanillaPsycastsExpanded
 {
-    class DeathActionWorker_SlagChunk
-    {
-    }
+	public class DeathActionWorker_SlagChunk : DeathActionWorker
+	{
+		
+
+		public override void PawnDied(Corpse corpse)
+		{
+			if (corpse.Map != null)
+            {
+				Thing chunk = ThingMaker.MakeThing(ThingDefOf.ChunkSlagSteel);
+				GenSpawn.Spawn(chunk, corpse.Position, corpse.Map);
+				corpse.Destroy();
+			}
+		}
+	}
 }

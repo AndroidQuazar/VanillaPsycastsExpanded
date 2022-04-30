@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityExtension_PsychicComa.cs" />
+    <Compile Include="DeathActionWorkers\DeathActionWorker_SlagChunk.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
