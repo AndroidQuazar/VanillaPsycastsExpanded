@@ -53,9 +53,8 @@
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
-    <Compile Include="HarmonyPatches\StatExtension_GetStatValue_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_Kill_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDefGenerator_Neurotrainer_ImpliedThingDefs_Patch.cs" />
-    <Compile Include="HarmonyPatches\Tool_AdjustedCooldown_Patch.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_NearbyOfTechlevel.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_ResearchSpeed.cs" />
     <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />
@@ -102,6 +101,10 @@
     <Compile Include="Paths\Staticlord\Ability_Flashstorm.cs" />
     <Compile Include="Paths\Staticlord\Hurricane.cs" />
     <Compile Include="Paths\Staticlord\Vortex.cs" />
+    <Compile Include="Paths\Warlord\AbilityExtension_ForceJobOnTarget.cs" />
+    <Compile Include="Paths\Warlord\Ability_PowerLeap.cs" />
+    <Compile Include="Paths\Warlord\HediffComp_PlaySustainer.cs" />
+    <Compile Include="Paths\Warlord\JumpingPawn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsycasterPathDef.cs" />
     <Compile Include="PsycastsMod.cs" />

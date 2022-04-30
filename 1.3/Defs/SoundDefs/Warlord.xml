@@ -2,8 +2,6 @@
 <Defs>
 
 <!--
-Warlord\Psycast_ControlledFrenzy_Sustainer_01a.ogg
-Warlord\Psycast_PowerLeap_Land_01a.ogg
 Warlord\Psychic_Killskip_Jump_01a.ogg
 Warlord\Psychic_Killskip_Jump_01b.ogg
 Warlord\Psychic_Killskip_Jump_01c.ogg
@@ -112,6 +110,23 @@ Warlord\Psychic_Killskip_Jump_01c.ogg
 	</SoundDef>
 
 	<SoundDef>
+		<defName>VPE_PowerLeap_Land</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Warlord/Psycast_PowerLeap_Land_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
 		<defName>VPE_Speedboost_Cast</defName>
 		<context>MapOnly</context>
 		<maxSimultaneous>1</maxSimultaneous>
@@ -128,4 +143,24 @@ Warlord\Psychic_Killskip_Jump_01c.ogg
 		</subSounds>
 	</SoundDef>
 	
+	<SoundDef>
+		<defName>VPE_ControlledFrenzy_Sustainer</defName>
+		<context>MapOnly</context>
+		<sustain>True</sustain>
+		<maxSimultaneous>1</maxSimultaneous>
+		<maxVoices>1</maxVoices>
+		<priorityMode>PrioritizeNearest</priorityMode>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Warlord/Psycast_ControlledFrenzy_Sustainer_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+				<sustainLoop>True</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
 </Defs>

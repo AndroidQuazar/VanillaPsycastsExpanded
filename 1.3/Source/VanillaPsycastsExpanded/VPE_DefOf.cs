@@ -44,7 +44,11 @@
         public static SoundDef VPE_GuardianSkipbarrier_Sustainer;
         public static HediffDef VPE_GuardianSkipBarrier;
         public static EffecterDef Interceptor_BlockedProjectilePsychic;
-        public static StatDef VPE_MeleeAttackSpeedFactor;
-        public static StatDef VPE_RangeAttackSpeedFactor;
+
+        public static ThingDef VPE_JumpingPawn;
+        public static SoundDef VPE_PowerLeap_Land;
+        public static FleckDef VPE_WarlordZap;
+        public static HediffDef VPE_ControlledFrenzy;
+        public static HediffDef VPE_GuidedShot;
     }
 }

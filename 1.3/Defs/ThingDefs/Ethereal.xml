@@ -53,4 +53,13 @@
         <drawOffscreen>true</drawOffscreen>
         <seeThroughFog>true</seeThroughFog>
     </ThingDef>
+	
+    <ThingDef ParentName="PawnFlyerBase">
+        <defName>VPE_JumpingPawn</defName>
+        <thingClass>VanillaPsycastsExpanded.JumpingPawn</thingClass>
+        <pawnFlyer>
+            <flightDurationMin>0.1</flightDurationMin>
+            <flightSpeed>20</flightSpeed>
+        </pawnFlyer>
+    </ThingDef>
 </Defs>

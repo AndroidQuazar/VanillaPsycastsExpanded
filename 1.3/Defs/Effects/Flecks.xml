@@ -97,4 +97,31 @@
       <drawSize>2.3</drawSize>
     </graphicData>
   </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>VPE_WarlordZap</defName>
+    <solidTime>0.3</solidTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+      <texPath>Effects/Warlord/WarlordZap</texPath>
+      <ticksPerFrame>3</ticksPerFrame>
+      <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <random>true</random>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_RedSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+	  <color>(161, 59, 85, 115)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>6</solidTime>
+    <fadeOutTime>3.2</fadeOutTime>
+    <growthRate>0.005</growthRate>
+  </FleckDef>
 </Defs>

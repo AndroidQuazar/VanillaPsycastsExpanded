@@ -86,6 +86,13 @@
       <label>power leap</label>
       <description>Drastically augments the caster’s legs, feet and spine to be able to leap great distances and land without injury, the distance improving with the user’s psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/PowerLeap</iconPath>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_PowerLeap</abilityClass>
+	  <castTime>3</castTime>
+	  <targetMode>Location</targetMode>
+	  <range>14.9</range>
+	  <rangeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	  </rangeStatFactors>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -99,11 +106,17 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_AdrenalineRush</defName>
       <label>adrenaline rush</label>
       <description>Psychically induces a surge of adrenaline in the caster, blocking all pain and augmenting their sight, hearing and movement. Lasts roughly two minutes depending on the user’s psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/AdrenalineRush</iconPath>
+	  <castSound>VPE_AdrenalineRush_Cast</castSound>
+	  <targetMode>Self</targetMode>
+	  <castTime>15</castTime>
+	  <durationTime>1800</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -115,13 +128,23 @@
             <li>VPE_PowerLeap</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_AdrenalineRush</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ControlledFrenzy</defName>
       <label>controlled frenzy</label>
       <description>Psychically augments the caster’s prowess and killing urges, doubling their damage output with all weapons. Each kill reduces the caster’s heat by 10 and resets the duration of the frenzy.</description>
       <iconPath>Abilities/Warlord/ControlledFrenzy</iconPath>
+	  <targetMode>Self</targetMode>
+	  <castSound>VPE_ControlledFrenzy_Cast</castSound>
+	  <castTime>60</castTime>
+	  <durationTime>3600</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -133,13 +156,22 @@
             <li>VPE_AdrenalineRush</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_ControlledFrenzy</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_GuidedShot</defName>
       <label>guided shot</label>
       <description>Projects a psychic aura for 10 seconds that allows the caster to alter the path of any bullet they fire, effectively doubling their weapon range and guaranteeing hits for the duration.</description>
       <iconPath>Abilities/Warlord/GuidedShot</iconPath>
+	  <targetMode>Self</targetMode>
+	  <castSound>VPE_GuidedShot_Cast</castSound>
+	  <castTime>30</castTime>
+	  <durationTime>480</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -151,13 +183,27 @@
             <li>VPE_AdrenalineRush</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_GuidedShot</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Beckon</defName>
       <label>beckon</label>
       <description>Psychically command the target to approach the caster.</description>
       <iconPath>Abilities/Warlord/Beckon</iconPath>
+	  <targetingParameters>
+		<canTargetHumans>True</canTargetHumans>
+	  	<canTargetSelf>false</canTargetSelf>
+	  	<canTargetAnimals>True</canTargetAnimals>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+	  </targetingParameters>
+	  <castTime>15</castTime>
+	  <durationTime>480</durationTime>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <range>20</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -169,8 +215,13 @@
             <li>VPE_AdrenalineRush</li>
           </prerequisites>
         </li>
+		<li Class = "VanillaPsycastsExpanded.AbilityExtension_ForceJobOnTarget">
+			<jobDef>GotoMindControlled</jobDef>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Killskip</defName>
       <label>killskip</label>
@@ -192,7 +243,7 @@
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MassBeckon</defName>
-      <label>5</label>
+      <label>mass beckon</label>
       <description>Psychically command the targets within an area to approach the caster.</description>
       <iconPath>Abilities/Warlord/MassBeckon</iconPath>
       <modExtensions>

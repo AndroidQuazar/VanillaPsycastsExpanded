@@ -228,4 +228,19 @@
 		<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_WarlordTargettingReticle</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<graphicData>
+			<texPath>Effects/Warlord/GuidedShot/WarlordTargettingReticle</texPath>
+		</graphicData>
+		<mote>
+			<realTime>true</realTime>
+			<solidTime>9999</solidTime>
+			<fadeOutTime>0.15</fadeOutTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+	</ThingDef>
 </Defs>
