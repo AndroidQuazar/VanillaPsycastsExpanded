@@ -204,6 +204,7 @@
 	  <castTime>15</castTime>
 	  <durationTime>480</durationTime>
 	  <range>20</range>
+	  <castSound>PsycastPsychicEffect</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -258,6 +259,7 @@
 	  <range>15.9</range>
 	  <radius>9</radius>
 	  <targetMode>Location</targetMode>
+	  <castSound>PsycastPsychicEffect</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
