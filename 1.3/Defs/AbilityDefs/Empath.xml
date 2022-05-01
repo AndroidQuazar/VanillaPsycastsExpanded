@@ -114,6 +114,7 @@
       <label>psychic sooth (male)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects males.</description>
       <iconPath>Abilities/Empath/SootheMale</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <castTime>600</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
@@ -143,6 +144,7 @@
       <label>psychic sooth (female)</label>
       <description>Sends out a signal to a distant engine of happiness to begin projecting a positive psychic drone, while also manipulating an orbital amplifier that only affects females.</description>
       <iconPath>Abilities/Empath/SootheFemale</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>

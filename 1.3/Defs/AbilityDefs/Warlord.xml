@@ -195,6 +195,7 @@
       <label>beckon</label>
       <description>Psychically command the target to approach the caster.</description>
       <iconPath>Abilities/Warlord/Beckon</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>
 	  	<canTargetSelf>false</canTargetSelf>
@@ -260,6 +261,7 @@
 	  <radius>9</radius>
 	  <targetMode>Location</targetMode>
 	  <castSound>PsycastPsychicEffect</castSound>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
