@@ -52,7 +52,7 @@
         {
             base.Cast(target, ability);
             foreach (var pawn in GenRadial.RadialDistinctThingsAround(target.Cell, ability.pawn.Map, ability.GetRadiusForPawn(), true)
-                .OfType<Pawn>().Where(x => x != ability.pawn))
+                .OfType<Pawn>().Where(x => x != ability.pawn && x.HostileTo(ability.pawn)))
             {
                 ForceJob(pawn, ability);
             }
