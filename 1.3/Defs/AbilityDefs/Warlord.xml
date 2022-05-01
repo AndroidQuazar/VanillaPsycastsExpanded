@@ -93,7 +93,7 @@
 	  <rangeStatFactors>
 		<PsychicSensitivity>1</PsychicSensitivity>
 	  </rangeStatFactors>
-	  <castSound>VPE_PowerLeap_Land</castSound>
+	  <castSound>VPE_PowerLeap_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
