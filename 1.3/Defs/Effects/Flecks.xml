@@ -140,4 +140,21 @@
       <drawSize>(1, 1)</drawSize>
     </graphicData>
   </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_PsycastSkipFlashExitRed</defName>
+    <altitudeLayer>VisEffects</altitudeLayer>
+    <fadeInTime>0.03</fadeInTime>
+    <fadeOutTime>1.3</fadeOutTime>
+    <solidTime>0.08</solidTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MotePsychicSkipFlash</shaderType>
+      <texPath>Things/Mote/PsycastSkipFlashRed</texPath>
+      <shaderParameters>
+        <_Noise>/Things/Mote/SkipFlashNoise</_Noise>
+      </shaderParameters>
+      <drawSize>2.6</drawSize>
+    </graphicData>
+  </FleckDef>
 </Defs>

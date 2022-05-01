@@ -1,10 +1,10 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using HarmonyLib;
+    using RimWorld;
     using System.Linq;
     using Verse;
     using VFECore.Abilities;
-using static VFECore.Patch_Verb;
 
     [HarmonyPatch(typeof(Pawn), "Kill")]
     public static class Pawn_Kill_Patch

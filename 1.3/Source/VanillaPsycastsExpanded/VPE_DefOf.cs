@@ -30,6 +30,9 @@
         public static SoundDef VPE_RaidPause_Sustainer;
         public static SoundDef VPE_GuardianSkipbarrier_Sustainer;
         public static SoundDef VPE_PowerLeap_Land;
+        public static SoundDef VPE_Killskip_Jump_01a;
+        public static SoundDef VPE_Killskip_Jump_01b;
+        public static SoundDef VPE_Killskip_Jump_01c;
 
         public static StatDef VPE_PsyfocusCostFactor;
         public static StatDef VPE_PsychicEntropyMinimum;
@@ -44,6 +47,7 @@
         public static MeditationFocusDef VPE_Wealth;
 
         public static EffecterDef      Interceptor_BlockedProjectilePsychic;
+        public static EffecterDef VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef  VPE_Foretelling;
         public static GameConditionDef VPE_PsychicFlashstorm;
 

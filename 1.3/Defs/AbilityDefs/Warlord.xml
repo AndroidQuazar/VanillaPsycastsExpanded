@@ -227,6 +227,11 @@
       <label>killskip</label>
       <description>Teleports to the target and executes a melee strike, weakened or augmented by the caster’s melee skill. If the target is killed, teleports to the next closest enemy at no cost and attacks again, until there is nothing left to kill.</description>
       <iconPath>Abilities/Warlord/Killskip</iconPath>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_Killskip</abilityClass>
+	  <castTime>30</castTime>
+	  <range>15.5</range>
+	  <targetMode>Pawn</targetMode>
+	  <needsTicking>true</needsTicking>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -241,6 +246,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_MassBeckon</defName>
       <label>mass beckon</label>
