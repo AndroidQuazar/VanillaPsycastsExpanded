@@ -13,7 +13,7 @@
         {
             if (multiplyByPawnMeleeSkill)
             {
-                __result += attacker.skills.GetSkill(SkillDefOf.Melee).Level / 10f;
+                __result *= (attacker.skills.GetSkill(SkillDefOf.Melee).Level / 10f) * attacker.GetStatValue(StatDefOf.PsychicSensitivity);
             }
         }
     }

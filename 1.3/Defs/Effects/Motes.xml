@@ -211,7 +211,7 @@
 			<fadeOutTime>0.1</fadeOutTime>
 		</mote>
 		<graphicData>
-		<texPath>Things/Mote/RedSparkFlash</texPath>
+		<texPath>Effects/Warlord/RedSparks/SparkRed</texPath>
 		<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
@@ -224,7 +224,7 @@
 			<fadeOutTime>0.1</fadeOutTime>
 		</mote>
 		<graphicData>
-		<texPath>Things/Mote/WhiteSparkFlash</texPath>
+		<texPath>Effects/Warlord/WhiteSparks/SparkWhite</texPath>
 		<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>

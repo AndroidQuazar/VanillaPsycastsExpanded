@@ -18,7 +18,7 @@
         public static float idlePulseSpeed = 3;
         public static float minIdleAlpha = 0.05f;
         public static float minAlpha = 0.2f;
-        public virtual float ShieldSize => 2.5f;
+        public virtual float ShieldSize => 1f;
         public virtual Color ShieldColor => Color.yellow;
 
         private Material shieldMat;
@@ -69,7 +69,7 @@
         }
         public void Draw()
         {
-            Vector3 pos = pawn.Position.ToVector3Shifted();
+            Vector3 pos = pawn.DrawPos;
             pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             float currentAlpha = GetCurrentAlpha();
             if (currentAlpha > 0f)
