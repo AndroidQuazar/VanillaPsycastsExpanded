@@ -277,8 +277,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_SpeedBoost</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic agility</label>
+		<description>Psychically induced agility boost, greatly increasing movement speed.</description>
 		<stages>
 			<li>
 				<statFactors>
@@ -295,8 +295,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_BladeFocus</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>blade focus</label>
+		<description>Psychically induced combat focus, greatly enhancing melee combat capabilities.</description>
 		<stages>
 			<li>
 				<statFactors>
@@ -313,8 +313,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_FiringFocus</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>firing focus</label>
+		<description>Psychically induced combat focus, greatly enhancing ranged combat capabilities.</description>
 		<stages>
 			<li>
 				<statFactors>
@@ -331,8 +331,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_AdrenalineRush</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic rush</label>
+		<description>Psychically induced adrenaline rush, increasing sight, hearing and movement capabilities.</description>
 		<stages>
 			<li>
 				<painFactor>0</painFactor>
@@ -356,8 +356,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_ControlledFrenzy</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic frenzy</label>
+		<description>Temporary, psychically induced frenzy. The energy restores itself with each consecutive kill.</description>
 		<hediffClass>VFECore.Abilities.Hediff_Ability</hediffClass>
 		<stages>
 			<li>
@@ -379,8 +379,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_GuidedShot</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>guided shot</label>
+		<description>Psychically induced insane accuracy.</description>
 		<hediffClass>VFECore.Abilities.Hediff_Ability</hediffClass>
 		<stages>
 			<li>
