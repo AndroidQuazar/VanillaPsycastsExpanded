@@ -53,6 +53,7 @@
             this.pawn.stances.SetStance(new Stance_Mobile());
             VerbProperties_AdjustedMeleeDamageAmount_Patch.multiplyByPawnMeleeSkill = true;
             this.pawn.meleeVerbs.TryMeleeAttack(target.Pawn, null, true);
+            this.pawn.meleeVerbs.TryMeleeAttack(target.Pawn, null, true); // deals two attack at once
             VerbProperties_AdjustedMeleeDamageAmount_Patch.multiplyByPawnMeleeSkill = false;
             castSounds.RandomElement().PlayOneShot(pawn);
         }
