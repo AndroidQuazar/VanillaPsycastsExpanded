@@ -104,4 +104,15 @@
         <casualInterruptible>false</casualInterruptible>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
+    <HistoryEventDef>
+        <defName>VPE_Foretelling</defName>
+        <label>foretelling</label>
+    </HistoryEventDef>
+    <GameConditionDef>
+        <defName>VPE_RaidPause</defName>
+        <conditionClass>VanillaPsycastsExpanded.Chronopath.GameCondition_RaidPause</conditionClass>
+        <label>paused raid</label>
+        <description>A Chronopath is pausing a raid.</description>
+        <canBePermanent>false</canBePermanent>
+    </GameConditionDef>
 </Defs>

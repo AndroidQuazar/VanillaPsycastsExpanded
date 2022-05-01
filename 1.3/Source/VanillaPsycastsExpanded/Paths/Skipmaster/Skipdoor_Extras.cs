@@ -98,6 +98,7 @@
                 IntVec3 cell      = this.targetCell;
                 Map     map       = this.job.globalTarget.Map;
                 localPawn.teleporting = true;
+                localPawn.ClearAllReservations(false);
                 localPawn.ExitMap(false, Rot4.Invalid);
                 localPawn.teleporting = false;
                 GenSpawn.Spawn(localPawn, cell, map);

@@ -28,7 +28,7 @@
             this.closeOnClickedOutside = true;
         }
 
-        public override Vector2 InitialSize => new(UI.screenWidth / 2f, UI.screenHeight - 200f);
+        public override Vector2 InitialSize => new(UI.screenWidth / 4f, UI.screenHeight - 400f);
 
         public override void DoWindowContents(Rect inRect)
         {

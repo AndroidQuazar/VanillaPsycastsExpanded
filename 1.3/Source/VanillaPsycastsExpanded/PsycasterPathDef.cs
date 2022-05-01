@@ -80,19 +80,19 @@
                                                                                             : Gen.YieldSingle(ab)).ToArray();
 
             this.HasAbilities = this.abilityLevelsInOrder.Any(arr => !arr.NullOrEmpty());
-            // if (!this.HasAbilities) return;
+            if (!this.HasAbilities) return;
             // Log.Message($"Abilities for {this.label}:");
-            // for (int i = 0; i < this.abilityLevelsInOrder.Length; i++)
-            // {
-            //     AbilityDef[] arr = this.abilityLevelsInOrder[i];
-            //     if (arr is null)
-            //         this.abilityLevelsInOrder[i] = new AbilityDef[0];
-            //     else
-            //     {
-            //         Log.Message($"  Level {i + 1}:");
-            //         for (int j = 0; j < arr.Length; j++) Log.Message($"    {j}: {arr[j].label}");
-            //     }
-            // }
+            for (int i = 0; i < this.abilityLevelsInOrder.Length; i++)
+            {
+                AbilityDef[] arr = this.abilityLevelsInOrder[i];
+                if (arr is null)
+                    this.abilityLevelsInOrder[i] = new AbilityDef[0];
+                //     else
+                //     {
+                //         Log.Message($"  Level {i + 1}:");
+                //         for (int j = 0; j < arr.Length; j++) Log.Message($"    {j}: {arr[j].label}");
+                //     }
+            }
         }
     }
 }

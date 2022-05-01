@@ -48,8 +48,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbilityExtension_PsychicComa.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_SlagChunk.cs" />
+    <Compile Include="Common\AbilityExtension_Flee.cs" />
+    <Compile Include="Common\AbilityExtension_PsychicComa.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
@@ -58,6 +59,14 @@
     <Compile Include="Meditation\FocusStrengthOffset_NearbyOfTechlevel.cs" />
     <Compile Include="Meditation\FocusStrengthOffset_ResearchSpeed.cs" />
     <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />
+    <Compile Include="Paths\Chronopath\AbilityExtension_Age.cs" />
+    <Compile Include="Paths\Chronopath\AbilityExtension_ImproveRelations.cs" />
+    <Compile Include="Paths\Chronopath\AbilityExtension_ReduceResistance.cs" />
+    <Compile Include="Paths\Chronopath\Ability_AdvanceSeason.cs" />
+    <Compile Include="Paths\Chronopath\Ability_Finish.cs" />
+    <Compile Include="Paths\Chronopath\Ability_MaturePlants.cs" />
+    <Compile Include="Paths\Chronopath\Ability_Meditate.cs" />
+    <Compile Include="Paths\Chronopath\GameCondition_RaidPause.cs" />
     <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Paths\Conflagrator\FireBeam.cs" />
     <Compile Include="Paths\Conflagrator\FireTornado.cs" />
@@ -76,7 +85,7 @@
     <Compile Include="Paths\Empath\AbilityExtension_EnergyDump.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_MindWipe.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_PsycastWordOfSerenity.cs" />
-    <Compile Include="Paths\Empath\AbilityExtension_GiveInspiration.cs" />
+    <Compile Include="Common\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />

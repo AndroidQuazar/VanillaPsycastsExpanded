@@ -353,7 +353,7 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_ControlledFrenzy</defName>
 		<label>text.todo</label>
@@ -376,7 +376,7 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_GuidedShot</defName>
 		<label>text.todo</label>
@@ -399,5 +399,25 @@
 				<targetingLineWidth>0.05</targetingLineWidth>
 			</li>
 		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_AgeSickness</defName>
+		<label>age sickness</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.5</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.25</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>
