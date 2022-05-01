@@ -202,7 +202,6 @@
 	  </targetingParameters>
 	  <castTime>15</castTime>
 	  <durationTime>480</durationTime>
-	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <range>20</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -218,6 +217,7 @@
 		<li Class = "VanillaPsycastsExpanded.AbilityExtension_ForceJobOnTarget">
 			<jobDef>GotoMindControlled</jobDef>
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -252,6 +252,11 @@
       <label>mass beckon</label>
       <description>Psychically command the targets within an area to approach the caster.</description>
       <iconPath>Abilities/Warlord/MassBeckon</iconPath>
+	  <castTime>15</castTime>
+	  <durationTime>480</durationTime>
+	  <range>15.9</range>
+	  <radius>9</radius>
+	  <targetMode>Location</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -264,6 +269,11 @@
             <li>VPE_GuidedShot</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_ForceJobOnTargetInRadius">
+			<jobDef>GotoMindControlled</jobDef>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 </Defs>
