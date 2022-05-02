@@ -56,10 +56,16 @@
 			<li Class="AnimalBehaviours.CompProperties_DoesntFlee">
 		
 			</li>
+			<li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
+				<gizmoImage>Effects/Technomancer/BreakLink/BreakLinkSteelConstruct</gizmoImage>
+				<gizmoLabel>VPE_BreakLink</gizmoLabel>
+				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
+			</li>
 		</comps>
 		<race>
 			<deathActionWorkerClass>VanillaPsycastsExpanded.DeathActionWorker_SlagChunk</deathActionWorkerClass>
 			<bloodDef>VPE_Filth_Metal</bloodDef>
+			<body>VPE_MetalConstructBody</body>
 			<fleshType>VPE_SteelConstructFlesh</fleshType>
 			<lifeStageAges>
 				<li>
@@ -102,11 +108,17 @@
 				<hediffname>VPE_NoPain</hediffname>
 				<hediffseverity>1</hediffseverity>
 			</li>
+			<li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
+				<gizmoImage>Effects/Technomancer/BreakLink/BreakLinkRockConstruct</gizmoImage>
+				<gizmoLabel>VPE_BreakLink</gizmoLabel>
+				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
+			</li>
 			
 		</comps>
 		<race>
 			
 			<bloodDef>VPE_Filth_Rock</bloodDef>
+			<body>VPE_RockConstructBody</body>
 			<fleshType>VPE_RockConstructFlesh</fleshType>
 			<lifeStageAges>
 				<li>
