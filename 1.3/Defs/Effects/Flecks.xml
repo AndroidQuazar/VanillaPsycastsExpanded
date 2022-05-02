@@ -81,6 +81,7 @@
       <random>true</random>
     </graphicData>
   </FleckDef>
+  
   <FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
     <defName>VFEP_PsycastAreaEffectSlow</defName>
     <altitudeLayer>MoteLow</altitudeLayer>
@@ -155,6 +156,20 @@
         <_Noise>/Things/Mote/SkipFlashNoise</_Noise>
       </shaderParameters>
       <drawSize>2.6</drawSize>
+    </graphicData>
+  </FleckDef>
+  
+  <FleckDef ParentName="FleckBase">
+    <defName>VPE_AggresiveHeatDump</defName>
+    <solidTime>0.3</solidTime>
+    <fadeOutTime>0.1</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+      <texPath>Effects/Archotechist/AggresiveHeatDump</texPath>
+      <ticksPerFrame>5</ticksPerFrame>
+      <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>(2.3, 2.3)</drawSize>
     </graphicData>
   </FleckDef>
 </Defs>

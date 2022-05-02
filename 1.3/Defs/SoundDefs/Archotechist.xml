@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <SoundDef>
+      <defName>VPE_AggressiveHeatDump_Cast</defName>
+      <context>MapOnly</context>
+      <maxSimultaneous>1</maxSimultaneous>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Chronopath/Psycast_AggressiveHeatDump_Cast_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>42</volumeRange>
+          <distRange>20~50</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+	
+    <SoundDef>
+      <defName>VPE_NeuralHeatDetonation_Cast</defName>
+      <context>MapOnly</context>
+      <maxSimultaneous>1</maxSimultaneous>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Chronopath/Psycast_NeuralHeatDetonation_Cast_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>42</volumeRange>
+          <distRange>20~50</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+	
+    <SoundDef>
+      <defName>VPE_PsychicDrone_Cast</defName>
+      <context>MapOnly</context>
+      <maxSimultaneous>1</maxSimultaneous>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Chronopath/Psycast_PsychicDrone_Cast_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>42</volumeRange>
+          <distRange>20~50</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+
+<!--
+Psycast_PsychicDrone_End_01a.ogg
+Psycast_PsychicDrone_Sustainer_01a.ogg
+-->
+	
+</Defs>

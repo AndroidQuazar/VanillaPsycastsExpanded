@@ -46,6 +46,7 @@
 
         public static FleckDef VPE_VortexSpark;
         public static FleckDef VPE_WarlordZap;
+        public static FleckDef VPE_AggresiveHeatDump;
 
         public static MeditationFocusDef VPE_Group;
         public static MeditationFocusDef VPE_Archotech;

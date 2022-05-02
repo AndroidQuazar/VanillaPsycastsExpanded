@@ -162,6 +162,16 @@
       <label>aggressive heat dump</label>
       <description>Instantly dump all of your neural heat into a target, causing them to explode with an area of effect relative to the heat lost and the target’s psychic sensitivity. A good declaration of war.</description>
       <iconPath>Abilities/Archotechist/AggressiveHeatDump</iconPath>
+      <targetingParameters>
+		<canTargetHumans>True</canTargetHumans>
+        <onlyTargetColonists>True</onlyTargetColonists>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+      </targetingParameters>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_AggressiveHeatDump</abilityClass>
+	  <castTime>60</castTime>
+	  <goodwillImpact>-200</goodwillImpact>
+	  <range>25</range>
+	  <castSound>VPE_AggressiveHeatDump_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
