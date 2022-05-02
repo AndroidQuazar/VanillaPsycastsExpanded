@@ -39,6 +39,7 @@
         public static SoundDef VPE_TimeSphere_Sustainer;
         public static SoundDef Psycast_Neuroquake_CastLoop;
         public static SoundDef Psycast_Neuroquake_CastEnd;
+        public static SoundDef VPE_PsychicDrone_End;
 
         public static StatDef VPE_PsyfocusCostFactor;
         public static StatDef VPE_PsychicEntropyMinimum;
@@ -52,6 +53,8 @@
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MeditationFocusDef VPE_Wealth;
+
+        public static MentalStateDef VPE_Wander_Sad;
 
         public static EffecterDef      Interceptor_BlockedProjectilePsychic;
         public static EffecterDef      VPE_Skip_ExitNoDelayRed;

@@ -14,6 +14,10 @@
                 {
                     overshield.Draw();
                 }
+                else if (hediff is Hediff_PsychicDrone psychicDrone)
+                {
+                    psychicDrone.Draw();
+                }
             }
         }
     }

@@ -229,6 +229,14 @@
       <label>psychic drone</label>
       <description>Creates a massive psychic drone aura around the caster tuned to hostiles, frequently driving them insane until they overcome the break. Duration scales with the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Archotechist/PsychicDrone</iconPath>
+	  <targetMode>Self</targetMode>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castFleck>PsycastAreaEffect</castFleck>
+	  <castFleckScale>10</castFleckScale>
+	  <castSound>VPE_PsychicDrone_Cast</castSound>
+	  <durationTime>1800</durationTime>
+	  <castTime>60</castTime>
+	  <radius>25.9</radius>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
@@ -241,6 +249,10 @@
             <li>VPE_AggressiveHeatDump</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_PsychicDrone</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	

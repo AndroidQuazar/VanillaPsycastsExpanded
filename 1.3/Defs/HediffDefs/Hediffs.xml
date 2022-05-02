@@ -371,7 +371,7 @@
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_RedSmoke</stateEffecter>
 			</li>
-			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySustainer">
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
 				<sustainer>VPE_ControlledFrenzy_Sustainer</sustainer>
 			</li>
 		</comps>
@@ -419,5 +419,18 @@
 				</capMods>
 			</li>
 		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_PsychicDrone</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_PsychicDrone</hediffClass>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
+				<endSound>VPE_PsychicDrone_End</endSound>
+				<sustainer>VPE_PsychicDrone_Sustainer</sustainer>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>
