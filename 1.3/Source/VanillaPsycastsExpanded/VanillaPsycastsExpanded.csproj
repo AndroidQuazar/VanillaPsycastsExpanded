@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comps\CompBreakLink.cs" />
+    <Compile Include="Comps\CompProperties\CompProperties_SetStoneColour.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_BreakLink.cs" />
+    <Compile Include="Comps\CompSetStoneColour.cs" />
     <Compile Include="DeathActionWorkers\DeathActionWorker_SlagChunk.cs" />
     <Compile Include="Common\AbilityExtension_Flee.cs" />
     <Compile Include="Common\AbilityExtension_PsychicComa.cs" />

@@ -34,7 +34,7 @@
 			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
 			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
 		</race>
-		
+
 	</ThingDef>
 	<!-- Steel -->
 	<ThingDef ParentName="VPE_ConstructBase">
@@ -48,13 +48,26 @@
 			<ArmorRating_Sharp>0.6</ArmorRating_Sharp>
 			<MoveSpeed>4.6</MoveSpeed>
 		</statBases>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				
+			</li>
+		</tools>
 		<comps>
 			<li Class="AnimalBehaviours.CompProperties_InitialHediff">
 				<hediffname>VPE_NoPain</hediffname>
 				<hediffseverity>1</hediffseverity>
 			</li>
 			<li Class="AnimalBehaviours.CompProperties_DoesntFlee">
-		
+
 			</li>
 			<li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
 				<gizmoImage>Effects/Technomancer/BreakLink/BreakLinkSteelConstruct</gizmoImage>
@@ -90,7 +103,7 @@
 			</li>
 		</lifeStages>
 	</PawnKindDef>
-	
+
 	<!-- Rock -->
 	<ThingDef ParentName="VPE_ConstructBase">
 		<defName>VPE_RockConstruct</defName>
@@ -113,10 +126,24 @@
 				<gizmoLabel>VPE_BreakLink</gizmoLabel>
 				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
 			</li>
-			
+			<li Class="VanillaPsycastsExpanded.CompProperties_SetStoneColour"/>
+
 		</comps>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				
+			</li>
+		</tools>
 		<race>
-			
+
 			<bloodDef>VPE_Filth_Rock</bloodDef>
 			<body>VPE_RockConstructBody</body>
 			<fleshType>VPE_RockConstructFlesh</fleshType>
