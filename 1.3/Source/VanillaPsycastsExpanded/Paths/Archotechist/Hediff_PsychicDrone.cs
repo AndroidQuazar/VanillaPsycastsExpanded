@@ -30,7 +30,7 @@
         public override void Tick()
         {
             base.Tick();
-            curAngle += 0.01f;
+            curAngle += 0.015f;
             if (curAngle > 360)
             {
                 curAngle = 0;
@@ -44,11 +44,6 @@
                     if (pawn.mindState.mentalStateHandler.TryStartMentalState(mentalStateDef, causedByPsycast: true))
                     {
                         affectedPawns.Add(pawn);
-                        Log.Message("Affecting " + pawn + " with " + mentalStateDef);
-                    }
-                    else
-                    {
-                        Log.Message("Failed to affect " + pawn + " with " + mentalStateDef);
                     }
                 }
             }

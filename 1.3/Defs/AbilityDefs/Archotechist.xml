@@ -261,6 +261,10 @@
       <label>neural heat detonation</label>
       <description>Efficiently but indiscriminately dumps all of the caster’s neural heat into an explosion away from themselves, the size being both relative to the heat lost and their psychic sensitivity.</description>
       <iconPath>Abilities/Archotechist/NeuralHeatDetonation</iconPath>
+	  <targetMode>Self</targetMode>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_NeuralHeatDetonation</abilityClass>
+	  <castTime>300</castTime>
+	  <castSound>VPE_NeuralHeatDetonation_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
