@@ -21,7 +21,7 @@
             if (this.TicksPassed % 60 == 0)
                 foreach (Map map in this.AffectedMaps)
                 foreach (Pawn pawn in map.attackTargetsCache.TargetsHostileToColony.OfType<Pawn>())
-                    pawn.stances.stunner.StunFor(60, null, false);
+                    pawn.stances.stunner.StunFor(61, null, false);
 
             if (this.sustainer == null) this.sustainer = VPE_DefOf.VPE_RaidPause_Sustainer.TrySpawnSustainer(SoundInfo.OnCamera());
             else this.sustainer.Maintain();

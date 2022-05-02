@@ -127,10 +127,9 @@
 
   <FleckDef ParentName="FleckBase">
     <defName>VPE_Timeskip</defName>
-    <solidTime>0.8</solidTime>
+    <solidTime>0.4</solidTime>
     <fadeOutTime>0.1</fadeOutTime>
-    <fadeInTime>0.1</fadeInTime>
-    <growthRate>20</growthRate>
+    <growthRate>15</growthRate>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
       <texPath>Effects/Chronopath/TimeskipWave</texPath>
@@ -138,6 +137,7 @@
       <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
       <shaderType>MoteGlow</shaderType>
       <drawSize>(1, 1)</drawSize>
+      <random>false</random>
     </graphicData>
   </FleckDef>
   

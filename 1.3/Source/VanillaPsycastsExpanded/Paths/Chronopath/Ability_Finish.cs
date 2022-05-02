@@ -26,7 +26,6 @@
                     dominant  = ingredients.Where(x => x.def.IsStuff).RandomElementByWeight(x => x.stackCount);
                 else dominant = ingredients.RandomElementByWeight(x => x.stackCount);
                 List<Thing> products = GenRecipe.MakeRecipeProducts(recipe, creator, ingredients, dominant, thing.BoundWorkTable as IBillGiver).ToList();
-                GenDebug.LogList(products);
                 ingredients.ForEach(t => recipe.Worker.ConsumeIngredient(t, recipe, this.pawn.Map));
                 thing.BoundBill.Notify_IterationCompleted(creator, ingredients);
                 recipe.Worker.ConsumeIngredient(thing, recipe, this.pawn.Map);

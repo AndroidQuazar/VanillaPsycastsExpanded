@@ -14,6 +14,7 @@
         public static HediffDef VPE_ControlledFrenzy;
         public static HediffDef VPE_Regenerating;
         public static HediffDef VPE_GuardianSkipBarrier;
+        public static HediffDef HeartAttack;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;

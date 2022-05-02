@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded.Chronopath
 {
     using System.Collections.Generic;
+    using System.Linq;
     using RimWorld;
     using Verse;
     using VFECore.Abilities;
@@ -38,6 +39,14 @@
 
             if (pawn.ageTracker.AgeBiologicalYears < 16)
                 pawn.ageTracker.AgeTickMothballed(GenDate.TicksPerYear * 16 - (int) pawn.ageTracker.AgeBiologicalTicks);
+
+            if (pawn.ageTracker.AgeBiologicalYears > pawn.def.race.lifeExpectancy * 1.1f)
+            {
+                BodyPartRecord part   = pawn.RaceProps.body.AllParts.FirstOrDefault(p => p.def == BodyPartDefOf.Heart);
+                Hediff         hediff = HediffMaker.MakeHediff(VPE_DefOf.HeartAttack, pawn, part);
+                hediff.Severity = 1.1f;
+                pawn.health.AddHediff(hediff, part);
+            }
         }
     }
 }

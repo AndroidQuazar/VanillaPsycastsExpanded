@@ -9,12 +9,12 @@
 
         public override void DrawFleck(FleckDrawData drawData, DrawBatch batch)
         {
-            this.startTick ??= Current.Game?.tickManager?.TicksGame ?? 0f;
+            float curTick = Current.Game?.tickManager?.TicksGame ?? 0f;
+            this.startTick ??= curTick;
             GraphicData_Animated dataAnimated = (GraphicData_Animated) this.data;
-            this.subGraphics?[
-                Mathf.FloorToInt(((Current.Game?.tickManager?.TicksGame ?? 0f) - (dataAnimated.random ? 0 : this.startTick.Value)) /
-                                 dataAnimated.ticksPerFrame) %
-                this.subGraphics.Length].DrawFleck(drawData, batch);
+            int frame = Mathf.FloorToInt((curTick - (dataAnimated.random ? 0 : this.startTick.Value)) / dataAnimated.ticksPerFrame) % this.subGraphics.Length;
+            Log.Message($"curTick: {curTick}, startTick: {this.startTick}, frame: {frame}, frames: {this.subGraphics.Length}");
+            this.subGraphics?[frame].DrawFleck(drawData, batch);
         }
     }
 }

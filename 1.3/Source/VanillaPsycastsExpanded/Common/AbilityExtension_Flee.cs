@@ -17,8 +17,8 @@
             Pawn pawn = target.Pawn;
             if (!this.onlyHostile || !pawn.HostileTo(ability.pawn)) return;
             pawn.GetLord()?.RemovePawn(pawn);
-            if (pawn.mindState != null) pawn.mindState.duty = new PawnDuty(DutyDefOf.ExitMapBest) {locomotion = LocomotionUrgency.Jog, canDig = false};
             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+            pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.PanicFlee, ability.def.label, true, false, ability.pawn, true, false, true);
         }
     }
 }
