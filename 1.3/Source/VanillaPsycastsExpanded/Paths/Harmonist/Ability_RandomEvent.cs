@@ -10,13 +10,18 @@
         public override void Cast(LocalTargetInfo target)
         {
             base.Cast(target);
+            DoRandomEvent(this.pawn.Map);
+        }
+
+        public static void DoRandomEvent(Map map)
+        {
             int i = 0;
             while (true)
             {
                 try
                 {
                     IncidentDef incident = DefDatabase<IncidentDef>.AllDefs.RandomElement();
-                    if (incident.Worker.TryExecute(StorytellerUtility.DefaultParmsNow(incident.category, this.pawn.Map))) break;
+                    if (incident.Worker.TryExecute(StorytellerUtility.DefaultParmsNow(incident.category, map))) break;
                 }
                 catch (Exception e)
                 {

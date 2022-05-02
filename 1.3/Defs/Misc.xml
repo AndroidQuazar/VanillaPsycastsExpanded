@@ -35,8 +35,7 @@
         <commonalityRainfallFactor>
             <points>
                 <li>(0, 0)</li>
-                <li>(1300, 1)</li>
-                <li>(4000, 2.0)</li>
+                <li>(10000, 0)</li>
             </points>
         </commonalityRainfallFactor>
         <!-- Colors are Overcast -->
@@ -113,6 +112,13 @@
         <conditionClass>VanillaPsycastsExpanded.Chronopath.GameCondition_RaidPause</conditionClass>
         <label>paused raid</label>
         <description>A Chronopath is pausing a raid.</description>
+        <canBePermanent>false</canBePermanent>
+    </GameConditionDef>
+    <GameConditionDef>
+        <defName>VPE_TimeQuake</defName>
+        <conditionClass>VanillaPsycastsExpanded.Chronopath.GameCondition_TimeQuake</conditionClass>
+        <label>time quake</label>
+        <description>A massive temporal disturbance.</description>
         <canBePermanent>false</canBePermanent>
     </GameConditionDef>
 </Defs>

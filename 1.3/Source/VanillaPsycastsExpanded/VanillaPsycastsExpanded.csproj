@@ -71,6 +71,7 @@
     <Compile Include="Paths\Chronopath\Ability_MaturePlants.cs" />
     <Compile Include="Paths\Chronopath\Ability_Meditate.cs" />
     <Compile Include="Paths\Chronopath\GameCondition_RaidPause.cs" />
+    <Compile Include="Paths\Chronopath\GameCondition_TimeQuake.cs" />
     <Compile Include="Paths\Chronopath\TimeSphere.cs" />
     <Compile Include="Paths\Conflagrator\Ability_FireTornado.cs" />
     <Compile Include="Paths\Conflagrator\FireBeam.cs" />

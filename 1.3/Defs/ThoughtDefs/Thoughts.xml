@@ -61,5 +61,17 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>VPE_TimeQuake</defName>
+	<workerClass>VanillaPsycastsExpanded.Chronopath.ThoughtWorker_TimeQuake</workerClass>
+    <stages>
+      <li>
+        <label>time quake</label>
+        <description>text.todo</description>
+        <baseMoodEffect>-12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 	
 </Defs>

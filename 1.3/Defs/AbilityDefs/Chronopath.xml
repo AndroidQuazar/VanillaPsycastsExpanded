@@ -266,6 +266,15 @@
       <label>timequake</label>
       <description>Find a discontinuity in the psychic field and compress it, releasing a massive temporal disturbance. Every creature in range but outside of the safe inner circle will experience rapid aging and structures will warp. Casting this takes 20 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing timequake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
       <iconPath>Abilities/Chronopath/Timequake</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_TimeQuake</abilityClass>
+      <castTime>1200</castTime>
+      <durationTime>1800</durationTime>
+      <durationTimeStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </durationTimeStatFactors>
+      <targetMode>Self</targetMode>
+      <radius>9</radius>
+      <castSound>Psycast_Neuroquake_CastStart</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -277,6 +286,9 @@
             <li>VPE_TimeSphere</li>
             <li>VPE_TimeReversal</li>
           </prerequisites>
+        </li>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+          <hours>120</hours>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
