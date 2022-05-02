@@ -66,6 +66,7 @@
     <Compile Include="Meditation\MeditationFocusAutopatcher.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_Neuroquake.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_GiveMentalState.cs" />
+    <Compile Include="Paths\Archotechist\Ability_PsychicShock.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_TransferEntropy.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_StunTarget.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_Age.cs" />

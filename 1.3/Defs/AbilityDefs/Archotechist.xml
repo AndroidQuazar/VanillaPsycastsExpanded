@@ -58,6 +58,14 @@
       <label>psychic shock</label>
       <description>Psychically shocks the target's mind with chaotic images, blocking coherent perception and dropping them into a state of psychic shock. There is a risk of brain damage and is overtly hostile.</description>
       <iconPath>Abilities/Archotechist/PsychicShock</iconPath>
+	  <castTime>30</castTime>
+	  <durationTime>7500</durationTime>
+	  <targetMode>Pawn</targetMode>
+	  <range>20</range>
+	  <goodwillImpact>-100</goodwillImpact>
+	  <abilityClass>VanillaPsycastsExpanded.Ability_PsychicShock</abilityClass>
+	  <castSound>PsychicShockLanceCast</castSound>
+	  <fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
@@ -70,6 +78,9 @@
             <li>VPE_Stun</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>PsychicShock</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
@@ -258,6 +269,7 @@
 	  <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
 	  <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
 	  <warmupPreEndSoundTicks>300</warmupPreEndSoundTicks>
+	  
       <modExtensions>
 		<li Class="VFECore.Abilities.AbilityExtension_ConfirmationMessage">
 			<message>If you use neuroquake, everyone in this region will feel the neuroquake echo, you will lose goodwill with every non-hostile faction.\n\nNeuroquake takes 12 seconds to cast, and cannot be interrupted. When complete, the caster will fall into a psychic coma for 5 days.\n\nEveryone in range except those in a small circle around the caster will be affected.\n\nDo you really want to cast neuroquake?</message>
