@@ -126,6 +126,7 @@
         <canTargetAnimals>True</canTargetAnimals>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
       </targetingParameters>
+	  <goodwillImpact>-15</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
@@ -144,6 +145,7 @@
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_AggressiveHeatDump</defName>
       <label>aggressive heat dump</label>
@@ -162,11 +164,26 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BerserkPulse</defName>
       <label>berskerk pulse</label>
       <description>Generate an overwhelming rush of undirected rage in everyone near the target point. Considered an overt act of aggression and lasts several seconds.</description>
       <iconPath>Abilities/Archotechist/BerserkPulse</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+	  <castTime>60</castTime>
+	  <durationTime>600</durationTime>
+	  <range>15</range>
+	  <radius>2.9</radius>
+      <targetingParameters>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetHumans>True</canTargetHumans>
+        <canTargetMechs>True</canTargetMechs>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetLocations>True</canTargetLocations>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+      </targetingParameters>
+	  <goodwillImpact>-75</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
@@ -178,8 +195,14 @@
             <li>VPE_Berserk</li>
           </prerequisites>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
+			<stateDef>Berserk</stateDef>
+			<stateDefForMechs>BerserkMechanoid</stateDefForMechs>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_PsychicDrone</defName>
       <label>psychic drone</label>
@@ -199,6 +222,7 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_NeuralHeatDetonation</defName>
       <label>neural heat detonation</label>
@@ -217,12 +241,27 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Neuroquake</defName>
       <label>neuroquake</label>
       <description>Find a discontinuity in the psychic field and unfold it, releasing a massive amount of psychic energy. Every creature in range but outside of the safe inner circle will be driven violently insane. Casting this takes 12 seconds of meditation, and afterwards, the caster will go into a five-day psychic coma. The disturbing neuroquake echoes will inflict pain on everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
       <iconPath>Abilities/Archotechist/Neuroquake</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+	  <jobDef>VFEA_UseAbilityUninterruptible</jobDef>
+	  <castTime>720</castTime>
+	  <targetMode>Self</targetMode>
+	  <durationTime>288000</durationTime>
+	  <radius>5.9</radius>
+	  <warmupMote>Mote_WarmupNeuroquake</warmupMote>
+	  <warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound>
+	  <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
+	  <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
+	  <warmupPreEndSoundTicks>300</warmupPreEndSoundTicks>
       <modExtensions>
+		<li Class="VFECore.Abilities.AbilityExtension_ConfirmationMessage">
+			<message>If you use neuroquake, everyone in this region will feel the neuroquake echo, you will lose goodwill with every non-hostile faction.\n\nNeuroquake takes 12 seconds to cast, and cannot be interrupted. When complete, the caster will fall into a psychic coma for 5 days.\n\nEveryone in range except those in a small circle around the caster will be affected.\n\nDo you really want to cast neuroquake?</message>
+		</li>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archotechist</path>
           <level>5</level>
@@ -233,6 +272,24 @@
             <li>VPE_PsychicDrone</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_AdditionalRadius">
+			<radius>60</radius>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_ScreenShaker">
+			<intensity>2</intensity>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Neuroquake">
+			<goodwillImpactForBerserk>-75</goodwillImpactForBerserk>
+			<goodwillImpactForNeuroquake>-10</goodwillImpactForNeuroquake>
+			<worldRangeTiles>4</worldRangeTiles>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>PsychicComa</hediff>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+			<fleckDef>PsychicApplyNeuroquake</fleckDef>
+			<sound>Psycast_Neuroquake_Effect</sound>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 </Defs>

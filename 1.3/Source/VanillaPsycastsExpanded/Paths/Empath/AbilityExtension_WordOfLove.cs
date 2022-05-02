@@ -1,7 +1,8 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
-using System.Security.Cryptography;
+    using System;
+    using System.Security.Cryptography;
     using Verse;
     using VFECore.Abilities;
     using static HarmonyLib.Code;
@@ -16,9 +17,10 @@ using System.Security.Cryptography;
 			canTargetMechs = false,
 			canTargetHumans = true
 		};
-        public override void PreCast(LocalTargetInfo target, Ability ability, ref bool startAbilityJob)
+
+        public override void PreCast(LocalTargetInfo target, Ability ability, ref bool startAbilityJobImmediately, Action startJobAction)
         {
-			startAbilityJob = false;
+			startAbilityJobImmediately = false;
 			Log.Message("PRECAST: " + target.Thing);
 			Find.Targeter.StopTargeting();
 			Find.Targeter.BeginTargeting(targetParams, delegate (LocalTargetInfo dest)
