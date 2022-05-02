@@ -50,6 +50,13 @@
         <label>hurricane maker</label>
         <thingClass>VanillaPsycastsExpanded.Staticlord.HurricaneMaker</thingClass>
         <tickerType>Normal</tickerType>
+    </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_TimeSphere</defName>
+        <label>time sphere</label>
+        <thingClass>VanillaPsycastsExpanded.Chronopath.TimeSphere</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
         <drawOffscreen>true</drawOffscreen>
         <seeThroughFog>true</seeThroughFog>
     </ThingDef>

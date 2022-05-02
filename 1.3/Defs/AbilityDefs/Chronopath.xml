@@ -208,6 +208,13 @@
       <label>time sphere</label>
       <description>Psychically compresses the flow of time in an area. Rapidly ages living creatures, plants flourish and wither, and structures start to disintegrate from the bizarre stress.</description>
       <iconPath>Abilities/Chronopath/TimeSphere</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_TimeSphere</abilityClass>
+      <castTime>120</castTime>
+      <castSound>VPE_TimeSphere_Cast</castSound>
+      <targetMode>Location</targetMode>
+      <range>25.9</range>
+      <radius>9.9</radius>
+      <durationTime>1800</durationTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>

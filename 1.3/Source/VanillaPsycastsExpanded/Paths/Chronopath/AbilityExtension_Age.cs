@@ -19,7 +19,7 @@
             if (this.casterYears.HasValue) Age(ability.pawn, this.casterYears.Value);
         }
 
-        private static void Age(Pawn pawn, float years)
+        public static void Age(Pawn pawn, float years)
         {
             pawn.ageTracker.AgeTickMothballed((int) (years * GenDate.TicksPerYear));
             if (years < 0)
