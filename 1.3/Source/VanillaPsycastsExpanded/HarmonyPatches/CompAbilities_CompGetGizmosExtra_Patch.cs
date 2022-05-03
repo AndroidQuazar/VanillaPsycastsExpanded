@@ -12,9 +12,12 @@
         {
             Pawn                    parent   = __instance.parent as Pawn;
             Hediff_PsycastAbilities psycasts = parent.Psycasts();
-            foreach (Gizmo gizmo in psycasts.GetPsySetGizmos()) yield return gizmo;
+            if (psycasts != null)
+            {
+                foreach (Gizmo gizmo in psycasts.GetPsySetGizmos()) yield return gizmo;
+            }
             foreach (Gizmo gizmo in gizmos)
-                if (gizmo is Command_Ability command)
+                if (psycasts != null && gizmo is Command_Ability command)
                 {
                     if (psycasts.ShouldShow(command.ability)) yield return command;
                 }
