@@ -150,7 +150,7 @@
     <solidTime>0.08</solidTime>
     <graphicData>
       <graphicClass>Graphic_FleckPulse</graphicClass>
-      <shaderType>MotePsychicSkipFlash</shaderType>
+      <shaderType>MoteGlow</shaderType>
       <texPath>Effects/Warlord/Killskip/PsycastSkipFlashRed</texPath>
       <shaderParameters>
         <_Noise>/Things/Mote/SkipFlashNoise</_Noise>
