@@ -58,6 +58,7 @@
     <Compile Include="Graphics\DistortMaterialsPool.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
+    <Compile Include="HarmonyPatches\CompAbilities_CompGetGizmosExtra_Patch.cs" />
     <Compile Include="HarmonyPatches\HediffSet_BleedRateTotal_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_Kill_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingDefGenerator_Neurotrainer_ImpliedThingDefs_Patch.cs" />

@@ -6,7 +6,8 @@
 	<VPE.MustHaveLivingFamilyMembers>{PAWN_nameDef} must have living family members.</VPE.MustHaveLivingFamilyMembers>
     <VPE.ThingsOfLevel>{0} things at level {1}</VPE.ThingsOfLevel>
     <VPE.TooCheap>Not enough value, must be worth at least $1 per item.</VPE.TooCheap>
-	
 	<VPE_BreakLink>Break Link</VPE_BreakLink>
 	<VPE_BreakLinkDesc>Break the link and immediately kill this construct</VPE_BreakLinkDesc>
+    <VPE.PsySetNext>Next PsySet</VPE.PsySetNext>
+    <VPE.PsySetPrev>Previous PsySet</VPE.PsySetPrev>
 </LanguagData>

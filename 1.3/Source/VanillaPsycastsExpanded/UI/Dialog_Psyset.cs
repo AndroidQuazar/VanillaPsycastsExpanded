@@ -28,7 +28,7 @@
             this.closeOnClickedOutside = true;
         }
 
-        public override Vector2 InitialSize => new(UI.screenWidth / 4f, UI.screenHeight - 400f);
+        public override Vector2 InitialSize => new(480f, 500f);
 
         public override void DoWindowContents(Rect inRect)
         {
@@ -41,7 +41,7 @@
             existingRect.xMax -= 8f;
             Widgets.Label(existingRect.TakeTopPart(20f), "VPE.Contents".Translate());
             Widgets.DrawMenuSection(existingRect);
-            DragAndDropWidget.DropArea(group, existingRect, obj => this.psyset.AddAbility((AbilityDef) obj), null);
+            DragAndDropWidget.DropArea(group, existingRect, obj => this.psyset.Abilities.Add((AbilityDef) obj), null);
             Vector2 curPos = existingRect.position + new Vector2(8f, 8f);
             foreach (AbilityDef def in this.psyset.Abilities.ToList())
             {

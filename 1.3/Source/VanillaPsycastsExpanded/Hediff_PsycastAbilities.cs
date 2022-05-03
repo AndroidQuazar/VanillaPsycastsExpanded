@@ -5,14 +5,20 @@
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
+    using Ability = VFECore.Abilities.Ability;
     using AbilityDef = VFECore.Abilities.AbilityDef;
 
+    [StaticConstructorOnStartup]
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
+        private static readonly Texture2D PsySetPrev = ContentFinder<Texture2D>.Get("UI/Gizmos/Psyset_Previous");
+        private static readonly Texture2D PsySetNext = ContentFinder<Texture2D>.Get("UI/Gizmos/Psyset_Next");
+
         public  float experience;
         public  int   points;
         private int   statPoints;
         private float minHeat;
+        private int   psysetIndex;
 
         public Hediff_Psylink           psylink;
         public List<PsySet>             psysets                = new();
@@ -27,6 +33,35 @@
             {
                 if (this.curStage == null) this.RecacheCurStage();
                 return this.curStage;
+            }
+        }
+
+        public IEnumerable<Gizmo> GetPsySetGizmos()
+        {
+            if (this.psysets.Count > 0)
+            {
+                yield return new Command_Action
+                {
+                    defaultLabel = "VPE.PsySetPrev".Translate(),
+                    icon         = PsySetPrev,
+                    action = () =>
+                    {
+                        this.psysetIndex--;
+                        if (this.psysetIndex < 0) this.psysetIndex = this.psysets.Count;
+                    },
+                    order = 10f
+                };
+                yield return new Command_Action
+                {
+                    defaultLabel = "VPE.PsySetNext".Translate(),
+                    icon         = PsySetNext,
+                    action = () =>
+                    {
+                        this.psysetIndex++;
+                        if (this.psysetIndex > this.psysets.Count) this.psysetIndex = 0;
+                    },
+                    order = 10f
+                };
             }
         }
 
@@ -95,9 +130,10 @@
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref this.experience, nameof(this.experience));
-            Scribe_Values.Look(ref this.points,     nameof(this.points));
-            Scribe_Values.Look(ref this.statPoints, nameof(this.statPoints));
+            Scribe_Values.Look(ref this.experience,  nameof(this.experience));
+            Scribe_Values.Look(ref this.points,      nameof(this.points));
+            Scribe_Values.Look(ref this.statPoints,  nameof(this.statPoints));
+            Scribe_Values.Look(ref this.psysetIndex, nameof(this.psysetIndex));
             Scribe_Collections.Look(ref this.unlockedPaths,          nameof(this.unlockedPaths),          LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
             Scribe_Collections.Look(ref this.psysets,                nameof(this.psysets),                LookMode.Deep);
@@ -124,6 +160,8 @@
         {
             this.unlockedMeditationFoci.Add(focus);
         }
+
+        public bool ShouldShow(Ability ability) => this.psysetIndex == this.psysets.Count || this.psysets[this.psysetIndex].Abilities.Contains(ability.def);
 
         public static int ExperienceRequiredForLevel(int level)
         {
