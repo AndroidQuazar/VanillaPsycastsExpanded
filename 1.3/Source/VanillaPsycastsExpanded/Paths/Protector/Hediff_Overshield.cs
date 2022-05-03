@@ -9,7 +9,7 @@
     using VFECore.Abilities;
 
     [StaticConstructorOnStartup]
-    public class Hediff_Overshield : HediffWithComps
+    public class Hediff_Overshield : Hediff_ShieldBubble
     {
         private int lastInterceptTicks = -999999;
         private float lastInterceptAngle;
@@ -18,25 +18,9 @@
         public static float idlePulseSpeed = 3;
         public static float minIdleAlpha = 0.05f;
         public static float minAlpha = 0.2f;
-        public virtual float ShieldSize => 1f;
-        public virtual Color ShieldColor => Color.yellow;
-
-        private Material shieldMat;
-        public Material ForceFieldMat
-        {
-            get
-            {
-                if (shieldMat == null)
-                {
-                    shieldMat = MaterialPool.MatFrom("Other/ForceField", ShaderDatabase.MoteGlow, ShieldColor);
-                }
-                return shieldMat;
-            }
-        }
+        public override string ShieldPath => "Other/ForceField";
 
         private static Material ForceFieldConeMat = MaterialPool.MatFrom("Other/ForceFieldCone", ShaderDatabase.MoteGlow);
-
-        private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
         public override void Tick()
         {
             base.Tick();
@@ -67,7 +51,7 @@
             return Vector3.Distance(projectile.ExactPosition.Yto0(), pawn.DrawPos.Yto0()) <= ShieldSize &&
                 !GenRadial.RadialCellsAround(pawn.Position, ShieldSize, true).ToList().Contains(cell);
         }
-        public void Draw()
+        public override void Draw()
         {
             Vector3 pos = pawn.DrawPos;
             pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
@@ -79,7 +63,7 @@
                 MatPropertyBlock.SetColor(ShaderPropertyIDs.Color, value);
                 Matrix4x4 matrix = default(Matrix4x4);
                 matrix.SetTRS(pos, Quaternion.identity, new Vector3(ShieldSize * 2f * 1.16015625f, 1f, ShieldSize * 2f * 1.16015625f));
-                UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ForceFieldMat, 0, null, 0, MatPropertyBlock);
+                UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldMat, 0, null, 0, MatPropertyBlock);
             }
             float currentConeAlpha_RecentlyIntercepted = GetCurrentConeAlpha_RecentlyIntercepted();
             if (currentConeAlpha_RecentlyIntercepted > 0f)

@@ -7,23 +7,10 @@
     using Verse;
     using VFECore.Abilities;
     [StaticConstructorOnStartup]
-    public class Hediff_PsychicDrone : Hediff_Ability
+    public class Hediff_PsychicDrone : Hediff_ShieldBubble
     {
         private float curAngle;
-
-        private Material material;
-        public Material FieldMat
-        {
-            get
-            {
-                if (material == null)
-                {
-                    material = MaterialPool.MatFrom("Effects/Archotechist/PsychicDrone/PsychicDroneEnergyField", ShaderDatabase.MoteGlow);
-                }
-                return material;
-            }
-        }
-
+        public override string ShieldPath => "Effects/Archotechist/PsychicDrone/PsychicDroneEnergyField";
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
@@ -33,8 +20,6 @@
         private List<Mote> maintainedMotes = new List<Mote>();
 
         private List<Pawn> affectedPawns = new List<Pawn>();
-
-        private static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
         public override void Tick()
         {
             base.Tick();
@@ -61,14 +46,14 @@
             }
         }
 
-        public void Draw()
+        public override void Draw()
         {
             Vector3 pos = pawn.DrawPos;
             pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
             Matrix4x4 matrix = default(Matrix4x4);
             var drawSize = this.ability.GetRadiusForPawn() * 2f;
             matrix.SetTRS(pos, Quaternion.AngleAxis(curAngle, Vector3.up), new Vector3(drawSize, 1f, drawSize));
-            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, FieldMat, 0, null, 0, MatPropertyBlock);
+            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldMat, 0, null, 0, MatPropertyBlock);
         }
         public Mote SpawnMoteAttached(ThingDef moteDef, float scale, float rotationRate)
         {

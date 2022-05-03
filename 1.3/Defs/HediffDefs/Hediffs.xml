@@ -433,4 +433,17 @@
 			</li>
 		</comps>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_IceShield</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_IceShield</hediffClass>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
+				<endSound>VPE_IceShield_End</endSound>
+				<sustainer>VPE_IceShield_Sustainer</sustainer>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

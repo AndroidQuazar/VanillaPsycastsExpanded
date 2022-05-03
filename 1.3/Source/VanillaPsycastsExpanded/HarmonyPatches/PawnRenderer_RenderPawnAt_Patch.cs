@@ -10,13 +10,9 @@
         {
             foreach (var hediff in ___pawn.health.hediffSet.hediffs)
             {
-                if (hediff is Hediff_Overshield overshield)
+                if (hediff is Hediff_ShieldBubble shieldBubble)
                 {
-                    overshield.Draw();
-                }
-                else if (hediff is Hediff_PsychicDrone psychicDrone)
-                {
-                    psychicDrone.Draw();
+                    shieldBubble.Draw();
                 }
             }
         }
