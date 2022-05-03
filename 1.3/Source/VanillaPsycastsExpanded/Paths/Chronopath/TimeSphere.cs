@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded.Chronopath
 {
+    using Graphics;
     using RimWorld;
     using UnityEngine;
     using Verse;
@@ -9,22 +10,16 @@
     [StaticConstructorOnStartup]
     public class TimeSphere : Thing
     {
-        private static readonly Material  DistortionMat = MaterialPool.MatFrom("Things/Mote/Black", ShaderDatabase.MoteGlowDistortBG);
-        private static readonly Texture2D DistortionTex = ContentFinder<Texture2D>.Get("Things/Mote/PsycastDistortionMask");
-        public                  float     Radius;
-        public                  int       Duration;
+        private static readonly Material DistortionMat =
+            DistortMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.1f, 1.5f);
+
+        public float Radius;
+        public int   Duration;
 
         private int       startTick;
         private Sustainer sustainer;
         private float     scale       = 5f;
-        private float     scaleChange = 1f;
-
-        static TimeSphere()
-        {
-            DistortionMat.SetTexture("_DistortionTex", DistortionTex);
-            DistortionMat.SetFloat("_distortionIntensity",  0.1f);
-            DistortionMat.SetFloat("_brightnessMultiplier", 1.5f);
-        }
+        private float     scaleChange = 0.25f;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -70,7 +65,7 @@
         {
             Graphics.DrawMesh(MeshPool.plane10,
                               Matrix4x4.TRS(this.Position.ToVector3ShiftedWithAltitude(AltitudeLayer.MoteOverheadLow), Quaternion.AngleAxis(0f, Vector3.up),
-                                            Vector3.one * this.Radius * 2f), DistortionMat, 0);
+                                            Vector3.one * this.scale * 1.75f), DistortionMat, 0);
         }
 
         public override void ExposeData()

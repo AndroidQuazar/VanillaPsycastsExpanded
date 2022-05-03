@@ -1,41 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VanillaPsycastsExpanded
+﻿namespace VanillaPsycastsExpanded
 {
+    using System.Collections.Generic;
     using Verse;
     using VFECore.Abilities;
 
     public class PsySet : IExposable
     {
-        private string name;
+        public string Name;
 
-        private List<AbilityDef> abilities = new List<AbilityDef>();
-
-        public string Name
-        {
-            get => this.name;
-            set => this.name = value;
-        }
-
-        public List<AbilityDef> Abilities
-        {
-            get => this.abilities;
-            set => this.abilities = value;
-        }
-
-        public void AddAbility(AbilityDef ability)
-        {
-            this.abilities.Add(ability);
-        }
+        public HashSet<AbilityDef> Abilities = new();
 
         public void ExposeData()
         {
-            Scribe_Values.Look(ref name, nameof(this.name));
-            Scribe_Collections.Look(ref this.abilities, nameof(this.abilities));
+            Scribe_Values.Look(ref this.Name, "name");
+            Scribe_Collections.Look(ref this.Abilities, "abilities");
         }
     }
 }

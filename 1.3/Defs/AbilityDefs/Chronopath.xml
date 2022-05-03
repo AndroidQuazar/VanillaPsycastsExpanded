@@ -10,7 +10,6 @@
       <radius>8.9</radius>
       <castTime>120</castTime>
       <castSound>VPE_PlantTimeskip_Cast</castSound>
-      <castFleck>VPE_Timeskip</castFleck>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -21,6 +20,10 @@
           <prerequisites>
             <li>VPE_TimeskipMeditation</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>VPE_Timeskip</fleckDef>
+          <scale>5</scale>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -84,7 +87,6 @@
       <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_Finish</abilityClass>
       <castTime>180</castTime>
       <castSound>VPE_CraftTimeskip_Cast</castSound>
-      <castFleck>VPE_Timeskip</castFleck>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
       <range>999999</range>
       <distanceToTarget>1.5</distanceToTarget>
@@ -110,6 +112,10 @@
         <li Class="VanillaPsycastsExpanded.Chronopath.AbilityExtension_Age">
           <casterYears>1</casterYears>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>VPE_Timeskip</fleckDef>
+          <scale>0.1</scale>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -123,9 +129,6 @@
       <castTime>180</castTime>
       <castSound>VPE_Age_Cast</castSound>
       <goodwillImpact>-25</goodwillImpact>
-      <targetFlecks>
-        <li>VPE_Timeskip</li>
-      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -146,6 +149,10 @@
             <li>VPE_AgeSickness</li>
           </onTarget>
           <durationTimeOverride>120000</durationTimeOverride>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>VPE_Timeskip</fleckDef>
+          <scale>0.1</scale>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -235,11 +242,10 @@
       <iconPath>Abilities/Chronopath/TimeReversal</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <castTime>300</castTime>
-      <range>1.9</range>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
-      <targetFlecks>
-        <li>VPE_Timeskip</li>
-      </targetFlecks>
       <castSound>VPE_TimeReversal_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -259,6 +265,10 @@
           <casterYears>5</casterYears>
           <targetYears>-10</targetYears>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>VPE_Timeskip</fleckDef>
+          <scale>0.7</scale>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -274,7 +284,12 @@
       </durationTimeStatFactors>
       <targetMode>Self</targetMode>
       <radius>9</radius>
-      <castSound>Psycast_Neuroquake_CastStart</castSound>
+      <jobDef>VFEA_UseAbilityUninterruptible</jobDef>
+      <warmupMote>Mote_WarmupNeuroquake</warmupMote>
+      <warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound>
+      <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
+      <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
+      <warmupPreEndSoundTicks>300</warmupPreEndSoundTicks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -289,6 +304,13 @@
         </li>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
           <hours>120</hours>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_ConfirmationMessage">
+          <message>If you use timequake, everyone in this region will feel the timequake echo, you will lose goodwill with every non-hostile faction.\n\nTimequake takes 20 seconds to cast, and cannot be interrupted. When complete, the caster will fall into a psychic coma for 5 days.\n\nEveryone except those in a small circle around the caster will be affected.\n\nDo you really want to cast timequake?</message>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>PsychicApplyNeuroquake</fleckDef>
+          <sound>Psycast_Neuroquake_Effect</sound>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

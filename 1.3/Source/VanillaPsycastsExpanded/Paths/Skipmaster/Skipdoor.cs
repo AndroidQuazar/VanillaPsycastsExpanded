@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.IO;
+    using Graphics;
     using UnityEngine;
     using Verse;
     using Verse.AI;
@@ -10,30 +11,26 @@
     [StaticConstructorOnStartup]
     public class Skipdoor : ThingWithComps
     {
-        private const           string        SKIPGATE_TEXPATH = "Textures/Effects/Skipmaster/Skipgate";
-        private const           float         MASK_THRESHOLD = 0.13f;
-        private static readonly Texture2D     DestroyIcon = ContentFinder<Texture2D>.Get("Effects/Skipmaster/Skipgate/SkipdoorDestroy");
-        private static readonly Texture2D     RenameIcon = ContentFinder<Texture2D>.Get("Effects/Skipmaster/Skipgate/SkipdoorRename");
-        private static readonly Texture2D     DistortionTex = ContentFinder<Texture2D>.Get("Things/Mote/PsycastDistortionMask");
-        private static readonly Material      DistortionMat = MaterialPool.MatFrom("Things/Mote/Black", ShaderDatabase.MoteGlowDistortBG);
-        private static readonly Material      MainMat = MaterialPool.MatFrom("Effects/Skipmaster/Skipgate/Skipgate", ShaderDatabase.TransparentPostLight);
-        private static          Material      maskMat;
-        private static          Texture2D     backgroundTex;
-        private                 Material      backgroundMat;
-        private                 RenderTexture background1;
-        private                 RenderTexture background2;
-        public                  Pawn          Pawn;
-        private                 float         rotation;
-        private                 float         distortAmount = 2.5f;
-        private                 Vector2       backgroundOffset;
-        private                 Sustainer     sustainer;
+        private const           string    SKIPGATE_TEXPATH = "Textures/Effects/Skipmaster/Skipgate";
+        private const           float     MASK_THRESHOLD   = 0.13f;
+        private static readonly Texture2D DestroyIcon      = ContentFinder<Texture2D>.Get("Effects/Skipmaster/Skipgate/SkipdoorDestroy");
+        private static readonly Texture2D RenameIcon       = ContentFinder<Texture2D>.Get("Effects/Skipmaster/Skipgate/SkipdoorRename");
+        private static readonly Material  MainMat          = MaterialPool.MatFrom("Effects/Skipmaster/Skipgate/Skipgate", ShaderDatabase.TransparentPostLight);
+        private static          Material  maskMat;
+        private static          Texture2D backgroundTex;
 
-        static Skipdoor()
-        {
-            DistortionMat.SetTexture("_DistortionTex", DistortionTex);
-            DistortionMat.SetFloat("_distortionIntensity",  0.01f);
-            DistortionMat.SetFloat("_brightnessMultiplier", 1.1f);
-        }
+
+        private static readonly Material DistortionMat =
+            DistortMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.001f, 1.1f);
+
+        private Material      backgroundMat;
+        private RenderTexture background1;
+        private RenderTexture background2;
+        public  Pawn          Pawn;
+        private float         rotation;
+        private float         distortAmount = 2.5f;
+        private Vector2       backgroundOffset;
+        private Sustainer     sustainer;
 
         public string Name { get; set; }
 
