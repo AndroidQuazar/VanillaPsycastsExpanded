@@ -176,4 +176,21 @@
 		<dealsDamageOnce>true</dealsDamageOnce>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
 	</VFECore.ExpandableProjectileDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_IceSpike</defName>
+		<label>ice spike</label>
+		<description>text.todo</description>
+		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
+		<graphicData>
+			<texPath>Effects/Frostshaper/IceSpike/IceSpike</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>Transparent</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Cut</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+			<speed>70</speed>
+		</projectile>
+	</ThingDef>
 </Defs>

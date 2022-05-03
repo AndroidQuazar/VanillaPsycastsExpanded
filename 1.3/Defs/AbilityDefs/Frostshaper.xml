@@ -8,6 +8,10 @@
 	  <range>12.9</range>
 	  <castTime>6</castTime>
       <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+	  <targetingParameters>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+	  </targetingParameters>
       <targetMode>Pawn</targetMode>
       <castSound>VPE_BreatheIce_Cast</castSound>
       <modExtensions>
@@ -29,6 +33,19 @@
       <label>ice spike</label>
       <description>Condenses vapor with psychic entropy into an icicle launched at a target, the damage scaling with psychic sensitivity.</description>
       <iconPath>Abilities/Frostshaper/IceSpike</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+	  <castTime>12</castTime>
+	  <range>22.9</range>
+	  <castSound>VPE_IceSpike_Cast</castSound>
+	  <targetingParameters>
+          <canTargetPawns>true</canTargetPawns>
+          <canTargetBuildings>true</canTargetBuildings>
+	  </targetingParameters>
+      <power>12</power>
+	  <targetMode>Pawn</targetMode>
+      <powerStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </powerStatFactors>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -37,8 +54,12 @@
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>8</entropyGain>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_IceSpike</projectile>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceShield</defName>
       <label>ice shield</label>
