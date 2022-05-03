@@ -130,11 +130,11 @@
     <defName>VPE_Timeskip</defName>
     <solidTime>0.4</solidTime>
     <fadeOutTime>0.1</fadeOutTime>
-    <growthRate>15</growthRate>
+    <growthRate>20</growthRate>
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
       <texPath>Effects/Chronopath/TimeskipWave</texPath>
-      <ticksPerFrame>10</ticksPerFrame>
+      <ticksPerFrame>6</ticksPerFrame>
       <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
       <shaderType>MoteGlow</shaderType>
       <drawSize>(1, 1)</drawSize>

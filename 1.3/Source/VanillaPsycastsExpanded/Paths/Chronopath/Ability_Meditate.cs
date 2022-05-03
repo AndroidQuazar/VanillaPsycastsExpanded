@@ -9,7 +9,7 @@
         {
             base.Cast(target);
             this.pawn.psychicEntropy.OffsetPsyfocusDirectly(1f - this.pawn.psychicEntropy.CurrentPsyfocus);
-            this.pawn.Psycasts().SpentPoints(-300);
+            this.pawn.Psycasts().GainExperience(300f);
         }
     }
 }

@@ -93,14 +93,7 @@
             foreach (AbilityDef def in path.abilities)
                 if (def.Psycast()?.prerequisites is { } prerequisites && abilityPos.ContainsKey(def))
                     foreach (AbilityDef abilityDef in prerequisites.Where(abilityDef => abilityPos.ContainsKey(abilityDef)))
-                    {
-                        Color color = Color.grey;
-                        if (CompAbilities.HasAbility(abilityDef))
-                            color = Color.white;
-
-                        Log.Message($"Drawing prereq line of {def} and {abilityDef} at {abilityPos[def]} and {abilityPos[abilityDef]}");
-                        Widgets.DrawLine(abilityPos[def], abilityPos[abilityDef], color, 2f);
-                    }
+                        Widgets.DrawLine(abilityPos[def], abilityPos[abilityDef], CompAbilities.HasAbility(abilityDef) ? Color.white : Color.grey, 2f);
 
             doAbility ??= DoAbility;
             for (int level = 0; level < path.abilityLevelsInOrder.Length; level++)
@@ -113,7 +106,6 @@
                     AbilityDef def  = abilities[pos];
                     if (def == PsycasterPathDef.Blank) continue;
                     abilityPos[def] = rect.center;
-                    Log.Message($"Drawing {def} at {rect} and caching pos at {rect.center}");
                     doAbility(rect, def);
                 }
             }
