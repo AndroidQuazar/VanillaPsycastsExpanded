@@ -10,4 +10,5 @@
 	<VPE_BreakLinkDesc>Break the link and immediately kill this construct</VPE_BreakLinkDesc>
     <VPE.PsySetNext>Next PsySet</VPE.PsySetNext>
     <VPE.PsySetPrev>Previous PsySet</VPE.PsySetPrev>
+    <VPE.Nearby>Nearby</VPE.Nearby>
 </LanguagData>

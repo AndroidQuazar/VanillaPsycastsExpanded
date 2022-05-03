@@ -12,6 +12,23 @@
                 <li Class="PatchOperationRemove">
                     <xpath>Defs/HediffDef[defName="PsychicAmplifier"]/stages</xpath>
                 </li>
+                <li Class="PatchOperationConditional">
+                    <xpath>Defs/StatDef[defName="MeditationFocusStrength"]/parts</xpath>
+                    <match Class="PatchOperationAdd">
+                        <xpath>Defs/StatDef[defName="MeditationFocusStrength"]/parts</xpath>
+                        <value>
+                            <li Class="VanillaPsycastsExpanded.StatPart_NearbyFoci" />
+                        </value>
+                    </match>
+                    <nomatch Class="PatchOperationAdd">
+                        <xpath>Defs/StatDef[defName="MeditationFocusStrength"]</xpath>
+                        <value>
+                            <parts>
+                                <li Class="VanillaPsycastsExpanded.StatPart_NearbyFoci" />
+                            </parts>
+                        </value>
+                    </nomatch>
+                </li>
                 <li Class="PatchOperationSequence">
                     <operations>
                         <li Class="PatchOperationAddModExtension">
