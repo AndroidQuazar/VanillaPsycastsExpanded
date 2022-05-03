@@ -147,4 +147,33 @@
 			<damageAmountBase>15</damageAmountBase>
 		</projectile>
     </ThingDef>
+	
+	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>VPE_IceBreathe</defName>
+		<label>ice breathe</label>
+		<thingClass>VanillaPsycastsExpanded.IceBreathePropectile</thingClass>
+		<graphicData>
+			<texPath>Effects/Frostshaper/IceBreath/Proj_IceBreath</texPath>
+			<texPathFadeOut>Effects/Frostshaper/IceBreath/Proj_IceBreathFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>Frostbite</damageDef>
+			<speed>45</speed>
+			<damageAmountBase>6</damageAmountBase>
+			<armorPenetrationBase>0.15</armorPenetrationBase>
+			<stoppingPower>1.5</stoppingPower>
+		</projectile>
+		<drawOffscreen>true</drawOffscreen>
+		<lifeTimeDuration>50</lifeTimeDuration>
+		<widthScaleFactor>0.65</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>2</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickDamageRate>20</tickDamageRate>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	</VFECore.ExpandableProjectileDef>
 </Defs>

@@ -5,6 +5,11 @@
       <label>breathe ice</label>
       <description>Breathe forward a stream of psychic entropy, the resulting cold cutting and inducing hypothermia scaling with the caster's psychic sensitivity.</description>
       <iconPath>Abilities/Frostshaper/IceBreath</iconPath>
+	  <range>12.9</range>
+	  <castTime>6</castTime>
+      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <targetMode>Pawn</targetMode>
+      <castSound>VPE_BreatheIce_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -13,8 +18,12 @@
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>8</entropyGain>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_IceBreathe</projectile>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceSpike</defName>
       <label>ice spike</label>

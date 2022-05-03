@@ -15,6 +15,7 @@
         public static HediffDef VPE_Regenerating;
         public static HediffDef VPE_GuardianSkipBarrier;
         public static HediffDef HeartAttack;
+        public static HediffDef VFEP_HypothermicSlowdown;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
