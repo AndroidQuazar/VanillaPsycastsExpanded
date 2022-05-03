@@ -243,4 +243,36 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 	</ThingDef>
+	
+
+  <ThingDef Abstract="True" Name="MoteGlowDistortBackground" ParentName="MoteBase">
+    <graphicData>
+      <shaderType>MoteGlowDistortBackground</shaderType>
+      <shaderParameters>
+        <_DistortionTex>/Things/Mote/PsycastDistortionMask</_DistortionTex>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteGlowDistortBackground">
+    <defName>VPE_PsycastAreaEffectMaintained</defName>
+	<thingClass>VanillaPsycastsExpanded.MoteAttachedScaled</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+	<mote>
+		<fadeInTime>0.02</fadeInTime>
+		<fadeOutTime>0.6</fadeOutTime>
+		<growthRate>1.5</growthRate>
+		<solidTime>99999999</solidTime>
+		<needsMaintenance>true</needsMaintenance>
+	</mote>
+    <graphicData>
+      <texPath>Things/Mote/Black</texPath>
+      <shaderParameters>
+        <_distortionIntensity>0.05</_distortionIntensity>
+        <_brightnessMultiplier>1.15</_brightnessMultiplier>
+      </shaderParameters>
+      <drawSize>2.2</drawSize>
+    </graphicData>
+  </ThingDef>
+  
 </Defs>

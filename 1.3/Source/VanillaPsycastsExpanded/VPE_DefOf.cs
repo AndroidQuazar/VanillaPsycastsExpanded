@@ -25,6 +25,7 @@
         public static ThingDef VPE_JumpingPawn;
         public static ThingDef VPE_TimeSphere;
         public static ThingDef VPE_SkyChanger;
+        public static ThingDef VPE_PsycastAreaEffectMaintained;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

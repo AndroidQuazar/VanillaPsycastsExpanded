@@ -75,6 +75,7 @@
     <Compile Include="Paths\Archotechist\AbilityExtension_TransferEntropy.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_StunTarget.cs" />
     <Compile Include="Paths\Archotechist\Hediff_PsychicDrone.cs" />
+    <Compile Include="Graphics\MoteAttachedScaled.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_Age.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_ImproveRelations.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_ReduceResistance.cs" />

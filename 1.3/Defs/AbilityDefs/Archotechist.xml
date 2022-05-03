@@ -94,7 +94,7 @@
         <onlyTargetColonists>True</onlyTargetColonists>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
       </targetingParameters>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>60</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <goodwillImpact>-15</goodwillImpact>
@@ -112,11 +112,8 @@
             <li>VPE_Stun</li>
           </prerequisites>
         </li>
-		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-			<hediff>PsychicComa</hediff>
-		</li>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_TransferEntropy">
-			<targetReceivesEntropy>False</targetReceivesEntropy>
+			<targetReceivesEntropy>true</targetReceivesEntropy>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -164,7 +161,6 @@
       <iconPath>Abilities/Archotechist/AggressiveHeatDump</iconPath>
       <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>
-        <onlyTargetColonists>True</onlyTargetColonists>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
       </targetingParameters>
 	  <abilityClass>VanillaPsycastsExpanded.Ability_AggressiveHeatDump</abilityClass>
@@ -231,10 +227,8 @@
       <iconPath>Abilities/Archotechist/PsychicDrone</iconPath>
 	  <targetMode>Self</targetMode>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
-	  <castFleck>PsycastAreaEffect</castFleck>
-	  <castFleckScale>10</castFleckScale>
 	  <castSound>VPE_PsychicDrone_Cast</castSound>
-	  <durationTime>1800</durationTime>
+	  <durationTime>18000000000</durationTime>
 	  <castTime>60</castTime>
 	  <radius>25.9</radius>
       <modExtensions>
