@@ -7,7 +7,7 @@
       <tab>VanillaExpanded</tab>
       <description>Tailor and craft complex eltex apparel, capable of improving psychic focus of your psycasters, as well as an eltex-infused staff.</description>
       <baseCost>3000</baseCost>
-      <techLevel>Ultra</techLevel>
+      <techLevel>Spacer</techLevel>
       <prerequisites>
          <li>SpacerElectronics</li>
       </prerequisites>
