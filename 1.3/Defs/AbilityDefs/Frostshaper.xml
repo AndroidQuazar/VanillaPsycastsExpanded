@@ -93,6 +93,11 @@
       <label>frost ray</label>
       <description>Push forth a concentrated stream of psychic entropy for a few seconds, rapidly inducing cuts and hypothermia. The duration scales with the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Frostshaper/FrostRay</iconPath>
+	  <durationTime>120</durationTime>
+	  <castTime>15</castTime>
+	  <range>12.9</range>
+	  <targetMode>Location</targetMode>
+      <abilityClass>VanillaPsycastsExpanded.Ability_FrostRay</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -105,8 +110,15 @@
             <li>VPE_IceSpike</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Projectile">
+          <projectile>VPE_FrostRay</projectile>
+        </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_FrostRay</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceCrystal</defName>
       <label>ice crystal</label>

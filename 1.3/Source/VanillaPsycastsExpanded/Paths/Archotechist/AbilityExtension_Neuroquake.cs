@@ -23,7 +23,6 @@ using System.Security.Cryptography;
 		public int worldRangeTiles;
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
-            base.Cast(target, ability);
 			if (affectedFactions == null)
 			{
 				affectedFactions = new Dictionary<Faction, Pair<bool, Pawn>>();

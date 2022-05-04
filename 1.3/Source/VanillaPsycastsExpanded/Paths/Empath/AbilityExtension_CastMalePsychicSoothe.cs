@@ -11,6 +11,8 @@ using Mono.Unix.Native;
 		public Gender gender;
         public override void Cast(LocalTargetInfo target, Ability ability)
 {
+            base.Cast(target, ability);
+
 			foreach (Pawn pawn in ability.pawn.MapHeld.mapPawns.AllPawnsSpawned)
 			{
 				if (!pawn.Dead && pawn.gender == gender && pawn.needs != null && pawn.needs.mood != null)

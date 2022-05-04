@@ -17,6 +17,7 @@
         public static HediffDef HeartAttack;
         public static HediffDef VFEP_HypothermicSlowdown;
         public static HediffDef VPE_IceShield;
+        public static HediffDef VPE_FrostRay;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -43,6 +44,7 @@
         public static SoundDef Psycast_Neuroquake_CastLoop;
         public static SoundDef Psycast_Neuroquake_CastEnd;
         public static SoundDef VPE_PsychicDrone_End;
+        public static SoundDef VPE_FrostRay_Sustainer;
 
         public static StatDef VPE_PsyfocusCostFactor;
         public static StatDef VPE_PsychicEntropyMinimum;

@@ -193,4 +193,20 @@
 			<speed>70</speed>
 		</projectile>
 	</ThingDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>VPE_FrostRay</defName>
+		<label>frost ray</label>
+		<thingClass>VanillaPsycastsExpanded.Projectile_FrostRay</thingClass>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Frostshaper/Frostbeam</texPath>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
+			<ticksPerFrame>3</ticksPerFrame>
+		</graphicData>
+		<projectile>
+			<speed>75</speed>
+			<damageDef>Cut</damageDef>
+			<damageAmountBase>12</damageAmountBase>
+		</projectile>
+	</ThingDef>
 </Defs>

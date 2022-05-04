@@ -13,6 +13,7 @@
         private int attackInTicks = -1;
         public override void Cast(LocalTargetInfo target)
         {
+	    base.Cast(target);
             AttackTarget(target);
             TryQueueAttackIfDead(target);
         }

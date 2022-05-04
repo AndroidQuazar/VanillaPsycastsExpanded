@@ -7,7 +7,8 @@
     public class AbilityExtension_StunTarget : AbilityExtension_AbilityMod
 	{
         public override void Cast(LocalTargetInfo target, Ability ability)
-        {
+        {       
+	    base.Cast(target, ability);
             target.Pawn?.stances.stunner.StunFor(ability.GetDurationForPawn(), ability.pawn, addBattleLog: false);
         }
     }

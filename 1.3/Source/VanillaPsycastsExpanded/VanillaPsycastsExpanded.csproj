@@ -110,9 +110,12 @@
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
+    <Compile Include="Paths\FrostShaper\Ability_FrostRay.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceShield.cs" />
     <Compile Include="Hediff_ShieldBubble.cs" />
     <Compile Include="Paths\FrostShaper\IceBreathePropectile.cs" />
+    <Compile Include="Paths\FrostShaper\Projectile_FrostRay.cs" />
+    <Compile Include="Stance_Stand.cs" />
     <Compile Include="Paths\Harmonist\Ability_HeatFocus.cs" />
     <Compile Include="Paths\Harmonist\Ability_RandomEvent.cs" />
     <Compile Include="Paths\Harmonist\Ability_Skillroll.cs" />
@@ -137,7 +140,7 @@
     <Compile Include="Paths\Warlord\AbilityExtension_ForceJobOnTarget.cs" />
     <Compile Include="Paths\Warlord\Ability_Killskip.cs" />
     <Compile Include="Paths\Warlord\Ability_PowerLeap.cs" />
-    <Compile Include="Paths\Warlord\HediffComp_PlaySound.cs" />
+    <Compile Include="HediffComp_PlaySound.cs" />
     <Compile Include="Paths\Warlord\JumpingPawn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PsycasterPathDef.cs" />

@@ -42,6 +42,7 @@
 		}
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
+            		base.Cast(target, ability);
 			Pawn pawn = target.Pawn;
 			Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicLove);
 			if (firstHediffOfDef != null)

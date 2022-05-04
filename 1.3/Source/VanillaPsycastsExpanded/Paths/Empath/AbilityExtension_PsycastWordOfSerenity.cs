@@ -16,6 +16,7 @@
 		public List<MentalStateDef> exceptions;
 		public override void Cast(LocalTargetInfo target, Ability ability)
 		{
+            		base.Cast(target, ability);
 			Hediff_PsycastAbilities psycastHediff =
 				(Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
 			psycastHediff.UseAbility(PsyfocusCostForTarget(target), this.GetEntropyUsedByPawn(ability.pawn));

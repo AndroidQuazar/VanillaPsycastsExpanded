@@ -11,6 +11,7 @@
 
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
+            base.Cast(target, ability);
             Pawn pawn = target.Pawn;
             if (pawn != null && (!this.onlyPlayer || pawn.Faction is {IsPlayer: true}))
             {

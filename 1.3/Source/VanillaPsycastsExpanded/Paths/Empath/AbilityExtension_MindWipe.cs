@@ -11,6 +11,7 @@ using VFECore;
 	{
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
+            base.Cast(target, ability);
             var pawn = target.Pawn;
             if (pawn.Faction != ability.pawn.Faction)
             {
