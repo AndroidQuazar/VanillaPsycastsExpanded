@@ -5,6 +5,23 @@
       <label>enchant quality</label>
       <description>The caster concentrates on an item and attempts to improve its quality by reshaping the material slightly, but cannot imitate a master’s handiwork.</description>
       <iconPath>Abilities/Technomancer/EnchantQuality</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_IncreaseQuality</abilityClass>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>1.9</distanceToTarget>
+      <targetMode>Pawn</targetMode>
+      <castTime>240</castTime>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+        <thingCategory>Item</thingCategory>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
+      <targetFlecks>
+        <li>PsycastPsychicEffect</li>
+      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -20,6 +37,23 @@
       <label>mend</label>
       <description>The caster concentrates on an item and attempts to repair present damage by rebinding the material, with the effect scaling with their psychic sensitivity.</description>
       <iconPath>Abilities/Technomancer/Mend</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Mend</abilityClass>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>1.9</distanceToTarget>
+      <targetMode>Pawn</targetMode>
+      <castTime>240</castTime>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+        <thingCategory>Item</thingCategory>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
+      <targetFlecks>
+        <li>PsycastPsychicEffect</li>
+      </targetFlecks>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>

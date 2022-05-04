@@ -48,6 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
+    <Compile Include="Paths\Technomancer\Ability_Mend.cs" />
     <Compile Include="UI\Command_ActionWithFloat.cs" />
     <Compile Include="Comps\CompBreakLink.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_SetStoneColour.cs" />

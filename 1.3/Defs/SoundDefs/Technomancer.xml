@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <SoundDef>
+      <defName>VPE_EnchantQuality_Cast</defName>
+      <context>MapOnly</context>
+      <maxSimultaneous>1</maxSimultaneous>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Technomancer/Psycast_EnchantQuality_Cast_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>42</volumeRange>
+          <distRange>20~50</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+    <SoundDef>
+      <defName>VPE_Mend_Cast</defName>
+      <context>MapOnly</context>
+      <maxSimultaneous>1</maxSimultaneous>
+      <subSounds>
+        <li>
+          <grains>
+            <li Class="AudioGrain_Clip">
+              <clipPath>Technomancer/Psycast_Mend_Cast_01a</clipPath>
+            </li>
+          </grains>
+          <volumeRange>42</volumeRange>
+          <distRange>20~50</distRange>
+        </li>
+      </subSounds>
+    </SoundDef>
+</Defs>
