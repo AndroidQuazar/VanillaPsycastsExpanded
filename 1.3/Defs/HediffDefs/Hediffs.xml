@@ -457,4 +457,16 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_IceBlock</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_IceBlock</hediffClass>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

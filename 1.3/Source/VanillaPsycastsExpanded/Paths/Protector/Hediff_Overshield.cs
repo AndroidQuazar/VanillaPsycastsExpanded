@@ -9,7 +9,7 @@
     using VFECore.Abilities;
 
     [StaticConstructorOnStartup]
-    public class Hediff_Overshield : Hediff_ShieldBubble
+    public class Hediff_Overshield : Hediff_Overlay
     {
         private int lastInterceptTicks = -999999;
         private float lastInterceptAngle;
@@ -18,13 +18,13 @@
         public static float idlePulseSpeed = 3;
         public static float minIdleAlpha = 0.05f;
         public static float minAlpha = 0.2f;
-        public override string ShieldPath => "Other/ForceField";
+        public override string OverlayPath => "Other/ForceField";
 
         private static Material ForceFieldConeMat = MaterialPool.MatFrom("Other/ForceFieldCone", ShaderDatabase.MoteGlow);
         public override void Tick()
         {
             base.Tick();
-			foreach (var thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, ShieldSize + 1, true))
+			foreach (var thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, OverlaySize + 1, true))
             {
                 if (thing is Projectile projectile)
                 {
@@ -48,8 +48,8 @@
         public virtual bool CanDestroyProjectile(Projectile projectile)
         {
             var cell = ((Vector3)VFECore.NonPublicFields.Projectile_origin.GetValue(projectile)).Yto0().ToIntVec3();
-            return Vector3.Distance(projectile.ExactPosition.Yto0(), pawn.DrawPos.Yto0()) <= ShieldSize &&
-                !GenRadial.RadialCellsAround(pawn.Position, ShieldSize, true).ToList().Contains(cell);
+            return Vector3.Distance(projectile.ExactPosition.Yto0(), pawn.DrawPos.Yto0()) <= OverlaySize &&
+                !GenRadial.RadialCellsAround(pawn.Position, OverlaySize, true).ToList().Contains(cell);
         }
         public override void Draw()
         {
@@ -58,21 +58,21 @@
             float currentAlpha = GetCurrentAlpha();
             if (currentAlpha > 0f)
             {
-                Color value = ShieldColor;
+                Color value = OverlayColor;
                 value.a *= currentAlpha;
                 MatPropertyBlock.SetColor(ShaderPropertyIDs.Color, value);
                 Matrix4x4 matrix = default(Matrix4x4);
-                matrix.SetTRS(pos, Quaternion.identity, new Vector3(ShieldSize * 2f * 1.16015625f, 1f, ShieldSize * 2f * 1.16015625f));
+                matrix.SetTRS(pos, Quaternion.identity, new Vector3(OverlaySize * 2f * 1.16015625f, 1f, OverlaySize * 2f * 1.16015625f));
                 UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldMat, 0, null, 0, MatPropertyBlock);
             }
             float currentConeAlpha_RecentlyIntercepted = GetCurrentConeAlpha_RecentlyIntercepted();
             if (currentConeAlpha_RecentlyIntercepted > 0f)
             {
-                Color color = ShieldColor;
+                Color color = OverlayColor;
                 color.a *= currentConeAlpha_RecentlyIntercepted;
                 MatPropertyBlock.SetColor(ShaderPropertyIDs.Color, color);
                 Matrix4x4 matrix2 = default(Matrix4x4);
-                matrix2.SetTRS(pos, Quaternion.Euler(0f, lastInterceptAngle - 90f, 0f), new Vector3(ShieldSize * 2f * 1.16015625f, 1f, ShieldSize * 2f * 1.16015625f));
+                matrix2.SetTRS(pos, Quaternion.Euler(0f, lastInterceptAngle - 90f, 0f), new Vector3(OverlaySize * 2f * 1.16015625f, 1f, OverlaySize * 2f * 1.16015625f));
                 UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix2, ForceFieldConeMat, 0, null, 0, MatPropertyBlock);
             }
         }

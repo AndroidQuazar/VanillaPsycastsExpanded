@@ -172,4 +172,16 @@
       <drawSize>(2.3, 2.3)</drawSize>
     </graphicData>
   </FleckDef>
+  
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_ColdGlow</defName>
+    <graphicData>
+      <texPath>Effects/Frostshaper/ColdZone/ColdZoneGlow</texPath>
+      <shaderType>MoteGlow</shaderType>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2.6</fadeInTime>
+    <solidTime>1.5</solidTime>
+    <fadeOutTime>3.3</fadeOutTime>
+  </FleckDef>
 </Defs>

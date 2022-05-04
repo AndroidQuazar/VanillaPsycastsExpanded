@@ -8,8 +8,8 @@
     public class Hediff_GuardianSkipBarrier : Hediff_Overshield
     {
         private Sustainer sustainer;
-        public override Color ShieldColor => new ColorInt(79, 141, 247).ToColor;
-        public override float ShieldSize => 9;
+        public override Color OverlayColor => new ColorInt(79, 141, 247).ToColor;
+        public override float OverlaySize => 9;
         protected override void DestroyProjectile(Projectile projectile)
         {
             base.DestroyProjectile(projectile);

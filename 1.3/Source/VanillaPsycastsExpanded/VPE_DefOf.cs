@@ -18,6 +18,7 @@
         public static HediffDef VFEP_HypothermicSlowdown;
         public static HediffDef VPE_IceShield;
         public static HediffDef VPE_FrostRay;
+        public static HediffDef VPE_IceBlock;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -69,5 +70,7 @@
 
         [DefAlias("VPE_Hurricane")] public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")] public static GameConditionDef VPE_Hurricane_Condition;
+
+        public static JobDef VPE_StandFreeze;
     }
 }

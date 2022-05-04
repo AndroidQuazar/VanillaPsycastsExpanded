@@ -7,10 +7,10 @@
     using Verse;
     using VFECore.Abilities;
     [StaticConstructorOnStartup]
-    public class Hediff_PsychicDrone : Hediff_ShieldBubble
+    public class Hediff_PsychicDrone : Hediff_Overlay
     {
         private float curAngle;
-        public override string ShieldPath => "Effects/Archotechist/PsychicDrone/PsychicDroneEnergyField";
+        public override string OverlayPath => "Effects/Archotechist/PsychicDrone/PsychicDroneEnergyField";
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
