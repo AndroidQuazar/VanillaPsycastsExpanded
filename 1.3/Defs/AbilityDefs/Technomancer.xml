@@ -22,6 +22,7 @@
       <targetFlecks>
         <li>PsycastPsychicEffect</li>
       </targetFlecks>
+      <castSound>VPE_EnchantQuality_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -54,6 +55,7 @@
       <targetFlecks>
         <li>PsycastPsychicEffect</li>
       </targetFlecks>
+      <castSound>VPE_Mend_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
