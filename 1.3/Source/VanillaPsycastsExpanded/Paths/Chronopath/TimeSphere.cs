@@ -18,8 +18,6 @@
 
         private int       startTick;
         private Sustainer sustainer;
-        private float     scale       = 5f;
-        private float     scaleChange = 0.25f;
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
@@ -47,11 +45,6 @@
             if (this.sustainer == null) this.sustainer = VPE_DefOf.VPE_TimeSphere_Sustainer.TrySpawnSustainer(this);
             else this.sustainer.Maintain();
 
-            if (this.scale >= this.Radius || this.scale <= 1f) this.scaleChange *= -1;
-
-            this.scale =  Mathf.Clamp(this.scale, 1f, this.Radius);
-            this.scale += this.scaleChange;
-
             if (Find.TickManager.TicksGame >= this.startTick + this.Duration) this.Destroy();
         }
 
@@ -65,7 +58,7 @@
         {
             Graphics.DrawMesh(MeshPool.plane10,
                               Matrix4x4.TRS(this.Position.ToVector3ShiftedWithAltitude(AltitudeLayer.MoteOverheadLow), Quaternion.AngleAxis(0f, Vector3.up),
-                                            Vector3.one * this.scale * 1.75f), DistortionMat, 0);
+                                            Vector3.one * this.Radius * 1.75f), DistortionMat, 0);
         }
 
         public override void ExposeData()
