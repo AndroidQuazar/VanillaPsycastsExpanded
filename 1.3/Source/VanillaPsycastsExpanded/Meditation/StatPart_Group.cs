@@ -10,7 +10,7 @@
         {
             if (!this.ApplyOn(req)) return;
 
-            val += GenRadial.RadialDistinctThingsAround(req.Pawn.Position, req.Pawn.Map, 5f, true).OfType<Pawn>()
+            val += GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, 5f, true).OfType<Pawn>()
                             .Count(p => p.CurJobDef == JobDefOf.Meditate) switch
             {
                 <=1 => 0,
@@ -25,7 +25,7 @@
         {
             if (!this.ApplyOn(req)) return "";
 
-            int num = GenRadial.RadialDistinctThingsAround(req.Pawn.Position, req.Pawn.Map, 5f, true).OfType<Pawn>()
+            int num = GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, 5f, true).OfType<Pawn>()
                                .Count(p => p.CurJobDef == JobDefOf.Meditate);
             return "VPE.GroupFocus".Translate(num - 1) + ": " + this.parentStat.Worker.ValueToString(num switch
             {

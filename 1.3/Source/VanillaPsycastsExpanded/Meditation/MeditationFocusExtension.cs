@@ -14,6 +14,6 @@
     {
         public MeditationFocusDef focus;
 
-        public bool ApplyOn(StatRequest req) => req.Pawn != null && this.focus.CanPawnUse(req.Pawn) && StatPart_NearbyFoci.ShouldApply;
+        public bool ApplyOn(StatRequest req) => req.Thing is Pawn pawn && this.focus.CanPawnUse(pawn) && StatPart_NearbyFoci.ShouldApply;
     }
 }

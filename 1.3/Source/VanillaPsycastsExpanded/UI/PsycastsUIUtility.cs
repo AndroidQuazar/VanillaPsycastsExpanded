@@ -45,10 +45,10 @@
                     if (ext.statParts.NullOrEmpty()) continue;
                     foreach (StatPart_Focus statPart in ext.statParts)
                     {
-                        statPart.focus                          =   def;
-                        statPart.parentStat                     =   StatDefOf.MeditationFocusStrength;
-                        StatDefOf.MeditationFocusStrength.parts ??= new List<StatPart>();
-                        StatDefOf.MeditationFocusStrength.parts.Add(statPart);
+                        statPart.focus                      =   def;
+                        statPart.parentStat                 =   StatDefOf.MeditationFocusStrength;
+                        StatDefOf.MeditationFocusGain.parts ??= new List<StatPart>();
+                        StatDefOf.MeditationFocusGain.parts.Add(statPart);
                     }
                 }
             }
