@@ -245,6 +245,7 @@
 	  <castTime>120</castTime>
 	  <targetMode>Self</targetMode>
 	  <radius>5.9</radius>
+	  <castSound>VPE_IceBlock_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
