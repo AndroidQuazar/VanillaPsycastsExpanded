@@ -198,8 +198,7 @@
                     Find.WindowStack.Add(new Dialog_RenamePsyset(psyset));
                 if (Widgets.ButtonText(rect.RightHalf().LeftHalf(), "VPE.Edit".Translate()))
                     Find.WindowStack.Add(new Dialog_Psyset(psyset, this.pawn));
-                if (Widgets.ButtonText(rect.RightHalf().RightHalf(), "VPE.Remove".Translate()))
-                    this.hediff.psysets.Remove(psyset);
+                if (Widgets.ButtonText(rect.RightHalf().RightHalf(), "VPE.Remove".Translate())) this.hediff.RemovePsySet(psyset);
             }
 
             if (Widgets.ButtonText(listing.GetRect(70f).LeftHalf().ContractedBy(5f), "VPE.CreatePsyset".Translate()))

@@ -31,15 +31,26 @@
             meditationIcons = new Dictionary<MeditationFocusDef, Texture2D>();
             foreach (MeditationFocusDef def in DefDatabase<MeditationFocusDef>.AllDefs)
             {
-                MeditationFocusExtension_Icon ext = def.GetModExtension<MeditationFocusExtension_Icon>();
+                MeditationFocusExtension ext = def.GetModExtension<MeditationFocusExtension>();
                 if (ext is null)
                 {
                     Log.Error(
-                        $"MeditationFocusDef {def} does not have a MeditationFocusExtension_Icon, meaning {def.modContentPack?.Name} is incompatible with Vanilla Psycasts Expanded");
+                        $"MeditationFocusDef {def} does not have a MeditationFocusExtension, meaning {def.modContentPack?.Name} is incompatible with Vanilla Psycasts Expanded");
                     meditationIcons.Add(def, BaseContent.WhiteTex);
                 }
                 else
+                {
                     meditationIcons.Add(def, ContentFinder<Texture2D>.Get(ext.icon));
+
+                    if (ext.statParts.NullOrEmpty()) continue;
+                    foreach (StatPart_Focus statPart in ext.statParts)
+                    {
+                        statPart.focus                          =   def;
+                        statPart.parentStat                     =   StatDefOf.MeditationFocusStrength;
+                        StatDefOf.MeditationFocusStrength.parts ??= new List<StatPart>();
+                        StatDefOf.MeditationFocusStrength.parts.Add(statPart);
+                    }
+                }
             }
         }
 

@@ -28,7 +28,7 @@
             this.closeOnClickedOutside = true;
         }
 
-        public override Vector2 InitialSize => new(480f, 500f);
+        public override Vector2 InitialSize => new(480f, 520f);
 
         public override void DoWindowContents(Rect inRect)
         {

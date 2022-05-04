@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using RimWorld;
+    using UI;
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
@@ -40,28 +41,32 @@
         {
             if (this.psysets.Count > 0)
             {
-                yield return new Command_Action
+                int nextIndex                                 = this.psysetIndex + 1;
+                if (nextIndex > this.psysets.Count) nextIndex = 0;
+                yield return new Command_ActionWithFloat
                 {
-                    defaultLabel = "VPE.PsySetPrev".Translate(),
-                    icon         = PsySetPrev,
-                    action = () =>
-                    {
-                        this.psysetIndex--;
-                        if (this.psysetIndex < 0) this.psysetIndex = this.psysets.Count;
-                    },
-                    order = 10f
+                    defaultLabel    = "VPE.PsySetNext".Translate(),
+                    defaultDesc     = "VPE.PsySetDesc".Translate(this.PsySetLabel(this.psysetIndex), this.PsySetLabel(nextIndex)),
+                    icon            = PsySetNext,
+                    action          = () => this.psysetIndex = nextIndex,
+                    order           = 10f,
+                    floatMenuGetter = this.GetPsySetFloatMenuOptions
                 };
-                yield return new Command_Action
-                {
-                    defaultLabel = "VPE.PsySetNext".Translate(),
-                    icon         = PsySetNext,
-                    action = () =>
-                    {
-                        this.psysetIndex++;
-                        if (this.psysetIndex > this.psysets.Count) this.psysetIndex = 0;
-                    },
-                    order = 10f
-                };
+            }
+        }
+
+        private string PsySetLabel(int index)
+        {
+            if (index == this.psysets.Count) return "VPE.All".Translate();
+            return this.psysets[index].Name;
+        }
+
+        private IEnumerable<FloatMenuOption> GetPsySetFloatMenuOptions()
+        {
+            for (int i = 0; i <= this.psysets.Count; i++)
+            {
+                int index = i;
+                yield return new FloatMenuOption(this.PsySetLabel(index), () => this.psysetIndex = index);
             }
         }
 
@@ -162,6 +167,12 @@
         }
 
         public bool ShouldShow(Ability ability) => this.psysetIndex == this.psysets.Count || this.psysets[this.psysetIndex].Abilities.Contains(ability.def);
+
+        public void RemovePsySet(PsySet set)
+        {
+            this.psysets.Remove(set);
+            this.psysetIndex = Mathf.Clamp(this.psysetIndex, 0, this.psysets.Count);
+        }
 
         public static int ExperienceRequiredForLevel(int level)
         {

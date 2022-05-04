@@ -7,31 +7,51 @@
 
     public class StatPart_NearbyFoci : StatPart
     {
-        private static bool shouldApply;
+        public static bool ShouldApply = true;
 
         public override void TransformValue(StatRequest req, ref float val)
         {
-            if (req.Thing == null || !shouldApply) return;
-            shouldApply = false;
-            val += GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, MeditationUtility.FocusObjectSearchRadius, true)
-                            .Where(thing => thing.TryGetComp<CompMeditationFocus>() is { } comp && comp.CanPawnUse(req.Pawn))
-                            .Sum(thing => thing.GetStatValueForPawn(StatDefOf.MeditationFocusStrength, req.Pawn));
-            shouldApply = true;
+            if (req.Thing == null || !ShouldApply) return;
+            ShouldApply =  false;
+            val         += AllFociNearby(req.Thing, req.Pawn).Sum(tuple => tuple.value);
+            ShouldApply =  true;
+        }
+
+        private static IEnumerable<(Thing thing, float value)> AllFociNearby(Thing main, Pawn pawn)
+        {
+            HashSet<MeditationFocusDef> focusTypes = main.TryGetComp<CompMeditationFocus>().Props.focusTypes.ToHashSet();
+            List<(Thing thing, List<MeditationFocusDef> foci, float value)> foci =
+                (from thing in GenRadial.RadialDistinctThingsAround(main.Position, main.Map, MeditationUtility.FocusObjectSearchRadius, true)
+                 let comp = thing.TryGetComp<CompMeditationFocus>()
+                 where comp != null && comp.CanPawnUse(pawn)
+                 let value = thing.GetStatValueForPawn(
+                     StatDefOf.MeditationFocusStrength, pawn)
+                 orderby value descending
+                 select (thing, comp.Props.focusTypes, value)).ToList();
+
+            List<(Thing, float)> result = new();
+            foreach ((Thing thing, List<MeditationFocusDef> types, float value) in foci)
+                if (types.Any(type => !focusTypes.Contains(type)))
+                {
+                    focusTypes.UnionWith(types);
+                    result.Add((thing, value));
+                }
+
+            return result;
         }
 
         public override string ExplanationPart(StatRequest req)
         {
-            if (req.Thing == null || !shouldApply) return "";
-            shouldApply = false;
-            List<string> lines =
-                (from thing in GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, MeditationUtility.FocusObjectSearchRadius, true)
-                 where thing.TryGetComp<CompMeditationFocus>() is { } comp && comp.CanPawnUse(req.Pawn)
-                 select thing.LabelCap + ": " +
-                        StatDefOf.MeditationFocusStrength.Worker.ValueToString(thing.GetStatValueForPawn(StatDefOf.MeditationFocusStrength, req.Pawn), true,
-                                                                               ToStringNumberSense.Offset)).ToList();
-            shouldApply = true;
+            if (req.Thing == null || !ShouldApply) return "";
+            ShouldApply = false;
+            List<string> lines = AllFociNearby(req.Thing, req.Pawn)
+                                 .Select(tuple => tuple.thing.LabelCap + ": " +
+                                                  StatDefOf.MeditationFocusStrength
+                                                           .Worker.ValueToString(tuple.value, true, ToStringNumberSense.Offset))
+                                 .ToList();
+            ShouldApply = true;
 
-            return lines.Count > 0 ? "VPE.Nearby" + ":" + lines.ToLineList("", true) : "";
+            return lines.Count > 0 ? "VPE.Nearby".Translate() + ":\n" + lines.ToLineList("  ", true) : "";
         }
     }
 }

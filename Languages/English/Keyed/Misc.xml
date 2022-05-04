@@ -11,4 +11,8 @@
     <VPE.PsySetNext>Next PsySet</VPE.PsySetNext>
     <VPE.PsySetPrev>Previous PsySet</VPE.PsySetPrev>
     <VPE.Nearby>Nearby</VPE.Nearby>
+    <VPE.WealthNearby>{0} wealth nearby out of {1} total wealth</VPE.WealthNearby>
+    <VPE.GroupFocus>{0} other pawns nearby</VPE.GroupFocus>
+    <VPE.All>All</VPE.All>
+    <VPE.PsySetDesc>Move to the next PsySet. Right click to choose a specific one.\nCurrent: {0}, Next: {1}</VPE.PsySetDesc>
 </LanguagData>

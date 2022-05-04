@@ -34,7 +34,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Dignified"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusDignified</icon>
                                 </li>
                             </value>
@@ -42,7 +42,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Flame"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusFlame</icon>
                                 </li>
                             </value>
@@ -50,7 +50,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Natural"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusNatural</icon>
                                 </li>
                             </value>
@@ -58,7 +58,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Artistic"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusArtistic</icon>
                                 </li>
                             </value>
@@ -66,7 +66,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Morbid"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusMorbid</icon>
                                 </li>
                             </value>
@@ -74,7 +74,7 @@
                         <li Class="PatchOperationAddModExtension">
                             <xpath>/Defs/MeditationFocusDef[defName="Minimal"]</xpath>
                             <value>
-                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension_Icon">
+                                <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusMinimal</icon>
                                 </li>
                             </value>
