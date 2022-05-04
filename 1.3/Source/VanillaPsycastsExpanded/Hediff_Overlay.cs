@@ -5,7 +5,7 @@
     using VFECore.Abilities;
 
     [StaticConstructorOnStartup]
-    public abstract class Hediff_ShieldBubble : Hediff_Ability
+    public abstract class Hediff_Overlay : Hediff_Ability
     {
         public static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
 
@@ -16,15 +16,15 @@
             {
                 if (material == null)
                 {
-                    material = MaterialPool.MatFrom(ShieldPath, ShaderDatabase.MoteGlow);
+                    material = MaterialPool.MatFrom(OverlayPath, ShaderDatabase.MoteGlow);
                 }
                 return material;
             }
         }
 
-        public virtual float ShieldSize => 1f;
-        public virtual Color ShieldColor => Color.yellow;
-        public virtual string ShieldPath { get; }
+        public virtual float OverlaySize => 1f;
+        public virtual Color OverlayColor => Color.yellow;
+        public virtual string OverlayPath { get; }
         public virtual void Draw()
         {
 

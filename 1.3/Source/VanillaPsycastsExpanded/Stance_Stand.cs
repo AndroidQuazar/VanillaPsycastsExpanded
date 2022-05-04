@@ -1,7 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using Verse;
-
     public class Stance_Stand : Stance_Busy
     {
         public Stance_Stand()

@@ -5,9 +5,9 @@
     using System.Linq;
     using UnityEngine;
     using Verse;
-    public class Hediff_IceShield : Hediff_ShieldBubble
+    public class Hediff_IceShield : Hediff_Overlay
     {
-        public override string ShieldPath => "Effects/Frostshaper/FrostShield/Frostshield";
+        public override string OverlayPath => "Effects/Frostshaper/FrostShield/Frostshield";
         public override void Notify_PawnPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             base.Notify_PawnPostApplyDamage(dinfo, totalDamageDealt);

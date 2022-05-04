@@ -48,6 +48,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FixedTemperatureZone.cs" />
+    <Compile Include="HarmonyPatches\GlobalControls_TemperatureString_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_JobTracker_StartJob_Patch.cs" />
+    <Compile Include="Hediff_Overlay.cs" />
+    <Compile Include="MapComponent_PsycastsManager.cs" />
+    <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnTemperatureArea.cs" />
+    <Compile Include="Paths\FrostShaper\Ability_IceBlock.cs" />
+    <Compile Include="Paths\FrostShaper\Ability_IceWall.cs" />
+    <Compile Include="Paths\FrostShaper\Ability_SnapFreeze.cs" />
+    <Compile Include="Paths\FrostShaper\CompMelter.cs" />
+    <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
+    <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
     <Compile Include="Paths\Technomancer\Ability_Mend.cs" />
     <Compile Include="UI\Command_ActionWithFloat.cs" />
@@ -118,7 +130,6 @@
     <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
     <Compile Include="Paths\FrostShaper\Ability_FrostRay.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceShield.cs" />
-    <Compile Include="Hediff_ShieldBubble.cs" />
     <Compile Include="Paths\FrostShaper\IceBreathePropectile.cs" />
     <Compile Include="Paths\FrostShaper\Projectile_FrostRay.cs" />
     <Compile Include="Stance_Stand.cs" />
