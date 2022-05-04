@@ -469,4 +469,46 @@
 			</li>
 		</stages>
 	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_BlizzardSource</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_BlizzardSource</hediffClass>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VPE_Blizzard</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Sight</capacity>
+						<postFactor>0.2</postFactor>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<postFactor>0.5</postFactor>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.5</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>60</disappearsAfterTicks>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

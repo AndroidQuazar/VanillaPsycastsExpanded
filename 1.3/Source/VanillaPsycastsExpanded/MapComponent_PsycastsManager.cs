@@ -5,6 +5,8 @@
     public class MapComponent_PsycastsManager : MapComponent
     {
         public List<FixedTemperatureZone> temperatureZones = new List<FixedTemperatureZone>();
+
+        public List<Hediff_BlizzardSource> blizzardSources = new List<Hediff_BlizzardSource>();
         public MapComponent_PsycastsManager(Map map) : base(map)
         {
 
@@ -36,6 +38,14 @@
                     return true;
                 }
             }
+            foreach (var hediff in blizzardSources)
+            {
+                if (cell.DistanceTo(hediff.pawn.Position) <= hediff.ability.GetRadiusForPawn())
+                {
+                    result = -60; // hardcoded for now, doesn't matter much
+                    return true;
+                }
+            }
             result = -1f;
             return false;
         }
@@ -44,6 +54,12 @@
         {
             base.ExposeData();
             Scribe_Collections.Look(ref temperatureZones, "temperatureZones", LookMode.Deep);
+            Scribe_Collections.Look(ref blizzardSources, "blizzardSources", LookMode.Reference);
+            if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            {
+                temperatureZones ??= new List<FixedTemperatureZone>();
+                blizzardSources ??= new List<Hediff_BlizzardSource>();
+            }
         }
     }
 }

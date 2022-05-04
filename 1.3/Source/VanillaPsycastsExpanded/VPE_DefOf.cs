@@ -19,6 +19,7 @@
         public static HediffDef VPE_IceShield;
         public static HediffDef VPE_FrostRay;
         public static HediffDef VPE_IceBlock;
+        public static HediffDef VPE_Blizzard;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;

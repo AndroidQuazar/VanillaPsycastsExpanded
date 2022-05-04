@@ -262,11 +262,21 @@
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_Blizzard</defName>
       <label>blizzard</label>
       <description>Using differential-pressure skipgates, water-linked skipgates and nodes of psychic entropy, creates a swirling blizzard away from the caster. Those exposed to the tempest experience reduced sight, moving and manipulation, as well as hypothermia buildup and cutting cold. Duration scales with the caster’s psychic sensitivity and puts them in a 5-day coma.</description>
       <iconPath>Abilities/Frostshaper/Blizzard</iconPath>
+	  <durationTime>1200</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <castTime>360</castTime>
+	  <targetMode>Self</targetMode>
+	  <goodwillImpact>-75</goodwillImpact>
+	  <warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound>
+	  <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
+	  <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
+	  <radius>50</radius>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -278,6 +288,13 @@
             <li>VPE_IceWall</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_AdditionalRadius">
+			<radius>5</radius>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_BlizzardSource</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 </Defs>

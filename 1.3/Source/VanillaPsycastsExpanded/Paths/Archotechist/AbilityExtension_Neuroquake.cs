@@ -3,7 +3,6 @@
     using RimWorld;
 	using RimWorld.Planet;
 	using System.Collections.Generic;
-using System.Security.Cryptography;
     using Verse;
     using Verse.AI;
     using Verse.Sound;
@@ -36,8 +35,8 @@ using System.Security.Cryptography;
 			{
 				if (CanApplyEffects(item) && !item.Fogged())
 				{
-					bool flag = !item.Spawned || item.Position.InHorDistOf(ability.pawn.Position, ability.GetRadiusForPawn()) 
-						|| !item.Position.InHorDistOf(ability.pawn.Position, ability.GetAdditionalRadius());
+					bool flag = !item.Spawned || item.Position.InHorDistOf(ability.pawn.Position, ability.GetAdditionalRadius()) 
+						|| !item.Position.InHorDistOf(ability.pawn.Position, ability.GetRadiusForPawn());
 					AffectGoodwill(item.HomeFaction, !flag, item);
 					if (!flag)
 					{

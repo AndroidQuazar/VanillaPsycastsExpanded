@@ -59,6 +59,7 @@
     <Compile Include="Paths\FrostShaper\Ability_SnapFreeze.cs" />
     <Compile Include="Paths\FrostShaper\CompMelter.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
+    <Compile Include="Paths\FrostShaper\Hediff_BlizzardSource.cs" />
     <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
     <Compile Include="Paths\Technomancer\Ability_Mend.cs" />

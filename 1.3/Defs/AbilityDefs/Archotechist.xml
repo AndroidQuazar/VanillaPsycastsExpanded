@@ -283,13 +283,12 @@
 	  <castTime>720</castTime>
 	  <targetMode>Self</targetMode>
 	  <durationTime>288000</durationTime>
-	  <radius>5.9</radius>
 	  <warmupMote>Mote_WarmupNeuroquake</warmupMote>
 	  <warmupStartSound>Psycast_Neuroquake_CastStart</warmupStartSound>
 	  <warmupSound>Psycast_Neuroquake_CastLoop</warmupSound>
 	  <warmupPreEndSound>Psycast_Neuroquake_CastEnd</warmupPreEndSound>
 	  <warmupPreEndSoundTicks>300</warmupPreEndSoundTicks>
-	  
+	  <radius>60</radius>
       <modExtensions>
 		<li Class="VFECore.Abilities.AbilityExtension_ConfirmationMessage">
 			<message>If you use neuroquake, everyone in this region will feel the neuroquake echo, you will lose goodwill with every non-hostile faction.\n\nNeuroquake takes 12 seconds to cast, and cannot be interrupted. When complete, the caster will fall into a psychic coma for 5 days.\n\nEveryone in range except those in a small circle around the caster will be affected.\n\nDo you really want to cast neuroquake?</message>
@@ -305,7 +304,7 @@
           </prerequisites>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_AdditionalRadius">
-			<radius>60</radius>
+			<radius>5.9</radius>
 		</li>
 		<li Class="VFECore.Abilities.AbilityExtension_ScreenShaker">
 			<intensity>2</intensity>

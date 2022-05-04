@@ -146,6 +146,7 @@
       <iconPath>Abilities/Empath/SootheFemale</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>PsychicSoothePulserCast</castSound>
+	  <castTime>600</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
 	  <castFleckScale>9</castFleckScale>
