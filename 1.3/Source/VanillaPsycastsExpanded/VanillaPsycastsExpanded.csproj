@@ -71,7 +71,7 @@
     <Compile Include="DeathActionWorkers\DeathActionWorker_SlagChunk.cs" />
     <Compile Include="Common\AbilityExtension_Flee.cs" />
     <Compile Include="Common\AbilityExtension_PsychicComa.cs" />
-    <Compile Include="Graphics\DistortMaterialsPool.cs" />
+    <Compile Include="Graphics\DistortedMaterialsPool.cs" />
     <Compile Include="Graphics\Graphic_AnimatedMote.cs" />
     <Compile Include="Graphics\HediffComp_MoteOverhead.cs" />
     <Compile Include="HarmonyPatches\CompAbilities_CompGetGizmosExtra_Patch.cs" />

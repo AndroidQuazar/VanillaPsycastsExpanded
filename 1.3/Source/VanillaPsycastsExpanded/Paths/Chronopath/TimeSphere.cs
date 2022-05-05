@@ -11,7 +11,7 @@
     public class TimeSphere : Thing
     {
         private static readonly Material DistortionMat =
-            DistortMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.1f, 1.5f);
+            DistortedMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.1f, 1.5f);
 
         public float Radius;
         public int   Duration;

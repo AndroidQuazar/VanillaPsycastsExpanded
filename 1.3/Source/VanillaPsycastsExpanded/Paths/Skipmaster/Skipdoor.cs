@@ -21,14 +21,14 @@
 
 
         private static readonly Material DistortionMat =
-            DistortMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.001f, 1.1f);
+            DistortedMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.02f, 1.1f);
 
         private Material      backgroundMat;
         private RenderTexture background1;
         private RenderTexture background2;
         public  Pawn          Pawn;
         private float         rotation;
-        private float         distortAmount = 2.5f;
+        private float         distortAmount = 1.5f;
         private Vector2       backgroundOffset;
         private Sustainer     sustainer;
 
@@ -164,7 +164,7 @@
             base.Tick();
             this.rotation      =  (this.rotation + 0.5f) % 360f;
             this.distortAmount += 0.01f;
-            if (this.distortAmount >= 3.5f) this.distortAmount = 2.5f;
+            if (this.distortAmount >= 3f) this.distortAmount = 1.5f;
             this.backgroundOffset += Vector2.one * 0.001f;
             this.RecacheBackground();
             this.sustainer ??= VPE_DefOf.VPE_Skipdoor_Sustainer.TrySpawnSustainer(this);
@@ -177,7 +177,9 @@
             if (this.backgroundMat != null)
                 Graphics.DrawMesh(MeshPool.plane10, Matrix4x4.TRS(drawLoc - Altitudes.AltIncVect / 2, Quaternion.identity, Vector3.one * 1.5f),
                                   this.backgroundMat, 0);
-            Graphics.DrawMesh(MeshPool.plane10, Matrix4x4.TRS(drawLoc + Altitudes.AltIncVect / 2, Quaternion.identity, Vector3.one * this.distortAmount),
+            Graphics.DrawMesh(MeshPool.plane10,
+                              Matrix4x4.TRS(drawLoc.Yto0() + Vector3.up * AltitudeLayer.MoteOverhead.AltitudeFor(), Quaternion.identity,
+                                            Vector3.one * this.distortAmount * 2f),
                               DistortionMat, 0);
         }
 

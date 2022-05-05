@@ -45,6 +45,7 @@
     <description>Skip the 5 chunks of rock or slag to scatter them near the target point. This is useful for producing cover during offensive operations.</description>
     <iconPath>Abilities/Skipmaster/Chunkskip</iconPath>
     <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Chunkskip</abilityClass>
+    <needsTicking>true</needsTicking>
     <range>25</range>
     <power>5</power>
     <radius>2.9</radius>
@@ -111,7 +112,6 @@
     <label>chaos skip</label>
     <description>Teleport the target to a random position near where he started. Stuns the target for a second and is considered a hostile action.</description>
     <iconPath>Abilities/Skipmaster/ChaosSkip</iconPath>
-
     <range>24.9</range>
     <goodwillImpact>-15</goodwillImpact>
     <modExtensions>

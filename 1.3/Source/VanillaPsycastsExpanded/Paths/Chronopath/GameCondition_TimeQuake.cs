@@ -13,7 +13,7 @@
     public class GameCondition_TimeQuake : GameCondition_TimeSnow
     {
         private static readonly Material DistortionMat =
-            DistortMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.00001f, 1.0f);
+            DistortedMaterialsPool.DistortedMaterial("Things/Mote/Black", "Things/Mote/PsycastDistortionMask", 0.00001f, 1.0f);
 
         public  float     SafeRadius;
         public  Pawn      Pawn;
