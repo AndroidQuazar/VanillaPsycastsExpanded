@@ -8,6 +8,14 @@
 				    <VPE_Eltex>1</VPE_Eltex>
 			    </value>
 			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraderKindDef[defName = "Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
+				<value>
+                    <li Class="StockGenerator_BuySingleDef">
+                        <thingDef>VPE_Eltex</thingDef>
+                    </li>
+			    </value>
+			</li>
 		</operations>	
 	</Operation>
 </Patch>
