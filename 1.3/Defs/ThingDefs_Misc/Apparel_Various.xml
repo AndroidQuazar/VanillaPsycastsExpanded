@@ -36,6 +36,9 @@
     </thingSetMakerTags>
     <equippedStatOffsets>
       <MoveSpeed>-0.8</MoveSpeed>
+      <PsychicSensitivityOffset>0.05</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.033</PsychicEntropyRecoveryRate>
+	  <PsychicEntropyMax>0.26672</PsychicEntropyMax>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
