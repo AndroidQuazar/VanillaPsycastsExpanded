@@ -15,6 +15,20 @@
       <requiredResearchFacilities>
          <li>MultiAnalyzer</li>
       </requiredResearchFacilities>
+      <researchViewX>8.00</researchViewX>
+      <researchViewY>5.65</researchViewY>
+   </ResearchProjectDef>
+   
+   <ResearchProjectDef>
+      <defName>VPE_CasterGear</defName>
+      <label>caster gear</label>
+      <tab>VanillaExpanded</tab>
+      <description>Craft simple psycaster apparel, armor and gear using eltex.</description>
+      <baseCost>1000</baseCost>
+      <techLevel>Medieval</techLevel>
+      <prerequisites>
+         <li>NobleApparel</li>
+      </prerequisites>
       <researchViewX>7.00</researchViewX>
       <researchViewY>5.65</researchViewY>
    </ResearchProjectDef>
