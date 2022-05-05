@@ -84,6 +84,7 @@
         <count>6</count>
       </li>
     </ingredients>
+	<researchPrerequisite>VPE_CasterGear</researchPrerequisite>
     <products>
       <VPE_Apparel_EltexMask>1</VPE_Apparel_EltexMask>
     </products>
@@ -113,6 +114,7 @@
         <count>4</count>
       </li>
     </ingredients>
+	<researchPrerequisite>VPE_CasterGear</researchPrerequisite>
     <products>
       <VPE_Apparel_EltexCape>1</VPE_Apparel_EltexCape>
     </products>
