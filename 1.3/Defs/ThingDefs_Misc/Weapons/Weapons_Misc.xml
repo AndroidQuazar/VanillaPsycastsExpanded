@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef ParentName="OrbitalUtilityBase">
+        <defName>VPE_HeatPearls</defName>
+        <label>heat pearls</label>
+        <description>An ancient targeting apparatus for an orbital bombardment system. This unit designates a target and transmits the coordinates to a network of satellites, which then bombard the target area with kinetic impactors. This unit has been reprogrammed to accept unauthorized users, but once it is used, the network will detect the incursion and cut off the link permanently.</description>
+        <graphicData>
+            <texPath>Effects/Technomancer/HeatPearls/HeatPearls</texPath>
+        </graphicData>
+        <apparel>
+            <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+        </apparel>
+        <verbs>
+            <li>
+                <label>throw heat pearl</label>
+                <verbClass>Verb_LaunchProjectileStatic</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <range>11.9</range>
+                <forcedMissRadius>1.9</forcedMissRadius>
+                <warmupTime>1.5</warmupTime>
+                <noiseRadius>4</noiseRadius>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>ThrowGrenade</soundCast>
+                <onlyManualCast>true</onlyManualCast>
+                <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+                <defaultProjectile>VPE_HeatPearls_Proj</defaultProjectile>
+                <ai_AvoidFriendlyFireRadius>6.9</ai_AvoidFriendlyFireRadius>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+            </li>
+        </verbs>
+        <tradeTags Inherit="False" />
+        <thingSetMakerTags Inherit="False" />
+        <tradeability>None</tradeability>
+        <comps>
+            <li Class="CompProperties_Reloadable">
+                <maxCharges>1</maxCharges>
+                <destroyOnEmpty>true</destroyOnEmpty>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>usage</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseGrenadeProjectile">
+        <defName>VPE_HeatPearls_Proj</defName>
+        <thingClass>Projectile_Explosive</thingClass>
+        <graphicData>
+            <texPath>Effects/Technomancer/HeatPearls/HeatPearl_Thrown</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <explosionRadius>4.9</explosionRadius>
+            <damageDef>VPE_NeuralHeatBlast</damageDef>
+            <explosionDelay>100</explosionDelay>
+        </projectile>
+    </ThingDef>
+</Defs>

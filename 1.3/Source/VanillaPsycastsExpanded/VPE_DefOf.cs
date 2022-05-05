@@ -31,6 +31,7 @@
         public static ThingDef VPE_TimeSphere;
         public static ThingDef VPE_SkyChanger;
         public static ThingDef VPE_PsycastAreaEffectMaintained;
+        public static ThingDef VPE_HeatPearls;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
@@ -45,33 +46,27 @@
         public static SoundDef VPE_TimeSphere_Sustainer;
         public static SoundDef Psycast_Neuroquake_CastLoop;
         public static SoundDef Psycast_Neuroquake_CastEnd;
-        public static SoundDef VPE_PsychicDrone_End;
         public static SoundDef VPE_FrostRay_Sustainer;
-
-        public static StatDef VPE_PsyfocusCostFactor;
-        public static StatDef VPE_PsychicEntropyMinimum;
-        public static JobDef  VPE_UseSkipdoor;
 
         public static FleckDef VPE_VortexSpark;
         public static FleckDef VPE_WarlordZap;
         public static FleckDef VPE_AggresiveHeatDump;
+        public static StatDef  VPE_PsyfocusCostFactor;
+        public static StatDef  VPE_PsychicEntropyMinimum;
+        public static JobDef   VPE_UseSkipdoor;
+        public static JobDef   VPE_StandFreeze;
 
-        public static MeditationFocusDef VPE_Group;
+
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
-        public static MeditationFocusDef VPE_Wealth;
-
-        public static MentalStateDef VPE_Wander_Sad;
-
-        public static EffecterDef      Interceptor_BlockedProjectilePsychic;
-        public static EffecterDef      VPE_Skip_ExitNoDelayRed;
-        public static HistoryEventDef  VPE_Foretelling;
-        public static GameConditionDef VPE_PsychicFlashstorm;
-        public static GameConditionDef VPE_TimeQuake;
+        public static MentalStateDef     VPE_Wander_Sad;
+        public static EffecterDef        Interceptor_BlockedProjectilePsychic;
+        public static EffecterDef        VPE_Skip_ExitNoDelayRed;
+        public static HistoryEventDef    VPE_Foretelling;
+        public static GameConditionDef   VPE_PsychicFlashstorm;
+        public static GameConditionDef   VPE_TimeQuake;
 
         [DefAlias("VPE_Hurricane")] public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")] public static GameConditionDef VPE_Hurricane_Condition;
-
-        public static JobDef VPE_StandFreeze;
     }
 }

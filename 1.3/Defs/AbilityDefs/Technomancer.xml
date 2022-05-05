@@ -71,6 +71,10 @@
       <label>conure heat pearls</label>
       <description>Converts a minimum amount of the caster’s heat into metaphysical pearls, effectively converting psyfocus into heat pearls. These can be thrown at other psycasters to induce massive amounts of heat on them, but are otherwise harmless.</description>
       <iconPath>Abilities/Technomancer/ConjureHeatPearls</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_ConjureHeatPearls</abilityClass>
+      <castTime>240</castTime>
+      <castSound>VPE_ConjureHeatPearls_Cast</castSound>
+      <targetMode>Self</targetMode>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>

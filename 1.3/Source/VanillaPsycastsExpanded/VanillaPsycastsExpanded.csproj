@@ -61,8 +61,10 @@
     <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_BlizzardSource.cs" />
     <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
+    <Compile Include="Paths\Technomancer\Ability_ConjureHeatPearls.cs" />
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
     <Compile Include="Paths\Technomancer\Ability_Mend.cs" />
+    <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
     <Compile Include="UI\Command_ActionWithFloat.cs" />
     <Compile Include="Comps\CompBreakLink.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_SetStoneColour.cs" />
