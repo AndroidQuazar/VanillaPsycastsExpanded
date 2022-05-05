@@ -199,6 +199,7 @@
       <description>Utilizing the alchemical foundation of equivalent exchange, converts a targeted item or stack of items into an object of equal or lesser value. Otherwise extremely unpredictable and uncontrollable.</description>
       <iconPath>Abilities/Harmonist/Transmutation</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_TransmuteItem</abilityClass>
+      <needsTicking>true</needsTicking>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
         <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>

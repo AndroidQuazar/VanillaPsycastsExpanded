@@ -226,6 +226,7 @@
 	  <castTime>300</castTime>
 	  <goodwillImpact>-25</goodwillImpact>
 	  <castSound>VPE_MindWipe_Cast</castSound>
+	  <needsTicking>true</needsTicking>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
