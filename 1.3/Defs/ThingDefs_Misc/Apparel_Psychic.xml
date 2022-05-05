@@ -50,6 +50,10 @@
       <layers> 
         <li>Overhead</li>
       </layers>
+      <tags>
+        <li>Royal</li>
+        <li>RoyalTier6</li>
+      </tags>
       <defaultOutfitTags>
         <li>Soldier</li>
       </defaultOutfitTags>
@@ -109,6 +113,12 @@
       <layers>
         <li>Shell</li>
       </layers>
+      <tags>
+        <li>Cape</li>
+        <li>Royal</li>
+        <li>RoyalTier2</li>
+        <li>RoyalTier5</li>
+      </tags>
       <defaultOutfitTags>
         <li>Soldier</li>
       </defaultOutfitTags>
