@@ -48,11 +48,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="FixedTemperatureZone.cs" />
     <Compile Include="HarmonyPatches\GlobalControls_TemperatureString_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_JobTracker_StartJob_Patch.cs" />
     <Compile Include="Hediff_Overlay.cs" />
     <Compile Include="MapComponent_PsycastsManager.cs" />
+    <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnSnowAround.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnTemperatureArea.cs" />
     <Compile Include="Paths\FrostShaper\Ability_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Ability_IceWall.cs" />
@@ -130,7 +132,6 @@
     <Compile Include="Common\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
-    <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
     <Compile Include="Paths\FrostShaper\Ability_FrostRay.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceShield.cs" />
     <Compile Include="Paths\FrostShaper\IceBreathePropectile.cs" />

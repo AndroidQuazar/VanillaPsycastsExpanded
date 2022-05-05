@@ -36,6 +36,13 @@
             }
 
             if (affectedFactions is null) affectedFactions = new List<Faction>();
+
+            var cells = GenRadial.RadialCellsAround(pawn.Position, this.ability.GetAdditionalRadius(), this.ability.GetRadiusForPawn())
+                .Where(x => x.InBounds(pawn.Map)).InRandomOrder().Take(Rand.RangeInclusive(9, 12));
+            foreach (var cell in cells)
+            {
+                pawn.Map.snowGrid.AddDepth(cell, 0.5f);
+            }
             foreach (Pawn victim in ability.pawn.Map.mapPawns.AllPawnsSpawned)
             {
                 if (InAffectedArea(victim.Position))

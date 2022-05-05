@@ -7,6 +7,7 @@
         public List<FixedTemperatureZone> temperatureZones = new List<FixedTemperatureZone>();
 
         public List<Hediff_BlizzardSource> blizzardSources = new List<Hediff_BlizzardSource>();
+        public List<Hediff_Overlay> hediffsToDraw = new List<Hediff_Overlay>();
         public MapComponent_PsycastsManager(Map map) : base(map)
         {
 
@@ -48,6 +49,15 @@
             }
             result = -1f;
             return false;
+        }
+
+        public override void MapComponentUpdate()
+        {
+            base.MapComponentUpdate();
+            foreach (var hediff in hediffsToDraw)
+            {
+                hediff.Draw();
+            }
         }
 
         public override void ExposeData()

@@ -39,7 +39,7 @@
             base.Tick();
             if (sustainer == null || sustainer.Ended)
             {
-                sustainer = VPE_DefOf.VPE_FrostRay_Sustainer.TrySpawnSustainer(SoundInfo.InMap(this));
+                sustainer = VPE_DefOf.VPE_FrostRay_Sustainer.TrySpawnSustainer(SoundInfo.InMap(this, MaintenanceType.PerTick));
             }
             sustainer.Maintain();
             if (this.launcher is Pawn pawn)

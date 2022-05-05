@@ -21,7 +21,7 @@
             AddEntropy();
             if (sustainer == null || sustainer.Ended)
             {
-                sustainer = VPE_DefOf.VPE_GuardianSkipbarrier_Sustainer.TrySpawnSustainer(SoundInfo.InMap(pawn));
+                sustainer = VPE_DefOf.VPE_GuardianSkipbarrier_Sustainer.TrySpawnSustainer(SoundInfo.InMap(pawn, MaintenanceType.PerTick));
             }
             sustainer.Maintain();
         }

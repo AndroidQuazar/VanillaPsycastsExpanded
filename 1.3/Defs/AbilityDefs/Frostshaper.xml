@@ -9,10 +9,10 @@
 	  <castTime>6</castTime>
       <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
 	  <targetingParameters>
+		  <canTargetLocations>true</canTargetLocations>
           <canTargetPawns>true</canTargetPawns>
           <canTargetBuildings>true</canTargetBuildings>
 	  </targetingParameters>
-      <targetMode>Pawn</targetMode>
       <castSound>VPE_BreatheIce_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -130,6 +130,7 @@
 	  <range>6.9</range>
 	  <targetMode>Location</targetMode>
 	  <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
+	  <needsTicking>true</needsTicking>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -144,6 +145,15 @@
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Building">
 			<building>VPE_IceCrystal</building>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>0.42</scale>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_SpawnSnowAround">
+			<radius>1.5</radius>
+			<depth>0.5</depth>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -218,7 +228,8 @@
 	  <durationTime>1200</durationTime>
 	  <range>25</range>
 	  <radius>3</radius>
-	  <targetMode>Pawn</targetMode> <!-- change to Location when AoE effect will be implemented -->
+	  <targetMode>Location</targetMode>
+	  <needsTicking>true</needsTicking>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -233,6 +244,11 @@
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>VPE_IceBlock</hediff>
 		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Skip_Exit</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>3</scale>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
@@ -246,6 +262,8 @@
 	  <targetMode>Self</targetMode>
 	  <radius>5.9</radius>
 	  <castSound>VPE_IceBlock_Cast</castSound>
+	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	  <fleckOnTargetScale>5.9</fleckOnTargetScale>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>

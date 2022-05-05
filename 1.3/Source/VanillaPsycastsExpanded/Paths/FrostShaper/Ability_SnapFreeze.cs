@@ -1,7 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
-using System.Linq;
+    using System.Linq;
     using Verse;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;

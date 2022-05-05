@@ -22,7 +22,7 @@
             {
                 if (sustainer == null || sustainer.Ended)
                 {
-                    sustainer = Props.sustainer.TrySpawnSustainer(SoundInfo.InMap(Pawn));
+                    sustainer = Props.sustainer.TrySpawnSustainer(SoundInfo.InMap(Pawn, MaintenanceType.PerTick));
                 }
                 sustainer.Maintain();
             }
