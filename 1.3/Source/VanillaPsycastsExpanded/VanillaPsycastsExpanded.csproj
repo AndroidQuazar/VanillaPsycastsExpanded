@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comps\CompFleckEmitter.cs" />
+    <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="FixedTemperatureZone.cs" />
     <Compile Include="GameComponent_PsycastsManager.cs" />
     <Compile Include="GoodwillImpactDelayed.cs" />

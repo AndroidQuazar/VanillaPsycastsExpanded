@@ -4,7 +4,6 @@
     using RimWorld;
     using UnityEngine;
     using Verse;
-
     public class IncidentWorker_EltexMeteorite : IncidentWorker
     {
         protected override bool CanFireNowSub(IncidentParms parms)
