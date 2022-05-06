@@ -68,6 +68,7 @@
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <targetingParameters>
 		<canTargetPawns>true</canTargetPawns>
+		<canTargetBuildings>false</canTargetBuildings>
 		<canTargetSelf>true</canTargetSelf>
 	  </targetingParameters>
 	  <durationTime>900</durationTime>

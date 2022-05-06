@@ -69,6 +69,7 @@
             {
                 temperatureZones ??= new List<FixedTemperatureZone>();
                 blizzardSources ??= new List<Hediff_BlizzardSource>();
+                hediffsToDraw ??= new List<Hediff_Overlay>();
             }
         }
     }
