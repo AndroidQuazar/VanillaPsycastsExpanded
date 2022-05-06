@@ -93,6 +93,16 @@
       <label>haywire</label>
       <description>Designates an area to experience psychic interference, effectively scrambling electronic systems’ IFFs while identifying the caster’s people as allies. Duration scales with psychic sensitivity.</description>
       <iconPath>Abilities/Technomancer/Haywire</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_AffectMechs</abilityClass>
+      <castTime>30</castTime>
+      <castSound>VPE_Haywire_Cast</castSound>
+      <durationTime>3600</durationTime>
+      <radius>2.9</radius>
+      <range>19.9</range>
+      <targetMode>Location</targetMode>
+      <durationTimeStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </durationTimeStatFactors>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -104,6 +114,9 @@
             <li>VPE_EnchantQuality</li>
             <li>VPE_Mend</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_Haywire</hediff>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

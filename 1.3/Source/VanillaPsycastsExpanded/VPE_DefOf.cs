@@ -48,13 +48,14 @@
         public static SoundDef Psycast_Neuroquake_CastEnd;
         public static SoundDef VPE_FrostRay_Sustainer;
 
-        public static FleckDef VPE_VortexSpark;
-        public static FleckDef VPE_WarlordZap;
-        public static FleckDef VPE_AggresiveHeatDump;
-        public static StatDef  VPE_PsyfocusCostFactor;
-        public static StatDef  VPE_PsychicEntropyMinimum;
-        public static JobDef   VPE_UseSkipdoor;
-        public static JobDef   VPE_StandFreeze;
+        public static FleckDef    VPE_VortexSpark;
+        public static FleckDef    VPE_WarlordZap;
+        public static FleckDef    VPE_AggresiveHeatDump;
+        public static StatDef     VPE_PsyfocusCostFactor;
+        public static StatDef     VPE_PsychicEntropyMinimum;
+        public static JobDef      VPE_UseSkipdoor;
+        public static JobDef      VPE_StandFreeze;
+        public static EffecterDef VPE_Haywire;
 
 
         public static MeditationFocusDef VPE_Archotech;

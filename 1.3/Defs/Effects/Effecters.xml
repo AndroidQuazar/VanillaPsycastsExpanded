@@ -144,4 +144,20 @@
       </li>
     </children>
   </EffecterDef>
+
+  <EffecterDef>
+		<defName>VPE_Haywire</defName>
+		<children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>VPE_Haywire</fleckDef>
+        <ticksBetweenMotes>60</ticksBetweenMotes>
+        <scale>0.2~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <angle>0~360</angle>
+        <speed>0.2~0.35</speed>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+		</children>
+	</EffecterDef>
 </Defs>

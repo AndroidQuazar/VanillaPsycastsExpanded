@@ -35,7 +35,7 @@
         [HarmonyPostfix]
         public static void Postfix(Pawn_PsychicEntropyTracker __instance, float offset)
         {
-            __instance.Pawn.Psycasts()?.GainExperience(offset * 100f);
+            if (offset > 0f) __instance.Pawn.Psycasts()?.GainExperience(offset * 100f);
         }
     }
 

@@ -195,5 +195,45 @@
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <solidTime>0</solidTime>
     <fadeOutTime>0.2</fadeOutTime>
-  </FleckDef>
+  </FleckDef>  
+  
+  <FleckDef ParentName="FleckBase_RandomGraphic_Thrown">
+    <defName>VPE_Haywire</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>2.6</fadeInTime>
+    <solidTime>0.5</solidTime>
+    <fadeOutTime>2.3</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_A</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_B</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_C</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_D</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_E</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Technomancer/HaywireCode/HaywireCodeline_F</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+    </randomGraphics>
+  </FleckDef>  
 </Defs>
