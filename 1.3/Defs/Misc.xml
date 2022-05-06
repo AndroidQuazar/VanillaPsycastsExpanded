@@ -82,10 +82,7 @@
         <casualInterruptible>false</casualInterruptible>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
-    <HistoryEventDef>
-        <defName>VPE_Foretelling</defName>
-        <label>foretelling</label>
-    </HistoryEventDef>
+
     <DamageDef>
         <defName>VPE_NeuralHeatBlast</defName>
         <label>neural heat blast</label>

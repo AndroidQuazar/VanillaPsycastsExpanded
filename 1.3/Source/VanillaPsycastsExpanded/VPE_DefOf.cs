@@ -32,6 +32,8 @@
         public static ThingDef VPE_SkyChanger;
         public static ThingDef VPE_PsycastAreaEffectMaintained;
         public static ThingDef VPE_HeatPearls;
+        public static ThingDef VPE_Eltex;
+        public static ThingDef VPE_EltexOre;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
@@ -64,6 +66,9 @@
         public static EffecterDef        Interceptor_BlockedProjectilePsychic;
         public static EffecterDef        VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef    VPE_Foretelling;
+        public static HistoryEventDef VPE_GiftedEltex;
+        public static HistoryEventDef VPE_SoldEltex;
+
         public static GameConditionDef   VPE_PsychicFlashstorm;
         public static GameConditionDef   VPE_TimeQuake;
 

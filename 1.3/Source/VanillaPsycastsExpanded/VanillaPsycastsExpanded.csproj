@@ -52,11 +52,21 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comps\CompFleckEmitter.cs" />
+    <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="FixedTemperatureZone.cs" />
+    <Compile Include="GameComponent_PsycastsManager.cs" />
+    <Compile Include="GoodwillImpactDelayed.cs" />
+    <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
+    <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
+    <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />
     <Compile Include="HarmonyPatches\GlobalControls_TemperatureString_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_JobTracker_StartJob_Patch.cs" />
+    <Compile Include="HarmonyPatches\TradeDeal_TryExecute_Patch.cs" />
     <Compile Include="Hediff_Overlay.cs" />
+    <Compile Include="Events\IncidentWorker_EltexMeteorite.cs" />
     <Compile Include="MapComponent_PsycastsManager.cs" />
+    <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnSnowAround.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnTemperatureArea.cs" />
     <Compile Include="Paths\FrostShaper\Ability_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Ability_IceWall.cs" />
@@ -138,7 +148,6 @@
     <Compile Include="Common\AbilityExtension_GiveInspiration.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_WordOfLove.cs" />
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
-    <Compile Include="HarmonyPatches\PawnRenderer_RenderPawnAt_Patch.cs" />
     <Compile Include="Paths\FrostShaper\Ability_FrostRay.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceShield.cs" />
     <Compile Include="Paths\FrostShaper\IceBreathePropectile.cs" />

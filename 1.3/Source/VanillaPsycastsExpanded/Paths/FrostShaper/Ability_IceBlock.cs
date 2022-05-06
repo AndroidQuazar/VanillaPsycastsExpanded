@@ -15,8 +15,11 @@
             AbilityExtension_Building extension = this.def.GetModExtension<AbilityExtension_Building>();
             foreach (var cell in cells)
             {
-                Thing building = GenSpawn.Spawn(extension.building, cell, this.pawn.Map);
-                building.SetFactionDirect(this.pawn.Faction);
+                if (cell.GetEdifice(this.pawn.Map) is null)
+                {
+                    Thing building = GenSpawn.Spawn(extension.building, cell, this.pawn.Map);
+                    building.SetFactionDirect(this.pawn.Faction);
+                }
             }
         }
     }

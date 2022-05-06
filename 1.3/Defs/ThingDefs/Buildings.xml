@@ -58,6 +58,10 @@
 			<li>
 				<compClass>VFECore.Abilities.CompSpawnedBuilding</compClass>
 			</li>
+			<li Class="CompProperties_Glower">
+				<glowRadius>2.9</glowRadius>
+				<glowColor>(255,255,255,0)</glowColor>
+			</li>
 		</comps>
 	</ThingDef>
 
@@ -106,7 +110,6 @@
 		<selectable>true</selectable>
 		<neverMultiSelect>true</neverMultiSelect>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded><!-- Best affordance needed for stone -->
-		<holdsRoof>true</holdsRoof>
 		<staticSunShadowHeight>1.0</staticSunShadowHeight>
 		<blockLight>true</blockLight>
 		<canOverlapZones>false</canOverlapZones>

@@ -102,7 +102,6 @@
 				</grains>
 				<volumeRange>42</volumeRange>
 				<distRange>20~50</distRange>
-				<sustainLoop>True</sustainLoop>
 			</li>
 		</subSounds>
 	</SoundDef>

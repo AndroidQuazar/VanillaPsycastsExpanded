@@ -21,6 +21,18 @@
                 return material;
             }
         }
+        public override void PostAdd(DamageInfo? dinfo)
+        {
+            base.PostAdd(dinfo);
+            base.pawn.Map.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Add(this);
+        }
+
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            base.pawn.Map.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Remove(this);
+        }
+
 
         public virtual float OverlaySize => 1f;
         public virtual Color OverlayColor => Color.yellow;

@@ -61,6 +61,66 @@
   </RecipeDef>
   
   <RecipeDef ParentName="VPE_CraftEltexGear">
+    <defName>VPE_Make_EltexMask</defName>
+    <label>make eltex mask</label>
+    <description>Make an eltex mask.</description>
+    <jobString>Making eltex mask.</jobString>
+    <workAmount>8000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VPE_Eltex</li>
+          </thingDefs>
+        </filter>
+        <count>6</count>
+      </li>
+    </ingredients>
+	<researchPrerequisite>VPE_CasterGear</researchPrerequisite>
+    <products>
+      <VPE_Apparel_EltexMask>1</VPE_Apparel_EltexMask>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="VPE_CraftEltexGear">
+    <defName>VPE_Make_EltexCape</defName>
+    <label>make eltex cape</label>
+    <description>Make an eltex cape.</description>
+    <jobString>Making eltex cape.</jobString>
+    <workAmount>16000</workAmount>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Textiles</li>
+          </categories>
+        </filter>
+        <count>80</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>VPE_Eltex</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+	<researchPrerequisite>VPE_CasterGear</researchPrerequisite>
+    <products>
+      <VPE_Apparel_EltexCape>1</VPE_Apparel_EltexCape>
+    </products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="VPE_CraftEltexGear">
     <defName>VPE_Make_EltexVest</defName>
     <label>make eltex vest</label>
     <description>Make an eltex vest.</description>

@@ -27,4 +27,11 @@
     <VPE.Remove>Remove</VPE.Remove>
     <VPE.Contents>Contents:</VPE.Contents>
     <VPE.ClickRemove>Click to Remove</VPE.ClickRemove>
+	<VPE.SellingEltexWarning>Selling Eltex is against Imperial law. This may or may not affect your relations with the Empire in the future.</VPE.SellingEltexWarning>
+	<VPE.GiftingEltexWarning>Gifting Eltex is against Imperial law. This may or may not affect your relations with the Empire in the future.</VPE.GiftingEltexWarning>
+	<VPE.EmpireAngeredTitle>Empire angered</VPE.EmpireAngeredTitle>
+	<VPE.EmpireAngeredDesc>Empire caught wind that you have been {0} Eltex behind their back. They consider it to be against Imperial law, and your relations have degraded.</VPE.EmpireAngeredDesc>
+	<VPE.Gifting>gifting</VPE.Gifting>
+	<VPE.Trading>trading</VPE.Trading>
+	<VPE.FactionRelationReducedInfo>Goodwill with {FACTION_name} is now {1}. (Reduced by {2})</VPE.FactionRelationReducedInfo>
 </LanguageData>

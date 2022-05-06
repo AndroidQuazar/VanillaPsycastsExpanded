@@ -182,6 +182,8 @@
 		<label>ice spike</label>
 		<description>text.todo</description>
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
+		<tickerType>Normal</tickerType>
+		<altitudeLayer>VisEffects</altitudeLayer>
 		<graphicData>
 			<texPath>Effects/Frostshaper/IceSpike/IceSpike</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -192,12 +194,20 @@
 			<damageAmountBase>12</damageAmountBase>
 			<speed>70</speed>
 		</projectile>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.CompProperties_FleckEmitter">
+				<fleck>VPE_ColdGlowBehindProjectile</fleck>
+				<emissionInterval>1</emissionInterval>
+				<scale>2.3</scale>
+			</li>
+		</comps>
 	</ThingDef>
 	
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_FrostRay</defName>
 		<label>frost ray</label>
 		<thingClass>VanillaPsycastsExpanded.Projectile_FrostRay</thingClass>
+		<altitudeLayer>VisEffects</altitudeLayer>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Frostshaper/Frostbeam</texPath>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
@@ -208,5 +218,12 @@
 			<damageDef>Cut</damageDef>
 			<damageAmountBase>12</damageAmountBase>
 		</projectile>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.CompProperties_FleckEmitter">
+				<fleck>VPE_ColdGlowBehindProjectile</fleck>
+				<emissionInterval>1</emissionInterval>
+				<scale>2.3</scale>
+			</li>
+		</comps>
 	</ThingDef>
 </Defs>

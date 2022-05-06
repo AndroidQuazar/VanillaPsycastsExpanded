@@ -279,6 +279,11 @@
 				<becomeVisible>false</becomeVisible>
 			</li>
 		</stages>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
+				<sustainer>Tornado</sustainer>
+			</li>
+		</comps>
 	</HediffDef>
 	
 	<HediffDef>
