@@ -33,6 +33,7 @@
         public static ThingDef VPE_PsycastAreaEffectMaintained;
         public static ThingDef VPE_HeatPearls;
         public static ThingDef VPE_Eltex;
+        public static ThingDef VPE_EltexOre;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
