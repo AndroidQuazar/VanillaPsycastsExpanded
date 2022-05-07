@@ -23,7 +23,7 @@
                     IncidentDef incident = DefDatabase<IncidentDef>.AllDefs.RandomElement();
                     if (incident.Worker.TryExecute(StorytellerUtility.DefaultParmsNow(incident.category, map))) break;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     // ignored
                 }
