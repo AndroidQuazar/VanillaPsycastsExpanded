@@ -26,7 +26,7 @@
                 if (this.pawn_renderer != null)
                     try
                     {
-                        Color color = thingDef.graphic.color;
+                        Color color = thingDef.graphic.data.color;
                         Graphic_Multi nakedGraphic =
                             (Graphic_Multi) GraphicDatabase.Get<Graphic_Multi>(this.pawn_renderer.graphics.nakedGraphic.path,
                                                                                this.pawn_renderer.graphics.nakedGraphic.Shader,
