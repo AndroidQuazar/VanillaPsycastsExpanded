@@ -20,6 +20,7 @@
         public static HediffDef VPE_FrostRay;
         public static HediffDef VPE_IceBlock;
         public static HediffDef VPE_Blizzard;
+        public static HediffDef VPE_InfinitePower;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -68,11 +69,11 @@
         public static EffecterDef        Interceptor_BlockedProjectilePsychic;
         public static EffecterDef        VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef    VPE_Foretelling;
-        public static HistoryEventDef VPE_GiftedEltex;
-        public static HistoryEventDef VPE_SoldEltex;
+        public static HistoryEventDef    VPE_GiftedEltex;
+        public static HistoryEventDef    VPE_SoldEltex;
 
-        public static GameConditionDef   VPE_PsychicFlashstorm;
-        public static GameConditionDef   VPE_TimeQuake;
+        public static GameConditionDef VPE_PsychicFlashstorm;
+        public static GameConditionDef VPE_TimeQuake;
 
         [DefAlias("VPE_Hurricane")] public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")] public static GameConditionDef VPE_Hurricane_Condition;

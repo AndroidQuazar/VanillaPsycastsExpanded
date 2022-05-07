@@ -18,4 +18,5 @@
     <VPE.MustHaveQuality>Target must have quality</VPE.MustHaveQuality>
     <VPE.QualityTooHigh>Target quality too high, must be lower than Excellent.</VPE.QualityTooHigh>
     <VPE.NotEnoughHeat>Not enough neural heat available.</VPE.NotEnoughHeat>
+    <VPE.MustConsumePower>Must consume power.</VPE.MustConsumePower>
 </LanguagData>

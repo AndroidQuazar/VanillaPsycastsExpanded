@@ -327,4 +327,21 @@
 			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_Haywire</compClass></li>
 		</comps>
 	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_InfinitePower</defName>
+		<label>powering</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_Haywire</stateEffecter>
+			</li>
+			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_InfinitePower</compClass></li>
+		</comps>
+	</HediffDef>
 </Defs>

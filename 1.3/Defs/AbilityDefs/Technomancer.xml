@@ -125,6 +125,16 @@
       <label>power</label>
       <description>Metaphysically alters the designated equipment’s power input to extract energy directly from fluctuations in the quantum foam for a few days. Duration scales with psychic sensitivity.</description>
       <iconPath>Abilities/Technomancer/Power</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Power</abilityClass>
+      <castTime>120</castTime>
+      <durationTime>150000</durationTime>
+      <targetFlecks>
+        <li>PsycastPsychicEffect</li>
+      </targetFlecks>
+      <targetMode>Thing</targetMode>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>1.9</distanceToTarget>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -135,6 +145,9 @@
           <prerequisites>
             <li>VPE_Mend</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_InfinitePower</hediff>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

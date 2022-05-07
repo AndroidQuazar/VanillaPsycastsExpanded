@@ -79,10 +79,9 @@
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
     <Compile Include="Paths\Technomancer\Ability_Mend.cs" />
     <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
-    <Compile Include="Paths\Technomancer\HaywireManager.cs">
-      <Generator>MSBuild:Compile</Generator>
-    </Compile>
+    <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
+    <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />
     <Compile Include="UI\Command_ActionWithFloat.cs" />
     <Compile Include="Comps\CompBreakLink.cs" />
     <Compile Include="Comps\CompProperties\CompProperties_SetStoneColour.cs" />
