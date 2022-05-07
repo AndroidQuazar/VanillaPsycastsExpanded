@@ -203,7 +203,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_AgeSickness</defName>
 		<label>age sickness</label>
-		<description>text.todo</description>
+		<description>Age-related psychic sickness greatly reducing manipulation and consciousness.</description>
 		<stages>
 			<li>
 				<capMods>
@@ -222,8 +222,8 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_PsychicDrone</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic drone</label>
+		<description>A strong psychic force affecting every enemy humanlike in the area, making them feel more disturbed, terrified, and paranoid.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_PsychicDrone</hediffClass>
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
@@ -235,8 +235,8 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_IceShield</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>ice shield</label>
+		<description>A psychic shield that protects from hypothermia and freezer enemies that interact with it.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_IceShield</hediffClass>
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
@@ -248,8 +248,8 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_FrostRay</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>frost ray</label>
+		<description>A heavily damaging and freezing ray of frost.</description>
 		<stages>
 			<li>
 				<becomeVisible>false</becomeVisible>
@@ -259,8 +259,8 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_IceBlock</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>frozen solid</label>
+		<description>This entity is completely frozen in a block of ice, and will not be able to move until it melts.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_IceBlock</hediffClass>
 		<stages>
 			<li>
@@ -271,8 +271,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_BlizzardSource</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>casting blizzard</label>
+		<description>This entity is casting blizzard.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_BlizzardSource</hediffClass>
 		<stages>
 			<li>
@@ -288,8 +288,8 @@
 	
 	<HediffDef>
 		<defName>VPE_Blizzard</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>blizzard</label>
+		<description>A huge wind with extreme snow that lowers sight, manipulation and movement speed.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<stages>
 			<li>
@@ -319,7 +319,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Haywire</defName>
 		<label>haywire</label>
-		<description>text.todo</description>
+		<description>Psychically hacked programming that disrupts the IFF operations.</description>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_Haywire</stateEffecter>
@@ -331,7 +331,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_InfinitePower</defName>
 		<label>powering</label>
-		<description>text.todo</description>
+		<description>Generating infinite electricity supply to a given structure.</description>
 		<stages>
 			<li>
 				<becomeVisible>false</becomeVisible>
