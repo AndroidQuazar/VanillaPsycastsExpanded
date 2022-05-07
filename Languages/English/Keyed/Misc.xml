@@ -19,4 +19,6 @@
     <VPE.QualityTooHigh>Target quality too high, must be lower than Excellent.</VPE.QualityTooHigh>
     <VPE.NotEnoughHeat>Not enough neural heat available.</VPE.NotEnoughHeat>
     <VPE.MustConsumePower>Must consume power.</VPE.MustConsumePower>
+    <VPE.MustBeStoneChunk>Target a stone chunk</VPE.MustBeStoneChunk>
+    <VPE.MustBeSteelSlag>Target steel slag</VPE.MustBeSteelSlag>
 </LanguagData>

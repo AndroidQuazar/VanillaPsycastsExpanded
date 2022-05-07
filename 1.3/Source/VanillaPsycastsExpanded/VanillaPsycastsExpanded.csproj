@@ -74,6 +74,8 @@
     <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_BlizzardSource.cs" />
     <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
+    <Compile Include="Paths\Technomancer\Ability_Construct_Rock.cs" />
+    <Compile Include="Paths\Technomancer\Ability_Construct_Steel.cs" />
     <Compile Include="Paths\Technomancer\Ability_Haywire.cs" />
     <Compile Include="Paths\Technomancer\Ability_ConjureHeatPearls.cs" />
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />

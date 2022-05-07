@@ -1,19 +1,14 @@
-﻿using Verse;
-using Verse.AI;
-
-namespace VanillaPsycastsExpanded
+﻿namespace VanillaPsycastsExpanded
 {
-	public class ThinkNode_Construct : ThinkNode_Conditional
-	{
+    using Verse;
+    using Verse.AI;
 
-
-		protected override bool Satisfied(Pawn pawn)
-		{
-			if (pawn.def == VPE_DefOf.VPE_RockConstruct || pawn.def == VPE_DefOf.VPE_SteelConstruct)
-			{
-				return true;
-			}
-			return false;
-		}
-	}
+    public class ThinkNode_Construct : ThinkNode_Conditional
+    {
+        protected override bool Satisfied(Pawn pawn)
+        {
+            if (pawn.def == VPE_DefOf.VPE_Race_RockConstruct || pawn.def == VPE_DefOf.VPE_Race_SteelConstruct) return true;
+            return false;
+        }
+    }
 }

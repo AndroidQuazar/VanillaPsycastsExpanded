@@ -1,38 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using RimWorld;
-using Verse;
-using UnityEngine;
-
-namespace VanillaPsycastsExpanded
+﻿namespace VanillaPsycastsExpanded
 {
+    using System.Collections.Generic;
+    using AnimalBehaviours;
+    using UnityEngine;
+    using Verse;
 
-
-    public class CompBreakLink : ThingComp, AnimalBehaviours.PawnGizmoProvider
+    public class CompBreakLink : ThingComp, PawnGizmoProvider
     {
-        public CompProperties_BreakLink Props => base.props as CompProperties_BreakLink;
-
+        public Pawn                     Pawn;
+        public CompProperties_BreakLink Props => this.props as CompProperties_BreakLink;
 
         public IEnumerable<Gizmo> GetGizmos()
         {
-
-            
-
-                yield return new Command_Action
+            yield return new Command_Action
+            {
+                defaultLabel = this.Props.gizmoLabel.Translate(),
+                defaultDesc  = this.Props.gizmoDesc.Translate(),
+                icon         = ContentFinder<Texture2D>.Get(this.Props.gizmoImage),
+                action = delegate
                 {
-                    defaultLabel = Props.gizmoLabel.Translate(),
-                    defaultDesc = Props.gizmoDesc.Translate(),
-                    icon = ContentFinder<Texture2D>.Get(Props.gizmoImage, true),
-                    action = delegate
-                    {
-                        this.parent.Kill(null);
-                    }
-                };
-            
+                    this.parent.Kill();
+                    this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
+                }
+            };
         }
-
-       
     }
-
-
 }

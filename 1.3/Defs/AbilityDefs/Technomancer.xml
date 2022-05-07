@@ -156,6 +156,21 @@
       <label>rock construct</label>
       <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a stone chunk. This new rock construct is capable of performing simple chores, and breaking the crystal allows the heat capacity to be restored.</description>
       <iconPath>Abilities/Technomancer/RockConstruct</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Rock</abilityClass>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>2.9</distanceToTarget>
+      <targetMode>Pawn</targetMode>
+      <castTime>360</castTime>
+      <needsTicking>true</needsTicking>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+        <thingCategory>Item</thingCategory>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -168,6 +183,20 @@
             <li>VPE_ConjureHeatPearls</li>
           </prerequisites>
         </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDefs>
+            <li>PsycastSkipInnerExit</li>
+            <li>PsycastSkipOuterRingExit</li>
+          </fleckDefs>
+          <scale>0.42</scale>
+          <sound>Psycast_Skip_Exit</sound>
+          <preCastTicks>10</preCastTicks>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+          <effecterDef>Skip_Exit</effecterDef>
+          <maintainForTicks>60</maintainForTicks>
+          <scale>0.42</scale>
+        </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -175,6 +204,21 @@
       <label>steel construct</label>
       <description>Converts a minimum amount of the caster’s heat capacity into metaphysical crystals to be implanted into a steel slag. This new steel construct will follow the caster and defend them from harm, and breaking the crystal allows the heat capacity to be restored.</description>
       <iconPath>Abilities/Technomancer/SteelConstruct</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Steel</abilityClass>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>2.9</distanceToTarget>
+      <targetMode>Pawn</targetMode>
+      <castTime>360</castTime>
+      <needsTicking>true</needsTicking>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
+        <thingCategory>Item</thingCategory>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -186,6 +230,20 @@
             <li>VPE_Haywire</li>
             <li>VPE_Power</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDefs>
+            <li>PsycastSkipInnerExit</li>
+            <li>PsycastSkipOuterRingExit</li>
+          </fleckDefs>
+          <scale>0.42</scale>
+          <sound>Psycast_Skip_Exit</sound>
+          <preCastTicks>10</preCastTicks>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+          <effecterDef>Skip_Exit</effecterDef>
+          <maintainForTicks>60</maintainForTicks>
+          <scale>0.42</scale>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

@@ -35,8 +35,6 @@
         public static ThingDef VPE_HeatPearls;
         public static ThingDef VPE_Eltex;
         public static ThingDef VPE_EltexOre;
-        public static ThingDef VPE_SteelConstruct;
-        public static ThingDef VPE_RockConstruct;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
@@ -71,11 +69,20 @@
         public static HistoryEventDef    VPE_Foretelling;
         public static HistoryEventDef    VPE_GiftedEltex;
         public static HistoryEventDef    VPE_SoldEltex;
+        public static PawnKindDef        VPE_RockConstruct;
+        public static PawnKindDef        VPE_SteelConstruct;
 
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;
 
-        [DefAlias("VPE_Hurricane")] public static WeatherDef       VPE_Hurricane_Weather;
-        [DefAlias("VPE_Hurricane")] public static GameConditionDef VPE_Hurricane_Condition;
+        [DefAlias("VPE_Hurricane")]      public static WeatherDef       VPE_Hurricane_Weather;
+        [DefAlias("VPE_Hurricane")]      public static GameConditionDef VPE_Hurricane_Condition;
+        [DefAlias("VPE_RockConstruct")]  public static ThingDef         VPE_Race_RockConstruct;
+        [DefAlias("VPE_SteelConstruct")] public static ThingDef         VPE_Race_SteelConstruct;
+
+        static VPE_DefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(VPE_DefOf));
+        }
     }
 }
