@@ -179,7 +179,7 @@
           <level>4</level>
           <order>2</order>
           <psyfocusCost>0.05</psyfocusCost>
-          <entropyGain>5</entropyGain>
+          <entropyGain>50</entropyGain>
           <prerequisites>
             <li>VPE_AdrenalineRush</li>
           </prerequisites>
