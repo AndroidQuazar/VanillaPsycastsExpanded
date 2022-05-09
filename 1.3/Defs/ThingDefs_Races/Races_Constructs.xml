@@ -82,9 +82,18 @@
 			<fleshType>VPE_SteelConstructFlesh</fleshType>
 			<lifeStageAges>
 				<li>
+					<minAge>0</minAge>
 					<def>AnimalAdult</def>
+					<soundAngry>VPE_Pawn_SteelConstruct_Angry</soundAngry>
+					<soundWounded>VPE_Pawn_SteelConstruct_Wounded</soundWounded>
+					<soundDeath>VPE_Pawn_SteelConstruct_Death</soundDeath>
+					<soundCall>VPE_Pawn_SteelConstruct_Call</soundCall>
 				</li>
 			</lifeStageAges>
+			<soundCallIntervalRange>
+				<min>12000</min>
+				<max>20000</max>
+			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="DryadKindBase">
@@ -149,9 +158,18 @@
 			<fleshType>VPE_RockConstructFlesh</fleshType>
 			<lifeStageAges>
 				<li>
+					<minAge>0</minAge>
 					<def>AnimalAdult</def>
+					<soundAngry>VPE_Pawn_RockConstruct_Angry</soundAngry>
+					<soundWounded>VPE_Pawn_RockConstruct_Wounded</soundWounded>
+					<soundDeath>VPE_Pawn_RockConstruct_Death</soundDeath>
+					<soundCall>VPE_Pawn_RockConstruct_Call</soundCall>
 				</li>
 			</lifeStageAges>
+			<soundCallIntervalRange>
+				<min>12000</min>
+				<max>20000</max>
+			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="DryadKindBase">
