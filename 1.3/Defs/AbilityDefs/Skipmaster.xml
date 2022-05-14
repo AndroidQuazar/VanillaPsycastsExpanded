@@ -137,6 +137,13 @@
     <label>skip</label>
     <description>Teleport the target to a desired position not too far from his starting point. This is considered a hostile action.</description>
     <iconPath>Abilities/Skipmaster/Skip</iconPath>
+    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+    <targetCount>2</targetCount>
+    <range>20</range>
+    <targetModes>
+      <li>Pawn</li>
+      <li>Location</li>
+    </targetModes>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -286,11 +293,15 @@
   </VFECore.Abilities.AbilityDef>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
     <defName>VPE_Farskip</defName>
+    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
     <label>farskip</label>
     <description>Skip the caster, along with anyone standing near them, to a willing ally at a distant location. This can send people far across the planet, and the skipped people will always appear near a random ally on the target map and be stunned for a few seconds from the journey.</description>
     <iconPath>Abilities/Skipmaster/Farskip</iconPath>
     <radius>4.9</radius>
     <castTime>300</castTime>
+    <targetMode>Tile</targetMode>
+    <range>10</range>
+    <worldTargeting>true</worldTargeting>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
