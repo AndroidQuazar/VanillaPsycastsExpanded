@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using System.Linq;
     using Verse;
     using Verse.AI;
@@ -14,8 +15,7 @@
         public StatDef durationMultiplier;
 
         public FleckDef fleckOnTarget;
-
-        protected void ForceJob(LocalTargetInfo target, Ability ability)
+        protected void ForceJob(GlobalTargetInfo target, Ability ability)
         {
             Pawn pawn = target.Thing as Pawn;
             if (pawn != null)
@@ -39,22 +39,12 @@
     }
     public class AbilityExtension_ForceJobOnTarget : AbilityExtension_ForceJobOnTargetBase
     {
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-            ForceJob(target, ability);
-        }
-    }
-
-    public class AbilityExtension_ForceJobOnTargetInRadius : AbilityExtension_ForceJobOnTargetBase
-    {
-        public override void Cast(LocalTargetInfo target, Ability ability)
-        {
-            base.Cast(target, ability);
-            foreach (var pawn in GenRadial.RadialDistinctThingsAround(target.Cell, ability.pawn.Map, ability.GetRadiusForPawn(), true)
-                .OfType<Pawn>().Where(x => x != ability.pawn && x.HostileTo(ability.pawn)))
+            base.Cast(targets, ability);
+            foreach (var target in targets)
             {
-                ForceJob(pawn, ability);
+                ForceJob(target, ability);
             }
         }
     }

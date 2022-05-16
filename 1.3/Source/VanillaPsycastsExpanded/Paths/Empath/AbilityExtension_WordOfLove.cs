@@ -5,7 +5,6 @@
     using System.Security.Cryptography;
     using Verse;
     using VFECore.Abilities;
-    using static HarmonyLib.Code;
     using Ability = VFECore.Abilities.Ability;
     public class AbilityExtension_WordOfLove : AbilityExtension_AbilityMod
 	{
@@ -21,19 +20,15 @@
         public override void PreCast(LocalTargetInfo target, Ability ability, ref bool startAbilityJobImmediately, Action startJobAction)
         {
 			startAbilityJobImmediately = false;
-			Log.Message("PRECAST: " + target.Thing);
 			Find.Targeter.StopTargeting();
 			Find.Targeter.BeginTargeting(targetParams, delegate (LocalTargetInfo dest)
 			{
-				Log.Message("STARTED 1: " + dest.Thing);
 				Find.Targeter.BeginTargeting(targetParams, delegate (LocalTargetInfo dest)
 				{
-					Log.Message("STARTED 2: " + dest.Thing);
 					if (ValidateTarget(dest, ability))
 					{
 						ability.selectedTarget = dest;
 						ability.StartAbilityJob(target);
-						Log.Message("STARTING JOB, SELECTED TARGET: " + ability.selectedTarget.Thing);
 					}
 				}, ability.pawn);
 			});
@@ -42,7 +37,7 @@
 		}
         public override void Cast(LocalTargetInfo target, Ability ability)
         {
-            		base.Cast(target, ability);
+			base.Cast(target, ability);
 			Pawn pawn = target.Pawn;
 			Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicLove);
 			if (firstHediffOfDef != null)
@@ -59,8 +54,8 @@
 				hediffComp_Disappears.ticksToDisappear = num.SecondsToTicks();
 			}
 			pawn.health.AddHediff(hediff_PsychicLove);
-			Log.Message("Added hediff to " + pawn + " - " + hediff_PsychicLove + " - target: " + ability.selectedTarget.Thing);
 		}
+
 		public bool ValidateTarget(LocalTargetInfo target, Ability ability, bool showMessages = true)
 		{
 			Pawn pawn = ability.selectedTarget.Pawn;

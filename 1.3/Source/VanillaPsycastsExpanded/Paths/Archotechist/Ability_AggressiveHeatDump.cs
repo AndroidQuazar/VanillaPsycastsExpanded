@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using System;
     using System.Collections.Generic;
     using UnityEngine;
@@ -11,14 +12,14 @@
 
     public class Ability_AggressiveHeatDump : Ability
     {
-        public override void Cast(LocalTargetInfo target)
+        public override void Cast(params GlobalTargetInfo[] targets)
         {
-            base.Cast(target);
+            base.Cast(targets);
             var explosionRadius = Mathf.Min(Mathf.Ceil(this.pawn.psychicEntropy.EntropyValue / 20f), 9f);
             this.pawn.psychicEntropy.RemoveAllEntropy();
-            MakeStaticFleck(target.Cell, target.Pawn.Map, FleckDefOf.PsycastAreaEffect, explosionRadius, 0);
-            MakeStaticFleck(target.Cell, target.Pawn.Map, VPE_DefOf.VPE_AggresiveHeatDump, explosionRadius, 0);
-            GenExplosion.DoExplosion(target.Cell, pawn.Map, explosionRadius, DamageDefOf.Flame, pawn, ignoredThings: new List<Thing> { pawn });
+            MakeStaticFleck(targets[0].Cell, targets[0].Thing.Map, FleckDefOf.PsycastAreaEffect, explosionRadius, 0);
+            MakeStaticFleck(targets[0].Cell, targets[0].Thing.Map, VPE_DefOf.VPE_AggresiveHeatDump, explosionRadius, 0);
+            GenExplosion.DoExplosion(targets[0].Cell, pawn.Map, explosionRadius, DamageDefOf.Flame, pawn, ignoredThings: new List<Thing> { pawn });
         }
     }
 }

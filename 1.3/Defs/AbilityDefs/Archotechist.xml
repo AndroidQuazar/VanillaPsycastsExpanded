@@ -192,14 +192,16 @@
 	  <durationTime>600</durationTime>
 	  <range>15</range>
 	  <radius>2.9</radius>
-      <targetingParameters>
+	  <targetMode>Location</targetMode>
+	  <hasAoE>true</hasAoE>
+      <targetingParametersForAoE>
         <canTargetSelf>True</canTargetSelf>
         <canTargetHumans>True</canTargetHumans>
         <canTargetMechs>True</canTargetMechs>
         <canTargetAnimals>True</canTargetAnimals>
         <canTargetLocations>True</canTargetLocations>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
-      </targetingParameters>
+      </targetingParametersForAoE>
 	  <goodwillImpact>-75</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

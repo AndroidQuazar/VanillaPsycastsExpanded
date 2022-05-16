@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
@@ -9,22 +10,24 @@
     {
         public bool onlyPlayer;
 
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-            Pawn pawn = target.Pawn;
-            if (pawn != null && (!this.onlyPlayer || pawn.Faction is {IsPlayer: true}))
+            base.Cast(targets, ability);
+            foreach (var target in targets)
             {
-                InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
-                if (randomAvailableInspirationDef != null)
-                    pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef,
-                                                                          "LetterPsychicInspiration".Translate(
-                                                                              pawn.Named("PAWN"), ability.pawn.Named("CASTER")));
+                Pawn pawn = target.Thing as Pawn;
+                if (pawn != null && (!this.onlyPlayer || pawn.Faction is { IsPlayer: true }))
+                {
+                    InspirationDef randomAvailableInspirationDef = pawn.mindState.inspirationHandler.GetRandomAvailableInspirationDef();
+                    if (randomAvailableInspirationDef != null)
+                        pawn.mindState.inspirationHandler.TryStartInspiration(randomAvailableInspirationDef,
+                                                                              "LetterPsychicInspiration".Translate(
+                                                                                  pawn.Named("PAWN"), ability.pawn.Named("CASTER")));
+                }
             }
         }
 
         public override bool CanApplyOn(LocalTargetInfo target, Ability ability, bool throwMessages = false) => this.Valid(target, ability);
-
         public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
         {
             Pawn pawn = target.Pawn;

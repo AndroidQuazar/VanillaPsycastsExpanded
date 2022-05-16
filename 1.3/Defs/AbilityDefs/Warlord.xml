@@ -260,6 +260,13 @@
 	  <range>15.9</range>
 	  <radius>9</radius>
 	  <targetMode>Location</targetMode>
+	  <hasAoE>true</hasAoE>
+	  <targetingParametersForAoE>
+		<canTargetHumans>True</canTargetHumans>
+	  	<canTargetSelf>false</canTargetSelf>
+	  	<canTargetAnimals>True</canTargetAnimals>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+	  </targetingParametersForAoE>
 	  <castSound>PsycastPsychicEffect</castSound>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
@@ -274,7 +281,7 @@
             <li>VPE_GuidedShot</li>
           </prerequisites>
         </li>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_ForceJobOnTargetInRadius">
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_ForceJobOnTarget">
 			<jobDef>GotoMindControlled</jobDef>
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>

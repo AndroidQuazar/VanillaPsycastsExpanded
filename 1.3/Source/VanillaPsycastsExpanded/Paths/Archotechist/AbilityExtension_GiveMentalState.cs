@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
@@ -14,16 +15,20 @@
 		public StatDef durationMultiplier;
 
 		public bool applyToSelf;
-		public override void Cast(LocalTargetInfo target, Ability ability)
-		{
-			base.Cast(target, ability);
-			Pawn pawn = (applyToSelf ? ability.pawn : (target.Thing as Pawn));
-			if (pawn != null && !pawn.InMentalState)
-			{
-				TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? (stateDefForMechs ?? stateDef) : stateDef, pawn, ability, durationMultiplier);
-				RestUtility.WakeUp(pawn);
+
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
+        {
+            base.Cast(targets, ability);
+			foreach (var target in targets)
+            {
+				Pawn pawn = (applyToSelf ? ability.pawn : (target.Thing as Pawn));
+				if (pawn != null && !pawn.InMentalState)
+				{
+					TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? (stateDefForMechs ?? stateDef) : stateDef, pawn, ability, durationMultiplier);
+					RestUtility.WakeUp(pawn);
+				}
 			}
-		}
+        }
 
 		public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
 		{

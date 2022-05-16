@@ -1,24 +1,25 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
     public class Ability_FrostRay : Ability
     {
-        public override void Cast(LocalTargetInfo target)
+        public override void Cast(params GlobalTargetInfo[] targets)
         {
-            base.Cast(target);
+            base.Cast(targets);
             Projectile projectile = GenSpawn.Spawn(this.def.GetModExtension<AbilityExtension_Projectile>().projectile, this.pawn.Position, this.pawn.Map) as Projectile;
             if (projectile is AbilityProjectile abilityProjectile)
             {
                 abilityProjectile.ability = this;
             }
-            projectile?.Launch(this.pawn, this.pawn.DrawPos, target, target, ProjectileHitFlags.IntendedTarget);
-            this.pawn.stances.SetStance(new Stance_Stand(this.GetDurationForPawn(), target, verb));
+            projectile?.Launch(this.pawn, this.pawn.DrawPos, ((LocalTargetInfo)targets[0]), ((LocalTargetInfo)targets[0]), ProjectileHitFlags.IntendedTarget);
+            this.pawn.stances.SetStance(new Stance_Stand(this.GetDurationForPawn(), ((LocalTargetInfo)targets[0]), verb));
         }
 
-        public override void ApplyHediffs(LocalTargetInfo targetInfo)
+        public override void ApplyHediffs(params GlobalTargetInfo[] targetInfo)
         {
             Ability_HediffDuration.ApplyHediff(this, this.pawn);
         }

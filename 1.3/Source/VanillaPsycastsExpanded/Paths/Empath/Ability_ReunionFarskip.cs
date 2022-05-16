@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using System.Collections.Generic;
     using System.Linq;
     using UnityEngine;
@@ -10,9 +11,10 @@
     public class Ability_ReunionFarskip : Ability
     {
         private List<Mote> maintainedMotes = new List<Mote>();
-        public override void PreWarmupAction(LocalTargetInfo target)
+
+        public override void PreWarmupAction()
         {
-            base.PreWarmupAction(target);
+            base.PreWarmupAction();
             var map = this.pawn.Map;
             var mote = SpawnMote(map, VPE_DefOf.VPE_Mote_GreenMist, pawn.Position.ToVector3Shifted(), 10f, 20f);
             maintainedMotes = new List<Mote>();
@@ -42,10 +44,11 @@
             });
         }
 
-        public override void Cast(LocalTargetInfo target)
+        public override void Cast(params GlobalTargetInfo[] targets)
         {
-            base.Cast(target);
-            var familyMembers = target.Pawn.relations.FamilyByBlood.Where(x => !x.Dead && !x.Spawned).ToList();
+            base.Cast(targets);
+            var target = targets[0].Thing as Pawn;
+            var familyMembers = target.relations.FamilyByBlood.Where(x => !x.Dead && !x.Spawned).ToList();
             var cells = GenRadial.RadialCellsAround(pawn.Position, 3, true).Where(x => x.InBounds(pawn.Map)).ToList();
             foreach (var member in familyMembers)
             {

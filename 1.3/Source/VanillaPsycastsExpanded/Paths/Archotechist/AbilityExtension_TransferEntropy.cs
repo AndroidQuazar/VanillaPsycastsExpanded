@@ -2,17 +2,20 @@
 {
 using Mono.Unix.Native;
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using Verse.Sound;
     using VFECore.Abilities;
+using static UnityEngine.GraphicsBuffer;
     using Ability = VFECore.Abilities.Ability;
 	public class AbilityExtension_TransferEntropy : AbilityExtension_AbilityMod
 	{
 		public bool targetReceivesEntropy = true;
-		public override void Cast(LocalTargetInfo target, Ability ability)
+
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-			Pawn pawn = target.Pawn;
+            base.Cast(targets, ability);
+			Pawn pawn = targets[0].Thing as Pawn;
 			if (pawn != null)
 			{
 				Pawn pawn2 = ability.pawn;

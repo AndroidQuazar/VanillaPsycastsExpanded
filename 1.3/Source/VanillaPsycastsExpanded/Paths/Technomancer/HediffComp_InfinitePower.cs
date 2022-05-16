@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded.Technomancer
 {
     using RimWorld;
+using RimWorld.Planet;
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
@@ -46,7 +47,7 @@
         public override void Cast(LocalTargetInfo target)
         {
             base.Cast(target);
-            this.ApplyHediffs(this.pawn);
+            this.ApplyHediffs(new GlobalTargetInfo(this.pawn));
             this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_InfinitePower)?.TryGetComp<HediffComp_InfinitePower>().Begin(target.Thing);
         }
 

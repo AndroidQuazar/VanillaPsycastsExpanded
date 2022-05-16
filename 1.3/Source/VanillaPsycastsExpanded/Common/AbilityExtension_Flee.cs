@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using Verse.AI;
     using Verse.AI.Group;
@@ -10,15 +11,17 @@
     public class AbilityExtension_Flee : AbilityExtension_AbilityMod
     {
         public bool onlyHostile = true;
-
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-            Pawn pawn = target.Pawn;
-            if (!this.onlyHostile || !pawn.HostileTo(ability.pawn)) return;
-            pawn.GetLord()?.RemovePawn(pawn);
-            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-            pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.PanicFlee, ability.def.label, true, false, ability.pawn, true, false, true);
+            base.Cast(targets, ability);
+            foreach (var target in targets)
+            {
+                Pawn pawn = target.Thing as Pawn;
+                if (!this.onlyHostile || !pawn.HostileTo(ability.pawn)) return;
+                pawn.GetLord()?.RemovePawn(pawn);
+                pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+                pawn.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.PanicFlee, ability.def.label, true, false, ability.pawn, true, false, true);
+            }
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using RimWorld;
+    using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
 
@@ -12,7 +13,7 @@
             base.Cast(target);
             foreach (Thing thing in this.AllTargetsAt(target.Cell))
             {
-                this.ApplyHediffs(thing);
+                this.ApplyHediffs(new GlobalTargetInfo(thing));
                 if (thing.TryGetComp<CompHaywire>() is { } comp) comp.GoHaywire(this.GetDurationForPawn());
             }
         }

@@ -2,6 +2,7 @@
 {
     using HarmonyLib;
     using RimWorld;
+    using RimWorld.Planet;
     using System.Collections.Generic;
     using Verse;
     using Verse.AI;
@@ -11,13 +12,12 @@
     public class Ability_Killskip : Ability
     {
         private int attackInTicks = -1;
-        public override void Cast(LocalTargetInfo target)
+        public override void Cast(params GlobalTargetInfo[] targets)
         {
-	    base.Cast(target);
-            AttackTarget(target);
-            TryQueueAttackIfDead(target);
+            base.Cast(targets);
+            AttackTarget(((LocalTargetInfo)targets[0]));
+            TryQueueAttackIfDead(((LocalTargetInfo)targets[0]));
         }
-
         private void TryQueueAttackIfDead(LocalTargetInfo target)
         {
             if (target.Pawn.Dead)

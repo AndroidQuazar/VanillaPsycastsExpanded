@@ -142,7 +142,7 @@
     <Compile Include="AbilityExtension_Psycast.cs" />
     <Compile Include="HarmonyPatches\Pawn_EntropyTracker_Patches.cs" />
     <Compile Include="Hediff_PsycastAbilities.cs" />
-    <Compile Include="Paths\Empath\AbilityExtension_CastMalePsychicSoothe.cs" />
+    <Compile Include="Paths\Empath\AbilityExtension_CastPsychicSoothe.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_EnergyDump.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_MindWipe.cs" />
     <Compile Include="Paths\Empath\AbilityExtension_PsycastWordOfSerenity.cs" />

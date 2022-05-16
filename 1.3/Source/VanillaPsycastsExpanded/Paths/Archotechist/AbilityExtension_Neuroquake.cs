@@ -7,6 +7,7 @@
     using Verse.AI;
     using Verse.Sound;
     using VFECore.Abilities;
+using static UnityEngine.GraphicsBuffer;
     using Ability = VFECore.Abilities.Ability;
 
     public class AbilityExtension_Neuroquake : AbilityExtension_AbilityMod
@@ -20,8 +21,9 @@
 		public int goodwillImpactForBerserk;
 
 		public int worldRangeTiles;
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
+            base.Cast(targets, ability);
 			if (affectedFactions == null)
 			{
 				affectedFactions = new Dictionary<Faction, Pair<bool, Pawn>>();
@@ -35,7 +37,7 @@
 			{
 				if (CanApplyEffects(item) && !item.Fogged())
 				{
-					bool flag = !item.Spawned || item.Position.InHorDistOf(ability.pawn.Position, ability.GetAdditionalRadius()) 
+					bool flag = !item.Spawned || item.Position.InHorDistOf(ability.pawn.Position, ability.GetAdditionalRadius())
 						|| !item.Position.InHorDistOf(ability.pawn.Position, ability.GetRadiusForPawn());
 					AffectGoodwill(item.HomeFaction, !flag, item);
 					if (!flag)
@@ -50,7 +52,7 @@
 			}
 			foreach (Map map in Find.Maps)
 			{
-				if (map == ability.pawn.Map || Find.WorldGrid.TraversalDistanceBetween(map.Tile, ability.pawn.Map.Tile, passImpassable: true, 
+				if (map == ability.pawn.Map || Find.WorldGrid.TraversalDistanceBetween(map.Tile, ability.pawn.Map.Tile, passImpassable: true,
 					worldRangeTiles + 1) > worldRangeTiles)
 				{
 					continue;
@@ -102,7 +104,7 @@
 					Faction.OfPlayer.TryAffectGoodwillWith(key, goodwillChange, canSendMessage: true, canSendHostilityLetter: true, HistoryEventDefOf.UsedHarmfulAbility);
 				}
 			}
-			base.Cast(target, ability);
+			base.Cast(targets, ability);
 			affectedFactions.Clear();
 			giveMentalStateTo.Clear();
 		}
