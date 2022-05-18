@@ -57,6 +57,7 @@
     <Compile Include="GameComponent_PsycastsManager.cs" />
     <Compile Include="GoodwillImpactDelayed.cs" />
     <Compile Include="Graphics\MoteBetween.cs" />
+    <Compile Include="Graphics\MoteCastBubble.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
     <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
     <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />
