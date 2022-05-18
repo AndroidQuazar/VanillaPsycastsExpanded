@@ -195,11 +195,10 @@
 	  <targetMode>Location</targetMode>
 	  <hasAoE>true</hasAoE>
       <targetingParametersForAoE>
-        <canTargetSelf>True</canTargetSelf>
+		<canTargetSelf>True</canTargetSelf>
         <canTargetHumans>True</canTargetHumans>
         <canTargetMechs>True</canTargetMechs>
         <canTargetAnimals>True</canTargetAnimals>
-        <canTargetLocations>True</canTargetLocations>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
       </targetingParametersForAoE>
 	  <goodwillImpact>-75</goodwillImpact>

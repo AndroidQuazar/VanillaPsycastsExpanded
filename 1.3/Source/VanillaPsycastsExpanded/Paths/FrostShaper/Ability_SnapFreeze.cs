@@ -1,12 +1,33 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using System.Linq;
     using Verse;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
     public class Ability_SnapFreeze : Ability
     {
+        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+        {
+            var hediffExtension = this.def.GetModExtension<AbilityExtension_Hediff>();
+            if (hediffExtension.targetOnlyEnemies && target.Thing != null && !target.Thing.HostileTo(pawn))
+            {
+                if (showMessages)
+                {
+                    Messages.Message("VFEA.TargetMustBeHostile".Translate(), target.Thing, MessageTypeDefOf.CautionInput, null);
+                }
+                return false;
+            }
+            return base.ValidateTarget(target, showMessages);
+        }
+        public override void ApplyHediffs(params GlobalTargetInfo[] targetInfo)
+        {
+            foreach (GlobalTargetInfo target in targetInfo)
+            {
+                ApplyHediff(this, (LocalTargetInfo)target);
+            }
+        }
         public override void ApplyHediffs(LocalTargetInfo targetInfo)
         {
             ApplyHediff(this, targetInfo);

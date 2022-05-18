@@ -230,6 +230,11 @@
 	  <range>25</range>
 	  <radius>3</radius>
 	  <targetMode>Location</targetMode>
+	  <hasAoE>true</hasAoE>
+      <targetingParametersForAoE>
+        <canTargetHumans>True</canTargetHumans>
+        <canTargetAnimals>True</canTargetAnimals>
+      </targetingParametersForAoE>
 	  <needsTicking>true</needsTicking>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -244,6 +249,7 @@
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>VPE_IceBlock</hediff>
+			<targetOnlyEnemies>true</targetOnlyEnemies>
 		</li>
 		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
 			<effecterDef>Skip_Exit</effecterDef>
