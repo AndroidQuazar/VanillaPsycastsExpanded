@@ -33,7 +33,7 @@
       <description>Momentarily disrupts motor function in the target's brain, preventing any movement. This lasts for a few seconds and is considered a hostile action.</description>
       <iconPath>Abilities/Archotechist/Stun</iconPath>
 	  <targetMode>Pawn</targetMode>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>15</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <goodwillImpact>-15</goodwillImpact>
