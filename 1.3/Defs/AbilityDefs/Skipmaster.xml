@@ -112,8 +112,23 @@
     <label>chaos skip</label>
     <description>Teleport the target to a random position near where he started. Stuns the target for a second and is considered a hostile action.</description>
     <iconPath>Abilities/Skipmaster/ChaosSkip</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</abilityClass>
+    <targetCount>2</targetCount>
     <range>24.9</range>
+    <minRadius>6.9</minRadius>
+    <radius>24.9</radius>
     <goodwillImpact>-15</goodwillImpact>
+    <castTime>30</castTime>
+    <targetModes>
+      <li>Pawn</li>
+      <li>Random</li>
+    </targetModes>
+    <targetingParametersList>
+      <li IsNull="True" />
+      <li>
+        <canTargetLocations>true</canTargetLocations>
+      </li>
+    </targetingParametersList>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -130,6 +145,9 @@
         <clamorType>Ability</clamorType>
         <clamorRadius>10</clamorRadius>
       </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+        <stunTicks>70~120</stunTicks>
+      </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -137,9 +155,10 @@
     <label>skip</label>
     <description>Teleport the target to a desired position not too far from his starting point. This is considered a hostile action.</description>
     <iconPath>Abilities/Skipmaster/Skip</iconPath>
-    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</abilityClass>
     <targetCount>2</targetCount>
     <range>20</range>
+    <castTime>30</castTime>
     <targetModes>
       <li>Pawn</li>
       <li>Location</li>
@@ -154,6 +173,13 @@
         <prerequisites>
           <li>VPE_ChaosSkip</li>
         </prerequisites>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+        <stunTicks>70~120</stunTicks>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
@@ -255,6 +281,28 @@
     <label>mass chaos skip</label>
     <description>Skip everyone near a target point to a random location nearby. Considered a nuisance as it can put allies in danger.</description>
     <iconPath>Abilities/Skipmaster/MassChaosSkip</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</abilityClass>
+    <targetCount>2</targetCount>
+    <radius>6.9</radius>
+    <range>20</range>
+    <castTime>60</castTime>
+    <targetModes>
+      <li>Location</li>
+      <li>Random</li>
+    </targetModes>
+    <targetingParametersList>
+      <li IsNull="True" />
+      <li>
+        <canTargetLocations>true</canTargetLocations>
+      </li>
+    </targetingParametersList>
+    <hasAoE>true</hasAoE>
+    <targetingParametersForAoE>
+      <canTargetSelf>True</canTargetSelf>
+      <canTargetPawns>True</canTargetPawns>
+      <canTargetBuildings>False</canTargetBuildings>
+    </targetingParametersForAoE>
+    <goodwillImpact>-5</goodwillImpact>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -265,6 +313,17 @@
         <prerequisites>
           <li>VPE_ChaosSkip</li>
         </prerequisites>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+        <stunTicks>70~120</stunTicks>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_RandomRadius">
+        <minRadius>6.9</minRadius>
+        <maxRadius>24.9</maxRadius>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
@@ -293,10 +352,10 @@
   </VFECore.Abilities.AbilityDef>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
     <defName>VPE_Farskip</defName>
-    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
     <label>farskip</label>
     <description>Skip the caster, along with anyone standing near them, to a willing ally at a distant location. This can send people far across the planet, and the skipped people will always appear near a random ally on the target map and be stunned for a few seconds from the journey.</description>
     <iconPath>Abilities/Skipmaster/Farskip</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_WorldTeleport</abilityClass>
     <radius>4.9</radius>
     <castTime>300</castTime>
     <targetMode>Tile</targetMode>
