@@ -5,6 +5,7 @@
     using RimWorld;
     using UnityEngine;
     using Verse;
+    using Verse.AI;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
     using AbilityDef = VFECore.Abilities.AbilityDef;
@@ -98,6 +99,17 @@
             if (entropy > 1.401298E-45f) builder.AppendInNewLine($"{"AbilityEntropyGain".Translate()}: {entropy}");
 
             return builder.ToString().Colorize(Color.cyan);
+        }
+
+        public override void WarmupToil(Toil toil)
+        {
+            base.WarmupToil(toil);
+            toil.AddPreInitAction(delegate
+            {
+                MoteCastBubble mote = (MoteCastBubble) ThingMaker.MakeThing(VPE_DefOf.VPE_Mote_Cast);
+                mote.Setup(toil.actor, toil.actor.GetComp<CompAbilities>().currentlyCasting);
+                GenSpawn.Spawn(mote, toil.actor.Position, toil.actor.Map);
+            });
         }
     }
 

@@ -293,5 +293,13 @@
       <drawSize>0.9</drawSize>
     </graphicData>
   </ThingDef>
-  
+
+  <ThingDef ParentName="InteractionMoteBase">
+    <defName>VPE_Mote_Cast</defName>
+	<thingClass>VanillaPsycastsExpanded.MoteCastBubble</thingClass>
+    <graphicData>
+      <texPath>UI/CastBubble/Cast</texPath>
+      <drawSize>1.25</drawSize>
+    </graphicData>
+  </ThingDef>
 </Defs>
