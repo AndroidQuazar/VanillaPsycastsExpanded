@@ -24,13 +24,13 @@
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            base.pawn.Map.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Add(this);
+            base.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Add(this);
         }
 
         public override void PostRemoved()
         {
             base.PostRemoved();
-            base.pawn.Map.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Remove(this);
+            base.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Remove(this);
         }
 
 
