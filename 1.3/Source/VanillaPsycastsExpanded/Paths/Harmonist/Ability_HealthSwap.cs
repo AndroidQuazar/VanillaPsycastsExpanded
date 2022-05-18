@@ -24,6 +24,7 @@
             }
         }
 
-        private bool ShouldTransfer(Hediff hediff) => hediff is Hediff_Injury || hediff.def.tendable || hediff.def.makesSickThought;
+        private bool ShouldTransfer(Hediff hediff) => hediff is Hediff_Injury || hediff.def.tendable || hediff.def.makesSickThought ||
+                                                      hediff.def.HasComp(typeof(HediffComp_Immunizable));
     }
 }
