@@ -162,6 +162,11 @@
       <label>location swap</label>
       <description>Spawns two precise, single-use skipgates between the caster and the visible target, allowing them to trade places.</description>
       <iconPath>Abilities/Harmonist/LocationSwap</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_LocationSwap</abilityClass>
+      <castTime>15</castTime>
+      <range>30</range>
+      <targetMode>Pawn</targetMode>
+      <castSound>VPE_LocationSwap_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -172,6 +177,10 @@
           <prerequisites>
             <li>VPE_LuckTransfer</li>
           </prerequisites>
+        </li>
+        <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+          <clamorType>Ability</clamorType>
+          <clamorRadius>10</clamorRadius>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

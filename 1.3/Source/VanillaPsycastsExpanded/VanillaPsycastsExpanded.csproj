@@ -74,6 +74,8 @@
     <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_BlizzardSource.cs" />
     <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
+    <Compile Include="Paths\Harmonist\Ability_LocationSwap.cs" />
+    <Compile Include="Paths\Harmonist\Ability_LuckTransfer.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Teleport.cs" />
     <Compile Include="Paths\Skipmaster\Ability_WorldTeleport.cs" />
     <Compile Include="Paths\Technomancer\Ability_Construct_Rock.cs" />

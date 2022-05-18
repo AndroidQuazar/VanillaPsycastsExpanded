@@ -372,6 +372,10 @@
           <li>VPE_Skipdoor</li>
         </prerequisites>
       </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+      </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
 </Defs>
