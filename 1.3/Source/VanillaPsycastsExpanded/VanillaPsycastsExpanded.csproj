@@ -56,6 +56,7 @@
     <Compile Include="FixedTemperatureZone.cs" />
     <Compile Include="GameComponent_PsycastsManager.cs" />
     <Compile Include="GoodwillImpactDelayed.cs" />
+    <Compile Include="Graphics\MoteBetween.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
     <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
     <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Paths\FrostShaper\Hediff_IceBlock.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_BlizzardSource.cs" />
     <Compile Include="Paths\FrostShaper\JobDriver_StandFreeze.cs" />
+    <Compile Include="Paths\Harmonist\Ability_HealthSwap.cs" />
     <Compile Include="Paths\Harmonist\Ability_LocationSwap.cs" />
     <Compile Include="Paths\Harmonist\Ability_LuckTransfer.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Teleport.cs" />

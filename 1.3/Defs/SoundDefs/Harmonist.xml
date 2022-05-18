@@ -128,4 +128,20 @@
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>VPE_HealthSwap_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Harmonist/Psycast_HealthSwap_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

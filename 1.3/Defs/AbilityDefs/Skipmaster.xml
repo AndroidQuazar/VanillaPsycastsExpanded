@@ -119,6 +119,7 @@
     <radius>24.9</radius>
     <goodwillImpact>-15</goodwillImpact>
     <castTime>30</castTime>
+    <needsTicking>true</needsTicking>
     <targetModes>
       <li>Pawn</li>
       <li>Random</li>
@@ -159,6 +160,7 @@
     <targetCount>2</targetCount>
     <range>20</range>
     <castTime>30</castTime>
+    <needsTicking>true</needsTicking>
     <targetModes>
       <li>Pawn</li>
       <li>Location</li>
@@ -286,6 +288,7 @@
     <radius>6.9</radius>
     <range>20</range>
     <castTime>60</castTime>
+    <needsTicking>true</needsTicking>
     <targetModes>
       <li>Location</li>
       <li>Random</li>
@@ -361,6 +364,7 @@
     <targetMode>Tile</targetMode>
     <range>10</range>
     <worldTargeting>true</worldTargeting>
+    <needsTicking>true</needsTicking>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>

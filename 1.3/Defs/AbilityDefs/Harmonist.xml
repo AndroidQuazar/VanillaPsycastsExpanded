@@ -189,6 +189,28 @@
       <label>health swap</label>
       <description>Creates an imbalance between the life forces of two people, causing all negative health conditions to flow from one to the other. Conditions that can’t be transferred are healed.</description>
       <iconPath>Abilities/Harmonist/HealthSwap</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_HealthSwap</abilityClass>
+      <castTime>240</castTime>
+      <castSound>VPE_HealthSwap_Cast</castSound>
+      <castFleckScale>9</castFleckScale>
+      <targetCount>2</targetCount>
+      <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <range>12.9</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
