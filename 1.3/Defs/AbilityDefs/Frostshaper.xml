@@ -251,11 +251,6 @@
 			<hediff>VPE_IceBlock</hediff>
 			<targetOnlyEnemies>true</targetOnlyEnemies>
 		</li>
-		<li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
-			<effecterDef>Skip_Exit</effecterDef>
-			<maintainForTicks>60</maintainForTicks>
-			<scale>3</scale>
-		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	

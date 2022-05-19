@@ -21,6 +21,21 @@
             }
             return base.ValidateTarget(target, showMessages);
         }
+
+        public IntVec3 targetCell;
+        protected override void ModifyTargets(ref GlobalTargetInfo[] targets)
+        {
+            targetCell = targets[0].Cell;
+            base.ModifyTargets(ref targets);
+        }
+
+        public override void Cast(params GlobalTargetInfo[] targets)
+        {
+            base.Cast(targets);
+            Effecter effecter = EffecterDefOf.Skip_Exit.Spawn(targetCell, this.pawn.Map, 3f);
+            this.AddEffecterToMaintain(effecter, targetCell, 60);
+        }
+
         public override void ApplyHediffs(params GlobalTargetInfo[] targetInfo)
         {
             foreach (GlobalTargetInfo target in targetInfo)

@@ -229,7 +229,7 @@
 	  <targetMode>Self</targetMode>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <castSound>VPE_PsychicDrone_Cast</castSound>
-	  <durationTime>18000000000</durationTime>
+	  <durationTime>1800</durationTime>
 	  <castTime>60</castTime>
 	  <radius>25.9</radius>
       <modExtensions>
