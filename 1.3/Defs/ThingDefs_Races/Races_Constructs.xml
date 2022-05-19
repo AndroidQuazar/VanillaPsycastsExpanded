@@ -58,7 +58,7 @@
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				
+
 			</li>
 		</tools>
 		<comps>
@@ -66,8 +66,8 @@
 				<hediffname>VPE_NoPain</hediffname>
 				<hediffseverity>1</hediffseverity>
 			</li>
-			<li Class="AnimalBehaviours.CompProperties_DoesntFlee">
-
+			<li Class="AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
 			</li>
 			<li Class="VanillaPsycastsExpanded.CompProperties_BreakLink">
 				<gizmoImage>Effects/Technomancer/BreakLink/BreakLinkSteelConstruct</gizmoImage>
@@ -96,7 +96,7 @@
 			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="DryadKindBase">
+	<PawnKindDef ParentName="PawnKindBase">
 		<defName>VPE_SteelConstruct</defName>
 		<label>steel construct</label>
 		<race>VPE_SteelConstruct</race>
@@ -135,6 +135,9 @@
 				<gizmoLabel>VPE_BreakLink</gizmoLabel>
 				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
 			<li Class="VanillaPsycastsExpanded.CompProperties_SetStoneColour"/>
 
 		</comps>
@@ -148,7 +151,7 @@
 				<cooldownTime>2</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
-				
+
 			</li>
 		</tools>
 		<race>
@@ -172,7 +175,7 @@
 			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="DryadKindBase">
+	<PawnKindDef ParentName="PawnKindBase">
 		<defName>VPE_RockConstruct</defName>
 		<label>rock construct</label>
 		<race>VPE_RockConstruct</race>
