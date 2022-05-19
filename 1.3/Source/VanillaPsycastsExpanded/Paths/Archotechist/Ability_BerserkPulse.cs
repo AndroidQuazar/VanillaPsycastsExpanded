@@ -18,7 +18,6 @@
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
-            Log.Message("Ability_BerserkPulse");
             MakeStaticFleck(targetCell, pawn.Map, VPE_DefOf.PsycastAreaEffect, this.GetRadiusForPawn(), 0);
         }
     }
