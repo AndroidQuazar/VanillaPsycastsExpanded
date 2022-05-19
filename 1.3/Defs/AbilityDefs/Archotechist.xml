@@ -187,7 +187,7 @@
       <label>berskerk pulse</label>
       <description>Generate an overwhelming rush of undirected rage in everyone near the target point. Considered an overt act of aggression and lasts several seconds.</description>
       <iconPath>Abilities/Archotechist/BerserkPulse</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+      <abilityClass>VanillaPsycastsExpanded.Ability_BerserkPulse</abilityClass>
 	  <castTime>60</castTime>
 	  <durationTime>600</durationTime>
 	  <range>15</range>

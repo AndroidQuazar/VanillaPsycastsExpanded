@@ -56,6 +56,7 @@
         public static FleckDef    VPE_VortexSpark;
         public static FleckDef    VPE_WarlordZap;
         public static FleckDef    VPE_AggresiveHeatDump;
+        public static FleckDef PsycastAreaEffect;
         public static StatDef     VPE_PsyfocusCostFactor;
         public static StatDef     VPE_PsychicEntropyMinimum;
         public static JobDef      VPE_UseSkipdoor;
