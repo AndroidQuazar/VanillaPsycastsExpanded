@@ -107,4 +107,27 @@
 			</li>
 		</comps>
     </HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Lucky</defName>
+		<label>lucky</label>
+		<description>text.todo</description>
+		<comps>
+			<li Class="VFECore.HediffCompProperties_Targeting">
+				<neverMiss>true</neverMiss>
+				<alwaysMiss>true</alwaysMiss>
+			</li>
+		</comps>
+	</HediffDef>
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_UnLucky</defName>
+		<label>unlucky</label>
+		<description>text.todo</description>
+		<comps>
+			<li Class="VFECore.HediffCompProperties_Targeting">
+				<alwaysHit>true</alwaysHit>
+				<neverHit>true</neverHit>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

@@ -21,6 +21,8 @@
         public static HediffDef VPE_IceBlock;
         public static HediffDef VPE_Blizzard;
         public static HediffDef VPE_InfinitePower;
+        public static HediffDef VPE_Lucky;
+        public static HediffDef VPE_UnLucky;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -56,7 +58,7 @@
         public static FleckDef    VPE_VortexSpark;
         public static FleckDef    VPE_WarlordZap;
         public static FleckDef    VPE_AggresiveHeatDump;
-        public static FleckDef PsycastAreaEffect;
+        public static FleckDef    PsycastAreaEffect;
         public static StatDef     VPE_PsyfocusCostFactor;
         public static StatDef     VPE_PsychicEntropyMinimum;
         public static JobDef      VPE_UseSkipdoor;

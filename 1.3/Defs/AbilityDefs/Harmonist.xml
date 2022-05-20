@@ -120,6 +120,28 @@
       <label>luck transfer</label>
       <description>Creates a rift in karmic balance by shifting the negative karma from the first target onto the second target, as well as receiving their positive karma. Only affects combat and the duration scales with the first target’s psychic sensitivity.</description>
       <iconPath>Abilities/Harmonist/LuckTransfer</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_LuckTransfer</abilityClass>
+      <castTime>120</castTime>
+      <castSound>VPE_LuckTransfer_Cast</castSound>
+      <targetCount>2</targetCount>
+      <targetModes>
+        <li>Pawn</li>
+        <li>Pawn</li>
+      </targetModes>
+      <durationTime>360</durationTime>
+      <targetingParametersList>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+        <li>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetPawns>True</canTargetPawns>
+          <canTargetBuildings>False</canTargetBuildings>
+        </li>
+      </targetingParametersList>
+      <range>5.9</range>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
