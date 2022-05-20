@@ -107,6 +107,10 @@
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
+            Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
+                                           "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, this.pawn.gender.GetPronoun().CapitalizeFirst(),
+                                                                              ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
+                                           this.pawn);
         }
 
         public void GainExperience(float experienceGain)
