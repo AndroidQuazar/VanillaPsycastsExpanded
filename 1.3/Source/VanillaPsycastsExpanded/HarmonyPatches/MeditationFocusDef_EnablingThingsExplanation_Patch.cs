@@ -9,7 +9,7 @@
     {
         public static bool Prefix(ref string __result)
         {
-            __result = "  - " + "VPE.UnlockedByPoints".Translate();
+            __result = "  - " + "VPE.UnlockedByPoints".Translate() + ".";
             return false;
         }
     }
