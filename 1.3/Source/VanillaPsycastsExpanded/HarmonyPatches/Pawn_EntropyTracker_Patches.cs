@@ -25,7 +25,8 @@
         [HarmonyPostfix]
         public static void Postfix(Pawn_PsychicEntropyTracker __instance, Thing focus)
         {
-            __instance.Pawn.Psycasts()?.GainExperience(MeditationUtility.PsyfocusGainPerTick(__instance.Pawn, focus) * 100f);
+            __instance.Pawn.Psycasts()
+                      ?.GainExperience(MeditationUtility.PsyfocusGainPerTick(__instance.Pawn, focus) * 100f * PsycastsMod.Settings.XPPerPercent);
         }
     }
 
@@ -35,7 +36,7 @@
         [HarmonyPostfix]
         public static void Postfix(Pawn_PsychicEntropyTracker __instance, float offset)
         {
-            if (offset > 0f) __instance.Pawn.Psycasts()?.GainExperience(offset * 100f);
+            if (offset > 0f) __instance.Pawn.Psycasts()?.GainExperience(offset * 100f * PsycastsMod.Settings.XPPerPercent);
         }
     }
 
@@ -45,7 +46,7 @@
         [HarmonyPrefix]
         public static void Prefix(Pawn_PsychicEntropyTracker __instance)
         {
-            __instance.Pawn.Psycasts()?.GainExperience((1f - __instance.CurrentPsyfocus) * 100f);
+            __instance.Pawn.Psycasts()?.GainExperience((1f - __instance.CurrentPsyfocus) * 100f * PsycastsMod.Settings.XPPerPercent);
         }
     }
 

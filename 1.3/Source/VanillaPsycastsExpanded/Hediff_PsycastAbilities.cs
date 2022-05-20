@@ -178,27 +178,14 @@
             this.psysetIndex = Mathf.Clamp(this.psysetIndex, 0, this.psysets.Count);
         }
 
-        public static int ExperienceRequiredForLevel(int level)
-        {
-            if (level <= 1)
-                return 100;
-            if (level <= 20)
-                return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.15f);
-            if (level <= 30)
-                return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.10f);
-            return Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.05f);
-        }
-
-        public static int ExperienceRequiredForNextLevel(int curLevel)
-        {
-            if (curLevel <= 0)
-                return 100;
-            if (curLevel < 20)
-                return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.15f);
-            if (curLevel < 30)
-                return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.10f);
-            return Mathf.RoundToInt(ExperienceRequiredForLevel(curLevel) * 0.05f);
-        }
+        public static int ExperienceRequiredForLevel(int level) =>
+            level switch
+            {
+                <= 1  => 100,
+                <= 20 => Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.15f),
+                <= 30 => Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.10f),
+                _     => Mathf.RoundToInt(ExperienceRequiredForLevel(level - 1) * 1.05f)
+            };
 
         public override void GiveRandomAbilityAtLevel(int? forLevel = null)
         {
