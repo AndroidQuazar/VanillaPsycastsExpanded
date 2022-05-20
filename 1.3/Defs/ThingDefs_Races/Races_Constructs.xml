@@ -96,7 +96,7 @@
 			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="PawnKindBase">
+	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>VPE_SteelConstruct</defName>
 		<label>steel construct</label>
 		<race>VPE_SteelConstruct</race>
@@ -175,7 +175,7 @@
 			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
-	<PawnKindDef ParentName="PawnKindBase">
+	<PawnKindDef ParentName="AnimalKindBase">
 		<defName>VPE_RockConstruct</defName>
 		<label>rock construct</label>
 		<race>VPE_RockConstruct</race>
