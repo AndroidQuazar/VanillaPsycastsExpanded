@@ -34,4 +34,6 @@
 	<VPE.Gifting>gifting</VPE.Gifting>
 	<VPE.Trading>trading</VPE.Trading>
 	<VPE.FactionRelationReducedInfo>Goodwill with {FACTION_name} is now {1}. (Reduced by {2})</VPE.FactionRelationReducedInfo>
+    <VPE.CreatePsyringTitle>Choose Psycast:</VPE.CreatePsyringTitle>
+    <VPE.CreatePsyringButton>Create Psyring</VPE.CreatePsyringButton>
 </LanguageData>

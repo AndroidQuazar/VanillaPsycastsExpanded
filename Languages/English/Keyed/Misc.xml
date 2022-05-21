@@ -24,4 +24,7 @@
     <VPE.PsylinkGained>Psylink level gained: {0}</VPE.PsylinkGained>
     <VPE.PsylinkGained.Desc>{0} has gained a new level of psylink. Upon reaching that level, {1} raised psycasting-related stats slightly. {1} can now also allocate a point to either learn a new psycast, improve psycasting stats further or unlock a new meditation focus.\n\nPsycasting experience needed for next level is: {2}.</VPE.PsylinkGained.Desc>
     <VPE.UnlockedByPoints>Unlocked via Psycaster points</VPE.UnlockedByPoints>
+    <VPE.MustEltex>Must target eltex</VPE.MustEltex>
+    <VPE.NotPsycaster>Not a psycaster</VPE.NotPsycaster>
+    <VPE.AlreadyPsyring>Already wearing a psyring</VPE.AlreadyPsyring>
 </LanguagData>

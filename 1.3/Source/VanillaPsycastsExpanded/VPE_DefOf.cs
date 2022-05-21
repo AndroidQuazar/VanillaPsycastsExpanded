@@ -39,6 +39,7 @@
         public static ThingDef VPE_EltexOre;
         public static ThingDef VPE_PsycastPsychicEffectTransfer;
         public static ThingDef VPE_Mote_Cast;
+        public static ThingDef VPE_Psyring;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

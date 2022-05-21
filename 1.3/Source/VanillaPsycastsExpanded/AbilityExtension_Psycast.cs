@@ -43,12 +43,6 @@
                     return true;
                 }
 
-                if (!this.PrereqsCompleted(ability.pawn))
-                {
-                    reason = "None of the prerequisites learned";
-                    return false;
-                }
-
                 float psyfocusCost = this.GetPsyfocusUsedByPawn(ability.pawn);
                 if (!hediff.SufficientPsyfocusPresent(psyfocusCost))
                 {
@@ -74,7 +68,7 @@
                 return true;
             }
 
-            reason = "DEBUG: No hediff";
+            reason = "VPE.NotPsycaster".Translate();
             return false;
         }
 

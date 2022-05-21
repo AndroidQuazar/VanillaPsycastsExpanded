@@ -160,4 +160,20 @@
       </li>
 		</children>
 	</EffecterDef>
+  
+  <EffecterDef>
+		<defName>VPE_Knowledge</defName>
+		<children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>VPE_Knowledge</fleckDef>
+        <ticksBetweenMotes>45</ticksBetweenMotes>
+        <scale>0.2~0.8</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <angle>0~360</angle>
+        <speed>0.2~0.35</speed>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+      </li>
+		</children>
+	</EffecterDef>
 </Defs>

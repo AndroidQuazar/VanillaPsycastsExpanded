@@ -86,4 +86,40 @@
     </colorGenerator>
   </ThingDef>
   
+  <ThingDef ParentName="ApparelNoQualityBase">
+    <defName>VPE_Psyring</defName>
+    <label>psyring</label>
+    <description>text.todo</description>
+    <thingClass>VanillaPsycastsExpanded.Technomancer.Psyring</thingClass>
+    <graphicData>
+      <texPath>Effects/Technomancer/Psyring/Psyring</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <Mass>0.1</Mass>
+      <Beauty>1</Beauty>
+      <Flammability>0</Flammability>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>Sellable</tradeability>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+    <apparel>
+      <countsAsClothingForNudity>false</countsAsClothingForNudity>
+      <scoreOffset>4</scoreOffset>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <careIfDamaged>false</careIfDamaged>
+      <ignoredByNonViolent>false</ignoredByNonViolent>
+      <wearPerDay>0</wearPerDay>
+      <bodyPartGroups>
+        <li>MiddleFingers</li>
+      </bodyPartGroups>
+      <layers>
+        <li>OnSkin</li>
+      </layers>
+      <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
+    </apparel>
+  </ThingDef>
 </Defs>

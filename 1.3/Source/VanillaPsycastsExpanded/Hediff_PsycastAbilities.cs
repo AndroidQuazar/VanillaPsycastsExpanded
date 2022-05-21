@@ -12,7 +12,6 @@
     [StaticConstructorOnStartup]
     public class Hediff_PsycastAbilities : Hediff_Abilities
     {
-        private static readonly Texture2D PsySetPrev = ContentFinder<Texture2D>.Get("UI/Gizmos/Psyset_Previous");
         private static readonly Texture2D PsySetNext = ContentFinder<Texture2D>.Get("UI/Gizmos/Psyset_Next");
 
         public  float experience;

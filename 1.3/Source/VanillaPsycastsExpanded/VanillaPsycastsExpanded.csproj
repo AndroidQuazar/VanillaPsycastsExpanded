@@ -89,6 +89,7 @@
     <Compile Include="Paths\Technomancer\Ability_ConjureHeatPearls.cs" />
     <Compile Include="Paths\Technomancer\Ability_IncreaseQuality.cs" />
     <Compile Include="Paths\Technomancer\Ability_Mend.cs" />
+    <Compile Include="Paths\Technomancer\Ability_Psyring.cs" />
     <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />

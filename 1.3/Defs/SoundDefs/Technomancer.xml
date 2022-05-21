@@ -80,6 +80,42 @@
 			</li>
 		</subSounds>
 	</SoundDef>
+	<SoundDef>
+		<defName>VPE_Psyring_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Technomancer/Psycast_Psyring_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	<SoundDef>
+	  <defName>VPE_Psyring_Warmup</defName>
+	  <context>MapOnly</context>
+	  <maxSimultaneous>5</maxSimultaneous>
+	  <priorityMode>PrioritizeNearest</priorityMode>
+	  <sustain>True</sustain>
+	  <sustainFadeoutTime>0.1</sustainFadeoutTime>
+	  <subSounds>
+		<li>
+			<grains>
+				<li Class="AudioGrain_Clip">
+					<clipPath>Technomancer/Psycast_Psyring_Sustainer_01a</clipPath>
+				</li>
+			</grains>
+		  <volumeRange>20~25</volumeRange>
+		  <pitchRange>0.9~1.1</pitchRange>
+		  <muteWhenPaused>True</muteWhenPaused>
+		</li>
+	  </subSounds>
+	</SoundDef>
 
 
 	<!-- Construct sounds -->
