@@ -344,4 +344,18 @@
 			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_InfinitePower</compClass></li>
 		</comps>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Smartbuzz</defName>
+		<label>smartbuzz</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<ResearchSpeed>2</ResearchSpeed>
+					<GlobalLearningFactor>2</GlobalLearningFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

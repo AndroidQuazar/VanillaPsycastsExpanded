@@ -285,11 +285,16 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofProgress</defName>
       <label>word of progress</label>
       <description>Speak words encouraging problem solving capabilities while psychically hypercharging the target’s mind with keen insight. The target will experience double research speed and intellectual skill gain for 5 days, scaling with their psychic sensitivity.</description>
       <iconPath>Abilities/Technomancer/WordofProgress</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <durationTime>150000</durationTime>
+      <durationTimeStatFactors>
+        <PsychicSensitivity>1</PsychicSensitivity>
+      </durationTimeStatFactors>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -300,6 +305,9 @@
           <prerequisites>
             <li>VPE_SteelConstruct</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_Smartbuzz</hediff>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

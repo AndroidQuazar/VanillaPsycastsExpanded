@@ -52,12 +52,6 @@
                     return false;
                 }
 
-                // if (ability.pawn.GetPsylinkLevel() > ability.def.requiredHediff.minimumLevel)
-                // {
-                //     reason = "CommandPsycastHigherLevelPsylinkRequired".Translate(ability.def.requiredHediff.minimumLevel);
-                //     return true;
-                // }
-
                 if (ability.pawn.psychicEntropy.WouldOverflowEntropy(this.GetEntropyUsedByPawn(ability.pawn)))
                 {
                     reason = "CommandPsycastWouldExceedEntropy".Translate(ability.def.label);
