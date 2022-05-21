@@ -125,7 +125,11 @@
       <li>Random</li>
     </targetModes>
     <targetingParametersList>
-      <li IsNull="True" />
+      <li>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
       <li>
         <canTargetLocations>true</canTargetLocations>
       </li>
@@ -165,6 +169,16 @@
       <li>Pawn</li>
       <li>Location</li>
     </targetModes>
+    <targetingParametersList>
+      <li>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
+      <li>
+        <canTargetLocations>true</canTargetLocations>
+      </li>
+    </targetingParametersList>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
