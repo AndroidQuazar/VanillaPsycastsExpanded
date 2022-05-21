@@ -316,6 +316,20 @@
       <label>reverse engineer</label>
       <description>The caster concentrates on an object and attempts to unravel the knowledge needed to manufacture more of them. The long, intense concentration ends with the caster falling into a 6-hour coma.</description>
       <iconPath>Abilities/Technomancer/ReverseEngineer</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_ReverseEngineer</abilityClass>
+      <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <range>999999</range>
+      <distanceToTarget>1.9</distanceToTarget>
+      <targetMode>Pawn</targetMode>
+      <castTime>1440</castTime>
+      <targetingParameters>
+        <canTargetItems>true</canTargetItems>
+        <canTargetLocations>false</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+      </targetingParameters>
+      <warmupSound>VPE_Psyring_Warmup</warmupSound>
+      <castSound>VPE_ReverseEngineer_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Technomancer</path>
@@ -327,6 +341,13 @@
             <li>VPE_CraftPsyRing</li>
             <li>VPE_WordofProgress</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_WarmupEffecter">
+          <effecterDef>VPE_Knowledge</effecterDef>
+          <scale>0.42</scale>
+        </li>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+          <hours>12</hours>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
