@@ -1,21 +1,21 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using System.Globalization;
-    using UnityEngine;
     using Verse;
     using VFECore.Abilities;
 
     public class Command_Ability_Psycast : Command_Ability
     {
-        private AbilityExtension_Psycast psycastExtension;
+        private readonly AbilityExtension_Psycast psycastExtension;
 
-        public Command_Ability_Psycast(Pawn pawn, Ability ability) : base(pawn, ability) => 
+        public Command_Ability_Psycast(Pawn pawn, Ability ability) : base(pawn, ability) =>
             this.psycastExtension = this.ability.def.GetModExtension<AbilityExtension_Psycast>();
 
         public override string TopRightLabel
         {
             get
             {
+                if (this.ability.AutoCast) return null;
                 string topRightLabel = string.Empty;
                 float  entropy       = this.psycastExtension.GetEntropyUsedByPawn(this.ability.pawn);
                 if (entropy > float.Epsilon)
