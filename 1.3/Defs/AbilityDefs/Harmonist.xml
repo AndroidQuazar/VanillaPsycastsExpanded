@@ -40,7 +40,7 @@
       <label>psychic guidance</label>
       <description>Dampens the caster’s sight, hearing, movement and manipulation in exchange for overcharging the target’s own physical abilities.</description>
       <iconPath>Abilities/Harmonist/PsychicGuidance</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <range>4.9</range>
       <durationTime>3600</durationTime>
       <targetMode>Humanlike</targetMode>

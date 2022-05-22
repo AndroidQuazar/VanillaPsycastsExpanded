@@ -157,6 +157,9 @@
         {
             base.ExposeData();
             Scribe_References.Look(ref this.Pawn, "pawn");
+            string name = this.Name;
+            Scribe_Values.Look(ref name, nameof(name));
+            this.Name = name;
         }
 
         public override void Tick()
