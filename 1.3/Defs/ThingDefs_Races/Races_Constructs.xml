@@ -155,7 +155,7 @@
 			</li>
 		</tools>
 		<race>
-
+			<deathActionWorkerClass>VanillaPsycastsExpanded.DeathActionWorker_RockChunk</deathActionWorkerClass>
 			<bloodDef>VPE_Filth_Rock</bloodDef>
 			<body>VPE_RockConstructBody</body>
 			<fleshType>VPE_RockConstructFlesh</fleshType>

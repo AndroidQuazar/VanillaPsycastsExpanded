@@ -32,6 +32,8 @@
                 if (!project.discoveredLetterTitle.NullOrEmpty() && Find.Storyteller.difficulty.AllowedBy(project.discoveredLetterDisabledWhen))
                     Find.LetterStack.ReceiveLetter(project.discoveredLetterTitle, project.discoveredLetterText, LetterDefOf.NeutralEvent);
             }
+
+            targets[0].Thing.Destroy();
         }
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
