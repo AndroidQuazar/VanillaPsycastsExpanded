@@ -324,6 +324,7 @@
       <castTime>1440</castTime>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
+        <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
         <canTargetLocations>false</canTargetLocations>
         <canTargetPawns>true</canTargetPawns>
         <canTargetBuildings>true</canTargetBuildings>

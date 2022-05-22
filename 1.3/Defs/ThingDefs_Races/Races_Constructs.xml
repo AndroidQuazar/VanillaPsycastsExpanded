@@ -107,7 +107,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Effects/Technomancer/SteelConstruct/SteelConstruct</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>2</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
@@ -186,7 +186,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Effects/Technomancer/RockConstruct/RockConstruct</texPath>
-					<drawSize>1.5</drawSize>
+					<drawSize>2</drawSize>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>

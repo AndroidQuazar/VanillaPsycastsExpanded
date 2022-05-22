@@ -224,11 +224,15 @@
         <li>
           <canTargetSelf>True</canTargetSelf>
           <canTargetPawns>True</canTargetPawns>
+          <canTargetAnimals>False</canTargetAnimals>
+          <canTargetMechs>False</canTargetMechs>
           <canTargetBuildings>False</canTargetBuildings>
         </li>
         <li>
           <canTargetSelf>True</canTargetSelf>
           <canTargetPawns>True</canTargetPawns>
+          <canTargetAnimals>False</canTargetAnimals>
+          <canTargetMechs>False</canTargetMechs>
           <canTargetBuildings>False</canTargetBuildings>
         </li>
       </targetingParametersList>

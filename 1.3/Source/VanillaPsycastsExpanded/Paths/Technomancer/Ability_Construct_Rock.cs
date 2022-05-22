@@ -24,8 +24,8 @@
             Pawn construct = PawnGenerator.GeneratePawn(VPE_DefOf.VPE_RockConstruct, this.pawn.Faction);
             construct.TryGetComp<CompBreakLink>().Pawn = this.pawn;
             this.pawn.Psycasts().OffsetMinHeat(20f);
-            construct.TryGetComp<CompSetStoneColour>().SetStoneColour(target.Thing.def);
             GenSpawn.Spawn(construct, target.Thing.Position, target.Thing.Map, target.Thing.Rotation);
+            construct.TryGetComp<CompSetStoneColour>().SetStoneColour(target.Thing.def);
             target.Thing.Destroy();
         }
 
