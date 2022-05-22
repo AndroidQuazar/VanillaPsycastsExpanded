@@ -4,6 +4,7 @@
     <VFECore.Abilities.AbilityDef Name="VPE_PsycastBase" Abstract="true">
         <warmupSound>VPE_PsycastCastingEffect</warmupSound>
         <warmupMote>VPE_Mote_CastPsycast</warmupMote>
+		<gizmoClass>VanillaPsycastsExpanded.Command_Ability_Psycast</gizmoClass>
     </VFECore.Abilities.AbilityDef>
 
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase" Name="VPE_WordOfAbilityBase" Abstract="True">

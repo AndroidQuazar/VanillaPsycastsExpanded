@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Text;
     using RimWorld;
+    using RimWorld.Planet;
     using UnityEngine;
     using Verse;
     using Verse.AI;
@@ -66,12 +67,12 @@
             return false;
         }
 
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
+            base.Cast(targets, ability);
 
             Hediff_PsycastAbilities psycastHediff =
-                (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+                (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
         }
 
@@ -80,11 +81,12 @@
             StringBuilder builder = new();
 
             float psyfocusCost = this.GetPsyfocusUsedByPawn(ability.pawn);
-            if (psyfocusCost > 1.401298E-45f)
+            if (psyfocusCost > float.Epsilon)
                 builder.AppendInNewLine($"{"AbilityPsyfocusCost".Translate()}: {psyfocusCost.ToStringPercent()}");
 
             float entropy = this.GetEntropyUsedByPawn(ability.pawn);
-            if (entropy > 1.401298E-45f) builder.AppendInNewLine($"{"AbilityEntropyGain".Translate()}: {entropy}");
+            if (entropy > float.Epsilon) 
+                builder.AppendInNewLine($"{"AbilityEntropyGain".Translate()}: {entropy}");
 
             return builder.ToString().Colorize(Color.cyan);
         }
