@@ -18,7 +18,9 @@
         public override float GetOffset(Thing parent, Pawn user = null)
         {
             List<Thing> things = this.GetThings(parent.Position, parent.Map);
-            return Mathf.Clamp(things.Count, 1, 10) / 5.55f * Mathf.Clamp(things.Sum(t => t.MarketValue * t.stackCount), 1, 5000) / 100f;
+            int         count  = Mathf.Clamp(things.Count,                                  1, 10);
+            float       x      = Mathf.Clamp(things.Sum(t => t.MarketValue * t.stackCount), 1, 5000);
+            return count / 5.55f * x / 10000f;
         }
 
         public override string GetExplanation(Thing parent)
@@ -42,7 +44,7 @@
             if (Find.TickManager.TicksGame                 < lastCacheTick) cache.Clear();
             if (cache.TryGetValue(key, out List<Thing> list)) return list;
             lastCacheTick = Find.TickManager.TicksGame;
-            list          = GenRadial.RadialDistinctThingsAround(cell, map, this.radius, false).Take(10).ToList();
+            list          = GenRadial.RadialDistinctThingsAround(cell, map, this.radius, true).Where(t => t.def.techLevel == this.techLevel).Take(10).ToList();
             cache.Add(key, list);
             return list;
         }

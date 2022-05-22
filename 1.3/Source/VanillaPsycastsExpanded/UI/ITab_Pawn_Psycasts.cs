@@ -150,7 +150,7 @@
             listing.Label("VPE.PsysetCustomize".Translate());
             Text.Font = GameFont.Tiny;
             listing.Label("VPE.PsysetDesc".Translate());
-            Rect psysets = listing.GetRect(240f);
+            Rect psysets = listing.GetRect(pawnAndStats.height - listing.CurHeight - 20f);
             Widgets.DrawMenuSection(psysets);
             Rect viewRect = new(0, 0, psysets.width - 20f, this.lastPsysetsHeight);
             Widgets.BeginScrollView(psysets.ContractedBy(3f, 6f), ref this.psysetsScrollPos, viewRect);

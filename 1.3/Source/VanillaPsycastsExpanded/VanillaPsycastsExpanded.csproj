@@ -60,6 +60,7 @@
     <Compile Include="Graphics\MoteCastBubble.cs" />
     <Compile Include="HarmonyPatches\MeditationFocusDef_EnablingThingsExplanation_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_GetMaxPsylinkLevel_Patch.cs" />
+    <Compile Include="HarmonyPatches\RitualOutcomeEffectWorker_Bestowing_Apply_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
     <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
     <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />

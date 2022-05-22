@@ -163,12 +163,12 @@
         public void UnlockPath(PsycasterPathDef path)
         {
             this.unlockedPaths.Add(path);
-            MeditationFocusTypeAvailabilityCache.ClearFor(this.pawn);
         }
 
         public void UnlockMeditationFocus(MeditationFocusDef focus)
         {
             this.unlockedMeditationFoci.Add(focus);
+            MeditationFocusTypeAvailabilityCache.ClearFor(this.pawn);
         }
 
         public bool ShouldShow(Ability ability) => this.psysetIndex == this.psysets.Count || this.psysets[this.psysetIndex].Abilities.Contains(ability.def);
