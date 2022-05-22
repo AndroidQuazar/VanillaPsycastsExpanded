@@ -55,6 +55,32 @@
       <background>UI/Backgrounds/ArchotechistPath</background>
       <altBackground>UI/AlternativeBackgrounds/PathBG_Archotechist</altBackground>
       <tab>Psycasts</tab>
+      <requiredBackstoriesAny>
+        <li>
+          <categoryName>ImperialCommon</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialCommon</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialFighter</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialFighter</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialRoyal</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialRoyal</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+      </requiredBackstoriesAny>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
       <defName>VPE_Necropath</defName>
@@ -95,6 +121,16 @@
       <background>UI/Backgrounds/WildspeakerPath</background>
       <altBackground>UI/AlternativeBackgrounds/PathBG_Wildspeaker</altBackground>
       <tab>Psycasts</tab>
+      <requiredBackstoriesAny>
+        <li>
+          <categoryName>Tribal</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>Tribal</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+      </requiredBackstoriesAny>
     </VanillaPsycastsExpanded.PsycasterPathDef>
     <VanillaPsycastsExpanded.PsycasterPathDef>
       <defName>VPE_Harmonist</defName>
@@ -118,11 +154,47 @@
       <description>?????</description>
       <background>UI/Backgrounds/AnimatPath</background>
       <tab>Psycasts</tab>
+      <requiredBackstoriesAny>
+        <li>
+          <categoryName>Tribal</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>Tribal</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+      </requiredBackstoriesAny>
     </VanillaPsycastsExpanded.PsycasterPathDef> -->
     <!-- <VanillaPsycastsExpanded.PsycasterPathDef>
       <defName>VPE_Puppeteer</defName>
       <label>Puppeteer</label>
       <description>Puppeteers Psycasts provide the ways to exploit minds and dominate others. They are the masters of subjugating enemies and creating mindless husks upon which they feed.</description>
       <background>UI/Backgrounds/PuppeteerPath</background>
+      <requiredBackstoriesAny>
+        <li>
+          <categoryName>ImperialCommon</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialCommon</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialFighter</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialFighter</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialRoyal</categoryName>
+          <slot>Childhood</slot>
+        </li>
+        <li>
+          <categoryName>ImperialRoyal</categoryName>
+          <slot>Adulthood</slot>
+        </li>
+      </requiredBackstoriesAny>
     </VanillaPsycastsExpanded.PsycasterPathDef> -->
 </Defs>

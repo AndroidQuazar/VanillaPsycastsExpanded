@@ -66,21 +66,24 @@
             if (this.curIdx > 0                                   && Widgets.ButtonText(decreaseRect, "<")) this.curIdx--;
             if (this.curIdx < this.hediff.unlockedPaths.Count - 1 && Widgets.ButtonText(increaseRect, ">")) this.curIdx++;
             Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(pagesRect, $"{this.curIdx + 1} / {this.hediff.unlockedPaths.Count}");
+            Widgets.Label(pagesRect, $"{(this.hediff.unlockedPaths.Count > 0 ? this.curIdx + 1 : 0)} / {this.hediff.unlockedPaths.Count}");
             Text.Anchor = TextAnchor.UpperLeft;
-            PsycasterPathDef path = this.hediff.unlockedPaths[this.curIdx];
-            PsycastsUIUtility.DrawPathBackground(ref abilityRect, path);
-            PsycastsUIUtility.DoPathAbilities(abilityRect, path, this.abilityPos, (rect, def) =>
+            if (this.hediff.unlockedPaths.Count > 0)
             {
-                PsycastsUIUtility.DrawAbility(rect, def);
-                if (this.compAbilities.HasAbility(def))
+                PsycasterPathDef path = this.hediff.unlockedPaths[this.curIdx];
+                PsycastsUIUtility.DrawPathBackground(ref abilityRect, path);
+                PsycastsUIUtility.DoPathAbilities(abilityRect, path, this.abilityPos, (rect, def) =>
                 {
-                    DragAndDropWidget.Draggable(group, rect, def);
-                    TooltipHandler.TipRegion(rect, () => $"{def.LabelCap}\n\n{def.description}", def.GetHashCode() + 1);
-                }
-                else
-                    Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, 0.6f));
-            });
+                    PsycastsUIUtility.DrawAbility(rect, def);
+                    if (this.compAbilities.HasAbility(def))
+                    {
+                        DragAndDropWidget.Draggable(group, rect, def);
+                        TooltipHandler.TipRegion(rect, () => $"{def.LabelCap}\n\n{def.description}", def.GetHashCode() + 1);
+                    }
+                    else
+                        Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, 0.6f));
+                });
+            }
 
             if (DragAndDropWidget.CurrentlyDraggedDraggable() is AbilityDef abilityDef)
                 PsycastsUIUtility.DrawAbility(new Rect(Event.current.mousePosition, new Vector2(36f, 36f)), abilityDef);

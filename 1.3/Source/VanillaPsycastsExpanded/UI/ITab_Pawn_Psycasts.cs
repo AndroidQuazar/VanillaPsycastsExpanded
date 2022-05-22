@@ -64,8 +64,12 @@
         {
             base.OnOpen();
             this.pawn = (Pawn) Find.Selector.SingleSelectedThing;
-            PsycastsUIUtility.Hediff =
-                this.hediff = (Hediff_PsycastAbilities) this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+            this.InitCache();
+        }
+
+        private void InitCache()
+        {
+            PsycastsUIUtility.Hediff        = this.hediff        = this.pawn.Psycasts();
             PsycastsUIUtility.CompAbilities = this.compAbilities = this.pawn.GetComp<CompAbilities>();
             this.abilityPos.Clear();
         }
@@ -76,10 +80,17 @@
             this.pawn                       = null;
             PsycastsUIUtility.Hediff        = this.hediff        = null;
             PsycastsUIUtility.CompAbilities = this.compAbilities = null;
+            this.abilityPos.Clear();
         }
 
         protected override void FillTab()
         {
+            if (Find.Selector.SingleSelectedThing is Pawn p && this.pawn != p)
+            {
+                this.pawn = p;
+                this.InitCache();
+            }
+
             if (this.pawn == null || this.hediff == null || this.compAbilities == null) return;
             GameFont         font         = Text.Font;
             TextAnchor       anchor       = Text.Anchor;
@@ -172,7 +183,7 @@
         private void DoFocus(Rect inRect, MeditationFocusDef def)
         {
             Widgets.DrawBox(inRect, 3, Texture2D.grayTexture);
-            bool unlocked = this.hediff.unlockedMeditationFoci.Contains(def);
+            bool unlocked = def.CanPawnUse(this.pawn);
             GUI.color = unlocked ? Color.white : Color.gray;
             GUI.DrawTexture(inRect.ContractedBy(5f), def.Icon());
             GUI.color = Color.white;
@@ -232,7 +243,8 @@
                 else
                 {
                     Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, this.useAltBackgrounds ? 0.7f : 0.55f));
-                    if (this.hediff.points >= 1 && Widgets.ButtonText(rect.CenterRect(new Vector2(140f, 30f)), "VPE.Unlock".Translate()))
+                    if (this.hediff.points >= 1 && def.CanPawnUnlock(this.pawn) &&
+                        Widgets.ButtonText(rect.CenterRect(new Vector2(140f, 30f)), "VPE.Unlock".Translate()))
                     {
                         this.hediff.SpentPoints();
                         this.hediff.UnlockPath(def);

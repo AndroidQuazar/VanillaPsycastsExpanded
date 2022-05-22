@@ -106,10 +106,11 @@
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
-            Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
-                                           "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, this.pawn.gender.GetPronoun().CapitalizeFirst(),
-                                                                              ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
-                                           this.pawn);
+            if (PawnUtility.ShouldSendNotificationAbout(this.pawn))
+                Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
+                                               "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, this.pawn.gender.GetPronoun().CapitalizeFirst(),
+                                                                                  ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
+                                               this.pawn);
         }
 
         public void GainExperience(float experienceGain)
@@ -162,6 +163,7 @@
         public void UnlockPath(PsycasterPathDef path)
         {
             this.unlockedPaths.Add(path);
+            MeditationFocusTypeAvailabilityCache.ClearFor(this.pawn);
         }
 
         public void UnlockMeditationFocus(MeditationFocusDef focus)

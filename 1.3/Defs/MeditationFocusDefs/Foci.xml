@@ -9,6 +9,7 @@
                 <statParts>
                     <li Class="VanillaPsycastsExpanded.StatPart_Group" />
                 </statParts>
+                <pointsOnly>true</pointsOnly>
             </li>
         </modExtensions>
     </MeditationFocusDef>
@@ -18,6 +19,7 @@
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                 <icon>UI/PsyfocusIcons/PsyfocusArchotechnology</icon>
+                <pointsOnly>true</pointsOnly>
             </li>
         </modExtensions>
     </MeditationFocusDef>
@@ -27,6 +29,7 @@
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                 <icon>UI/PsyfocusIcons/PsyfocusScience</icon>
+                <pointsOnly>true</pointsOnly>
             </li>
         </modExtensions>
     </MeditationFocusDef>
@@ -39,6 +42,7 @@
                 <statParts>
                     <li Class="VanillaPsycastsExpanded.StatPart_NearbyWealth" />
                 </statParts>
+                <pointsOnly>true</pointsOnly>
             </li>
         </modExtensions>
     </MeditationFocusDef>

@@ -8,6 +8,7 @@
     {
         public string               icon;
         public List<StatPart_Focus> statParts;
+        public bool                 pointsOnly;
     }
 
     public abstract class StatPart_Focus : StatPart

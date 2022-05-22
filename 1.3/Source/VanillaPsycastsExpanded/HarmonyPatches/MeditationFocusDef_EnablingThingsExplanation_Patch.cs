@@ -7,10 +7,10 @@
     [HarmonyPatch(typeof(MeditationFocusDef), nameof(MeditationFocusDef.EnablingThingsExplanation))]
     public static class MeditationFocusDef_EnablingThingsExplanation_Patch
     {
-        public static bool Prefix(ref string __result)
+        public static void Postfix(Pawn pawn, MeditationFocusDef __instance, ref string __result)
         {
-            __result = "  - " + "VPE.UnlockedByPoints".Translate() + ".";
-            return false;
+            if (pawn.Psycasts()?.unlockedMeditationFoci.Contains(__instance) ?? false)
+                __result += "\n  - " + "VPE.UnlockedByPoints".Translate() + ".";
         }
     }
 }

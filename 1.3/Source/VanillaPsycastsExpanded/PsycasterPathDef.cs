@@ -2,15 +2,17 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using RimWorld;
     using UnityEngine;
     using Verse;
-    using VFECore.Abilities;
+    using AbilityDef = VFECore.Abilities.AbilityDef;
 
     public class PsycasterPathDef : Def
     {
         public static AbilityDef Blank;
         public static int        TotalPoints;
 
+        public List<BackstoryCategoryAndSlot> requiredBackstoriesAny;
 
         public string background;
         public string altBackground;
@@ -28,6 +30,20 @@
         [Unsaved] public int              MaxLevel;
         [Unsaved] public List<AbilityDef> abilities;
         [Unsaved] public AbilityDef[][]   abilityLevelsInOrder;
+
+        public bool CanPawnUnlock(Pawn pawn)
+        {
+            if (this.requiredBackstoriesAny.NullOrEmpty()) return true;
+            foreach (BackstoryCategoryAndSlot requirement in this.requiredBackstoriesAny)
+            {
+                List<string> list6 = requirement.slot == BackstorySlot.Adulthood
+                    ? pawn.story.adulthood?.spawnCategories
+                    : pawn.story.childhood?.spawnCategories;
+                if (list6 != null && list6.Contains(requirement.categoryName)) return true;
+            }
+
+            return false;
+        }
 
         public override void PostLoad()
         {

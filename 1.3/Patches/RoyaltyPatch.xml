@@ -6,8 +6,11 @@
         </mods>
         <match Class="PatchOperationSequence">
             <operations>
-                <li Class="PatchOperationRemove">
+                <li Class="PatchOperationReplace">
                     <xpath>Defs/HediffDef[defName="PsychicAmplifier"]/maxSeverity</xpath>
+                    <value>
+                        <maxSeverity>2147483645</maxSeverity>
+                    </value>
                 </li>
                 <li Class="PatchOperationRemove">
                     <xpath>Defs/HediffDef[defName="PsychicAmplifier"]/stages</xpath>

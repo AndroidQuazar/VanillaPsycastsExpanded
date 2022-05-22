@@ -7,10 +7,10 @@
     [HarmonyPatch(typeof(MeditationFocusTypeAvailabilityCache), "PawnCanUseInt")]
     public static class MeditationFocusTypeAvailabilityCache_PawnCanUse_Patch
     {
-        public static bool Prefix(Pawn p, MeditationFocusDef type, ref bool __result)
+        public static void Postfix(Pawn p, MeditationFocusDef type, ref bool __result)
         {
-            __result = p.Psycasts()?.unlockedMeditationFoci.Contains(type) ?? false;
-            return false;
+            if (p.Psycasts()?.unlockedMeditationFoci.Contains(type) ?? false) __result     = true;
+            else if (type.GetModExtension<MeditationFocusExtension>().pointsOnly) __result = false;
         }
     }
 }
