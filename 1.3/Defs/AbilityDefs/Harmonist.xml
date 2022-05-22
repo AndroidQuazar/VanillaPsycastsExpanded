@@ -128,7 +128,7 @@
         <li>Pawn</li>
         <li>Pawn</li>
       </targetModes>
-      <durationTime>360</durationTime>
+      <durationTime>3600</durationTime>
       <targetingParametersList>
         <li>
           <canTargetSelf>True</canTargetSelf>
