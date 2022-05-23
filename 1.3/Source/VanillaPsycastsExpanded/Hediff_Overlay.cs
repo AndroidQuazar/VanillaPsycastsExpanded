@@ -7,7 +7,7 @@
     [StaticConstructorOnStartup]
     public abstract class Hediff_Overlay : Hediff_Ability
     {
-        public static readonly MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
+        public MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
 
         private Material material;
         public Material ShieldMat
@@ -35,7 +35,6 @@
 
 
         public virtual float OverlaySize => 1f;
-        public virtual Color OverlayColor => Color.yellow;
         public virtual string OverlayPath { get; }
         public virtual void Draw()
         {

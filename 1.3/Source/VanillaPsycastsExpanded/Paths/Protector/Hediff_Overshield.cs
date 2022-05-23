@@ -20,6 +20,8 @@
         public static float minAlpha = 0.2f;
         public override string OverlayPath => "Other/ForceField";
 
+        public virtual Color OverlayColor => Color.yellow;
+
         private static Material ForceFieldConeMat = MaterialPool.MatFrom("Other/ForceFieldCone", ShaderDatabase.MoteGlow);
         public override void Tick()
         {
