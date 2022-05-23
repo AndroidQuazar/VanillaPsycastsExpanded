@@ -16,7 +16,7 @@
                 foreach (Gizmo gizmo in psycasts.GetPsySetGizmos())
                     yield return gizmo;
             foreach (Gizmo gizmo in gizmos)
-                if (psycasts != null && gizmo is Command_Ability command)
+                if (psycasts != null && gizmo is Command_Ability command && command.ability.def.HasModExtension<AbilityExtension_Psycast>())
                 {
                     if (psycasts.ShouldShow(command.ability)) yield return command;
                 }
