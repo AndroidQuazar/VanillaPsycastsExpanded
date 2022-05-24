@@ -161,10 +161,10 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-      <defName>VPE_TreeEchoSlam</defName>
-      <label>tree echo slam</label>
-      <description>Infuses a target tree with potent, excessive life force, causing an identical tree to grow inside it and destroy the old tree in a shower of splinters. Depending on the caster’s psychic sensitivity, the effect can jump towards multiple nearby trees that haven’t been infused before with the same energy.</description>
-      <iconPath>Abilities/Wildspeaker/TreeEchoSlam</iconPath>
+      <defName>VPE_SummonPack</defName>
+      <label>summon pack</label>
+      <description>Sends out a pulse of lifeforce into the region, inducing territorial manhunting aggression into numerous animals that will appear to defend the colony. Once all invaders are defeated, the animals will return to their homes. The distance the pulse travels, and with that the relative strength of the creatures are influenced by the caster’s psychic sensitivity.</description>
+      <iconPath>Abilities/Wildspeaker/SummonPack</iconPath>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Wildspeaker</path>
