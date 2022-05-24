@@ -5,6 +5,17 @@
       <label>bramble maze</label>
       <description>Infuses a fertile area with chaotic life energy, causing it to sprout shoots of brambles that wither after 12 hours.</description>
       <iconPath>Abilities/Wildspeaker/BrambleMaze</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+      <castTime>30</castTime>
+      <range>25</range>
+      <targetMode>Location</targetMode>
+      <radius>6</radius>
+      <hasAoE>true</hasAoE>
+      <durationTime>30000</durationTime>
+      <targetingParametersForAoE>
+        <canTargetLocations>true</canTargetLocations>
+      </targetingParametersForAoE>
+      <castSound>VPE_BrambleMaze_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Wildspeaker</path>
@@ -12,6 +23,15 @@
           <order>1</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>10</entropyGain>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+          <thing>VPE_BrambleSpawner</thing>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>PsycastPsychicEffect</fleckDef>
+          <scale>6</scale>
+          <allTargets>false</allTargets>
+          <tryCenter>true</tryCenter>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>

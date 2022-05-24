@@ -243,11 +243,19 @@
                 else
                 {
                     Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, this.useAltBackgrounds ? 0.7f : 0.55f));
-                    if (this.hediff.points >= 1 && def.CanPawnUnlock(this.pawn) &&
-                        Widgets.ButtonText(rect.CenterRect(new Vector2(140f, 30f)), "VPE.Unlock".Translate()))
+                    if (this.hediff.points >= 1)
                     {
-                        this.hediff.SpentPoints();
-                        this.hediff.UnlockPath(def);
+                        Rect centerRect = rect.CenterRect(new Vector2(140f, 30f));
+                        if (def.CanPawnUnlock(this.pawn))
+                        {
+                            if (Widgets.ButtonText(centerRect, "VPE.Unlock".Translate()))
+                            {
+                                this.hediff.SpentPoints();
+                                this.hediff.UnlockPath(def);
+                            }
+                        }
+                        else
+                            Widgets.Label(centerRect, "VPE.Locked".Translate().Resolve().ToUpper());
                     }
                 }
 

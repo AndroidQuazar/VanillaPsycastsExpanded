@@ -66,17 +66,25 @@
         <thingClass>ThingWithComps</thingClass>
         <tickerType>Never</tickerType>
         <comps>
-          <li Class="CompProperties_AffectsSky">
-            <skyColors>
-              <sky>(255, 255, 255)</sky>
-              <shadow>(255, 255, 255)</shadow>
-              <overlay>(255,255,255,255)</overlay>
-              <saturation>2</saturation>
-            </skyColors>
-          </li>
+            <li Class="CompProperties_AffectsSky">
+                <skyColors>
+                    <sky>(255, 255, 255)</sky>
+                    <shadow>(255, 255, 255)</shadow>
+                    <overlay>(255,255,255,255)</overlay>
+                    <saturation>2</saturation>
+                </skyColors>
+            </li>
         </comps>
     </ThingDef>
-	
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_BrambleSpawner</defName>
+        <label>emerging</label>
+        <thingClass>VanillaPsycastsExpanded.Wildspeaker.BrambleSpawner</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <comps><li><compClass>VFECore.Abilities.CompDuration</compClass></li></comps>
+    </ThingDef>
+
     <ThingDef ParentName="PawnFlyerBase">
         <defName>VPE_JumpingPawn</defName>
         <thingClass>VanillaPsycastsExpanded.JumpingPawn</thingClass>

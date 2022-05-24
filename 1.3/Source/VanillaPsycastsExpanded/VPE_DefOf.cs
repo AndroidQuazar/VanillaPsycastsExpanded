@@ -40,6 +40,7 @@
         public static ThingDef VPE_PsycastPsychicEffectTransfer;
         public static ThingDef VPE_Mote_Cast;
         public static ThingDef VPE_Psyring;
+        public static ThingDef Plant_Brambles;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

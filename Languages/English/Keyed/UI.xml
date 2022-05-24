@@ -36,4 +36,5 @@
 	<VPE.FactionRelationReducedInfo>Goodwill with {FACTION_name} is now {1}. (Reduced by {2})</VPE.FactionRelationReducedInfo>
     <VPE.CreatePsyringTitle>Choose Psycast:</VPE.CreatePsyringTitle>
     <VPE.CreatePsyringButton>Create Psyring</VPE.CreatePsyringButton>
+    <VPE.Locked>locked</VPE.Locked>
 </LanguageData>
