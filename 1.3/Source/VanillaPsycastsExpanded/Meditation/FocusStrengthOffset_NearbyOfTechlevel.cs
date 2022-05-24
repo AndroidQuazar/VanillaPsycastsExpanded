@@ -17,15 +17,26 @@
 
         public override float GetOffset(Thing parent, Pawn user = null)
         {
-            List<Thing> things = this.GetThings(parent.Position, parent.Map);
-            int         count  = Mathf.Clamp(things.Count,                                  1, 10);
-            float       x      = Mathf.Clamp(things.Sum(t => t.MarketValue * t.stackCount), 1, 5000);
+            int   count;
+            float x;
+            if (parent.Map == null)
+            {
+                count = 1;
+                x     = parent.MarketValue * parent.stackCount;
+            }
+            else
+            {
+                List<Thing> things = this.GetThings(parent.Position, parent.Map);
+                count = Mathf.Clamp(things.Count,                                  1, 10);
+                x     = Mathf.Clamp(things.Sum(t => t.MarketValue * t.stackCount), 1, 5000);
+            }
+
             return count / 5.55f * x / 10000f;
         }
 
         public override string GetExplanation(Thing parent)
         {
-            int num = this.GetThings(parent.Position, parent.Map).Count;
+            int num = parent.Map == null ? 1 : this.GetThings(parent.Position, parent.Map).Count;
             return "VPE.ThingsOfLevel".Translate(num, this.techLevel.ToString()) + ": " + this.GetOffset(parent).ToStringWithSign("0%");
         }
 

@@ -8,7 +8,7 @@
     {
         public override void TransformValue(StatRequest req, ref float val)
         {
-            if (!this.ApplyOn(req)) return;
+            if (!this.ApplyOn(req) || req.Thing.Map == null) return;
 
             float total  = req.Thing.Map.wealthWatcher.WealthTotal;
             float nearby = GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, 6f, true).Sum(t => t.MarketValue * t.stackCount);
@@ -17,7 +17,7 @@
 
         public override string ExplanationPart(StatRequest req)
         {
-            if (!this.ApplyOn(req)) return "";
+            if (!this.ApplyOn(req) || req.Thing.Map == null) return "";
 
             float total  = req.Thing.Map.wealthWatcher.WealthTotal;
             float nearby = GenRadial.RadialDistinctThingsAround(req.Thing.Position, req.Thing.Map, 6f, true).Sum(t => t.MarketValue * t.stackCount);

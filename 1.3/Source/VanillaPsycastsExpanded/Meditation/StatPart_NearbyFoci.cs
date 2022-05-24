@@ -11,7 +11,7 @@
 
         public override void TransformValue(StatRequest req, ref float val)
         {
-            if (req.Thing == null || req.Pawn == null || !ShouldApply) return;
+            if (req.Thing == null || req.Pawn == null || !ShouldApply || req.Thing.Map == null) return;
             ShouldApply =  false;
             val         += AllFociNearby(req.Thing, req.Pawn).Sum(tuple => tuple.value);
             ShouldApply =  true;
@@ -42,7 +42,7 @@
 
         public override string ExplanationPart(StatRequest req)
         {
-            if (req.Thing == null || req.Pawn == null || !ShouldApply) return "";
+            if (req.Thing == null || req.Pawn == null || !ShouldApply || req.Thing.Map == null) return "";
             ShouldApply = false;
             List<string> lines = AllFociNearby(req.Thing, req.Pawn)
                                  .Select(tuple => tuple.thing.LabelCap + ": " +
