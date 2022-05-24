@@ -37,7 +37,7 @@
                         useJob    = JobDefOf.UseNeurotrainer,
                         useLabel  = "PsycastNeurotrainerUseLabel".Translate(abilityDef.label)
                     });
-                    thingDef.comps.Add(new CompProperties_UseEffectGiveAbility
+                    thingDef.comps.Add(new CompProperties_UseEffect_Psytrainer
                     {
                         ability = abilityDef
                     });
@@ -62,6 +62,21 @@
                     thingDef.stackLimit = 1;
                     yield return thingDef;
                 }
+        }
+    }
+
+    public class CompProperties_UseEffect_Psytrainer : CompProperties_UseEffectGiveAbility
+    {
+        public CompProperties_UseEffect_Psytrainer() => this.compClass = typeof(CompPsytrainer);
+    }
+
+    public class CompPsytrainer : CompUseEffect_GiveAbility
+    {
+        public override void DoEffect(Pawn usedBy)
+        {
+            if (this.Props.ability?.Psycast()?.path is { } path && usedBy.Psycasts() is { } psycasts && !psycasts.unlockedPaths.Contains(path))
+                psycasts.UnlockPath(path);
+            base.DoEffect(usedBy);
         }
     }
 }

@@ -67,5 +67,11 @@
 
             for (int i = 0; i < 2; i++) FleckMaker.ThrowSmoke(this.RandomLocation(), this.SingleMap, 4f);
         }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_Values.Look(ref this.numStrikes, nameof(this.numStrikes));
+        }
     }
 }
