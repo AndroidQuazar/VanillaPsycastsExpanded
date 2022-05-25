@@ -127,7 +127,7 @@
     <Compile Include="Meditation\StatPart_NearbyFoci.cs" />
     <Compile Include="Meditation\StatPart_NearbyWealth.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_Neuroquake.cs" />
-    <Compile Include="Paths\Archotechist\AbilityExtension_GiveMentalState.cs" />
+    <Compile Include="Common\AbilityExtension_GiveMentalState.cs" />
     <Compile Include="Paths\Archotechist\Ability_NeuralHeatDetonation.cs" />
     <Compile Include="Paths\Archotechist\Ability_AggressiveHeatDump.cs" />
     <Compile Include="Paths\Archotechist\Ability_PsychicShock.cs" />
