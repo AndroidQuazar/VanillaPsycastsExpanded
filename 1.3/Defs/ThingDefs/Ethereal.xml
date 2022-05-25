@@ -92,6 +92,13 @@
         <drawerType>RealtimeOnly</drawerType>
         <comps><li><compClass>VFECore.Abilities.CompAbilitySpawn</compClass></li></comps>
     </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_TreeSpawner</defName>
+        <label>emerging</label>
+        <thingClass>VanillaPsycastsExpanded.Wildspeaker.TreeSpawner</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+    </ThingDef>
 
     <ThingDef ParentName="PawnFlyerBase">
         <defName>VPE_JumpingPawn</defName>

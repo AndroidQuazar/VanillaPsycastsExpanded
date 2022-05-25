@@ -138,6 +138,19 @@
     <label>tree sprout</label>
     <description>Infuses a large, fertile area with potent life energy, causing it to sprout fully grown oak trees.</description>
     <iconPath>Abilities/Wildspeaker/TreeSprout</iconPath>
+    <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+    <castTime>180</castTime>
+    <range>36.9</range>
+    <targetMode>Location</targetMode>
+    <radius>6</radius>
+    <radiusStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </radiusStatFactors>
+    <hasAoE>true</hasAoE>
+    <targetingParametersForAoE>
+      <canTargetLocations>true</canTargetLocations>
+    </targetingParametersForAoE>
+    <castSound>VPE_BrambleMaze_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -148,6 +161,15 @@
         <prerequisites>
           <li>VPE_WordofAnimals</li>
         </prerequisites>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+        <thing>VPE_TreeSpawner</thing>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+        <scale>6</scale>
+        <allTargets>false</allTargets>
+        <tryCenter>true</tryCenter>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
