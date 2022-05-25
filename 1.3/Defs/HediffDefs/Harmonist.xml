@@ -3,7 +3,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_MindControlled</defName>
 		<label>mind control</label>
-		<description>The mind is under control of another</description>
+		<description>Psychically-induced mind control, giving absolute control to another person.</description>
 		<initialSeverity>1</initialSeverity>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
@@ -20,7 +20,7 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>VPE_MindScramble</defName>
         <label>mind scramble</label>
-        <description>The mind is scrambled by attempting to be two people at once</description>
+        <description>Psychically-induced mind scramble, caused by attempting to be two people at once.</description>
         <initialSeverity>1</initialSeverity>
         <stages>
             <li>
@@ -40,7 +40,7 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>VPE_PsychicGuidance</defName>
         <label>psychic guidance</label>
-        <description>Recieving guidance from another</description>
+        <description>Psychically-induced guidance from another person.</description>
         <initialSeverity>1</initialSeverity>
         <stages>
             <li>
@@ -75,7 +75,7 @@
     <HediffDef ParentName="PsycastHediffBase">
         <defName>VPE_PsychicGuide</defName>
         <label>psychic guide</label>
-        <description>Giving guidance to another</description>
+        <description>Psychically-induced absence of mind caused by giving guidance to another person.</description>
         <initialSeverity>1</initialSeverity>
         <stages>
             <li>
@@ -111,7 +111,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Lucky</defName>
 		<label>lucky</label>
-		<description>text.todo</description>
+		<description>Psychically-induced luck that allows this person to always hit their target, and never be hit by their enemy.</description>
 		<comps>
 			<li Class="VFECore.HediffCompProperties_Targeting">
 				<neverMiss>true</neverMiss>
@@ -122,7 +122,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_UnLucky</defName>
 		<label>unlucky</label>
-		<description>text.todo</description>
+		<description>Psychically-induced bad luck that stops this person from ever hitting their target, whilst always being hit by the enemy.</description>
 		<comps>
 			<li Class="VFECore.HediffCompProperties_Targeting">
 				<alwaysHit>true</alwaysHit>

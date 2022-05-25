@@ -347,13 +347,13 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_AnimalOvershield</defName>
 		<label>animal shield</label>
-		<description>text.todo</description>
+		<description>An overshield that protects the animal from any ranged attacks.</description>
 		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_AnimalShield</hediffClass>
 	</HediffDef>
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Smartbuzz</defName>
 		<label>smartbuzz</label>
-		<description>text.todo</description>
+		<description>Psychically-induced feelings of clarity and curiosity. This improves research speed as well as skill gain speed.</description>
 		<stages>
 			<li>
 				<statFactors>
