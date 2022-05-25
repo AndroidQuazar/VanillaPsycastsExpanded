@@ -97,6 +97,7 @@
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_Animal.cs" />
     <Compile Include="Paths\Wildspeaker\Hediff_AnimalShield.cs" />
+    <Compile Include="Paths\Wildspeaker\MentalState_ManhunterTerritorial.cs" />
     <Compile Include="Paths\Wildspeaker\Spawners.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
     <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />

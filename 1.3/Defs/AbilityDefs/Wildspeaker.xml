@@ -218,6 +218,23 @@
     <label>animal allies</label>
     <description>Infuses a large area with harmonic life force that influences animal behavior, causing them to attack those hostile to the caster for a duration scaling with their psychic sensitivity.</description>
     <iconPath>Abilities/Wildspeaker/AnimalAllies</iconPath>
+    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+    <castTime>60</castTime>
+    <durationTime>1800</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <range>35</range>
+    <radius>18</radius>
+    <targetMode>Location</targetMode>
+    <hasAoE>true</hasAoE>
+    <targetingParametersForAoE>
+      <canTargetSelf>False</canTargetSelf>
+      <canTargetHumans>False</canTargetHumans>
+      <canTargetMechs>False</canTargetMechs>
+      <canTargetAnimals>True</canTargetAnimals>
+      <neverTargetIncapacitated>True</neverTargetIncapacitated>
+    </targetingParametersForAoE>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -229,6 +246,16 @@
           <li>VPE_ShieldAnimals</li>
           <li>VPE_Shrineshield</li>
         </prerequisites>
+      </li>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
+        <stateDef>VPE_ManhunterTerritorial</stateDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+        <fleckDef>PsycastPsychicEffect</fleckDef>
+        <scale>18</scale>
+        <allTargets>false</allTargets>
+        <tryCenter>true</tryCenter>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>

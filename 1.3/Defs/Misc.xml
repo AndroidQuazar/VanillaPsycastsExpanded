@@ -82,7 +82,6 @@
         <casualInterruptible>false</casualInterruptible>
         <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
     </JobDef>
-
     <DamageDef>
         <defName>VPE_NeuralHeatBlast</defName>
         <label>neural heat blast</label>
@@ -98,4 +97,15 @@
         <soundExplosion>VPE_NeuralHeat_Blast</soundExplosion>
         <combatLogRules>Damage_Bomb</combatLogRules>
     </DamageDef>
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>VPE_ManhunterTerritorial</defName>
+        <stateClass>VanillaPsycastsExpanded.Wildspeaker.MentalState_ManhunterTerritorial</stateClass>
+        <label>territorial manhunter</label>
+        <category>Aggro</category>
+        <nameColor>(0.9,0.2,0.5)</nameColor>
+        <beginLetter>text.todo</beginLetter>
+        <recoveryMessage>text.todo</recoveryMessage>
+        <baseInspectLine>Maddened: Territorial Manhunter</baseInspectLine>
+        <unspawnedCanDo>false</unspawnedCanDo>
+      </MentalStateDef>
 </Defs>
