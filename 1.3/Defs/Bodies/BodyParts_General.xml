@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <Defs>
-
-
 	<BodyPartDef>
 		<defName>VPE_RockHead</defName>
 		<label>rocky head</label>
@@ -17,7 +14,6 @@
 			<li>SightSource</li>
 		</tags>
 	</BodyPartDef>
-
 	<BodyPartDef>
 		<defName>VPE_RockBody</defName>
 		<label>rocky body</label>
@@ -32,7 +28,6 @@
 		</tags>
 		<frostbiteVulnerability>0.001</frostbiteVulnerability>
 	</BodyPartDef>
-	
 	<BodyPartDef>
 		<defName>VPE_MetalHead</defName>
 		<label>metal head</label>
@@ -47,7 +42,6 @@
 			<li>SightSource</li>
 		</tags>
 	</BodyPartDef>
-
 	<BodyPartDef>
 		<defName>VPE_MetalBody</defName>
 		<label>metal body</label>
@@ -62,8 +56,43 @@
 		</tags>
 		<frostbiteVulnerability>0.001</frostbiteVulnerability>
 	</BodyPartDef>
-
-
-
-
+	<BodyPartDef>
+		<defName>VPE_Skull</defName>
+		<label>skull</label>
+		<hitPoints>25</hitPoints>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<canSuggestAmputation>false</canSuggestAmputation>
+		<tags>
+			<li>ConsciousnessSource</li>
+			<li>SightSource</li>
+		</tags>
+	</BodyPartDef>
+	<BodyPartDef>
+		<defName>VPE_SkeletalLeg</defName>
+		<label>skeletal leg</label>
+		<hitPoints>30</hitPoints>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<tags>
+			<li>MovingLimbCore</li>
+		</tags>
+		<frostbiteVulnerability>0.001</frostbiteVulnerability>
+	</BodyPartDef>
+	<BodyPartDef>
+		<defName>VPE_SkeletalArm</defName>
+		<label>skeletal arm</label>
+		<hitPoints>30</hitPoints>
+		<skinCovered>false</skinCovered>
+		<solid>true</solid>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<tags>
+			<li>ManipulationLimbCore</li>
+		</tags>
+	</BodyPartDef>
 </Defs>

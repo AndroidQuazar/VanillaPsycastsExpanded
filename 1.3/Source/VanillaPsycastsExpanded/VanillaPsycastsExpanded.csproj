@@ -70,6 +70,7 @@
     <Compile Include="Hediff_Overlay.cs" />
     <Compile Include="Events\IncidentWorker_EltexMeteorite.cs" />
     <Compile Include="MapComponent_PsycastsManager.cs" />
+    <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
     <Compile Include="Paths\Archotechist\Ability_BerserkPulse.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnSnowAround.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnTemperatureArea.cs" />

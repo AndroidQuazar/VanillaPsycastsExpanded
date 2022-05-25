@@ -27,7 +27,7 @@
 				<li>
 					<def>VPE_RockBody</def>
 					<customLabel>rocky body</customLabel>
-					<coverage>0.9</coverage>
+					<coverage>0.8</coverage>
 					
 				</li>
 				
@@ -60,7 +60,7 @@
 				<li>
 					<def>VPE_MetalBody</def>
 					<customLabel>metal body</customLabel>
-					<coverage>0.9</coverage>
+					<coverage>0.8</coverage>
 					
 				</li>
 				
