@@ -72,11 +72,13 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofAnimals</defName>
       <label>word of animals</label>
       <description>Soothe an animal using psychic suggestion, either calming a manhunting animal or taming them.</description>
       <iconPath>Abilities/Wildspeaker/WordofAnimals</iconPath>
+      <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_Animal</abilityClass>
+      <castSound>PsychicSoothePulserCast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Wildspeaker</path>
@@ -95,6 +97,8 @@
       <label>manhunter pulse</label>
       <description>Drive animals in a large area into a manhunting rage using a psychic pulse, lasting a minute. Considered a declaration of war if it affects the animals in a caravan.</description>
       <iconPath>Abilities/Wildspeaker/ManhunterPulse</iconPath>
+      <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
+      <castFleckScale>9</castFleckScale>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Wildspeaker</path>
