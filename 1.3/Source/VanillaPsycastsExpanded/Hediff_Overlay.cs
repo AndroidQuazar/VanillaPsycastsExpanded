@@ -7,38 +7,37 @@
     [StaticConstructorOnStartup]
     public abstract class Hediff_Overlay : Hediff_Ability
     {
-        public MaterialPropertyBlock MatPropertyBlock = new MaterialPropertyBlock();
+        public MaterialPropertyBlock MatPropertyBlock = new();
 
         private Material material;
+
         public Material ShieldMat
         {
             get
             {
-                if (material == null)
-                {
-                    material = MaterialPool.MatFrom(OverlayPath, ShaderDatabase.MoteGlow);
-                }
-                return material;
+                if (this.material == null) this.material = MaterialPool.MatFrom(this.OverlayPath, ShaderDatabase.MoteGlow);
+                return this.material;
             }
         }
+
+
+        public virtual float  OverlaySize => 1f;
+        public virtual string OverlayPath { get; }
+
         public override void PostAdd(DamageInfo? dinfo)
         {
             base.PostAdd(dinfo);
-            base.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Add(this);
+            this.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Add(this);
         }
 
         public override void PostRemoved()
         {
             base.PostRemoved();
-            base.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Remove(this);
+            this.pawn.MapHeld.GetComponent<MapComponent_PsycastsManager>().hediffsToDraw.Remove(this);
         }
 
-
-        public virtual float OverlaySize => 1f;
-        public virtual string OverlayPath { get; }
         public virtual void Draw()
         {
-
         }
     }
 }

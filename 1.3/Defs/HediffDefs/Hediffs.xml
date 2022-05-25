@@ -344,7 +344,12 @@
 			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_InfinitePower</compClass></li>
 		</comps>
 	</HediffDef>
-	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_AnimalOvershield</defName>
+		<label>animal shield</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_AnimalShield</hediffClass>
+	</HediffDef>
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Smartbuzz</defName>
 		<label>smartbuzz</label>

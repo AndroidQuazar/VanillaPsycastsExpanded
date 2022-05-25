@@ -150,7 +150,7 @@
     <targetingParametersForAoE>
       <canTargetLocations>true</canTargetLocations>
     </targetingParametersForAoE>
-    <castSound>VPE_BrambleMaze_Cast</castSound>
+    <castSound>VPE_TreeSprout_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -178,6 +178,25 @@
     <label>shield animals</label>
     <description>Generates spherical skipgates on all colony animals in range that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the duration scales with the caster’s psychic sensitivity.</description>
     <iconPath>Abilities/Wildspeaker/ShieldAnimals</iconPath>
+    <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+    <targetMode>Self</targetMode>
+    <radius>12</radius>
+    <hasAoE>true</hasAoE>
+    <castTime>30</castTime>
+    <durationTime>600</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+    <targetingParametersForAoE>
+      <canTargetPawns>true</canTargetPawns>
+      <canTargetAnimals>true</canTargetAnimals>
+      <canTargetHumans>false</canTargetHumans>
+      <canTargetMechs>false</canTargetMechs>
+      <canTargetBuildings>false</canTargetBuildings>
+      <mustBeSameFaction>true</mustBeSameFaction>
+      <ignoreRangeAndSight>true</ignoreRangeAndSight>
+    </targetingParametersForAoE>
+    <castSound>VPE_ShieldAnimals_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -188,6 +207,9 @@
         <prerequisites>
           <li>VPE_ManhunterPulse</li>
         </prerequisites>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+        <hediff>VPE_AnimalOvershield</hediff>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
