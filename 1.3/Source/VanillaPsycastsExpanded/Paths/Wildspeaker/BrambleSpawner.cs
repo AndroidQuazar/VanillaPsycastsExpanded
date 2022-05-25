@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded.Wildspeaker
 {
+    using System.Collections.Generic;
     using HarmonyLib;
     using RimWorld;
     using Verse;
@@ -21,6 +22,26 @@
         {
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad) secondSpawnTickRef(this) = Find.TickManager.TicksGame + 3f.SecondsToTicks();
+            if (!this.CheckSpawnLoc(this.Position, map)) this.Destroy();
+        }
+
+        protected virtual bool CheckSpawnLoc(IntVec3 loc, Map map)
+        {
+            if (loc.GetTerrain(map).fertility == 0f) return false;
+            List<Thing> list = loc.GetThingList(map);
+            for (int i = list.Count - 1; i >= 0; i--)
+            {
+                Thing thing = list[i];
+                if (thing is Plant)
+                {
+                    if (thing.def.plant.IsTree) return false;
+                    thing.Destroy();
+                }
+
+                if (thing.def.IsEdifice()) return false;
+            }
+
+            return true;
         }
     }
 }

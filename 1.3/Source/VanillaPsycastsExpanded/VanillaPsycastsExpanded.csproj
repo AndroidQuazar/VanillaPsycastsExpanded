@@ -96,6 +96,7 @@
     <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="Paths\Wildspeaker\BrambleSpawner.cs" />
+    <Compile Include="Paths\Wildspeaker\WildPlantSpawner.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
     <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />
     <Compile Include="UI\Command_Ability_Psycast.cs" />

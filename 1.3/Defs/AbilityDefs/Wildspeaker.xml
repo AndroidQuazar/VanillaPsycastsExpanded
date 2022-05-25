@@ -40,6 +40,16 @@
       <label>crop burst</label>
       <description>Infuses a fertile area with life energy, causing it to sprout plantable crops that finish growth in relation to the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Wildspeaker/CropBurst</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
+      <castTime>120</castTime>
+      <range>25</range>
+      <targetMode>Location</targetMode>
+      <radius>6</radius>
+      <hasAoE>true</hasAoE>
+      <targetingParametersForAoE>
+        <canTargetLocations>true</canTargetLocations>
+      </targetingParametersForAoE>
+      <castSound>VPE_BrambleMaze_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Wildspeaker</path>
@@ -50,6 +60,15 @@
           <prerequisites>
             <li>VPE_BrambleMaze</li>
           </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Spawn">
+          <thing>VPE_WildPlantSpawner</thing>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+          <fleckDef>PsycastPsychicEffect</fleckDef>
+          <scale>6</scale>
+          <allTargets>false</allTargets>
+          <tryCenter>true</tryCenter>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
