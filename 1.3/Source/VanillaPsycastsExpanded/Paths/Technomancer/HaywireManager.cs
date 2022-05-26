@@ -25,20 +25,6 @@
 
         public static bool ShouldTargetAllies(Thing t) => HaywireThings.Contains(t);
 
-        [HarmonyPatch(typeof(Pawn), nameof(Pawn.SpawnSetup))]
-        [HarmonyPostfix]
-        public static void PawnPostSpawned(Pawn __instance)
-        {
-            if (__instance.health.hediffSet.GetAllComps().OfType<HediffComp_Haywire>().Any()) HaywireThings.Add(__instance);
-        }
-
-        [HarmonyPatch(typeof(Pawn), nameof(Pawn.DeSpawn))]
-        [HarmonyPostfix]
-        public static void PawnPostDeSpawned(Pawn __instance)
-        {
-            if (HaywireThings.Contains(__instance)) HaywireThings.Remove(__instance);
-        }
-
         [HarmonyPatch(typeof(AttackTargetsCache), nameof(AttackTargetsCache.GetPotentialTargetsFor))]
         [HarmonyPostfix]
         public static void ChangeTargets(IAttackTargetSearcher th, ref List<IAttackTarget> __result, AttackTargetsCache __instance)

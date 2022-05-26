@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>Darkvision</defName>
+      <label>darkvision</label>
+      <description>Gives the targeted pawn a nictitating membrane that allows them to see equally well in darkness and daytime. Duration scales with the target's psychic sensitivity.</description>
+      <iconPath>Abilities/Nightstalker/Darkvision</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <castTime>180</castTime>
+      <range>5</range>
+      <durationTime>60000</durationTime>
+      <targetMode>Humanlike</targetMode>
+      <targetingParameters>
+          <canTargetSelf>True</canTargetSelf>
+          <canTargetMechs>False</canTargetMechs>
+          <canTargetAnimals>False</canTargetAnimals>
+          <canTargetBuildings>False</canTargetBuildings>
+      </targetingParameters>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>VPE_Nightstalker</path>
+          <level>1</level>
+          <order>1</order>
+          <psyfocusCost>0.3</psyfocusCost>
+          <entropyGain>0</entropyGain>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+            <hediff>VPE_Darkvision</hediff>
+            <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
+</Defs>

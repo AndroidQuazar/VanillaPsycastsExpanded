@@ -24,6 +24,7 @@
         public static HediffDef VPE_Lucky;
         public static HediffDef VPE_UnLucky;
         public static HediffDef VPE_Essence;
+        public static HediffDef VPE_Darkvision_Display;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -83,6 +84,7 @@
         public static HistoryEventDef    VPE_SoldEltex;
         public static PawnKindDef        VPE_RockConstruct;
         public static PawnKindDef        VPE_SteelConstruct;
+        public static ThoughtDef         EnvironmentDark;
 
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;

@@ -376,4 +376,37 @@
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 		</comps>
 	</HediffDef>
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Darkvision</defName>
+		<label>darkvision</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Nightstalker.Hediff_Darkvision</hediffClass>
+		<woundAnchorRange>0</woundAnchorRange>
+		<displayWound>true</displayWound>
+		<stages>
+			<li>
+				<statFactors>
+					<ShootingAccuracyOutdoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</ShootingAccuracyOutdoorsDarkOffset>
+					<ShootingAccuracyOutdoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</ShootingAccuracyOutdoorsLitOffset>
+					<ShootingAccuracyIndoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</ShootingAccuracyIndoorsDarkOffset>
+					<ShootingAccuracyIndoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</ShootingAccuracyIndoorsLitOffset>
+					<MeleeHitChanceOutdoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeHitChanceOutdoorsDarkOffset>
+					<MeleeHitChanceOutdoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeHitChanceOutdoorsLitOffset>
+					<MeleeHitChanceIndoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeHitChanceIndoorsDarkOffset>
+					<MeleeHitChanceIndoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeHitChanceIndoorsLitOffset>
+					<MeleeDodgeChanceOutdoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeDodgeChanceOutdoorsDarkOffset>
+					<MeleeDodgeChanceOutdoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeDodgeChanceOutdoorsLitOffset>
+					<MeleeDodgeChanceIndoorsDarkOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeDodgeChanceIndoorsDarkOffset>
+					<MeleeDodgeChanceIndoorsLitOffset MayRequire="Ludeon.RimWorld.Ideology">0</MeleeDodgeChanceIndoorsLitOffset>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VPE_Darkvision_Display</defName>
+		<label>darkvision</label>
+		<description>text.todo</description>
+		<woundAnchorRange>0</woundAnchorRange>
+		<displayWound>true</displayWound>
+	</HediffDef>
 </Defs>

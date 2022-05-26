@@ -148,6 +148,14 @@
       <altBackground>UI/AlternativeBackgrounds/PathBG_Technomancer</altBackground>
       <tab>Psycasts</tab>
     </VanillaPsycastsExpanded.PsycasterPathDef>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+      <defName>VPE_Nightstalker</defName>
+      <label>Nightstalker</label>
+      <description>Nightstalkers are warriors of the dark, gaining many combat related benefits when shrouded in the shadows.</description>
+      <background>UI/Backgrounds/NightstalkerPath</background>
+      <altBackground>UI/AlternativeBackgrounds/PathBG_Nightstalker</altBackground>
+      <tab>Psycasts</tab>
+    </VanillaPsycastsExpanded.PsycasterPathDef>
     <!-- <VanillaPsycastsExpanded.PsycasterPathDef>
       <defName>VPE_Animat</defName>
       <label>animat</label>
