@@ -9,6 +9,7 @@
       <targetMode>Self</targetMode>
       <radius>8.9</radius>
       <castTime>120</castTime>
+	  <cooldownTime>600</cooldownTime>
       <castSound>VPE_PlantTimeskip_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -36,6 +37,7 @@
       <targetMode>Self</targetMode>
       <castTime>600</castTime>
       <castSound>VPE_TimeskipMeditation_Cast</castSound>
+	  <cooldownTime>6000</cooldownTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
