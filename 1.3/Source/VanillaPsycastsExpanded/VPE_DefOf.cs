@@ -23,6 +23,7 @@
         public static HediffDef VPE_InfinitePower;
         public static HediffDef VPE_Lucky;
         public static HediffDef VPE_UnLucky;
+        public static HediffDef VPE_Essence;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -67,6 +68,7 @@
         public static StatDef     VPE_PsychicEntropyMinimum;
         public static JobDef      VPE_UseSkipdoor;
         public static JobDef      VPE_StandFreeze;
+        public static JobDef      VPE_EssenceTransfer;
         public static EffecterDef VPE_Haywire;
 
 

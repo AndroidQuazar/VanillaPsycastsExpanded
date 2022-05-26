@@ -287,6 +287,33 @@
     <label>essence transfer</label>
     <description>Infuses the life force of another nearby person into a colony animal, linking them and putting the caster in a 6 hour coma. Should the linked person die, the linked animal will go to their side and transfer their own harmonized life essence to them, dying when finished. Should the linked animal die first, the effect is lost and there can only be one link at a time.</description>
     <iconPath>Abilities/Wildspeaker/EssenceTransfer</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_EssenceTransfer</abilityClass>
+    <targetCount>2</targetCount>
+    <targetModes>
+      <li>Humanlike</li>
+      <li>Pawn</li>
+    </targetModes>
+    <targetingParametersList>
+      <li>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
+      <li>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetHumans>False</canTargetHumans>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
+    </targetingParametersList>
+    <castTime>720</castTime>
+    <range>3</range>
+    <radius>99999999</radius>
+    <castSound>VPE_EssenceTransfer_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -297,6 +324,9 @@
         <prerequisites>
           <li>VPE_AnimalAllies</li>
         </prerequisites>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+        <hediff>VPE_Essence</hediff>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>

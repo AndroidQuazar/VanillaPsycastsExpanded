@@ -100,4 +100,20 @@
       </li>
     </subSounds>
   </SoundDef>
+  <SoundDef>
+    <defName>VPE_EssenceTransfer_Cast</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Wildspeaker/Psycast_EssenceTransfer_Cast_01a</clipPath>
+          </li>
+        </grains>
+        <volumeRange>42</volumeRange>
+        <distRange>20~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>
