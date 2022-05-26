@@ -219,7 +219,7 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_PsychicDrone</defName>
 		<label>psychic drone</label>
@@ -232,7 +232,7 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_IceShield</defName>
 		<label>ice shield</label>
@@ -245,7 +245,7 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_FrostRay</defName>
 		<label>frost ray</label>
@@ -256,7 +256,7 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_IceBlock</defName>
 		<label>frozen solid</label>
@@ -285,7 +285,7 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef>
 		<defName>VPE_Blizzard</defName>
 		<label>blizzard</label>
@@ -324,7 +324,9 @@
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_Haywire</stateEffecter>
 			</li>
-			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_Haywire</compClass></li>
+			<li>
+				<compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_Haywire</compClass>
+			</li>
 		</comps>
 	</HediffDef>
 
@@ -341,7 +343,9 @@
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_Haywire</stateEffecter>
 			</li>
-			<li><compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_InfinitePower</compClass></li>
+			<li>
+				<compClass>VanillaPsycastsExpanded.Technomancer.HediffComp_InfinitePower</compClass>
+			</li>
 		</comps>
 	</HediffDef>
 	<HediffDef ParentName="PsycastHediffBase">
@@ -362,5 +366,14 @@
 				</statFactors>
 			</li>
 		</stages>
+	</HediffDef>
+	<HediffDef>
+		<defName>VPE_Essence</defName>
+		<label>Essence of </label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_Essence</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+		</comps>
 	</HediffDef>
 </Defs>

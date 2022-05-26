@@ -23,6 +23,7 @@
         public static HediffDef VPE_InfinitePower;
         public static HediffDef VPE_Lucky;
         public static HediffDef VPE_UnLucky;
+        public static HediffDef VPE_Essence;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -41,6 +42,8 @@
         public static ThingDef VPE_Mote_Cast;
         public static ThingDef VPE_Psyring;
         public static ThingDef Plant_Brambles;
+        public static ThingDef VPE_Shrineshield_Small;
+        public static ThingDef VPE_Shrineshield_Large;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
@@ -65,12 +68,14 @@
         public static StatDef     VPE_PsychicEntropyMinimum;
         public static JobDef      VPE_UseSkipdoor;
         public static JobDef      VPE_StandFreeze;
+        public static JobDef      VPE_EssenceTransfer;
         public static EffecterDef VPE_Haywire;
 
 
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MentalStateDef     VPE_Wander_Sad;
+        public static MentalStateDef     VPE_ManhunterTerritorial;
         public static EffecterDef        Interceptor_BlockedProjectilePsychic;
         public static EffecterDef        VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef    VPE_Foretelling;

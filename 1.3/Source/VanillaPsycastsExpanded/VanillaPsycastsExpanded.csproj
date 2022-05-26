@@ -97,7 +97,11 @@
     <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_Animal.cs" />
+    <Compile Include="Paths\Wildspeaker\Ability_ShrineShield.cs" />
+    <Compile Include="Paths\Wildspeaker\Ability_SummonPack.cs" />
+    <Compile Include="Paths\Wildspeaker\CompPlaySound.cs" />
     <Compile Include="Paths\Wildspeaker\Hediff_AnimalShield.cs" />
+    <Compile Include="Paths\Wildspeaker\Hediff_Essence.cs" />
     <Compile Include="Paths\Wildspeaker\MentalState_ManhunterTerritorial.cs" />
     <Compile Include="Paths\Wildspeaker\Spawners.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
@@ -224,6 +228,5 @@
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

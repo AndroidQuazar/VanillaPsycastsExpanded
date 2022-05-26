@@ -264,6 +264,11 @@
     <label>shrineshield</label>
     <description>Generate a spherical skipgate on a nature shrine that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the size of the sphere depends on the size of the shrine.</description>
     <iconPath>Abilities/Wildspeaker/Shrineshield</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_ShrineShield</abilityClass>
+    <castTime>60</castTime>
+    <targetMode>Self</targetMode>
+    <castSound>VPE_Shrineshield_Cast</castSound>
+    <durationTime>1200</durationTime>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -282,6 +287,33 @@
     <label>essence transfer</label>
     <description>Infuses the life force of another nearby person into a colony animal, linking them and putting the caster in a 6 hour coma. Should the linked person die, the linked animal will go to their side and transfer their own harmonized life essence to them, dying when finished. Should the linked animal die first, the effect is lost and there can only be one link at a time.</description>
     <iconPath>Abilities/Wildspeaker/EssenceTransfer</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_EssenceTransfer</abilityClass>
+    <targetCount>2</targetCount>
+    <targetModes>
+      <li>Humanlike</li>
+      <li>Pawn</li>
+    </targetModes>
+    <targetingParametersList>
+      <li>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>False</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
+      <li>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetMechs>False</canTargetMechs>
+        <canTargetHumans>False</canTargetHumans>
+        <canTargetBuildings>False</canTargetBuildings>
+      </li>
+    </targetingParametersList>
+    <castTime>720</castTime>
+    <range>3</range>
+    <radius>99999999</radius>
+    <castSound>VPE_EssenceTransfer_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -293,6 +325,9 @@
           <li>VPE_AnimalAllies</li>
         </prerequisites>
       </li>
+      <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+        <hediff>VPE_Essence</hediff>
+      </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
@@ -300,6 +335,14 @@
     <label>summon pack</label>
     <description>Sends out a pulse of lifeforce into the region, inducing territorial manhunting aggression into numerous animals that will appear to defend the colony. Once all invaders are defeated, the animals will return to their homes. The distance the pulse travels, and with that the relative strength of the creatures are influenced by the caster’s psychic sensitivity.</description>
     <iconPath>Abilities/Wildspeaker/SummonPack</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_SummonPack</abilityClass>
+    <castTime>720</castTime>
+    <targetMode>Self</targetMode>
+    <power>8</power>
+    <powerStatFactors>
+      <PsychicSensitivity>100</PsychicSensitivity>
+    </powerStatFactors>
+    <castSound>VPE_SummonPack_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
