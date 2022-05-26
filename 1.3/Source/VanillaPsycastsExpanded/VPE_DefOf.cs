@@ -75,6 +75,7 @@
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MentalStateDef     VPE_Wander_Sad;
+        public static MentalStateDef     VPE_ManhunterTerritorial;
         public static EffecterDef        Interceptor_BlockedProjectilePsychic;
         public static EffecterDef        VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef    VPE_Foretelling;

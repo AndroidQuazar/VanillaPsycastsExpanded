@@ -98,6 +98,7 @@
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_Animal.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_ShrineShield.cs" />
+    <Compile Include="Paths\Wildspeaker\Ability_SummonPack.cs" />
     <Compile Include="Paths\Wildspeaker\CompPlaySound.cs" />
     <Compile Include="Paths\Wildspeaker\Hediff_AnimalShield.cs" />
     <Compile Include="Paths\Wildspeaker\Hediff_Essence.cs" />

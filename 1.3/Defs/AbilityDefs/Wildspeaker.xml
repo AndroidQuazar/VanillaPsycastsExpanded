@@ -335,6 +335,14 @@
     <label>summon pack</label>
     <description>Sends out a pulse of lifeforce into the region, inducing territorial manhunting aggression into numerous animals that will appear to defend the colony. Once all invaders are defeated, the animals will return to their homes. The distance the pulse travels, and with that the relative strength of the creatures are influenced by the caster’s psychic sensitivity.</description>
     <iconPath>Abilities/Wildspeaker/SummonPack</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_SummonPack</abilityClass>
+    <castTime>720</castTime>
+    <targetMode>Self</targetMode>
+    <power>8</power>
+    <powerStatFactors>
+      <PsychicSensitivity>100</PsychicSensitivity>
+    </powerStatFactors>
+    <castSound>VPE_SummonPack_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
