@@ -41,6 +41,8 @@
         public static ThingDef VPE_Mote_Cast;
         public static ThingDef VPE_Psyring;
         public static ThingDef Plant_Brambles;
+        public static ThingDef VPE_Shrineshield_Small;
+        public static ThingDef VPE_Shrineshield_Large;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

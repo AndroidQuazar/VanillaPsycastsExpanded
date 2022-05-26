@@ -82,7 +82,11 @@
         <thingClass>VanillaPsycastsExpanded.Wildspeaker.BrambleSpawner</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
-        <comps><li><compClass>VFECore.Abilities.CompDuration</compClass></li></comps>
+        <comps>
+            <li>
+                <compClass>VFECore.Abilities.CompDuration</compClass>
+            </li>
+        </comps>
     </ThingDef>
     <ThingDef ParentName="EtherealThingBase">
         <defName>VPE_WildPlantSpawner</defName>
@@ -90,7 +94,11 @@
         <thingClass>VanillaPsycastsExpanded.Wildspeaker.WildPlantSpawner</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
-        <comps><li><compClass>VFECore.Abilities.CompAbilitySpawn</compClass></li></comps>
+        <comps>
+            <li>
+                <compClass>VFECore.Abilities.CompAbilitySpawn</compClass>
+            </li>
+        </comps>
     </ThingDef>
     <ThingDef ParentName="EtherealThingBase">
         <defName>VPE_TreeSpawner</defName>
@@ -99,7 +107,71 @@
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
     </ThingDef>
-
+    <ThingDef ParentName="EtherealThingBase" Name="ShrineShieldBase" Abstract="True">
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Ethereal/PsychicShieldRipples</texPath>
+            <shaderType>BulletShieldPsychic</shaderType>
+            <color>(0, 255, 0)</color>
+            <shaderParameters>
+                <_PulseInterval>0.5</_PulseInterval>
+                <_DistortionScale>0.5</_DistortionScale>
+                <_DistortionIntensity>0.15</_DistortionIntensity>
+                <_MinAlpha>0.1</_MinAlpha>
+                <_MaxAlpha>0.3</_MaxAlpha>
+                <_DistortionTex>/Things/Mote/SmokeTiled</_DistortionTex>
+            </shaderParameters>
+        </graphicData>
+        <comps>
+            <li>
+                <compClass>VFECore.Abilities.CompDuration</compClass>
+            </li>
+            <li Class="VanillaPsycastsExpanded.Wildspeaker.CompProperties_PlaySound">
+                <sustainer>VPE_Shrineshield_Sustainer</sustainer>
+                <endSound>VPE_Shrineshield_End</endSound>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef ParentName="ShrineShieldBase">
+        <defName>VPE_Shrineshield_Small</defName>
+        <label>small shrineshield</label>
+        <graphicData>
+            <drawSize>11.8</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_ProjectileInterceptor">
+                <radius>5.9</radius>
+                <interceptGroundProjectiles>true</interceptGroundProjectiles>
+                <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+                <interceptOutgoingProjectiles>true</interceptOutgoingProjectiles>
+                <color>(0.0, 1, 0.0)</color>
+                <minAlpha>0.2</minAlpha>
+                <interceptEffect>Interceptor_BlockedProjectilePsychic</interceptEffect>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef ParentName="ShrineShieldBase">
+        <defName>VPE_Shrineshield_Large</defName>
+        <label>large shrineshield</label>
+        <graphicData>
+            <drawSize>23.8</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_ProjectileInterceptor">
+                <radius>11.9</radius>
+                <interceptGroundProjectiles>true</interceptGroundProjectiles>
+                <interceptNonHostileProjectiles>true</interceptNonHostileProjectiles>
+                <interceptOutgoingProjectiles>true</interceptOutgoingProjectiles>
+                <color>(0.0, 1, 0.0)</color>
+                <minAlpha>0.2</minAlpha>
+                <interceptEffect>Interceptor_BlockedProjectilePsychic</interceptEffect>
+            </li>
+        </comps>
+    </ThingDef>
     <ThingDef ParentName="PawnFlyerBase">
         <defName>VPE_JumpingPawn</defName>
         <thingClass>VanillaPsycastsExpanded.JumpingPawn</thingClass>

@@ -264,6 +264,11 @@
     <label>shrineshield</label>
     <description>Generate a spherical skipgate on a nature shrine that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the size of the sphere depends on the size of the shrine.</description>
     <iconPath>Abilities/Wildspeaker/Shrineshield</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_ShrineShield</abilityClass>
+    <castTime>60</castTime>
+    <targetMode>Self</targetMode>
+    <castSound>VPE_Shrineshield_Cast</castSound>
+    <durationTime>1200</durationTime>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
