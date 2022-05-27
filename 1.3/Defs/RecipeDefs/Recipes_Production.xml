@@ -20,12 +20,16 @@
     <skillRequirements>
       <Crafting>6</Crafting>
     </skillRequirements>
+    <recipeUsers>
+      <li>HandTailoringBench</li>
+      <li>ElectricTailoringBench</li>
+    </recipeUsers>
   </RecipeDef>
   
   <RecipeDef Name="VPE_CraftEltexGearSmithy" ParentName="VPE_CraftEltexGear" Abstract = "True">
     <effectWorking>Smith</effectWorking>
     <soundWorking>Recipe_Smith</soundWorking>
-    <recipeUsers>
+    <recipeUsers Inherit = "False">
       <li>ElectricSmithy</li>
       <li>FueledSmithy</li>
     </recipeUsers>
@@ -210,7 +214,7 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Apparel_PsyfocusShirt>1</Apparel_PsyfocusShirt>
+      <MeleeWeapon_PsyfocusStaff>1</MeleeWeapon_PsyfocusStaff>
     </products>
   </RecipeDef>
  
