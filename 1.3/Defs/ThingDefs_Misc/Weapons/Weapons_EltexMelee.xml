@@ -8,6 +8,7 @@
     <equippedAngleOffset>-65</equippedAngleOffset>
     <burnableByRecipe>false</burnableByRecipe>
 	<techLevel>Medieval</techLevel>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeMaker>
     <skillRequirements>
       <Crafting>6</Crafting>
@@ -32,6 +33,7 @@
     <equippedAngleOffset>-65</equippedAngleOffset>
     <burnableByRecipe>false</burnableByRecipe>
 	<techLevel>Medieval</techLevel>
+	<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
     <recipeMaker>
     <skillRequirements>
       <Crafting>6</Crafting>
