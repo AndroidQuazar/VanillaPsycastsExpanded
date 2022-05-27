@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofTrust</defName>
       <label>word of trust</label>
       <description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
       <iconPath>Abilities/Archon/WordofTrust</iconPath>
-	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
-	  <targetMode>Pawn</targetMode>
-	  <castTime>120</castTime>
-	  <distanceToTarget>1.5</distanceToTarget>
-	  <warmupMote>Mote_WarmupWordOf</warmupMote>
-	  <warmupSound>Psycast_WordOf_Warmup</warmupSound>
-	  <drawAimPie>false</drawAimPie>
-	  <cooldownTime>600</cooldownTime>
 	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <range>30</range>
       <targetingParameters>
@@ -29,23 +21,22 @@
           <entropyGain>0</entropyGain>
         </li>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_AbilityOffsetPrisonerResistance">
-			<offset>-12</offset>
+			<offset>-20</offset>
 		</li>
 		<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
 			<interactionDef>WordOfTrust</interactionDef>
 		</li>
-			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
-				<fleckDef>PsycastPsychicEffect</fleckDef>
-				<sound>Psycast_WordOf_Effect</sound>
-			</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
       <defName>VPE_WordofProductivity</defName>
       <label>word of productivity</label>
       <description>Using words of motivation with a heaping boost to metabolism, makes the touched target a more productive member of society for the next few days. Considered a hostile action and duration is affected by the target’s psychic sensitivity.</description>
       <iconPath>Abilities/Archon/WordofProductivity</iconPath>
+	  <durationTime>300000</durationTime>
+	  <goodwillImpact>-10</goodwillImpact>
+	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archon</path>
@@ -57,8 +48,12 @@
             <li>VPE_WordofTrust</li>
           </prerequisites>
         </li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_Productivity</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_BlindingPulse</defName>
       <label>blinding pulse</label>

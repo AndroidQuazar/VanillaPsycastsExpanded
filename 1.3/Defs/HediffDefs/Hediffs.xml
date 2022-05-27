@@ -409,4 +409,18 @@
 		<woundAnchorRange>0</woundAnchorRange>
 		<displayWound>true</displayWound>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Productivity</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<hungerRateFactor>1.25</hungerRateFactor>
+				<statOffsets>
+					<WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

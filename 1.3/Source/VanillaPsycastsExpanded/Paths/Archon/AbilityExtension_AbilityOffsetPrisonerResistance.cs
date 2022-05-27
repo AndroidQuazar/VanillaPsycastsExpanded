@@ -18,7 +18,8 @@
 				Pawn pawn = target.Thing as Pawn;
 				if (pawn != null)
 				{
-					pawn.guest.resistance = Mathf.Max(pawn.guest.resistance + offset, 0f);
+					var toOffset = offset * pawn.GetStatValue(StatDefOf.PsychicSensitivity);
+					pawn.guest.resistance = Mathf.Max(pawn.guest.resistance + toOffset, 0f);
 				}
 			}
         }
