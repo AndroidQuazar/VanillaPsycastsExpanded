@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofTrust</defName>
       <label>word of trust</label>
       <description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
       <iconPath>Abilities/Archon/WordofTrust</iconPath>
+	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+	  <targetMode>Pawn</targetMode>
+	  <castTime>120</castTime>
+	  <distanceToTarget>1.5</distanceToTarget>
+	  <warmupMote>Mote_WarmupWordOf</warmupMote>
+	  <warmupSound>Psycast_WordOf_Warmup</warmupSound>
+	  <drawAimPie>false</drawAimPie>
+	  <cooldownTime>600</cooldownTime>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+	  <range>30</range>
+      <targetingParameters>
+        <onlyTargetPrisonersOfColony>True</onlyTargetPrisonersOfColony>
+        <neverTargetIncapacitated>True</neverTargetIncapacitated>
+      </targetingParameters>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Archon</path>
@@ -13,8 +28,19 @@
           <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>0</entropyGain>
         </li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_AbilityOffsetPrisonerResistance">
+			<offset>-12</offset>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
+			<interactionDef>WordOfTrust</interactionDef>
+		</li>
+			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>Psycast_WordOf_Effect</sound>
+			</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+	
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_WordofProductivity</defName>
       <label>word of productivity</label>
