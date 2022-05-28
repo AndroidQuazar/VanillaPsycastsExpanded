@@ -111,9 +111,16 @@
 					<minAge>0</minAge>
 					<def>AnimalAdult</def>
 				
+					<soundWounded>VPE_Pawn_Skeleton_Wounded</soundWounded>
+					<soundDeath>VPE_Pawn_Skeleton_Death</soundDeath>
+					<soundCall>VPE_Pawn_Skeleton_Call</soundCall>
+				
 				</li>
 			</lifeStageAges>
-			
+			<soundCallIntervalRange>
+				<min>12000</min>
+				<max>20000</max>
+			</soundCallIntervalRange>
 		</race>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
@@ -126,7 +133,7 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Effects/Technomancer/SteelConstruct/SteelConstruct</texPath>
+					<texPath>Effects/Necropath/Enthrall/Soulshade</texPath>
 					<drawSize>2</drawSize>
 				</bodyGraphicData>
 			</li>
