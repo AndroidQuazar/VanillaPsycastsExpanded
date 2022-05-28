@@ -24,6 +24,7 @@
       <li>HandTailoringBench</li>
       <li>ElectricTailoringBench</li>
     </recipeUsers>
+	<useIngredientsForColor>false</useIngredientsForColor>
   </RecipeDef>
   
   <RecipeDef Name="VPE_CraftEltexGearSmithy" ParentName="VPE_CraftEltexGear" Abstract = "True">
@@ -70,7 +71,6 @@
     <description>Make an eltex mask.</description>
     <jobString>Making eltex mask.</jobString>
     <workAmount>8000</workAmount>
-    <useIngredientsForColor>false</useIngredientsForColor>
     <ingredients>
       <li>
         <filter>
@@ -101,7 +101,6 @@
     <description>Make an eltex cape.</description>
     <jobString>Making eltex cape.</jobString>
     <workAmount>16000</workAmount>
-    <useIngredientsForColor>false</useIngredientsForColor>
     <ingredients>
       <li>
         <filter>
