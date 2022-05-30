@@ -40,7 +40,7 @@
 	<ThingDef ParentName="VPE_ConstructBase">
 		<defName>VPE_SteelConstruct</defName>
 		<label>steel construct</label>
-		<description>A piece of steel slag, animated by powerful psychic energy. It will always follow the summoner who gave it life, and will defend them even if it means death.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;Constructs generate constant heat for the caster that summoned them. Keeping too many constructs alive could prevent the psycaster from casting other abilities.</description>
+		<description>A piece of steel slag, animated by powerful psychic energy. It will engage nearby threats and defend the master from any harm that may come to them.\n\n&lt;color=#E5E54C&gt;Gameplay effect:&lt;/color&gt;Constructs generate constant heat for the caster that summoned them. Keeping too many constructs alive could prevent the psycaster from casting other abilities.</description>
 		<statBases>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>250</ComfyTemperatureMax>
