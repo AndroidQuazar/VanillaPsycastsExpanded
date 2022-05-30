@@ -42,17 +42,20 @@
 					return false;
 				}
 			}
-			return Valid(target, ability);
+			return Valid( new[] { target.ToGlobalTargetInfo(target.Thing.Map) }, ability);
         }
 
-        public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
+        public override bool Valid(GlobalTargetInfo[] targets, Ability ability, bool throwMessages = false)
         {
-			Pawn pawn = target.Pawn;
-			if (pawn != null && !AbilityUtility.ValidateHasResistance(pawn, throwMessages))
-			{
-				return false;
+			foreach (var target in targets)
+            {
+				Pawn pawn = target.Thing as Pawn;
+				if (pawn != null && !AbilityUtility.ValidateHasResistance(pawn, throwMessages))
+				{
+					return false;
+				}
 			}
-			return true;
-		}
+            return base.Valid(targets, ability, throwMessages);
+        }
 	}
 }

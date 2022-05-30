@@ -43,14 +43,18 @@ using static UnityEngine.GraphicsBuffer;
 
         }
 
-        public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
+        public override bool Valid(GlobalTargetInfo[] targets, Ability ability, bool throwMessages = false)
         {
-			Pawn pawn = target.Pawn;
-			if (pawn != null && !AbilityUtility.ValidateNoMentalState(pawn, throwMessages))
-			{
-				return false;
+			foreach (var target in targets)
+            {
+				Pawn pawn = target.Thing as Pawn;
+				if (pawn != null && !AbilityUtility.ValidateNoMentalState(pawn, throwMessages))
+				{
+					return false;
+				}
 			}
-			return true;
-		}
+
+			return base.Valid(targets, ability, throwMessages);
+        }
 	}
 }

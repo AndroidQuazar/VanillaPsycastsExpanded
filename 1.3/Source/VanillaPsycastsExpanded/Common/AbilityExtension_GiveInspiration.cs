@@ -27,17 +27,21 @@
             }
         }
 
-        public override bool CanApplyOn(LocalTargetInfo target, Ability ability, bool throwMessages = false) => this.Valid(target, ability);
-        public override bool Valid(LocalTargetInfo target, Ability ability, bool throwMessages = false)
-        {
-            Pawn pawn = target.Pawn;
-            if (pawn != null && (!this.onlyPlayer || pawn.Faction is {IsPlayer: true}))
-            {
-                if (!AbilityUtility.ValidateNoInspiration(pawn, throwMessages)) return false;
-                if (!AbilityUtility.ValidateCanGetInspiration(pawn, throwMessages)) return false;
-            }
+        public override bool CanApplyOn(LocalTargetInfo target, Ability ability, bool throwMessages = false) => 
+            this.Valid(new[] { target.ToGlobalTargetInfo(target.Thing.Map) }, ability);
 
-            return base.Valid(target, ability, throwMessages);
+        public override bool Valid(GlobalTargetInfo[] targets, Ability ability, bool throwMessages = false)
+        {
+            foreach (var target in targets)
+            {
+                Pawn pawn = target.Thing as Pawn;
+                if (pawn != null && (!this.onlyPlayer || pawn.Faction is { IsPlayer: true }))
+                {
+                    if (!AbilityUtility.ValidateNoInspiration(pawn, throwMessages)) return false;
+                    if (!AbilityUtility.ValidateCanGetInspiration(pawn, throwMessages)) return false;
+                }
+            }
+            return base.Valid(targets, ability, throwMessages);
         }
     }
 }
