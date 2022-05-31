@@ -36,7 +36,10 @@
         }
         private void AddEntropy()
         {
-            pawn.psychicEntropy.TryAddEntropy(1f, overLimit: true);
+            if (Find.TickManager.TicksGame % 10 == 0)
+            {
+                pawn.psychicEntropy.TryAddEntropy(1f, overLimit: false);
+            }
             if (pawn.psychicEntropy.EntropyValue >= pawn.psychicEntropy.MaxEntropy)
             {
                 Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);

@@ -46,7 +46,7 @@
 
         public List<Pawn> GetLivingFamilyMembers(Pawn pawn)
         {
-            return pawn.relations.FamilyByBlood.Where(x => !x.Dead && !x.Spawned).ToList();
+            return pawn.relations.FamilyByBlood.Where(x => !x.Dead).ToList();
         }
         public override void Cast(params GlobalTargetInfo[] targets)
         {

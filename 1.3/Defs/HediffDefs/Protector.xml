@@ -6,7 +6,7 @@
 		<description>Psychically-induced healing boost.</description>
 		<stages>
 			<li>
-				<naturalHealingFactor>2.5</naturalHealingFactor>
+				<naturalHealingFactor>3</naturalHealingFactor>
 			</li>
 		</stages>
 	</HediffDef>

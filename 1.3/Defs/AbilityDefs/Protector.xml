@@ -242,11 +242,11 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_RegrowLimbs</defName>
       <label>regrow limbs</label>
-      <description>Induces a complex form of psychic rejuvenation that targets the subject’s limbs, namely those that are missing. The effect is gradual over a minute’s time and often described as “wildly uncomfortable” as it overstimulates their phantom limb syndrome.</description>
+      <description>Induces a complex form of psychic rejuvenation that targets the subject’s limbs, namely those that are missing. The effect is gradual over a full day’s time and often described as “wildly uncomfortable” as it overstimulates their phantom limb syndrome.</description>
       <iconPath>Abilities/Protector/RegrowLimbs</iconPath>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <castTime>120</castTime>
-	  <durationTime>3600</durationTime>
+	  <durationTime>60000</durationTime>
 	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
 	  <targetMode>Pawn</targetMode>
 	  <range>999999</range>

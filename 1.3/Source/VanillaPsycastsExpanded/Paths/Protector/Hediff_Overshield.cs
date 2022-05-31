@@ -26,13 +26,16 @@
         public override void Tick()
         {
             base.Tick();
-			foreach (var thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, OverlaySize + 1, true))
+            if (pawn.Map != null)
             {
-                if (thing is Projectile projectile)
+                foreach (var thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, OverlaySize + 1, true))
                 {
-                    if (CanDestroyProjectile(projectile))
+                    if (thing is Projectile projectile)
                     {
-                        DestroyProjectile(projectile);
+                        if (CanDestroyProjectile(projectile))
+                        {
+                            DestroyProjectile(projectile);
+                        }
                     }
                 }
             }

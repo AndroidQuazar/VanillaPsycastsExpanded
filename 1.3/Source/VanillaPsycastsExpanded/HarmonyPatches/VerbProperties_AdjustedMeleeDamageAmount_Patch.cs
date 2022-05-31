@@ -11,7 +11,7 @@
         public static bool multiplyByPawnMeleeSkill;
         private static void Postfix(ref float __result, Verb ownerVerb, Pawn attacker)
         {
-            if (multiplyByPawnMeleeSkill)
+            if (attacker != null && multiplyByPawnMeleeSkill)
             {
                 __result *= (attacker.skills.GetSkill(SkillDefOf.Melee).Level / 10f) * attacker.GetStatValue(StatDefOf.PsychicSensitivity);
             }

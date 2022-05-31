@@ -11,7 +11,7 @@
         public override void PostTick()
         {
             base.PostTick();
-            if (Find.TickManager.TicksGame % 60 == 0)
+            if (Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
             {
                 bool healedOnce = false;
                 var injuredHediffs = pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>().ToList();
@@ -35,7 +35,6 @@
                             var regeneratingHediff = HediffMaker.MakeHediff(VPE_DefOf.VPE_Regenerating, pawn, missingPartHediff.Part);
                             regeneratingHediff.Severity = missingPartHediff.Part.def.GetMaxHealth(pawn) - 1;
                             pawn.health.AddHediff(regeneratingHediff);
-                            Log.Message("Adding hediff: " + regeneratingHediff);
                         }
                         healedOnce = true;
                     }

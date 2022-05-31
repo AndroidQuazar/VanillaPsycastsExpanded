@@ -56,7 +56,10 @@
             base.MapComponentUpdate();
             foreach (var hediff in hediffsToDraw)
             {
-                hediff.Draw();
+                if (hediff.pawn?.MapHeld != null)
+                {
+                    hediff.Draw();
+                }
             }
         }
 
@@ -65,6 +68,7 @@
             base.ExposeData();
             Scribe_Collections.Look(ref temperatureZones, "temperatureZones", LookMode.Deep);
             Scribe_Collections.Look(ref blizzardSources, "blizzardSources", LookMode.Reference);
+            Scribe_Collections.Look(ref hediffsToDraw, "hediffsToDraw", LookMode.Reference);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 temperatureZones ??= new List<FixedTemperatureZone>();

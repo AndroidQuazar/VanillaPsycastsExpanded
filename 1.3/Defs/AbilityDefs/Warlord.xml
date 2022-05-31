@@ -61,7 +61,7 @@
 	  <castSound>VPE_FiringFocus_Cast</castSound>
 	  <targetMode>Self</targetMode>
 	  <castTime>15</castTime>
-	  <durationTime>7200</durationTime>
+	  <durationTime>1800</durationTime>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -111,7 +111,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_AdrenalineRush</defName>
       <label>adrenaline rush</label>
-      <description>Psychically induces a surge of adrenaline in the caster, blocking all pain and augmenting their sight, hearing and movement. Lasts roughly two minutes depending on the user’s psychic sensitivity.</description>
+      <description>Psychically induces a surge of adrenaline in the caster, blocking all pain and augmenting their sight, hearing and movement. Lasts roughly thirty seconds depending on the user’s psychic sensitivity.</description>
       <iconPath>Abilities/Warlord/AdrenalineRush</iconPath>
 	  <castSound>VPE_AdrenalineRush_Cast</castSound>
 	  <targetMode>Self</targetMode>
@@ -166,7 +166,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_GuidedShot</defName>
       <label>guided shot</label>
-      <description>Projects a psychic aura for 10 seconds that allows the caster to alter the path of any bullet they fire, effectively doubling their weapon range and guaranteeing hits for the duration.</description>
+      <description>Projects a psychic aura for 8 seconds that allows the caster to alter the path of any bullet they fire, effectively doubling their weapon range and guaranteeing hits for the duration.</description>
       <iconPath>Abilities/Warlord/GuidedShot</iconPath>
 	  <targetMode>Self</targetMode>
 	  <castSound>VPE_GuidedShot_Cast</castSound>
@@ -205,6 +205,9 @@
 	  <castTime>15</castTime>
 	  <durationTime>480</durationTime>
 	  <range>20</range>
+	  <rangeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	  </rangeStatFactors>
 	  <castSound>PsycastPsychicEffect</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
