@@ -25,6 +25,7 @@
         public static HediffDef VPE_UnLucky;
         public static HediffDef VPE_Essence;
         public static HediffDef VPE_Darkvision_Display;
+        public static HediffDef VPE_PsychicSoothe;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;

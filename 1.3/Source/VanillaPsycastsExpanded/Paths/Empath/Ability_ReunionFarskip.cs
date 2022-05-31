@@ -44,12 +44,16 @@
             });
         }
 
+        public List<Pawn> GetLivingFamilyMembers(Pawn pawn)
+        {
+            return pawn.relations.FamilyByBlood.Where(x => !x.Dead && !x.Spawned).ToList();
+        }
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
             var target = targets[0].Thing as Pawn;
-            var familyMembers = target.relations.FamilyByBlood.Where(x => !x.Dead && !x.Spawned).ToList();
-            var cells = GenRadial.RadialCellsAround(pawn.Position, 3, true).Where(x => x.InBounds(pawn.Map)).ToList();
+            var familyMembers = GetLivingFamilyMembers(target);
+            var cells = GenRadial.RadialCellsAround(pawn.Position, 3, true).Where(x => x.InBounds(pawn.Map) && x.Walkable(pawn.Map)).ToList();
             foreach (var member in familyMembers)
             {
                 GenSpawn.Spawn(member, cells.RandomElement(), pawn.Map);
@@ -70,7 +74,7 @@
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
             var targetPawn = target.Pawn;
-            if (!targetPawn?.relations?.FamilyByBlood.Any() ?? false)
+            if (!GetLivingFamilyMembers(targetPawn).Any())
             {
                 if (showMessages)
                 {

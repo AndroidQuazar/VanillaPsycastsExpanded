@@ -63,6 +63,7 @@
     <Compile Include="HarmonyPatches\Pawn_Spawn_Patches.cs" />
     <Compile Include="HarmonyPatches\RitualOutcomeEffectWorker_Bestowing_Apply_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
+    <Compile Include="HarmonyPatches\ThoughtWorker_PsychicDrone_CurrentStateInternal_Patch.cs" />
     <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
     <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />
     <Compile Include="HarmonyPatches\GlobalControls_TemperatureString_Patch.cs" />

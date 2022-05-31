@@ -139,6 +139,7 @@
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <castTime>600</castTime>
+	  <durationTime>180000</durationTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
 	  <castFleckScale>9</castFleckScale>
@@ -158,6 +159,9 @@
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
 			<gender>Male</gender>
 		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_PsychicSoothe</hediff>
+		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
@@ -169,6 +173,7 @@
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>PsychicSoothePulserCast</castSound>
 	  <castTime>600</castTime>
+	  <durationTime>180000</durationTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
 	  <castFleckScale>9</castFleckScale>
@@ -186,6 +191,9 @@
         </li>
 		<li Class="VanillaPsycastsExpanded.AbilityExtension_CastPsychicSoothe">
 			<gender>Female</gender>
+		</li>
+		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+			<hediff>VPE_PsychicSoothe</hediff>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -279,6 +287,11 @@
       <iconPath>Abilities/Empath/ReunionFarskip</iconPath>
 	  <abilityClass>VanillaPsycastsExpanded.Ability_ReunionFarskip</abilityClass>
 	  <castTime>720</castTime>
+	  <targetMode IsNull="True"/>
+      <targetingParameters>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetHumans>True</canTargetHumans>
+      </targetingParameters>
 	  <distanceToTarget>5.5</distanceToTarget>
 	  <castFleck>PsycastAreaEffect</castFleck>
 	  <castSound>VPE_ReunionFarskim_Cast</castSound>

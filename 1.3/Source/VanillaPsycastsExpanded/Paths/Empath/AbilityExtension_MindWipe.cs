@@ -33,6 +33,10 @@ using VFECore;
                 {
                     pawn.skills.GetSkill(kvp.Key).passion = kvp.Value;
                 }
+                if (pawn.ideo.Ideo != ability.pawn.Ideo)
+                {
+                    pawn.ideo.SetIdeo(ability.pawn.Ideo);
+                }
             }
         }
     }
