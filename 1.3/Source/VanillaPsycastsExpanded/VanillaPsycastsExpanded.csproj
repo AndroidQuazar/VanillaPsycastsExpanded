@@ -142,7 +142,6 @@
     <Compile Include="Paths\Archotechist\Ability_AggressiveHeatDump.cs" />
     <Compile Include="Paths\Archotechist\Ability_PsychicShock.cs" />
     <Compile Include="Paths\Archotechist\AbilityExtension_TransferEntropy.cs" />
-    <Compile Include="Paths\Archotechist\AbilityExtension_StunTarget.cs" />
     <Compile Include="Paths\Archotechist\Hediff_PsychicDrone.cs" />
     <Compile Include="Graphics\MoteAttachedScaled.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_Age.cs" />

@@ -171,7 +171,7 @@
 	  <targetMode>Self</targetMode>
 	  <castSound>VPE_GuidedShot_Cast</castSound>
 	  <castTime>30</castTime>
-	  <durationTime>480</durationTime>
+	  <durationTime>48000</durationTime>
 	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

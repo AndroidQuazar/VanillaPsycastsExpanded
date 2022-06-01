@@ -34,13 +34,14 @@
             }
             if (Find.TickManager.TicksGame % 180 == 0)
             {
-                foreach (var pawn in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, this.ability.GetRadiusForPawn(), true)
-                    .OfType<Pawn>().Where(x => !affectedPawns.Contains(x) && !x.InMentalState && x.HostileTo(pawn) && x.RaceProps.IsFlesh))
+                if (GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, this.ability.GetRadiusForPawn(), true)
+                    .OfType<Pawn>().Where(x => !affectedPawns.Contains(x) && !x.InMentalState && x.HostileTo(pawn) 
+                        && x.RaceProps.IsFlesh).TryRandomElement(out var victim))
                 {
                     var mentalStateDef = Rand.Bool ? VPE_DefOf.VPE_Wander_Sad : MentalStateDefOf.Berserk;
-                    if (pawn.mindState.mentalStateHandler.TryStartMentalState(mentalStateDef, causedByPsycast: true))
+                    if (victim.mindState.mentalStateHandler.TryStartMentalState(mentalStateDef, causedByPsycast: true))
                     {
-                        affectedPawns.Add(pawn);
+                        affectedPawns.Add(victim);
                     }
                 }
             }

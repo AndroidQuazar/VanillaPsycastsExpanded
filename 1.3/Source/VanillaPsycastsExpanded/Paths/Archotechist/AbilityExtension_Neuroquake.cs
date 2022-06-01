@@ -7,7 +7,6 @@
     using Verse.AI;
     using Verse.Sound;
     using VFECore.Abilities;
-using static UnityEngine.GraphicsBuffer;
     using Ability = VFECore.Abilities.Ability;
 
     public class AbilityExtension_Neuroquake : AbilityExtension_AbilityMod
@@ -88,7 +87,7 @@ using static UnityEngine.GraphicsBuffer;
 			}
 			foreach (Faction allFaction in Find.FactionManager.AllFactions)
 			{
-				if (!allFaction.IsPlayer && !allFaction.defeated && !allFaction.HostileTo(Faction.OfPlayer))
+				if (!allFaction.IsPlayer && !allFaction.defeated)
 				{
 					AffectGoodwill(allFaction, gaveMentalBreak: false);
 				}
@@ -107,6 +106,9 @@ using static UnityEngine.GraphicsBuffer;
 			base.Cast(targets, ability);
 			affectedFactions.Clear();
 			giveMentalStateTo.Clear();
+			var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, ability.pawn);
+			coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = GenDate.TicksPerDay * 5;
+			ability.pawn.health.AddHediff(coma);
 		}
 
 		private void AffectGoodwill(Faction faction, bool gaveMentalBreak, Pawn p = null)

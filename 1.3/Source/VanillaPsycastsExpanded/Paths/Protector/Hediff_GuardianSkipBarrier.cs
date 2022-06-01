@@ -15,9 +15,10 @@
             base.DestroyProjectile(projectile);
             AddEntropy();
         }
-        public override void Tick()
+
+        public override void PostTick()
         {
-            base.Tick();
+            base.PostTick();
             AddEntropy();
             if (sustainer == null || sustainer.Ended)
             {
@@ -40,12 +41,13 @@
             {
                 pawn.psychicEntropy.TryAddEntropy(1f, overLimit: false);
             }
-            if (pawn.psychicEntropy.EntropyValue >= pawn.psychicEntropy.MaxEntropy)
+            if (pawn.psychicEntropy.EntropyValue - 1f >= pawn.psychicEntropy.MaxEntropy)
             {
-                Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
-                hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = GenDate.TicksPerDay * 5;
-                pawn.health.AddHediff(hediff);
-                this.comps.Add(new HediffComp_ShouldBeDestroyed());
+                this.pawn.health.RemoveHediff(this);
+                //Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
+                //hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = GenDate.TicksPerDay * 5;
+                //pawn.health.AddHediff(hediff);
+                //this.comps.Add(new HediffComp_ShouldBeDestroyed());
             }
         }
     }

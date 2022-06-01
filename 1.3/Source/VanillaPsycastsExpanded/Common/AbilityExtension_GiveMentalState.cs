@@ -16,7 +16,6 @@
         public StatDef durationMultiplier;
 
         public bool applyToSelf;
-
         public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
             base.Cast(targets, ability);

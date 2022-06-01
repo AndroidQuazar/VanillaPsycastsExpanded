@@ -150,7 +150,7 @@
         <clamorType>Ability</clamorType>
         <clamorRadius>10</clamorRadius>
       </li>
-      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+      <li Class="VFECore.Abilities.AbilityExtension_Stun">
         <stunTicks>70~120</stunTicks>
       </li>
     </modExtensions>
@@ -194,7 +194,7 @@
         <clamorType>Ability</clamorType>
         <clamorRadius>10</clamorRadius>
       </li>
-      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+      <li Class="VFECore.Abilities.AbilityExtension_Stun">
         <stunTicks>70~120</stunTicks>
       </li>
     </modExtensions>
@@ -335,7 +335,7 @@
         <clamorType>Ability</clamorType>
         <clamorRadius>10</clamorRadius>
       </li>
-      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Stun">
+      <li Class="VFECore.Abilities.AbilityExtension_Stun">
         <stunTicks>70~120</stunTicks>
       </li>
       <li Class="VFECore.Abilities.AbilityExtension_RandomRadius">

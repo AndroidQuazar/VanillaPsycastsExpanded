@@ -6,7 +6,6 @@ using Mono.Unix.Native;
     using Verse;
     using Verse.Sound;
     using VFECore.Abilities;
-using static UnityEngine.GraphicsBuffer;
     using Ability = VFECore.Abilities.Ability;
 	public class AbilityExtension_TransferEntropy : AbilityExtension_AbilityMod
 	{
@@ -15,21 +14,25 @@ using static UnityEngine.GraphicsBuffer;
         public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
             base.Cast(targets, ability);
-			Pawn pawn = targets[0].Thing as Pawn;
-			if (pawn != null)
-			{
-				Pawn pawn2 = ability.pawn;
-				if (targetReceivesEntropy)
+			foreach (var target in targets)
+            {
+				Pawn pawn = target.Thing as Pawn;
+				if (pawn != null)
 				{
-					pawn.psychicEntropy.TryAddEntropy(pawn2.psychicEntropy.EntropyValue, pawn2, scale: false, overLimit: true);
+					if (targetReceivesEntropy)
+					{
+						pawn.psychicEntropy.TryAddEntropy(ability.pawn.psychicEntropy.EntropyValue, ability.pawn, scale: false, overLimit: true);
+					}
+					if (!pawn.HasPsylink)
+                    {
+						var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
+						pawn.health.AddHediff(coma);
+					}
+					ability.pawn.psychicEntropy.RemoveAllEntropy();
+					MoteMaker.MakeInteractionOverlay(ThingDefOf.Mote_PsychicLinkPulse, ability.pawn, pawn);
 				}
-				pawn2.psychicEntropy.RemoveAllEntropy();
-				MoteMaker.MakeInteractionOverlay(ThingDefOf.Mote_PsychicLinkPulse, ability.pawn, pawn);
 			}
-			else
-			{
-				Log.Error("CompAbilityEffect_TransferEntropy is only applicable to pawns.");
-			}
+
 		}
 
         public override bool IsEnabledForPawn(Ability ability, out string reason)
@@ -53,7 +56,6 @@ using static UnityEngine.GraphicsBuffer;
 					return false;
 				}
 			}
-
 			return base.Valid(targets, ability, throwMessages);
         }
 	}

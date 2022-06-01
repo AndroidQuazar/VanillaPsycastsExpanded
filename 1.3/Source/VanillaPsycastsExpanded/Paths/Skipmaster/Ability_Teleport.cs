@@ -66,17 +66,4 @@
             base.Cast(targets);
         }
     }
-
-    public class AbilityExtension_Stun : AbilityExtension_AbilityMod
-    {
-        public IntRange stunTicks;
-
-        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
-        {
-            base.Cast(targets, ability);
-            for (int i = 0; i < targets.Length; i++)
-                if (targets[i].Thing is Pawn {Spawned: true} p)
-                    p.stances.stunner.StunFor(this.stunTicks.RandomInRange, ability.pawn);
-        }
-    }
 }

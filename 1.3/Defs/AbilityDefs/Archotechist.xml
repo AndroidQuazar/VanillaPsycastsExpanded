@@ -47,8 +47,8 @@
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>12</entropyGain>
         </li>
-		<li Class="VanillaPsycastsExpanded.AbilityExtension_StunTarget">
-			
+		<li Class="VFECore.Abilities.AbilityExtension_Stun">
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -71,7 +71,7 @@
           <path>VPE_Archotechist</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.02</psyfocusCost>
+          <psyfocusCost>0.08</psyfocusCost>
           <entropyGain>15</entropyGain>
           <prerequisites>
             <li>VPE_Burden</li>
@@ -80,6 +80,7 @@
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>PsychicShock</hediff>
+			<durationMultiplier>PsychicSensitivity</durationMultiplier>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -90,6 +91,8 @@
       <description>Instantly dump all your neural heat into a conscious ally. As a side effect, the target will fall into a debilitating, harmless coma for about a day. The target must actively accept the psychic invasion, so only conscious allies can be targeted.</description>
       <iconPath>Abilities/Archotechist/NeuralHeatDump</iconPath>
       <targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetBuildings>False</canTargetBuildings>
 		<canTargetHumans>True</canTargetHumans>
         <onlyTargetColonists>True</onlyTargetColonists>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
@@ -160,6 +163,8 @@
       <description>Instantly dump all of your neural heat into a target, causing them to explode with an area of effect relative to the heat lost and the target’s psychic sensitivity. A good declaration of war.</description>
       <iconPath>Abilities/Archotechist/AggressiveHeatDump</iconPath>
       <targetingParameters>
+		<canTargetLocations>False</canTargetLocations>
+		<canTargetBuildings>False</canTargetBuildings>
 		<canTargetHumans>True</canTargetHumans>
         <neverTargetIncapacitated>True</neverTargetIncapacitated>
       </targetingParameters>
@@ -173,7 +178,7 @@
           <path>VPE_Archotechist</path>
           <level>3</level>
           <order>2</order>
-          <psyfocusCost>0</psyfocusCost>
+          <psyfocusCost>0.2</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_NeuralHeatDump</li>
@@ -265,7 +270,7 @@
           <path>VPE_Archotechist</path>
           <level>4</level>
           <order>3</order>
-          <psyfocusCost>0</psyfocusCost>
+          <psyfocusCost>0.24</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_AggressiveHeatDump</li>
@@ -314,9 +319,6 @@
 			<goodwillImpactForBerserk>-75</goodwillImpactForBerserk>
 			<goodwillImpactForNeuroquake>-10</goodwillImpactForNeuroquake>
 			<worldRangeTiles>4</worldRangeTiles>
-		</li>
-		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-			<hediff>PsychicComa</hediff>
 		</li>
 		<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
 			<fleckDef>PsychicApplyNeuroquake</fleckDef>

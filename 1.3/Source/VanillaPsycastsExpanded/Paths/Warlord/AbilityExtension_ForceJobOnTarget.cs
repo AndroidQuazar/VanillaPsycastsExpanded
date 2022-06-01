@@ -20,7 +20,6 @@
             Pawn pawn = target.Thing as Pawn;
             if (pawn != null)
             {
-                Log.Message("Casting on " + pawn);
                 Job job = JobMaker.MakeJob(jobDef, ability.pawn);
                 float num = 1f;
                 if (durationMultiplier != null)
