@@ -54,10 +54,9 @@
             Caravan caravan = this.pawn.GetCaravan();
             if (caravan is {ImmobilizedByMass: true}) return false;
             Caravan caravan1 = target.WorldObject as Caravan;
-            if (caravan  != null                && caravan1         != null && caravan == caravan1) return false;
-            if (caravan1 != null                && caravan1.Faction != this.pawn.Faction) return false;
-            if (target.WorldObject is MapParent && !this.ShouldEnterMap(target)) return false;
-            return base.ValidateTargetTile(target);
+
+            return (caravan == null || caravan != caravan1) && (this.ShouldEnterMap(target) || caravan1 != null && caravan1.Faction == this.pawn.Faction) &&
+                   base.ValidateTargetTile(target);
         }
 
         public override bool IsEnabledForPawn(out string reason)
@@ -91,13 +90,13 @@
 
         public override void Cast(params GlobalTargetInfo[] targets)
         {
-            Caravan    caravan    = this.pawn.GetCaravan();
-            Map        targetMap  = targets[0].WorldObject is MapParent mapParent ? mapParent.Map : null;
-            IntVec3    targetCell = IntVec3.Invalid;
-            List<Pawn> list       = this.PawnsToSkip().ToList();
+            Caravan caravan = this.pawn.GetCaravan();
+            Map targetMap = targets[0].WorldObject is MapParent mapParent ? mapParent.Map : null;
+            IntVec3 targetCell = IntVec3.Invalid;
+            List<Pawn> list = this.PawnsToSkip().ToList();
             if (this.pawn.Spawned) SoundDefOf.Psycast_Skip_Pulse.PlayOneShot(new TargetInfo(targets[0].Cell, this.pawn.Map));
-            if (this.ShouldEnterMap(targets[0])) targetCell = this.AlliedPawnOnMap(targetMap)?.Position ?? this.pawn.Position;
-            AbilityExtension_Clamor clamor                  = this.def.GetModExtension<AbilityExtension_Clamor>();
+            if (targetMap != null && this.AlliedPawnOnMap(targetMap) is {Position: var alliedPawnCell}) targetCell = alliedPawnCell;
+            AbilityExtension_Clamor clamor = this.def.GetModExtension<AbilityExtension_Clamor>();
             if (targetCell.IsValid)
             {
                 foreach (Pawn pawn3 in list)
@@ -116,48 +115,56 @@
                     if (pawn3.drafter != null && pawn3.IsColonistPlayerControlled) pawn3.drafter.Drafted = true;
                     pawn3.Notify_Teleported();
                     if (pawn3.IsPrisoner) pawn3.guest.WaitInsteadOfEscapingForDefaultTicks();
-
                     this.AddEffecterToMaintain(EffecterDefOf.Skip_ExitNoDelay.Spawn(pawn3, pawn3.Map), pawn3.Position, 60, targetMap);
                     SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(intVec, pawn3.Map));
                     if ((pawn3.IsColonist || pawn3.RaceProps.packAnimal) && pawn3.Map.IsPlayerHome) pawn3.inventory.UnloadEverything = true;
                 }
 
+                if (Find.WorldSelector.IsSelected(caravan))
+                {
+                    Find.WorldSelector.Deselect(caravan);
+                    CameraJumper.TryJump(targetCell, targetMap);
+                }
+
                 caravan?.Destroy();
+            }
+            else if (targets[0].WorldObject is Caravan caravan2 && caravan2.Faction == this.pawn.Faction)
+            {
+                if (caravan != null)
+                {
+                    caravan.pawns.TryTransferAllToContainer(caravan2.pawns);
+                    caravan2.Notify_Merged(new List<Caravan>
+                    {
+                        caravan
+                    });
+                    caravan.Destroy();
+                }
+                else
+                    foreach (Pawn pawn4 in list)
+                    {
+                        caravan2.AddPawn(pawn4, true);
+                        pawn4.ExitMap(false, Rot4.Invalid);
+                        AbilityUtility.DoClamor(pawn4.Position, clamor.clamorRadius, this.pawn, clamor.clamorType);
+                    }
+            }
+            else if (caravan != null)
+            {
+                caravan.Tile = targets[0].Tile;
+                caravan.pather.StopDead();
             }
             else
             {
-                if (targets[0].WorldObject is Caravan caravan2 && caravan2.Faction == this.pawn.Faction)
-                {
-                    if (caravan != null)
-                    {
-                        caravan.pawns.TryTransferAllToContainer(caravan2.pawns);
-                        caravan2.Notify_Merged(new List<Caravan>
-                        {
-                            caravan
-                        });
-                        caravan.Destroy();
-                    }
-                    else
-                        foreach (Pawn pawn4 in list)
-                        {
-                            caravan2.AddPawn(pawn4, true);
-                            pawn4.ExitMap(false, Rot4.Invalid);
-                            AbilityUtility.DoClamor(pawn4.Position, clamor.clamorRadius, this.pawn, clamor.clamorType);
-                        }
-                }
-                else if (caravan != null)
-                {
-                    caravan.Tile = targets[0].Tile;
-                    caravan.pather.StopDead();
-                }
-                else
-                {
-                    CaravanMaker.MakeCaravan(list, this.pawn.Faction, targets[0].Tile, false);
-                    foreach (Pawn pawn5 in list) pawn5.ExitMap(false, Rot4.Invalid);
-                }
+                CaravanMaker.MakeCaravan(list, this.pawn.Faction, targets[0].Tile, false);
+                foreach (Pawn pawn5 in list) pawn5.ExitMap(false, Rot4.Invalid);
             }
 
+
             base.Cast(targets);
+        }
+
+        public override void DrawHighlight(LocalTargetInfo target)
+        {
+            GenDraw.DrawRadiusRing(this.pawn.Position, this.GetRadiusForPawn(), Color.blue);
         }
     }
 }

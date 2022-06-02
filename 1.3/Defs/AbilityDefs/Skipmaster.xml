@@ -50,6 +50,7 @@
     <power>5</power>
     <radius>2.9</radius>
     <targetMode>Location</targetMode>
+    <castTime>60</castTime>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>
@@ -76,6 +77,9 @@
     <needsTicking>true</needsTicking>
     <range>24.9</range>
     <radius>1.9</radius>
+    <radiusStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </radiusStatFactors>
     <castTime>60</castTime>
     <targetMode>Location</targetMode>
     <modExtensions>
@@ -130,8 +134,9 @@
         <canTargetPawns>True</canTargetPawns>
         <canTargetBuildings>False</canTargetBuildings>
       </li>
-      <li>
+      <li Class="VFECore.Abilities.TargetingParametersForAoE">
         <canTargetLocations>true</canTargetLocations>
+        <canTargetBlockedLocations>false</canTargetBlockedLocations>
       </li>
     </targetingParametersList>
     <modExtensions>
@@ -162,7 +167,7 @@
     <iconPath>Abilities/Skipmaster/Skip</iconPath>
     <abilityClass>VanillaPsycastsExpanded.Skipmaster.Ability_Teleport</abilityClass>
     <targetCount>2</targetCount>
-    <range>20</range>
+    <range>28</range>
     <castTime>30</castTime>
     <needsTicking>true</needsTicking>
     <targetModes>
@@ -174,9 +179,11 @@
         <canTargetSelf>True</canTargetSelf>
         <canTargetPawns>True</canTargetPawns>
         <canTargetBuildings>False</canTargetBuildings>
+        <canTargetItems>true</canTargetItems>
       </li>
-      <li>
+      <li Class="VFECore.Abilities.TargetingParametersForAoE">
         <canTargetLocations>true</canTargetLocations>
+        <canTargetBlockedLocations>false</canTargetBlockedLocations>
       </li>
     </targetingParametersList>
     <modExtensions>
@@ -309,8 +316,9 @@
     </targetModes>
     <targetingParametersList>
       <li IsNull="True" />
-      <li>
+      <li Class="VFECore.Abilities.TargetingParametersForAoE">
         <canTargetLocations>true</canTargetLocations>
+        <canTargetBlockedLocations>false</canTargetBlockedLocations>
       </li>
     </targetingParametersList>
     <hasAoE>true</hasAoE>
@@ -359,7 +367,7 @@
         <path>VPE_Skipmaster</path>
         <level>5</level>
         <order>2</order>
-        <psyfocusCost>0.7</psyfocusCost>
+        <psyfocusCost>0.8</psyfocusCost>
         <entropyGain>0</entropyGain>
         <prerequisites>
           <li>VPE_MassChaosSkip</li>
@@ -377,8 +385,12 @@
     <castTime>300</castTime>
     <targetMode>Tile</targetMode>
     <range>10</range>
+    <rangeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </rangeStatFactors>
     <worldTargeting>true</worldTargeting>
     <needsTicking>true</needsTicking>
+    <showGizmoOnWorldView>true</showGizmoOnWorldView>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>

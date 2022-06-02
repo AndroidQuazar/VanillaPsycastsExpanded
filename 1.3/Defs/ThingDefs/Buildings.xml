@@ -6,7 +6,7 @@
 		<thingClass>VanillaPsycastsExpanded.Skipmaster.Skipdoor</thingClass>
 		<description>A psychic entry-point to a portal network</description>
 		<statBases>
-			<MaxHitPoints>300</MaxHitPoints>
+			<MaxHitPoints>600</MaxHitPoints>
 		</statBases>
 		<drawerType>RealtimeOnly</drawerType>
 		<tickerType>Normal</tickerType>

@@ -41,14 +41,23 @@
     {
         public static WorldComponent_SkipdoorManager Instance;
 
-        public List<Skipdoor> Skipdoors = new();
+        private List<Skipdoor> skipdoors = new();
 
         public WorldComponent_SkipdoorManager(World world) : base(world) => Instance = this;
+
+        public List<Skipdoor> Skipdoors
+        {
+            get
+            {
+                this.skipdoors.RemoveAll(skipdoor => skipdoor is not {Spawned: true});
+                return this.skipdoors;
+            }
+        }
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look(ref this.Skipdoors, "skipdoors", LookMode.Reference);
+            Scribe_Collections.Look(ref this.skipdoors, "skipdoors", LookMode.Reference);
         }
     }
 
@@ -97,11 +106,13 @@
                 Pawn    localPawn = this.pawn;
                 IntVec3 cell      = this.targetCell;
                 Map     map       = this.job.globalTarget.Map;
+                bool    drafted   = localPawn.Drafted;
                 localPawn.teleporting = true;
                 localPawn.ClearAllReservations(false);
                 localPawn.ExitMap(false, Rot4.Invalid);
                 localPawn.teleporting = false;
                 GenSpawn.Spawn(localPawn, cell, map);
+                localPawn.drafter.Drafted = drafted;
             });
         }
 
