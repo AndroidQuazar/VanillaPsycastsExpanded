@@ -4,7 +4,7 @@
 		<defName>VPE_Skipdoor</defName>
 		<label>skipdoor</label>
 		<thingClass>VanillaPsycastsExpanded.Skipmaster.Skipdoor</thingClass>
-		<description>A psychic entry-point to a portal network</description>
+		<description>A psychic entry-point to a portal network.</description>
 		<statBases>
 			<MaxHitPoints>600</MaxHitPoints>
 		</statBases>
@@ -15,7 +15,7 @@
 	<ThingDef ParentName="BuildingBase">
 		<defName>VPE_IceCrystal</defName>
 		<label>ice crystal</label>
-		<description>text.todo</description>
+		<description>A small crystal of ice that cools down the temperature in the room. Can help freeze perishable items.</description>
 		<category>Building</category>
 		<graphicData>
 			<texPath>Effects/Frostshaper/IceCrystal/IceCrystal</texPath>
