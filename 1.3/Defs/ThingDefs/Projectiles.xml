@@ -3,7 +3,7 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_Flameball</defName>
 		<label>flameball</label>
-		<description>A ball of flame launched by a Conflagrator</description>
+		<description>A ball of flame launched by a conflagrator</description>
 		<thingClass>VanillaPsycastsExpanded.Graphics.Projectile_Pointing</thingClass>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Conflagrator/Fireball</texPath>
@@ -78,7 +78,7 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_Bolt</defName>
 		<label>bolt</label>
-		<description>A bolt launched by a Staticlord</description>
+		<description>A bolt launched by a staticlord</description>
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
 		<drawOffscreen>true</drawOffscreen>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
@@ -185,7 +185,7 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_IceSpike</defName>
 		<label>ice spike</label>
-		<description>text.todo</description>
+		<description>A spike of ice launched by the frostshaper.</description>
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
 		<tickerType>Normal</tickerType>
 		<altitudeLayer>VisEffects</altitudeLayer>

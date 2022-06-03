@@ -5,7 +5,7 @@
     <defName>VPE_EltexMeteor</defName>
     <label>eltex meteor</label>
     <workerClass>SitePartWorker_PreciousLump</workerClass>
-    <description>text.todo</description>
+    <description>A location of an eltex meteor, highly desired by the empire. Travelling here will allow you to obtain eltex that can be used to craft psycasting gear.</description>
     <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
     <expandingIconTexture>MapIcons/EltexMeteorLocation</expandingIconTexture>
     <forceExitAndRemoveMapCountdownDurationDays>11</forceExitAndRemoveMapCountdownDurationDays>

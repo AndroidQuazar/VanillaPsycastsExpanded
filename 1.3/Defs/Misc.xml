@@ -4,7 +4,7 @@
         <defName>VPE_Hurricane</defName>
         <label>hurricane</label>
         <isBad>true</isBad>
-        <description>Extreme wind will cause a slowdown to all pawns.</description>
+        <description>Extreme wind will cause a slowdown to everyone not under the roof.</description>
         <temperatureRange>0~999</temperatureRange>
         <windSpeedFactor>3</windSpeedFactor>
         <windSpeedOffset>5</windSpeedOffset>
@@ -103,8 +103,8 @@
         <label>territorial manhunter</label>
         <category>Aggro</category>
         <nameColor>(0.9,0.2,0.5)</nameColor>
-        <beginLetter>text.todo</beginLetter>
-        <recoveryMessage>text.todo</recoveryMessage>
+        <beginLetter>{0} has become a territorial manhunter!</beginLetter>
+        <recoveryMessage>{0}'s territorial defense instincts have come to an end.</recoveryMessage>
         <baseInspectLine>Maddened: Territorial Manhunter</baseInspectLine>
         <unspawnedCanDo>false</unspawnedCanDo>
     </MentalStateDef>
