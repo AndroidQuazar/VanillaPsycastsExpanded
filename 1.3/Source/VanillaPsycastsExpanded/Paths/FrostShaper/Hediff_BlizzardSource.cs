@@ -23,6 +23,7 @@
             base.PostRemoved();
             base.pawn.Map.GetComponent<MapComponent_PsycastsManager>().blizzardSources.Remove(this);
             var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
+            coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = (int)((GenDate.TicksPerDay * 5) * pawn.GetStatValue(StatDefOf.PsychicSensitivity));
             pawn.health.AddHediff(coma);
         }
         public override void Tick()
@@ -38,12 +39,13 @@
             if (affectedFactions is null) affectedFactions = new List<Faction>();
 
             var cells = GenRadial.RadialCellsAround(pawn.Position, this.ability.GetAdditionalRadius(), this.ability.GetRadiusForPawn())
-                .Where(x => x.InBounds(pawn.Map)).InRandomOrder().Take(Rand.RangeInclusive(9, 12));
+                .Where(x => x.InBounds(pawn.Map)).InRandomOrder().Take(Rand.RangeInclusive(9, 12)).ToList();
             foreach (var cell in cells)
             {
                 pawn.Map.snowGrid.AddDepth(cell, 0.5f);
             }
-            foreach (Pawn victim in ability.pawn.Map.mapPawns.AllPawnsSpawned)
+            var affectedPawns = ability.pawn.Map.mapPawns.AllPawnsSpawned.ListFullCopy();
+            foreach (Pawn victim in affectedPawns)
             {
                 if (InAffectedArea(victim.Position))
                 {
@@ -59,7 +61,9 @@
                     }
                     if (victim.IsHashIntervalTick(60))
                     {
-                        HealthUtility.AdjustSeverity(victim, HediffDefOf.Hypothermia, 0.01f);
+                        HealthUtility.AdjustSeverity(victim, HediffDefOf.Hypothermia, 0.02f);
+                        DamageInfo dinfo = new DamageInfo(DamageDefOf.Cut, Rand.RangeInclusive(1, 3));
+                        victim.TakeDamage(dinfo);
                     }
                     if (ability.pawn.Faction == Faction.OfPlayer)
                     {

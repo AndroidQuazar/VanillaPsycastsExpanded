@@ -18,7 +18,7 @@
             {
                 if (cell.GetEdifice(this.pawn.Map) is null)
                 {
-                    Thing building = GenSpawn.Spawn(extension.building, cell, this.pawn.Map);
+                    Thing building = GenSpawn.Spawn(extension.building, cell, this.pawn.Map, WipeMode.VanishOrMoveAside);
                     building.SetFactionDirect(this.pawn.Faction);
                 }
             }
