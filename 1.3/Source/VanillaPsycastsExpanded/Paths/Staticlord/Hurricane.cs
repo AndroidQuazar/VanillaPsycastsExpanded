@@ -30,8 +30,7 @@
 
         public override void Tick()
         {
-            this.Pawn.psychicEntropy.TryAddEntropy(1f, this, true, true);
-            if (this.Pawn.psychicEntropy.EntropyRelativeValue >= 1f) this.Destroy();
+            if (!this.Pawn.psychicEntropy.TryAddEntropy(1f, this) || this.Pawn.Downed) this.Destroy();
         }
 
         public override void ExposeData()

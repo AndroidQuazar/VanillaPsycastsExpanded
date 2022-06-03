@@ -9,7 +9,7 @@
 
     public class Vortex : ThingWithComps
     {
-        public const float RADIUS   = 22.9f;
+        public const float RADIUS   = 18.9f;
         public const int   DURATION = 2500;
 
         private Sustainer sustainer;
@@ -86,12 +86,12 @@
                     new()
                     {
                         capacity = PawnCapacityDefOf.Moving,
-                        setMax   = Mathf.Lerp(0f, 0.4f, this.pawn.Position.DistanceTo(this.Vortex.Position) / Vortex.RADIUS)
+                        setMax   = Mathf.Lerp(0.25f, 0.8f, this.pawn.Position.DistanceTo(this.Vortex.Position) / Vortex.RADIUS)
                     },
                     new()
                     {
                         capacity = PawnCapacityDefOf.Manipulation,
-                        setMax   = Mathf.Lerp(0f, 0.4f, this.pawn.Position.DistanceTo(this.Vortex.Position) / Vortex.RADIUS)
+                        setMax   = Mathf.Lerp(0.25f, 0.8f, this.pawn.Position.DistanceTo(this.Vortex.Position) / Vortex.RADIUS)
                     }
                 }
             };

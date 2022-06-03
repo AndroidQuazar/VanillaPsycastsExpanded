@@ -204,7 +204,7 @@
       <iconPath>Abilities/Staticlord/Vortex</iconPath>
       <abilityClass>VFECore.Abilities.Ability_SpawnBuilding</abilityClass>
       <castTime>30</castTime>
-      <range>30.9</range>
+      <range>18.9</range>
       <radius>22.9</radius>
       <durationTime>2500</durationTime>
       <targetMode>Location</targetMode>
@@ -255,7 +255,7 @@
       <castTime>60</castTime>
       <range>20</range>
       <radius>14</radius>
-      <durationTime>9840</durationTime>
+      <durationTime>6000</durationTime>
       <targetMode>Location</targetMode>
       <power>40</power>
       <powerStatFactors>

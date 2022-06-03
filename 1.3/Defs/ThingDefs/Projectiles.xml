@@ -121,7 +121,7 @@
 				<impactRadius>1.9</impactRadius>
 				<targetFriendly>false</targetFriendly>
 				<addFire>true</addFire>
-				<bounceRange>6</bounceRange>
+				<bounceRange>8</bounceRange>
 				<maxLifetime>50</maxLifetime>
 				<impactSound>VPE_ChainBolt_Impact</impactSound>
 			</li>
@@ -139,7 +139,7 @@
 			<drawSize>(3, 3)</drawSize>
         </graphicData>
 		<projectile>
-			<speed>4</speed>
+			<speed>5</speed>
 			<soundAmbient>VPE_BallLightning_Sustainer</soundAmbient>
 			<shadowSize>0</shadowSize>
 			<explosionRadius>5</explosionRadius>
