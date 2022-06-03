@@ -7,9 +7,9 @@
       <iconPath>Abilities/Chronopath/PlantTimeskip</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_MaturePlants</abilityClass>
       <targetMode>Self</targetMode>
-      <radius>8.9</radius>
+      <radius>2.9</radius>
       <castTime>120</castTime>
-	  <cooldownTime>600</cooldownTime>
+	    <cooldownTime>600</cooldownTime>
       <castSound>VPE_PlantTimeskip_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -24,14 +24,14 @@
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
           <fleckDef>VPE_Timeskip</fleckDef>
-          <scale>5</scale>
+          <scale>1</scale>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TimeskipMeditation</defName>
       <label>timeskip meditation</label>
-      <description>Puts the caster into a self-inflicted coma for six hours as they earn experience to their next Psycast level and regain full Psyfocus. Biologically ages the caster by a full year.</description>
+      <description>Puts the caster into a self-inflicted coma for six hours as they earn a considerable amount of experience toward their next Psycast level and regain full Psyfocus. Biologically ages the caster by a full year.</description>
       <iconPath>Abilities/Chronopath/TimeskipMeditation</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_Meditate</abilityClass>
       <targetMode>Self</targetMode>
@@ -175,7 +175,7 @@
           <path>VPE_Chronopath</path>
           <level>4</level>
           <order>1</order>
-          <psyfocusCost>0.1</psyfocusCost>
+          <psyfocusCost>0.2</psyfocusCost>
           <entropyGain>40</entropyGain>
           <prerequisites>
             <li>VPE_Age</li>
