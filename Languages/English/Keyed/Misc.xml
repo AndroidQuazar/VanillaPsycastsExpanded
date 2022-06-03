@@ -29,4 +29,6 @@
     <VPE.AlreadyPsyring>Already wearing a psyring</VPE.AlreadyPsyring>
     <VPE.Research>Must be researchable</VPE.Research>
     <VPE.AlreadyResearch>Already researched</VPE.AlreadyResearch>
+    <VPE.MustBeAllyOrNeutral>Target must be ally or neutral.</VPE.MustBeAllyOrNeutral>
+
 </LanguagData>
