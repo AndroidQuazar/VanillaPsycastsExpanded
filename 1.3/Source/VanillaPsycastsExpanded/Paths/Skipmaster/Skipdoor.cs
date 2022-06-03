@@ -172,6 +172,7 @@
             this.RecacheBackground();
             this.sustainer ??= VPE_DefOf.VPE_Skipdoor_Sustainer.TrySpawnSustainer(this);
             this.sustainer.Maintain();
+            if (this.IsHashIntervalTick(30) && this.HitPoints < this.MaxHitPoints) this.HitPoints += 1;
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)

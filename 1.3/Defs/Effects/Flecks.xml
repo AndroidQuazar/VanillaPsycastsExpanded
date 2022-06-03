@@ -22,7 +22,7 @@
     <altitudeLayer>MoteOverhead</altitudeLayer>
     <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
       <texPath>Effects/Conflagrator/Explosion</texPath>
-      <ticksPerFrame>5</ticksPerFrame>
+      <ticksPerFrame>7</ticksPerFrame>
       <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Fleck_Animated</graphicClass>
       <shaderType>MoteGlow</shaderType>
       <drawSize>(20, 20)</drawSize>

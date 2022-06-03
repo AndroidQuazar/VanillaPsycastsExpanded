@@ -6,7 +6,7 @@
       <description>Generate a small fragile pod of magma as the caster lobs the projectile away. Upon impact, the liquid bursts forth in a small radius.</description>
       <iconPath>Abilities/Conflagrator/Flameball</iconPath>
       <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
-      <castTime>30</castTime>
+      <castTime>60</castTime>
       <range>18.9</range>
       <radius>3</radius>
       <targetMode>Location</targetMode>
@@ -17,7 +17,7 @@
           <level>1</level>
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
-          <entropyGain>4</entropyGain>
+          <entropyGain>6</entropyGain>
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_Projectile">
           <projectile>VPE_Flameball</projectile>
@@ -73,7 +73,7 @@
           <level>3</level>
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
-          <entropyGain>20</entropyGain>
+          <entropyGain>30</entropyGain>
           <prerequisites>
             <li>VPE_SelfExplosion</li>
           </prerequisites>
@@ -98,7 +98,7 @@
         <canTargetBuildings>false</canTargetBuildings>
       </targetingParameters>
       <castTime>15</castTime>
-      <durationTime>900</durationTime>
+      <durationTime>1200</durationTime>
       <castSound>VPE_FireShield_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -211,7 +211,7 @@
       <description>Introduces gravitational distortions in orbiting meteoroids and space debris to strike a location of the caster’s choosing. These come in groups of 4 to ensure optimal control and devastation.</description>
       <iconPath>Abilities/Conflagrator/MeteorShower</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Skyfallers</abilityClass>
-      <castTime>300</castTime>
+      <castTime>180</castTime>
       <range>36.9</range>
       <radius>9.9</radius>
       <power>5</power>
@@ -254,7 +254,7 @@
           <path>VPE_Conflagrator</path>
           <level>5</level>
           <order>1</order>
-          <psyfocusCost>0.2</psyfocusCost>
+          <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>50</entropyGain>
           <prerequisites>
             <li>VPE_EyeBlast</li>
