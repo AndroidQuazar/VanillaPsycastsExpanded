@@ -6,6 +6,7 @@ using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
     using VFECore.Shields;
+    using Ability = VFECore.Abilities.Ability;
 
     [StaticConstructorOnStartup]
     public class HediffComp_InfinitePower : HediffComp_Draw
@@ -42,7 +43,7 @@ using RimWorld.Planet;
         }
     }
 
-    public class Ability_Power : Ability_HediffDuration
+    public class Ability_Power : Ability
     {
         public override void Cast(LocalTargetInfo target)
         {

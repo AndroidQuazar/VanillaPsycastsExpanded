@@ -5,8 +5,9 @@
     using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
+    using Ability = VFECore.Abilities.Ability;
 
-    public class Ability_AffectMechs : Ability_HediffDuration
+    public class Ability_AffectMechs : Ability
     {
         public override void Cast(LocalTargetInfo target)
         {

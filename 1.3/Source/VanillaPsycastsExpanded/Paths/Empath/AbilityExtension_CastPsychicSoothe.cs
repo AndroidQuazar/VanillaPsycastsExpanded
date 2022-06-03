@@ -19,7 +19,7 @@ using Mono.Unix.Native;
             {
                 if (!pawn.Dead && pawn.gender == gender && pawn.needs != null && pawn.needs.mood != null)
                 {
-                    Ability_HediffDuration.ApplyHediff(ability, pawn);
+                    ability.ApplyHediff(pawn);
                 }
             }
         }

@@ -5,7 +5,9 @@
     using Verse;
     using Verse.Sound;
     using VFECore.Abilities;
-    public class Ability_PsychicShock : Ability_HediffDuration
+    using Ability = VFECore.Abilities.Ability;
+
+    public class Ability_PsychicShock : Ability
     {
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {

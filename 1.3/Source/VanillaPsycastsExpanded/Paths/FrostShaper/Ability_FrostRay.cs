@@ -21,7 +21,7 @@
 
         public override void ApplyHediffs(params GlobalTargetInfo[] targetInfo)
         {
-            Ability_HediffDuration.ApplyHediff(this, this.pawn);
+            this.ApplyHediff(this.pawn);
         }
     }
 }

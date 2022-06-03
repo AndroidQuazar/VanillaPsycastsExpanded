@@ -18,7 +18,7 @@
 		<warmupSound>Psycast_WordOf_Warmup</warmupSound>
 		<drawAimPie>false</drawAimPie>
 		<cooldownTime>600</cooldownTime>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<abilityClass>VanillaPsycastsExpanded.Ability_WordOf</abilityClass>
         <modExtensions>
 			<li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
 				<fleckDef>WordOfApply</fleckDef>
