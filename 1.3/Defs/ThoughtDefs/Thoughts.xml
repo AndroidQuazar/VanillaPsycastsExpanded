@@ -74,4 +74,20 @@
     </stages>
   </ThoughtDef>
 
+
+  <ThoughtDef>
+    <defName>VPE_Thrall</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>VPE_Thrall</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Thrall</label>
+        <description>Ughhh ugghhh aaaahhhh</description>
+        <baseMoodEffect>100</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

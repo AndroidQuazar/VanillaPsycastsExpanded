@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>VPE_Thrall</defName>
+    <commonality>0</commonality>
+    <disabledWorkTags>ManualSkilled, Social</disabledWorkTags>
+    <degreeDatas>
+      <li>
+        <label>thrall</label>
+        <description>text.todo</description>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

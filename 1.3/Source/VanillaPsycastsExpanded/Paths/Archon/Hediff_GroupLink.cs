@@ -1,6 +1,5 @@
 ﻿namespace VanillaPsycastsExpanded
 {
-    using RimWorld;
     using RimWorld.Planet;
     using System.Collections.Generic;
     using System.Linq;
@@ -8,7 +7,18 @@
     using Verse;
     using Verse.Sound;
     using VFECore.Abilities;
-	public class Hediff_GroupLink : Hediff_Overlay
+    public class Hediff_Thrall : HediffWithComps
+    {
+        public override void Tick()
+        {
+            base.Tick();
+            if (Find.TickManager.TicksGame % 60 == 0)
+            {
+
+            }
+        }
+    }
+    public class Hediff_GroupLink : Hediff_Overlay
 	{
         public override string OverlayPath => "Other/ForceField";
         public virtual Color OverlayColor => Color.yellow;

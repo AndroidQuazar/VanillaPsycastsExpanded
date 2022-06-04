@@ -436,5 +436,24 @@
 		<description>text.todo</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
 	</HediffDef>
-	
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_PsychicPain</defName>
+		<label>psychic pain</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_PsychicPain</hediffClass>
+	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Protection</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<IncomingDamageFactor>0.5</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
 </Defs>

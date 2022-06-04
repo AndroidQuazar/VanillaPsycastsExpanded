@@ -201,6 +201,7 @@
       <label>bliss</label>
       <description>After a brief meditation period, induce a sense of serenity in the target that reaches maximum magnitude near the effect’s end. As the calming feeling becomes more pronounced, they will find it harder to concentrate but it is not considered a malicious action.</description>
       <iconPath>Abilities/Empath/Bliss</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <durationTime>60000</durationTime>
 	  <castTime>1200</castTime>
 	  <castSound>VPE_Bliss_Cast</castSound>
@@ -226,6 +227,7 @@
       <label>energy dump</label>
       <description>Purges the build-up of fatigue in a nearby target and leaves them completely refreshed, in exchange the caster is left completely exhausted and needing a good nap.</description>
       <iconPath>Abilities/Empath/EnergyDump</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <distanceToTarget>3.5</distanceToTarget>
 	  <castFleck>PsycastPsychicEffect</castFleck>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
@@ -251,6 +253,7 @@
       <label>mind wipe</label>
       <description>Induce a harmless, instantaneous retrograde amnesia in the target, purging all memories, social bonds and skills acquired outside of their backstory. They also feel a strong kinship with the caster’s colony and joy at rediscovering the joys of life without commitment.</description>
       <iconPath>Abilities/Empath/MindWipe</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>300</castTime>
 	  <goodwillImpact>-25</goodwillImpact>
 	  <castSound>VPE_MindWipe_Cast</castSound>

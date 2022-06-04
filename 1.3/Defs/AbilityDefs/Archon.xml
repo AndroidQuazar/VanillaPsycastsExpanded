@@ -143,11 +143,15 @@
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>VPE_WordofPain</defName>
 		<label>word of pain</label>
 		<description>Induces noise in the target’s pain centers of the brain and overstimulates their nerve endings, scaling with their psychic sensitivity.</description>
 		<iconPath>Abilities/Archon/WordofPain</iconPath>
+		<durationTime>720</durationTime>
+        <castSound>PsychicShockLanceCast</castSound>
+		<castTime>30</castTime>
+		<range>19.9</range>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -160,6 +164,9 @@
 					<li>VPE_BlindingPulse</li>
 				</prerequisites>
 			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_PsychicPain</hediff>
+			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
@@ -168,6 +175,18 @@
 		<label>mind break</label>
 		<description>Using concentrated harmonic psychic noise, lobotomizes the target and turns them into a serving, restless thrall. Very much unappreciated by their former factions.</description>
 		<iconPath>Abilities/Archon/MindBreak</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetHumans>True</canTargetHumans>
+		</targetingParameters>
+		<range>2.9</range>
+		<castTime>30</castTime>
+		<goodwillImpact>-200</goodwillImpact>
+		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+        <castSound>PsychicShockLanceCast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -180,14 +199,22 @@
 					<li>VPE_WordofAlliance</li>
 				</prerequisites>
 			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveTrait">
+				<trait>VPE_Thrall</trait>
+			</li>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_JoinFaction"/>
+			
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
 		<defName>VPE_WordofProtection</defName>
 		<label>word of protection</label>
 		<description>Using harmonic psychic noise, physically alters the target’s body to be more durable and resistant to damage. Lasts a long time and scales with the caster’s psychic sensitivity.</description>
 		<iconPath>Abilities/Archon/WordofProtection</iconPath>
+		<durationTime>15000</durationTime>
+		<range>6.9</range>
+		<castTime>45</castTime>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -199,6 +226,11 @@
 					<li>VPE_GroupLink</li>
 					<li>VPE_WordofPain</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_Protection</hediff>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				<durationMultiplierFromCaster>true</durationMultiplierFromCaster>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
