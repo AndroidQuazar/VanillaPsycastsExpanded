@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded.Harmonist
 {
+    using System.Collections.Generic;
     using System.Linq;
     using RimWorld.Planet;
     using Verse;
@@ -17,10 +18,19 @@
             mote.exactPosition = source.DrawPos;
             GenSpawn.Spawn(mote, source.Position, source.MapHeld);
 
-            foreach (Hediff hediff in source.health.hediffSet.hediffs.Where(this.ShouldTransfer).ToList())
+            List<Hediff> sourceToDest = source.health.hediffSet.hediffs.Where(this.ShouldTransfer).ToList();
+            List<Hediff> destToSource = dest.health.hediffSet.hediffs.Where(this.ShouldTransfer).ToList();
+
+            foreach (Hediff hediff in sourceToDest)
             {
                 source.health.RemoveHediff(hediff);
                 dest.health.AddHediff(hediff, hediff.Part);
+            }
+
+            foreach (Hediff hediff in destToSource)
+            {
+                dest.health.RemoveHediff(hediff);
+                source.health.AddHediff(hediff, hediff.Part);
             }
         }
 

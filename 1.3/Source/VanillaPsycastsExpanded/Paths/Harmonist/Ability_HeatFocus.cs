@@ -15,9 +15,9 @@
         {
             base.Cast(target);
             float amount = Mathf.Min(1f - this.pawn.psychicEntropy.CurrentPsyfocus,
-                                     (this.pawn.psychicEntropy.EntropyValue - this.pawn.GetStatValue(VPE_DefOf.VPE_PsychicEntropyMinimum)) * 0.005f);
+                                     (this.pawn.psychicEntropy.EntropyValue - this.pawn.GetStatValue(VPE_DefOf.VPE_PsychicEntropyMinimum)) * 0.002f);
             this.pawn.psychicEntropy.OffsetPsyfocusDirectly(amount);
-            currentEntropy(this.pawn.psychicEntropy) -= amount * 200f;
+            currentEntropy(this.pawn.psychicEntropy) -= amount * 500f;
         }
     }
 }

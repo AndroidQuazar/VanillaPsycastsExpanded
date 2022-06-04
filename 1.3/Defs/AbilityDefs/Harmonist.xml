@@ -11,12 +11,13 @@
       <durationTime>720</durationTime>
       <targetMode>Humanlike</targetMode>
       <range>16.9</range>
+      <cooldownTime>600</cooldownTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
           <level>1</level>
           <order>1</order>
-          <psyfocusCost>0.02</psyfocusCost>
+          <psyfocusCost>0.08</psyfocusCost>
           <entropyGain>18</entropyGain>
           <prerequisites>
             <li>VPE_PsychicGuidance</li>
@@ -272,7 +273,7 @@
           <path>VPE_Harmonist</path>
           <level>4</level>
           <order>2</order>
-          <psyfocusCost>0.6</psyfocusCost>
+          <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_LocationSwap</li>

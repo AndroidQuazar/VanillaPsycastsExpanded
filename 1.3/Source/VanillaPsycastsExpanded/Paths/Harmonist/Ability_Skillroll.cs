@@ -1,20 +1,34 @@
 ﻿namespace VanillaPsycastsExpanded.Harmonist
 {
+    using System;
     using System.Linq;
+    using HarmonyLib;
+    using MonoMod.Utils;
     using RimWorld;
+    using RimWorld.Planet;
     using UnityEngine;
     using Verse;
     using Ability = VFECore.Abilities.Ability;
 
     public class Ability_Skillroll : Ability
     {
-        public override void Cast(LocalTargetInfo target)
-        {
-            base.Cast(target);
-            Pawn pawn   = target.Pawn;
-            int  points = Mathf.FloorToInt(pawn.skills.skills.Sum(skill => skill.Level) * 1.1f);
+        private static readonly Func<Pawn, SkillDef, int> finalLevelOfSkill =
+            AccessTools.Method(typeof(PawnGenerator), "FinalLevelOfSkill").CreateDelegate<Func<Pawn, SkillDef, int>>();
 
-            foreach (SkillRecord skill in pawn.skills.skills) skill.levelInt = 0;
+        public override void Cast(params GlobalTargetInfo[] targets)
+        {
+            base.Cast(targets);
+            Pawn pawn   = targets[0].Thing as Pawn;
+            int  points = 0;
+
+            foreach (SkillRecord skill in pawn.skills.skills)
+            {
+                int oldLevel = skill.levelInt;
+                skill.levelInt =  finalLevelOfSkill(pawn, skill.def);
+                points         += oldLevel - skill.levelInt;
+            }
+
+            points = Mathf.RoundToInt(points * 1.1f);
             for (int i = 0; i < points; i++)
             {
                 SkillRecord skill = pawn.skills.skills.Where(skill => !skill.TotallyDisabled && skill.levelInt < 20).RandomElement();
