@@ -8,7 +8,7 @@
 	  <targetMode>Self</targetMode>
 	  <castTime>15</castTime>
 	  <durationTime>7200</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>VPE_Speedboost_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -34,7 +34,7 @@
 	  <targetMode>Self</targetMode>
 	  <castTime>15</castTime>
 	  <durationTime>7200</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -62,7 +62,7 @@
 	  <targetMode>Self</targetMode>
 	  <castTime>15</castTime>
 	  <durationTime>1800</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -117,7 +117,7 @@
 	  <targetMode>Self</targetMode>
 	  <castTime>15</castTime>
 	  <durationTime>1800</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -145,7 +145,7 @@
 	  <castSound>VPE_ControlledFrenzy_Cast</castSound>
 	  <castTime>60</castTime>
 	  <durationTime>3600</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>
@@ -171,8 +171,8 @@
 	  <targetMode>Self</targetMode>
 	  <castSound>VPE_GuidedShot_Cast</castSound>
 	  <castTime>30</castTime>
-	  <durationTime>48000</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <durationTime>480</durationTime>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Warlord</path>

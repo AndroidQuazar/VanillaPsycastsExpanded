@@ -3,7 +3,7 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_Flameball</defName>
 		<label>flameball</label>
-		<description>A ball of flame launched by a Conflagrator</description>
+		<description>A ball of flame launched by a conflagrator</description>
 		<thingClass>VanillaPsycastsExpanded.Graphics.Projectile_Pointing</thingClass>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Conflagrator/Fireball</texPath>
@@ -11,6 +11,7 @@
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
 			<shaderType>MoteGlow</shaderType>
 		</graphicData>
+		<drawOffscreen>true</drawOffscreen>
 		<drawerType>RealtimeOnly</drawerType>
 		<projectile>
 			<explosionRadius>3</explosionRadius>
@@ -53,6 +54,7 @@
 		<defName>VPE_EyeBlast</defName>
 		<label>eye blast</label>
 		<thingClass>VFECore.BeamProjectile</thingClass>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
 			<texPath>Effects/Conflagrator/EyeBlastFirebeam/EyeBlastFirebeam</texPath>
 			<shaderType>MoteGlow</shaderType>
@@ -76,8 +78,9 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_Bolt</defName>
 		<label>bolt</label>
-		<description>A bolt launched by a Staticlord</description>
+		<description>A bolt launched by a staticlord</description>
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Staticlord/Bolt</texPath>
 			<ticksPerFrame>3</ticksPerFrame>
@@ -103,6 +106,7 @@
 		<defName>VPE_ChainBolt</defName>
 		<label>chain bolt</label>
 		<thingClass>VFEMech.TeslaProjectile</thingClass>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
 			<texPath>Effects/Staticlord/ChainBolt</texPath>
 			<graphicClass>Graphic_Flicker</graphicClass>
@@ -131,6 +135,7 @@
         <defName>VPE_BallLightning</defName>
         <label>ball lightning</label>
         <thingClass>VanillaPsycastsExpanded.Staticlord.BallLightning</thingClass>
+		<drawOffscreen>true</drawOffscreen>
         <graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
             <texPath>Effects/Staticlord/BallOfLightning</texPath>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>
@@ -180,10 +185,11 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>VPE_IceSpike</defName>
 		<label>ice spike</label>
-		<description>text.todo</description>
+		<description>A spike of ice launched by the frostshaper.</description>
 		<thingClass>VFECore.Abilities.AbilityProjectile</thingClass>
 		<tickerType>Normal</tickerType>
 		<altitudeLayer>VisEffects</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
 			<texPath>Effects/Frostshaper/IceSpike/IceSpike</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
@@ -208,6 +214,7 @@
 		<label>frost ray</label>
 		<thingClass>VanillaPsycastsExpanded.Projectile_FrostRay</thingClass>
 		<altitudeLayer>VisEffects</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
 			<texPath>Effects/Frostshaper/Frostbeam</texPath>
 			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_Animated</graphicClass>

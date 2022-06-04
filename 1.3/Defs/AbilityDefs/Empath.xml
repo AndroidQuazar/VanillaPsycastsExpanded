@@ -6,7 +6,6 @@
         <label>word of joy</label>
         <description>Speak happy, calming words to someone while using psychic suggestion to implant a joyfuzz loop in his mind. The joyfuzz will suppress uncomfortable thoughts and sensations in the target to improve mood. This has the side-effect of dulling sensation and decision-making, which reduces consciousness.</description>
         <iconPath>UI/Abilities/WordOfJoy</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 		<durationTime>300000</durationTime>
 		<durationTimeStatFactors>
 			<PsychicSensitivity>1</PsychicSensitivity>
@@ -82,7 +81,6 @@
         <description>Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.</description>
         <iconPath>Abilities/Empath/WordofSerenity</iconPath>
 		<durationTime>15000</durationTime>
-		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
         <modExtensions>
             <li Class="VanillaPsycastsExpanded.AbilityExtension_PsycastWordOfSerenity">
                 <path>VPE_Empath</path>
@@ -198,12 +196,12 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
       <defName>VPE_Bliss</defName>
       <label>bliss</label>
       <description>After a brief meditation period, induce a sense of serenity in the target that reaches maximum magnitude near the effect’s end. As the calming feeling becomes more pronounced, they will find it harder to concentrate but it is not considered a malicious action.</description>
       <iconPath>Abilities/Empath/Bliss</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <durationTime>60000</durationTime>
 	  <castTime>1200</castTime>
 	  <castSound>VPE_Bliss_Cast</castSound>
@@ -224,15 +222,17 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
       <defName>VPE_EnergyDump</defName>
       <label>energy dump</label>
       <description>Purges the build-up of fatigue in a nearby target and leaves them completely refreshed, in exchange the caster is left completely exhausted and needing a good nap.</description>
       <iconPath>Abilities/Empath/EnergyDump</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <distanceToTarget>3.5</distanceToTarget>
 	  <castFleck>PsycastPsychicEffect</castFleck>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <castSound>VPE_EnergyDump_Cast</castSound>
+	<castTime>120</castTime>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Empath</path>
@@ -248,11 +248,12 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
       <defName>VPE_MindWipe</defName>
       <label>mind wipe</label>
       <description>Induce a harmless, instantaneous retrograde amnesia in the target, purging all memories, social bonds and skills acquired outside of their backstory. They also feel a strong kinship with the caster’s colony and joy at rediscovering the joys of life without commitment.</description>
       <iconPath>Abilities/Empath/MindWipe</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>300</castTime>
 	  <goodwillImpact>-25</goodwillImpact>
 	  <castSound>VPE_MindWipe_Cast</castSound>
@@ -280,7 +281,7 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
       <defName>VPE_ReunionFarskip</defName>
       <label>reunion farskip</label>
       <description>After a short meditation period and followed by a 5-day coma, taps into a target’s bloodline to skip all living family members to their proximity, knocked out through psychic shock. However, it does nothing to change their relationships and is considered rude by all other factions.</description>

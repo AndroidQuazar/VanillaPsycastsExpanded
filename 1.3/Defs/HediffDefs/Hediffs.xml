@@ -370,7 +370,7 @@
 	<HediffDef>
 		<defName>VPE_Essence</defName>
 		<label>Essence of </label>
-		<description>text.todo</description>
+		<description>Psychically-split fragment of someone's personality imbued in this very being.</description>
 		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_Essence</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
@@ -379,7 +379,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Darkvision</defName>
 		<label>darkvision</label>
-		<description>text.todo</description>
+		<description>Psychically-induced ability to see through the darkness and shadows.</description>
 		<hediffClass>VanillaPsycastsExpanded.Nightstalker.Hediff_Darkvision</hediffClass>
 		<woundAnchorRange>0</woundAnchorRange>
 		<displayWound>true</displayWound>
@@ -405,15 +405,15 @@
 	<HediffDef>
 		<defName>VPE_Darkvision_Display</defName>
 		<label>darkvision</label>
-		<description>text.todo</description>
+		<description>Psychically-induced night vision.</description>
 		<woundAnchorRange>0</woundAnchorRange>
 		<displayWound>true</displayWound>
 	</HediffDef>
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Productivity</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic productivity</label>
+		<description>Psychically-induced improvement to work speed.</description>
 		<stages>
 			<li>
 				<hungerRateFactor>1.25</hungerRateFactor>
@@ -426,7 +426,45 @@
 	
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_PsychicSoothe</defName>
+		<label>psychic soothe</label>
+		<description>Psychically-induced, self-satisfying perceptual distortions, giving a temporary mood boost.</description>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VPE_GroupLink</defName>
+		<label>group link</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
+	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_PsychicPain</defName>
+		<label>psychic pain</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_PsychicPain</hediffClass>
+	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Protection</defName>
 		<label>text.todo</label>
 		<description>text.todo</description>
+		<stages>
+			<li>
+				<statFactors>
+					<IncomingDamageFactor>0.5</IncomingDamageFactor>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Hallucination</defName>
+		<label>hallucination</label>
+		<description>text.todo</description>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_Hallucination</stateEffecter>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>

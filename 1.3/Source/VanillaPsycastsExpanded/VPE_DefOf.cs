@@ -26,6 +26,8 @@
         public static HediffDef VPE_Essence;
         public static HediffDef VPE_Darkvision_Display;
         public static HediffDef VPE_PsychicSoothe;
+        public static HediffDef VPE_GroupLink;
+        public static HediffDef VPE_Hallucination;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -46,6 +48,8 @@
         public static ThingDef Plant_Brambles;
         public static ThingDef VPE_Shrineshield_Small;
         public static ThingDef VPE_Shrineshield_Large;
+
+        public static TraitDef VPE_Thrall;
 
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;

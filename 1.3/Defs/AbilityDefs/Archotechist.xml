@@ -6,7 +6,7 @@
       <description>Slow the target for a short time by suppressing motor activity in the brain. Considered a hostile action and affected by the target’s psychic sensitivity.</description>
       <iconPath>Abilities/Archotechist/Burden</iconPath>
 	  <targetMode>Pawn</targetMode>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>15</castTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <goodwillImpact>-15</goodwillImpact>
@@ -232,7 +232,7 @@
       <description>Creates a massive psychic drone aura around the caster tuned to hostiles, frequently driving them insane until they overcome the break. Duration scales with the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Archotechist/PsychicDrone</iconPath>
 	  <targetMode>Self</targetMode>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castSound>VPE_PsychicDrone_Cast</castSound>
 	  <durationTime>1800</durationTime>
 	  <castTime>60</castTime>

@@ -3,7 +3,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_IceBreath</defName>
       <label>breathe ice</label>
-      <description>Breathe forward a stream of psychic entropy, the resulting cold cutting and inducing hypothermia scaling with the caster's psychic sensitivity.</description>
+      <description>Breathe forward a stream of psychic entropy, the resulting cold cutting and inducing hypothermia scaling with the distance to the target.</description>
       <iconPath>Abilities/Frostshaper/IceBreath</iconPath>
 	  <range>12.9</range>
 	  <castTime>6</castTime>
@@ -65,13 +65,13 @@
       <label>ice shield</label>
       <description>Creates an aura of psychic entropy around the target for several seconds, preventing them from experiencing cold and inducing hypothermia on any who try to attack them in melee.</description>
       <iconPath>Abilities/Frostshaper/IceShield</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <targetingParameters>
 		<canTargetPawns>true</canTargetPawns>
 		<canTargetBuildings>false</canTargetBuildings>
 		<canTargetSelf>true</canTargetSelf>
 	  </targetingParameters>
-	  <durationTime>900</durationTime>
+	  <durationTime>1800</durationTime>
 	  <range>9.9</range>
 	  <castTime>15</castTime>
 	  <castSound>VPE_IceShield_Cast</castSound>
@@ -94,7 +94,10 @@
       <label>frost ray</label>
       <description>Push forth a concentrated stream of psychic entropy for a few seconds, rapidly inducing cuts and hypothermia. The duration scales with the caster’s psychic sensitivity.</description>
       <iconPath>Abilities/Frostshaper/FrostRay</iconPath>
-	  <durationTime>120</durationTime>
+	  <durationTime>240</durationTime>
+	  <durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	  </durationTimeStatFactors>
 	  <castTime>15</castTime>
 	  <range>12.9</range>
 	  <targetMode>Location</targetMode>
@@ -249,7 +252,6 @@
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>VPE_IceBlock</hediff>
-			<targetOnlyEnemies>true</targetOnlyEnemies>
 		</li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
@@ -289,7 +291,7 @@
       <description>Using differential-pressure skipgates, water-linked skipgates and nodes of psychic entropy, creates a swirling blizzard away from the caster. Those exposed to the tempest experience reduced sight, moving and manipulation, as well as hypothermia buildup and cutting cold. Duration scales with the caster’s psychic sensitivity and puts them in a 5-day coma.</description>
       <iconPath>Abilities/Frostshaper/Blizzard</iconPath>
 	  <durationTime>1200</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>360</castTime>
 	  <targetMode>Self</targetMode>
 	  <goodwillImpact>-75</goodwillImpact>

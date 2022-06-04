@@ -74,6 +74,10 @@
                 temperatureZones ??= new List<FixedTemperatureZone>();
                 blizzardSources ??= new List<Hediff_BlizzardSource>();
                 hediffsToDraw ??= new List<Hediff_Overlay>();
+
+                temperatureZones.RemoveAll(x => x is null);
+                blizzardSources.RemoveAll(x => x is null);
+                hediffsToDraw.RemoveAll(x => x is null);
             }
         }
     }

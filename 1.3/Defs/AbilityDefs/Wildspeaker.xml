@@ -178,7 +178,7 @@
     <label>shield animals</label>
     <description>Generates spherical skipgates on all colony animals in range that sends all incoming and outgoing ground-level projectiles to some distant place. People and items are not affected and the duration scales with the caster’s psychic sensitivity.</description>
     <iconPath>Abilities/Wildspeaker/ShieldAnimals</iconPath>
-    <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+    <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
     <targetMode>Self</targetMode>
     <radius>12</radius>
     <hasAoE>true</hasAoE>

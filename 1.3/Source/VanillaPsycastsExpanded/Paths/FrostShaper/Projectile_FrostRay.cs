@@ -51,9 +51,9 @@
                     return;
                 }
             }
-            if (this.IsHashIntervalTick(60))
+            if (this.IsHashIntervalTick(10))
             {
-                var resultingLine = new ShootLine(origin.ToIntVec3(), ExactPosition.ToIntVec3());
+                var resultingLine = new ShootLine(origin.ToIntVec3(), DrawPos.ToIntVec3());
                 var cells = resultingLine.Points().Where(x => x != resultingLine.Source);
                 var pawns = new HashSet<Pawn>();
                 foreach (var cell in cells)
@@ -70,8 +70,8 @@
                     Find.BattleLog.Add(battleLogEntry_RangedImpact);
                     DamageInfo dinfo = new DamageInfo(def.projectile.damageDef, base.DamageAmount, base.ArmorPenetration, ExactRotation.eulerAngles.y, launcher, null, equipmentDef, DamageInfo.SourceCategory.ThingOrUnknown, intendedTarget.Thing);
                     victim.TakeDamage(dinfo).AssociateWithLog(battleLogEntry_RangedImpact);
-                    HealthUtility.AdjustSeverity(victim, HediffDefOf.Hypothermia, 0.1f);
-                    HealthUtility.AdjustSeverity(victim, VPE_DefOf.VFEP_HypothermicSlowdown, 0.1f);
+                    HealthUtility.AdjustSeverity(victim, HediffDefOf.Hypothermia, 0.016f);
+                    HealthUtility.AdjustSeverity(victim, VPE_DefOf.VFEP_HypothermicSlowdown, 0.016f);
                 }
             }
         }

@@ -68,7 +68,7 @@
     <stages>
       <li>
         <label>time quake</label>
-        <description>text.todo</description>
+        <description>Everyone I knew has changed so much. This timequake really did a number on me.</description>
         <baseMoodEffect>-12</baseMoodEffect>
       </li>
     </stages>
@@ -86,4 +86,19 @@
     </stages>
   </ThoughtDef>
 
+  <ThoughtDef>
+    <defName>VPE_Thrall</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>VPE_Thrall</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Thrall</label>
+        <description>Ughhh ugghhh aaaahhhh</description>
+        <baseMoodEffect>100</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

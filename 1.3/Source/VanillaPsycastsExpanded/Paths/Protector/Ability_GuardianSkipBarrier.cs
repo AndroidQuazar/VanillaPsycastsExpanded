@@ -4,12 +4,11 @@
     using System.Collections.Generic;
     using System.Linq;
     using UnityEngine;
-using UnityEngine.Networking;
     using Verse;
     using Verse.AI;
     using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
-    public class Ability_GuardianSkipBarrier : Ability_HediffDuration
+    public class Ability_GuardianSkipBarrier : Ability
     {
         public override Gizmo GetGizmo()
         {

@@ -9,7 +9,7 @@
 	  <castTime>15</castTime>
 	  <durationTime>7200</durationTime>
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <targetMode>Humanlike</targetMode>
 	  <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>
@@ -36,7 +36,6 @@
       <label>word of healing</label>
       <description>Psychically stimulates a person’s regenerative capabilities into overdrive, effectively tripling their natural healing factor for a few days.</description>
       <iconPath>Abilities/Protector/WordofFortitude</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <durationTime>150000</durationTime>
 	  <castTime>60</castTime>
 	  <castSound>VPE_WordOfHealing_Cast</castSound>
@@ -54,14 +53,13 @@
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
 	
-    <VFECore.Abilities.AbilityDef ParentName="VPE_WordOfAbilityBase">
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
       <defName>VPE_Stabilize</defName>
       <label>stabilize</label>
       <description>Temporarily puts the target’s cardiovascular system in stasis, which prevents them from bleeding out for two minutes.</description>
       <iconPath>Abilities/Protector/Stabilize</iconPath>
 	  <castTime>180</castTime>
 	  <durationTime>7200</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 	  <castSound>VPE_Stabilize_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -87,7 +85,6 @@
       <iconPath>Abilities/Protector/WordofImmunity</iconPath>
 	  <castTime>60</castTime>
 	  <durationTime>150000</durationTime>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -110,7 +107,7 @@
       <label>overshield</label>
       <description>Generate a spherical skipgate on a target that sends all incoming ground-level projectiles to some distant place, the duration scaling with the target’s psychic sensitivity. People and items are not affected.</description>
       <iconPath>Abilities/Protector/Overshield</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>60</castTime>
 	  <durationTime>600</durationTime>
 	  <range>5</range>
@@ -143,7 +140,7 @@
       <label>focus</label>
       <description>Psychically focus the target's mind for a minute, boosting their sight, hearing and moving capacities.</description>
       <iconPath>Abilities/Protector/Focus</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>15</castTime>
 	  <range>28</range>
 	  <durationTime>3600</durationTime>
@@ -210,7 +207,7 @@
       <label>invisibility</label>
       <description>Psychically manipulate the visual centers of everyone nearby, rendering them unable to perceive a particular individual for a short time.</description>
       <iconPath>Abilities/Protector/Invisibility</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <targetMode>Humanlike</targetMode>
       <targetingParameters>
         <canTargetSelf>True</canTargetSelf>
@@ -244,7 +241,7 @@
       <label>regrow limbs</label>
       <description>Induces a complex form of psychic rejuvenation that targets the subject’s limbs, namely those that are missing. The effect is gradual over a full day’s time and often described as “wildly uncomfortable” as it overstimulates their phantom limb syndrome.</description>
       <iconPath>Abilities/Protector/RegrowLimbs</iconPath>
-	  <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>120</castTime>
 	  <durationTime>60000</durationTime>
 	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>

@@ -5,7 +5,7 @@
 		<disabledFromQuestsPawns>
 			<li>VPE_SteelConstruct</li>
 			<li>VPE_RockConstruct</li>
-			
+			<li>VPE_SummonedSkeleton</li>
 		</disabledFromQuestsPawns>
 	</AnimalBehaviours.AnimalsDisabledFromQuestsDef>
 </Defs>

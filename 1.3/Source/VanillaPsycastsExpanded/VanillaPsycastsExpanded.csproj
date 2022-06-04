@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AI\JobGivers\JobGiver_Clean.cs" />
     <Compile Include="AI\JobGivers\JobGiver_Flick.cs" />
+    <Compile Include="Common\AbilityExtension_JoinFaction.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="FixedTemperatureZone.cs" />
@@ -58,8 +59,11 @@
     <Compile Include="GoodwillImpactDelayed.cs" />
     <Compile Include="Graphics\MoteBetween.cs" />
     <Compile Include="Graphics\MoteCastBubble.cs" />
+    <Compile Include="HarmonyPatches\Room_Patches.cs" />
     <Compile Include="HarmonyPatches\MeditationFocusDef_EnablingThingsExplanation_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_GetMaxPsylinkLevel_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_NeedsTracker_ShouldHaveNeed_Patch.cs" />
+    <Compile Include="HarmonyPatches\Pawn_SkillTracker_Learn_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_Spawn_Patches.cs" />
     <Compile Include="HarmonyPatches\RitualOutcomeEffectWorker_Bestowing_Apply_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
@@ -73,7 +77,15 @@
     <Compile Include="Events\IncidentWorker_EltexMeteorite.cs" />
     <Compile Include="MapComponent_PsycastsManager.cs" />
     <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
+    <Compile Include="Common\AbilityExtension_GiveTrait.cs" />
+    <Compile Include="Paths\Archon\Ability_DrainPsyessence.cs" />
+    <Compile Include="Paths\Archon\Ability_PsychicComa.cs" />
+    <Compile Include="Paths\Archon\Ability_GroupLink.cs" />
+    <Compile Include="Paths\Archon\Hediff_GroupLink.cs" />
+    <Compile Include="Paths\Archon\Ability_GoodwillImpact.cs" />
     <Compile Include="Paths\Archon\AbilityExtension_AbilityOffsetPrisonerResistance.cs" />
+    <Compile Include="Paths\Archon\Ability_WordOf.cs" />
+    <Compile Include="Paths\Archon\Hediff_PsychicPain.cs" />
     <Compile Include="Paths\Archotechist\Ability_BerserkPulse.cs" />
     <Compile Include="Paths\Chronopath\AbilityExtension_Foretelling.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnSnowAround.cs" />
@@ -109,6 +121,7 @@
     <Compile Include="Paths\Wildspeaker\Hediff_Essence.cs" />
     <Compile Include="Paths\Wildspeaker\MentalState_ManhunterTerritorial.cs" />
     <Compile Include="Paths\Wildspeaker\Spawners.cs" />
+    <Compile Include="PsycastChecker.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
     <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />
     <Compile Include="UI\Command_Ability_Psycast.cs" />

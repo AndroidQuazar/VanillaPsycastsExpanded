@@ -302,4 +302,22 @@
       <drawSize>1.25</drawSize>
     </graphicData>
   </ThingDef>
+  
+    <ThingDef ParentName="MoteBase">
+        <defName>VPE_Hallucination</defName>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+		  <ticksPerFrame>5</ticksPerFrame>
+          <texPath>Effects/Archon/MassHallucination</texPath>
+          <shaderType>MoteGlow</shaderType>
+		  <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
+		  <drawSize>(0.5, 0.5)</drawSize>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+        <mote>
+          <fadeInTime>0.5</fadeInTime>
+          <solidTime>2.3</solidTime>
+          <fadeOutTime>1.0</fadeOutTime>
+        </mote>
+	</ThingDef>
 </Defs>
