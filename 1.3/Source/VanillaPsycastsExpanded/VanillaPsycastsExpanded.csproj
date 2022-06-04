@@ -77,6 +77,7 @@
     <Compile Include="MapComponent_PsycastsManager.cs" />
     <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
     <Compile Include="Common\AbilityExtension_GiveTrait.cs" />
+    <Compile Include="Paths\Archon\Ability_DrainPsyessence.cs" />
     <Compile Include="Paths\Archon\Ability_GroupLink.cs" />
     <Compile Include="Paths\Archon\Hediff_GroupLink.cs" />
     <Compile Include="Paths\Archon\Ability_GoodwillImpact.cs" />

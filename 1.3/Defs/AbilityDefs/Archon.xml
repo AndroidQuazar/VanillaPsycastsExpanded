@@ -235,11 +235,14 @@
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
 		<defName>VPE_DrainPsyessence</defName>
 		<label>drain psyessence</label>
 		<description>Targeting a downed psychically-talented pawn, induces intense harmonic psychic noise to liquify their flesh and convert it into psyessence to be absorbed by the caster as their own accumulated psychic talent. The final moments of psychic disintegration will be felt by everyone for many kilometers around, causing diplomatic consequences with all factions.</description>
 		<iconPath>Abilities/Archon/DrainPsyessence</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_DrainPsyessence</abilityClass>
+		<castTime>180</castTime>
+		<castSound>VPE_DrainPsyessence_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
