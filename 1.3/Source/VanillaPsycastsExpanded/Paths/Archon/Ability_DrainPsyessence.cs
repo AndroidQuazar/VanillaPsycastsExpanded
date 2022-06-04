@@ -47,9 +47,13 @@
                 }
                 pawnPsycasts.GainExperience(previousExperience);
 
+                targetPawn.health.RemoveHediff(targetPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicAmplifier));
+                targetPawn.health.RemoveHediff(targetPawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant));
+
+
                 targetPawn.Kill(null);
                 targetPawn.Corpse.GetComp<CompRottable>().RotProgress += 1200000f;
-
+                FilthMaker.TryMakeFilth(targetPawn.Corpse.Position, targetPawn.Corpse.Map, ThingDefOf.Filth_CorpseBile, 3);
                 MoteBetween mote = (MoteBetween)ThingMaker.MakeThing(VPE_DefOf.VPE_PsycastPsychicEffectTransfer);
                 mote.Attach(targetPawn.Corpse, this.pawn);
                 mote.Scale = 1f;

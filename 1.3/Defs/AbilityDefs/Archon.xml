@@ -262,6 +262,20 @@
 		<label>mass hallucination</label>
 		<description>Creating a massive burst of psychic suggestion, convinced nearby pawns that rooms are the absolute best they could possibly be. The resulting coma for the caster and the effect lasts for five days.</description>
 		<iconPath>Abilities/Archon/MassHallucination</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_PsychicComa</abilityClass>
+		<castSound>VPE_MassHallucination_Cast</castSound>
+		<targetMode>Self</targetMode>
+		<castTime>360</castTime>
+		<durationTime>300000</durationTime>
+		<hasAoE>true</hasAoE>
+		<radius>9</radius>
+		<targetingParametersForAoE>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+		</targetingParametersForAoE>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -272,6 +286,9 @@
 				<prerequisites>
 					<li>VPE_WordofProtection</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_Hallucination</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

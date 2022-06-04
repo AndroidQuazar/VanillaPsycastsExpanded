@@ -59,6 +59,7 @@
     <Compile Include="GoodwillImpactDelayed.cs" />
     <Compile Include="Graphics\MoteBetween.cs" />
     <Compile Include="Graphics\MoteCastBubble.cs" />
+    <Compile Include="HarmonyPatches\Room_Patches.cs" />
     <Compile Include="HarmonyPatches\MeditationFocusDef_EnablingThingsExplanation_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_GetMaxPsylinkLevel_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_NeedsTracker_ShouldHaveNeed_Patch.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
     <Compile Include="Common\AbilityExtension_GiveTrait.cs" />
     <Compile Include="Paths\Archon\Ability_DrainPsyessence.cs" />
+    <Compile Include="Paths\Archon\Ability_PsychicComa.cs" />
     <Compile Include="Paths\Archon\Ability_GroupLink.cs" />
     <Compile Include="Paths\Archon\Hediff_GroupLink.cs" />
     <Compile Include="Paths\Archon\Ability_GoodwillImpact.cs" />

@@ -456,4 +456,15 @@
 			</li>
 		</stages>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Hallucination</defName>
+		<label>hallucination</label>
+		<description>text.todo</description>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_Hallucination</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>
