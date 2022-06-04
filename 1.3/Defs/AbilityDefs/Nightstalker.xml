@@ -5,7 +5,7 @@
       <label>darkvision</label>
       <description>Gives the targeted pawn a nictitating membrane that allows them to see equally well in darkness and daytime. Duration scales with the target's psychic sensitivity.</description>
       <iconPath>Abilities/Nightstalker/Darkvision</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <castTime>180</castTime>
       <range>5</range>
       <durationTime>60000</durationTime>

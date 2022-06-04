@@ -86,7 +86,7 @@
       <label>static aura</label>
       <description>The caster designates a nearby target to receive an aura of surging electricity, which will inflict EMP effects on anything foreign that they approach, including structures, pawns and electrical objects.</description>
       <iconPath>Abilities/Staticlord/StaticAura</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <castTime>30</castTime>
       <range>6.9</range>
       <radius>6</radius>

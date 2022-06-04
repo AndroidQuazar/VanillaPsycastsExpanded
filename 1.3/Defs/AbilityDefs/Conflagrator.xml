@@ -90,7 +90,7 @@
       <label>fire shield</label>
       <description>Creates a temporary incendiary vortex skipgate around a target that links to a nearby star that extends outward by a few inches. Anyone that attempts to attack the target in melee will be set ablaze, with the additional benefit of overpowering any other fire effects.</description>
       <iconPath>Abilities/Conflagrator/FireShield</iconPath>
-      <abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <range>4.9</range>
       <targetMode>Pawn</targetMode>
       <targetingParameters>

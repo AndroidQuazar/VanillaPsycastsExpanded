@@ -110,6 +110,7 @@
     <Compile Include="Paths\Wildspeaker\Hediff_Essence.cs" />
     <Compile Include="Paths\Wildspeaker\MentalState_ManhunterTerritorial.cs" />
     <Compile Include="Paths\Wildspeaker\Spawners.cs" />
+    <Compile Include="PsycastChecker.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
     <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />
     <Compile Include="UI\Command_Ability_Psycast.cs" />

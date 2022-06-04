@@ -6,7 +6,6 @@
 		<label>word of trust</label>
 		<description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
 		<iconPath>Abilities/Archon/WordofTrust</iconPath>
-		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 		<range>30</range>
 		<castTime>120</castTime>
 		<targetingParameters>
@@ -38,7 +37,6 @@
 		<castTime>120</castTime>
 		<durationTime>300000</durationTime>
 		<goodwillImpact>-10</goodwillImpact>
-		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -66,7 +64,7 @@
 		<radius>7</radius>
 		<range>25</range>
 		<durationTime>1800</durationTime>
-		<abilityClass>VFECore.Abilities.Ability_HediffDuration</abilityClass>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 		<goodwillImpact>-15</goodwillImpact>
 		<targetMode>Location</targetMode>
