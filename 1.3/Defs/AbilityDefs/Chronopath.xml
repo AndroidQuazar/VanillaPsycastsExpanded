@@ -127,6 +127,11 @@
       <iconPath>Abilities/Chronopath/Age</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <targetMode>Pawn</targetMode>
+      <targetingParameters>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetBuildings>false</canTargetBuildings>
+      </targetingParameters>
       <range>3</range>
       <castTime>180</castTime>
       <castSound>VPE_Age_Cast</castSound>
@@ -150,7 +155,7 @@
           <onTarget>
             <li>VPE_AgeSickness</li>
           </onTarget>
-          <durationTimeOverride>120000</durationTimeOverride>
+          <durationTimeOverride>300000</durationTimeOverride>
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
           <fleckDef>VPE_Timeskip</fleckDef>

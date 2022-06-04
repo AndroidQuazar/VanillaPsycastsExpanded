@@ -23,6 +23,9 @@
         {
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad) this.startTick = Find.TickManager.TicksGame;
+            foreach (Thing thing in GenRadial.RadialDistinctThingsAround(this.Position, this.Map, this.Radius, true))
+                if (thing is Pawn {Faction: {IsPlayer: false}} pawn && !pawn.Faction.HostileTo(Faction.OfPlayer))
+                    pawn.Faction.TryAffectGoodwillWith(Faction.OfPlayer, -75, true, true, HistoryEventDefOf.UsedHarmfulAbility);
         }
 
         public override void Tick()

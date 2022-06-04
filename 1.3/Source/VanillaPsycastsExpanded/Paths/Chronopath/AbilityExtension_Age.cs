@@ -21,6 +21,7 @@
 
         public static void Age(Pawn pawn, float years)
         {
+            if (years < 0 && pawn.ageTracker.AgeBiologicalYears <= 16) return;
             pawn.ageTracker.AgeTickMothballed((int) (years * GenDate.TicksPerYear));
             if (years < 0)
             {

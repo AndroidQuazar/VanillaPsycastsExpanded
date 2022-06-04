@@ -74,4 +74,16 @@
     </stages>
   </ThoughtDef>
 
+  <ThoughtDef>
+    <defName>VPE_Future</defName>
+	<durationDays>3</durationDays>
+    <stages>
+      <li>
+        <label>I know my future!</label>
+        <description>I know my future, and things are looking good!</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
 </Defs>

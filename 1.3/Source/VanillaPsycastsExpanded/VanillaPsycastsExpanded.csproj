@@ -75,6 +75,7 @@
     <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
     <Compile Include="Paths\Archon\AbilityExtension_AbilityOffsetPrisonerResistance.cs" />
     <Compile Include="Paths\Archotechist\Ability_BerserkPulse.cs" />
+    <Compile Include="Paths\Chronopath\AbilityExtension_Foretelling.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnSnowAround.cs" />
     <Compile Include="Paths\FrostShaper\AbilityExtension_SpawnTemperatureArea.cs" />
     <Compile Include="Paths\FrostShaper\Ability_IceBlock.cs" />

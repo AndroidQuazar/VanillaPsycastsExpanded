@@ -86,6 +86,7 @@
         public static PawnKindDef        VPE_RockConstruct;
         public static PawnKindDef        VPE_SteelConstruct;
         public static ThoughtDef         EnvironmentDark;
+        public static ThoughtDef         VPE_Future;
 
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;
