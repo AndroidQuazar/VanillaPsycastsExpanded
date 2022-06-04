@@ -73,6 +73,8 @@
     <Compile Include="Events\IncidentWorker_EltexMeteorite.cs" />
     <Compile Include="MapComponent_PsycastsManager.cs" />
     <Compile Include="MentalStates\MentalState_FriendlyManhunter.cs" />
+    <Compile Include="Paths\Archon\Ability_GroupLink.cs" />
+    <Compile Include="Paths\Archon\Hediff_GroupLink.cs" />
     <Compile Include="Paths\Archon\Ability_GoodwillImpact.cs" />
     <Compile Include="Paths\Archon\AbilityExtension_AbilityOffsetPrisonerResistance.cs" />
     <Compile Include="Paths\Archon\Ability_WordOf.cs" />

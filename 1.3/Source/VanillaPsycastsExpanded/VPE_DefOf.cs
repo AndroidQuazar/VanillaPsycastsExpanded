@@ -26,6 +26,7 @@
         public static HediffDef VPE_Essence;
         public static HediffDef VPE_Darkvision_Display;
         public static HediffDef VPE_PsychicSoothe;
+        public static HediffDef VPE_GroupLink;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;

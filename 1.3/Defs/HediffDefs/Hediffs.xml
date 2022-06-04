@@ -429,4 +429,12 @@
 		<label>psychic soothe</label>
 		<description>Psychically-induced, self-satisfying perceptual distortions, giving a temporary mood boost.</description>
 	</HediffDef>
+	
+	<HediffDef>
+		<defName>VPE_GroupLink</defName>
+		<label>group link</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
+	</HediffDef>
+	
 </Defs>

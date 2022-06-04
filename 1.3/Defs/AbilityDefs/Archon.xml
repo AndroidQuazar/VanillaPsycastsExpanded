@@ -120,6 +120,11 @@
 		<label>group link</label>
 		<description>Creates a sphere of psychic suggestion around the caster, linking all pawns within to the caster and allowing any single target “Word of” psycast to affect all others. The effect ends when those linked move out of range.</description>
 		<iconPath>Abilities/Archon/GroupLink</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_GroupLink</abilityClass>
+		<castTime>30</castTime>
+		<targetMode>Self</targetMode>
+		<radius>9</radius>
+		<castSound>VPE_GroupLink_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -131,6 +136,9 @@
 					<li>VPE_WordofProductivity</li>
 					<li>VPE_BlindingPulse</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_GroupLink</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
