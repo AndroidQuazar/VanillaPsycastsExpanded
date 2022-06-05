@@ -10,6 +10,7 @@
 		<durationTime>720</durationTime>
 		<goodwillImpact>-15</goodwillImpact>
 		<castTime>15</castTime>
+		<castSound>VPE_WordOfFear_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -87,6 +88,26 @@
 		<label>paralysis pulse</label>
 		<description>Emits a cloud of black particles around the caster, which afflicts all those within the area - except the caster - with 10 days of paralytic abasia. The radius scales with the caster’s psychic sensitivity.</description>
 		<iconPath>Abilities/Necropath/ParalysisPulse</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_ParalysisPulse</abilityClass>
+		<targetMode>Self</targetMode>
+		<durationTime>600000</durationTime>
+		<radius>4.9</radius>
+		<radiusStatFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</radiusStatFactors>
+		<castFleck>PsycastAreaEffect</castFleck>
+		<castFleckScaleWithRadius>true</castFleckScaleWithRadius>
+		<goodwillImpact>-100</goodwillImpact>
+		<castTime>30</castTime>
+		<hasAoE>true</hasAoE>
+		<targetingParametersForAoE>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+		</targetingParametersForAoE>
+		<castSound>VPE_ParalysisPulse_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -97,6 +118,9 @@
 				<prerequisites>
 					<li>VPE_Liferot</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>Abasia</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

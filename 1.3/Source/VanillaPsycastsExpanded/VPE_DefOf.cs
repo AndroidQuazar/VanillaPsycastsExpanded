@@ -51,7 +51,7 @@
         public static ThingDef Plant_Brambles;
         public static ThingDef VPE_Shrineshield_Small;
         public static ThingDef VPE_Shrineshield_Large;
-
+        public static ThingDef VPE_Mote_ParalysisPulse;
         public static TraitDef VPE_Thrall;
 
         public static SoundDef VPE_Recharge_Sustainer;

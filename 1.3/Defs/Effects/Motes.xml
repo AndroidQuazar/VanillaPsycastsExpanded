@@ -321,7 +321,6 @@
         </mote>
 	</ThingDef>
 	
-	
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Liferot</defName>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
@@ -338,5 +337,19 @@
           <fadeOutTime>1.0</fadeOutTime>
         </mote>
 	</ThingDef>
-	
+
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_ParalysisPulse</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteAttachedOneTime</thingClass>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<texPath>Effects/Necropath/ParalysisPulse</texPath>
+			<ticksPerFrame>5</ticksPerFrame>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
+			<drawSize>1.8</drawSize>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<mote>
+			<solidTime>0.5</solidTime>
+		</mote>
+	</ThingDef>
 </Defs>
