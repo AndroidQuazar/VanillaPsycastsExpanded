@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AI\JobGivers\JobGiver_Clean.cs" />
+    <Compile Include="AI\JobGivers\JobGiver_Flee.cs" />
     <Compile Include="AI\JobGivers\JobGiver_Flick.cs" />
     <Compile Include="Common\AbilityExtension_JoinFaction.cs" />
     <Compile Include="Common\HediffComp_DisappearsOnDowned.cs" />

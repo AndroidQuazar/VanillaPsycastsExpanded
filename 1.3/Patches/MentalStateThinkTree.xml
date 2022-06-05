@@ -20,6 +20,17 @@
 					</li>
                 </subNodes>
             </li>
+			
+            <li Class="ThinkNode_ConditionalMentalState">
+                <state>VPE_Flee</state>
+                <subNodes>
+					<li Class="VanillaPsycastsExpanded.JobGiver_Flee"></li>
+					<li Class="JobGiver_WanderAnywhere">
+						<maxDanger>Some</maxDanger>
+						<locomotionUrgency>Jog</locomotionUrgency>
+					</li>
+                </subNodes>
+            </li>
         </value>
     </Operation>
 </Patch>

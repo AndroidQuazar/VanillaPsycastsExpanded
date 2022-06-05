@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-	
-
-	<!-- Skeleton sounds -->
 
 	<SoundDef>
 		<defName>VPE_Pawn_Skeleton_Call</defName>
@@ -60,5 +57,173 @@
 		</subSounds>
 	</SoundDef>
 	
+	<SoundDef>
+		<defName>VPE_ConsumeBodies_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_ConsumeBodies_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_CorpseTalk_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_CorpseTalk_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_Deathshield_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_Deathshield_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_Enthrall_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_Enthrall_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_Ghostwalk_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_Ghostwalk_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_Liferot_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_Liferot_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
 	
+	<SoundDef>
+		<defName>VPE_ParalysisPulse_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_ParalysisPulse_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_Resurrect_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_Resurrect_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+
+	<SoundDef>
+		<defName>VPE_StealVitality_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_StealVitality_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	<SoundDef>
+		<defName>VPE_WordOfFear_Cast</defName>
+		<context>MapOnly</context>
+		<maxSimultaneous>1</maxSimultaneous>
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>Necropath/Psycast_WordOfFear_Cast_01a</clipPath>
+					</li>
+				</grains>
+				<volumeRange>42</volumeRange>
+				<distRange>20~50</distRange>
+			</li>
+		</subSounds>
+	</SoundDef>
 </Defs>
