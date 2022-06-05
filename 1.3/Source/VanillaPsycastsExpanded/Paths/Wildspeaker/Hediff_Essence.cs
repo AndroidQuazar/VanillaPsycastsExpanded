@@ -58,6 +58,7 @@
 
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             Toil toil = Toils_LayDown.LayDown(TargetIndex.B, false, false, true, false);
+            toil.AddPreInitAction(delegate { this.restStartTick = Find.TickManager.TicksGame; });
             toil.AddPreTickAction(delegate
             {
                 if (Find.TickManager.TicksGame >= this.restStartTick + GenDate.TicksPerHour * 6) this.ReadyForNextToil();
