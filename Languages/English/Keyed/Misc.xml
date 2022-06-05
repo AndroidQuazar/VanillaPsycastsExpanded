@@ -32,5 +32,6 @@
     <VPE.MustBeAllyOrNeutral>Target must be ally or neutral.</VPE.MustBeAllyOrNeutral>
     <VPE.MustBeDowned>Target must be downed.</VPE.MustBeDowned>
     <VPE.MustHavePsychicLevel>Target must have at least one psycaster level.</VPE.MustHavePsychicLevel>
+    <VPE.MustHaveHeatAmount>Must have at least {0} neural heat.</VPE.MustHaveHeatAmount>
 
 </LanguagData>

@@ -44,6 +44,10 @@
         private AbilityDef ability;
         private bool       alreadyHad;
 
+        public AbilityDef       Ability => this.ability;
+        public bool             Added   => !this.alreadyHad;
+        public PsycasterPathDef Path    => this.ability.Psycast().path;
+
         public override string Label => base.Label + " (" + this.ability.LabelCap + ")";
 
         public void Init(AbilityDef ability) => this.ability = ability;
@@ -133,7 +137,7 @@
                                       let psycast = ability.def.Psycast()
                                       where psycast != null
                                       orderby psycast.path.label, psycast.level descending, psycast.order
-                                      select ability.def).ToList();
+                                      select ability.def).Except(pawn.AllAbilitiesFromPsyrings()).ToList();
         }
 
         public override    Vector2 InitialSize => new(400f, 800f);
@@ -177,5 +181,15 @@
             this.lastHeight = curHeight;
             Widgets.EndScrollView();
         }
+    }
+
+    public static class PsyringUtilities
+    {
+        public static IEnumerable<Psyring> AllPsyrings(this Pawn pawn) => pawn.apparel.WornApparel.OfType<Psyring>();
+
+        public static IEnumerable<AbilityDef> AllAbilitiesFromPsyrings(this Pawn pawn) =>
+            pawn.AllPsyrings().Where(psyring => psyring.Added).Select(psyring => psyring.Ability).Distinct();
+
+        public static IEnumerable<PsycasterPathDef> AllPathsFromPsyrings(this Pawn pawn) => pawn.AllPsyrings().Select(psyring => psyring.Path).Distinct();
     }
 }

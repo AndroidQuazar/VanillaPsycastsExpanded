@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Technomancer;
     using UnityEngine;
     using Verse;
     using VFECore.Abilities;
@@ -15,6 +16,7 @@
         private readonly Dictionary<AbilityDef, Vector2> abilityPos = new();
         private          Pawn                            pawn;
         private          int                             curIdx;
+        public           List<PsycasterPathDef>          paths;
 
         public Dialog_Psyset(PsySet psyset, Pawn pawn)
         {
@@ -26,6 +28,10 @@
             this.doCloseX              = true;
             this.forcePause            = true;
             this.closeOnClickedOutside = true;
+            this.paths                 = this.hediff.unlockedPaths.ListFullCopy();
+            foreach (PsycasterPathDef path in pawn.AllPathsFromPsyrings())
+                if (!this.paths.Contains(path))
+                    this.paths.Add(path);
         }
 
         public override Vector2 InitialSize => new(480f, 520f);
@@ -45,8 +51,7 @@
             Vector2 curPos = existingRect.position + new Vector2(8f, 8f);
             foreach (AbilityDef def in this.psyset.Abilities.ToList())
             {
-                AbilityDef localDef = def;
-                Rect       rect     = new(curPos, new Vector2(36f, 36f));
+                Rect rect = new(curPos, new Vector2(36f, 36f));
                 PsycastsUIUtility.DrawAbility(rect, def);
                 TooltipHandler.TipRegion(rect, () => $"{def.LabelCap}\n\n{def.description}\n\n{"VPE.ClickRemove".Translate().Resolve().ToUpper()}",
                                          def.GetHashCode() + 2);
@@ -63,14 +68,14 @@
             Rect pagesRect    = abilityRect.TakeTopPart(50f);
             Rect decreaseRect = pagesRect.TakeLeftPart(40f).ContractedBy(0f, 5f);
             Rect increaseRect = pagesRect.TakeRightPart(40f).ContractedBy(0f, 5f);
-            if (this.curIdx > 0                                   && Widgets.ButtonText(decreaseRect, "<")) this.curIdx--;
-            if (this.curIdx < this.hediff.unlockedPaths.Count - 1 && Widgets.ButtonText(increaseRect, ">")) this.curIdx++;
+            if (this.curIdx > 0                    && Widgets.ButtonText(decreaseRect, "<")) this.curIdx--;
+            if (this.curIdx < this.paths.Count - 1 && Widgets.ButtonText(increaseRect, ">")) this.curIdx++;
             Text.Anchor = TextAnchor.MiddleCenter;
-            Widgets.Label(pagesRect, $"{(this.hediff.unlockedPaths.Count > 0 ? this.curIdx + 1 : 0)} / {this.hediff.unlockedPaths.Count}");
+            Widgets.Label(pagesRect, $"{(this.paths.Count > 0 ? this.curIdx + 1 : 0)} / {this.paths.Count}");
             Text.Anchor = TextAnchor.UpperLeft;
-            if (this.hediff.unlockedPaths.Count > 0)
+            if (this.paths.Count > 0)
             {
-                PsycasterPathDef path = this.hediff.unlockedPaths[this.curIdx];
+                PsycasterPathDef path = this.paths[this.curIdx];
                 PsycastsUIUtility.DrawPathBackground(ref abilityRect, path);
                 PsycastsUIUtility.DoPathAbilities(abilityRect, path, this.abilityPos, (rect, def) =>
                 {

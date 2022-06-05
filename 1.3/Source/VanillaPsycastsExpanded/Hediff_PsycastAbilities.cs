@@ -143,6 +143,7 @@
             Scribe_Values.Look(ref this.points,      nameof(this.points));
             Scribe_Values.Look(ref this.statPoints,  nameof(this.statPoints));
             Scribe_Values.Look(ref this.psysetIndex, nameof(this.psysetIndex));
+            Scribe_Values.Look(ref this.minHeat,     nameof(this.minHeat));
             Scribe_Collections.Look(ref this.unlockedPaths,          nameof(this.unlockedPaths),          LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
             Scribe_Collections.Look(ref this.psysets,                nameof(this.psysets),                LookMode.Deep);

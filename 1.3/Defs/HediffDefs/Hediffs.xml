@@ -361,7 +361,7 @@
 		<stages>
 			<li>
 				<statFactors>
-					<ResearchSpeed>2</ResearchSpeed>
+					<ResearchSpeed>1.25</ResearchSpeed>
 					<GlobalLearningFactor>2</GlobalLearningFactor>
 				</statFactors>
 			</li>

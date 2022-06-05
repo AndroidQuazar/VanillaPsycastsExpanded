@@ -135,9 +135,7 @@
 				<gizmoLabel>VPE_BreakLink</gizmoLabel>
 				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
 			</li>
-			<li Class="AnimalBehaviours.CompProperties_Draftable">
-				<makeNonFleeingToo>true</makeNonFleeingToo>
-			</li>
+			<li Class="AnimalBehaviours.CompProperties_DoesntFlee" />
 			<li Class="VanillaPsycastsExpanded.CompProperties_SetStoneColour"/>
 
 		</comps>
