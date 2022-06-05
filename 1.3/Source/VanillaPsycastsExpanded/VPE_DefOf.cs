@@ -6,6 +6,8 @@
     [DefOf]
     public static class VPE_DefOf
     {
+        public static DamageDef VPE_Rot;
+
         public static HediffDef VPE_PsycastAbilityImplant;
         public static HediffDef VPE_Recharge;
         public static HediffDef VPE_Vortex;

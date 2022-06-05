@@ -75,44 +75,5 @@
             </li>
         </modExtensions>
     </WeatherDef>
-    <JobDef>
-        <defName>VPE_UseSkipdoor</defName>
-        <driverClass>VanillaPsycastsExpanded.Skipmaster.JobDriver_UseSkipdoor</driverClass>
-        <reportString>using TargetA to teleport to TargetB</reportString>
-        <casualInterruptible>false</casualInterruptible>
-        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
-    </JobDef>
-    <DamageDef>
-        <defName>VPE_NeuralHeatBlast</defName>
-        <label>neural heat blast</label>
-        <workerClass>VanillaPsycastsExpanded.Technomancer.DamageWorker_NeuralHeatBlast</workerClass>
-        <externalViolence>false</externalViolence>
-        <isExplosive>false</isExplosive>
-        <defaultDamage>1</defaultDamage>
-        <defaultStoppingPower>0.5</defaultStoppingPower>
-        <explosionHeatEnergyPerCell>10</explosionHeatEnergyPerCell>
-        <explosionCellFleck>VPE_NeuralHeatBlast</explosionCellFleck>
-        <explosionColorCenter>(1, 0.3, 0.1)</explosionColorCenter>
-        <explosionColorEdge>(0.6, 0.3, 0.2)</explosionColorEdge>
-        <soundExplosion>VPE_NeuralHeat_Blast</soundExplosion>
-        <combatLogRules>Damage_Bomb</combatLogRules>
-    </DamageDef>
-    <MentalStateDef ParentName="BaseMentalState">
-        <defName>VPE_ManhunterTerritorial</defName>
-        <stateClass>VanillaPsycastsExpanded.Wildspeaker.MentalState_ManhunterTerritorial</stateClass>
-        <label>territorial manhunter</label>
-        <category>Aggro</category>
-        <nameColor>(0.9,0.2,0.5)</nameColor>
-        <beginLetter>{0} has become a territorial manhunter!</beginLetter>
-        <recoveryMessage>{0}'s territorial defense instincts have come to an end.</recoveryMessage>
-        <baseInspectLine>Maddened: Territorial Manhunter</baseInspectLine>
-        <unspawnedCanDo>false</unspawnedCanDo>
-    </MentalStateDef>
-    <JobDef>
-        <defName>VPE_EssenceTransfer</defName>
-        <driverClass>VanillaPsycastsExpanded.Wildspeaker.JobDriver_EssenceTransfer</driverClass>
-        <reportString>transfering essence to TargetA</reportString>
-        <casualInterruptible>false</casualInterruptible>
-        <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
-    </JobDef>
+
 </Defs>

@@ -29,6 +29,13 @@
 		<label>liferot</label>
 		<description>Psychically induces randomized mass necrosis in a target, exposing the afflicted body parts to infection and intense gagging due to the smell. Duration scales with the target’s psychic sensitivity and is an obviously overtly hostile action.</description>
 		<iconPath>Abilities/Necropath/Liferot</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castSound>VPE_Liferot_Cast</castSound>
+		<castTime>30</castTime>
+		<goodwillImpact>-100</goodwillImpact>
+		<range>12.9</range>
+		<durationTime>180</durationTime>
+		<targetMode>Pawn</targetMode>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -39,6 +46,10 @@
 				<prerequisites>
 					<li>VPE_WordofFear</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_LifeRot</hediff>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

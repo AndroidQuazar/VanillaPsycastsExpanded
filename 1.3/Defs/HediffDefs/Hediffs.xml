@@ -467,4 +467,45 @@
 			</li>
 		</comps>
 	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+    <defName>VPE_LifeRot</defName>
+    <label>life rot</label>
+    <description>text.todo</description>
+    <makesSickThought>true</makesSickThought>
+	<hediffClass>VanillaPsycastsExpanded.Hediff_Liferot</hediffClass>
+    <stages>
+      <li>
+        <vomitMtbDays>0.01</vomitMtbDays>
+      </li>
+    </stages>
+	<comps>
+		<li Class="HediffCompProperties_Effecter">
+			<stateEffecter>VPE_Liferot</stateEffecter>
+		</li>
+		<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
+			<filthDef>Filth_CorpseBile</filthDef>
+			<intervalRate>30</intervalRate>
+			<filthCount>1~3</filthCount>
+		</li>
+	</comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="InjuryBase">
+    <defName>VPE_Rot</defName>
+    <label>rot</label>
+    <labelNoun>a rot</labelNoun>
+    <description>A rot.</description>
+    <comps>
+      <li Class="HediffCompProperties_Infecter">
+        <infectionChance>1</infectionChance>
+      </li>
+    </comps>
+    <injuryProps>
+      <painPerSeverity>0.125</painPerSeverity>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Rotted away</destroyedLabel>
+      <destroyedOutLabel>Rotted away</destroyedOutLabel>
+    </injuryProps>
+  </HediffDef>
 </Defs>

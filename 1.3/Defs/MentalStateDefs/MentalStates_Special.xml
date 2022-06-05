@@ -1,7 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-
+	<MentalStateDef ParentName="BaseMentalState">
+		<defName>VPE_ManhunterTerritorial</defName>
+		<stateClass>VanillaPsycastsExpanded.Wildspeaker.MentalState_ManhunterTerritorial</stateClass>
+		<label>territorial manhunter</label>
+		<category>Aggro</category>
+		<nameColor>(0.9,0.2,0.5)</nameColor>
+		<beginLetter>{0} has become a territorial manhunter!</beginLetter>
+		<recoveryMessage>{0}'s territorial defense instincts have come to an end.</recoveryMessage>
+		<baseInspectLine>Maddened: Territorial Manhunter</baseInspectLine>
+		<unspawnedCanDo>false</unspawnedCanDo>
+	</MentalStateDef>
 
   <MentalStateDef ParentName="BaseMentalState">
     <defName>VPE_Manhunter</defName>
@@ -19,7 +29,6 @@
     <recoverFromCollapsingExhausted>false</recoverFromCollapsingExhausted>
   </MentalStateDef>
 
- 
   <MentalStateDef ParentName="BaseMentalState">
     <defName>VPE_Flee</defName>
     <label>fleeing</label>
