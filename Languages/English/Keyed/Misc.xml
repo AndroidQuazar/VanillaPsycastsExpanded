@@ -35,4 +35,6 @@
     <VPE.MustHaveHeatAmount>Must have at least {0} neural heat.</VPE.MustHaveHeatAmount>
 	<VPE.MustBeCorpse>Target must be corpse.</VPE.MustBeCorpse>
 	<VPE.MustBeCorpseHumanlike>Corpse must be humanlike.</VPE.MustBeCorpseHumanlike>
+    <VPE.PackSummon>Pack Summoned!</VPE.PackSummon>
+    <VPE.PackSummon.Desc>A pack of wild animals have been summoned by {0} to defend the colony.</VPE.PackSummon.Desc>
 </LanguagData>

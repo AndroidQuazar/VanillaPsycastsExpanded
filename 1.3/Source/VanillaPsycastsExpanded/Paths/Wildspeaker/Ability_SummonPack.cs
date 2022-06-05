@@ -32,6 +32,9 @@
                 animal.mindState.mentalStateHandler.TryStartMentalState(VPE_DefOf.VPE_ManhunterTerritorial);
                 animal.mindState.exitMapAfterTick = Find.TickManager.TicksGame + Rand.Range(25000, 35000);
             }
+
+            Find.LetterStack.ReceiveLetter("VPE.PackSummon".Translate(), "VPE.PackSummon.Desc".Translate(this.pawn.NameShortColored), LetterDefOf.PositiveEvent,
+                                           new TargetInfo(entryCell, map));
         }
     }
 }

@@ -31,7 +31,6 @@
             {
                 Thing thing = this.removeAfterTicks[i].thing;
                 int   tick  = this.removeAfterTicks[i].tick;
-                Log.Message($"Checking: thing={thing}, tick={tick}, curTick={Find.TickManager.TicksGame}");
                 if (thing is null or {Destroyed: true})
                     this.removeAfterTicks.RemoveAt(i);
                 else if (Find.TickManager.TicksGame >= tick)

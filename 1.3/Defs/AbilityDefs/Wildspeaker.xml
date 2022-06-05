@@ -79,6 +79,7 @@
     <iconPath>Abilities/Wildspeaker/WordofAnimals</iconPath>
     <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_Animal</abilityClass>
     <castSound>PsychicSoothePulserCast</castSound>
+    <distanceToTarget>6.9</distanceToTarget>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -324,9 +325,6 @@
         <prerequisites>
           <li>VPE_AnimalAllies</li>
         </prerequisites>
-      </li>
-      <li Class="VFECore.Abilities.AbilityExtension_Hediff">
-        <hediff>VPE_Essence</hediff>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>

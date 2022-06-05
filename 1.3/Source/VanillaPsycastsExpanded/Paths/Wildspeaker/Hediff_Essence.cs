@@ -35,17 +35,11 @@
 
     public class Ability_EssenceTransfer : Ability
     {
-        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
-        {
-            if (target.Pawn         == null) return false;
-            if (target.Pawn.Faction != this.pawn.Faction) return false;
-            return base.ValidateTarget(target, showMessages);
-        }
-
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
             if (targets[0].Thing is not Pawn human || targets[1].Thing is not Pawn animal) return;
+            Log.Message($"Transfering essence from {human} to {animal}");
             Hediff_Essence hediff = (Hediff_Essence) HediffMaker.MakeHediff(VPE_DefOf.VPE_Essence, animal);
             hediff.EssenceOf = human;
             animal.health.AddHediff(hediff);
