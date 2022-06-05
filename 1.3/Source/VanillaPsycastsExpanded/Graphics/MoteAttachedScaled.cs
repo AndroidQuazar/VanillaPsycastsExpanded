@@ -2,7 +2,6 @@
 {
     using UnityEngine;
     using Verse;
-
     public class MoteAttachedScaled : MoteAttached
     {
         public float maxScale;

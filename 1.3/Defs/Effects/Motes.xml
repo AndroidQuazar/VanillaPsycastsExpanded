@@ -352,4 +352,18 @@
 			<solidTime>0.5</solidTime>
 		</mote>
 	</ThingDef>
+	
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_SoulOrb</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteAttachedMovingAround</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<graphicData>
+			<texPath>Effects/Necropath/ConsumeBodies/SoulOrb</texPath>
+			<drawSize>0.7</drawSize>
+		</graphicData>
+		<mote>
+			<solidTime>999999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+	</ThingDef>
 </Defs>

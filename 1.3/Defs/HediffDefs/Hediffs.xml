@@ -551,4 +551,16 @@
 		</stages>
 	</HediffDef>
 
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_CorpseTalk</defName>
+		<label>corpse talk</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_CorpseTalk</hediffClass>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
+				<moteDef>VPE_SoulOrb</moteDef>
+				<offset>(0, 0, 0.1)</offset>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>

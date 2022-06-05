@@ -125,11 +125,25 @@
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
 		<defName>VPE_Corpsetalk</defName>
 		<label>corpsetalk</label>
 		<description>Target a corpse and temporarily appropriate the victim’s skills to make up for the caster’s deficiencies. Effect lasts for a season before returning to normal.</description>
 		<iconPath>Abilities/Necropath/Corpsetalk</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_Corpsetalk</abilityClass>
+		<castTime>60</castTime>
+		<durationTime>900000</durationTime>
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetPawns>False</canTargetPawns>
+			<canTargetHumans>False</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<thingCategory>Item</thingCategory>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<castSound>VPE_CorpseTalk_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -140,6 +154,10 @@
 				<prerequisites>
 					<li>VPE_WordofFear</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_CorpseTalk</hediff>
+				<applyAuto>false</applyAuto>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
