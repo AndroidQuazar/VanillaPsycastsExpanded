@@ -104,6 +104,7 @@
     <Compile Include="Paths\Harmonist\Ability_HealthSwap.cs" />
     <Compile Include="Paths\Harmonist\Ability_LocationSwap.cs" />
     <Compile Include="Paths\Harmonist\Ability_LuckTransfer.cs" />
+    <Compile Include="Paths\Necropath\Ability_StealVitality.cs" />
     <Compile Include="Paths\Necropath\Hediff_Liferot.cs" />
     <Compile Include="Paths\Nightstalker\Hediff_Darkvision.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Teleport.cs" />

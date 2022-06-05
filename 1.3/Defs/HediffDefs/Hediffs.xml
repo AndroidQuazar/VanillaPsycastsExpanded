@@ -508,4 +508,47 @@
       <destroyedOutLabel>Rotted away</destroyedOutLabel>
     </injuryProps>
   </HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_GainedVitality</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>2</naturalHealingFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>1.5</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<postFactor>1.5</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_LostVitality</defName>
+		<label>text.todo</label>
+		<description>text.todo</description>
+		<stages>
+			<li>
+				<naturalHealingFactor>0</naturalHealingFactor>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.5</postFactor>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.25</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+  
 </Defs>

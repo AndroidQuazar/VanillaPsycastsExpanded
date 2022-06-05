@@ -59,6 +59,12 @@
 		<label>steal vitality</label>
 		<description>Siphons vitality form a close, living target, transferring the target’s natural healing factor, movement speed and consciousness to the caster. Considered an overtly hostile action.</description>
 		<iconPath>Abilities/Necropath/StealVitality</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_StealVitality</abilityClass>
+		<range>3.9</range>
+		<castTime>15</castTime>
+		<targetMode>Pawn</targetMode>
+		<durationTime>60000</durationTime>
+		<castSound>VPE_StealVitality_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -69,6 +75,9 @@
 				<prerequisites>
 					<li>VPE_WordofFear</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_LostVitality</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

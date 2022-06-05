@@ -30,6 +30,7 @@
         public static HediffDef VPE_PsychicSoothe;
         public static HediffDef VPE_GroupLink;
         public static HediffDef VPE_Hallucination;
+        public static HediffDef VPE_GainedVitality;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
