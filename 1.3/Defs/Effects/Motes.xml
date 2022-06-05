@@ -349,7 +349,7 @@
 		</graphicData>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
-			<solidTime>0.5</solidTime>
+			<solidTime>0.7</solidTime>
 		</mote>
 	</ThingDef>
 	
@@ -357,6 +357,7 @@
 		<defName>VPE_SoulOrb</defName>
 		<thingClass>VanillaPsycastsExpanded.MoteAttachedMovingAround</thingClass>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
 		<graphicData>
 			<texPath>Effects/Necropath/ConsumeBodies/SoulOrb</texPath>
 			<drawSize>0.7</drawSize>
