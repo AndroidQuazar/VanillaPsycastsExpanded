@@ -228,7 +228,7 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
 		<defName>VPE_Deathshield</defName>
 		<label>deathshield</label>
-		<description>Locks the touched target’s life force in place for 5 days, preventing them from dying. After this period, they can die from accumulated wounds, blood loss, or missing limbs or organs.</description>
+		<description>Locks the touched target’s life force in place for a day, preventing them from dying. After this period, they can die from accumulated wounds, blood loss, or missing limbs or organs.</description>
 		<iconPath>Abilities/Necropath/Deathshield</iconPath>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 		<targetMode>Pawn</targetMode>
