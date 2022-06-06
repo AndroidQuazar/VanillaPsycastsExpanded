@@ -49,7 +49,7 @@
 				</prerequisites>
 			</li>
 			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>VPE_LifeRot</hediff>
+				<hediff>VPE_Liferot</hediff>
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</modExtensions>
@@ -167,6 +167,11 @@
 		<label>ghostwalk</label>
 		<description>Psychically convinces the atoms of the caster that they are able to pass between the atoms of structures. The duration of the deceit scales with the caster’s psychic sensitivity.</description>
 		<iconPath>Abilities/Necropath/Ghostwalk</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<castTime>60</castTime>
+		<durationTime>720</durationTime>
+		<targetMode>Self</targetMode>
+		<castSound>VPE_CorpseTalk_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -178,6 +183,10 @@
 					<li>VPE_StealVitality</li>
 				</prerequisites>
 			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_Ghostwalk</hediff>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
@@ -186,6 +195,19 @@
 		<label>consume bodies</label>
 		<description>Psychically strips all remaining life force from nearby humanoid corpses and stores the essence as a permanent stacking buffer to neural heat.</description>
 		<iconPath>Abilities/Necropath/ConsumeBodies</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_ConsumeBodies</abilityClass>
+		<castTime>600</castTime>
+		<targetMode>Self</targetMode>
+		<hasAoE>true</hasAoE>
+		<radius>3.9</radius>
+		<targetingParametersForAoE>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetPawns>True</canTargetPawns>
+			<canTargetHumans>True</canTargetHumans>
+		</targetingParametersForAoE>
+		<castSound>VPE_ConsumeBodies_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
@@ -196,6 +218,9 @@
 				<prerequisites>
 					<li>VPE_Corpsetalk</li>
 				</prerequisites>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>VPE_BodyConsumption</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

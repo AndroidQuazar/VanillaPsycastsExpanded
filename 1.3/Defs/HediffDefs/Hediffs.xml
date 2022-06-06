@@ -369,11 +369,11 @@
 	</HediffDef>
 	<HediffDef>
 		<defName>VPE_Essence</defName>
-		<label>Essence of </label>
+		<label>Essence of</label>
 		<description>Psychically-split fragment of someone's personality imbued in this very being.</description>
 		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_Essence</hediffClass>
 		<comps>
-			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
 	</HediffDef>
 	<HediffDef ParentName="PsycastHediffBase">
@@ -409,7 +409,7 @@
 		<woundAnchorRange>0</woundAnchorRange>
 		<displayWound>true</displayWound>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Productivity</defName>
 		<label>psychic productivity</label>
@@ -423,13 +423,13 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_PsychicSoothe</defName>
 		<label>psychic soothe</label>
 		<description>Psychically-induced, self-satisfying perceptual distortions, giving a temporary mood boost.</description>
 	</HediffDef>
-	
+
 	<HediffDef>
 		<defName>VPE_GroupLink</defName>
 		<label>group link</label>
@@ -456,7 +456,7 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Hallucination</defName>
 		<label>hallucination</label>
@@ -467,47 +467,47 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
-    <defName>VPE_LifeRot</defName>
-    <label>life rot</label>
-    <description>text.todo</description>
-    <makesSickThought>true</makesSickThought>
-	<hediffClass>VanillaPsycastsExpanded.Hediff_Liferot</hediffClass>
-    <stages>
-      <li>
-        <vomitMtbDays>0.01</vomitMtbDays>
-      </li>
-    </stages>
-	<comps>
-		<li Class="HediffCompProperties_Effecter">
-			<stateEffecter>VPE_Liferot</stateEffecter>
-		</li>
-		<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
-			<filthDef>Filth_CorpseBile</filthDef>
-			<intervalRate>30</intervalRate>
-			<filthCount>1~3</filthCount>
-		</li>
-	</comps>
-  </HediffDef>
-  
-  <HediffDef ParentName="InjuryBase">
-    <defName>VPE_Rot</defName>
-    <label>rot</label>
-    <labelNoun>a rot</labelNoun>
-    <description>A rot.</description>
-    <comps>
-      <li Class="HediffCompProperties_Infecter">
-        <infectionChance>1</infectionChance>
-      </li>
-    </comps>
-    <injuryProps>
-      <painPerSeverity>0.125</painPerSeverity>
-      <canMerge>false</canMerge>
-      <destroyedLabel>Rotted away</destroyedLabel>
-      <destroyedOutLabel>Rotted away</destroyedOutLabel>
-    </injuryProps>
-  </HediffDef>
+		<defName>VPE_Liferot</defName>
+		<label>life rot</label>
+		<description>text.todo</description>
+		<makesSickThought>true</makesSickThought>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_Liferot</hediffClass>
+		<stages>
+			<li>
+				<vomitMtbDays>0.01</vomitMtbDays>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_Liferot</stateEffecter>
+			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
+				<filthDef>Filth_CorpseBile</filthDef>
+				<intervalRate>30</intervalRate>
+				<filthCount>1~3</filthCount>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="InjuryBase">
+		<defName>VPE_Rot</defName>
+		<label>rot</label>
+		<labelNoun>a rot</labelNoun>
+		<description>A rot.</description>
+		<comps>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>1</infectionChance>
+			</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.125</painPerSeverity>
+			<canMerge>false</canMerge>
+			<destroyedLabel>Rotted away</destroyedLabel>
+			<destroyedOutLabel>Rotted away</destroyedOutLabel>
+		</injuryProps>
+	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_GainedVitality</defName>
@@ -515,6 +515,7 @@
 		<description>text.todo</description>
 		<stages>
 			<li>
+				<restFallFactor>0.5</restFallFactor>
 				<naturalHealingFactor>2</naturalHealingFactor>
 				<capMods>
 					<li>
@@ -529,13 +530,14 @@
 			</li>
 		</stages>
 	</HediffDef>
-	
+
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_LostVitality</defName>
 		<label>text.todo</label>
 		<description>text.todo</description>
 		<stages>
 			<li>
+				<restFallFactor>2</restFallFactor>
 				<naturalHealingFactor>0</naturalHealingFactor>
 				<capMods>
 					<li>
@@ -552,6 +554,21 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Ghostwalk</defName>
+		<label>ghostwalk</label>
+		<description>text.todo</description>
+		<comps>
+			<li Class="HediffCompProperties">
+				<compClass>VFECore.HediffComp_Phasing</compClass>
+			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
+				<moteDef>VPE_MatterPhasing</moteDef>
+				<maxScale>1</maxScale>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_CorpseTalk</defName>
 		<label>corpse talk</label>
 		<description>text.todo</description>
@@ -559,8 +576,37 @@
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
 				<moteDef>VPE_SoulOrb</moteDef>
-				<offset>(0, 0, 0.1)</offset>
 			</li>
 		</comps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>VPE_BodyConsumption</defName>
+		<label>body consumption</label>
+		<description>text.todo</description>
+		<makesSickThought>true</makesSickThought>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_BodyConsumption</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_Liferot</stateEffecter>
+			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
+				<filthDef>Filth_CorpseBile</filthDef>
+				<intervalRate>30</intervalRate>
+				<filthCount>1~3</filthCount>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>VPE_BodiesConsumed</defName>
+		<label>bodies consumed</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_BodiesConsumed</hediffClass>
+		<stages>
+			<li>
+				<vomitMtbDays>0.01</vomitMtbDays>
+			</li>
+		</stages>
 	</HediffDef>
 </Defs>

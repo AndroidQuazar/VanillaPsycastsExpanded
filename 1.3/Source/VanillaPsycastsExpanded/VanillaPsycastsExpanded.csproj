@@ -59,9 +59,11 @@
     <Compile Include="Graphics\IAnimationOneTime.cs" />
     <Compile Include="Graphics\MoteAttachedMovingAround.cs" />
     <Compile Include="Graphics\MoteAttachedOneTime.cs" />
+    <Compile Include="HarmonyPatches\Mote_Patches.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
+    <Compile Include="Paths\Necropath\StatPart_PsycastBodiesConsumed.cs" />
     <Compile Include="Misc\FixedTemperatureZone.cs" />
     <Compile Include="GameComponent_PsycastsManager.cs" />
     <Compile Include="Misc\GoodwillImpactDelayed.cs" />
@@ -109,10 +111,13 @@
     <Compile Include="Paths\Harmonist\Ability_LocationSwap.cs" />
     <Compile Include="Paths\Harmonist\Ability_LuckTransfer.cs" />
     <Compile Include="Paths\Necropath\Ability_Corpsetalk.cs" />
+    <Compile Include="Paths\Necropath\Ability_ConsumeBodies.cs" />
     <Compile Include="Paths\Necropath\Ability_ParalysisPulse.cs" />
     <Compile Include="Paths\Necropath\Ability_StealVitality.cs" />
+    <Compile Include="Paths\Necropath\Hediff_BodiesConsumed.cs" />
     <Compile Include="Paths\Necropath\Hediff_CorpseTalk.cs" />
     <Compile Include="Paths\Necropath\Hediff_Liferot.cs" />
+    <Compile Include="Paths\Necropath\Hediff_BodyConsumption.cs" />
     <Compile Include="Paths\Nightstalker\Hediff_Darkvision.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Teleport.cs" />
     <Compile Include="Paths\Skipmaster\Ability_WorldTeleport.cs" />

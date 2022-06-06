@@ -9,13 +9,15 @@
     {
         private float direction;
         private Vector3 curPosition;
-
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            curPosition = new Vector3(Rand.Range(-0.5f, 0.5f), 0, Rand.Range(-0.5f, 0.5f));
-            exactPosition = GetRootPosition() + curPosition;
-            exactPosition.y = link1.Target.CenterVector3.y + 1;
+            if (!respawningAfterLoad)
+            {
+                curPosition = new Vector3(Rand.Range(-0.5f, 0.5f), 0, Rand.Range(-0.5f, 0.5f));
+                exactPosition = GetRootPosition() + curPosition;
+                exactPosition.y = link1.Target.CenterVector3.y + 1;
+            }
         }
         protected override void TimeInterval(float deltaTime)
         {

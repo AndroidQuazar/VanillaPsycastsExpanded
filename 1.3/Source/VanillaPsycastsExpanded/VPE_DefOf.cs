@@ -31,6 +31,8 @@
         public static HediffDef VPE_GroupLink;
         public static HediffDef VPE_Hallucination;
         public static HediffDef VPE_GainedVitality;
+        public static HediffDef VPE_BodyConsumption;
+        public static HediffDef VPE_BodiesConsumed;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -52,8 +54,9 @@
         public static ThingDef VPE_Shrineshield_Small;
         public static ThingDef VPE_Shrineshield_Large;
         public static ThingDef VPE_Mote_ParalysisPulse;
-        public static TraitDef VPE_Thrall;
+        public static ThingDef VPE_SoulOrbTransfer;
 
+        public static TraitDef VPE_Thrall;
         public static SoundDef VPE_Recharge_Sustainer;
         public static SoundDef VPE_BallLightning_Zap;
         public static SoundDef VPE_Vortex_Sustainer;

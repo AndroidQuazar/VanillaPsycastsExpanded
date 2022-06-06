@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <ThingDef ParentName="MoteBase">
-        <defName>VPE_Mote_FireBeam</defName>
-        <graphicData>
-          <texPath>Things/Mote/PowerBeam</texPath>
-          <shaderType>MoteGlow</shaderType>
-        </graphicData>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <drawOffscreen>true</drawOffscreen>
-        <mote>
-          <fadeInTime>0.5</fadeInTime>
-          <solidTime>2.3</solidTime>
-          <fadeOutTime>1.0</fadeOutTime>
-        </mote>
-      </ThingDef>
-	  
-	  <ThingDef ParentName="MoteGlowDistorted">
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_FireBeam</defName>
+		<graphicData>
+			<texPath>Things/Mote/PowerBeam</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>2.3</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteGlowDistorted">
 		<defName>VPE_Mote_CastPsycast</defName>
 		<thingClass>MoteThrownAttached</thingClass>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
-		  <fadeInTime>0.3</fadeInTime>
-		  <fadeOutTime>0.1</fadeOutTime>
-		  <solidTime>9999</solidTime>
-		  <needsMaintenance>true</needsMaintenance>
+			<fadeInTime>0.3</fadeInTime>
+			<fadeOutTime>0.1</fadeOutTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
-		  <texPath>Things/Mote/PsycastCast</texPath>
+			<texPath>Things/Mote/PsycastCast</texPath>
 		</graphicData>
-	  </ThingDef>
-	  
-	  <ThingDef ParentName="MoteGlowDistorted">
+	</ThingDef>
+
+	<ThingDef ParentName="MoteGlowDistorted">
 		<defName>VPE_Mote_CastPsycast_Red</defName>
 		<thingClass>MoteThrownAttached</thingClass>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
-		  <fadeInTime>0.3</fadeInTime>
-		  <fadeOutTime>0.1</fadeOutTime>
-		  <solidTime>9999</solidTime>
-		  <needsMaintenance>true</needsMaintenance>
+			<fadeInTime>0.3</fadeInTime>
+			<fadeOutTime>0.1</fadeOutTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
-		  <texPath>Effects/Harmonist/PsycastCastRed</texPath>
+			<texPath>Effects/Harmonist/PsycastCastRed</texPath>
 		</graphicData>
-	  </ThingDef>
-	  
-	  <ThingDef ParentName="MoteGlowDistorted">
+	</ThingDef>
+
+	<ThingDef ParentName="MoteGlowDistorted">
 		<defName>VPE_Mote_CastPsycast_Yellow</defName>
 		<thingClass>MoteThrownAttached</thingClass>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
 		<mote>
-		  <fadeInTime>0.3</fadeInTime>
-		  <fadeOutTime>0.1</fadeOutTime>
-		  <solidTime>9999</solidTime>
-		  <needsMaintenance>true</needsMaintenance>
+			<fadeInTime>0.3</fadeInTime>
+			<fadeOutTime>0.1</fadeOutTime>
+			<solidTime>9999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
 		</mote>
 		<graphicData>
 			<texPath>Effects/Harmonist/PsycastCastYellow</texPath>
 		</graphicData>
-	  </ThingDef>
-	
-    <ThingDef ParentName="MoteBase">
-        <defName>VPE_Mote_Butterfly</defName>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Mote_Butterfly</defName>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
-		  <ticksPerFrame>5</ticksPerFrame>
-          <texPath>Effects/Empath/Bliss</texPath>
-          <shaderType>MoteGlow</shaderType>
-		  <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
-		  <drawSize>(0.5, 0.5)</drawSize>
-        </graphicData>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <drawOffscreen>true</drawOffscreen>
-        <mote>
-          <fadeInTime>0.5</fadeInTime>
-          <solidTime>2.3</solidTime>
-          <fadeOutTime>1.0</fadeOutTime>
-        </mote>
+			<ticksPerFrame>5</ticksPerFrame>
+			<texPath>Effects/Empath/Bliss</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
+			<drawSize>(0.5, 0.5)</drawSize>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>2.3</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
 	</ThingDef>
 
 	<ThingDef ParentName="MoteBase">
@@ -91,7 +91,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostA</defName>
 		<graphicData>
@@ -105,7 +105,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostB</defName>
 		<graphicData>
@@ -119,7 +119,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostC</defName>
 		<graphicData>
@@ -133,7 +133,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostD</defName>
 		<graphicData>
@@ -147,7 +147,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostE</defName>
 		<graphicData>
@@ -161,7 +161,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostF</defName>
 		<graphicData>
@@ -175,7 +175,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Mote_GhostG</defName>
 		<graphicData>
@@ -189,7 +189,7 @@
 			<fadeOutTime>3.2</fadeOutTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_YellowSparkFlash</defName>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
@@ -198,11 +198,11 @@
 			<fadeOutTime>0.1</fadeOutTime>
 		</mote>
 		<graphicData>
-		<texPath>Things/Mote/YellowSparkFlash</texPath>
-		<shaderType>MoteGlow</shaderType>
+			<texPath>Things/Mote/YellowSparkFlash</texPath>
+			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_RedSparkFlash</defName>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
@@ -211,11 +211,11 @@
 			<fadeOutTime>0.1</fadeOutTime>
 		</mote>
 		<graphicData>
-		<texPath>Effects/Warlord/RedSparks/SparkRed</texPath>
-		<shaderType>MoteGlow</shaderType>
+			<texPath>Effects/Warlord/RedSparks/SparkRed</texPath>
+			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_WhiteSparkFlash</defName>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
@@ -224,11 +224,11 @@
 			<fadeOutTime>0.1</fadeOutTime>
 		</mote>
 		<graphicData>
-		<texPath>Effects/Warlord/WhiteSparks/SparkWhite</texPath>
-		<shaderType>MoteGlow</shaderType>
+			<texPath>Effects/Warlord/WhiteSparks/SparkWhite</texPath>
+			<shaderType>MoteGlow</shaderType>
 		</graphicData>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_WarlordTargettingReticle</defName>
 		<thingClass>MoteAttached</thingClass>
@@ -243,99 +243,99 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 	</ThingDef>
-	
 
-  <ThingDef Abstract="True" Name="MoteGlowDistortBackground" ParentName="MoteBase">
-    <graphicData>
-      <shaderType>MoteGlowDistortBackground</shaderType>
-      <shaderParameters>
-        <_DistortionTex>/Things/Mote/PsycastDistortionMask</_DistortionTex>
-      </shaderParameters>
-    </graphicData>
-  </ThingDef>
 
-  <ThingDef ParentName="MoteGlowDistortBackground">
-    <defName>VPE_PsycastAreaEffectMaintained</defName>
-	<thingClass>VanillaPsycastsExpanded.MoteAttachedScaled</thingClass>
-    <altitudeLayer>MoteLow</altitudeLayer>
-	<mote>
-		<fadeInTime>0.02</fadeInTime>
-		<fadeOutTime>0.6</fadeOutTime>
-		<growthRate>1.5</growthRate>
-		<solidTime>99999999</solidTime>
-		<needsMaintenance>true</needsMaintenance>
-	</mote>
-    <graphicData>
-      <texPath>Things/Mote/Black</texPath>
-      <shaderParameters>
-        <_distortionIntensity>0.05</_distortionIntensity>
-        <_brightnessMultiplier>1.15</_brightnessMultiplier>
-      </shaderParameters>
-      <drawSize>2.2</drawSize>
-    </graphicData>
-  </ThingDef>
-
-  <ThingDef ParentName="MoteGlowDistortBackground">
-    <defName>VPE_PsycastPsychicEffectTransfer</defName>
-	<thingClass>VanillaPsycastsExpanded.MoteBetween</thingClass>
-    <altitudeLayer>MoteLow</altitudeLayer>
-	<mote>
-		<fadeInTime>0.05</fadeInTime>
-		<fadeOutTime>0.05</fadeOutTime>
-		<solidTime>1.9</solidTime>
-	</mote>
-    <graphicData>
-      <texPath>Things/Mote/Black</texPath>
-      <shaderParameters>
-        <_distortionIntensity>0.05</_distortionIntensity>
-        <_brightnessMultiplier>1.15</_brightnessMultiplier>
-      </shaderParameters>
-      <drawSize>0.9</drawSize>
-    </graphicData>
-  </ThingDef>
-
-  <ThingDef ParentName="InteractionMoteBase">
-    <defName>VPE_Mote_Cast</defName>
-	<thingClass>VanillaPsycastsExpanded.MoteCastBubble</thingClass>
-    <graphicData>
-      <texPath>UI/CastBubble/Cast</texPath>
-      <drawSize>1.25</drawSize>
-    </graphicData>
-  </ThingDef>
-  
-    <ThingDef ParentName="MoteBase">
-        <defName>VPE_Hallucination</defName>
-		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
-		  <ticksPerFrame>5</ticksPerFrame>
-          <texPath>Effects/Archon/MassHallucination</texPath>
-          <shaderType>MoteGlow</shaderType>
-		  <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
-		  <drawSize>(0.5, 0.5)</drawSize>
-        </graphicData>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <drawOffscreen>true</drawOffscreen>
-        <mote>
-          <fadeInTime>0.5</fadeInTime>
-          <solidTime>2.3</solidTime>
-          <fadeOutTime>1.0</fadeOutTime>
-        </mote>
+	<ThingDef Abstract="True" Name="MoteGlowDistortBackground" ParentName="MoteBase">
+		<graphicData>
+			<shaderType>MoteGlowDistortBackground</shaderType>
+			<shaderParameters>
+				<_DistortionTex>/Things/Mote/PsycastDistortionMask</_DistortionTex>
+			</shaderParameters>
+		</graphicData>
 	</ThingDef>
-	
+
+	<ThingDef ParentName="MoteGlowDistortBackground">
+		<defName>VPE_PsycastAreaEffectMaintained</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteAttachedScaled</thingClass>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<mote>
+			<fadeInTime>0.02</fadeInTime>
+			<fadeOutTime>0.6</fadeOutTime>
+			<growthRate>1.5</growthRate>
+			<solidTime>99999999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/Black</texPath>
+			<shaderParameters>
+				<_distortionIntensity>0.05</_distortionIntensity>
+				<_brightnessMultiplier>1.15</_brightnessMultiplier>
+			</shaderParameters>
+			<drawSize>2.2</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteGlowDistortBackground">
+		<defName>VPE_PsycastPsychicEffectTransfer</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteBetween</thingClass>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<mote>
+			<fadeInTime>0.05</fadeInTime>
+			<fadeOutTime>0.05</fadeOutTime>
+			<solidTime>1.9</solidTime>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/Black</texPath>
+			<shaderParameters>
+				<_distortionIntensity>0.05</_distortionIntensity>
+				<_brightnessMultiplier>1.15</_brightnessMultiplier>
+			</shaderParameters>
+			<drawSize>0.9</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="InteractionMoteBase">
+		<defName>VPE_Mote_Cast</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteCastBubble</thingClass>
+		<graphicData>
+			<texPath>UI/CastBubble/Cast</texPath>
+			<drawSize>1.25</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_Hallucination</defName>
+		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
+			<ticksPerFrame>5</ticksPerFrame>
+			<texPath>Effects/Archon/MassHallucination</texPath>
+			<shaderType>MoteGlow</shaderType>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
+			<drawSize>(0.5, 0.5)</drawSize>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>2.3</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
+	</ThingDef>
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_Liferot</defName>
 		<graphicData Class="VanillaPsycastsExpanded.Graphics.GraphicData_Animated">
-		  <ticksPerFrame>5</ticksPerFrame>
-          <texPath>Effects/Necropath/Liferot</texPath>
-		  <graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
-		  <drawSize>(0.5, 0.5)</drawSize>
-        </graphicData>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <drawOffscreen>true</drawOffscreen>
-        <mote>
-          <fadeInTime>0.5</fadeInTime>
-          <solidTime>2.3</solidTime>
-          <fadeOutTime>1.0</fadeOutTime>
-        </mote>
+			<ticksPerFrame>5</ticksPerFrame>
+			<texPath>Effects/Necropath/Liferot</texPath>
+			<graphicClass>VanillaPsycastsExpanded.Graphics.Graphic_AnimatedMote</graphicClass>
+			<drawSize>(0.5, 0.5)</drawSize>
+		</graphicData>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<mote>
+			<fadeInTime>0.5</fadeInTime>
+			<solidTime>2.3</solidTime>
+			<fadeOutTime>1.0</fadeOutTime>
+		</mote>
 	</ThingDef>
 
 	<ThingDef ParentName="MoteBase">
@@ -352,7 +352,7 @@
 			<solidTime>0.7</solidTime>
 		</mote>
 	</ThingDef>
-	
+
 	<ThingDef ParentName="MoteBase">
 		<defName>VPE_SoulOrb</defName>
 		<thingClass>VanillaPsycastsExpanded.MoteAttachedMovingAround</thingClass>
@@ -367,4 +367,41 @@
 			<needsMaintenance>true</needsMaintenance>
 		</mote>
 	</ThingDef>
+
+	<ThingDef ParentName="MoteBase">
+		<defName>VPE_SoulOrbTransfer</defName>
+		<thingClass>VanillaPsycastsExpanded.MoteBetween</thingClass>
+		<altitudeLayer>MoteOverhead</altitudeLayer>
+		<drawOffscreen>true</drawOffscreen>
+		<graphicData>
+			<texPath>Effects/Necropath/ConsumeBodies/SoulOrb</texPath>
+			<drawSize>0.7</drawSize>
+		</graphicData>
+		<mote>
+			<fadeInTime>0.05</fadeInTime>
+			<fadeOutTime>0.05</fadeOutTime>
+			<solidTime>1.9</solidTime>
+		</mote>
+	</ThingDef>
+	
+	<ThingDef ParentName="MoteGlowDistortBackground">
+		<defName>VPE_MatterPhasing</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<mote>
+			<fadeInTime>0.05</fadeInTime>
+			<fadeOutTime>0.05</fadeOutTime>
+			<solidTime>999999</solidTime>
+			<needsMaintenance>true</needsMaintenance>
+		</mote>
+		<graphicData>
+			<texPath>Things/Mote/Black</texPath>
+			<shaderParameters>
+				<_distortionIntensity>0.05</_distortionIntensity>
+				<_brightnessMultiplier>1.1</_brightnessMultiplier>      
+			</shaderParameters>
+			<drawSize>1.3</drawSize>
+		</graphicData>
+	</ThingDef>
+
 </Defs>
