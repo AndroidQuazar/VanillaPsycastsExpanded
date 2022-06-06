@@ -8,7 +8,6 @@
         public Corpse target;
         protected override void Impact()
         {
-            base.Impact();
             var pawn = target.InnerPawn;
             var hediffs = pawn.health.hediffSet.hediffs;
             for (var i = hediffs.Count - 1; i >= 0; i--)
@@ -26,6 +25,7 @@
                 }
             }
             ResurrectionUtility.ResurrectWithSideEffects(pawn);
+            Destroy();
         }
 
         public override void ExposeData()
