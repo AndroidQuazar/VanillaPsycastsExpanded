@@ -4,10 +4,8 @@ using Verse;
 using Verse.AI;
 namespace VanillaPsycastsExpanded
 {
-	public class MentalState_FriendlyManhunter : MentalState
+	public class MentalState_FriendlyManhunter : MentalState_Manhunter
 	{
-		
-
 		public override bool ForceHostileTo(Thing t)
 		{
 			
