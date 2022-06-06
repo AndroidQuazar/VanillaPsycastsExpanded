@@ -40,6 +40,9 @@
 		<label>psychic overshield</label>
 		<description>Psychically-induced personal skipbarrier. Impenetrable by ranged projectiles.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+		</comps>
 	</HediffDef>
 
 	<HediffDef>
@@ -54,6 +57,9 @@
 				</statOffsets>
 			</li>
 		</stages>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
