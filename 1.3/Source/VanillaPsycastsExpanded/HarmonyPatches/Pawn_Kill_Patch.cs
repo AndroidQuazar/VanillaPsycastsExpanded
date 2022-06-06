@@ -9,7 +9,15 @@
     [HarmonyPatch(typeof(Pawn), "Kill")]
     public static class Pawn_Kill_Patch
     {
-
+        private static bool Prefix(Pawn __instance)
+        {
+            var hediff = __instance.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_DeathShield);
+            if (hediff != null)
+            {
+                return false;
+            }
+            return true;
+        }
         private static void Postfix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit = null)
         {
             if (__instance.Dead)

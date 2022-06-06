@@ -54,7 +54,7 @@
             Matrix4x4 matrix = default(Matrix4x4);
             var drawSize = this.ability.GetRadiusForPawn() * 2f;
             matrix.SetTRS(pos, Quaternion.AngleAxis(curAngle, Vector3.up), new Vector3(drawSize, 1f, drawSize));
-            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldMat, 0, null, 0, MatPropertyBlock);
+            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, OverlayMat, 0, null, 0, MatPropertyBlock);
         }
         public Mote SpawnMoteAttached(ThingDef moteDef, float scale, float rotationRate)
         {

@@ -34,6 +34,10 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AlienRace">
+      <HintPath>..\..\..\..\..\..\..\workshop\content\294100\839005762\1.3\Assemblies\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Core" />
@@ -63,6 +67,8 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
+    <Compile Include="ModCompatibility.cs" />
+    <Compile Include="Paths\Necropath\Hediff_Deathshield.cs" />
     <Compile Include="Paths\Necropath\StatPart_PsycastBodiesConsumed.cs" />
     <Compile Include="Misc\FixedTemperatureZone.cs" />
     <Compile Include="GameComponent_PsycastsManager.cs" />

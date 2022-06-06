@@ -603,10 +603,18 @@
 		<label>bodies consumed</label>
 		<description>text.todo</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_BodiesConsumed</hediffClass>
-		<stages>
-			<li>
-				<vomitMtbDays>0.01</vomitMtbDays>
+	</HediffDef>
+	
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_DeathShield</defName>
+		<label>death shield</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_Deathshield</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_BlackSmoke</stateEffecter>
 			</li>
-		</stages>
+		</comps>
 	</HediffDef>
 </Defs>

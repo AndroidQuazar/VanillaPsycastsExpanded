@@ -208,4 +208,21 @@
 			</li>
 		</children>
 	</EffecterDef>
+	
+  <EffecterDef>
+    <defName>VPE_BlackSmoke</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>VPE_BlackSmoke</fleckDef>
+        <ticksBetweenMotes>5</ticksBetweenMotes>
+		<positionOffset>(0, 0, -0.5)</positionOffset>
+        <scale>0.9~1.5</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+    </children>
+  </EffecterDef>
 </Defs>

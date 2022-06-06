@@ -33,6 +33,7 @@
         public static HediffDef VPE_GainedVitality;
         public static HediffDef VPE_BodyConsumption;
         public static HediffDef VPE_BodiesConsumed;
+        public static HediffDef VPE_DeathShield;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
