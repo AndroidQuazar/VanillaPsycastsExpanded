@@ -68,8 +68,11 @@
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="ModCompatibility.cs" />
+    <Compile Include="Paths\Necropath\Ability_Resurrect.cs" />
     <Compile Include="Paths\Necropath\Ability_SpawnSkeleton.cs" />
+    <Compile Include="Paths\Necropath\Ability_TargetCorpse.cs" />
     <Compile Include="Paths\Necropath\Hediff_Deathshield.cs" />
+    <Compile Include="Paths\Necropath\SoulFromSky.cs" />
     <Compile Include="Paths\Necropath\StatPart_PsycastBodiesConsumed.cs" />
     <Compile Include="Misc\FixedTemperatureZone.cs" />
     <Compile Include="GameComponent_PsycastsManager.cs" />

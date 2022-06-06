@@ -258,6 +258,7 @@
 		<description>Psychically strips the deceased target’s life force and infuses it directly into their bones, animating them for a full day. The only remaining instinct is to inflict pain on the caster’s enemies.</description>
 		<iconPath>Abilities/Necropath/Enthrall</iconPath>
 		<abilityClass>VanillaPsycastsExpanded.Ability_SpawnSkeleton</abilityClass>
+		<castTime>15</castTime>
 		<range>19.9</range>
 		<targetingParameters>
 			<canTargetLocations>False</canTargetLocations>
@@ -284,11 +285,24 @@
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>
 	
-	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastGoToTargetBase">
 		<defName>VPE_Resurrect</defName>
 		<label>resurrect</label>
 		<description>By sacrificing a natural finger, the caster is able to imitate the effects of resurrector mech serum on any non-dessicated corpse, the psychic energy repairing broken-down tissues and kickstarting the body back to life. The target will be incapacitated and their allegiances will remain the same. The less preserved the body is, the more likely the target is to suffer from negative side effects.</description>
 		<iconPath>Abilities/Necropath/Resurrect</iconPath>
+		<abilityClass>VanillaPsycastsExpanded.Ability_Resurrect</abilityClass>
+		<castTime>600</castTime>
+		<targetingParameters>
+			<canTargetLocations>False</canTargetLocations>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>False</canTargetAnimals>
+			<canTargetPawns>False</canTargetPawns>
+			<canTargetHumans>False</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<thingCategory>Item</thingCategory>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+		</targetingParameters>
+		<castSound>VPE_Resurrect_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>

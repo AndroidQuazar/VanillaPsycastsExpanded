@@ -34,6 +34,7 @@
         public static HediffDef VPE_BodyConsumption;
         public static HediffDef VPE_BodiesConsumed;
         public static HediffDef VPE_DeathShield;
+        public static HediffDef TraumaSavant;
 
         public static ThingDef VPE_ChainBolt;
         public static ThingDef VPE_Bolt;
@@ -56,6 +57,7 @@
         public static ThingDef VPE_Shrineshield_Large;
         public static ThingDef VPE_Mote_ParalysisPulse;
         public static ThingDef VPE_SoulOrbTransfer;
+        public static ThingDef VPE_SoulFromSky;
 
         public static TraitDef VPE_Thrall;
         public static SoundDef VPE_Recharge_Sustainer;
@@ -84,7 +86,6 @@
         public static JobDef      VPE_EssenceTransfer;
         public static EffecterDef VPE_Haywire;
 
-
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MentalStateDef     VPE_Wander_Sad;
@@ -102,6 +103,7 @@
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;
         public static PawnKindDef VPE_SummonedSkeleton;
+        public static BodyPartDef Finger;
 
         [DefAlias("VPE_Hurricane")]      public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")]      public static GameConditionDef VPE_Hurricane_Condition;

@@ -58,6 +58,7 @@
       <label>stabilize</label>
       <description>Temporarily puts the target’s cardiovascular system in stasis, which prevents them from bleeding out for two minutes.</description>
       <iconPath>Abilities/Protector/Stabilize</iconPath>
+	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <castTime>180</castTime>
 	  <durationTime>7200</durationTime>
 	  <castSound>VPE_Stabilize_Cast</castSound>

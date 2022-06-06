@@ -2,7 +2,6 @@
 {
     using RimWorld;
     using Verse;
-
     public class StatPart_PsycastBodiesConsumed : StatPart
     {
         public override void TransformValue(StatRequest req, ref float val)
