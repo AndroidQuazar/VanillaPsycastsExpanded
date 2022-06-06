@@ -11,7 +11,7 @@
 
         private Material material;
 
-        public Material ShieldMat
+        public Material OverlayMat
         {
             get
             {

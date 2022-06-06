@@ -67,7 +67,7 @@
             MatPropertyBlock.SetColor(ShaderPropertyIDs.Color, value);
             Matrix4x4 matrix = default(Matrix4x4);
             matrix.SetTRS(pos, Quaternion.identity, new Vector3(OverlaySize * 2f * 1.16015625f, 1f, OverlaySize * 2f * 1.16015625f));
-            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, ShieldMat, 0, null, 0, MatPropertyBlock);
+            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, OverlayMat, 0, null, 0, MatPropertyBlock);
             foreach (var linked in linkedPawns)
             {
                 GenDraw.DrawLineBetween(linked.DrawPos, this.pawn.DrawPos, SimpleColor.Yellow);

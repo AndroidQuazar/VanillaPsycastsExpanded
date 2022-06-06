@@ -272,5 +272,18 @@
       </li>
     </randomGraphics>
   </FleckDef>
-  
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_BlackSmoke</defName>
+    <graphicData>
+      <texPath>Things/Mote/Smoke</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(0.0,0.0,0.0,1.0)</color>
+    </graphicData>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0.50</fadeInTime>
+    <solidTime>6</solidTime>
+    <fadeOutTime>3.2</fadeOutTime>
+    <growthRate>0.005</growthRate>
+  </FleckDef>
 </Defs>

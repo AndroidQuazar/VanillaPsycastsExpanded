@@ -76,4 +76,22 @@
         </modExtensions>
     </WeatherDef>
 
+  <ThingDef ParentName="SkyfallerBase">
+    <defName>VPE_SoulFromSky</defName>
+    <thingClass>VanillaPsycastsExpanded.SoulFromSky</thingClass>
+    <label>soul</label>
+    <tickerType>Normal</tickerType>
+    <size>(1, 1)</size>
+    <graphicData>
+      <texPath>Effects/Necropath/Resurrect/Soul</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <skyfaller>
+		<motesPerCell>0</motesPerCell>
+		<hitRoof>false</hitRoof>
+      <shadowSize>(0, 0)</shadowSize>
+      <speed>1.2</speed>
+    </skyfaller>
+  </ThingDef>
 </Defs>
