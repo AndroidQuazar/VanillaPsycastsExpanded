@@ -101,6 +101,7 @@
 
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;
+        public static PawnKindDef VPE_SummonedSkeleton;
 
         [DefAlias("VPE_Hurricane")]      public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")]      public static GameConditionDef VPE_Hurricane_Condition;
