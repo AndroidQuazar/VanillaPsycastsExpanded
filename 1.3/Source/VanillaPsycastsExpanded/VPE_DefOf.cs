@@ -31,7 +31,6 @@
         public static HediffDef VPE_GroupLink;
         public static HediffDef VPE_Hallucination;
         public static HediffDef VPE_GainedVitality;
-        public static HediffDef VPE_BodyConsumption;
         public static HediffDef VPE_BodiesConsumed;
         public static HediffDef VPE_DeathShield;
         public static HediffDef TraumaSavant;
@@ -84,14 +83,16 @@
         public static JobDef      VPE_UseSkipdoor;
         public static JobDef      VPE_StandFreeze;
         public static JobDef      VPE_EssenceTransfer;
+
         public static EffecterDef VPE_Haywire;
+        public static EffecterDef VPE_Liferot;
+        public static EffecterDef Interceptor_BlockedProjectilePsychic;
+        public static EffecterDef VPE_Skip_ExitNoDelayRed;
 
         public static MeditationFocusDef VPE_Archotech;
         public static MeditationFocusDef VPE_Science;
         public static MentalStateDef     VPE_Wander_Sad;
         public static MentalStateDef     VPE_ManhunterTerritorial;
-        public static EffecterDef        Interceptor_BlockedProjectilePsychic;
-        public static EffecterDef        VPE_Skip_ExitNoDelayRed;
         public static HistoryEventDef    VPE_Foretelling;
         public static HistoryEventDef    VPE_GiftedEltex;
         public static HistoryEventDef    VPE_SoldEltex;

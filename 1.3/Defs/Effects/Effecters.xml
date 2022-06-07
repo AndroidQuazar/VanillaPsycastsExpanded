@@ -215,8 +215,7 @@
       <li>
         <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
         <fleckDef>VPE_BlackSmoke</fleckDef>
-        <ticksBetweenMotes>5</ticksBetweenMotes>
-		<positionOffset>(0, 0, -0.5)</positionOffset>
+        <ticksBetweenMotes>60</ticksBetweenMotes>
         <scale>0.9~1.5</scale>
         <spawnLocType>OnSource</spawnLocType>
         <absoluteAngle>true</absoluteAngle>

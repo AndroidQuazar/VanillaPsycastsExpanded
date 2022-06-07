@@ -37,15 +37,6 @@
                 {
                     __instance.health.RemoveHediff(hediff2);
                 }
-
-                var hediff3 = __instance.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_BodyConsumption) as Hediff_BodyConsumption;
-                if (hediff3 != null)
-                {
-                    __instance.Corpse.Destroy();
-                    var consumerHediff = hediff3.consumer.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_BodiesConsumed) as Hediff_BodiesConsumed;
-                    consumerHediff.consumedBodies++;
-                    __instance.health.RemoveHediff(hediff3);
-                }
             }
         }
     }

@@ -579,24 +579,6 @@
 			</li>
 		</comps>
 	</HediffDef>
-
-	<HediffDef>
-		<defName>VPE_BodyConsumption</defName>
-		<label>body consumption</label>
-		<description>text.todo</description>
-		<makesSickThought>true</makesSickThought>
-		<hediffClass>VanillaPsycastsExpanded.Hediff_BodyConsumption</hediffClass>
-		<comps>
-			<li Class="HediffCompProperties_Effecter">
-				<stateEffecter>VPE_Liferot</stateEffecter>
-			</li>
-			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
-				<filthDef>Filth_CorpseBile</filthDef>
-				<intervalRate>30</intervalRate>
-				<filthCount>1~3</filthCount>
-			</li>
-		</comps>
-	</HediffDef>
 	
 	<HediffDef>
 		<defName>VPE_BodiesConsumed</defName>

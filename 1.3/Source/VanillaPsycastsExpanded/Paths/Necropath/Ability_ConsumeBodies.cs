@@ -7,9 +7,30 @@
     using UnityEngine;
     using Verse;
     using Verse.AI;
-    using Ability = VFECore.Abilities.Ability;
-    public class Ability_ConsumeBodies : Ability
+    public class Ability_ConsumeBodies : Ability_TargetCorpse
     {
+        public override void WarmupToil(Toil toil)
+        {
+            base.WarmupToil(toil);
+            toil.AddPreInitAction(delegate
+            {
+                foreach (var target in Comp.currentlyCastingTargets)
+                {
+                    this.AddEffecterToMaintain(VPE_DefOf.VPE_Liferot.Spawn(target.Thing.Position, this.pawn.Map), target.Thing, toil.defaultDuration);
+                }
+            });
+            toil.AddPreTickAction(delegate
+            {
+                foreach (var target in Comp.currentlyCastingTargets)
+                {
+                    if (target.Thing.IsHashIntervalTick(60))
+                    {
+                        FilthMaker.TryMakeFilth(target.Thing.Position, target.Thing.Map, ThingDefOf.Filth_CorpseBile, 1);
+                        target.Thing.TryGetComp<CompRottable>().RotProgress += 60000;
+                    }
+                }
+            });
+        }
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
@@ -17,12 +38,17 @@
             {
                 pawn.health.AddHediff(VPE_DefOf.VPE_BodiesConsumed);
             }
-        }
-        public override Hediff ApplyHediff(Pawn targetPawn, HediffDef hediffDef, BodyPartRecord bodyPart, int duration, float severity)
-        {
-            var hediff = base.ApplyHediff(targetPawn, hediffDef, bodyPart, duration, severity) as Hediff_BodyConsumption;
-            hediff.consumer = this.pawn;
-            return hediff;
+
+            var consumerHediff = this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_BodiesConsumed) as Hediff_BodiesConsumed;
+            foreach (var target in targets)
+            {
+                MoteBetween mote = (MoteBetween)ThingMaker.MakeThing(VPE_DefOf.VPE_SoulOrbTransfer);
+                mote.Attach(target.Thing, this.pawn);
+                mote.exactPosition = target.Thing.DrawPos;
+                GenSpawn.Spawn(mote, target.Thing.Position, this.pawn.Map);
+                consumerHediff.consumedBodies++;
+                target.Thing.Destroy();
+            }
         }
     }
 }

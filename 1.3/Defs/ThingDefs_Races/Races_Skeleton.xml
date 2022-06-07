@@ -102,8 +102,7 @@
 			
 		</comps>
 		<race>
-			
-			
+			<deathActionWorkerClass>VanillaPsycastsExpanded.DeathActionWorker_Skeleton</deathActionWorkerClass>
 			<body>VPE_SkeletalBody</body>
 			<fleshType>VPE_SkeletalFlesh</fleshType>
 			<lifeStageAges>
@@ -135,6 +134,7 @@
 				<bodyGraphicData>
 					<texPath>Effects/Necropath/Enthrall/Soulshade</texPath>
 					<drawSize>2</drawSize>
+					<shaderType>MetaOverlay</shaderType>
 				</bodyGraphicData>
 			</li>
 		</lifeStages>
