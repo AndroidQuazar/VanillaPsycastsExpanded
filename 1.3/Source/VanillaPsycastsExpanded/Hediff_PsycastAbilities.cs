@@ -106,20 +106,24 @@
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
-            if (PawnUtility.ShouldSendNotificationAbout(this.pawn))
-                Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
-                                               "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, this.pawn.gender.GetPronoun().CapitalizeFirst(),
-                                                                                  ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
-                                               this.pawn);
         }
 
         public void GainExperience(float experienceGain)
         {
             this.experience += experienceGain;
+            bool psylinkGained = false;
             while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
             {
                 this.ChangeLevel(1);
+                psylinkGained = true;
                 this.experience -= ExperienceRequiredForLevel(this.level);
+            }
+            if (psylinkGained && PawnUtility.ShouldSendNotificationAbout(this.pawn))
+            {
+                Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
+                                               "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, 
+                                               this.pawn.gender.GetPronoun().CapitalizeFirst(),
+                                                ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent, this.pawn);
             }
         }
 

@@ -21,7 +21,7 @@
     public class Hediff_GroupLink : Hediff_Overlay
 	{
         public override string OverlayPath => "Other/ForceField";
-        public virtual Color OverlayColor => Color.yellow;
+        public virtual Color OverlayColor => new Color(Color.yellow.r, Color.yellow.g, Color.yellow.b, 0.5f);
         public override float OverlaySize => this.ability.GetRadiusForPawn();
 
         public List<Pawn> linkedPawns = new List<Pawn>();

@@ -65,7 +65,8 @@
 		<range>25</range>
 		<durationTime>1800</durationTime>
 		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+		<fleckOnTarget>PsycastAreaEffect</fleckOnTarget>
+		<fleckOnTargetScaleWithRadius>true</fleckOnTargetScaleWithRadius>
 		<goodwillImpact>-15</goodwillImpact>
 		<targetMode>Location</targetMode>
 		<targetingParametersForAoE>
@@ -97,7 +98,6 @@
 		<label>word of alliance</label>
 		<description>Speak words of friendship and benefits to a close target using psychic suggestion, helping them realize that you’re not all that bad. Only works on those willing to listen and effect scales with the caster's psychic sensitivity.</description>
 		<iconPath>Abilities/Archon/WordofAlliance</iconPath>
-		<range>3</range>
 		<castTime>60</castTime>
 		<abilityClass>VanillaPsycastsExpanded.Ability_GoodwillImpact</abilityClass>
 		<modExtensions>
