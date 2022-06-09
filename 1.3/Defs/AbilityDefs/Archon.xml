@@ -19,6 +19,7 @@
 				<order>1</order>
 				<psyfocusCost>0.6</psyfocusCost>
 				<entropyGain>0</entropyGain>
+				<showCastBubble>false</showCastBubble>
 			</li>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_AbilityOffsetPrisonerResistance">
 				<offset>-20</offset>

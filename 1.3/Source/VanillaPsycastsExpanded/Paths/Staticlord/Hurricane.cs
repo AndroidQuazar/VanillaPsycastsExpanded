@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded.Staticlord
 {
     using RimWorld;
+    using RimWorld.Planet;
     using UnityEngine;
     using Verse;
     using Ability = VFECore.Abilities.Ability;
@@ -25,6 +26,7 @@
         {
             this.caused.End();
             this.Map.weatherDecider.StartNextWeather();
+            this.Pawn.Psycasts().currentlyChanneling = null;
             base.Destroy(mode);
         }
 
@@ -59,14 +61,14 @@
 
         public string OffLabel => "VPE.StopHurricane".Translate();
 
-        public override void Cast(LocalTargetInfo target)
+        public override void Cast(params GlobalTargetInfo[] targets)
         {
-            base.Cast(target);
+            base.Cast(targets);
             this.maker      = (HurricaneMaker) ThingMaker.MakeThing(VPE_DefOf.VPE_HurricaneMaker);
             this.maker.Pawn = this.pawn;
             GenSpawn.Spawn(this.maker, this.pawn.Position, this.pawn.Map);
+            this.pawn.Psycasts().currentlyChanneling = this;
         }
-
 
         public override void ExposeData()
         {

@@ -384,7 +384,7 @@
     <radius>4.9</radius>
     <castTime>300</castTime>
     <targetMode>Tile</targetMode>
-    <range>10</range>
+    <range>999</range>
     <rangeStatFactors>
       <PsychicSensitivity>1</PsychicSensitivity>
     </rangeStatFactors>

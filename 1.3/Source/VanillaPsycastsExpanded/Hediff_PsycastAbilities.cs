@@ -14,8 +14,10 @@
     {
         private static readonly Texture2D PsySetNext = ContentFinder<Texture2D>.Get("UI/Gizmos/Psyset_Next");
 
-        public  float experience;
-        public  int   points;
+        public float   experience;
+        public int     points;
+        public Ability currentlyChanneling;
+
         private int   statPoints;
         private float minHeat;
         private int   psysetIndex;
@@ -24,6 +26,7 @@
         public List<PsySet>             psysets                = new();
         public List<MeditationFocusDef> unlockedMeditationFoci = new();
         public List<PsycasterPathDef>   unlockedPaths          = new();
+
 
         private HediffStage curStage;
 
@@ -115,16 +118,16 @@
             while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
             {
                 this.ChangeLevel(1);
-                psylinkGained = true;
+                psylinkGained   =  true;
                 this.experience -= ExperienceRequiredForLevel(this.level);
             }
+
             if (psylinkGained && PawnUtility.ShouldSendNotificationAbout(this.pawn))
-            {
                 Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
-                                               "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap, 
-                                               this.pawn.gender.GetPronoun().CapitalizeFirst(),
-                                                ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent, this.pawn);
-            }
+                                               "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap,
+                                                                                  this.pawn.gender.GetPronoun().CapitalizeFirst(),
+                                                                                  ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
+                                               this.pawn);
         }
 
         public bool SufficientPsyfocusPresent(float focusRequired) =>
@@ -151,7 +154,8 @@
             Scribe_Collections.Look(ref this.unlockedPaths,          nameof(this.unlockedPaths),          LookMode.Def);
             Scribe_Collections.Look(ref this.unlockedMeditationFoci, nameof(this.unlockedMeditationFoci), LookMode.Def);
             Scribe_Collections.Look(ref this.psysets,                nameof(this.psysets),                LookMode.Deep);
-            Scribe_References.Look(ref this.psylink, nameof(this.psylink));
+            Scribe_References.Look(ref this.psylink,             nameof(this.psylink));
+            Scribe_References.Look(ref this.currentlyChanneling, nameof(this.currentlyChanneling));
         }
 
         public void SpentPoints(int count = 1)
