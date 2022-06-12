@@ -104,30 +104,33 @@
             this.pawn.psychicEntropy.OffsetPsyfocusDirectly(-focus);
         }
 
-        public override void ChangeLevel(int levelOffset)
+        public void ChangeLevel(int levelOffset, bool sendLetter = true)
         {
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
-        }
-
-        public void GainExperience(float experienceGain)
-        {
-            this.experience += experienceGain;
-            bool psylinkGained = false;
-            while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
-            {
-                this.ChangeLevel(1);
-                psylinkGained   =  true;
-                this.experience -= ExperienceRequiredForLevel(this.level);
-            }
-
-            if (psylinkGained && PawnUtility.ShouldSendNotificationAbout(this.pawn))
+            if (sendLetter && PawnUtility.ShouldSendNotificationAbout(this.pawn))
                 Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
                                                "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap,
                                                                                   this.pawn.gender.GetPronoun().CapitalizeFirst(),
                                                                                   ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
                                                this.pawn);
+        }
+        public override void ChangeLevel(int levelOffset)
+        {
+            ChangeLevel(levelOffset, sendLetter: true);
+        }
+
+        public void GainExperience(float experienceGain)
+        {
+            this.experience += experienceGain;
+            bool psylinkWasGainedAlready = false;
+            while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
+            {
+                this.ChangeLevel(1, sendLetter: psylinkWasGainedAlready is false);
+                psylinkWasGainedAlready   =  true;
+                this.experience -= ExperienceRequiredForLevel(this.level);
+            }
         }
 
         public bool SufficientPsyfocusPresent(float focusRequired) =>
