@@ -124,11 +124,11 @@
         public void GainExperience(float experienceGain)
         {
             this.experience += experienceGain;
-            bool psylinkWasGainedAlready = false;
+            bool newLevelWasGainedAlready = false;
             while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
             {
-                this.ChangeLevel(1, sendLetter: psylinkWasGainedAlready is false);
-                psylinkWasGainedAlready   =  true;
+                this.ChangeLevel(1, sendLetter: newLevelWasGainedAlready is false);
+                newLevelWasGainedAlready   =  true;
                 this.experience -= ExperienceRequiredForLevel(this.level);
             }
         }
