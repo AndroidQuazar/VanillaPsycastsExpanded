@@ -13,14 +13,14 @@
 
     public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
     {
-        public float entropyGain = 0f;
-        public int   level;
-        public int   order;
-
+        public float            entropyGain = 0f;
+        public int              level;
+        public int              order;
         public PsycasterPathDef path;
         public List<AbilityDef> prerequisites;
         public float            psyfocusCost = 0f;
         public bool             spaceAfter;
+        public bool             showCastBubble = true;
 
         public bool PrereqsCompleted(Pawn pawn) => this.PrereqsCompleted(pawn.GetComp<CompAbilities>());
 
@@ -59,6 +59,12 @@
                     return false;
                 }
 
+                if (hediff.currentlyChanneling != null)
+                {
+                    reason = "VPE.CurrentChanneling".Translate(hediff.currentlyChanneling.def.LabelCap);
+                    return false;
+                }
+
                 reason = string.Empty;
                 return true;
             }
@@ -72,7 +78,7 @@
             base.Cast(targets, ability);
 
             Hediff_PsycastAbilities psycastHediff =
-                (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+                (Hediff_PsycastAbilities) ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
             psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
         }
 
@@ -85,7 +91,7 @@
                 builder.AppendInNewLine($"{"AbilityPsyfocusCost".Translate()}: {psyfocusCost.ToStringPercent()}");
 
             float entropy = this.GetEntropyUsedByPawn(ability.pawn);
-            if (entropy > float.Epsilon) 
+            if (entropy > float.Epsilon)
                 builder.AppendInNewLine($"{"AbilityEntropyGain".Translate()}: {entropy}");
 
             return builder.ToString().Colorize(Color.cyan);
@@ -94,6 +100,7 @@
         public override void WarmupToil(Toil toil)
         {
             base.WarmupToil(toil);
+            if (!this.showCastBubble) return;
             toil.AddPreInitAction(delegate
             {
                 MoteCastBubble mote = (MoteCastBubble) ThingMaker.MakeThing(VPE_DefOf.VPE_Mote_Cast);

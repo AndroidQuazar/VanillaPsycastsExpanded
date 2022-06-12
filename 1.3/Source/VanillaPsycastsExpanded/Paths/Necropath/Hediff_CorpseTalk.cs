@@ -11,10 +11,16 @@
         public override void PostRemoved()
         {
             base.PostRemoved();
+            ResetSkills();
+        }
+
+        public void ResetSkills()
+        {
             foreach (var kvp in skillXPDifferences)
             {
                 this.pawn.skills.GetSkill(kvp.Key).Level = Mathf.Max(0, this.pawn.skills.GetSkill(kvp.Key).Level - kvp.Value);
             }
+            skillXPDifferences.Clear();
         }
 
         public override void ExposeData()

@@ -46,7 +46,7 @@
             base.SpawnSetup(map, respawningAfterLoad);
             if (!respawningAfterLoad)
             {
-                secondSpawnTickRef(this) = Find.TickManager.TicksGame + this.DurationTicks() + Rand.RangeInclusive(-10, 20);
+                secondSpawnTickRef(this) = Find.TickManager.TicksGame + this.DurationTicks() + Rand.RangeInclusive(-60, 120);
                 Rand.PushState(Find.TickManager.TicksGame);
                 this.plantDef = this.ChoosePlant(this.Position, map);
                 Rand.PopState();

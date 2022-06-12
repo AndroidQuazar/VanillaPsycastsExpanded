@@ -41,6 +41,10 @@
     <baseInspectLine>Mental state: Fleeing</baseInspectLine>
     <blockNormalThoughts>true</blockNormalThoughts>
     <unspawnedCanDo>true</unspawnedCanDo>
+    <minTicksBeforeRecovery>8000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>12000</maxTicksBeforeRecovery>
+    <recoveryMtbDays>0.033</recoveryMtbDays>
+    <recoverFromSleep>true</recoverFromSleep>
   </MentalStateDef>
  
 

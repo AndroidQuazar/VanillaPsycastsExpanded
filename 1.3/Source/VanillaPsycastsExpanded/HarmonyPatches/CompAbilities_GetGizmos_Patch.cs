@@ -5,8 +5,8 @@
     using Verse;
     using VFECore.Abilities;
 
-    [HarmonyPatch(typeof(CompAbilities), nameof(CompAbilities.CompGetGizmosExtra))]
-    public static class CompAbilities_CompGetGizmosExtra_Patch
+    [HarmonyPatch(typeof(CompAbilities), nameof(CompAbilities.GetGizmos))]
+    public static class CompAbilities_GetGizmos_Patch
     {
         public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> gizmos, CompAbilities __instance)
         {

@@ -200,12 +200,16 @@
 		<targetMode>Self</targetMode>
 		<hasAoE>true</hasAoE>
 		<radius>3.9</radius>
+		<needsTicking>true</needsTicking>
 		<targetingParametersForAoE>
 			<canTargetLocations>False</canTargetLocations>
 			<canTargetSelf>False</canTargetSelf>
 			<canTargetAnimals>False</canTargetAnimals>
-			<canTargetPawns>True</canTargetPawns>
-			<canTargetHumans>True</canTargetHumans>
+			<canTargetPawns>False</canTargetPawns>
+			<canTargetHumans>False</canTargetHumans>
+			<canTargetItems>true</canTargetItems>
+			<thingCategory>Item</thingCategory>
+			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParametersForAoE>
 		<castSound>VPE_ConsumeBodies_Cast</castSound>
 		<modExtensions>
@@ -218,9 +222,6 @@
 				<prerequisites>
 					<li>VPE_Corpsetalk</li>
 				</prerequisites>
-			</li>
-			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
-				<hediff>VPE_BodyConsumption</hediff>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

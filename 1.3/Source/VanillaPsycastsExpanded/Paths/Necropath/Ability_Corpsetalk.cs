@@ -8,26 +8,31 @@
     using Verse;
     using Verse.AI;
     using VFECore.Abilities;
-    using Ability = VFECore.Abilities.Ability;
     public class Ability_Corpsetalk : Ability_TargetCorpse
     {
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
             var hediff = this.ApplyHediff(this.pawn) as Hediff_CorpseTalk;
-            hediff.skillXPDifferences = new Dictionary<SkillDef, int>();
-            foreach (var target in targets)
+            if (hediff.skillXPDifferences != null)
             {
-                var corpse = target.Thing as Corpse;
-                foreach (var skillDef in DefDatabase<SkillDef>.AllDefs)
+                hediff.ResetSkills();
+            }
+            else
+            {
+                hediff.skillXPDifferences = new Dictionary<SkillDef, int>();
+            }
+            var corpse = targets[0].Thing as Corpse;
+            foreach (var skillDef in DefDatabase<SkillDef>.AllDefs)
+            {
+                var pawnSkillRecord = pawn.skills.GetSkill(skillDef);
+                var corpseSkillRecord = corpse.InnerPawn.skills.GetSkill(skillDef);
+                var diff = corpseSkillRecord.Level - pawnSkillRecord.Level;
+                if (diff > 0)
                 {
-                    var diff = corpse.InnerPawn.skills.GetSkill(skillDef).Level - pawn.skills.GetSkill(skillDef).Level;
-                    if (diff > 0)
-                    {
-                        var oldValue = pawn.skills.GetSkill(skillDef).Level;
-                        pawn.skills.GetSkill(skillDef).Level = Mathf.Min(20, pawn.skills.GetSkill(skillDef).Level + diff);
-                        hediff.skillXPDifferences[skillDef] = pawn.skills.GetSkill(skillDef).Level - oldValue;
-                    }
+                    var oldValue = pawnSkillRecord.Level;
+                    pawnSkillRecord.Level = Mathf.Min(20, pawnSkillRecord.Level + diff);
+                    hediff.skillXPDifferences[skillDef] = pawnSkillRecord.Level - oldValue;
                 }
             }
         }

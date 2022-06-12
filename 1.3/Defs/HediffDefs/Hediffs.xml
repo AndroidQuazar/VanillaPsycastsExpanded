@@ -461,6 +461,7 @@
 		<defName>VPE_Hallucination</defName>
 		<label>hallucination</label>
 		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_Hallucination</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_Hallucination</stateEffecter>
@@ -576,24 +577,6 @@
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
 				<moteDef>VPE_SoulOrb</moteDef>
-			</li>
-		</comps>
-	</HediffDef>
-
-	<HediffDef>
-		<defName>VPE_BodyConsumption</defName>
-		<label>body consumption</label>
-		<description>text.todo</description>
-		<makesSickThought>true</makesSickThought>
-		<hediffClass>VanillaPsycastsExpanded.Hediff_BodyConsumption</hediffClass>
-		<comps>
-			<li Class="HediffCompProperties_Effecter">
-				<stateEffecter>VPE_Liferot</stateEffecter>
-			</li>
-			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
-				<filthDef>Filth_CorpseBile</filthDef>
-				<intervalRate>30</intervalRate>
-				<filthCount>1~3</filthCount>
 			</li>
 		</comps>
 	</HediffDef>
