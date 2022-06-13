@@ -253,9 +253,15 @@
                                 this.hediff.SpentPoints();
                                 this.hediff.UnlockPath(def);
                             }
+
+                            TooltipHandler.TipRegion(centerRect, def.tooltip);
                         }
                         else
-                            Widgets.Label(centerRect, "VPE.Locked".Translate().Resolve().ToUpper());
+                        {
+                            GUI.color = Color.grey;
+                            Widgets.ButtonText(centerRect, "VPE.Locked".Translate().Resolve().ToUpper(), active: false);
+                            GUI.color = Color.white;
+                        }
                     }
                 }
 

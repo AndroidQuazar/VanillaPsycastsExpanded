@@ -21,6 +21,7 @@
         public int    height;
         public int    order;
         public string tab;
+        public string tooltip;
 
         [Unsaved] public Texture2D        backgroundImage;
         [Unsaved] public Texture2D        altBackgroundImage;
