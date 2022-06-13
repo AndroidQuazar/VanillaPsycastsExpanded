@@ -74,15 +74,15 @@
         public static SoundDef Psycast_Neuroquake_CastEnd;
         public static SoundDef VPE_FrostRay_Sustainer;
 
-        public static FleckDef    VPE_VortexSpark;
-        public static FleckDef    VPE_WarlordZap;
-        public static FleckDef    VPE_AggresiveHeatDump;
-        public static FleckDef    PsycastAreaEffect;
-        public static StatDef     VPE_PsyfocusCostFactor;
-        public static StatDef     VPE_PsychicEntropyMinimum;
-        public static JobDef      VPE_UseSkipdoor;
-        public static JobDef      VPE_StandFreeze;
-        public static JobDef      VPE_EssenceTransfer;
+        public static FleckDef VPE_VortexSpark;
+        public static FleckDef VPE_WarlordZap;
+        public static FleckDef VPE_AggresiveHeatDump;
+        public static FleckDef PsycastAreaEffect;
+        public static StatDef  VPE_PsyfocusCostFactor;
+        public static StatDef  VPE_PsychicEntropyMinimum;
+        public static JobDef   VPE_UseSkipdoor;
+        public static JobDef   VPE_StandFreeze;
+        public static JobDef   VPE_EssenceTransfer;
 
         public static EffecterDef VPE_Haywire;
         public static EffecterDef VPE_Liferot;
@@ -103,8 +103,8 @@
 
         public static GameConditionDef VPE_PsychicFlashstorm;
         public static GameConditionDef VPE_TimeQuake;
-        public static PawnKindDef VPE_SummonedSkeleton;
-        public static BodyPartDef Finger;
+        public static PawnKindDef      VPE_SummonedSkeleton;
+        public static BodyPartDef      Finger;
 
         [DefAlias("VPE_Hurricane")]      public static WeatherDef       VPE_Hurricane_Weather;
         [DefAlias("VPE_Hurricane")]      public static GameConditionDef VPE_Hurricane_Condition;

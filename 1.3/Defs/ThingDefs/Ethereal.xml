@@ -180,4 +180,33 @@
             <flightSpeed>20</flightSpeed>
         </pawnFlyer>
     </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_Darkness</defName>
+        <label>darkness</label>
+        <thingClass>ThingWithComps</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <drawOffscreen>true</drawOffscreen>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MotePsychicSkipInner</shaderType>
+            <texPath>Things/Mote/SkipInnerDimension</texPath>
+            <shaderParameters>
+                <_innerRingSize>0.65</_innerRingSize>
+                <_inTime>0.0</_inTime>
+                <_solidTime>2</_solidTime>
+                <_outTime>0.0</_outTime>
+                <AgeSecs>1</AgeSecs>
+            </shaderParameters>
+            <drawSize>13.6</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="VanillaPsycastsExpanded.Nightstalker.CompProperties_Darkness">
+                <glowRadius>4.9</glowRadius>
+            </li>
+            <li>
+                <compClass>VFECore.Abilities.CompDuration</compClass>
+            </li>
+        </comps>
+    </ThingDef>
 </Defs>
