@@ -6,8 +6,6 @@
     using UnityEngine;
     using Verse;
     using Verse.Sound;
-    using VFECore.Abilities;
-    using Ability = VFECore.Abilities.Ability;
 
     [HarmonyPatch]
     public class GameCondition_RaidPause : GameCondition_TimeSnow
@@ -78,18 +76,6 @@
                     this.worldOverlayMat.SetTextureOffset(
                         "_MainTex2", Find.TickManager.TicksGame % 3600000 * new Vector2(0.0004f, -0.002f) * this.worldOverlayMat.GetTextureScale("_MainTex").x);
             }
-        }
-    }
-
-    public class AbilityExtension_GameCondition : AbilityExtension_AbilityMod
-    {
-        public GameConditionDef gameCondition;
-
-        public override void Cast(LocalTargetInfo target, Ability ability)
-        {
-            base.Cast(target, ability);
-            GameCondition condition = GameConditionMaker.MakeCondition(this.gameCondition, ability.GetDurationForPawn());
-            ability.pawn.Map.gameConditionManager.RegisterCondition(condition);
         }
     }
 }

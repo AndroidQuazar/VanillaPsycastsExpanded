@@ -186,7 +186,7 @@
             <li>VPE_Age</li>
           </prerequisites>
         </li>
-        <li Class="VanillaPsycastsExpanded.Chronopath.AbilityExtension_GameCondition">
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
           <gameCondition>VPE_RaidPause</gameCondition>
         </li>
       </modExtensions>

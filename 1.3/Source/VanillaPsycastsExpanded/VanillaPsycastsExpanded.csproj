@@ -69,6 +69,7 @@
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Paths\Archon\Hediff_Hallucination.cs" />
+    <Compile Include="Common\AbilityExtension_GameCondition.cs" />
     <Compile Include="Paths\Necropath\Ability_Resurrect.cs" />
     <Compile Include="Paths\Necropath\Ability_SpawnSkeleton.cs" />
     <Compile Include="Paths\Necropath\Ability_TargetCorpse.cs" />
