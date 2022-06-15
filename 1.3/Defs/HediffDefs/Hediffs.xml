@@ -373,7 +373,7 @@
 		<description>Psychically-split fragment of someone's personality imbued in this very being.</description>
 		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_Essence</hediffClass>
 		<comps>
-			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
 		</comps>
 	</HediffDef>
 	<HediffDef ParentName="PsycastHediffBase">
@@ -580,14 +580,13 @@
 			</li>
 		</comps>
 	</HediffDef>
-	
+
 	<HediffDef>
 		<defName>VPE_BodiesConsumed</defName>
 		<label>bodies consumed</label>
 		<description>text.todo</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_BodiesConsumed</hediffClass>
 	</HediffDef>
-	
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_DeathShield</defName>
@@ -597,6 +596,25 @@
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
 				<stateEffecter>VPE_BlackSmoke</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>VPE_Obscured</defName>
+		<label>obscured</label>
+		<description>text.todo</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath" />
+			<li>
+				<compClass>VanillaPsycastsExpanded.Nightstalker.HediffComp_DissapearsInLight</compClass>
+			</li>
+			<li>
+				<compClass>VanillaPsycastsExpanded.Nightstalker.HediffComp_DissapearsOnAttack</compClass>
+			</li>
+			<li>
+				<compClass>HediffComp_Invisibility</compClass>
 			</li>
 		</comps>
 	</HediffDef>

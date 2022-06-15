@@ -130,6 +130,7 @@
     <Compile Include="Paths\Necropath\Hediff_CorpseTalk.cs" />
     <Compile Include="Paths\Necropath\Hediff_Liferot.cs" />
     <Compile Include="Paths\Nightstalker\CompDarkener.cs" />
+    <Compile Include="Paths\Nightstalker\HediffComp_DissapearsInLight.cs" />
     <Compile Include="Paths\Nightstalker\Hediff_Darkvision.cs" />
     <Compile Include="Paths\Skipmaster\Ability_Teleport.cs" />
     <Compile Include="Paths\Skipmaster\Ability_WorldTeleport.cs" />

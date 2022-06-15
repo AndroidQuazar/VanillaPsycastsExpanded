@@ -59,4 +59,40 @@
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
+    <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+      <defName>VPE_Obscure</defName>
+      <label>obscure</label>
+      <description>Creates a field of optical disharmony around the caster, causing affected allies standing in darkness to be completely invisible. Attacking breaks the illusion.</description>
+      <iconPath>Abilities/Nightstalker/Obscure</iconPath>
+      <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+      <castTime>300</castTime>
+      <hasAoE>true</hasAoE>
+      <targetMode>Self</targetMode>
+      <radius>8.9</radius>
+      <targetingParametersForAoE>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetHumans>true</canTargetHumans>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetMechs>false</canTargetMechs>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <mustBeSameFaction>true</mustBeSameFaction>
+      </targetingParametersForAoE>
+      <castSound>VPE_Obscure_Cast</castSound>
+      <modExtensions>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+          <path>VPE_Nightstalker</path>
+          <level>2</level>
+          <order>1</order>
+          <psyfocusCost>0.4</psyfocusCost>
+          <entropyGain>0</entropyGain>
+          <prerequisites>
+            <li>VPE_Darkness</li>
+          </prerequisites>
+        </li>
+        <li Class="VFECore.Abilities.AbilityExtension_Hediff">
+          <hediff>VPE_Obscured</hediff>
+        </li>
+      </modExtensions>
+    </VFECore.Abilities.AbilityDef>
 </Defs>
