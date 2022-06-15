@@ -6,23 +6,30 @@
     using Verse;
     using Verse.AI;
     using Verse.Sound;
-    using VFECore.Abilities;
     using Ability = VFECore.Abilities.Ability;
 
     public class Ability_Teleport : Ability
     {
+        public virtual FleckDef[] EffectSet => new[]
+        {
+            FleckDefOf.PsycastSkipFlashEntry,
+            FleckDefOf.PsycastSkipInnerExit,
+            FleckDefOf.PsycastSkipOuterRingExit
+        };
+
         public override void WarmupToil(Toil toil)
         {
             base.WarmupToil(toil);
             toil.AddPreTickAction(delegate
             {
                 if (this.pawn.jobs.curDriver.ticksLeftThisToil != 5) return;
+                FleckDef[] set = this.EffectSet;
                 for (int i = 0; i < this.Comp.currentlyCastingTargets.Length; i += 2)
                     if (this.Comp.currentlyCastingTargets[i].Thing is { } t)
                     {
                         if (t is Pawn p)
                         {
-                            FleckCreationData dataAttachedOverlay = FleckMaker.GetDataAttachedOverlay(p, FleckDefOf.PsycastSkipFlashEntry, Vector3.zero);
+                            FleckCreationData dataAttachedOverlay = FleckMaker.GetDataAttachedOverlay(p, set[0], Vector3.zero);
                             dataAttachedOverlay.link.detachAfterTicks = 5;
                             p.Map.flecks.CreateFleck(dataAttachedOverlay);
                         }
@@ -30,8 +37,8 @@
                             FleckMaker.Static(t.TrueCenter(), t.Map, FleckDefOf.PsycastSkipFlashEntry);
 
                         GlobalTargetInfo dest = this.Comp.currentlyCastingTargets[i + 1];
-                        FleckMaker.Static(dest.Cell, dest.Map, FleckDefOf.PsycastSkipInnerExit);
-                        FleckMaker.Static(dest.Cell, dest.Map, FleckDefOf.PsycastSkipOuterRingExit);
+                        FleckMaker.Static(dest.Cell, dest.Map, set[1]);
+                        FleckMaker.Static(dest.Cell, dest.Map, set[2]);
                         SoundDefOf.Psycast_Skip_Entry.PlayOneShot(t);
                         SoundDefOf.Psycast_Skip_Exit.PlayOneShot(new TargetInfo(dest.Cell, dest.Map));
                         this.AddEffecterToMaintain(EffecterDefOf.Skip_Entry.Spawn(t, t.Map),           t.Position, 60);

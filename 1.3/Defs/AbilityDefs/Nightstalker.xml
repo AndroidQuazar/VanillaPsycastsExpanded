@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
-    <defName>Darkvision</defName>
+    <defName>VPE_Darkvision</defName>
     <label>darkvision</label>
     <description>Gives the targeted pawn a nictitating membrane that allows them to see equally well in darkness and daytime. Duration scales with the target's psychic sensitivity.</description>
     <iconPath>Abilities/Nightstalker/Darkvision</iconPath>
@@ -103,6 +103,7 @@
     <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
     <castTime>600</castTime>
     <targetMode>Self</targetMode>
+    <castSound>PsychicShockLanceCast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Nightstalker</path>
@@ -111,12 +112,46 @@
         <psyfocusCost>0.3</psyfocusCost>
         <entropyGain>0</entropyGain>
         <prerequisites>
-          <li>Darkvision</li>
+          <li>VPE_Darkvision</li>
         </prerequisites>
       </li>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
         <gameCondition>Eclipse</gameCondition>
         <durationDays>0.75~1.25</durationDays>
+      </li>
+    </modExtensions>
+  </VFECore.Abilities.AbilityDef>
+  <VFECore.Abilities.AbilityDef  ParentName="VPE_PsycastBase">
+    <defName>VPE_Shadowskip</defName>
+    <label>shadowskip</label>
+    <description>Linking the caster with their own shadow allows them to teleport themselves to an area of darkness, even if they can’t see the location.</description>
+    <iconPath>Abilities/Nightstalker/Shadowskip</iconPath>
+    <abilityClass>VanillaPsycastsExpanded.Nightstalker.Ability_TeleportDark</abilityClass>
+    <castTime>30</castTime>
+    <needsTicking>true</needsTicking>
+    <targetMode>Location</targetMode>
+    <range>99999</range>
+    <targetingParameters Class="VFECore.Abilities.TargetingParametersForAoE">
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetBlockedLocations>false</canTargetBlockedLocations>
+    </targetingParameters>
+    <modExtensions>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+        <path>VPE_Nightstalker</path>
+        <level>3</level>
+        <order>1</order>
+        <psyfocusCost>0.01</psyfocusCost>
+        <entropyGain>40</entropyGain>
+        <prerequisites>
+          <li>VPE_Obscure</li>
+          <li>VPE_Eclipse</li>
+        </prerequisites>
+      </li>
+      <li Class="VanillaPsycastsExpanded.Skipmaster.AbilityExtension_Clamor">
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>

@@ -286,4 +286,22 @@
     <fadeOutTime>3.2</fadeOutTime>
     <growthRate>0.005</growthRate>
   </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_PsycastSkipFlashEntry_DarkBlue</defName>
+    <altitudeLayer>VisEffects</altitudeLayer>
+    <fadeInTime>0.15</fadeInTime>
+    <fadeOutTime>0.15</fadeOutTime>
+    <solidTime>0.08</solidTime>
+    <graphicData>
+      <graphicClass>Graphic_FleckPulse</graphicClass>
+      <shaderType>MotePsychicSkipFlash</shaderType>
+      <texPath>Things/Mote/PsycastSkipFlash</texPath>
+      <shaderParameters>
+        <_Noise>/Things/Mote/SkipFlashNoise</_Noise>
+      </shaderParameters>
+      <drawSize>2.6</drawSize>
+      <color>(0, 0, 0.3)</color>
+    </graphicData>
+  </FleckDef>
 </Defs>
