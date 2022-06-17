@@ -73,6 +73,7 @@
         public static SoundDef Psycast_Neuroquake_CastLoop;
         public static SoundDef Psycast_Neuroquake_CastEnd;
         public static SoundDef VPE_FrostRay_Sustainer;
+        public static SoundDef VPE_Assassinate_Return;
 
         public static FleckDef VPE_VortexSpark;
         public static FleckDef VPE_WarlordZap;

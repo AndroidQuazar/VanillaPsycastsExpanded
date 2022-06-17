@@ -384,10 +384,7 @@
     <radius>4.9</radius>
     <castTime>300</castTime>
     <targetMode>Tile</targetMode>
-    <range>999</range>
-    <rangeStatFactors>
-      <PsychicSensitivity>1</PsychicSensitivity>
-    </rangeStatFactors>
+    <range>9999</range>
     <worldTargeting>true</worldTargeting>
     <needsTicking>true</needsTicking>
     <showGizmoOnWorldView>true</showGizmoOnWorldView>

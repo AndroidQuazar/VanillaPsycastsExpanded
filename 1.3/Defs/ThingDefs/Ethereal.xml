@@ -209,4 +209,19 @@
             </li>
         </comps>
     </ThingDef>
+    <ThingDef ParentName="EtherealThingBase">
+        <defName>VPE_Decoy</defName>
+        <label>decoy</label>
+        <thingClass>VanillaPsycastsExpanded.Nightstalker.Decoy</thingClass>
+        <tickerType>Normal</tickerType>
+        <drawerType>RealtimeOnly</drawerType>
+        <comps>
+            <li>
+                <compClass>VFECore.Abilities.CompDuration</compClass>
+            </li>
+            <li>
+                <compClass>VFECore.Abilities.CompAbilitySpawn</compClass>
+            </li>
+        </comps>
+    </ThingDef>
 </Defs>

@@ -618,4 +618,16 @@
 			</li>
 		</comps>
 	</HediffDef>
+
+	<HediffDef ParentName="PsycastHediffBase">
+		<defName>VPE_Shadowfocus</defName>
+		<label>shadowfocus</label>
+		<description>text.todo</description>
+		<hediffClass>VanillaPsycastsExpanded.Nightstalker.Hediff_ShadowFocus</hediffClass>
+		<comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>VPE_BlackSmoke</stateEffecter>
+			</li>
+		</comps>
+	</HediffDef>
 </Defs>
