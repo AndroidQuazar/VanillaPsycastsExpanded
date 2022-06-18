@@ -6,24 +6,13 @@
             <li>
                 <hediff>VPE_Darkvision_Display</hediff>
                 <wounds>
-                    <li>
+                    <li Class="VanillaPsycastsExpanded.WoundWithShader">
                         <textureSouth>Effects/Nightstalker/DarkvisionEye_south</textureSouth>
                         <textureNorth>Effects/Nightstalker/DarkvisionEye_south</textureNorth>
                         <textureEast>Effects/Nightstalker/DarkvisionEye_east</textureEast>
                         <textureWest>Effects/Nightstalker/DarkvisionEye_east</textureWest>
-                        <scale>1</scale>
-                    </li>
-                </wounds>
-            </li>
-            <li>
-                <hediff>VPE_Darkvision</hediff>
-                <wounds>
-                    <li>
-                        <textureSouth>Effects/Nightstalker/DarkvisionEye_south</textureSouth>
-                        <textureNorth>Effects/Nightstalker/DarkvisionEye_south</textureNorth>
-                        <textureEast>Effects/Nightstalker/DarkvisionEye_east</textureEast>
-                        <textureWest>Effects/Nightstalker/DarkvisionEye_east</textureWest>
-                        <scale>1</scale>
+                        <shader>MoteGlow</shader>
+                        <scale>0.75</scale>
                     </li>
                 </wounds>
             </li>

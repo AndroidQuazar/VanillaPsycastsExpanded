@@ -187,6 +187,7 @@
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
         <drawOffscreen>true</drawOffscreen>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>MotePsychicSkipInner</shaderType>

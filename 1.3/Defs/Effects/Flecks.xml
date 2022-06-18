@@ -304,4 +304,39 @@
       <color>(0, 0, 0.3)</color>
     </graphicData>
   </FleckDef>
+
+  <FleckDef ParentName="FleckBase_RandomGraphic">
+    <defName>VPE_Slash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <fadeInTime>0</fadeInTime>
+    <solidTime>1.5</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <randomGraphics>
+      <li>
+        <texPath>Effects/Nightstalker/Slash_a</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Nightstalker/Slash_b</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Nightstalker/Slash_c</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Nightstalker/Slash_d</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+      <li>
+        <texPath>Effects/Nightstalker/Slash_e</texPath>
+        <shaderType>TransparentPostLight</shaderType>
+        <graphicClass>Graphic_Fleck</graphicClass>
+      </li>
+    </randomGraphics>
+  </FleckDef>
 </Defs>

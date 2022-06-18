@@ -14,7 +14,8 @@
             FleckDefOf.PsycastSkipOuterRingExit
         };
 
-        public override bool CanHitTarget(LocalTargetInfo target) => this.pawn.Map.glowGrid.GameGlowAt(target.Cell) <= 0.29;
+        public override bool CanHitTarget(LocalTargetInfo target) =>
+            this.pawn.Map.glowGrid.GameGlowAt(target.Cell) <= 0.29 && !target.Cell.Fogged(this.pawn.Map) && target.Cell.Walkable(this.pawn.Map);
 
         protected override void ModifyTargets(ref GlobalTargetInfo[] targets)
         {

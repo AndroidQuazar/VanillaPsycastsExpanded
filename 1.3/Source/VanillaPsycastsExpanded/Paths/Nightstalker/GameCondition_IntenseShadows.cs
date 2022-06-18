@@ -10,7 +10,7 @@
     public class GameCondition_IntenseShadows : GameCondition
     {
         private static readonly HashSet<Map> intenseShadowMaps = new();
-        public override         SkyTarget?   SkyTarget(Map map) => new SkyTarget(0.1f, new SkyColorSet(Color.gray, Color.black, Color.black, 1f), 0.25f, 0.25f);
+        public override         SkyTarget?   SkyTarget(Map map) => new SkyTarget(1f, new SkyColorSet(Color.gray, Color.black, Color.black, 1f), 0.25f, 0.25f);
         public override         float        SkyTargetLerpFactor(Map map) => 1f;
 
         public override void Init()
@@ -35,7 +35,7 @@
         [HarmonyPostfix]
         public static void GameGlowAt_Postfix(ref float __result, Map ___map)
         {
-            if (__result <= 0.5f && intenseShadowMaps.Contains(___map)) __result = 0f;
+            if (__result < 0.5f && intenseShadowMaps.Contains(___map)) __result = 0f;
         }
 
         [HarmonyPatch(typeof(GenCelestial), nameof(GenCelestial.CurShadowStrength))]

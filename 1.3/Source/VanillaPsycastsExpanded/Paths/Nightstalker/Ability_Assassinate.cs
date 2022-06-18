@@ -51,6 +51,7 @@
             Verb verb = this.pawn.meleeVerbs.GetUpdatedAvailableVerbsList(false).MaxBy(v => VerbUtility.DPS(v.verb, this.pawn)).verb;
             this.pawn.meleeVerbs.TryMeleeAttack(this.target, verb, true);
             this.pawn.stances.CancelBusyStanceHard();
+            FleckMaker.AttachedOverlay(this.target, VPE_DefOf.VPE_Slash, Rand.InsideUnitCircle * 0.3f);
         }
 
         private void TeleportPawnTo(IntVec3 c)

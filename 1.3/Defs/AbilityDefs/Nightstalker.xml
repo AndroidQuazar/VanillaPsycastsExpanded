@@ -69,6 +69,7 @@
     <hasAoE>true</hasAoE>
     <targetMode>Self</targetMode>
     <radius>8.9</radius>
+    <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
     <targetingParametersForAoE>
       <canTargetPawns>true</canTargetPawns>
       <canTargetHumans>true</canTargetHumans>
@@ -118,6 +119,7 @@
       <li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
         <gameCondition>Eclipse</gameCondition>
         <durationDays>0.75~1.25</durationDays>
+        <sendLetter>true</sendLetter>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
@@ -169,6 +171,7 @@
     <durationTimeStatFactors>
       <PsychicSensitivity>1</PsychicSensitivity>
     </durationTimeStatFactors>
+    <needsTicking>true</needsTicking>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Nightstalker</path>
@@ -183,6 +186,10 @@
       </li>
       <li Class="VFECore.Abilities.AbilityExtension_Spawn">
         <thing>VPE_Decoy</thing>
+      </li>
+      <li Class="VFECore.Abilities.AbilityExtension_EffecterOnTarget">
+        <effecterDef>VPE_BlackSmoke</effecterDef>
+        <maintainForDuration>true</maintainForDuration>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
