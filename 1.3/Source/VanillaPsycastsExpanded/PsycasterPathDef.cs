@@ -23,6 +23,8 @@
         public string tab;
         public string tooltip;
 
+        [MustTranslate] public string lockedReason;
+
         [Unsaved] public Texture2D        backgroundImage;
         [Unsaved] public Texture2D        altBackgroundImage;
         [Unsaved] public Texture2D        backgroundImageLocked;

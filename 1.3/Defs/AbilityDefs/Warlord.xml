@@ -43,6 +43,7 @@
           <order>1</order>
           <psyfocusCost>0.04</psyfocusCost>
           <entropyGain>10</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>
           </prerequisites>
@@ -71,6 +72,7 @@
           <order>3</order>
           <psyfocusCost>0.04</psyfocusCost>
           <entropyGain>10</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>
           </prerequisites>
@@ -126,6 +128,7 @@
           <order>1</order>
           <psyfocusCost>0.04</psyfocusCost>
           <entropyGain>10</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>
           </prerequisites>
@@ -217,6 +220,7 @@
           <order>3</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>20</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_AdrenalineRush</li>
           </prerequisites>
@@ -280,6 +284,7 @@
           <order>2</order>
           <psyfocusCost>0.03</psyfocusCost>
           <entropyGain>30</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Beckon</li>
             <li>VPE_GuidedShot</li>

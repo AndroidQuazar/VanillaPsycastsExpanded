@@ -97,8 +97,7 @@
             return false;
         }
 
-        public static void DoPathAbilities(Rect                     inRect, PsycasterPathDef path, Dictionary<AbilityDef, Vector2> abilityPos,
-                                           Action<Rect, AbilityDef> doAbility = null)
+        public static void DoPathAbilities(Rect inRect, PsycasterPathDef path, Dictionary<AbilityDef, Vector2> abilityPos, Action<Rect, AbilityDef> doAbility)
         {
             if (!EnsureInit()) return;
             foreach (AbilityDef def in path.abilities)
@@ -106,7 +105,6 @@
                     foreach (AbilityDef abilityDef in prerequisites.Where(abilityDef => abilityPos.ContainsKey(abilityDef)))
                         Widgets.DrawLine(abilityPos[def], abilityPos[abilityDef], CompAbilities.HasAbility(abilityDef) ? Color.white : Color.grey, 2f);
 
-            doAbility ??= DoAbility;
             for (int level = 0; level < path.abilityLevelsInOrder.Length; level++)
             {
                 Rect levelRect = new(inRect.x, inRect.y + (path.MaxLevel - 1 - level) * inRect.height / path.MaxLevel + 10f, inRect.width, inRect.height / 5f);
@@ -130,35 +128,6 @@
             GUI.DrawTexture(inRect, Command.BGTexShrunk);
             GUI.color = Color.white;
             GUI.DrawTexture(inRect, ability.icon);
-        }
-
-        private static void DoAbility(Rect inRect, AbilityDef ability)
-        {
-            if (!EnsureInit()) return;
-            bool unlockable = false;
-            bool locked     = false;
-            if (!CompAbilities.HasAbility(ability))
-            {
-                if (ability.Psycast().PrereqsCompleted(CompAbilities) && Hediff.points >= 1)
-                    unlockable = true;
-                else locked    = true;
-            }
-
-            if (unlockable) QuickSearchWidget.DrawStrongHighlight(inRect.ExpandedBy(12f));
-            DrawAbility(inRect, ability);
-            if (locked) Widgets.DrawRectFast(inRect, new Color(0f, 0f, 0f, 0.6f));
-
-            TooltipHandler.TipRegion(
-                inRect,
-                () => $"{ability.LabelCap}\n\n{ability.description}{(unlockable ? "\n\n" + "VPE.ClickToUnlock".Translate().Resolve().ToUpper() : "")}",
-                ability.GetHashCode());
-
-            if (unlockable && Widgets.ButtonInvisible(inRect))
-            {
-                Hediff.SpentPoints();
-                ability.abilityClass ??= typeof(Ability_Blank); // TODO: Remove this (it's for debugging)
-                CompAbilities.GiveAbility(ability);
-            }
         }
     }
 }

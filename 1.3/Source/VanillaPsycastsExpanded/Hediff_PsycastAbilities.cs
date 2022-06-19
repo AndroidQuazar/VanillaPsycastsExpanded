@@ -104,11 +104,9 @@
             this.pawn.psychicEntropy.OffsetPsyfocusDirectly(-focus);
         }
 
-        public void ChangeLevel(int levelOffset, bool sendLetter = true)
+        public void ChangeLevel(int levelOffset, bool sendLetter)
         {
-            base.ChangeLevel(levelOffset);
-            this.points += levelOffset;
-            this.RecacheCurStage();
+            this.ChangeLevel(levelOffset);
             if (sendLetter && PawnUtility.ShouldSendNotificationAbout(this.pawn))
                 Find.LetterStack.ReceiveLetter("VPE.PsylinkGained".Translate(this.pawn.LabelShortCap),
                                                "VPE.PsylinkGained.Desc".Translate(this.pawn.LabelShortCap,
@@ -116,20 +114,23 @@
                                                                                   ExperienceRequiredForLevel(this.level + 1)), LetterDefOf.PositiveEvent,
                                                this.pawn);
         }
+
         public override void ChangeLevel(int levelOffset)
         {
-            ChangeLevel(levelOffset, sendLetter: true);
+            base.ChangeLevel(levelOffset);
+            this.points += levelOffset;
+            this.RecacheCurStage();
         }
 
-        public void GainExperience(float experienceGain)
+        public void GainExperience(float experienceGain, bool sendLetter = true)
         {
             this.experience += experienceGain;
             bool newLevelWasGainedAlready = false;
             while (this.experience >= ExperienceRequiredForLevel(this.level + 1))
             {
-                this.ChangeLevel(1, sendLetter: newLevelWasGainedAlready is false);
-                newLevelWasGainedAlready   =  true;
-                this.experience -= ExperienceRequiredForLevel(this.level);
+                this.ChangeLevel(1, sendLetter && !newLevelWasGainedAlready);
+                newLevelWasGainedAlready =  true;
+                this.experience          -= ExperienceRequiredForLevel(this.level);
             }
         }
 

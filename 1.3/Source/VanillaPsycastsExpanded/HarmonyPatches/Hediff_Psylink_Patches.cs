@@ -20,7 +20,7 @@
     {
         public static void Prefix(Hediff_Psylink __instance, int levelOffset, ref bool sendLetter)
         {
-            __instance.pawn.Psycasts().ChangeLevel(levelOffset);
+            __instance.pawn.Psycasts().ChangeLevel(levelOffset, sendLetter);
             sendLetter = false;
         }
     }

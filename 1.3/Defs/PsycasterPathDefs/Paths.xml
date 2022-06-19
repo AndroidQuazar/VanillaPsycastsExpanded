@@ -62,6 +62,7 @@
       <altBackground>UI/AlternativeBackgrounds/PathBG_Archotechist</altBackground>
       <tab>Psycasts</tab>
       <tooltip>A path so mysterious only imperial scholars can confirm rumours, archotechists are able to tap into archotech engines and exert power so ridiculous and bizarre that it really makes one question their sanity. Archotechists can simply drive entire armies to insanity, and can even manipulate neural heat to mutilate their adversaries.</tooltip>
+      <lockedReason>Imperials only</lockedReason>
       <requiredBackstoriesAny>
         <li>
           <categoryName>ImperialCommon</categoryName>
@@ -133,6 +134,7 @@
       <altBackground>UI/AlternativeBackgrounds/PathBG_Wildspeaker</altBackground>
       <tab>Psycasts</tab>
       <tooltip>A secret path of the tribal communities, wildspeaking is the art of living in harmony with the forest and nature, and being able to summon the aid of the forest when needed. Tribal wildspeakers are known to control packs of territorial animals, be protected from all damage by an impenetrable shield, and they can also seem to make brambles and trees sprout out of the ground on a whim.</tooltip>
+      <lockedReason>Tribals only</lockedReason>
       <requiredBackstoriesAny>
         <li>
           <categoryName>Tribal</categoryName>
@@ -177,6 +179,7 @@
       <description>?????</description>
       <background>UI/Backgrounds/AnimatPath</background>
       <tab>Psycasts</tab>
+      <lockedReason>Tribals only</lockedReason>
       <requiredBackstoriesAny>
         <li>
           <categoryName>Tribal</categoryName>
@@ -193,6 +196,7 @@
       <label>Puppeteer</label>
       <description>Puppeteers Psycasts provide the ways to exploit minds and dominate others. They are the masters of subjugating enemies and creating mindless husks upon which they feed.</description>
       <background>UI/Backgrounds/PuppeteerPath</background>
+      <lockedReason>Imperials only</lockedReason>
       <requiredBackstoriesAny>
         <li>
           <categoryName>ImperialCommon</categoryName>

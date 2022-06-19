@@ -29,6 +29,10 @@
 
         private bool useAltBackgrounds;
 
+        private bool devMode;
+
+        private float psysetSectionHeight;
+
         static ITab_Pawn_Psycasts()
         {
             foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
@@ -106,6 +110,14 @@
             Rect bar = listing.GetRect(60f).ContractedBy(10f, 0f);
             Text.Anchor = TextAnchor.MiddleCenter;
             int xpForNext = Hediff_PsycastAbilities.ExperienceRequiredForLevel(this.hediff.level + 1);
+            if (this.devMode)
+            {
+                Text.Font = GameFont.Small;
+                if (Widgets.ButtonText(bar.TakeRightPart(80f), "Dev: Level up"))
+                    this.hediff.GainExperience(xpForNext, false);
+                Text.Font = GameFont.Medium;
+            }
+
             Widgets.FillableBar(bar, this.hediff.experience / xpForNext);
             Widgets.Label(bar, $"{this.hediff.experience.ToStringByStyle(ToStringStyle.FloatOne)} / {xpForNext}");
             Text.Font = GameFont.Tiny;
@@ -119,10 +131,16 @@
             listing.Gap(3f);
             Text.Anchor = TextAnchor.MiddleLeft;
             Text.Font   = GameFont.Small;
-            if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate(), "VPE.Upgrade".Translate()) && this.hediff.points >= 1)
+            if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate(), "VPE.Upgrade".Translate()))
             {
-                this.hediff.SpentPoints();
-                this.hediff.ImproveStats();
+                int num = GenUI.CurrentAdjustmentMultiplier();
+                if (this.devMode) this.hediff.ImproveStats(num);
+                else if (this.hediff.points >= num)
+                {
+                    this.hediff.SpentPoints(num);
+                    this.hediff.ImproveStats(num);
+                }
+                else Messages.Message("VPE.NotEnoughPoints".Translate(), MessageTypeDefOf.RejectInput, false);
             }
 
             listing.StatDisplay(TexPsycasts.IconNeuralHeatLimit,     StatDefOf.PsychicEntropyMax,          this.pawn);
@@ -150,13 +168,17 @@
             listing.Label("VPE.PsysetCustomize".Translate());
             Text.Font = GameFont.Tiny;
             listing.Label("VPE.PsysetDesc".Translate());
-            Rect psysets = listing.GetRect(pawnAndStats.height - listing.CurHeight - 20f);
+            float prePsysetHeight = listing.CurHeight;
+            Rect  psysets         = listing.GetRect(this.psysetSectionHeight);
             Widgets.DrawMenuSection(psysets);
             Rect viewRect = new(0, 0, psysets.width - 20f, this.lastPsysetsHeight);
             Widgets.BeginScrollView(psysets.ContractedBy(3f, 6f), ref this.psysetsScrollPos, viewRect);
             this.DoPsysets(viewRect);
             Widgets.EndScrollView();
+            float postPsysetHeight = listing.CurHeight;
             listing.CheckboxLabeled("VPE.UseAltBackground".Translate(), ref this.useAltBackgrounds);
+            if (Prefs.DevMode) listing.CheckboxLabeled("VPE.DevMode".Translate(), ref this.devMode);
+            this.psysetSectionHeight = pawnAndStats.height - prePsysetHeight - (listing.CurHeight - postPsysetHeight);
             listing.End();
             if (this.pathsByTab.NullOrEmpty())
             {
@@ -189,10 +211,10 @@
             GUI.color = Color.white;
             TooltipHandler.TipRegion(inRect, $"{def.LabelCap}\n\n{def.description}");
             Widgets.DrawHighlightIfMouseover(inRect);
-            if (this.hediff.points >= 1 && !unlocked)
+            if ((this.hediff.points >= 1 || this.devMode) && !unlocked)
                 if (Widgets.ButtonText(new Rect(inRect.xMax - 13f, inRect.yMax - 13f, 12f, 12f), "▲"))
                 {
-                    this.hediff.SpentPoints();
+                    if (!this.devMode) this.hediff.SpentPoints();
                     this.hediff.UnlockMeditationFocus(def);
                 }
         }
@@ -238,19 +260,19 @@
                 PsycastsUIUtility.DrawPathBackground(ref rect, def, this.useAltBackgrounds);
                 if (this.hediff.unlockedPaths.Contains(def))
                 {
-                    if (def.HasAbilities) PsycastsUIUtility.DoPathAbilities(rect, def, this.abilityPos);
+                    if (def.HasAbilities) PsycastsUIUtility.DoPathAbilities(rect, def, this.abilityPos, this.DoAbility);
                 }
                 else
                 {
                     Widgets.DrawRectFast(rect, new Color(0f, 0f, 0f, this.useAltBackgrounds ? 0.7f : 0.55f));
-                    if (this.hediff.points >= 1)
+                    if (this.hediff.points >= 1 || this.devMode)
                     {
                         Rect centerRect = rect.CenterRect(new Vector2(140f, 30f));
-                        if (def.CanPawnUnlock(this.pawn))
+                        if (this.devMode || def.CanPawnUnlock(this.pawn))
                         {
                             if (Widgets.ButtonText(centerRect, "VPE.Unlock".Translate()))
                             {
-                                this.hediff.SpentPoints();
+                                if (!this.devMode) this.hediff.SpentPoints();
                                 this.hediff.UnlockPath(def);
                             }
 
@@ -259,7 +281,7 @@
                         else
                         {
                             GUI.color = Color.grey;
-                            Widgets.ButtonText(centerRect, "VPE.Locked".Translate().Resolve().ToUpper(), active: false);
+                            Widgets.ButtonText(centerRect, "VPE.Locked".Translate() + ": " + def.lockedReason, active: false);
                             GUI.color = Color.white;
                         }
                     }
@@ -278,6 +300,34 @@
             }
 
             this.lastPathsHeight = curPos.y + maxHeight;
+        }
+
+        private void DoAbility(Rect inRect, AbilityDef ability)
+        {
+            bool unlockable = false;
+            bool locked     = false;
+            if (this.devMode) unlockable = true;
+            else if (!this.compAbilities.HasAbility(ability))
+            {
+                if (ability.Psycast().PrereqsCompleted(this.compAbilities) && this.hediff.points >= 1)
+                    unlockable = true;
+                else locked    = true;
+            }
+
+            if (unlockable) QuickSearchWidget.DrawStrongHighlight(inRect.ExpandedBy(12f));
+            PsycastsUIUtility.DrawAbility(inRect, ability);
+            if (locked) Widgets.DrawRectFast(inRect, new Color(0f, 0f, 0f, 0.6f));
+
+            TooltipHandler.TipRegion(
+                inRect,
+                () => $"{ability.LabelCap}\n\n{ability.description}{(unlockable ? "\n\n" + "VPE.ClickToUnlock".Translate().Resolve().ToUpper() : "")}",
+                ability.GetHashCode());
+
+            if (unlockable && Widgets.ButtonInvisible(inRect))
+            {
+                if (!this.devMode) this.hediff.SpentPoints();
+                this.compAbilities.GiveAbility(ability);
+            }
         }
     }
 }
