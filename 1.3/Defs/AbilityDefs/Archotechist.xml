@@ -19,6 +19,7 @@
           <order>1</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>8</entropyGain>
+          <psychic>true</psychic>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>PsychicBurden</hediff>
@@ -46,6 +47,7 @@
           <order>2</order>
           <psyfocusCost>0.01</psyfocusCost>
           <entropyGain>12</entropyGain>
+          <psychic>true</psychic>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Stun">
 			<durationMultiplier>PsychicSensitivity</durationMultiplier>
@@ -73,6 +75,7 @@
           <order>1</order>
           <psyfocusCost>0.08</psyfocusCost>
           <entropyGain>15</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Burden</li>
             <li>VPE_Stun</li>
@@ -145,6 +148,7 @@
           <order>1</order>
           <psyfocusCost>0.04</psyfocusCost>
           <entropyGain>40</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PsychicShock</li>
           </prerequisites>
@@ -214,6 +218,7 @@
           <order>1</order>
           <psyfocusCost>0.06</psyfocusCost>
           <entropyGain>65</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Berserk</li>
           </prerequisites>
@@ -244,6 +249,7 @@
           <order>2</order>
           <psyfocusCost>0.06</psyfocusCost>
           <entropyGain>65</entropyGain>
+          <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Berserk</li>
             <li>VPE_AggressiveHeatDump</li>

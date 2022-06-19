@@ -22,6 +22,7 @@
         public float            psyfocusCost = 0f;
         public bool             spaceAfter;
         public bool             showCastBubble = true;
+        public bool             psychic;
 
         public bool PrereqsCompleted(Pawn pawn) => this.PrereqsCompleted(pawn.GetComp<CompAbilities>());
 
@@ -113,6 +114,7 @@
         public override void TargetingOnGUI(LocalTargetInfo target, Ability ability)
         {
             base.TargetingOnGUI(target, ability);
+            if (!this.psychic) return;
             List<GlobalTargetInfo> validTargets = ability.currentTargets.Where(t => t.IsValid && t.Map != null).ToList();
             GlobalTargetInfo[]     targets      = new GlobalTargetInfo[validTargets.Count + 1];
             validTargets.CopyTo(targets, 0);

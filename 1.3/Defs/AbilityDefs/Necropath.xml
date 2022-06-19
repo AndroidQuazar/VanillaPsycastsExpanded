@@ -44,6 +44,7 @@
 				<order>1</order>
 				<psyfocusCost>0.02</psyfocusCost>
 				<entropyGain>10</entropyGain>
+				<psychic>true</psychic>
 				<prerequisites>
 					<li>VPE_WordofFear</li>
 				</prerequisites>

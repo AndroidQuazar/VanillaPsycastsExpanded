@@ -243,6 +243,7 @@
         <order>2</order>
         <psyfocusCost>0.05</psyfocusCost>
         <entropyGain>35</entropyGain>
+        <psychic>true</psychic>
         <prerequisites>
           <li>VPE_ShieldAnimals</li>
           <li>VPE_Shrineshield</li>

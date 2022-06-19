@@ -24,6 +24,7 @@
         <order>1</order>
         <psyfocusCost>0.3</psyfocusCost>
         <entropyGain>0</entropyGain>
+        <psychic>true</psychic>
       </li>
       <li Class="VFECore.Abilities.AbilityExtension_Hediff">
         <hediff>VPE_Darkvision</hediff>

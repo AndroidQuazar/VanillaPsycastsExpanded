@@ -6,6 +6,8 @@
         <warmupMote>VPE_Mote_CastPsycast</warmupMote>
 		<gizmoClass>VanillaPsycastsExpanded.Command_Ability_Psycast</gizmoClass>
 		<cooldownTime>120</cooldownTime>
+		<rangeRingColor>(1, 1, 1)</rangeRingColor>
+		<radiusRingColor>(0.3, 0.8, 1)</radiusRingColor>
     </VFECore.Abilities.AbilityDef>
 
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase" Name="VPE_PsycastGoToTargetBase" Abstract="True">

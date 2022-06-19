@@ -17,6 +17,7 @@
           <order>1</order>
           <psyfocusCost>0.02</psyfocusCost>
           <entropyGain>8</entropyGain>
+          <psychic>true</psychic>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
 			<hediff>VPE_SpeedBoost</hediff>
