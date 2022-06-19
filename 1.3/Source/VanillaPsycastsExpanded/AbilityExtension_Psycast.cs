@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using RimWorld;
     using RimWorld.Planet;
@@ -107,6 +108,34 @@
                 mote.Setup(toil.actor, toil.actor.GetComp<CompAbilities>().currentlyCasting);
                 GenSpawn.Spawn(mote, toil.actor.Position, toil.actor.Map);
             });
+        }
+
+        public override void TargetingOnGUI(LocalTargetInfo target, Ability ability)
+        {
+            base.TargetingOnGUI(target, ability);
+            List<GlobalTargetInfo> validTargets = ability.currentTargets.Where(t => t.IsValid && t.Map != null).ToList();
+            GlobalTargetInfo[]     targets      = new GlobalTargetInfo[validTargets.Count + 1];
+            validTargets.CopyTo(targets, 0);
+            targets[targets.Length - 1] = target.ToGlobalTargetInfo(validTargets?.LastOrDefault().Map ?? ability.pawn.Map);
+            ability.ModifyTargets(ref targets);
+            foreach (GlobalTargetInfo targetInfo in targets)
+                if (targetInfo.Thing is Pawn p)
+                {
+                    float sense = p.GetStatValue(StatDefOf.PsychicSensitivity);
+                    if (sense < 1.401298E-45f)
+                    {
+                        Vector3 drawPos = p.DrawPos;
+                        drawPos.z += 1f;
+                        GenMapUI.DrawText(new Vector2(drawPos.x, drawPos.z), "Ineffective".Translate(), Color.red);
+                    }
+                    else
+                    {
+                        Vector3 drawPos = p.DrawPos;
+                        drawPos.z += 1f;
+                        GenMapUI.DrawText(new Vector2(drawPos.x, drawPos.z), StatDefOf.PsychicSensitivity.LabelCap + ": " + sense.ToStringPercent(),
+                                          sense > float.Epsilon ? Color.white : Color.red);
+                    }
+                }
         }
     }
 

@@ -17,7 +17,7 @@
         public override bool CanHitTarget(LocalTargetInfo target) =>
             this.pawn.Map.glowGrid.GameGlowAt(target.Cell) <= 0.29 && !target.Cell.Fogged(this.pawn.Map) && target.Cell.Walkable(this.pawn.Map);
 
-        protected override void ModifyTargets(ref GlobalTargetInfo[] targets)
+        public override void ModifyTargets(ref GlobalTargetInfo[] targets)
         {
             base.ModifyTargets(ref targets);
             targets = new[] {this.pawn, targets[0]};

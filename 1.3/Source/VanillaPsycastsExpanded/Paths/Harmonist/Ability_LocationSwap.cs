@@ -5,7 +5,7 @@
 
     public class Ability_LocationSwap : Ability_Teleport
     {
-        protected override void ModifyTargets(ref GlobalTargetInfo[] targets)
+        public override void ModifyTargets(ref GlobalTargetInfo[] targets)
         {
             targets = new[]
             {
