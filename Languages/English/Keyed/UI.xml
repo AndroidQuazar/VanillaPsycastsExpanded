@@ -40,4 +40,5 @@
 	<VPE.StatsReport_BodiesConsumed>Bodies consumed: +{0}</VPE.StatsReport_BodiesConsumed>
     <VPE.DevMode>Developer mode</VPE.DevMode>
     <VPE.NotEnoughPoints>Not enough points available</VPE.NotEnoughPoints>
+    <VPE.AbilitiesList>Psycasts included:</VPE.AbilitiesList>
 </LanguageData>

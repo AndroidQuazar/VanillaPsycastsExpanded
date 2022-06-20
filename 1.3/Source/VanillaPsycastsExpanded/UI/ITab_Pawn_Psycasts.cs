@@ -275,8 +275,6 @@
                                 if (!this.devMode) this.hediff.SpentPoints();
                                 this.hediff.UnlockPath(def);
                             }
-
-                            TooltipHandler.TipRegion(centerRect, def.tooltip);
                         }
                         else
                         {
@@ -285,6 +283,11 @@
                             GUI.color = Color.white;
                         }
                     }
+
+                    TooltipHandler.TipRegion(
+                        rect,
+                        () => def.tooltip + "\n" + "VPE.AbilitiesList".Translate() + "\n" + def.abilities.Select(ab => ab.label).ToLineList("  ", true),
+                        def.GetHashCode());
                 }
 
                 maxHeight =  Mathf.Max(maxHeight, height + 10f);
