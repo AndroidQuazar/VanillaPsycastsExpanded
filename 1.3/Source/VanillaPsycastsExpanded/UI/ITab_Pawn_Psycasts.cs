@@ -286,7 +286,7 @@
 
                     TooltipHandler.TipRegion(
                         rect,
-                        () => def.tooltip + "\n" + "VPE.AbilitiesList".Translate() + "\n" + def.abilities.Select(ab => ab.label).ToLineList("  ", true),
+                        () => def.tooltip + "\n\n" + "VPE.AbilitiesList".Translate() + "\n" + def.abilities.Select(ab => ab.label).ToLineList("  ", true),
                         def.GetHashCode());
                 }
 
