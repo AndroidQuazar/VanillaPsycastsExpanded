@@ -6,6 +6,6 @@
     public class ThinkNode_Construct : ThinkNode_Conditional
     {
         protected override bool Satisfied(Pawn pawn) => 
-            pawn.def == VPE_DefOf.VPE_Race_SteelConstruct;
+            pawn.def == VPE_DefOf.VPE_Race_RockConstruct;
     }
 }
