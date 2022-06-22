@@ -433,21 +433,21 @@
 	<HediffDef>
 		<defName>VPE_GroupLink</defName>
 		<label>group link</label>
-		<description>text.todo</description>
+		<description>Psychically-induced link between several entities. Any 'word of' psycast will resonate between all linked individuals.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_PsychicPain</defName>
 		<label>psychic pain</label>
-		<description>text.todo</description>
+		<description>Psychically-induced extreme physical pain.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_PsychicPain</hediffClass>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Protection</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic protection</label>
+		<description>Psychically-induced physical protection from incoming damage.</description>
 		<stages>
 			<li>
 				<statFactors>
@@ -460,7 +460,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Hallucination</defName>
 		<label>hallucination</label>
-		<description>text.todo</description>
+		<description>Strong psychic suggestion that reshapes reality in the eyes of the affected individuals, making them perceive their every day life as that of a luxury.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Hallucination</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
@@ -471,8 +471,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Liferot</defName>
-		<label>life rot</label>
-		<description>text.todo</description>
+		<label>liferot</label>
+		<description>Psychically-induced mass necrosis, causing living and healthy limbs and organs to rot on the victim.</description>
 		<makesSickThought>true</makesSickThought>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Liferot</hediffClass>
 		<stages>
@@ -512,8 +512,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_GainedVitality</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic vitality</label>
+		<description>Psychically-induced vitality stolen from another person.</description>
 		<stages>
 			<li>
 				<restFallFactor>0.5</restFallFactor>
@@ -534,8 +534,8 @@
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_LostVitality</defName>
-		<label>text.todo</label>
-		<description>text.todo</description>
+		<label>psychic weakness</label>
+		<description>Psychically-induced weakness caused by vitality being stolen by another person.</description>
 		<stages>
 			<li>
 				<restFallFactor>2</restFallFactor>
@@ -557,7 +557,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Ghostwalk</defName>
 		<label>ghostwalk</label>
-		<description>text.todo</description>
+		<description>Psychically-induced matter phasing.</description>
 		<comps>
 			<li Class="HediffCompProperties">
 				<compClass>VFECore.HediffComp_Phasing</compClass>
@@ -572,7 +572,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_CorpseTalk</defName>
 		<label>corpse talk</label>
-		<description>text.todo</description>
+		<description>Psychically-induced link with a spirit of a deceased individual.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_CorpseTalk</hediffClass>
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnMote">
@@ -584,14 +584,14 @@
 	<HediffDef>
 		<defName>VPE_BodiesConsumed</defName>
 		<label>bodies consumed</label>
-		<description>text.todo</description>
+		<description>The amount of bodies that were consumed using the Consume Bodies psycast. Each body consumed increases a maximum neural heat by 1.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_BodiesConsumed</hediffClass>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_DeathShield</defName>
 		<label>death shield</label>
-		<description>text.todo</description>
+		<description>Psychically-induced immortality that lasts for one day.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Deathshield</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
@@ -603,7 +603,7 @@
 	<HediffDef>
 		<defName>VPE_Obscured</defName>
 		<label>obscured</label>
-		<description>text.todo</description>
+		<description>Psychically-induced invisibility.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
@@ -622,7 +622,7 @@
 	<HediffDef ParentName="PsycastHediffBase">
 		<defName>VPE_Shadowfocus</defName>
 		<label>shadowfocus</label>
-		<description>text.todo</description>
+		<description>Psychically-induced increase to psychic sensitivity based on the lack of light around the psycaster.</description>
 		<hediffClass>VanillaPsycastsExpanded.Nightstalker.Hediff_ShadowFocus</hediffClass>
 		<comps>
 			<li Class="HediffCompProperties_Effecter">
