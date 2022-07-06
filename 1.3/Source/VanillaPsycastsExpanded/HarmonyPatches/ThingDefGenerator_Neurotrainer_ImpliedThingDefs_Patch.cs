@@ -78,5 +78,23 @@
                 psycasts.UnlockPath(path);
             base.DoEffect(usedBy);
         }
+
+        public override bool CanBeUsedBy(Pawn p, out string failReason)
+        {
+            if (p.Psycasts() is null or {level: <=0})
+            {
+                failReason = "VPE.MustBePsycaster".Translate();
+                return false;
+            }
+
+            if (p.GetComp<CompAbilities>().HasAbility(this.Props.ability))
+            {
+                failReason = "VPE.AlreadyHasPsycast".Translate(this.Props.ability.LabelCap);
+                return false;
+            }
+
+            failReason = null;
+            return true;
+        }
     }
 }

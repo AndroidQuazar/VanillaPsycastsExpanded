@@ -16,18 +16,24 @@
         public StatDef durationMultiplier;
 
         public bool applyToSelf;
+        public bool clearOthers;
+
         public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
             base.Cast(targets, ability);
             foreach (GlobalTargetInfo target in targets)
             {
                 Pawn pawn = this.applyToSelf ? ability.pawn : target.Thing as Pawn;
-                if (pawn is {InMentalState: false})
+                if (pawn is null) continue;
+                if (pawn.InMentalState)
                 {
-                    TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? this.stateDefForMechs ?? this.stateDef : this.stateDef, pawn, ability,
-                                                   this.durationMultiplier);
-                    RestUtility.WakeUp(pawn);
+                    if (this.clearOthers) pawn.mindState.mentalStateHandler.CurState.RecoverFromState();
+                    else continue;
                 }
+
+                TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? this.stateDefForMechs ?? this.stateDef : this.stateDef, pawn, ability,
+                                               this.durationMultiplier);
+                RestUtility.WakeUp(pawn);
             }
         }
 

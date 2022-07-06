@@ -65,14 +65,6 @@
       <lockedReason>Imperials only</lockedReason>
       <requiredBackstoriesAny>
         <li>
-          <categoryName>ImperialCommon</categoryName>
-          <slot>Childhood</slot>
-        </li>
-        <li>
-          <categoryName>ImperialCommon</categoryName>
-          <slot>Adulthood</slot>
-        </li>
-        <li>
           <categoryName>ImperialFighter</categoryName>
           <slot>Childhood</slot>
         </li>

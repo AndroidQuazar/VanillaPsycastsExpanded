@@ -14,7 +14,7 @@
         public void SetStoneColour(ThingDef thingDef)
         {
             this.rockDef = thingDef;
-            this.Apply();
+            LongEventHandler.ExecuteWhenFinished(this.Apply);
         }
 
         private void Apply()
@@ -34,7 +34,7 @@
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            if (respawningAfterLoad) this.Apply();
+            if (respawningAfterLoad) LongEventHandler.ExecuteWhenFinished(this.Apply);
         }
 
         public override void PostExposeData()

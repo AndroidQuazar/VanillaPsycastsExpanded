@@ -6,6 +6,7 @@
     using System.Reflection.Emit;
     using HarmonyLib;
     using RimWorld;
+    using UnityEngine;
     using Verse;
     using VFECore.Abilities;
 
@@ -112,6 +113,12 @@
 
             return null;
         }
+
+        protected override void SetupPlant(Plant plant, IntVec3 loc, Map map)
+        {
+            base.SetupPlant(plant, loc, map);
+            plant.Growth = Mathf.Clamp(this.TryGetComp<CompAbilitySpawn>().pawn.GetStatValue(StatDefOf.PsychicSensitivity) - 1f, 0.1f, 1f);
+        }
     }
 
     public class TreeSpawner : PlantSpawner
@@ -130,6 +137,7 @@
         protected override void SetupPlant(Plant plant, IntVec3 loc, Map map)
         {
             if (PlantUtility.AdjacentSowBlocker(plant.def, loc, map) != null) plant.Destroy();
+            else plant.Growth = 1f;
         }
     }
 }

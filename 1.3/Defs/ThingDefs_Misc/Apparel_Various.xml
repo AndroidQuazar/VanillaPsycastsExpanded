@@ -38,7 +38,7 @@
       <MoveSpeed>-0.8</MoveSpeed>
       <PsychicSensitivityOffset>0.05</PsychicSensitivityOffset>
       <PsychicEntropyRecoveryRate>0.033</PsychicEntropyRecoveryRate>
-	  <PsychicEntropyMax>0.26672</PsychicEntropyMax>
+      <PsychicEntropyMax>0.26672</PsychicEntropyMax>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
@@ -65,7 +65,7 @@
     </apparel>
     <costList>
       <VPE_Eltex>1</VPE_Eltex>
-	  <Gold>18</Gold>
+      <Gold>18</Gold>
     </costList>
     <colorGenerator Class="ColorGenerator_Options">
       <options>
@@ -85,7 +85,7 @@
       </options>
     </colorGenerator>
   </ThingDef>
-  
+
   <ThingDef ParentName="ApparelNoQualityBase">
     <defName>VPE_Psyring</defName>
     <label>psyring</label>
@@ -95,17 +95,20 @@
       <texPath>Effects/Technomancer/Psyring/Psyring</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
+    <techLevel>Ultra</techLevel>
     <statBases>
       <MarketValue>1200</MarketValue>
       <Mass>0.1</Mass>
       <Beauty>1</Beauty>
       <Flammability>0</Flammability>
     </statBases>
-    <techLevel>Spacer</techLevel>
     <tradeability>Sellable</tradeability>
     <tradeTags>
       <li>ExoticMisc</li>
     </tradeTags>
+    <thingCategories>
+      <li>ApparelUtility</li>
+    </thingCategories>
     <apparel>
       <countsAsClothingForNudity>false</countsAsClothingForNudity>
       <scoreOffset>4</scoreOffset>

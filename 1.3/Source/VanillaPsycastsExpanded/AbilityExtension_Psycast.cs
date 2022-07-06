@@ -139,6 +139,17 @@
                     }
                 }
         }
+
+        public override bool ValidateTarget(LocalTargetInfo target, Ability ability, bool throwMessages = false)
+        {
+            if (this.psychic && target.Pawn is { } p && p.GetStatValue(StatDefOf.PsychicSensitivity) < 1.401298E-45f)
+            {
+                if (throwMessages) Messages.Message("Ineffective".Translate(), MessageTypeDefOf.RejectInput, false);
+                return false;
+            }
+
+            return true;
+        }
     }
 
     public static class AbilityExtensionPsycastUtility

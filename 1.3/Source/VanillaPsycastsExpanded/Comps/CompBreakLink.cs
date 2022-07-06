@@ -17,12 +17,20 @@
                 defaultLabel = this.Props.gizmoLabel.Translate(),
                 defaultDesc  = this.Props.gizmoDesc.Translate(),
                 icon         = ContentFinder<Texture2D>.Get(this.Props.gizmoImage),
-                action = delegate
-                {
-                    this.parent.Kill();
-                    this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
-                }
+                action       = delegate { this.parent.Kill(); }
             };
+        }
+
+        public override void PostDeSpawn(Map map)
+        {
+            base.PostDeSpawn(map);
+            if (this.parent is Pawn {Dead: true}) this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
+        }
+
+        public override void PostExposeData()
+        {
+            base.PostExposeData();
+            Scribe_References.Look(ref this.Pawn, "pawn");
         }
     }
 }

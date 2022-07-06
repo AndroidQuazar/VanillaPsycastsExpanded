@@ -200,6 +200,7 @@
                 <AgeSecs>1</AgeSecs>
             </shaderParameters>
             <drawSize>13.6</drawSize>
+            <color>(1, 1, 1, 0.8)</color>
         </graphicData>
         <comps>
             <li Class="VanillaPsycastsExpanded.Nightstalker.CompProperties_Darkness">

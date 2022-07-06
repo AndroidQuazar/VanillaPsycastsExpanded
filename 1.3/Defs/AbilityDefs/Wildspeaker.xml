@@ -112,6 +112,7 @@
       <canTargetAnimals>True</canTargetAnimals>
       <neverTargetIncapacitated>True</neverTargetIncapacitated>
     </targetingParametersForAoE>
+    <fleckOnTarget>VFEP_PsycastAreaEffectSlow</fleckOnTarget>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -126,11 +127,6 @@
       <li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
         <stateDef>Manhunter</stateDef>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
-      </li>
-      <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
-        <fleckDef>VFEP_PsycastAreaEffectSlow</fleckDef>
-        <allTargets>false</allTargets>
-        <tryCenter>true</tryCenter>
       </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
@@ -252,6 +248,7 @@
       <li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
         <stateDef>VPE_ManhunterTerritorial</stateDef>
         <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <clearOthers>true</clearOthers>
       </li>
       <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
         <fleckDef>PsycastPsychicEffect</fleckDef>
@@ -347,7 +344,7 @@
         <path>VPE_Wildspeaker</path>
         <level>5</level>
         <order>2</order>
-        <psyfocusCost>0.1</psyfocusCost>
+        <psyfocusCost>0.7</psyfocusCost>
         <entropyGain>60</entropyGain>
         <prerequisites>
           <li>VPE_AnimalAllies</li>

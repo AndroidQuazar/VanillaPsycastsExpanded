@@ -1,10 +1,9 @@
 ﻿namespace VanillaPsycastsExpanded.Technomancer
 {
     using RimWorld;
-using RimWorld.Planet;
+    using RimWorld.Planet;
     using UnityEngine;
     using Verse;
-    using VFECore.Abilities;
     using VFECore.Shields;
     using Ability = VFECore.Abilities.Ability;
 
@@ -40,6 +39,13 @@ using RimWorld.Planet;
         {
             base.CompPostPostRemoved();
             this.compPower.SetUpPowerVars();
+        }
+
+        public override void CompExposeData()
+        {
+            base.CompExposeData();
+            Scribe_References.Look(ref this.target, nameof(this.target));
+            if (Scribe.mode == LoadSaveMode.PostLoadInit) this.compPower = this.target.TryGetComp<CompPowerTrader>();
         }
     }
 

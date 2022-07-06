@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded.Wildspeaker
 {
     using System.Collections.Generic;
+    using System.Linq;
     using RimWorld;
     using RimWorld.Planet;
     using Verse;
@@ -11,7 +12,7 @@
     {
         public Pawn EssenceOf;
 
-        public override string Label => base.Label + this.EssenceOf.NameShortColored;
+        public override string Label => base.Label + " " + this.EssenceOf.NameShortColored;
 
         public override bool ShouldRemove => this.EssenceOf == null || this.EssenceOf.Dead && this.EssenceOf.Corpse is not {Spawned: true};
 
@@ -35,14 +36,26 @@
 
     public class Ability_EssenceTransfer : Ability
     {
+        private Pawn curTarget;
+
         public override void Cast(params GlobalTargetInfo[] targets)
         {
             base.Cast(targets);
             if (targets[0].Thing is not Pawn human || targets[1].Thing is not Pawn animal) return;
-            Log.Message($"Transfering essence from {human} to {animal}");
+            if (this.curTarget is {Dead: false, Discarded: false, Destroyed: false})
+                foreach (Hediff_Essence hediffEssence in this.curTarget.health.hediffSet.hediffs.OfType<Hediff_Essence>().ToList())
+                    this.curTarget.health.RemoveHediff(hediffEssence);
+            else this.curTarget = null;
             Hediff_Essence hediff = (Hediff_Essence) HediffMaker.MakeHediff(VPE_DefOf.VPE_Essence, animal);
             hediff.EssenceOf = human;
             animal.health.AddHediff(hediff);
+            this.curTarget = animal;
+        }
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+            Scribe_References.Look(ref this.curTarget, nameof(this.curTarget));
         }
     }
 

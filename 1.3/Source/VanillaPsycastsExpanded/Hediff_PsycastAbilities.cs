@@ -120,6 +120,7 @@
             base.ChangeLevel(levelOffset);
             this.points += levelOffset;
             this.RecacheCurStage();
+            this.psylink.level = this.level;
         }
 
         public void GainExperience(float experienceGain, bool sendLetter = true)
