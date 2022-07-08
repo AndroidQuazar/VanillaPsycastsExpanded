@@ -6,6 +6,6 @@
 
     public class Ability_WorldTeleportNight : Ability_WorldTeleport
     {
-        public override bool ValidateTargetTile(GlobalTargetInfo target) => GenLocalDate.HourFloat(target.Tile) is < 6f or > 18f;
+        public override bool CanHitTargetTile(GlobalTargetInfo target) => GenLocalDate.HourFloat(target.Tile) is < 6f or > 18f;
     }
 }

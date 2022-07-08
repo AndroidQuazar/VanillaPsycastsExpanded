@@ -49,7 +49,7 @@
             return target.WorldObject is MapParent {HasMap: true} mapParent && (this.AlliedPawnOnMap(mapParent.Map) != null || mapParent.Map == this.pawn.Map);
         }
 
-        public override bool ValidateTargetTile(GlobalTargetInfo target)
+        public override bool CanHitTargetTile(GlobalTargetInfo target)
         {
             Caravan caravan = this.pawn.GetCaravan();
             if (caravan is {ImmobilizedByMass: true}) return false;
