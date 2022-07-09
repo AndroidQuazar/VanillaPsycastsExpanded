@@ -15,11 +15,47 @@
     {
         public static void Prefix(List<Tradeable> ___tradeables, out int __state)
         {
-            __state = ___tradeables.Where(x => x.ThingDef == VPE_DefOf.VPE_Eltex).Sum(x => x.CountToTransferToDestination);
+            __state = 0;
+            foreach (var tradeable in ___tradeables)
+            {
+                __state += tradeable.ThingDef.GetEltexOrEltexMaterialCount() * tradeable.CountToTransferToDestination;
+            }
         }
+
+        public static int GetEltexOrEltexMaterialCount(this ThingDef def)
+        {
+            if (def == VPE_DefOf.VPE_Eltex)
+            {
+                return 1;
+            }
+            else if (def.costList != null)
+            {
+                var firstCost = def.costList.FirstOrDefault(x => x.thingDef == VPE_DefOf.VPE_Eltex);
+                if (firstCost != null)
+                {
+                    return firstCost.count;
+                }
+            }
+            else
+            {
+                foreach (var recipe in DefDatabase<RecipeDef>.AllDefs)
+                {
+                    if (recipe.ProducedThingDef == def)
+                    {
+                        var firstCost = recipe.ingredients.FirstOrDefault(x => x.IsFixedIngredient && x.FixedIngredient == VPE_DefOf.VPE_Eltex);
+                        if (firstCost != null)
+                        {
+                            return (int)firstCost.GetBaseCount();
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
+
         public static void Postfix(int __state, bool __result)
         {
-            if (__result && TradeSession.trader.Faction != Faction.OfEmpire)
+            if (__state > 0 &&__result && TradeSession.trader.Faction != Faction.OfEmpire)
             {
                 if (Rand.Chance(0.5f))
                 {

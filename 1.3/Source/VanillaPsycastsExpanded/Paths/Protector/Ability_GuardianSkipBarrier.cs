@@ -24,7 +24,6 @@
                     action = delegate
                     {
                         this.pawn.health.RemoveHediff(hediff);
-                        this.pawn.Psycasts().currentlyChanneling = null;
                     },
                     order = 10f + (this.def.requiredHediff?.hediffDef?.index ?? 0) + (this.def.requiredHediff?.minimumLevel ?? 0)
                 };

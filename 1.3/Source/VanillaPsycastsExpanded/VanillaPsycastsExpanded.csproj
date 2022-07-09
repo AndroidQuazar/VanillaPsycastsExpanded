@@ -63,6 +63,7 @@
     <Compile Include="Graphics\IAnimationOneTime.cs" />
     <Compile Include="Graphics\MoteAttachedMovingAround.cs" />
     <Compile Include="Graphics\MoteAttachedOneTime.cs" />
+    <Compile Include="HarmonyPatches\HediffUtility_CanHealNaturally_Patch.cs" />
     <Compile Include="HarmonyPatches\Mote_Patches.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="HarmonyPatches\RitualOutcomeEffectWorker_Bestowing_Apply_Patch.cs" />
     <Compile Include="HarmonyPatches\ThingSetMaker_Meteorite_Reset.cs" />
     <Compile Include="HarmonyPatches\ThoughtWorker_PsychicDrone_CurrentStateInternal_Patch.cs" />
-    <Compile Include="HarmonyPatches\Tradeable_CountToTransferPatch.cs" />
+    <Compile Include="HarmonyPatches\Transferable_CanAdjustBy_Patch.cs" />
     <Compile Include="HarmonyPatches\GenTemperature_GetTemperatureForCell_Patch.cs" />
     <Compile Include="HarmonyPatches\GlobalControls_TemperatureString_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_JobTracker_StartJob_Patch.cs" />

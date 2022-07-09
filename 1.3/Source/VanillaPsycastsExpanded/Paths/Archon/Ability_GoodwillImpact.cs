@@ -13,7 +13,7 @@
         {
             if (target.Thing is Pawn targetPawn)
             {
-                if (targetPawn.HostileTo(this.pawn) || targetPawn.Faction == this.pawn.Faction)
+                if (targetPawn.HostileTo(this.pawn) || targetPawn.Faction == this.pawn.Faction || targetPawn.Faction is null)
                 {
                     if (showMessages)
                     {

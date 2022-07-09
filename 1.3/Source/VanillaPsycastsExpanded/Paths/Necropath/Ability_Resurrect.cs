@@ -30,7 +30,7 @@
                     var soul = SkyfallerMaker.MakeSkyfaller(VPE_DefOf.VPE_SoulFromSky) as SoulFromSky;
                     soul.target = corpse;
                     GenPlace.TryPlaceThing(soul, corpse.Position, corpse.Map, ThingPlaceMode.Direct);
-                    pawn.TakeDamage(new DamageInfo(DamageDefOf.Cut, 99999, instigator: this.pawn, hitPart: finger));
+                    var result = pawn.TakeDamage(new DamageInfo(DamageDefOf.SurgicalCut, 99999, instigator: this.pawn, hitPart: finger));
                 }
             }
         }

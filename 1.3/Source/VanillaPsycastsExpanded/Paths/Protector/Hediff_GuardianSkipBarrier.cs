@@ -34,6 +34,10 @@
             {
                 sustainer?.End();
             }
+            if (pawn.Psycasts().currentlyChanneling == this.ability)
+            {
+                pawn.Psycasts().currentlyChanneling = null;
+            }
         }
         private void AddEntropy()
         {
@@ -44,10 +48,6 @@
             if (pawn.psychicEntropy.EntropyValue - 1f >= pawn.psychicEntropy.MaxEntropy)
             {
                 this.pawn.health.RemoveHediff(this);
-                //Hediff hediff = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
-                //hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = GenDate.TicksPerDay * 5;
-                //pawn.health.AddHediff(hediff);
-                //this.comps.Add(new HediffComp_ShouldBeDestroyed());
             }
         }
     }
