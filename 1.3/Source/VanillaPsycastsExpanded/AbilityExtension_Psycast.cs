@@ -18,8 +18,8 @@
         public int              level;
         public int              order;
         public PsycasterPathDef path;
-        public List<AbilityDef> prerequisites;
-        public float            psyfocusCost = 0f;
+        public List<AbilityDef> prerequisites = new List<AbilityDef>();
+        public float            psyfocusCost  = 0f;
         public bool             spaceAfter;
         public bool             showCastBubble = true;
         public bool             psychic;
@@ -29,6 +29,20 @@
         public bool PrereqsCompleted(CompAbilities compAbilities)
         {
             return this.prerequisites == null || compAbilities.LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
+        }
+
+        public void UnlockWithPrereqs(CompAbilities compAbilities)
+        {
+            foreach (AbilityDef prerequisite in this.prerequisites)
+            {
+                AbilityExtension_Psycast extension = prerequisite.GetModExtension<AbilityExtension_Psycast>();
+                if(extension != null)
+                    extension.UnlockWithPrereqs(compAbilities);
+                else
+                    compAbilities.GiveAbility(prerequisite);
+            }
+
+            compAbilities.GiveAbility(this.abilityDef);
         }
 
         public float GetPsyfocusUsedByPawn(Pawn pawn) => this.psyfocusCost * pawn.GetStatValue(VPE_DefOf.VPE_PsyfocusCostFactor);
