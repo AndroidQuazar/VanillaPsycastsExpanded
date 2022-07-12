@@ -15,15 +15,19 @@
 		public float psyfocusCostForExtreme = -1f;
 
 		public List<MentalStateDef> exceptions;
-		public override void Cast(LocalTargetInfo target, Ability ability)
-		{
-			base.Cast(target, ability);
-			Hediff_PsycastAbilities psycastHediff =
-				(Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
-			psycastHediff.UseAbility(PsyfocusCostForTarget(target), this.GetEntropyUsedByPawn(ability.pawn));
-		}
 
-		public float PsyfocusCostForTarget(LocalTargetInfo target)
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
+        {
+            base.Cast(targets, ability);
+			foreach (var target in targets)
+            {
+				Hediff_PsycastAbilities psycastHediff =
+			(Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+				psycastHediff.UseAbility(PsyfocusCostForTarget(target), this.GetEntropyUsedByPawn(ability.pawn));
+			}
+        }
+
+		public float PsyfocusCostForTarget(GlobalTargetInfo target)
 		{
 			return TargetMentalBreakIntensity(target) switch
 {
@@ -33,9 +37,9 @@
 				_ => 0f,
 			};
 		}
-		public MentalBreakIntensity TargetMentalBreakIntensity(LocalTargetInfo target)
+		public MentalBreakIntensity TargetMentalBreakIntensity(GlobalTargetInfo target)
 		{
-			MentalStateDef mentalStateDef = target.Pawn?.MentalStateDef;
+			MentalStateDef mentalStateDef = (target.Thing as Pawn)?.MentalStateDef;
 			if (mentalStateDef != null)
 			{
 				List<MentalBreakDef> allDefsListForReading = DefDatabase<MentalBreakDef>.AllDefsListForReading;
@@ -69,13 +73,13 @@
 						}
 						return false;
 					}
-					float num = PsyfocusCostForTarget(((LocalTargetInfo)target));
+					float num = PsyfocusCostForTarget(target);
 					if (num > ability.pawn.psychicEntropy.CurrentPsyfocus + 0.0005f)
 					{
 						Pawn pawn2 = ability.pawn;
 						if (throwMessages)
 						{
-							TaggedString taggedString = ("MentalBreakIntensity" + TargetMentalBreakIntensity(((LocalTargetInfo)target))).Translate();
+							TaggedString taggedString = ("MentalBreakIntensity" + TargetMentalBreakIntensity(target)).Translate();
 							Messages.Message("CommandPsycastNotEnoughPsyfocusForMentalBreak".Translate(num.ToStringPercent(), taggedString, pawn2.psychicEntropy.CurrentPsyfocus.ToStringPercent("0.#"), ability.def.label.Named("PSYCASTNAME"), pawn2.Named("CASTERNAME")), pawn, MessageTypeDefOf.RejectInput, historical: false);
 						}
 						return false;

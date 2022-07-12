@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded
 {
+    using RimWorld.Planet;
     using Verse;
     using VFECore.Abilities;
 
@@ -8,12 +9,16 @@
         public float radius;
 
         public float depth;
-        public override void Cast(LocalTargetInfo target, Ability ability)
+
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-            foreach (var cell in GenRadial.RadialCellsAround(target.Cell, radius, true))
+            base.Cast(targets, ability);
+            foreach (var target in targets)
             {
-                ability.pawn.Map.snowGrid.AddDepth(cell, depth);
+                foreach (var cell in GenRadial.RadialCellsAround(target.Cell, radius, true))
+                {
+                    ability.pawn.Map.snowGrid.AddDepth(cell, depth);
+                }
             }
         }
     }

@@ -40,12 +40,6 @@
         {
             foreach (GlobalTargetInfo target in targetInfo) ApplyHediff(this, (LocalTargetInfo) target);
         }
-
-        public override void ApplyHediffs(LocalTargetInfo targetInfo)
-        {
-            ApplyHediff(this, targetInfo);
-        }
-
         public static void ApplyHediff(Ability ability, LocalTargetInfo targetInfo)
         {
             AbilityExtension_Hediff hediffExtension = ability.def.GetModExtension<AbilityExtension_Hediff>();

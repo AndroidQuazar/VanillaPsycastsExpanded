@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded
 {
     using RimWorld;
+    using RimWorld.Planet;
     using System.Linq;
     using Verse;
     using Verse.AI;
@@ -12,18 +13,22 @@
         public float fixedTemperature;
         public FleckDef fleckToSpawnInArea;
         public float spawnRate;
-        public override void Cast(LocalTargetInfo target, Ability ability)
+
+        public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
-            base.Cast(target, ability);
-            ability.pawn.Map.GetComponent<MapComponent_PsycastsManager>().temperatureZones.Add(new FixedTemperatureZone
+            base.Cast(targets, ability);
+            foreach (var target in targets)
             {
-                fixedTemperature = fixedTemperature,
-                radius = ability.GetRadiusForPawn(),
-                center = target.Cell,
-                expiresIn = Find.TickManager.TicksGame + ability.GetDurationForPawn(),
-                fleckToSpawn = fleckToSpawnInArea,
-                spawnRate = spawnRate
-            });
+                ability.pawn.Map.GetComponent<MapComponent_PsycastsManager>().temperatureZones.Add(new FixedTemperatureZone
+                {
+                    fixedTemperature = fixedTemperature,
+                    radius = ability.GetRadiusForPawn(),
+                    center = target.Cell,
+                    expiresIn = Find.TickManager.TicksGame + ability.GetDurationForPawn(),
+                    fleckToSpawn = fleckToSpawnInArea,
+                    spawnRate = spawnRate
+                });
+            }
         }
     }
 }
