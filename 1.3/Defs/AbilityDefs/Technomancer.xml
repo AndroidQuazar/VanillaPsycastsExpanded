@@ -9,6 +9,7 @@
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
+	  <showUndrafted>true</showUndrafted>
       <targetMode>Pawn</targetMode>
       <castTime>240</castTime>
       <targetingParameters>
@@ -42,6 +43,7 @@
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
+	  <showUndrafted>true</showUndrafted>
       <targetMode>Pawn</targetMode>
       <castTime>240</castTime>
       <targetingParameters>
@@ -131,6 +133,7 @@
       <targetFlecks>
         <li>PsycastPsychicEffect</li>
       </targetFlecks>
+	  <showUndrafted>true</showUndrafted>
       <targetMode>Thing</targetMode>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
       <range>999999</range>
@@ -163,6 +166,7 @@
       <targetMode>Pawn</targetMode>
       <castTime>360</castTime>
       <needsTicking>true</needsTicking>
+	  <showUndrafted>true</showUndrafted>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
         <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
@@ -211,6 +215,7 @@
       <targetMode>Pawn</targetMode>
       <castTime>360</castTime>
       <needsTicking>true</needsTicking>
+	  <showUndrafted>true</showUndrafted>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
         <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
@@ -258,6 +263,7 @@
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
       <castTime>1800</castTime>
+	  <showUndrafted>true</showUndrafted>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>
         <mapObjectTargetsMustBeAutoAttackable>false</mapObjectTargetsMustBeAutoAttackable>
@@ -291,6 +297,7 @@
       <description>Speak words encouraging problem solving capabilities while psychically hypercharging the target’s mind with keen insight. The target will experience double research speed and intellectual skill gain for 5 days, scaling with their psychic sensitivity.</description>
       <iconPath>Abilities/Technomancer/WordofProgress</iconPath>
       <durationTime>150000</durationTime>
+	  <showUndrafted>true</showUndrafted>
       <durationTimeStatFactors>
         <PsychicSensitivity>1</PsychicSensitivity>
       </durationTimeStatFactors>
@@ -320,6 +327,7 @@
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
+	  <showUndrafted>true</showUndrafted>
       <castTime>1440</castTime>
       <targetingParameters>
         <canTargetItems>true</canTargetItems>

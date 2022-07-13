@@ -8,6 +8,7 @@
 		<iconPath>Abilities/Archon/WordofTrust</iconPath>
 		<range>30</range>
 		<castTime>120</castTime>
+		<showUndrafted>true</showUndrafted>
 		<targetingParameters>
 			<onlyTargetPrisonersOfColony>True</onlyTargetPrisonersOfColony>
 			<neverTargetIncapacitated>True</neverTargetIncapacitated>
@@ -39,6 +40,7 @@
 		<castTime>120</castTime>
 		<durationTime>300000</durationTime>
 		<goodwillImpact>-10</goodwillImpact>
+		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -103,6 +105,7 @@
 		<iconPath>Abilities/Archon/WordofAlliance</iconPath>
 		<castTime>60</castTime>
 		<abilityClass>VanillaPsycastsExpanded.Ability_GoodwillImpact</abilityClass>
+		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -191,6 +194,7 @@
 		<goodwillImpact>-200</goodwillImpact>
 		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
         <castSound>PsychicShockLanceCast</castSound>
+		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>

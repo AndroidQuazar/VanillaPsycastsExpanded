@@ -119,6 +119,7 @@
       <iconPath>Abilities/Staticlord/Recharge</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Staticlord.Ability_Recharge</abilityClass>
       <castTime>60</castTime>
+	  <showUndrafted>true</showUndrafted>
       <durationTime>180</durationTime>
       <durationTimeStatFactors>
         <PsychicSensitivity>2</PsychicSensitivity>

@@ -100,6 +100,7 @@
       <castTime>15</castTime>
       <durationTime>1200</durationTime>
       <castSound>VPE_FireShield_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Conflagrator</path>

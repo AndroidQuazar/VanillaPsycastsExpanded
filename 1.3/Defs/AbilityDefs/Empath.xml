@@ -8,6 +8,7 @@
     <iconPath>UI/Abilities/WordOfJoy</iconPath>
     <durationTime>300000</durationTime>
     <goodwillImpact>-25</goodwillImpact>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Empath</path>
@@ -35,6 +36,7 @@
     <description>Speak about someone's romantic virtues while using psychic suggestion to implant romantic desire in the listener. For days afterward, the listener will feel psychically-induced romantic attraction towards the other person. This greatly increases opinion and makes them much more likely to attempt romantic advances and marriage proposals if they get the chance. This power can be used to connect two other people, induce love for the caster, or force oneself to love another.</description>
     <iconPath>Abilities/Empath/WordofLove</iconPath>
     <durationTime>480000</durationTime>
+	<showUndrafted>true</showUndrafted>
     <targetMode IsNull="True" />
     <targetCount>2</targetCount>
     <targetModes>
@@ -82,6 +84,7 @@
     <description>Use calming words and psychic suggestion to end a mental break on a person or animal. The target will fall into a short psychic sleep. The psyfocus cost depends on the intensity of the target's mental break.</description>
     <iconPath>Abilities/Empath/WordofSerenity</iconPath>
     <durationTime>15000</durationTime>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_PsycastWordOfSerenity">
         <path>VPE_Empath</path>
@@ -116,6 +119,7 @@
     <label>word of inspiration</label>
     <description>Speak words encouraging creativity while psychically hypercharging the target's mind with new ideas. The target will experience a random inspiration appropriate to them.</description>
     <iconPath>Abilities/Empath/WordofInspiration</iconPath>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Empath</path>
@@ -144,6 +148,7 @@
     <castSound>PsychicSoothePulserCast</castSound>
     <castTime>600</castTime>
     <durationTime>180000</durationTime>
+	<showUndrafted>true</showUndrafted>
     <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
     <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
     <castFleckScale>9</castFleckScale>
@@ -178,6 +183,7 @@
     <castSound>PsychicSoothePulserCast</castSound>
     <castTime>600</castTime>
     <durationTime>180000</durationTime>
+	<showUndrafted>true</showUndrafted>
     <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
     <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
     <castFleckScale>9</castFleckScale>
@@ -209,6 +215,7 @@
     <iconPath>Abilities/Empath/Bliss</iconPath>
     <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
     <durationTime>60000</durationTime>
+	<showUndrafted>true</showUndrafted>
     <castTime>1200</castTime>
     <castSound>VPE_Bliss_Cast</castSound>
     <modExtensions>
@@ -237,6 +244,7 @@
     <distanceToTarget>3.5</distanceToTarget>
     <castFleck>PsycastPsychicEffect</castFleck>
     <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+	<showUndrafted>true</showUndrafted>
     <castSound>VPE_EnergyDump_Cast</castSound>
     <castTime>120</castTime>
     <modExtensions>
@@ -263,6 +271,7 @@
     <castTime>300</castTime>
     <goodwillImpact>-25</goodwillImpact>
     <castSound>VPE_MindWipe_Cast</castSound>
+	<showUndrafted>true</showUndrafted>
     <needsTicking>true</needsTicking>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

@@ -17,6 +17,7 @@
       <canTargetBuildings>False</canTargetBuildings>
     </targetingParameters>
     <castSound>VPE_Darkvision_Cast</castSound>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Nightstalker</path>
@@ -106,6 +107,7 @@
     <castTime>600</castTime>
     <targetMode>Self</targetMode>
     <castSound>PsychicShockLanceCast</castSound>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Nightstalker</path>

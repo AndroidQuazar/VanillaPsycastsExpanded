@@ -11,6 +11,7 @@
 	  <fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
 	  <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
 	  <targetMode>Humanlike</targetMode>
+	  <showUndrafted>true</showUndrafted>
 	  <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>
 	  	<canTargetSelf>True</canTargetSelf>
@@ -40,6 +41,7 @@
 	  <durationTime>150000</durationTime>
 	  <castTime>60</castTime>
 	  <castSound>VPE_WordOfHealing_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -87,6 +89,7 @@
       <iconPath>Abilities/Protector/WordofImmunity</iconPath>
 	  <castTime>60</castTime>
 	  <durationTime>150000</durationTime>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Protector</path>
@@ -147,6 +150,7 @@
 	  <castTime>15</castTime>
 	  <range>28</range>
 	  <durationTime>3600</durationTime>
+	  <showUndrafted>true</showUndrafted>
 	  <targetMode>Humanlike</targetMode>
 	  <targetingParameters>
 		<canTargetHumans>True</canTargetHumans>

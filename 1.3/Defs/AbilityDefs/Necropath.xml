@@ -305,6 +305,7 @@
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParameters>
 		<castSound>VPE_Resurrect_Cast</castSound>
+		<showUndrafted>true</showUndrafted>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>

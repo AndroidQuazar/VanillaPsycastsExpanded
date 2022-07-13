@@ -50,6 +50,7 @@
       <targetMode>Humanlike</targetMode>
       <castTime>120</castTime>
       <castSound>VPE_PsychicGuidance_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -172,6 +173,7 @@
       <castSound>VPE_BendProbability_Cast</castSound>
       <castFleck>VFEP_PsycastAreaEffectSlow</castFleck>
       <castFleckScale>9</castFleckScale>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>
@@ -273,6 +275,7 @@
       </targetingParameters>
       <castTime>360</castTime>
       <castSound>VPE_Transmutation_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Harmonist</path>

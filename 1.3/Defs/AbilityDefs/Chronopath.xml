@@ -38,6 +38,7 @@
       <castTime>600</castTime>
       <castSound>VPE_TimeskipMeditation_Cast</castSound>
 	  <cooldownTime>6000</cooldownTime>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -60,6 +61,7 @@
       <description>Psychic whispers of things to come. Colony pawns are inspired, neutrals or friendlies improve relations, prisoners lose their resistance and enemies retreat from their doom.</description>
       <iconPath>Abilities/Chronopath/WordofForetelling</iconPath>
       <distanceToTarget>3</distanceToTarget>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -136,6 +138,7 @@
       <castTime>180</castTime>
       <castSound>VPE_Age_Cast</castSound>
       <goodwillImpact>-25</goodwillImpact>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -175,6 +178,7 @@
         <PsychicSensitivity>5</PsychicSensitivity>
       </durationTimeStatFactors>
       <targetMode>Self</targetMode>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -201,6 +205,7 @@
       <castSound>VPE_SeasonTimeskip_Cast</castSound>
       <castTime>600</castTime>
       <targetMode>Self</targetMode>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
@@ -254,6 +259,7 @@
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
       <castSound>VPE_TimeReversal_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>

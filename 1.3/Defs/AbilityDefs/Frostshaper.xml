@@ -75,6 +75,7 @@
 	  <range>9.9</range>
 	  <castTime>15</castTime>
 	  <castSound>VPE_IceShield_Cast</castSound>
+	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>

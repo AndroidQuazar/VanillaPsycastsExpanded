@@ -12,6 +12,7 @@
     <radius>14.9</radius>
     <range>24.9</range>
     <targetMode>Location</targetMode>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Skipmaster</path>

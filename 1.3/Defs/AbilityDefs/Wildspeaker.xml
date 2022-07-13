@@ -80,6 +80,7 @@
     <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_Animal</abilityClass>
     <castSound>PsychicSoothePulserCast</castSound>
     <distanceToTarget>6.9</distanceToTarget>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -312,6 +313,7 @@
     <castTime>720</castTime>
     <range>3</range>
     <radius>99999999</radius>
+	<showUndrafted>true</showUndrafted>
     <castSound>VPE_EssenceTransfer_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -339,6 +341,7 @@
       <PsychicSensitivity>100</PsychicSensitivity>
     </powerStatFactors>
     <castSound>VPE_SummonPack_Cast</castSound>
+	<showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
