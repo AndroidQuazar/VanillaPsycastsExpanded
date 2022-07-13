@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+   <Operation Class="PatchOperationSequence">
+      <operations>
+         <li Class="PatchOperationAdd">
+            <xpath>Defs/FactionDef[defName = "Empire"]/pawnGroupMakers</xpath>
+            <value>
+               <li>
+                  <kindDef>CombatPsycasters</kindDef>
+                  <commonality>10</commonality>
+                  <options>
+                     <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
+                     <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
+                     <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
+                     <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
+                     <Empire_Caster_Conflagrator>1</Empire_Caster_Conflagrator>
+                     <Empire_Caster_Archotechist>1</Empire_Caster_Archotechist>
+                     <Empire_Caster_Warlord>1</Empire_Caster_Warlord>
+                  </options>
+               </li>
+               <li>
+                  <kindDef>CombatPsycasters</kindDef>
+                  <commonality>100</commonality>
+                  <options>
+                     <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
+                     <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
+                     <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
+                     <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
+                     <Empire_Caster_Warlord>1</Empire_Caster_Warlord>
+                     <Empire_Caster_Protector>1</Empire_Caster_Protector>
+                  </options>
+               </li>
+               <li>
+                  <kindDef>CombatPsycasters</kindDef>
+                  <commonality>50</commonality>
+                  <options>
+                     <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
+                     <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
+                     <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
+                     <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
+                     <Empire_Caster_Archotechist>1</Empire_Caster_Archotechist>
+                  </options>
+               </li>
+            </value>
+         </li>
+         <li Class="PatchOperationAdd">
+            <xpath>Defs/FactionDef[@Name = "TribeBase"]/pawnGroupMakers</xpath>
+            <value>
+               <li>
+                  <kindDef>CombatPsycasters</kindDef>
+                  <commonality>100</commonality>
+                  <options>
+                     <Tribal_Penitent>5</Tribal_Penitent>
+                     <Tribal_Warrior>5</Tribal_Warrior>
+                     <Tribal_Archer>10</Tribal_Archer>
+                     <Tribal_Hunter>10</Tribal_Hunter>
+                     <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+                     <Tribal_Berserker>5</Tribal_Berserker>
+                     <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
+                     <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
+                     <Tribal_Caster_Wildspeaker>3</Tribal_Caster_Wildspeaker>
+                  </options>
+               </li>
+               <li>
+                  <kindDef>CombatPsycasters</kindDef>
+                  <commonality>70</commonality>
+                  <options>
+                     <Tribal_Penitent>5</Tribal_Penitent>
+                     <Tribal_Warrior>5</Tribal_Warrior>
+                     <Tribal_Archer>10</Tribal_Archer>
+                     <Tribal_Hunter>10</Tribal_Hunter>
+                     <Tribal_HeavyArcher>10</Tribal_HeavyArcher>
+                     <Tribal_Berserker>5</Tribal_Berserker>
+                     <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
+                     <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
+                     <Tribal_Caster_Conflagrator>3</Tribal_Caster_Conflagrator>
+                     <Tribal_Caster_Frostshaper>3</Tribal_Caster_Frostshaper>
+                     <Tribal_Caster_Staticlord>3</Tribal_Caster_Staticlord>
+                  </options>
+               </li>
+            </value>
+         </li>
+      </operations>
+   </Operation>
+</Patch>
