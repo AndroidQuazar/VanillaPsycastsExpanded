@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+   <PawnKindDef ParentName="RoyalBase">
+      <defName>Empire_Caster_Conflagrator</defName>
+      <label>coflagator</label>
+      <combatPower>300</combatPower>
+      <weaponMoney>99999</weaponMoney>
+      <specificApparelRequirements>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <requiredTag>RoyalRobe</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>UpperHead</bodyPartGroup>
+            <requiredTag>BestowerHood</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <apparelLayer>OnSkin</apparelLayer>
+            <requiredTag>RoyalTier2</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Legs</bodyPartGroup>
+            <stuff>Hyperweave</stuff>
+         </li>
+      </specificApparelRequirements>
+      <techHediffsMoney>1000~4000</techHediffsMoney>
+      <apparelColor>(114,12,12)</apparelColor>
+      <weaponTags Inherit="False">
+         <li>EltexStaff</li>
+      </weaponTags>
+      <requiredWorkTags>
+         <li>Violent</li>
+      </requiredWorkTags>
+      <minGenerationAge>50</minGenerationAge>
+      <techHediffsMaxAmount>3</techHediffsMaxAmount>
+      <initialWillRange>6~8</initialWillRange>
+      <initialResistanceRange>30~46</initialResistanceRange>
+      <modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>1</initialLevel>
+            <statUpgradePoints>1~3</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_Conflagrator>1~4|1~5</VPE_Conflagrator>
+            </unlockedPaths>
+         </li>
+      </modExtensions>
+   </PawnKindDef>
+   
+   <PawnKindDef ParentName="RoyalBase">
+      <defName>Empire_Caster_Archotechist</defName>
+      <label>archotechist</label>
+      <combatPower>300</combatPower>
+      <weaponMoney>99999</weaponMoney>
+      <specificApparelRequirements>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <requiredTag>RoyalRobe</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>UpperHead</bodyPartGroup>
+            <requiredTag>BestowerHood</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <apparelLayer>OnSkin</apparelLayer>
+            <requiredTag>RoyalTier2</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Legs</bodyPartGroup>
+            <stuff>Hyperweave</stuff>
+         </li>
+      </specificApparelRequirements>
+      <techHediffsMoney>1000~4000</techHediffsMoney>
+      <apparelColor>(114,12,12)</apparelColor>
+      <weaponTags Inherit="False">
+         <li>EltexStaff</li>
+      </weaponTags>
+      <requiredWorkTags>
+         <li>Violent</li>
+      </requiredWorkTags>
+      <minGenerationAge>50</minGenerationAge>
+      <techHediffsMaxAmount>3</techHediffsMaxAmount>
+      <initialWillRange>6~8</initialWillRange>
+      <initialResistanceRange>30~46</initialResistanceRange>
+      <modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>1</initialLevel>
+            <statUpgradePoints>3~9</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_Archotechist>1~4|1~5</VPE_Archotechist>
+            </unlockedPaths>
+         </li>
+      </modExtensions>
+   </PawnKindDef>
+   
+   <PawnKindDef ParentName="RoyalBase">
+      <defName>Empire_Caster_Warlord</defName>
+      <label>warlord</label>
+      <combatPower>300</combatPower>
+      <weaponMoney>99999</weaponMoney>
+      <specificApparelRequirements>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <requiredTag>RoyalRobe</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>UpperHead</bodyPartGroup>
+            <requiredTag>BestowerHood</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <apparelLayer>OnSkin</apparelLayer>
+            <requiredTag>RoyalTier2</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Legs</bodyPartGroup>
+            <stuff>Hyperweave</stuff>
+         </li>
+      </specificApparelRequirements>
+      <techHediffsMoney>1000~4000</techHediffsMoney>
+      <apparelColor>(114,12,12)</apparelColor>
+      <weaponTags Inherit="False">
+         <li>EltexStaff</li>
+      </weaponTags>
+      <requiredWorkTags>
+         <li>Violent</li>
+      </requiredWorkTags>
+      <minGenerationAge>50</minGenerationAge>
+      <techHediffsMaxAmount>3</techHediffsMaxAmount>
+      <initialWillRange>6~8</initialWillRange>
+      <initialResistanceRange>30~46</initialResistanceRange>
+      <modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>1</initialLevel>
+            <statUpgradePoints>1~3</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_Warlord>1~4|1~6</VPE_Warlord>
+            </unlockedPaths>
+         </li>
+      </modExtensions>
+   </PawnKindDef>
+   
+   <PawnKindDef ParentName="RoyalBase">
+      <defName>Empire_Caster_Protector</defName>
+      <label>protector</label>
+      <combatPower>300</combatPower>
+      <weaponMoney>99999</weaponMoney>
+      <specificApparelRequirements>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <requiredTag>RoyalRobe</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>UpperHead</bodyPartGroup>
+            <requiredTag>BestowerHood</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Torso</bodyPartGroup>
+            <apparelLayer>OnSkin</apparelLayer>
+            <requiredTag>RoyalTier2</requiredTag>
+         </li>
+         <li>
+            <bodyPartGroup>Legs</bodyPartGroup>
+            <stuff>Hyperweave</stuff>
+         </li>
+      </specificApparelRequirements>
+      <techHediffsMoney>1000~4000</techHediffsMoney>
+      <apparelColor>(114,12,12)</apparelColor>
+      <weaponTags Inherit="False">
+         <li>EltexStaff</li>
+      </weaponTags>
+      <requiredWorkTags>
+         <li>Violent</li>
+      </requiredWorkTags>
+      <minGenerationAge>50</minGenerationAge>
+      <techHediffsMaxAmount>3</techHediffsMaxAmount>
+      <initialWillRange>6~8</initialWillRange>
+      <initialResistanceRange>30~46</initialResistanceRange>
+      <modExtensions>
+         <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
+            <implantDef>VPE_PsycastAbilityImplant</implantDef>
+            <initialLevel>1</initialLevel>
+            <statUpgradePoints>1~3</statUpgradePoints>
+            <unlockedPaths>
+               <VPE_Protector>1~4|1~6</VPE_Protector>
+            </unlockedPaths>
+         </li>
+      </modExtensions>
+   </PawnKindDef>
+   
+</Defs>
