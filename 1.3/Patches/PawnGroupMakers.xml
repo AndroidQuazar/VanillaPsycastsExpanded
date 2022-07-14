@@ -5,8 +5,8 @@
          <li Class="PatchOperationAdd">
             <xpath>Defs/FactionDef[defName = "Empire"]/pawnGroupMakers</xpath>
             <value>
-               <li>
-                  <kindDef>CombatPsycasters</kindDef>
+               <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
+                  <kindDef>Combat</kindDef>
                   <commonality>10</commonality>
                   <options>
                      <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
@@ -19,8 +19,8 @@
 					 <Empire_Caster_Warlord_Melee>0.5</Empire_Caster_Warlord_Melee>
                   </options>
                </li>
-               <li>
-                  <kindDef>CombatPsycasters</kindDef>
+               <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
+                  <kindDef>Combat</kindDef>
                   <commonality>100</commonality>
                   <options>
                      <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
@@ -32,8 +32,8 @@
                      <Empire_Caster_Protector>1</Empire_Caster_Protector>
                   </options>
                </li>
-               <li>
-                  <kindDef>CombatPsycasters</kindDef>
+               <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
+                  <kindDef>Combat</kindDef>
                   <commonality>50</commonality>
                   <options>
                      <Empire_Fighter_Trooper>5</Empire_Fighter_Trooper>
@@ -48,8 +48,8 @@
          <li Class="PatchOperationAdd">
             <xpath>Defs/FactionDef[@Name = "TribeBase"]/pawnGroupMakers</xpath>
             <value>
-               <li>
-                  <kindDef>CombatPsycasters</kindDef>
+               <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
+                  <kindDef>Combat</kindDef>
                   <commonality>100</commonality>
                   <options>
                      <Tribal_Penitent>5</Tribal_Penitent>
@@ -63,8 +63,8 @@
                      <Tribal_Caster_Wildspeaker>3</Tribal_Caster_Wildspeaker>
                   </options>
                </li>
-               <li>
-                  <kindDef>CombatPsycasters</kindDef>
+               <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
+                  <kindDef>Combat</kindDef>
                   <commonality>70</commonality>
                   <options>
                      <Tribal_Penitent>5</Tribal_Penitent>

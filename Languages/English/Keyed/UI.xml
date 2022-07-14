@@ -41,4 +41,7 @@
     <VPE.DevMode>Developer mode</VPE.DevMode>
     <VPE.NotEnoughPoints>Not enough points available</VPE.NotEnoughPoints>
     <VPE.AbilitiesList>Psycasts included:</VPE.AbilitiesList>
+	<VPE.PsycasterRaidDescription>{0}
+
+Capturing psycasters is a viable strategy and can be considered beneficial.</VPE.PsycasterRaidDescription>
 </LanguageData>
