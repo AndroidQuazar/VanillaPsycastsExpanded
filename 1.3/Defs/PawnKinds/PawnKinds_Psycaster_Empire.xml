@@ -97,42 +97,28 @@
       </modExtensions>
    </PawnKindDef>
    
-   <PawnKindDef ParentName="RoyalBase">
-      <defName>Empire_Caster_Warlord</defName>
-      <label>warlord</label>
-      <combatPower>300</combatPower>
-      <weaponMoney>99999</weaponMoney>
-      <specificApparelRequirements>
-         <li>
-            <bodyPartGroup>Torso</bodyPartGroup>
-            <requiredTag>RoyalRobe</requiredTag>
-         </li>
-         <li>
-            <bodyPartGroup>UpperHead</bodyPartGroup>
-            <requiredTag>BestowerHood</requiredTag>
-         </li>
-         <li>
-            <bodyPartGroup>Torso</bodyPartGroup>
-            <apparelLayer>OnSkin</apparelLayer>
-            <requiredTag>RoyalTier2</requiredTag>
-         </li>
-         <li>
-            <bodyPartGroup>Legs</bodyPartGroup>
-            <stuff>Hyperweave</stuff>
-         </li>
-      </specificApparelRequirements>
-      <techHediffsMoney>1000~4000</techHediffsMoney>
-      <apparelColor>(114,12,12)</apparelColor>
-      <weaponTags Inherit="False">
-         <li>EltexStaff</li>
-      </weaponTags>
-      <requiredWorkTags>
-         <li>Violent</li>
-      </requiredWorkTags>
-      <minGenerationAge>50</minGenerationAge>
-      <techHediffsMaxAmount>3</techHediffsMaxAmount>
-      <initialWillRange>6~8</initialWillRange>
-      <initialResistanceRange>30~46</initialResistanceRange>
+  <PawnKindDef ParentName="StellicGuardBase">
+    <defName>Empire_Caster_Warlord_Ranged</defName>
+    <label>warlord</label>
+    <titleSelectOne>
+      <li>Freeholder</li>
+      <li>Yeoman</li>
+      <li>Acolyte</li>
+      <li>Knight</li>
+    </titleSelectOne>
+    <weaponTags>
+      <li>SpacerGun</li>
+    </weaponTags>
+    <skills>
+      <li>
+        <skill>Shooting</skill>
+        <range>11~16</range>
+      </li>
+    </skills>
+    <disallowedTraits>
+      <li>Brawler</li>
+    </disallowedTraits>
+    <initialResistanceRange>14~22</initialResistanceRange>
       <modExtensions>
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
@@ -143,7 +129,28 @@
             </unlockedPaths>
          </li>
       </modExtensions>
-   </PawnKindDef>
+  </PawnKindDef>
+
+  <PawnKindDef ParentName="StellicGuardBase">
+    <defName>Empire_Caster_Warlord_Melee</defName>
+    <label>warlord</label>
+    <titleSelectOne>
+      <li>Knight</li>
+    </titleSelectOne>
+    <weaponTags>
+      <li>Bladelink</li>
+    </weaponTags>
+    <apparelRequired>
+      <li>Apparel_ShieldBelt</li>
+    </apparelRequired>
+    <skills>
+      <li>
+        <skill>Melee</skill>
+        <range>11~16</range>
+      </li>
+    </skills>
+    <initialResistanceRange>19~30</initialResistanceRange>
+  </PawnKindDef>
    
    <PawnKindDef ParentName="RoyalBase">
       <defName>Empire_Caster_Protector</defName>
