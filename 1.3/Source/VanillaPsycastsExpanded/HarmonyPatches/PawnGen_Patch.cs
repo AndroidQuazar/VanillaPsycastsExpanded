@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VanillaPsycastsExpanded.HarmonyPatches
+﻿namespace VanillaPsycastsExpanded
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using HarmonyLib;
     using RimWorld;
     using Verse;
@@ -40,7 +36,7 @@ namespace VanillaPsycastsExpanded.HarmonyPatches
 
                 Hediff_PsycastAbilities implant = (__result.health.hediffSet.GetFirstHediffOfDef(psycastExtension.implantDef) as Hediff_PsycastAbilities)!;
 
-                if(implant.psylink == null)
+                if (implant.psylink == null)
                     implant.InitializeFromPsylink(psylink);
 
                 foreach (PathUnlockData unlockedPath in psycastExtension.unlockedPaths)
@@ -51,28 +47,34 @@ namespace VanillaPsycastsExpanded.HarmonyPatches
 
                         int abilityCount = unlockedPath.unlockedAbilityCount.RandomInRange;
 
+
+
                         IEnumerable<AbilityDef> abilitySelection = new List<AbilityDef>();
 
                         for (int level = unlockedPath.unlockedAbilityLevelRange.min; level < unlockedPath.unlockedAbilityLevelRange.max && level < unlockedPath.path.MaxLevel; level++)
                             abilitySelection = abilitySelection.Concat(unlockedPath.path.abilityLevelsInOrder[level]);
 
                         List<AbilityDef> abilitySelectionList = abilitySelection.ToList();
+                        List<AbilityDef> abilitySelectionListFiltered;
 
-                        while (abilitySelectionList.Any() && abilityCount > 0)
+                        while ((abilitySelectionListFiltered = abilitySelectionList.Where(ab => ab.Psycast().PrereqsCompleted(comp)).ToList()).Any() && abilityCount > 0)
                         {
                             abilityCount--;
-                            AbilityDef abilityDef = abilitySelectionList.RandomElement();
+                            AbilityDef abilityDef = abilitySelectionListFiltered.RandomElement();
+                            comp.GiveAbility(abilityDef);
 
-                            abilityDef.GetModExtension<AbilityExtension_Psycast>().UnlockWithPrereqs(comp);
                             implant.ChangeLevel(1, false);
+                            implant.points--;
 
-                            foreach (Ability learnedAbility in comp.LearnedAbilities)
-                                abilitySelectionList.Remove(learnedAbility.def);
+                            abilitySelectionList.Remove(abilityDef);
                         }
                     }
                 }
 
-                implant.ImproveStats(psycastExtension.statUpgradePoints.RandomInRange);
+                int statCount = psycastExtension.statUpgradePoints.RandomInRange;
+                implant.ChangeLevel(statCount);
+                implant.points -= statCount;
+                implant.ImproveStats(statCount);
 
             }
         }
