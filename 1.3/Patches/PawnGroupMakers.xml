@@ -15,7 +15,8 @@
                      <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
                      <Empire_Caster_Conflagrator>1</Empire_Caster_Conflagrator>
                      <Empire_Caster_Archotechist>1</Empire_Caster_Archotechist>
-                     <Empire_Caster_Warlord>1</Empire_Caster_Warlord>
+                     <Empire_Caster_Warlord_Ranged>0.5</Empire_Caster_Warlord_Ranged>
+					 <Empire_Caster_Warlord_Melee>0.5</Empire_Caster_Warlord_Melee>
                   </options>
                </li>
                <li>
@@ -26,7 +27,8 @@
                      <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
                      <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
                      <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
-                     <Empire_Caster_Warlord>1</Empire_Caster_Warlord>
+                     <Empire_Caster_Warlord_Ranged>0.5</Empire_Caster_Warlord_Ranged>
+					 <Empire_Caster_Warlord_Melee>0.5</Empire_Caster_Warlord_Melee>
                      <Empire_Caster_Protector>1</Empire_Caster_Protector>
                   </options>
                </li>
