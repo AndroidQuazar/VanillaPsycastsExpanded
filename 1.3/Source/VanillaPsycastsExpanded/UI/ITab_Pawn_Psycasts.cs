@@ -55,7 +55,8 @@ public class ITab_Pawn_Psycasts : ITab
     }
 
     public override bool IsVisible =>
-        Find.Selector.SingleSelectedThing is Pawn pawn && pawn.health.hediffSet.HasHediff(VPE_DefOf.VPE_PsycastAbilityImplant);
+        Find.Selector.SingleSelectedThing is Pawn pawn && pawn.health.hediffSet.HasHediff(VPE_DefOf.VPE_PsycastAbilityImplant) &&
+        pawn.Faction is { IsPlayer: true };
 
     protected override void UpdateSize()
     {
