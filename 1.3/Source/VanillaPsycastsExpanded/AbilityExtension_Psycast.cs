@@ -28,7 +28,7 @@
 
         public bool PrereqsCompleted(CompAbilities compAbilities)
         {
-            return this.prerequisites == null || compAbilities.LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
+            return this.prerequisites.NullOrEmpty() || compAbilities.LearnedAbilities.Any(ab => this.prerequisites.Contains(ab.def));
         }
 
         public void UnlockWithPrereqs(CompAbilities compAbilities)
