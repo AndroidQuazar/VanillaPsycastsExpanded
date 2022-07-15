@@ -13,10 +13,10 @@
                      <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
                      <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
                      <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
-                     <Empire_Caster_Conflagrator>1</Empire_Caster_Conflagrator>
-                     <Empire_Caster_Archotechist>1</Empire_Caster_Archotechist>
-                     <Empire_Caster_Warlord_Ranged>0.5</Empire_Caster_Warlord_Ranged>
-					 <Empire_Caster_Warlord_Melee>0.5</Empire_Caster_Warlord_Melee>
+                     <Empire_Caster_Conflagrator>0.2</Empire_Caster_Conflagrator>
+                     <Empire_Caster_Archotechist>0.2</Empire_Caster_Archotechist>
+                     <Empire_Caster_Warlord_Ranged>0.2</Empire_Caster_Warlord_Ranged>
+					 <Empire_Caster_Warlord_Melee>0.2</Empire_Caster_Warlord_Melee>
                   </options>
                </li>
                <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
@@ -27,9 +27,9 @@
                      <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
                      <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
                      <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
-                     <Empire_Caster_Warlord_Ranged>0.5</Empire_Caster_Warlord_Ranged>
-					 <Empire_Caster_Warlord_Melee>0.5</Empire_Caster_Warlord_Melee>
-                     <Empire_Caster_Protector>1</Empire_Caster_Protector>
+                     <Empire_Caster_Warlord_Ranged>0.2</Empire_Caster_Warlord_Ranged>
+					 <Empire_Caster_Warlord_Melee>0.2</Empire_Caster_Warlord_Melee>
+                     <Empire_Caster_Protector>0.4</Empire_Caster_Protector>
                   </options>
                </li>
                <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
@@ -40,7 +40,7 @@
                      <Empire_Fighter_Janissary>3.5</Empire_Fighter_Janissary>
                      <Empire_Fighter_Cataphract>2</Empire_Fighter_Cataphract>
                      <Empire_Fighter_Champion>4</Empire_Fighter_Champion>
-                     <Empire_Caster_Archotechist>1</Empire_Caster_Archotechist>
+                     <Empire_Caster_Archotechist>0.1</Empire_Caster_Archotechist>
                   </options>
                </li>
             </value>
@@ -60,7 +60,7 @@
                      <Tribal_Berserker>5</Tribal_Berserker>
                      <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
                      <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
-                     <Tribal_Caster_Wildspeaker>3</Tribal_Caster_Wildspeaker>
+                     <Tribal_Caster_Wildspeaker>0.1</Tribal_Caster_Wildspeaker>
                   </options>
                </li>
                <li Class="VanillaPsycastsExpanded.PawnGroupMaker_PsycasterRaid">
@@ -75,9 +75,9 @@
                      <Tribal_Berserker>5</Tribal_Berserker>
                      <Tribal_ChiefRanged>3</Tribal_ChiefRanged>
                      <Tribal_ChiefMelee>1.5</Tribal_ChiefMelee>
-                     <Tribal_Caster_Conflagrator>3</Tribal_Caster_Conflagrator>
-                     <Tribal_Caster_Frostshaper>3</Tribal_Caster_Frostshaper>
-                     <Tribal_Caster_Staticlord>3</Tribal_Caster_Staticlord>
+                     <Tribal_Caster_Conflagrator>0.1</Tribal_Caster_Conflagrator>
+                     <Tribal_Caster_Frostshaper>0.1</Tribal_Caster_Frostshaper>
+                     <Tribal_Caster_Staticlord>0.1</Tribal_Caster_Staticlord>
                   </options>
                </li>
             </value>
