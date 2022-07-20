@@ -73,6 +73,7 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
+    <Compile Include="Misc\GenRadialCached.cs" />
     <Compile Include="Misc\WoundWithShader.cs" />
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Paths\Archon\Hediff_Hallucination.cs" />
