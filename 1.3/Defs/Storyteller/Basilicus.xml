@@ -4,9 +4,9 @@
         <defName>VPE_Basilicus</defName>
         <label>Basilicus Bestower</label>
         <description>Basilicus enforces the will of the emperor wherever he goes, bestowing great powers on those who deserve it. Epic ballads become even more fantastic if everyone has access to psychic powers.</description>
-        <portraitLarge>UI/HeroArt/Storytellers/RandyRandom</portraitLarge>
-        <portraitTiny>UI/HeroArt/Storytellers/RandyRandomTiny</portraitTiny>
-        <listOrder>40</listOrder>
+        <portraitLarge>UI/HeroArt/Storytellers/BasilicusBestower</portraitLarge>
+        <portraitTiny>UI/HeroArt/Storytellers/BasilicusBestowerTiny</portraitTiny>
+        <listOrder>240</listOrder>
         <comps>
             <!-- Home all -->
             <li Class="StorytellerCompProperties_RandomMain">
