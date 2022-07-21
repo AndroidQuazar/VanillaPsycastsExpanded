@@ -1,16 +1,18 @@
-﻿namespace VanillaPsycastsExpanded.Chronopath
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using RimWorld;
-    using Verse;
-    using Ability = VFECore.Abilities.Ability;
+﻿namespace VanillaPsycastsExpanded.Chronopath;
 
-    public class Ability_Finish : Ability
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using RimWorld.Planet;
+using Verse;
+using Ability = VFECore.Abilities.Ability;
+
+public class Ability_Finish : Ability
+{
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(LocalTargetInfo target)
-        {
-            base.Cast(target);
+        base.Cast(targets);
+        foreach (GlobalTargetInfo target in targets)
             if (target.Thing is UnfinishedThing thing)
             {
                 List<Thing> ingredients = thing.ingredients;
@@ -38,8 +40,7 @@
                     if (!GenPlace.TryPlaceThing(product, loc, this.pawn.Map, ThingPlaceMode.Near))
                         Log.Error($"Could not drop recipe product {product} near {loc}");
             }
-        }
-
-        public override bool CanHitTarget(LocalTargetInfo target) => base.CanHitTarget(target) && target.Thing is UnfinishedThing;
     }
+
+    public override bool CanHitTarget(LocalTargetInfo target) => base.CanHitTarget(target) && target.Thing is UnfinishedThing;
 }

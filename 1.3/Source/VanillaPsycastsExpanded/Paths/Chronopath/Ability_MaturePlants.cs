@@ -1,20 +1,21 @@
-﻿namespace VanillaPsycastsExpanded.Chronopath
-{
-    using System.Linq;
-    using RimWorld;
-    using Verse;
-    using Ability = VFECore.Abilities.Ability;
+﻿namespace VanillaPsycastsExpanded.Chronopath;
 
-    public class Ability_MaturePlants : Ability
+using System.Linq;
+using RimWorld;
+using RimWorld.Planet;
+using Verse;
+using Ability = VFECore.Abilities.Ability;
+
+public class Ability_MaturePlants : Ability
+{
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(LocalTargetInfo target)
+        base.Cast(targets);
+        foreach (Plant plant in targets.SelectMany(target => GenRadial.RadialDistinctThingsAround(target.Cell, target.Map, this.GetRadiusForPawn(), true))
+                                       .OfType<Plant>().Distinct())
         {
-            base.Cast(target);
-            foreach (Plant plant in GenRadial.RadialDistinctThingsAround(target.Cell, this.pawn.Map, this.GetRadiusForPawn(), true).OfType<Plant>())
-            {
-                plant.Growth = 1f;
-                plant.DirtyMapMesh(plant.Map);
-            }
+            plant.Growth = 1f;
+            plant.DirtyMapMesh(plant.Map);
         }
     }
 }

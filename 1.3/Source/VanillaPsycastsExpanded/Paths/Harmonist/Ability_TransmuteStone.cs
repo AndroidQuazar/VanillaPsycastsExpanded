@@ -1,22 +1,24 @@
-﻿namespace VanillaPsycastsExpanded.Harmonist
+﻿namespace VanillaPsycastsExpanded.Harmonist;
+
+using System.Collections.Generic;
+using HarmonyLib;
+using RimWorld.Planet;
+using Verse;
+using VFECore.Abilities;
+
+public class Ability_TransmuteStone : Ability
 {
-    using System.Collections.Generic;
-    using HarmonyLib;
-    using RimWorld.Planet;
-    using Verse;
-    using VFECore.Abilities;
+    private static readonly AccessTools.FieldRef<World, List<ThingDef>> allNaturalRockDefs =
+        AccessTools.FieldRefAccess<World, List<ThingDef>>("allNaturalRockDefs");
 
-    public class Ability_TransmuteStone : Ability
+    private static readonly AccessTools.FieldRef<Thing, Graphic> graphicInt = AccessTools.FieldRefAccess<Thing, Graphic>("graphicInt");
+
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        private static readonly AccessTools.FieldRef<World, List<ThingDef>> allNaturalRockDefs =
-            AccessTools.FieldRefAccess<World, List<ThingDef>>("allNaturalRockDefs");
-
-        private static readonly AccessTools.FieldRef<Thing, Graphic> graphicInt = AccessTools.FieldRefAccess<Thing, Graphic>("graphicInt");
-
-        public override void Cast(LocalTargetInfo target)
+        base.Cast(targets);
+        foreach (GlobalTargetInfo target in targets)
         {
-            base.Cast(target);
-            Map map = this.pawn.Map;
+            Map map = target.Map;
             Find.World.NaturalRockTypesIn(map.Tile); // Force the game to generate the rocks list we are querying
             List<ThingDef> naturalRockDefs = allNaturalRockDefs(Find.World);
             ThingDef       chosenRock      = naturalRockDefs.RandomElement();

@@ -1,17 +1,20 @@
-﻿namespace VanillaPsycastsExpanded.Harmonist
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using RimWorld;
-    using UnityEngine;
-    using Verse;
-    using Ability = VFECore.Abilities.Ability;
+﻿namespace VanillaPsycastsExpanded.Harmonist;
 
-    public class Ability_TransmuteItem : Ability
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
+using Verse;
+using Ability = VFECore.Abilities.Ability;
+
+public class Ability_TransmuteItem : Ability
+{
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(LocalTargetInfo target)
+        base.Cast(targets);
+        foreach (GlobalTargetInfo target in targets)
         {
-            base.Cast(target);
             Thing   item  = target.Thing;
             float   value = item.MarketValue * item.stackCount;
             IntVec3 pos   = item.Position;
@@ -42,22 +45,22 @@
             item.Destroy();
             item            = ThingMaker.MakeThing(chosen);
             item.stackCount = Mathf.FloorToInt(value / chosen.BaseMarketValue);
-            GenSpawn.Spawn(item, pos, this.pawn.Map);
+            GenSpawn.Spawn(item, pos, target.Map);
         }
+    }
 
-        public override bool CanHitTarget(LocalTargetInfo target) => this.targetParams.CanTarget(target.Thing, this) &&
-                                                                     GenSight.LineOfSight(this.pawn.Position, target.Cell, this.pawn.Map, true);
+    public override bool CanHitTarget(LocalTargetInfo target) => this.targetParams.CanTarget(target.Thing, this) &&
+                                                                 GenSight.LineOfSight(this.pawn.Position, target.Cell, this.pawn.Map, true);
 
-        public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+    public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
+    {
+        if (!base.ValidateTarget(target, showMessages)) return false;
+        if (target.Thing.MarketValue < 1f)
         {
-            if (!base.ValidateTarget(target, showMessages)) return false;
-            if (target.Thing.MarketValue < 1f)
-            {
-                if (showMessages) Messages.Message("VPE.TooCheap".Translate(), MessageTypeDefOf.RejectInput, false);
-                return false;
-            }
-
-            return true;
+            if (showMessages) Messages.Message("VPE.TooCheap".Translate(), MessageTypeDefOf.RejectInput, false);
+            return false;
         }
+
+        return true;
     }
 }

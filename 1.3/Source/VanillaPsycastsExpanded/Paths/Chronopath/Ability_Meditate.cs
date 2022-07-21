@@ -1,15 +1,14 @@
-﻿namespace VanillaPsycastsExpanded.Chronopath
-{
-    using Verse;
-    using VFECore.Abilities;
+﻿namespace VanillaPsycastsExpanded.Chronopath;
 
-    public class Ability_Meditate : Ability
+using RimWorld.Planet;
+using VFECore.Abilities;
+
+public class Ability_Meditate : Ability
+{
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(LocalTargetInfo target)
-        {
-            base.Cast(target);
-            this.pawn.psychicEntropy.OffsetPsyfocusDirectly(1f - this.pawn.psychicEntropy.CurrentPsyfocus);
-            this.pawn.Psycasts().GainExperience(300f);
-        }
+        base.Cast(targets);
+        this.pawn.psychicEntropy.OffsetPsyfocusDirectly(1f - this.pawn.psychicEntropy.CurrentPsyfocus);
+        this.pawn.Psycasts().GainExperience(300f);
     }
 }

@@ -1,19 +1,19 @@
-﻿namespace VanillaPsycastsExpanded.Chronopath
-{
-    using RimWorld;
-    using Verse;
-    using VFECore.Abilities;
-    using Ability = VFECore.Abilities.Ability;
+﻿namespace VanillaPsycastsExpanded.Chronopath;
 
-    public class AbilityExtension_ReduceResistance : AbilityExtension_AbilityMod
+using RimWorld;
+using RimWorld.Planet;
+using Verse;
+using VFECore.Abilities;
+using Ability = VFECore.Abilities.Ability;
+
+public class AbilityExtension_ReduceResistance : AbilityExtension_AbilityMod
+{
+    public override void Cast(GlobalTargetInfo[] targets, Ability ability)
     {
-        public override void Cast(LocalTargetInfo target, Ability ability)
+        base.Cast(targets, ability);
+        foreach (GlobalTargetInfo target in targets)
         {
-            base.Cast(target, ability);
-            Pawn pawn = target.Pawn;
-            if (pawn?.HostFaction == null) return;
-            if (pawn.GuestStatus  != GuestStatus.Prisoner) return;
-            if (pawn.HostFaction  != ability.pawn.Faction) return;
+            if (target.Thing is not Pawn { HostFaction: { } host, GuestStatus: GuestStatus.Prisoner } pawn || host == ability.pawn.Faction) return;
             pawn.guest.resistance -= 20f;
         }
     }

@@ -1,17 +1,20 @@
-﻿namespace VanillaPsycastsExpanded.Conflagrator
+﻿namespace VanillaPsycastsExpanded.Conflagrator;
+
+using RimWorld.Planet;
+using Verse;
+using VFECore.Abilities;
+
+[StaticConstructorOnStartup]
+public class Ability_FireTornado : Ability
 {
-    using Verse;
-    using VFECore.Abilities;
+    private static readonly ThingDef FireTornadoDef = ThingDef.Named("VPE_FireTornado");
 
-    [StaticConstructorOnStartup]
-    public class Ability_FireTornado : Ability
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        private static readonly ThingDef FireTornadoDef = ThingDef.Named("VPE_FireTornado");
-
-        public override void Cast(LocalTargetInfo target)
+        base.Cast(targets);
+        foreach (GlobalTargetInfo target in targets)
         {
-            base.Cast(target);
-            FireTornado tornado = (FireTornado) GenSpawn.Spawn(FireTornadoDef, target.Cell, this.pawn.Map);
+            FireTornado tornado = (FireTornado)GenSpawn.Spawn(FireTornadoDef, target.Cell, target.Map);
             tornado.ticksLeftToDisappear = this.GetDurationForPawn();
         }
     }

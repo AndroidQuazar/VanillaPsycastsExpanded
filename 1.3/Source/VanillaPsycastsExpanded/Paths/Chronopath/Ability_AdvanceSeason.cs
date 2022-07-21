@@ -1,34 +1,34 @@
-﻿namespace VanillaPsycastsExpanded.Chronopath
+﻿namespace VanillaPsycastsExpanded.Chronopath;
+
+using RimWorld;
+using RimWorld.Planet;
+using UnityEngine;
+using Verse;
+using Ability = VFECore.Abilities.Ability;
+
+public class Ability_AdvanceSeason : Ability
 {
-    using RimWorld;
-    using UnityEngine;
-    using Verse;
-    using Ability = VFECore.Abilities.Ability;
+    private int ticksAdvanceLeft;
 
-    public class Ability_AdvanceSeason : Ability
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        private int ticksAdvanceLeft;
+        base.Cast(targets);
+        this.ticksAdvanceLeft = Mathf.CeilToInt(GenDate.HoursPerDay * 15f);
+    }
 
-        public override void Cast(LocalTargetInfo target)
+    public override void Tick()
+    {
+        base.Tick();
+        if (this.ticksAdvanceLeft > 0)
         {
-            base.Cast(target);
-            this.ticksAdvanceLeft = Mathf.CeilToInt(GenDate.HoursPerDay * 15f);
+            this.ticksAdvanceLeft--;
+            Find.TickManager.DebugSetTicksGame(Find.TickManager.TicksGame + GenDate.TicksPerHour);
         }
+    }
 
-        public override void Tick()
-        {
-            base.Tick();
-            if (this.ticksAdvanceLeft > 0)
-            {
-                this.ticksAdvanceLeft--;
-                Find.TickManager.DebugSetTicksGame(Find.TickManager.TicksGame + GenDate.TicksPerHour);
-            }
-        }
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Values.Look(ref this.ticksAdvanceLeft, nameof(this.ticksAdvanceLeft));
-        }
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Values.Look(ref this.ticksAdvanceLeft, nameof(this.ticksAdvanceLeft));
     }
 }
