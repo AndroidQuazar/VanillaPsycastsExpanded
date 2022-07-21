@@ -16,12 +16,12 @@ public class ITab_Pawn_Psycasts : ITab
     private readonly Dictionary<string, List<PsycasterPathDef>> pathsByTab;
     private readonly List<TabRecord>                            tabs;
     private readonly Dictionary<AbilityDef, Vector2>            abilityPos = new();
+    private readonly bool                                       smallMode;
 
     private CompAbilities           compAbilities;
     private string                  curTab;
     private Hediff_PsycastAbilities hediff;
     private float                   lastPathsHeight;
-    private float                   lastPsysetsHeight;
     private int                     pathsPerRow;
     private Vector2                 pathsScrollPos;
     private Pawn                    pawn;
@@ -52,7 +52,12 @@ public class ITab_Pawn_Psycasts : ITab
                                                    .ToList();
         this.tabs   = this.pathsByTab.Select(kv => new TabRecord(kv.Key, () => this.curTab = kv.Key, () => this.curTab == kv.Key)).ToList();
         this.curTab = this.pathsByTab.Keys.FirstOrDefault();
+        Log.Message($"Height: {this.size.y}");
+        this.smallMode = this.size.y <= 600f;
     }
+
+    public Vector2 Size                   => this.size;
+    public float   RequestedPsysetsHeight { get; private set; }
 
     public override bool IsVisible =>
         Find.Selector.SingleSelectedThing is Pawn pawn && pawn.health.hediffSet.HasHediff(VPE_DefOf.VPE_PsycastAbilityImplant) &&
@@ -132,7 +137,8 @@ public class ITab_Pawn_Psycasts : ITab
         listing.Gap(3f);
         Text.Anchor = TextAnchor.MiddleLeft;
         Text.Font   = GameFont.Small;
-        if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate(), "VPE.Upgrade".Translate()))
+        float heightBefore = listing.CurHeight;
+        if (listing.ButtonTextLabeled("VPE.PsycasterStats".Translate() + (this.smallMode ? $" ({"VPE.Hover".Translate()})" : ""), "VPE.Upgrade".Translate()))
         {
             int num = GenUI.CurrentAdjustmentMultiplier();
             if (this.devMode) this.hediff.ImproveStats(num);
@@ -144,38 +150,75 @@ public class ITab_Pawn_Psycasts : ITab
             else Messages.Message("VPE.NotEnoughPoints".Translate(), MessageTypeDefOf.RejectInput, false);
         }
 
-        listing.StatDisplay(TexPsycasts.IconNeuralHeatLimit,     StatDefOf.PsychicEntropyMax,          this.pawn);
-        listing.StatDisplay(TexPsycasts.IconNeuralHeatRegenRate, StatDefOf.PsychicEntropyRecoveryRate, this.pawn);
-        listing.StatDisplay(TexPsycasts.IconPsychicSensitivity,  StatDefOf.PsychicSensitivity,         this.pawn);
-        listing.StatDisplay(TexPsycasts.IconPsyfocusGain,        StatDefOf.MeditationFocusGain,        this.pawn);
-        listing.StatDisplay(TexPsycasts.IconPsyfocusCost,        VPE_DefOf.VPE_PsyfocusCostFactor,     this.pawn);
+        float heightAfter = listing.CurHeight;
+        if (this.smallMode)
+        {
+            Rect rect = new(pawnAndStats.x, heightBefore, pawnAndStats.width, heightAfter - heightBefore);
+            if (Mouse.IsOver(rect))
+            {
+                Vector2 size = new(pawnAndStats.width, 120f);
+                Find.WindowStack.ImmediateWindow(145 * 62346, new Rect(GenUI.GetMouseAttachedWindowPos(size.x, size.y), size), WindowLayer.Super,
+                                                 delegate
+                                                 {
+                                                     Listing_Standard inner = new();
+                                                     inner.Begin(new Rect(Vector2.one * 5f, size));
+                                                     inner.StatDisplay(TexPsycasts.IconNeuralHeatLimit,     StatDefOf.PsychicEntropyMax,          this.pawn);
+                                                     inner.StatDisplay(TexPsycasts.IconNeuralHeatRegenRate, StatDefOf.PsychicEntropyRecoveryRate, this.pawn);
+                                                     inner.StatDisplay(TexPsycasts.IconPsychicSensitivity,  StatDefOf.PsychicSensitivity,         this.pawn);
+                                                     inner.StatDisplay(TexPsycasts.IconPsyfocusGain,        StatDefOf.MeditationFocusGain,        this.pawn);
+                                                     inner.StatDisplay(TexPsycasts.IconPsyfocusCost,        VPE_DefOf.VPE_PsyfocusCostFactor,     this.pawn);
+                                                     inner.End();
+                                                 });
+            }
+        }
+        else
+        {
+            listing.StatDisplay(TexPsycasts.IconNeuralHeatLimit,     StatDefOf.PsychicEntropyMax,          this.pawn);
+            listing.StatDisplay(TexPsycasts.IconNeuralHeatRegenRate, StatDefOf.PsychicEntropyRecoveryRate, this.pawn);
+            listing.StatDisplay(TexPsycasts.IconPsychicSensitivity,  StatDefOf.PsychicSensitivity,         this.pawn);
+            listing.StatDisplay(TexPsycasts.IconPsyfocusGain,        StatDefOf.MeditationFocusGain,        this.pawn);
+            listing.StatDisplay(TexPsycasts.IconPsyfocusCost,        VPE_DefOf.VPE_PsyfocusCostFactor,     this.pawn);
+        }
+
         listing.LabelWithIcon(TexPsycasts.IconFocusTypes, "VPE.FocusTypes".Translate());
         Text.Anchor = TextAnchor.UpperLeft;
         Rect  fociRect = listing.GetRect(48f);
         float x        = pawnAndStats.x;
         foreach (MeditationFocusDef def in this.foci)
         {
+            if (x + 50f >= pawnAndStats.width)
+            {
+                x = pawnAndStats.x;
+                listing.Gap(3f);
+                fociRect = listing.GetRect(48f);
+            }
+
             Rect rect = new(x, fociRect.y, 48f, 48f);
             this.DoFocus(rect, def);
             x += 50f;
-            if (x >= pawnAndStats.xMax)
-            {
-                x        = pawnAndStats.x;
-                fociRect = listing.GetRect(48f);
-            }
         }
 
         listing.Gap(10f);
-        listing.Label("VPE.PsysetCustomize".Translate());
+        if (this.smallMode)
+        {
+            if (listing.ButtonTextLabeled("VPE.PsysetCustomize".Translate(), "VPE.Edit".Translate())) Find.WindowStack.Add(new Dialog_EditPsysets(this));
+        }
+        else listing.Label("VPE.PsysetCustomize".Translate());
+
         Text.Font = GameFont.Tiny;
         listing.Label("VPE.PsysetDesc".Translate());
         float prePsysetHeight = listing.CurHeight;
-        Rect  psysets         = listing.GetRect(this.psysetSectionHeight);
-        Widgets.DrawMenuSection(psysets);
-        Rect viewRect = new(0, 0, psysets.width - 20f, this.lastPsysetsHeight);
-        Widgets.BeginScrollView(psysets.ContractedBy(3f, 6f), ref this.psysetsScrollPos, viewRect);
-        this.DoPsysets(viewRect);
-        Widgets.EndScrollView();
+        Rect  viewRect;
+        if (!this.smallMode)
+        {
+            Rect psysets = listing.GetRect(this.psysetSectionHeight);
+            Widgets.DrawMenuSection(psysets);
+            viewRect = new Rect(0, 0, psysets.width - 20f, this.RequestedPsysetsHeight);
+            Widgets.BeginScrollView(psysets.ContractedBy(3f, 6f), ref this.psysetsScrollPos, viewRect);
+            this.DoPsysets(viewRect);
+            Widgets.EndScrollView();
+        }
+
         float postPsysetHeight = listing.CurHeight;
         listing.CheckboxLabeled("VPE.UseAltBackground".Translate(), ref this.useAltBackgrounds);
         if (Prefs.DevMode) listing.CheckboxLabeled("VPE.DevMode".Translate(), ref this.devMode);
@@ -220,7 +263,7 @@ public class ITab_Pawn_Psycasts : ITab
             }
     }
 
-    private void DoPsysets(Rect inRect)
+    public void DoPsysets(Rect inRect)
     {
         Listing_Standard listing = new();
         listing.Begin(inRect);
@@ -242,7 +285,7 @@ public class ITab_Pawn_Psycasts : ITab
             Find.WindowStack.Add(new Dialog_Psyset(psyset, this.pawn));
         }
 
-        this.lastPsysetsHeight = listing.CurHeight + 70f;
+        this.RequestedPsysetsHeight = listing.CurHeight + 70f;
         listing.End();
     }
 

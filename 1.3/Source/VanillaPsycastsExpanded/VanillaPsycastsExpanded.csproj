@@ -276,6 +276,7 @@
     <Compile Include="Paths\Staticlord\Ability_Thunderbolt.cs" />
     <Compile Include="Paths\Staticlord\BallLightning.cs" />
     <Compile Include="Paths\Staticlord\Recharge.cs" />
+    <Compile Include="UI\Dialog_EditPsysets.cs" />
     <Compile Include="UI\Dialog_Psyset.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="Meditation\MeditationFocusExtension.cs" />
