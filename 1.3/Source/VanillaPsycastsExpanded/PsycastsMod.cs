@@ -48,8 +48,8 @@
         {
             base.ExposeData();
             Scribe_Values.Look(ref this.XPPerPercent, "xpPerPercent", 1f);
-            Scribe_Values.Look(ref this.baseSpawnChance, nameof(this.baseSpawnChance), 0);
-            Scribe_Values.Look(ref this.additionalAbilityChance, nameof(this.additionalAbilityChance), 0);
+            Scribe_Values.Look(ref this.baseSpawnChance, nameof(this.baseSpawnChance), 0.1f);
+            Scribe_Values.Look(ref this.additionalAbilityChance, nameof(this.additionalAbilityChance), 0.1f);
         }
     }
 }
