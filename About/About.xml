@@ -1,6 +1,6 @@
 <ModMetaData>
 	<name>Vanilla Psycasts Expanded</name>
-	<author>erdelf, Oskar Potocki, legodude17, Taranchuk, xrushha</author>
+	<author>erdelf, Oskar Potocki, legodude17, Taranchuk, xrushha, Sarg Bjornson, Sir Van</author>
 	<supportedVersions>
 		<li>1.3</li>
 	</supportedVersions>
@@ -29,8 +29,16 @@
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 		<li>vanillaexpanded.achievements</li>
 	</loadAfter>
-	<description>
+	<description>Vanilla Psycasts Expanded is potentially our Magnum Opus, a greatest, most exquisite, complex and visually stunning mod up to date. As always, it started with us simply not being satisfied with how Psycasts ended up being in Royalty DLC. This resulted in us wanting to expand on the concept, and expand we did.
+	
+Inspired by games such as World of Warcraft, Stellaris, Path of Exile and many more, we have designed a brand new system that makes Psycasters truly worth-while, whilst also keeping everything anchored in the grim universe of RimWorld. This mod does not add fantasy character classes, tossing fireballs left and right, conjuring holy magic to repel demons etc. It simply expands on the mysterious psychic powers granted by the link to an archotech.
 
+Complex level-up system will reward you for meditating, allowing you to distribute ability points in many different paths, unlocking hundreds of new, unique abilities, each kept in line with vanilla psycasts when it comes to balancing and visuals. Ultimately, it’s up to you if you want to become a fire-slinging conflagrator, an animal ruling wildspeaker, or a mix of both. As it always is with RPG games, you can also spend level-up points on upgrading your overall psycaster stats.
 
-	</description>
+On rare occasions, enemies can send their finest psycasters against you. They will be able to use all their unlocked abilities to defeat you, so you should make sure to prioritize them. Don’t worry - Psycaster raids are rare, and the game prompts you with fair warnings that an enemy raid is utlising a psycaster.
+
+If you like going balls to the wall, however, Basilicus Bestower is a new storyteller that allows any pawn to appear as a psycaster. This means you will see psycasters in almost every raid.
+
+This mod should be compatible with most of the mods, except the mods that add new psycasts or change existing ones. Please check the mod description on Steam Workshop for details into what mods are not compatible.
+</description>
 </ModMetaData>
