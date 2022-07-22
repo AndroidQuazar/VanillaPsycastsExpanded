@@ -30,6 +30,10 @@
             listing.Begin(inRect);
             listing.Label("VPE.XPPerPercent".Translate() + ": " + Settings.XPPerPercent);
             Settings.XPPerPercent = listing.Slider(Settings.XPPerPercent, 0.1f, 10f);
+            listing.Label("VPE.PsycasterSpawnBaseChance".Translate() + ": " + (Settings.baseSpawnChance * 100) + "%");
+            Settings.baseSpawnChance = listing.Slider(Settings.baseSpawnChance, 0, 1f);
+            listing.Label("VPE.PsycasterSpawnAdditional".Translate() + ": " + (Settings.additionalAbilityChance * 100) + "%");
+            Settings.additionalAbilityChance = listing.Slider(Settings.additionalAbilityChance, 0, 1f);
             listing.End();
         }
     }
@@ -37,11 +41,15 @@
     public class PsycastSettings : ModSettings
     {
         public float XPPerPercent = 1f;
+        public float baseSpawnChance = 0.1f;
+        public float additionalAbilityChance = 0.1f;
 
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref this.XPPerPercent, "xpPerPercent", 1f);
+            Scribe_Values.Look(ref this.baseSpawnChance, nameof(this.baseSpawnChance), 0);
+            Scribe_Values.Look(ref this.additionalAbilityChance, nameof(this.additionalAbilityChance), 0);
         }
     }
 }

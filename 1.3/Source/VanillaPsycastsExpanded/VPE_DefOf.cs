@@ -114,6 +114,8 @@
         [DefAlias("VPE_RockConstruct")]  public static ThingDef         VPE_Race_RockConstruct;
         [DefAlias("VPE_SteelConstruct")] public static ThingDef         VPE_Race_SteelConstruct;
 
+        public static StorytellerDef VPE_Basilicus;
+
         static VPE_DefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(VPE_DefOf));

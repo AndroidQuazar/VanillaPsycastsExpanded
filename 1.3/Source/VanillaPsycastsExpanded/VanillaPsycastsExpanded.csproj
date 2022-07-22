@@ -170,7 +170,6 @@
     <Compile Include="Paths\Wildspeaker\Spawners.cs" />
     <Compile Include="PawnKindAbilityExtension_Psycasts.cs" />
     <Compile Include="PsycastChecker.cs" />
-    <Compile Include="StorytellerComp_SpawnWithPsycasts.cs" />
     <Compile Include="ThinkNodes\ThinkNode_Construct.cs" />
     <Compile Include="Paths\Technomancer\HediffComp_InfinitePower.cs" />
     <Compile Include="UI\Command_Ability_Psycast.cs" />

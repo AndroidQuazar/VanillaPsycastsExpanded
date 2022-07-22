@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LanguagData>
+<LanguageData>
     <VanillaPsycastsExpanded>Vanilla Psycasts Expanded</VanillaPsycastsExpanded>
     <VPE.XPPerPercent>Psycaster XP per Psyfocus % gained</VPE.XPPerPercent>
-</LanguagData>
+    <VPE.PsycasterSpawnBaseChance>Basilicus Bestower Psycaster spawn chance</VPE.PsycasterSpawnBaseChance>
+    <VPE.PsycasterSpawnAdditional>Basilicus Bestower Psycaster strength factor</VPE.PsycasterSpawnAdditional>
+</LanguageData>

@@ -135,11 +135,5 @@
                 <delayTicks>180</delayTicks>
             </li>
         </comps>
-        <modExtensions>
-            <li Class="VanillaPsycastsExpanded.StorytellerSpawnWithPsycastsExtension">
-                <baseSpawnChance>10</baseSpawnChance>
-                <additionalAbilityChance>10</additionalAbilityChance>
-            </li>
-        </modExtensions>
     </StorytellerDef>
 </Defs>
