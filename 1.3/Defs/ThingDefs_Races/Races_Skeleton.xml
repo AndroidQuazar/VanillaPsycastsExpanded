@@ -38,7 +38,7 @@
 	<ThingDef ParentName="VPE_UndeadBase">
 		<defName>VPE_SummonedSkeleton</defName>
 		<label>skeleton</label>
-		<description>todo.</description>
+		<description>A psychically re-animated husk of a deceased individual. Extremely aggressive, but will soon wither away into nothing.</description>
 		<statBases>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>250</ComfyTemperatureMax>
@@ -133,7 +133,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Effects/Necropath/Enthrall/Soulshade</texPath>
-					<drawSize>2</drawSize>
+					<drawSize>1.5</drawSize>
 					<shaderType>MetaOverlay</shaderType>
 				</bodyGraphicData>
 			</li>
