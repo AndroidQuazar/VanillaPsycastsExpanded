@@ -36,7 +36,12 @@
 		<goodwillImpact>-100</goodwillImpact>
 		<range>12.9</range>
 		<durationTime>180</durationTime>
-		<targetMode>Pawn</targetMode>
+		<targetingParameters>
+			<canTargetSelf>False</canTargetSelf>
+			<canTargetAnimals>True</canTargetAnimals>
+			<canTargetMechs>False</canTargetMechs>
+			<canTargetHumans>True</canTargetHumans>
+		</targetingParameters>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Necropath</path>
