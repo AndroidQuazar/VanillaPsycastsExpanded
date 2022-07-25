@@ -92,6 +92,7 @@
       <castTime>180</castTime>
       <castSound>VPE_CraftTimeskip_Cast</castSound>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.5</distanceToTarget>
       <targetingParameters>
@@ -255,6 +256,7 @@
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <castTime>300</castTime>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>

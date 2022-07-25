@@ -126,6 +126,7 @@
       </durationTimeStatFactors>
       <distanceToTarget>1.9</distanceToTarget>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <targetMode>Thing</targetMode>
       <modExtensions>

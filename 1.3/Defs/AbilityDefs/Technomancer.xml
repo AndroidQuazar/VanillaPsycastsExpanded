@@ -7,6 +7,7 @@
       <iconPath>Abilities/Technomancer/EnchantQuality</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_IncreaseQuality</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
 	  <showUndrafted>true</showUndrafted>
@@ -41,6 +42,7 @@
       <iconPath>Abilities/Technomancer/Mend</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Mend</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
 	  <showUndrafted>true</showUndrafted>
@@ -136,6 +138,7 @@
 	  <showUndrafted>true</showUndrafted>
       <targetMode>Thing</targetMode>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
       <modExtensions>
@@ -161,6 +164,7 @@
       <iconPath>Abilities/Technomancer/RockConstruct</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Rock</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>2.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
@@ -210,6 +214,7 @@
       <iconPath>Abilities/Technomancer/SteelConstruct</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Construct_Steel</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>2.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
@@ -259,6 +264,7 @@
       <iconPath>Abilities/Technomancer/CraftPsyRing</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_Psyring</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>
@@ -324,6 +330,7 @@
       <iconPath>Abilities/Technomancer/ReverseEngineer</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_ReverseEngineer</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>1.9</distanceToTarget>
       <targetMode>Pawn</targetMode>

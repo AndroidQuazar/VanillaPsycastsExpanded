@@ -254,6 +254,7 @@
 	  <castTime>120</castTime>
 	  <durationTime>60000</durationTime>
 	  <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+	  <requireLineOfSight>false</requireLineOfSight>
 	  <targetMode>Pawn</targetMode>
 	  <range>999999</range>
 	  <distanceToTarget>1.5</distanceToTarget>

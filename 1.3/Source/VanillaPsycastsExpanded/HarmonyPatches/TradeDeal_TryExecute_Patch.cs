@@ -24,28 +24,31 @@
 
         public static int GetEltexOrEltexMaterialCount(this ThingDef def)
         {
-            if (def == VPE_DefOf.VPE_Eltex)
+            if (def != null)
             {
-                return 1;
-            }
-            else if (def.costList != null)
-            {
-                var firstCost = def.costList.FirstOrDefault(x => x.thingDef == VPE_DefOf.VPE_Eltex);
-                if (firstCost != null)
+                if (def == VPE_DefOf.VPE_Eltex)
                 {
-                    return firstCost.count;
+                    return 1;
                 }
-            }
-            else
-            {
-                foreach (var recipe in DefDatabase<RecipeDef>.AllDefs)
+                else if (def.costList != null)
                 {
-                    if (recipe.ProducedThingDef == def)
+                    var firstCost = def.costList.FirstOrDefault(x => x.thingDef == VPE_DefOf.VPE_Eltex);
+                    if (firstCost != null)
                     {
-                        var firstCost = recipe.ingredients.FirstOrDefault(x => x.IsFixedIngredient && x.FixedIngredient == VPE_DefOf.VPE_Eltex);
-                        if (firstCost != null)
+                        return firstCost.count;
+                    }
+                }
+                else
+                {
+                    foreach (var recipe in DefDatabase<RecipeDef>.AllDefs)
+                    {
+                        if (recipe.ProducedThingDef == def)
                         {
-                            return (int)firstCost.GetBaseCount();
+                            var firstCost = recipe.ingredients.FirstOrDefault(x => x.IsFixedIngredient && x.FixedIngredient == VPE_DefOf.VPE_Eltex);
+                            if (firstCost != null)
+                            {
+                                return (int)firstCost.GetBaseCount();
+                            }
                         }
                     }
                 }

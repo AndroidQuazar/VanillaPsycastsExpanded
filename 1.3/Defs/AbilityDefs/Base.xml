@@ -11,6 +11,7 @@
     </VFECore.Abilities.AbilityDef>
 
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase" Name="VPE_PsycastGoToTargetBase" Abstract="True">
+		<requireLineOfSight>false</requireLineOfSight>
 		<jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
 		<targetMode>Pawn</targetMode>
 		<range>999999</range>

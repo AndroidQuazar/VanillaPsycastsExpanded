@@ -2,7 +2,6 @@
 {
     using HarmonyLib;
     using Verse;
-
     [HarmonyPatch(typeof(ListerThings), "EverListable")]
     public static class ListerThings_EverListable_Patch
     {

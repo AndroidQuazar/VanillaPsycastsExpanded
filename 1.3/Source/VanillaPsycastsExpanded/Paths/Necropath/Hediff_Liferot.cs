@@ -12,7 +12,7 @@
             if (this.pawn.IsHashIntervalTick(60) && this.pawn.health.hediffSet.GetNotMissingParts().Where(x => x.coverageAbs > 0)
                 .TryRandomElement(out var part))
             {
-                this.pawn.TakeDamage(new DamageInfo(VPE_DefOf.VPE_Rot, 99999, hitPart: part));
+                this.pawn.TakeDamage(new DamageInfo(VPE_DefOf.VPE_Rot, 1, hitPart: part));
             }
         }
     }

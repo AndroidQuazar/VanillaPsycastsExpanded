@@ -43,9 +43,9 @@
         {
             if (Find.TickManager.TicksGame % 10 == 0)
             {
-                pawn.psychicEntropy.TryAddEntropy(1f, overLimit: false);
+                pawn.psychicEntropy.TryAddEntropy(1f, overLimit: true);
             }
-            if (pawn.psychicEntropy.EntropyValue - 1f >= pawn.psychicEntropy.MaxEntropy)
+            if (pawn.psychicEntropy.EntropyValue >= pawn.psychicEntropy.MaxEntropy)
             {
                 this.pawn.health.RemoveHediff(this);
             }

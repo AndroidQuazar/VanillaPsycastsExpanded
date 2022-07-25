@@ -311,6 +311,7 @@
       <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_Skillroll</abilityClass>
       <castTime>720</castTime>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>
+      <requireLineOfSight>false</requireLineOfSight>
       <range>999999</range>
       <distanceToTarget>2.9</distanceToTarget>
       <castSound>VPE_Skillroll_Cast</castSound>

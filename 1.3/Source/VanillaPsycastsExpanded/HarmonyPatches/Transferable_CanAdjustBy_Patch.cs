@@ -29,21 +29,24 @@
 
         public static bool IsEltexOrHasEltexMaterial(this ThingDef def)
         {
-            if (def == VPE_DefOf.VPE_Eltex)
+            if (def != null)
             {
-                return true;
-            }
-            else if (def.costList != null && def.costList.Any(x => x.thingDef == VPE_DefOf.VPE_Eltex))
-            {
-                return true;
-            }
-            else
-            {
-                foreach (var recipe in DefDatabase<RecipeDef>.AllDefs)
+                if (def == VPE_DefOf.VPE_Eltex)
                 {
-                    if (recipe.ProducedThingDef == def && recipe.ingredients.Any(x => x.IsFixedIngredient && x.FixedIngredient == VPE_DefOf.VPE_Eltex))
+                    return true;
+                }
+                else if (def.costList != null && def.costList.Any(x => x.thingDef == VPE_DefOf.VPE_Eltex))
+                {
+                    return true;
+                }
+                else
+                {
+                    foreach (var recipe in DefDatabase<RecipeDef>.AllDefs)
                     {
-                        return true;
+                        if (recipe.ProducedThingDef == def && recipe.ingredients.Any(x => x.IsFixedIngredient && x.FixedIngredient == VPE_DefOf.VPE_Eltex))
+                        {
+                            return true;
+                        }
                     }
                 }
             }

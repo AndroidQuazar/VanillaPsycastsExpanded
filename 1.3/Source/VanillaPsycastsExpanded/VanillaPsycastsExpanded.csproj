@@ -70,6 +70,7 @@
     <Compile Include="HarmonyPatches\PawnGen_Patch.cs" />
     <Compile Include="Events\PawnGroupMaker_PsycasterRaid.cs" />
     <Compile Include="HarmonyPatches\PawnGroupMaker_CanGenerateFrom_Patch.cs" />
+    <Compile Include="HarmonyPatches\PawnUtility_ShouldSendNotificationAbout_Patch.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
