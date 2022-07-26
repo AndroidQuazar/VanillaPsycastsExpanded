@@ -1,121 +1,120 @@
-﻿namespace VanillaPsycastsExpanded.Nightstalker
+﻿namespace VanillaPsycastsExpanded.Nightstalker;
+
+using System.Collections.Generic;
+using System.Linq;
+using HarmonyLib;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+using VFECore.Abilities;
+
+[HarmonyPatch]
+public class Decoy : ThingWithComps, IAttackTarget
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using HarmonyLib;
-    using RimWorld;
-    using UnityEngine;
-    using Verse;
-    using Verse.AI;
-    using VFECore.Abilities;
+    private static readonly HashSet<Map> mapsWithDecoys = new();
+    private                 Pawn         pawn;
 
-    [HarmonyPatch]
-    public class Decoy : ThingWithComps, IAttackTarget
+    public bool ThreatDisabled(IAttackTargetSearcher disabledFor) => false;
+
+    public Thing           Thing                   => this;
+    public LocalTargetInfo TargetCurrentlyAimingAt => LocalTargetInfo.Invalid;
+    public float           TargetPriorityFactor    => float.MaxValue;
+
+    public override void SpawnSetup(Map map, bool respawningAfterLoad)
     {
-        private static readonly HashSet<Map> mapsWithDecoys = new();
-        private                 Pawn         pawn;
-
-        public bool ThreatDisabled(IAttackTargetSearcher disabledFor) => false;
-
-        public Thing           Thing                   => this;
-        public LocalTargetInfo TargetCurrentlyAimingAt => LocalTargetInfo.Invalid;
-        public float           TargetPriorityFactor    => float.MaxValue;
-
-        public override void SpawnSetup(Map map, bool respawningAfterLoad)
-        {
-            this.pawn = this.GetComp<CompAbilitySpawn>().pawn;
-            mapsWithDecoys.Add(map);
-            base.SpawnSetup(map, respawningAfterLoad);
-            foreach (IAttackTarget target in this.pawn.Map.attackTargetsCache.TargetsHostileToFaction(this.pawn.Faction))
-                if (target.Thing is Pawn {CurJobDef: var jobDef} targetPawn && (jobDef == JobDefOf.Wait_Combat || jobDef == JobDefOf.Goto))
-                    targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-        }
-
-        public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
-        {
-            if (!this.Map.listerThings.AllThings.OfType<Decoy>().Except(this).Any()) mapsWithDecoys.Remove(this.Map);
-            base.DeSpawn(mode);
-        }
-
-        public override void DrawAt(Vector3 drawLoc, bool flip = false)
-        {
-            DecoyOverlayUtility.DrawOverlay = true;
-            this.pawn.Drawer.DrawAt(drawLoc);
-            DecoyOverlayUtility.DrawOverlay = false;
-        }
-
-        [HarmonyPatch(typeof(DamageFlasher), "GetDamagedMat")]
-        [HarmonyPrefix]
-        private static void GetDuplicateMat(ref Material baseMat)
-        {
-            if (DecoyOverlayUtility.DrawOverlay) baseMat = DecoyOverlayUtility.GetDuplicateMat(baseMat);
-        }
-
-        [HarmonyPatch(typeof(AttackTargetFinder), nameof(AttackTargetFinder.BestAttackTarget))]
-        [HarmonyPrefix]
-        public static bool BestAttackTarget_Prefix(IAttackTargetSearcher searcher, ref IAttackTarget __result)
-        {
-            if (!mapsWithDecoys.Contains(searcher.Thing.MapHeld)) return true;
-            List<IAttackTarget> list1 = searcher.Thing.Map.attackTargetsCache.GetPotentialTargetsFor(searcher);
-            List<Decoy>         list2 = list1.OfType<Decoy>().ToList();
-            Log.Message("Stuff:");
-            GenDebug.LogList(list1);
-            Log.Message("Decoys:");
-            GenDebug.LogList(list2);
-            if (list2.NullOrEmpty()) return true;
-            __result = list2.RandomElement();
-            return false;
-        }
-
-        [HarmonyPatch(typeof(JobGiver_AIFightEnemy), "UpdateEnemyTarget")]
-        [HarmonyPrefix]
-        public static void UpdateEnemyTarget_Prefix(Pawn pawn)
-        {
-            if (pawn.mindState.enemyTarget is { } and not Decoy && mapsWithDecoys.Contains(pawn.MapHeld)) pawn.mindState.enemyTarget = null;
-        }
-
-        [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Faction))]
-        [HarmonyPostfix]
-        public static void HostileTo_Postfix(Thing t, Faction fac, ref bool __result)
-        {
-            if (!__result && t is Decoy {pawn: { } p}) __result = p.HostileTo(fac);
-        }
-
-        [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Thing))]
-        [HarmonyPostfix]
-        public static void HostileTo_Postfix(Thing a, Thing b, ref bool __result)
-        {
-            if (__result) return;
-            if (a is Decoy {pawn: { } p1}) __result = p1.HostileTo(b);
-            if (b is Decoy {pawn: { } p2}) __result = a.HostileTo(p2);
-        }
+        this.pawn = this.GetComp<CompAbilitySpawn>().pawn;
+        mapsWithDecoys.Add(map);
+        base.SpawnSetup(map, respawningAfterLoad);
+        foreach (IAttackTarget target in this.pawn.Map.attackTargetsCache.TargetsHostileToFaction(this.pawn.Faction))
+            if (target.Thing is Pawn { CurJobDef: var jobDef } targetPawn && (jobDef == JobDefOf.Wait_Combat || jobDef == JobDefOf.Goto))
+                targetPawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
     }
 
-    public static class DecoyOverlayUtility
+    public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
     {
-        [TweakValue("00", 0f, 1f)] public static float ColorR = 0f;
-        [TweakValue("00", 0f, 1f)] public static float ColorG = 0f;
-        [TweakValue("00", 0f, 1f)] public static float ColorB = 0f;
-        [TweakValue("00", 0f, 1f)] public static float ColorA = 1f;
+        if (!this.Map.listerThings.AllThings.OfType<Decoy>().Except(this).Any()) mapsWithDecoys.Remove(this.Map);
+        base.DeSpawn(mode);
+    }
 
-        private static readonly Dictionary<Material, Material> Materials = new();
+    public override void DrawAt(Vector3 drawLoc, bool flip = false)
+    {
+        DecoyOverlayUtility.DrawOverlay = true;
+        this.pawn.Drawer.DrawAt(drawLoc);
+        DecoyOverlayUtility.DrawOverlay = false;
+    }
 
-        public static bool  DrawOverlay;
-        public static Color OverlayColor => new(ColorR, ColorG, ColorB, ColorA);
+    [HarmonyPatch(typeof(DamageFlasher), "GetDamagedMat")]
+    [HarmonyPrefix]
+    private static void GetDuplicateMat(ref Material baseMat)
+    {
+        if (DecoyOverlayUtility.DrawOverlay) baseMat = DecoyOverlayUtility.GetDuplicateMat(baseMat);
+    }
 
-        public static Material GetDuplicateMat(Material baseMat)
+    [HarmonyPatch(typeof(AttackTargetFinder), nameof(AttackTargetFinder.BestAttackTarget))]
+    [HarmonyPrefix]
+    public static bool BestAttackTarget_Prefix(IAttackTargetSearcher searcher, ref IAttackTarget __result)
+    {
+        if (!mapsWithDecoys.Contains(searcher.Thing.MapHeld)) return true;
+        List<IAttackTarget> list1 = searcher.Thing.Map.attackTargetsCache.GetPotentialTargetsFor(searcher);
+        List<Decoy>         list2 = list1.OfType<Decoy>().ToList();
+        // Log.Message("Stuff:");
+        // GenDebug.LogList(list1);
+        // Log.Message("Decoys:");
+        // GenDebug.LogList(list2);
+        if (list2.NullOrEmpty()) return true;
+        __result = list2.RandomElement();
+        return false;
+    }
+
+    [HarmonyPatch(typeof(JobGiver_AIFightEnemy), "UpdateEnemyTarget")]
+    [HarmonyPrefix]
+    public static void UpdateEnemyTarget_Prefix(Pawn pawn)
+    {
+        if (pawn.mindState.enemyTarget is { } and not Decoy && mapsWithDecoys.Contains(pawn.MapHeld)) pawn.mindState.enemyTarget = null;
+    }
+
+    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Faction))]
+    [HarmonyPostfix]
+    public static void HostileTo_Postfix(Thing t, Faction fac, ref bool __result)
+    {
+        if (!__result && t is Decoy { pawn: { } p }) __result = p.HostileTo(fac);
+    }
+
+    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Thing))]
+    [HarmonyPostfix]
+    public static void HostileTo_Postfix(Thing a, Thing b, ref bool __result)
+    {
+        if (__result) return;
+        if (a is Decoy { pawn: { } p1 }) __result = p1.HostileTo(b);
+        if (b is Decoy { pawn: { } p2 }) __result = a.HostileTo(p2);
+    }
+}
+
+public static class DecoyOverlayUtility
+{
+    [TweakValue("00", 0f, 1f)] public static float ColorR = 0f;
+    [TweakValue("00", 0f, 1f)] public static float ColorG = 0f;
+    [TweakValue("00", 0f, 1f)] public static float ColorB = 0f;
+    [TweakValue("00", 0f, 1f)] public static float ColorA = 1f;
+
+    private static readonly Dictionary<Material, Material> Materials = new();
+
+    public static bool  DrawOverlay;
+    public static Color OverlayColor => new(ColorR, ColorG, ColorB, ColorA);
+
+    public static Material GetDuplicateMat(Material baseMat)
+    {
+        if (!Materials.TryGetValue(baseMat, out Material value))
         {
-            if (!Materials.TryGetValue(baseMat, out Material value))
-            {
-                value       = MaterialAllocator.Create(baseMat);
-                value.color = OverlayColor;
-                if (Materials.ContainsKey(baseMat))
-                    Materials[baseMat] = value;
-                else
-                    Materials.Add(baseMat, value);
-            }
-
-            return value;
+            value       = MaterialAllocator.Create(baseMat);
+            value.color = OverlayColor;
+            if (Materials.ContainsKey(baseMat))
+                Materials[baseMat] = value;
+            else
+                Materials.Add(baseMat, value);
         }
+
+        return value;
     }
 }

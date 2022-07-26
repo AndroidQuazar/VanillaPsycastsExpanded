@@ -13,7 +13,7 @@ public class AbilityExtension_ReduceResistance : AbilityExtension_AbilityMod
         base.Cast(targets, ability);
         foreach (GlobalTargetInfo target in targets)
         {
-            if (target.Thing is not Pawn { HostFaction: { } host, GuestStatus: GuestStatus.Prisoner } pawn || host != ability.pawn.Faction) return;
+            if (target.Thing is not Pawn { HostFaction: { } host, GuestStatus: GuestStatus.Prisoner } pawn || host != ability.pawn.Faction) continue;
             pawn.guest.resistance -= 20f;
         }
     }
