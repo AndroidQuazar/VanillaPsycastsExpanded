@@ -1,36 +1,41 @@
-﻿namespace VanillaPsycastsExpanded
+﻿namespace VanillaPsycastsExpanded;
+
+using System.Collections.Generic;
+using AnimalBehaviours;
+using UnityEngine;
+using Verse;
+
+public class CompBreakLink : ThingComp, PawnGizmoProvider
 {
-    using System.Collections.Generic;
-    using AnimalBehaviours;
-    using UnityEngine;
-    using Verse;
+    public Pawn                     Pawn;
+    public CompProperties_BreakLink Props => this.props as CompProperties_BreakLink;
 
-    public class CompBreakLink : ThingComp, PawnGizmoProvider
+    public IEnumerable<Gizmo> GetGizmos()
     {
-        public Pawn                     Pawn;
-        public CompProperties_BreakLink Props => this.props as CompProperties_BreakLink;
-
-        public IEnumerable<Gizmo> GetGizmos()
+        yield return new Command_Action
         {
-            yield return new Command_Action
-            {
-                defaultLabel = this.Props.gizmoLabel.Translate(),
-                defaultDesc  = this.Props.gizmoDesc.Translate(),
-                icon         = ContentFinder<Texture2D>.Get(this.Props.gizmoImage),
-                action       = delegate { this.parent.Kill(); }
-            };
-        }
+            defaultLabel = this.Props.gizmoLabel.Translate(),
+            defaultDesc  = this.Props.gizmoDesc.Translate(),
+            icon         = ContentFinder<Texture2D>.Get(this.Props.gizmoImage),
+            action       = delegate { this.parent.Kill(); }
+        };
+    }
 
-        public override void PostDeSpawn(Map map)
-        {
-            base.PostDeSpawn(map);
-            if (this.parent is Pawn {Dead: true}) this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
-        }
+    public override void CompTick()
+    {
+        base.CompTick();
+        if (this.Pawn is { Dead: true } or { Destroyed: true }) this.parent.Kill();
+    }
 
-        public override void PostExposeData()
-        {
-            base.PostExposeData();
-            Scribe_References.Look(ref this.Pawn, "pawn");
-        }
+    public override void PostDeSpawn(Map map)
+    {
+        base.PostDeSpawn(map);
+        if (this.parent is Pawn { Dead: true }) this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
+    }
+
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_References.Look(ref this.Pawn, "pawn");
     }
 }

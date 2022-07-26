@@ -61,7 +61,7 @@
       <description>Psychic whispers of things to come. Colony pawns are inspired, neutrals or friendlies improve relations, prisoners lose their resistance and enemies retreat from their doom.</description>
       <iconPath>Abilities/Chronopath/WordofForetelling</iconPath>
       <distanceToTarget>3</distanceToTarget>
-	  <showUndrafted>true</showUndrafted>
+	    <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>

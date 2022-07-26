@@ -1,28 +1,44 @@
-﻿namespace VanillaPsycastsExpanded
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-    using System.Reflection.Emit;
-    using HarmonyLib;
-    using RimWorld;
-    using Verse;
+﻿namespace VanillaPsycastsExpanded;
 
-    [HarmonyPatch(typeof(RitualOutcomeEffectWorker_Bestowing), nameof(RitualOutcomeEffectWorker_Bestowing.Apply))]
-    public class RitualOutcomeEffectWorker_Bestowing_Apply_Patch
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using HarmonyLib;
+using RimWorld;
+using Verse;
+
+[HarmonyPatch(typeof(RitualOutcomeEffectWorker_Bestowing), nameof(RitualOutcomeEffectWorker_Bestowing.Apply))]
+public class RitualOutcomeEffectWorker_Bestowing_Apply_Patch
+{
+    [HarmonyTranspiler]
+    public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
-        [HarmonyTranspiler]
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        List<CodeInstruction> codes = instructions.ToList();
+        MethodInfo            info1 = AccessTools.Method(typeof(PawnUtility), nameof(PawnUtility.GetPsylinkLevel));
+        MethodInfo            info2 = AccessTools.Method(typeof(PawnUtility), nameof(PawnUtility.GetMaxPsylinkLevelByTitle));
+
+        int idx1 = codes.FindIndex(ins => ins.Calls(info1)) - 1;
+        int idx2 = codes.FindIndex(ins => ins.Calls(info2)) + 1;
+
+        codes.RemoveRange(idx1, idx2 - idx1 + 1);
+        codes.InsertRange(idx1, new[]
         {
-            List<CodeInstruction> codes = instructions.ToList();
-            MethodInfo            info1 = AccessTools.Method(typeof(Thing),   nameof(Thing.Destroy));
-            MethodInfo            info2 = AccessTools.Method(typeof(History), nameof(History.Notify_PsylinkAvailable));
-            int                   idx1  = codes.FindIndex(ins => ins.Calls(info1)) + 1;
-            codes.RemoveRange(idx1, 4);
-            int idx3 = codes.FindIndex(ins => ins.Calls(info2)) + 1;
-            int idx4 = codes.FindIndex(idx3, ins => ins.opcode == OpCodes.Blt_S);
-            codes.RemoveRange(idx3, idx4 - idx3 + 1);
-            return codes;
-        }
+            new CodeInstruction(OpCodes.Ldloc_2),
+            new CodeInstruction(OpCodes.Ldloc, 9),
+            CodeInstruction.LoadField(typeof(RoyalTitleDef), nameof(RoyalTitleDef.maxPsylinkLevel)),
+            new CodeInstruction(OpCodes.Ldloc, 10),
+            CodeInstruction.LoadField(typeof(RoyalTitleDef), nameof(RoyalTitleDef.maxPsylinkLevel)),
+            CodeInstruction.Call(typeof(RitualOutcomeEffectWorker_Bestowing_Apply_Patch), nameof(ApplyTitlePsylink))
+        });
+        return codes;
+    }
+
+    public static void ApplyTitlePsylink(Pawn pawn, int oldMax, int newMax)
+    {
+        Hediff_PsycastAbilities psylink = pawn.Psycasts();
+        if (psylink.maxLevelFromTitles <= newMax) return;
+        psylink.ChangeLevel(newMax - oldMax, false);
+        psylink.maxLevelFromTitles = newMax;
     }
 }

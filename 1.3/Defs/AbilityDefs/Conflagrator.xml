@@ -82,6 +82,7 @@
           <explosionRadius>7</explosionRadius>
           <onCaster>false</onCaster>
           <explosionDamageDef>Flame</explosionDamageDef>
+          <casterImmune>false</casterImmune>
         </li>
       </modExtensions>
     </VFECore.Abilities.AbilityDef>
