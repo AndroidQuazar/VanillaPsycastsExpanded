@@ -6,7 +6,7 @@
 		<label>word of fear</label>
 		<description>Induces panic by overloading their flight response system for a short duration. Considered a hostile action.</description>
 		<iconPath>Abilities/Necropath/WordofFear</iconPath>
-		<distanceToTarget>8</distanceToTarget>
+		<distanceToTarget>6</distanceToTarget>
 		<durationTime>720</durationTime>
 		<goodwillImpact>-15</goodwillImpact>
 		<castTime>15</castTime>

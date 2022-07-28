@@ -252,7 +252,7 @@
         <path>VPE_Empath</path>
         <level>4</level>
         <order>3</order>
-        <psyfocusCost>0.8</psyfocusCost>
+        <psyfocusCost>0.4</psyfocusCost>
         <entropyGain>0</entropyGain>
         <prerequisites>
           <li>VPE_SootheFemale</li>
