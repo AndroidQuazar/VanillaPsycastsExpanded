@@ -21,6 +21,14 @@ public class AbilityExtension_Age : AbilityExtension_AbilityMod
         if (this.casterYears.HasValue) Age(ability.pawn, this.casterYears.Value);
     }
 
+    public override bool CanApplyOn(LocalTargetInfo target, Ability ability, bool throwMessages = false)
+    {
+        if (!base.CanApplyOn(target, ability, throwMessages)) return false;
+        if (target.Thing is not Pawn pawn) return false;
+        if (!pawn.RaceProps.IsFlesh) return false;
+        return true;
+    }
+
     public static void Age(Pawn pawn, float years)
     {
         if (years < 0 && pawn.ageTracker.AgeBiologicalYears <= 16) return;
