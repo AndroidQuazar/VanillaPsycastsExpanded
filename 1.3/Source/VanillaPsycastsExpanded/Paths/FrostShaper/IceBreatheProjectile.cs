@@ -6,9 +6,11 @@
     using Verse;
     using Verse.AI;
     using Verse.Sound;
-	using VFECore;
-	public class IceBreathePropectile : ExpandableProjectile
+    using VFECore;
+    using Ability = VFECore.Abilities.Ability;
+    public class IceBreatheProjectile : ExpandableProjectile
 	{
+		public Ability ability;
 		public override void DoDamage(IntVec3 pos)
 		{
 			base.DoDamage(pos);
@@ -30,6 +32,10 @@
 								var severityImpact = (0.5f / pawn.Position.DistanceTo(launcher.Position));
 								HealthUtility.AdjustSeverity(pawn, HediffDefOf.Hypothermia, severityImpact);
 								HealthUtility.AdjustSeverity(pawn, VPE_DefOf.VFEP_HypothermicSlowdown, severityImpact);
+								if (ability.def.goodwillImpact != 0)
+								{
+									ability.ApplyGoodwillImpact(pawn);
+								}
 							}
 						}
 					}
@@ -42,5 +48,11 @@
 		{
 			return t is Pawn && base.IsDamagable(t) || t.def == ThingDefOf.Fire;
 		}
-	}
+
+        public override void ExposeData()
+        {
+            base.ExposeData();
+			Scribe_References.Look(ref ability, "ability");
+        }
+    }
 }

@@ -79,6 +79,7 @@
     <Compile Include="ModCompatibility.cs" />
     <Compile Include="Paths\Archon\Hediff_Hallucination.cs" />
     <Compile Include="Common\AbilityExtension_GameCondition.cs" />
+    <Compile Include="Paths\FrostShaper\Ability_IceBreath.cs" />
     <Compile Include="Paths\Necropath\Ability_Resurrect.cs" />
     <Compile Include="Paths\Necropath\Ability_SpawnSkeleton.cs" />
     <Compile Include="Paths\Necropath\Ability_TargetCorpse.cs" />
@@ -240,7 +241,7 @@
     <Compile Include="Paths\Empath\Ability_ReunionFarskip.cs" />
     <Compile Include="Paths\FrostShaper\Ability_FrostRay.cs" />
     <Compile Include="Paths\FrostShaper\Hediff_IceShield.cs" />
-    <Compile Include="Paths\FrostShaper\IceBreathePropectile.cs" />
+    <Compile Include="Paths\FrostShaper\IceBreatheProjectile.cs" />
     <Compile Include="Paths\FrostShaper\Projectile_FrostRay.cs" />
     <Compile Include="Misc\Stance_Stand.cs" />
     <Compile Include="Paths\Harmonist\Ability_HeatFocus.cs" />

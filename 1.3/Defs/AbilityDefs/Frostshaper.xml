@@ -7,13 +7,14 @@
       <iconPath>Abilities/Frostshaper/IceBreath</iconPath>
 	  <range>12.9</range>
 	  <castTime>6</castTime>
-      <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+      <abilityClass>VanillaPsycastsExpanded.Ability_IceBreath</abilityClass>
 	  <targetingParameters>
 		  <canTargetLocations>true</canTargetLocations>
           <canTargetPawns>true</canTargetPawns>
           <canTargetBuildings>true</canTargetBuildings>
 	  </targetingParameters>
       <castSound>VPE_BreatheIce_Cast</castSound>
+	  <goodwillImpact>-15</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
@@ -240,6 +241,7 @@
         <canTargetAnimals>True</canTargetAnimals>
       </targetingParametersForAoE>
 	  <needsTicking>true</needsTicking>
+	  <goodwillImpact>-15</goodwillImpact>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Frostshaper</path>
