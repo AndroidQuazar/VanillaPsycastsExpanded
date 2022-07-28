@@ -74,6 +74,13 @@
 				<gizmoLabel>VPE_BreakLink</gizmoLabel>
 				<gizmoDesc>VPE_BreakLinkDesc</gizmoDesc>
 			</li>
+			<li Class="AnimalBehaviours.CompProperties_DiseaseImmunity">
+				<hediffsToRemove><li>Animal_Plague</li><li>Animal_Flu</li><li>AB_AnimalSporesAllergy</li></hediffsToRemove>
+				<tickInterval>2000</tickInterval>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_DiseaseEventImmunity">
+				
+			</li>
 		</comps>
 		<race>
 			<deathActionWorkerClass>VanillaPsycastsExpanded.DeathActionWorker_SlagChunk</deathActionWorkerClass>
@@ -137,7 +144,13 @@
 			</li>
 			<li Class="AnimalBehaviours.CompProperties_DoesntFlee" />
 			<li Class="VanillaPsycastsExpanded.CompProperties_SetStoneColour"/>
-
+			<li Class="AnimalBehaviours.CompProperties_DiseaseImmunity">
+				<hediffsToRemove><li>Animal_Plague</li><li>Animal_Flu</li><li>AB_AnimalSporesAllergy</li></hediffsToRemove>
+				<tickInterval>2000</tickInterval>
+			</li>
+			<li Class="AnimalBehaviours.CompProperties_DiseaseEventImmunity">
+				
+			</li>
 		</comps>
 		<tools>
 			<li>
