@@ -73,6 +73,9 @@
 					</li>
 				</hediffsToApply>
 			</li>
+			<li Class="VFECore.WeatherExtension">
+				<canRandomlyGenerate>false</canRandomlyGenerate>
+			</li>
 		</modExtensions>
 	</WeatherDef>
 </Defs>
