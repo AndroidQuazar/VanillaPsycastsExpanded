@@ -156,7 +156,7 @@
 	<VFECore.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>VPE_IceBreathe</defName>
 		<label>ice breathe</label>
-		<thingClass>VanillaPsycastsExpanded.IceBreathePropectile</thingClass>
+		<thingClass>VanillaPsycastsExpanded.IceBreatheProjectile</thingClass>
 		<graphicData>
 			<texPath>Effects/Frostshaper/IceBreath/Proj_IceBreath</texPath>
 			<texPathFadeOut>Effects/Frostshaper/IceBreath/Proj_IceBreathFadeOut</texPathFadeOut>
