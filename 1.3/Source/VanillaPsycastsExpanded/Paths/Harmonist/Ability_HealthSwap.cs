@@ -1,40 +1,59 @@
-﻿namespace VanillaPsycastsExpanded.Harmonist
+﻿namespace VanillaPsycastsExpanded.Harmonist;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using RimWorld.Planet;
+using Verse;
+using Ability = VFECore.Abilities.Ability;
+
+public class Ability_HealthSwap : Ability
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using RimWorld.Planet;
-    using Verse;
-    using VFECore.Abilities;
-
-    public class Ability_HealthSwap : Ability
+    public override void Cast(params GlobalTargetInfo[] targets)
     {
-        public override void Cast(params GlobalTargetInfo[] targets)
+        base.Cast(targets);
+        if (targets[0].Thing is not Pawn source || targets[1].Thing is not Pawn dest) return;
+        MoteBetween mote = (MoteBetween)ThingMaker.MakeThing(VPE_DefOf.VPE_PsycastPsychicEffectTransfer);
+        mote.Attach(source, dest);
+        mote.Scale         = 1f;
+        mote.exactPosition = source.DrawPos;
+        GenSpawn.Spawn(mote, source.Position, source.MapHeld);
+
+        List<Hediff> sourceToDest = source.health.hediffSet.hediffs.Where(ShouldTransfer).ToList();
+        List<Hediff> destToSource = dest.health.hediffSet.hediffs.Where(ShouldTransfer).ToList();
+
+        foreach (Hediff hediff in sourceToDest) source.health.RemoveHediff(hediff);
+
+        foreach (Hediff hediff in destToSource) dest.health.RemoveHediff(hediff);
+
+        AddAll(source, destToSource);
+        AddAll(dest,   sourceToDest);
+    }
+
+    private static bool ShouldTransfer(Hediff hediff) => hediff is Hediff_Injury or Hediff_MissingPart or Hediff_Addiction || hediff.def.tendable ||
+                                                         hediff.def.makesSickThought || hediff.def.HasComp(typeof(HediffComp_Immunizable));
+
+    private static void AddAll(Pawn pawn, List<Hediff> hediffs)
+    {
+        int n = 0;
+        while (hediffs.Any() || n < 10)
         {
-            base.Cast(targets);
-            if (targets[0].Thing is not Pawn source || targets[1].Thing is not Pawn dest) return;
-            MoteBetween mote = (MoteBetween) ThingMaker.MakeThing(VPE_DefOf.VPE_PsycastPsychicEffectTransfer);
-            mote.Attach(source, dest);
-            mote.Scale         = 1f;
-            mote.exactPosition = source.DrawPos;
-            GenSpawn.Spawn(mote, source.Position, source.MapHeld);
-
-            List<Hediff> sourceToDest = source.health.hediffSet.hediffs.Where(this.ShouldTransfer).ToList();
-            List<Hediff> destToSource = dest.health.hediffSet.hediffs.Where(this.ShouldTransfer).ToList();
-
-            foreach (Hediff hediff in sourceToDest)
+            hediffs.RemoveAll(hediff =>
             {
-                source.health.RemoveHediff(hediff);
-                dest.health.AddHediff(hediff, hediff.Part);
-            }
-
-            foreach (Hediff hediff in destToSource)
-            {
-                dest.health.RemoveHediff(hediff);
-                source.health.AddHediff(hediff, hediff.Part);
-            }
+                if (pawn.health.hediffSet.PartIsMissing(hediff.Part)) return false;
+                try
+                {
+                    pawn.health.AddHediff(hediff, hediff.Part);
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    Log.Error($"Error while swapping: {e}");
+                    return false;
+                }
+            });
+            n++;
         }
-
-        private bool ShouldTransfer(Hediff hediff) => hediff is Hediff_Injury || hediff.def.tendable || hediff.def.makesSickThought ||
-                                                      hediff.def.HasComp(typeof(HediffComp_Immunizable));
     }
 }

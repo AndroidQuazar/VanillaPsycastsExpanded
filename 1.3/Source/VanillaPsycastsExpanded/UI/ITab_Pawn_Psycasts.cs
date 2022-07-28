@@ -50,10 +50,9 @@ public class ITab_Pawn_Psycasts : ITab
         this.pathsByTab = DefDatabase<PsycasterPathDef>.AllDefs.GroupBy(def => def.tab).ToDictionary(group => group.Key, group => group.ToList());
         this.foci = DefDatabase<MeditationFocusDef>.AllDefs.OrderByDescending(def => def.modContentPack.IsOfficialMod).ThenByDescending(def => def.label)
                                                    .ToList();
-        this.tabs   = this.pathsByTab.Select(kv => new TabRecord(kv.Key, () => this.curTab = kv.Key, () => this.curTab == kv.Key)).ToList();
-        this.curTab = this.pathsByTab.Keys.FirstOrDefault();
-        Log.Message($"Height: {this.size.y}");
-        this.smallMode = this.size.y <= 600f;
+        this.tabs      = this.pathsByTab.Select(kv => new TabRecord(kv.Key, () => this.curTab = kv.Key, () => this.curTab == kv.Key)).ToList();
+        this.curTab    = this.pathsByTab.Keys.FirstOrDefault();
+        this.smallMode = this.size.y <= 1200f / Prefs.UIScale;
     }
 
     public Vector2 Size                   => this.size;
@@ -153,7 +152,7 @@ public class ITab_Pawn_Psycasts : ITab
         float heightAfter = listing.CurHeight;
         if (this.smallMode)
         {
-            Rect rect = new(pawnAndStats.x, heightBefore, pawnAndStats.width, heightAfter - heightBefore);
+            Rect rect = new(pawnAndStats.x, heightBefore, pawnAndStats.width / 2f, heightAfter - heightBefore);
             if (Mouse.IsOver(rect))
             {
                 Vector2 size = new(pawnAndStats.width, 120f);
