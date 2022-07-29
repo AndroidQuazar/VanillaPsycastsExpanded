@@ -53,11 +53,14 @@
         }
         public override void Draw()
         {
-            Vector3 pos = pawn.DrawPos;
-            pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
-            Matrix4x4 matrix = default(Matrix4x4);
-            matrix.SetTRS(pos, Quaternion.AngleAxis(curAngle, Vector3.up), new Vector3(OverlaySize, 1f, OverlaySize));
-            UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, OverlayMat, 0, null, 0, MatPropertyBlock);
+            if (pawn.Spawned)
+            {
+                Vector3 pos = pawn.DrawPos;
+                pos.y = AltitudeLayer.MoteOverhead.AltitudeFor();
+                Matrix4x4 matrix = default(Matrix4x4);
+                matrix.SetTRS(pos, Quaternion.AngleAxis(curAngle, Vector3.up), new Vector3(OverlaySize, 1f, OverlaySize));
+                UnityEngine.Graphics.DrawMesh(MeshPool.plane10, matrix, OverlayMat, 0, null, 0, MatPropertyBlock);
+            }
         }
 
         public override void ExposeData()

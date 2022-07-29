@@ -6,7 +6,7 @@
 		<label>word of trust</label>
 		<description>Speak to the prisoner while using psychic suggestion to reduce his resistance to recruitment. This psycast can only reduce a prisoner's resistance, but cannot recruit him.</description>
 		<iconPath>Abilities/Archon/WordofTrust</iconPath>
-		<range>30</range>
+		<distanceToTarget>30</distanceToTarget>
 		<castTime>120</castTime>
 		<showUndrafted>true</showUndrafted>
 		<targetingParameters>
@@ -158,7 +158,7 @@
 		<durationTime>720</durationTime>
         <castSound>PsychicShockLanceCast</castSound>
 		<castTime>30</castTime>
-		<range>19.9</range>
+		<distanceToTarget>19.9</distanceToTarget>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
 				<path>VPE_Archon</path>
@@ -221,7 +221,7 @@
 		<description>Using harmonic psychic noise, physically alters the target’s body to be more durable and resistant to damage. Lasts a long time and scales with the caster’s psychic sensitivity.</description>
 		<iconPath>Abilities/Archon/WordofProtection</iconPath>
 		<durationTime>15000</durationTime>
-		<range>6.9</range>
+		<distanceToTarget>6.9</distanceToTarget>
 		<castTime>45</castTime>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">

@@ -41,8 +41,9 @@
 				{
 					return false;
 				}
+				return Valid( new[] { target.ToGlobalTargetInfo(target.Thing.Map) }, ability);
 			}
-			return Valid( new[] { target.ToGlobalTargetInfo(target.Thing.Map) }, ability);
+			return false;
         }
 
         public override bool Valid(GlobalTargetInfo[] targets, Ability ability, bool throwMessages = false)
