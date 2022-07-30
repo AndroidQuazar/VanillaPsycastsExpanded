@@ -88,8 +88,8 @@ public class Hediff_PsycastAbilities : Hediff_Abilities
         {
             statOffsets = new List<StatModifier>
             {
-                new() { stat = StatDefOf.PsychicEntropyMax, value          = this.level * 5     + this.statPoints * 20 },
-                new() { stat = StatDefOf.PsychicEntropyRecoveryRate, value = this.level * 0.05f + this.statPoints * 0.2f },
+                new() { stat = StatDefOf.PsychicEntropyMax, value          = this.level * 5 + this.statPoints * 20 },
+                new() { stat = StatDefOf.PsychicEntropyRecoveryRate, value = this.statPoints * 0.2f },
                 new() { stat = StatDefOf.PsychicSensitivity, value         = this.statPoints * 0.05f },
                 new() { stat = StatDefOf.MeditationFocusGain, value        = this.statPoints * 0.1f },
                 new() { stat = VPE_DefOf.VPE_PsyfocusCostFactor, value     = this.statPoints * -0.01f },

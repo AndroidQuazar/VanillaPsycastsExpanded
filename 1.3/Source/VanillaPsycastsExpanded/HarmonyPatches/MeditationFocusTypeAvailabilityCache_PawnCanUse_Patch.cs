@@ -10,7 +10,7 @@
         public static void Postfix(Pawn p, MeditationFocusDef type, ref bool __result)
         {
             if (p.Psycasts()?.unlockedMeditationFoci.Contains(type) ?? false) __result     = true;
-            else if (type.GetModExtension<MeditationFocusExtension>().pointsOnly) __result = false;
+            else if (type.GetModExtension<MeditationFocusExtension>()?.pointsOnly ?? false) __result = false;
         }
     }
 }

@@ -9,8 +9,14 @@
         public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
             base.Cast(targets, ability);
-            (targets[0].Thing as Pawn).needs.rest.CurLevel = 1;
-            ability.pawn.needs.rest.CurLevel = 0;
+            foreach (var target in targets)
+            {
+                if (target.Thing is Pawn targetPawn && targetPawn.needs?.rest != null)
+                {
+                    targetPawn.needs.rest.CurLevel = 1;
+                    ability.pawn.needs.rest.CurLevel = 0;
+                }
+            }
         }
     }
 }
