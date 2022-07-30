@@ -35,7 +35,7 @@ public class PsycasterPathDef : Def
     [Unsaved] public List<AbilityDef> abilities;
     [Unsaved] public AbilityDef[][]   abilityLevelsInOrder;
 
-    public bool CanPawnUnlock(Pawn pawn) => this.PawnHasCorrectBackstory(pawn) && this.PawnHasMeme(pawn);
+    public virtual bool CanPawnUnlock(Pawn pawn) => this.PawnHasCorrectBackstory(pawn) && this.PawnHasMeme(pawn);
 
     private bool PawnHasMeme(Pawn pawn) => this.requiredMeme == null || (pawn.Ideo?.memes.Contains(this.requiredMeme) ?? false);
 
