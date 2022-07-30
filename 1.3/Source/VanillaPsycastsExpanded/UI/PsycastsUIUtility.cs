@@ -34,8 +34,8 @@
                 MeditationFocusExtension ext = def.GetModExtension<MeditationFocusExtension>();
                 if (ext is null)
                 {
-                    Log.Error(
-                        $"MeditationFocusDef {def} does not have a MeditationFocusExtension, meaning {def.modContentPack?.Name} is incompatible with Vanilla Psycasts Expanded");
+                    Log.Warning(
+                        $"MeditationFocusDef {def} does not have a MeditationFocusExtension, which means it will not have an icon in the Psycasts UI.\nPlease ask {def.modContentPack.ModMetaData.AuthorsString} to add one.");
                     meditationIcons.Add(def, BaseContent.WhiteTex);
                 }
                 else
