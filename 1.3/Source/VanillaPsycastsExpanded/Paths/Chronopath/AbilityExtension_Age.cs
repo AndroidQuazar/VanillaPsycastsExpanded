@@ -16,14 +16,17 @@ public class AbilityExtension_Age : AbilityExtension_AbilityMod
     public override void Cast(GlobalTargetInfo[] targets, Ability ability)
     {
         base.Cast(targets, ability);
-        if (targets[0].Thing is not Pawn pawn) return;
-        if (this.targetYears.HasValue) Age(pawn,         this.targetYears.Value);
         if (this.casterYears.HasValue) Age(ability.pawn, this.casterYears.Value);
+        if (!this.targetYears.HasValue) return;
+        foreach (GlobalTargetInfo target in targets)
+            if (target.Thing is Pawn pawn)
+                Age(pawn, this.targetYears.Value);
     }
 
     public override bool CanApplyOn(LocalTargetInfo target, Ability ability, bool throwMessages = false)
     {
         if (!base.CanApplyOn(target, ability, throwMessages)) return false;
+        if (!this.targetYears.HasValue) return true;
         if (target.Thing is not Pawn pawn) return false;
         if (!pawn.RaceProps.IsFlesh) return false;
         return true;
