@@ -110,7 +110,7 @@ public class Skipdoor : ThingWithComps
             this.backgroundMat = new Material(ShaderDatabase.TransparentPostLight);
         });
         this.RecacheBackground();
-        if (!respawningAfterLoad) return;
+        if (respawningAfterLoad) return;
         WorldComponent_SkipdoorManager.Instance.Skipdoors.Add(this);
         this.Pawn.Psycasts().OffsetMinHeat(50f);
         this.Pawn.psychicEntropy.TryAddEntropy(50f, this, true, true);
