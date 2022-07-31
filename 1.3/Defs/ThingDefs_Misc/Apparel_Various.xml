@@ -15,6 +15,7 @@
     <graphicData>
       <texPath>Things/Apparel/RoyalPlateArmor/RoyalPlateArmor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+		<shaderType>CutoutComplex</shaderType>
     </graphicData>
     <stuffCategories>
       <li>Metallic</li>
@@ -52,6 +53,7 @@
         <li>Legs</li>
       </bodyPartGroups>
       <wornGraphicPath>Things/Apparel/RoyalPlateArmor/RoyalPlateArmor</wornGraphicPath>
+	  <useWornGraphicMask>true</useWornGraphicMask>
       <layers>
         <li>Middle</li>
         <li>Shell</li>
