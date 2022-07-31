@@ -26,17 +26,25 @@ public class RitualOutcomeEffectWorker_Bestowing_Apply_Patch
         {
             new CodeInstruction(OpCodes.Ldloc_2),
             new CodeInstruction(OpCodes.Ldloc, 9),
-            CodeInstruction.LoadField(typeof(RoyalTitleDef), nameof(RoyalTitleDef.maxPsylinkLevel)),
             new CodeInstruction(OpCodes.Ldloc, 10),
-            CodeInstruction.LoadField(typeof(RoyalTitleDef), nameof(RoyalTitleDef.maxPsylinkLevel)),
             CodeInstruction.Call(typeof(RitualOutcomeEffectWorker_Bestowing_Apply_Patch), nameof(ApplyTitlePsylink))
         });
         return codes;
     }
 
-    public static void ApplyTitlePsylink(Pawn pawn, int oldMax, int newMax)
+    public static void ApplyTitlePsylink(Pawn pawn, RoyalTitleDef oldTitle, RoyalTitleDef newTitle)
     {
         Hediff_PsycastAbilities psylink = pawn.Psycasts();
+        int                     newMax  = newTitle.maxPsylinkLevel;
+        int                     oldMax  = oldTitle?.maxPsylinkLevel ?? 0;
+
+        if (psylink == null)
+        {
+            pawn.ChangePsylinkLevel(newMax - oldMax, false);
+            pawn.Psycasts().maxLevelFromTitles = newMax;
+            return;
+        }
+
         if (psylink.maxLevelFromTitles <= newMax) return;
         psylink.ChangeLevel(newMax - oldMax, false);
         psylink.maxLevelFromTitles = newMax;
