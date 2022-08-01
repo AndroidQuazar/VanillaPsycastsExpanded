@@ -45,14 +45,14 @@
     </targetModes>
     <targetingParametersList>
       <li>
-        <canTargetSelf>False</canTargetSelf>
+        <canTargetSelf>True</canTargetSelf>
         <canTargetHumans>True</canTargetHumans>
         <canTargetAnimals>False</canTargetAnimals>
         <canTargetMechs>False</canTargetMechs>
         <canTargetBuildings>False</canTargetBuildings>
       </li>
       <li>
-        <canTargetSelf>False</canTargetSelf>
+        <canTargetSelf>True</canTargetSelf>
         <canTargetHumans>True</canTargetHumans>
         <canTargetAnimals>False</canTargetAnimals>
         <canTargetMechs>False</canTargetMechs>
