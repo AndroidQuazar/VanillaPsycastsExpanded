@@ -1,10 +1,10 @@
-﻿namespace VanillaPsycastsExpanded
-{
-    using RimWorld;
-    using Verse;
+﻿namespace VanillaPsycastsExpanded;
 
-    public class Hediff_PsychicPain : HediffWithComps
-    {
-        public override float PainOffset => pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-    }
+using RimWorld;
+using UnityEngine;
+using Verse;
+
+public class Hediff_PsychicPain : HediffWithComps
+{
+    public override float PainOffset => Mathf.Max(this.pawn.GetStatValue(StatDefOf.PsychicSensitivity) - 0.8f, 0f);
 }
