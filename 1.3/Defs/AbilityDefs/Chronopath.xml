@@ -129,12 +129,7 @@
       <description>Very inefficiently siphons life force from a living target, de-aging the caster by 2 years and aging the other by 10. Very debilitating aftereffects for the victim and considered a hostile action by allies.</description>
       <iconPath>Abilities/Chronopath/Age</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
-      <targetMode>Pawn</targetMode>
-      <targetingParameters>
-        <canTargetPawns>true</canTargetPawns>
-        <canTargetMechs>false</canTargetMechs>
-        <canTargetBuildings>false</canTargetBuildings>
-      </targetingParameters>
+      <targetMode>Humanlike</targetMode>
       <range>3</range>
       <castTime>180</castTime>
       <castSound>VPE_Age_Cast</castSound>
