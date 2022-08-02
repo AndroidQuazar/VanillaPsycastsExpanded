@@ -372,6 +372,7 @@
 		<label>Essence of</label>
 		<description>Psychically-split fragment of someone's personality imbued in this very being.</description>
 		<hediffClass>VanillaPsycastsExpanded.Wildspeaker.Hediff_Essence</hediffClass>
+		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 		</comps>
@@ -408,6 +409,7 @@
 		<description>Psychically-induced night vision.</description>
 		<woundAnchorRange>0</woundAnchorRange>
 		<displayWound>true</displayWound>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
@@ -435,6 +437,7 @@
 		<label>group link</label>
 		<description>Psychically-induced link between several entities. Any 'word of' psycast will resonate between all linked individuals.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
@@ -586,6 +589,7 @@
 		<label>bodies consumed</label>
 		<description>The amount of bodies that were consumed using the Consume Bodies psycast. Each body consumed increases a maximum neural heat by 1.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_BodiesConsumed</hediffClass>
+		<isBad>false</isBad>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">
@@ -605,6 +609,7 @@
 		<label>obscured</label>
 		<description>Psychically-induced invisibility.</description>
 		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
 		<comps>
 			<li Class="HediffCompProperties_DisappearsOnDeath" />
 			<li>
