@@ -78,7 +78,7 @@ Changelog 8/2/2022
 - Wildspeaker's Animal Allies psyfocus cost 5% > 26%
 - Wildspeaker's Animal Allies heat cost 35 > 120
 - Wildspeaker's Summon Pack now puts the caster in a 6 hour psychic coma
-
-
+- Word of Love will induce love in first target, keeping the same logic as vanilla. Fixed duration of effect, now it should last only 8 days. 
+- Regrow limbs will regrow only parts that don't have missing parent parts. Once the effect expires remaining regenerating parts should still regenerate, but at a slower speed. 
 
 

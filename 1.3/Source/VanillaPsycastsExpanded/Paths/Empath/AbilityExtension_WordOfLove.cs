@@ -11,8 +11,8 @@
         public override void Cast(GlobalTargetInfo[] targets, Ability ability)
         {
             base.Cast(targets, ability);
-			Pawn target = targets[0].Thing as Pawn;
-			Pawn pawn = targets[1].Thing as Pawn;
+			Pawn target = targets[1].Thing as Pawn;
+			Pawn pawn = targets[0].Thing as Pawn;
 			Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicLove);
 			if (firstHediffOfDef != null)
 			{
@@ -23,9 +23,7 @@
 			HediffComp_Disappears hediffComp_Disappears = hediff_PsychicLove.TryGetComp<HediffComp_Disappears>();
 			if (hediffComp_Disappears != null)
 			{
-				float num = ability.GetDurationForPawn();
-				num *= pawn.GetStatValue(StatDefOf.PsychicSensitivity);
-				hediffComp_Disappears.ticksToDisappear = num.SecondsToTicks();
+				hediffComp_Disappears.ticksToDisappear = (int)(ability.GetDurationForPawn() * pawn.GetStatValue(StatDefOf.PsychicSensitivity));
 			}
 			pawn.health.AddHediff(hediff_PsychicLove);
 		}

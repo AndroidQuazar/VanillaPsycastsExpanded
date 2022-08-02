@@ -79,5 +79,11 @@
 			<canMerge>false</canMerge>
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>
+		<comps>
+		      <li Class="HediffCompProperties_SeverityPerDay">
+					<severityPerDay>-4</severityPerDay>
+					<showHoursToRecover>true</showHoursToRecover>
+			</li>
+		</comps>
 	</HediffDef>
 </Defs>
