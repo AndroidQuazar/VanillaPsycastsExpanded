@@ -82,7 +82,7 @@
     </graphicData>
   </FleckDef>
 
-  <FleckDef ParentName="FleckGlowDistortBackground" Name="FleckPsycastAreaEffect">
+  <FleckDef ParentName="FleckGlowDistortBackground">
     <defName>VFEP_PsycastAreaEffectSlow</defName>
     <altitudeLayer>MoteLow</altitudeLayer>
     <fadeInTime>2</fadeInTime>

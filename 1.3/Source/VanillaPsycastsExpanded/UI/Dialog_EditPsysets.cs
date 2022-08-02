@@ -8,7 +8,12 @@ public class Dialog_EditPsysets : Window
 {
     private readonly ITab_Pawn_Psycasts parent;
 
-    public Dialog_EditPsysets(ITab_Pawn_Psycasts parent) => this.parent = parent;
+    public Dialog_EditPsysets(ITab_Pawn_Psycasts parent)
+    {
+        this.parent   = parent;
+        this.doCloseX = true;
+    }
+
     protected override float   Margin      => 3f;
     public override    Vector2 InitialSize => new(this.parent.Size.x * 0.3f, Mathf.Max(300f, this.NeededHeight));
 

@@ -42,7 +42,6 @@
     <VPE.NotEnoughPoints>Not enough points available</VPE.NotEnoughPoints>
     <VPE.AbilitiesList>Psycasts included:</VPE.AbilitiesList>
     <VPE.Hover>hover</VPE.Hover>
-    <VPE.Edit>Edit</VPE.Edit>
     <VPE.PsycasterRaidDescription>{0}
 
 Capturing psycasters is a viable strategy and can be considered beneficial.</VPE.PsycasterRaidDescription>

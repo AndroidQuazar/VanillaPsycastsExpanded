@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <RaidStrategyDef Name="ImmediateAttack">
+  <RaidStrategyDef>
     <defName>VPE_ImmediateAttack_Psycasters</defName>
     <workerClass>VanillaPsycastsExpanded.RaidStrategyWorker_ImmediateAttack_Psycasters</workerClass>
     <selectionWeightPerPointsCurve>

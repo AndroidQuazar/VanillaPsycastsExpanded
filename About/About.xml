@@ -22,6 +22,9 @@
 		</li>
 	</modDependencies>
 	<packageId>VanillaExpanded.VPsycastsE</packageId>
+	<loadBefore>
+		<li>steve.betterquestrewards</li>
+	</loadBefore>
 	<loadAfter>
 		<li>Ludeon.RimWorld</li>
 		<li>Ludeon.RimWorld.Royalty</li>

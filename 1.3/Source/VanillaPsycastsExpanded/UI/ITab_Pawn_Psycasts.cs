@@ -1,5 +1,6 @@
 ﻿namespace VanillaPsycastsExpanded.UI;
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -16,29 +17,29 @@ public class ITab_Pawn_Psycasts : ITab
     private readonly Dictionary<string, List<PsycasterPathDef>> pathsByTab;
     private readonly List<TabRecord>                            tabs;
     private readonly Dictionary<AbilityDef, Vector2>            abilityPos = new();
-    private readonly bool                                       smallMode;
 
-    private CompAbilities           compAbilities;
-    private string                  curTab;
     private Hediff_PsycastAbilities hediff;
-    private float                   lastPathsHeight;
-    private int                     pathsPerRow;
-    private Vector2                 pathsScrollPos;
-    private Pawn                    pawn;
-    private Vector2                 psysetsScrollPos;
+    private CompAbilities           compAbilities;
 
-    private bool useAltBackgrounds;
-
-    private bool devMode;
-
-    private float psysetSectionHeight;
+    private string  curTab;
+    private float   lastPathsHeight;
+    private int     pathsPerRow;
+    private Vector2 pathsScrollPos;
+    private Pawn    pawn;
+    private Vector2 psysetsScrollPos;
+    private bool    useAltBackgrounds;
+    private bool    devMode;
+    private float   psysetSectionHeight;
+    private bool    smallMode;
 
     static ITab_Pawn_Psycasts()
     {
         foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
             if (def.race is { Humanlike: true })
             {
+                def.inspectorTabs ??= new List<Type>();
                 def.inspectorTabs.Add(typeof(ITab_Pawn_Psycasts));
+                def.inspectorTabsResolved ??= new List<InspectTabBase>();
                 def.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psycasts)));
             }
     }
@@ -50,9 +51,8 @@ public class ITab_Pawn_Psycasts : ITab
         this.pathsByTab = DefDatabase<PsycasterPathDef>.AllDefs.GroupBy(def => def.tab).ToDictionary(group => group.Key, group => group.ToList());
         this.foci = DefDatabase<MeditationFocusDef>.AllDefs.OrderByDescending(def => def.modContentPack.IsOfficialMod).ThenByDescending(def => def.label)
                                                    .ToList();
-        this.tabs      = this.pathsByTab.Select(kv => new TabRecord(kv.Key, () => this.curTab = kv.Key, () => this.curTab == kv.Key)).ToList();
-        this.curTab    = this.pathsByTab.Keys.FirstOrDefault();
-        this.smallMode = this.size.y <= 1200f / Prefs.UIScale;
+        this.tabs   = this.pathsByTab.Select(kv => new TabRecord(kv.Key, () => this.curTab = kv.Key, () => this.curTab == kv.Key)).ToList();
+        this.curTab = this.pathsByTab.Keys.FirstOrDefault();
     }
 
     public Vector2 Size                   => this.size;
@@ -67,6 +67,12 @@ public class ITab_Pawn_Psycasts : ITab
         base.UpdateSize();
         this.size.y      = this.PaneTopY - 30f;
         this.pathsPerRow = Mathf.FloorToInt(this.size.x * 0.67f / 200f);
+        this.smallMode = PsycastsMod.Settings.smallMode switch
+        {
+            MultiCheckboxState.On  => true,
+            MultiCheckboxState.Off => false,
+            _                      => this.size.y <= 1080f / Prefs.UIScale
+        };
     }
 
     public override void OnOpen()
@@ -155,7 +161,7 @@ public class ITab_Pawn_Psycasts : ITab
             Rect rect = new(pawnAndStats.x, heightBefore, pawnAndStats.width / 2f, heightAfter - heightBefore);
             if (Mouse.IsOver(rect))
             {
-                Vector2 size = new(pawnAndStats.width, 120f);
+                Vector2 size = new(pawnAndStats.width, 150f);
                 Find.WindowStack.ImmediateWindow(145 * 62346, new Rect(GenUI.GetMouseAttachedWindowPos(size.x, size.y), size), WindowLayer.Super,
                                                  delegate
                                                  {

@@ -74,6 +74,7 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
+    <Compile Include="Misc\BackCompatabilityConverter_Psytrainers.cs" />
     <Compile Include="Misc\GenRadialCached.cs" />
     <Compile Include="Misc\WoundWithShader.cs" />
     <Compile Include="ModCompatibility.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="UI\Dialog_Psyset.cs" />
     <Compile Include="UI\ITab_Pawn_Psycasts.cs" />
     <Compile Include="Meditation\MeditationFocusExtension.cs" />
+    <Compile Include="UI\Listing_Standard_Ext.cs" />
     <Compile Include="UI\PsycastsUIUtility.cs" />
     <Compile Include="UI\PsychicStatusGizmo.cs" />
     <Compile Include="UI\TexPsycasts.cs" />
