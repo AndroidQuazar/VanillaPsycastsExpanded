@@ -28,11 +28,22 @@
 			pawn.health.AddHediff(hediff_PsychicLove);
 		}
 
-		public override bool ValidateTarget(LocalTargetInfo target, Ability ability, bool showMessages = true)
+        public override string ExtraLabelMouseAttachment(LocalTargetInfo target, Ability ability)
 		{
-			if (ability.currentTargets.Any())
+			var targets = ability.currentTargets.Where(x => x.Thing != null).ToList();
+			if (targets.Any())
+			{
+				return "PsychicLoveFor".Translate();
+			}
+			return "PsychicLoveInduceIn".Translate();
+		}
+		public override bool HidePawnTooltips => true;
+        public override bool ValidateTarget(LocalTargetInfo target, Ability ability, bool showMessages = true)
+		{
+			var targets = ability.currentTargets.Where(x => x.Thing != null).ToList();
+			if (targets.Any())
             {
-				Pawn pawn = ability.currentTargets[0].Thing as Pawn;
+				Pawn pawn = targets[0].Thing as Pawn;
 				Pawn pawn2 = target.Pawn;
 				if (pawn == pawn2)
 				{

@@ -70,6 +70,7 @@
           <li>VPE_WordofJoy</li>
         </prerequisites>
         <showCastBubble>false</showCastBubble>
+        <psychic>true</psychic>
       </li>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_WordOfLove"></li>
       <li Class="VFECore.Abilities.AbilityExtension_SocialInteraction">
