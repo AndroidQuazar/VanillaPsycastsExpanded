@@ -9,14 +9,14 @@
       <targetMode>Self</targetMode>
       <radius>2.9</radius>
       <castTime>120</castTime>
-	    <cooldownTime>600</cooldownTime>
+	    <cooldownTime>60000</cooldownTime>
       <castSound>VPE_PlantTimeskip_Cast</castSound>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
           <path>VPE_Chronopath</path>
           <level>1</level>
           <order>1</order>
-          <psyfocusCost>0.25</psyfocusCost>
+          <psyfocusCost>0.50</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_TimeskipMeditation</li>
@@ -31,7 +31,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_TimeskipMeditation</defName>
       <label>timeskip meditation</label>
-      <description>Puts the caster into a self-inflicted coma for six hours as they earn a considerable amount of experience toward their next Psycast level and regain full Psyfocus. Biologically ages the caster by a five years.</description>
+      <description>Puts the caster into a self-inflicted coma for six hours as they earn a considerable amount of experience toward their next Psycast level and regain full Psyfocus. Biologically ages the caster by five years.</description>
       <iconPath>Abilities/Chronopath/TimeskipMeditation</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_Meditate</abilityClass>
       <targetMode>Self</targetMode>
@@ -67,7 +67,7 @@
           <path>VPE_Chronopath</path>
           <level>1</level>
           <order>3</order>
-          <psyfocusCost>0.4</psyfocusCost>
+          <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_TimeskipMeditation</li>
@@ -86,7 +86,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_CraftTimeskip</defName>
       <label>craft timeskip</label>
-      <description>Using very precise timeskipping, moves the desired item to its finished state as if the creator had continued working on it.</description>
+      <description>Using very precise timeskipping, moves the desired item to its finished state as if the creator had continued working on it. Ages the caster by 3 years.</description>
       <iconPath>Abilities/Chronopath/CraftTimeskip</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Chronopath.Ability_Finish</abilityClass>
       <castTime>180</castTime>
@@ -115,7 +115,7 @@
           </prerequisites>
         </li>
         <li Class="VanillaPsycastsExpanded.Chronopath.AbilityExtension_Age">
-          <casterYears>1</casterYears>
+          <casterYears>3</casterYears>
         </li>
         <li Class="VFECore.Abilities.AbilityExtension_FleckOnTarget">
           <fleckDef>VPE_Timeskip</fleckDef>
@@ -185,7 +185,7 @@
           <path>VPE_Chronopath</path>
           <level>4</level>
           <order>1</order>
-          <psyfocusCost>0.2</psyfocusCost>
+          <psyfocusCost>0.6</psyfocusCost>
           <entropyGain>40</entropyGain>
           <prerequisites>
             <li>VPE_Age</li>
@@ -212,7 +212,7 @@
           <path>VPE_Chronopath</path>
           <level>4</level>
           <order>2</order>
-          <psyfocusCost>0.5</psyfocusCost>
+          <psyfocusCost>0.8</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_CraftTimeskip</li>
@@ -241,7 +241,7 @@
           <level>5</level>
           <order>1</order>
           <psyfocusCost>0.1</psyfocusCost>
-          <entropyGain>40</entropyGain>
+          <entropyGain>90</entropyGain>
           <prerequisites>
             <li>VPE_RaidPause</li>
           </prerequisites>

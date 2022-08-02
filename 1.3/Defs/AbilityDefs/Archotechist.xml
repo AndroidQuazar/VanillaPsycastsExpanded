@@ -46,7 +46,7 @@
           <level>1</level>
           <order>2</order>
           <psyfocusCost>0.01</psyfocusCost>
-          <entropyGain>12</entropyGain>
+          <entropyGain>24</entropyGain>
           <psychic>true</psychic>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Stun">
@@ -73,8 +73,8 @@
           <path>VPE_Archotechist</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.08</psyfocusCost>
-          <entropyGain>15</entropyGain>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>30</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Burden</li>
@@ -111,7 +111,7 @@
           <path>VPE_Archotechist</path>
           <level>2</level>
           <order>2</order>
-          <psyfocusCost>0</psyfocusCost>
+          <psyfocusCost>0.08</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_Burden</li>
@@ -182,7 +182,7 @@
           <path>VPE_Archotechist</path>
           <level>3</level>
           <order>2</order>
-          <psyfocusCost>0.2</psyfocusCost>
+          <psyfocusCost>0.4</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_NeuralHeatDump</li>
@@ -248,7 +248,7 @@
           <level>4</level>
           <order>2</order>
           <psyfocusCost>0.06</psyfocusCost>
-          <entropyGain>65</entropyGain>
+          <entropyGain>85</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Berserk</li>
@@ -276,7 +276,7 @@
           <path>VPE_Archotechist</path>
           <level>4</level>
           <order>3</order>
-          <psyfocusCost>0.24</psyfocusCost>
+          <psyfocusCost>0.36</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_AggressiveHeatDump</li>
