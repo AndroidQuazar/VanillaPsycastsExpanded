@@ -326,7 +326,7 @@
     <VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
       <defName>VPE_ReverseEngineer</defName>
       <label>reverse engineer</label>
-      <description>The caster concentrates on an object and attempts to unravel the knowledge needed to manufacture more of them. The long, intense concentration ends with the caster falling into a 6-hour coma.</description>
+      <description>The caster concentrates on an object and attempts to unravel the knowledge needed to manufacture more of them. The long, intense concentration ends with the caster falling into a 12-hour coma.</description>
       <iconPath>Abilities/Technomancer/ReverseEngineer</iconPath>
       <abilityClass>VanillaPsycastsExpanded.Technomancer.Ability_ReverseEngineer</abilityClass>
       <jobDef>VFEA_GotoTargetAndUseAbility</jobDef>

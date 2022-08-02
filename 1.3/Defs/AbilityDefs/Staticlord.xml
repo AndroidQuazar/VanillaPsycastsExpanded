@@ -268,8 +268,8 @@
           <path>VPE_Staticlord</path>
           <level>5</level>
           <order>2</order>
-          <psyfocusCost>0.04</psyfocusCost>
-          <entropyGain>65</entropyGain>
+          <psyfocusCost>0.24</psyfocusCost>
+          <entropyGain>85</entropyGain>
           <prerequisites>
             <li>VPE_Vortex</li>
           </prerequisites>

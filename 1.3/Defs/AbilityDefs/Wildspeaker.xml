@@ -42,6 +42,7 @@
     <iconPath>Abilities/Wildspeaker/CropBurst</iconPath>
     <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
     <castTime>120</castTime>
+	<cooldownTime>60000</cooldownTime>
     <range>25</range>
     <targetMode>Location</targetMode>
     <radius>6</radius>
@@ -55,7 +56,7 @@
         <path>VPE_Wildspeaker</path>
         <level>2</level>
         <order>1</order>
-        <psyfocusCost>0.16</psyfocusCost>
+        <psyfocusCost>0.60</psyfocusCost>
         <entropyGain>0</entropyGain>
         <prerequisites>
           <li>VPE_BrambleMaze</li>
@@ -119,8 +120,8 @@
         <path>VPE_Wildspeaker</path>
         <level>3</level>
         <order>1</order>
-        <psyfocusCost>0.04</psyfocusCost>
-        <entropyGain>50</entropyGain>
+        <psyfocusCost>0.26</psyfocusCost>
+        <entropyGain>90</entropyGain>
         <prerequisites>
           <li>VPE_WordofAnimals</li>
         </prerequisites>
@@ -238,8 +239,8 @@
         <path>VPE_Wildspeaker</path>
         <level>4</level>
         <order>2</order>
-        <psyfocusCost>0.05</psyfocusCost>
-        <entropyGain>35</entropyGain>
+        <psyfocusCost>0.26</psyfocusCost>
+        <entropyGain>120</entropyGain>
         <psychic>true</psychic>
         <prerequisites>
           <li>VPE_ShieldAnimals</li>

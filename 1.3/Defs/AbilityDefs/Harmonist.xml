@@ -113,7 +113,7 @@
           <path>VPE_Harmonist</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.02</psyfocusCost>
+          <psyfocusCost>0.06</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_Mindcontrol</li>
@@ -222,6 +222,7 @@
       <abilityClass>VanillaPsycastsExpanded.Harmonist.Ability_HealthSwap</abilityClass>
       <castTime>240</castTime>
       <castSound>VPE_HealthSwap_Cast</castSound>
+	  <cooldownTime>30000</cooldownTime>
       <castFleckScale>9</castFleckScale>
       <targetCount>2</targetCount>
       <targetModes>

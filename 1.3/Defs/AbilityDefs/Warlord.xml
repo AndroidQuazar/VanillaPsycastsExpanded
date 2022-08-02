@@ -15,8 +15,8 @@
           <path>VPE_Warlord</path>
           <level>1</level>
           <order>1</order>
-          <psyfocusCost>0.02</psyfocusCost>
-          <entropyGain>8</entropyGain>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>12</entropyGain>
           <psychic>true</psychic>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -41,8 +41,8 @@
           <path>VPE_Warlord</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.04</psyfocusCost>
-          <entropyGain>10</entropyGain>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>20</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>
@@ -70,8 +70,8 @@
           <path>VPE_Warlord</path>
           <level>2</level>
           <order>3</order>
-          <psyfocusCost>0.04</psyfocusCost>
-          <entropyGain>10</entropyGain>
+          <psyfocusCost>0.12</psyfocusCost>
+          <entropyGain>20</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>
@@ -126,8 +126,8 @@
           <path>VPE_Warlord</path>
           <level>3</level>
           <order>1</order>
-          <psyfocusCost>0.04</psyfocusCost>
-          <entropyGain>10</entropyGain>
+          <psyfocusCost>0.18</psyfocusCost>
+          <entropyGain>26</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_PowerLeap</li>

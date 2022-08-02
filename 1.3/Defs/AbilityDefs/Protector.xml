@@ -47,7 +47,7 @@
           <path>VPE_Protector</path>
           <level>1</level>
           <order>2</order>
-          <psyfocusCost>0.3</psyfocusCost>
+          <psyfocusCost>0.36</psyfocusCost>
           <entropyGain>0</entropyGain>
         </li>
 		<li Class="VFECore.Abilities.AbilityExtension_Hediff">
@@ -70,7 +70,7 @@
           <path>VPE_Protector</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.2</psyfocusCost>
+          <psyfocusCost>0.3</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_Painblock</li>
@@ -95,7 +95,7 @@
           <path>VPE_Protector</path>
           <level>2</level>
           <order>1</order>
-          <psyfocusCost>0.3</psyfocusCost>
+          <psyfocusCost>0.36</psyfocusCost>
           <entropyGain>0</entropyGain>
           <prerequisites>
             <li>VPE_WordofHealing</li>
@@ -127,7 +127,7 @@
           <level>3</level>
           <order>1</order>
           <psyfocusCost>0.05</psyfocusCost>
-          <entropyGain>20</entropyGain>
+          <entropyGain>50</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
             <li>VPE_Stabilize</li>
@@ -194,7 +194,7 @@
           <path>VPE_Protector</path>
           <level>4</level>
           <order>1</order>
-          <psyfocusCost>0.04</psyfocusCost>
+          <psyfocusCost>0.08</psyfocusCost>
           <entropyGain>65</entropyGain>
           <prerequisites>
             <li>VPE_Overshield</li>
@@ -230,7 +230,7 @@
           <path>VPE_Protector</path>
           <level>4</level>
           <order>2</order>
-          <psyfocusCost>0.03</psyfocusCost>
+          <psyfocusCost>0.12</psyfocusCost>
           <entropyGain>45</entropyGain>
           <psychic>true</psychic>
           <prerequisites>
