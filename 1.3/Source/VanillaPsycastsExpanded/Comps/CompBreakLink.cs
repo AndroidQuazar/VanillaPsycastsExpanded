@@ -30,7 +30,7 @@ public class CompBreakLink : ThingComp, PawnGizmoProvider
     public override void PostDeSpawn(Map map)
     {
         base.PostDeSpawn(map);
-        if (this.parent is Pawn { Dead: true }) this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
+        if (this.parent is Pawn { Dead: true } or { Destroyed: true }) this.Pawn.Psycasts()?.OffsetMinHeat(-20f);
     }
 
     public override void PostExposeData()

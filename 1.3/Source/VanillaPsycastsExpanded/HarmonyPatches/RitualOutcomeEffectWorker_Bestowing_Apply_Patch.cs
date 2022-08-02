@@ -45,7 +45,7 @@ public class RitualOutcomeEffectWorker_Bestowing_Apply_Patch
             return;
         }
 
-        if (psylink.maxLevelFromTitles <= newMax) return;
+        if (psylink.maxLevelFromTitles > newMax) return;
         psylink.ChangeLevel(newMax - oldMax, false);
         psylink.maxLevelFromTitles = newMax;
     }
