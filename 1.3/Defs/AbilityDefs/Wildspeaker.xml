@@ -353,6 +353,9 @@
           <li>VPE_AnimalAllies</li>
         </prerequisites>
       </li>
+      <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+        <hours>6</hours>
+      </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
 </Defs>
