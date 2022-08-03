@@ -16,6 +16,7 @@ public class Ability_TransmuteItem : Ability
         foreach (GlobalTargetInfo target in targets)
         {
             Thing   item  = target.Thing;
+            Map     map   = item.Map;
             float   value = item.MarketValue * item.stackCount;
             IntVec3 pos   = item.Position;
 
@@ -45,7 +46,7 @@ public class Ability_TransmuteItem : Ability
             item.Destroy();
             item            = ThingMaker.MakeThing(chosen);
             item.stackCount = Mathf.FloorToInt(value / chosen.BaseMarketValue);
-            GenSpawn.Spawn(item, pos, target.Map);
+            GenSpawn.Spawn(item, pos, map);
         }
     }
 
