@@ -504,6 +504,11 @@
 			<li Class="HediffCompProperties_Infecter">
 				<infectionChance>1</infectionChance>
 			</li>
+			      <li Class="HediffCompProperties_TendDuration">
+			        <labelTendedWell>bandaged</labelTendedWell>
+			        <labelTendedWellInner>tended</labelTendedWellInner>
+			        <labelSolidTendedWell>tended</labelSolidTendedWell>
+			      </li>
 		</comps>
 		<injuryProps>
 			<painPerSeverity>0.125</painPerSeverity>

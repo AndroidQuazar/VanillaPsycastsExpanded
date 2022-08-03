@@ -75,7 +75,7 @@
 		<description>Regenerating wounds, new and old.</description>
 		<tendable>false</tendable>
 		<injuryProps>
-			<painPerSeverity>0.0125</painPerSeverity>
+			<painPerSeverity>0</painPerSeverity>
 			<canMerge>false</canMerge>
 			<destroyedLabel>Destroyed</destroyedLabel>
 		</injuryProps>

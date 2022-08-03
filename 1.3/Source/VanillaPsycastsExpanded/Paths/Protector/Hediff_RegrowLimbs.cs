@@ -24,7 +24,7 @@
                 {
                     var nonMissingParts = pawn.health.hediffSet.GetNotMissingParts().ToList();
                     var missingParts = pawn.def.race.body.AllParts.Where(x => pawn.health.hediffSet.PartIsMissing(x) 
-                        && nonMissingParts.Contains(x.parent)).ToList();
+                        && nonMissingParts.Contains(x.parent) && !pawn.health.hediffSet.AncestorHasDirectlyAddedParts(x)).ToList();
                     if (missingParts.Any())
                     {
                         var missingPart = missingParts.RandomElement();

@@ -81,4 +81,6 @@ Changelog 8/2/2022
 - Word of Love will induce love in first target, keeping the same logic as vanilla. Fixed duration of effect, now it should last only 8 days. Added on target label attachments "Induce love in" and "Psychic love for". The ability is marked as psychic thus will show psychic sensitivity info. 
 - Regrow limbs will regrow only parts that don't have missing parent parts. Once the effect expires remaining regenerating parts should still regenerate, but at a slower speed. 
 
-
+Changelog 8/2/2022
+- Rot damages from liferot ability are now tendable and will go away once tended.
+- Regrow limbs won't restore parts under artifical limbs, like drill arms or peg leg. Regeneration will be painless and won't make pawns downed because of it.
