@@ -252,12 +252,15 @@ public class ITab_Pawn_Psycasts : ITab
     {
         Widgets.DrawBox(inRect, 3, Texture2D.grayTexture);
         bool unlocked = def.CanPawnUse(this.pawn);
+        bool canUnlock = def != VPE_DefOf.Dignified || (this.pawn.royalty != null &&
+                                                        (this.pawn.royalty.AllTitlesForReading.Any() || this.pawn.royalty.CanUpdateTitleOfAnyFaction(out _)));
         GUI.color = unlocked ? Color.white : Color.gray;
         GUI.DrawTexture(inRect.ContractedBy(5f), def.Icon());
         GUI.color = Color.white;
-        TooltipHandler.TipRegion(inRect, $"{def.LabelCap}\n\n{def.description}");
+        TooltipHandler.TipRegion(inRect, def.LabelCap    + (def.description.NullOrEmpty() ? "" : "\n\n") +
+                                         def.description + (canUnlock ? "" : $"\n\n{"VPE.LockedTitle".Translate()}"));
         Widgets.DrawHighlightIfMouseover(inRect);
-        if ((this.hediff.points >= 1 || this.devMode) && !unlocked)
+        if ((this.hediff.points >= 1 || this.devMode) && !unlocked && canUnlock)
             if (Widgets.ButtonText(new Rect(inRect.xMax - 13f, inRect.yMax - 13f, 12f, 12f), "▲"))
             {
                 if (!this.devMode) this.hediff.SpentPoints();
