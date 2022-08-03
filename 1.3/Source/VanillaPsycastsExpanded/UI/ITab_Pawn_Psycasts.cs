@@ -1,6 +1,5 @@
 ﻿namespace VanillaPsycastsExpanded.UI;
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -37,10 +36,8 @@ public class ITab_Pawn_Psycasts : ITab
         foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
             if (def.race is { Humanlike: true })
             {
-                def.inspectorTabs ??= new List<Type>();
-                def.inspectorTabs.Add(typeof(ITab_Pawn_Psycasts));
-                def.inspectorTabsResolved ??= new List<InspectTabBase>();
-                def.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psycasts)));
+                def.inspectorTabs?.Add(typeof(ITab_Pawn_Psycasts));
+                def.inspectorTabsResolved?.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psycasts)));
             }
     }
 
