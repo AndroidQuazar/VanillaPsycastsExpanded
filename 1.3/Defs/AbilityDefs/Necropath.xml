@@ -149,6 +149,7 @@
 			<thingCategory>Item</thingCategory>
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParameters>
+		<reserveTargets>true</reserveTargets>
 		<castSound>VPE_CorpseTalk_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -217,6 +218,7 @@
 			<thingCategory>Item</thingCategory>
 			<mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
 		</targetingParametersForAoE>
+		<reserveTargets>true</reserveTargets>
 		<castSound>VPE_ConsumeBodies_Cast</castSound>
 		<modExtensions>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -267,6 +269,7 @@
 		<abilityClass>VanillaPsycastsExpanded.Ability_SpawnSkeleton</abilityClass>
 		<castTime>15</castTime>
 		<range>19.9</range>
+		<reserveTargets>true</reserveTargets>
 		<targetingParameters>
 			<canTargetLocations>False</canTargetLocations>
 			<canTargetSelf>False</canTargetSelf>
@@ -299,6 +302,7 @@
 		<iconPath>Abilities/Necropath/Resurrect</iconPath>
 		<abilityClass>VanillaPsycastsExpanded.Ability_Resurrect</abilityClass>
 		<castTime>600</castTime>
+		<reserveTargets>true</reserveTargets>
 		<targetingParameters>
 			<canTargetLocations>False</canTargetLocations>
 			<canTargetSelf>False</canTargetSelf>

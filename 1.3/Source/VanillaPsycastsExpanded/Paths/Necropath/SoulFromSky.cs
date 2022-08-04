@@ -25,6 +25,10 @@
                 }
             }
             ResurrectionUtility.ResurrectWithSideEffects(pawn);
+            if (!pawn.Spawned)
+            {
+                GenSpawn.Spawn(pawn, this.Position, this.MapHeld);
+            }
             Destroy();
         }
 
