@@ -45,7 +45,7 @@ public class ThingDefGenerator_Neurotrainer_ImpliedThingDefs_Patch
                 thingDef.statBases.Add(new StatModifier
                 {
                     stat  = StatDefOf.MarketValue,
-                    value = Mathf.Round(Mathf.Lerp(100f, 1000f, psycastExt.level / 6f))
+                    value = Mathf.Round(500f + 300f * psycastExt.level)
                 });
                 thingDef.thingCategories = new List<ThingCategoryDef>
                 {
