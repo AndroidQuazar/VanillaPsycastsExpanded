@@ -73,15 +73,17 @@
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
-            var targetPawn = target.Pawn;
-            if (!GetLivingFamilyMembers(targetPawn).Any())
+            if (target.Thing is Pawn targetPawn && targetPawn.relations != null)
             {
-                if (showMessages)
+                if (!GetLivingFamilyMembers(targetPawn).Any())
                 {
-                    Messages.Message("VPE.MustHaveLivingFamilyMembers".Translate(targetPawn.Named("PAWN")), targetPawn, 
-                        MessageTypeDefOf.RejectInput, historical: false);
+                    if (showMessages)
+                    {
+                        Messages.Message("VPE.MustHaveLivingFamilyMembers".Translate(targetPawn.Named("PAWN")), targetPawn,
+                            MessageTypeDefOf.RejectInput, historical: false);
+                    }
+                    return false;
                 }
-                return false;
             }
             return base.ValidateTarget(target, showMessages);
         }

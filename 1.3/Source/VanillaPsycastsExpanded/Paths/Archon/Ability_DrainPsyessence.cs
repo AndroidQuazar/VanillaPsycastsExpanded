@@ -9,20 +9,22 @@
     {
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
-            var victim = target.Thing as Pawn;
-            if (!victim.Downed)
+            if (target.Thing is Pawn victim)
             {
-                if (showMessages)
+                if (!victim.Downed)
                 {
-                    Messages.Message("VPE.MustBeDowned".Translate(), victim, MessageTypeDefOf.CautionInput);
+                    if (showMessages)
+                    {
+                        Messages.Message("VPE.MustBeDowned".Translate(), victim, MessageTypeDefOf.CautionInput);
+                    }
+                    return false;
                 }
-                return false;
-            }
-            if (victim.Psycasts() is null || victim.Psycasts().level < 1)
-            {
-                if (showMessages)
+                if (victim.Psycasts() is null || victim.Psycasts().level < 1)
                 {
-                    Messages.Message("VPE.MustHavePsychicLevel".Translate(), victim, MessageTypeDefOf.CautionInput);
+                    if (showMessages)
+                    {
+                        Messages.Message("VPE.MustHavePsychicLevel".Translate(), victim, MessageTypeDefOf.CautionInput);
+                    }
                 }
             }
             return base.ValidateTarget(target, showMessages);

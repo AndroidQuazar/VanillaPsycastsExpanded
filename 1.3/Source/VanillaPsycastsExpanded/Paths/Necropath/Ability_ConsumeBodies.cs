@@ -16,14 +16,17 @@
             {
                 foreach (var target in Comp.currentlyCastingTargets)
                 {
-                    this.AddEffecterToMaintain(VPE_DefOf.VPE_Liferot.Spawn(target.Thing.Position, this.pawn.Map), target.Thing, toil.defaultDuration);
+                    if (target.HasThing && target.Thing.TryGetComp<CompRottable>() != null)
+                    {
+                        this.AddEffecterToMaintain(VPE_DefOf.VPE_Liferot.Spawn(target.Thing.Position, this.pawn.Map), target.Thing, toil.defaultDuration);
+                    }
                 }
             });
             toil.AddPreTickAction(delegate
             {
                 foreach (var target in Comp.currentlyCastingTargets)
                 {
-                    if (target.Thing.IsHashIntervalTick(60))
+                    if (target.HasThing && target.Thing.TryGetComp<CompRottable>() != null && target.Thing.IsHashIntervalTick(60))
                     {
                         FilthMaker.TryMakeFilth(target.Thing.Position, target.Thing.Map, ThingDefOf.Filth_CorpseBile, 1);
                         target.Thing.TryGetComp<CompRottable>().RotProgress += 60000;
