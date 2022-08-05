@@ -14,7 +14,7 @@
         public MentalStateDef stateDefForMechs;
 
         public StatDef durationMultiplier;
-
+        public bool durationScalesWithCaster;
         public bool applyToSelf;
         public bool clearOthers;
 
@@ -31,8 +31,8 @@
                     else continue;
                 }
 
-                TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? this.stateDefForMechs ?? this.stateDef : this.stateDef, pawn, ability,
-                                               this.durationMultiplier);
+                TryGiveMentalStateWithDuration(pawn.RaceProps.IsMechanoid ? this.stateDefForMechs ?? this.stateDef : this.stateDef, 
+                    pawn, ability, this.durationMultiplier, this.durationScalesWithCaster);
                 RestUtility.WakeUp(pawn);
             }
         }
@@ -44,14 +44,24 @@
             return true;
         }
 
-        public static void TryGiveMentalStateWithDuration(MentalStateDef def, Pawn p, Ability ability, StatDef multiplierStat)
+        public static void TryGiveMentalStateWithDuration(MentalStateDef def, Pawn p, Ability ability, StatDef multiplierStat, bool durationScalesWithCaster)
         {
             if (p.mindState.mentalStateHandler.TryStartMentalState(def, null, true, false, null, false,
                                                                    false, ability.def.GetModExtension<AbilityExtension_Psycast>() != null))
             {
                 float num                       = ability.GetDurationForPawn();
-                if (multiplierStat != null) num *= p.GetStatValue(multiplierStat);
-                p.mindState.mentalStateHandler.CurState.forceRecoverAfterTicks = num.SecondsToTicks();
+                if (multiplierStat != null)
+                {
+                    if (durationScalesWithCaster)
+                    {
+                        num *= p.GetStatValue(multiplierStat);
+                    }
+                    else
+                    {
+                        num *= ability.pawn.GetStatValue(multiplierStat);
+                    }
+                }
+                p.mindState.mentalStateHandler.CurState.forceRecoverAfterTicks = (int)num;
             }
         }
     }

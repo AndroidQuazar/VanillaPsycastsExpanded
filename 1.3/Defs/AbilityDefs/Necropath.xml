@@ -7,7 +7,7 @@
 		<description>Induces panic by overloading their flight response system for a short duration. Considered a hostile action.</description>
 		<iconPath>Abilities/Necropath/WordofFear</iconPath>
 		<distanceToTarget>6</distanceToTarget>
-		<durationTime>720</durationTime>
+		<durationTime>600</durationTime>
 		<goodwillImpact>-15</goodwillImpact>
 		<castTime>15</castTime>
 		<castSound>VPE_WordOfFear_Cast</castSound>
@@ -21,6 +21,7 @@
 			</li>
 			<li Class="VanillaPsycastsExpanded.AbilityExtension_GiveMentalState">
 				<stateDef>VPE_Flee</stateDef>
+				<clearOthers>true</clearOthers>
 			</li>
 		</modExtensions>
 	</VFECore.Abilities.AbilityDef>

@@ -82,7 +82,7 @@
 			{
 				MentalStateDef mentalStateDef = null;
 				mentalStateDef = (item2.RaceProps.IsMechanoid ? MentalStateDefOf.BerserkMechanoid : MentalStateDefOf.Berserk);
-				AbilityExtension_GiveMentalState.TryGiveMentalStateWithDuration(mentalStateDef, item2, ability, StatDefOf.PsychicSensitivity);
+				AbilityExtension_GiveMentalState.TryGiveMentalStateWithDuration(mentalStateDef, item2, ability, StatDefOf.PsychicSensitivity, false);
 				RestUtility.WakeUp(item2);
 			}
 			foreach (Faction allFaction in Find.FactionManager.AllFactions)
