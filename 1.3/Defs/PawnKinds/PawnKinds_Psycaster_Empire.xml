@@ -41,9 +41,9 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>1</initialLevel>
-            <statUpgradePoints>1~3</statUpgradePoints>
+            <statUpgradePoints>2~6</statUpgradePoints>
             <unlockedPaths>
-               <VPE_Conflagrator>1~4|1~5</VPE_Conflagrator>
+               <VPE_Conflagrator>1~4|2~10</VPE_Conflagrator>
             </unlockedPaths>
          </li>
       </modExtensions>
@@ -89,9 +89,9 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>1</initialLevel>
-            <statUpgradePoints>3~9</statUpgradePoints>
+            <statUpgradePoints>6~12</statUpgradePoints>
             <unlockedPaths>
-               <VPE_Archotechist>1~4|1~5</VPE_Archotechist>
+               <VPE_Archotechist>1~4|2~10</VPE_Archotechist>
             </unlockedPaths>
          </li>
       </modExtensions>
@@ -123,9 +123,9 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>1</initialLevel>
-            <statUpgradePoints>1~3</statUpgradePoints>
+            <statUpgradePoints>2~6</statUpgradePoints>
             <unlockedPaths>
-               <VPE_Warlord>1~4|1~6</VPE_Warlord>
+               <VPE_Warlord>1~4|2~12</VPE_Warlord>
             </unlockedPaths>
          </li>
       </modExtensions>
@@ -192,9 +192,9 @@
          <li Class="VanillaPsycastsExpanded.PawnKindAbilityExtension_Psycasts">
             <implantDef>VPE_PsycastAbilityImplant</implantDef>
             <initialLevel>1</initialLevel>
-            <statUpgradePoints>1~3</statUpgradePoints>
+            <statUpgradePoints>2~6</statUpgradePoints>
             <unlockedPaths>
-               <VPE_Protector>1~4|1~6</VPE_Protector>
+               <VPE_Protector>1~4|2~12</VPE_Protector>
             </unlockedPaths>
          </li>
       </modExtensions>
