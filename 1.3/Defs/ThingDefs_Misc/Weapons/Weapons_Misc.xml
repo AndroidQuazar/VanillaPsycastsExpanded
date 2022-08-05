@@ -7,6 +7,9 @@
         <graphicData>
             <texPath>Effects/Technomancer/HeatPearls/HeatPearls</texPath>
         </graphicData>
+        <statBases>
+            <MarketValue>60</MarketValue>
+        </statBases>
         <apparel>
             <ai_pickUpOpportunistically>true</ai_pickUpOpportunistically>
         </apparel>
