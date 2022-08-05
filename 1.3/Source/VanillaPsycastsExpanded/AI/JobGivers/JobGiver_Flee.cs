@@ -17,7 +17,7 @@ namespace VanillaPsycastsExpanded
                 && GenSight.LineOfSight(x.Position, pawn.Position, pawn.Map)).OrderBy(x => x.Position.DistanceTo(pawn.Position)).ToList();
             if (enemies.Any())
             {
-                if (CellFinderLoose.GetFleeExitPosition(pawn, 10f, out var pos))
+                if (pawn.Faction != Faction.OfPlayer && CellFinderLoose.GetFleeExitPosition(pawn, 10f, out var pos))
                 {
                     Job job = JobMaker.MakeJob(JobDefOf.Flee, pos, enemies.First());
                     job.exitMapOnArrival = true;
