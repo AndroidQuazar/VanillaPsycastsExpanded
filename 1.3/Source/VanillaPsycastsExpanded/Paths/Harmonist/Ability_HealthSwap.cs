@@ -36,8 +36,7 @@ public class Ability_HealthSwap : Ability
 
     private static void AddAll(Pawn pawn, List<Hediff> hediffs)
     {
-        int n = 0;
-        while (hediffs.Any() || n < 10)
+        void TryAdd()
         {
             hediffs.RemoveAll(hediff =>
             {
@@ -53,7 +52,9 @@ public class Ability_HealthSwap : Ability
                     return false;
                 }
             });
-            n++;
         }
+
+        TryAdd();
+        TryAdd();
     }
 }
