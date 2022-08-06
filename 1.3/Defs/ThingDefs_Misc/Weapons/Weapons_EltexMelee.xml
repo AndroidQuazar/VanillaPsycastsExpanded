@@ -97,6 +97,9 @@
 	    <Steel>30</Steel>
 		<VPE_Eltex>4</VPE_Eltex>
 	</costList>
+            <li Class="VFECore.ThingDefExtension">
+                <usableWithShields>true</usableWithShields>
+            </li>
   </ThingDef>
   
   <ThingDef ParentName="VPE_BaseMeleeWeapon_Eltex_Blunt">
@@ -135,6 +138,9 @@
 	    <Steel>50</Steel>
 		<VPE_Eltex>4</VPE_Eltex>
 	</costList>
+            <li Class="VFECore.ThingDefExtension">
+                <usableWithShields>true</usableWithShields>
+            </li>
   </ThingDef>
   
   <ThingDef ParentName="VPE_BaseMeleeWeapon_Eltex_Sharp">
@@ -180,6 +186,9 @@
 	    <Steel>50</Steel>
 		<VPE_Eltex>4</VPE_Eltex>
 	</costList>
+            <li Class="VFECore.ThingDefExtension">
+                <usableWithShields>true</usableWithShields>
+            </li>
   </ThingDef>
   
 </Defs>

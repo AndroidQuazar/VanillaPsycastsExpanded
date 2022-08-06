@@ -37,7 +37,7 @@
       <targetMode>Self</targetMode>
       <castTime>600</castTime>
       <castSound>VPE_TimeskipMeditation_Cast</castSound>
-	  <cooldownTime>60000</cooldownTime>
+	  <cooldownTime>180000</cooldownTime>
 	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -46,9 +46,6 @@
           <order>2</order>
           <psyfocusCost>0</psyfocusCost>
           <entropyGain>0</entropyGain>
-        </li>
-        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
-          <hours>6</hours>
         </li>
         <li Class="VanillaPsycastsExpanded.Chronopath.AbilityExtension_Age">
           <casterYears>5</casterYears>

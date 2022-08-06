@@ -8,7 +8,7 @@
     <degreeDatas>
       <li>
         <label>thrall</label>
-        <description>text.todo</description>
+        <description>Psychic enthrallment caused by incredibly strong mental influence. Thralls don't need to sleep or have recreation, but are unable to do skilled work and engage in social interactions.</description>
       </li>
     </degreeDatas>
   </TraitDef>
