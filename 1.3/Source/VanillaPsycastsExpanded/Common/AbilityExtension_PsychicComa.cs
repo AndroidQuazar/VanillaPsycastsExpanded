@@ -20,7 +20,7 @@ public class AbilityExtension_PsychicComa : AbilityExtension_AbilityMod
         float duration = this.hours * GenDate.TicksPerHour + this.ticks;
         float mult     = ability.pawn.GetStatValue(this.multiplier ?? StatDefOf.PsychicSensitivity);
 
-        duration *= Mathf.Approximately(mult, 1f) ? 1f : 1 / mult;
+        duration *= Mathf.Approximately(mult, 0f) ? 10f : 1 / mult;
 
         Hediff hediff = HediffMaker.MakeHediff(this.coma ?? VPE_DefOf.PsychicComa, ability.pawn);
         hediff.TryGetComp<HediffComp_Disappears>().ticksToDisappear = Mathf.FloorToInt(duration);

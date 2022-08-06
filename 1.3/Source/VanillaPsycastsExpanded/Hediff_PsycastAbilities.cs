@@ -1,6 +1,7 @@
 ﻿namespace VanillaPsycastsExpanded;
 
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UI;
 using UnityEngine;
@@ -122,6 +123,13 @@ public class Hediff_PsycastAbilities : Hediff_Abilities
         base.ChangeLevel(levelOffset);
         this.points += levelOffset;
         this.RecacheCurStage();
+        this.psylink ??= this.pawn.health.hediffSet.hediffs.OfType<Hediff_Psylink>().FirstOrDefault();
+        if (this.psylink == null)
+        {
+            this.pawn.ChangePsylinkLevel(this.level, false);
+            this.psylink = this.pawn.health.hediffSet.hediffs.OfType<Hediff_Psylink>().First();
+        }
+
         this.psylink.level = this.level;
     }
 

@@ -29,7 +29,7 @@ public class Ability_Finish : Ability
                 else dominant = ingredients.RandomElementByWeight(x => x.stackCount);
                 List<Thing> products = GenRecipe.MakeRecipeProducts(recipe, creator, ingredients, dominant, thing.BoundWorkTable as IBillGiver).ToList();
                 ingredients.ForEach(t => recipe.Worker.ConsumeIngredient(t, recipe, this.pawn.Map));
-                thing.BoundBill.Notify_IterationCompleted(creator, ingredients);
+                thing.BoundBill?.Notify_IterationCompleted(creator, ingredients);
                 recipe.Worker.ConsumeIngredient(thing, recipe, this.pawn.Map);
                 RecordsUtility.Notify_BillDone(creator, products);
                 if (products.Count == 0) return;
