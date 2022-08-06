@@ -47,9 +47,6 @@
           <psyfocusCost>0</psyfocusCost>
           <entropyGain>0</entropyGain>
         </li>
-        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
-          <hours>6</hours>
-        </li>
         <li Class="VanillaPsycastsExpanded.Chronopath.AbilityExtension_Age">
           <casterYears>5</casterYears>
         </li>
