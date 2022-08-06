@@ -525,15 +525,15 @@
 		<stages>
 			<li>
 				<restFallFactor>0.5</restFallFactor>
-				<naturalHealingFactor>2</naturalHealingFactor>
+				<naturalHealingFactor>1.2</naturalHealingFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<postFactor>1.5</postFactor>
+						<postFactor>1.2</postFactor>
 					</li>
 					<li>
 						<capacity>Consciousness</capacity>
-						<postFactor>1.5</postFactor>
+						<postFactor>1.3</postFactor>
 					</li>
 				</capMods>
 			</li>
@@ -547,15 +547,15 @@
 		<stages>
 			<li>
 				<restFallFactor>2</restFallFactor>
-				<naturalHealingFactor>0</naturalHealingFactor>
+				<naturalHealingFactor>0.8</naturalHealingFactor>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<postFactor>0.5</postFactor>
+						<postFactor>0.8</postFactor>
 					</li>
 					<li>
 						<capacity>Consciousness</capacity>
-						<setMax>0.25</setMax>
+						<setMax>0.70</setMax>
 					</li>
 				</capMods>
 			</li>
