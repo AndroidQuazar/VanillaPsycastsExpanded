@@ -46,7 +46,7 @@
       <iconPath>Abilities/Harmonist/PsychicGuidance</iconPath>
       <abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
       <range>4.9</range>
-      <durationTime>3600</durationTime>
+      <durationTime>30000</durationTime>
       <targetMode>Humanlike</targetMode>
       <castTime>120</castTime>
       <castSound>VPE_PsychicGuidance_Cast</castSound>

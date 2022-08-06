@@ -93,8 +93,8 @@
       <EquipDelay>2</EquipDelay>
     </statBases>
     <equippedStatOffsets>
-      <PsychicSensitivityOffset>0.20</PsychicSensitivityOffset>
-      <PsychicEntropyRecoveryRate>0.083</PsychicEntropyRecoveryRate>
+      <PsychicSensitivityOffset>0.10</PsychicSensitivityOffset>
+      <PsychicEntropyRecoveryRate>0.043</PsychicEntropyRecoveryRate>
 	  <PsychicEntropyMax>0.6667</PsychicEntropyMax>
       <SlaveSuppressionOffset MayRequire="Ludeon.RimWorld.Ideology">-0.2</SlaveSuppressionOffset>
     </equippedStatOffsets>
