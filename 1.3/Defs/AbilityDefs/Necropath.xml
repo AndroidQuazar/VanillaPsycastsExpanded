@@ -95,11 +95,11 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>VPE_ParalysisPulse</defName>
 		<label>paralysis pulse</label>
-		<description>Emits a cloud of black particles around the caster, which afflicts all those within the area - except the caster - with 10 days of paralytic abasia. The radius scales with the caster’s psychic sensitivity.</description>
+		<description>Emits a cloud of black particles around the caster, which afflicts all those within the area - except the caster - with 2 hours of paralytic abasia. The radius scales with the caster’s psychic sensitivity.</description>
 		<iconPath>Abilities/Necropath/ParalysisPulse</iconPath>
 		<abilityClass>VanillaPsycastsExpanded.Ability_ParalysisPulse</abilityClass>
 		<targetMode>Self</targetMode>
-		<durationTime>600000</durationTime>
+		<durationTime>5000</durationTime>
 		<radius>4.9</radius>
 		<radiusStatFactors>
 			<PsychicSensitivity>1</PsychicSensitivity>

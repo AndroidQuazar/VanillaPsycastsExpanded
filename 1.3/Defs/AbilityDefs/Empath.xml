@@ -323,6 +323,9 @@
           <li>VPE_MindWipe</li>
         </prerequisites>
       </li>
+        <li Class="VanillaPsycastsExpanded.AbilityExtension_PsychicComa">
+          <hours>120</hours>
+        </li>
     </modExtensions>
   </VFECore.Abilities.AbilityDef>
 </Defs>

@@ -62,8 +62,6 @@
                 member.RaceProps.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource).TryRandomElement(out result);
                 member.health.AddHediff(hediff, result);
             }
-            var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, pawn);
-            pawn.health.AddHediff(coma);
             var factions = familyMembers.Select(x => x.Faction).Where(x => x != null).Distinct();
             foreach (var faction in factions)
             {

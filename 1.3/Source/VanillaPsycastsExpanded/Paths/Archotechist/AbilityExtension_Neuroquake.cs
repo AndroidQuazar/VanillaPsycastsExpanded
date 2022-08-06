@@ -107,7 +107,7 @@
 			affectedFactions.Clear();
 			giveMentalStateTo.Clear();
 			var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, ability.pawn);
-			coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = (int)((GenDate.TicksPerDay * 5) * ability.pawn.GetStatValue(StatDefOf.PsychicSensitivity));
+			coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = (int)((GenDate.TicksPerDay * 5) / ability.pawn.GetStatValue(StatDefOf.PsychicSensitivity));
 			ability.pawn.health.AddHediff(coma);
 		}
 

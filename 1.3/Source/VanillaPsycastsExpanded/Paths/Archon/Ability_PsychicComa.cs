@@ -13,7 +13,7 @@
         {
             base.Cast(targets);
             var coma = HediffMaker.MakeHediff(VPE_DefOf.PsychicComa, this.pawn);
-            coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = (int)((GenDate.TicksPerDay * 5) * this.pawn.GetStatValue(StatDefOf.PsychicSensitivity));
+            coma.TryGetComp<HediffComp_Disappears>().ticksToDisappear = (int)((GenDate.TicksPerDay * 5) / this.pawn.GetStatValue(StatDefOf.PsychicSensitivity));
             this.pawn.health.AddHediff(coma);
         }
     }
