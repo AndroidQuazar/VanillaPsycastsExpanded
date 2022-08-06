@@ -37,7 +37,7 @@
       <targetMode>Self</targetMode>
       <castTime>600</castTime>
       <castSound>VPE_TimeskipMeditation_Cast</castSound>
-	  <cooldownTime>60000</cooldownTime>
+	  <cooldownTime>180000</cooldownTime>
 	  <showUndrafted>true</showUndrafted>
       <modExtensions>
         <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
