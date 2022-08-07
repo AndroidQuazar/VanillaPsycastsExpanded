@@ -74,6 +74,7 @@
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
+    <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />
     <Compile Include="Misc\BackCompatabilityConverter_Psytrainers.cs" />
     <Compile Include="Misc\GenRadialCached.cs" />
     <Compile Include="Misc\WoundWithShader.cs" />
