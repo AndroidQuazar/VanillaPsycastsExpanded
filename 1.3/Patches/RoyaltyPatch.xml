@@ -58,6 +58,7 @@
                             <value>
                                 <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
                                     <icon>UI/PsyfocusIcons/PsyfocusNatural</icon>
+                                    <canBeUnlocked>false</canBeUnlocked>
                                 </li>
                             </value>
                         </li>

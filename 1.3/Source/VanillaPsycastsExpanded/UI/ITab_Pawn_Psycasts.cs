@@ -103,6 +103,8 @@ public class ITab_Pawn_Psycasts : ITab
             this.InitCache();
         }
 
+        if (this.devMode && !Prefs.DevMode) this.devMode = false;
+
         if (this.pawn == null || this.hediff == null || this.compAbilities == null) return;
         GameFont         font         = Text.Font;
         TextAnchor       anchor       = Text.Anchor;
@@ -251,16 +253,15 @@ public class ITab_Pawn_Psycasts : ITab
     private void DoFocus(Rect inRect, MeditationFocusDef def)
     {
         Widgets.DrawBox(inRect, 3, Texture2D.grayTexture);
-        bool unlocked = def.CanPawnUse(this.pawn);
-        bool canUnlock = def != VPE_DefOf.Dignified || (this.pawn.royalty != null &&
-                                                        (this.pawn.royalty.AllTitlesForReading.Any() || this.pawn.royalty.CanUpdateTitleOfAnyFaction(out _)));
+        bool unlocked  = def.CanPawnUse(this.pawn);
+        bool canUnlock = def.CanUnlock(this.pawn, out string lockedReason);
         GUI.color = unlocked ? Color.white : Color.gray;
         GUI.DrawTexture(inRect.ContractedBy(5f), def.Icon());
         GUI.color = Color.white;
         TooltipHandler.TipRegion(inRect, def.LabelCap    + (def.description.NullOrEmpty() ? "" : "\n\n") +
-                                         def.description + (canUnlock ? "" : $"\n\n{"VPE.LockedTitle".Translate()}"));
+                                         def.description + (canUnlock ? "" : $"\n\n{lockedReason}"));
         Widgets.DrawHighlightIfMouseover(inRect);
-        if ((this.hediff.points >= 1 || this.devMode) && !unlocked && canUnlock)
+        if ((this.hediff.points >= 1 || this.devMode) && !unlocked && (canUnlock || this.devMode))
             if (Widgets.ButtonText(new Rect(inRect.xMax - 13f, inRect.yMax - 13f, 12f, 12f), "▲"))
             {
                 if (!this.devMode) this.hediff.SpentPoints();
