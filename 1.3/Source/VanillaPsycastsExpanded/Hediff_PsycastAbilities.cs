@@ -81,6 +81,8 @@ public class Hediff_PsycastAbilities : Hediff_Abilities
         this.level   = psylink.level;
         this.points  = this.level;
         this.RecacheCurStage();
+        if (!this.unlockedPaths.Any())
+            this.unlockedPaths.Add(DefDatabase<PsycasterPathDef>.AllDefs.Where(path => path.CanPawnUnlock(psylink.pawn)).RandomElement());
     }
 
     private void RecacheCurStage()
