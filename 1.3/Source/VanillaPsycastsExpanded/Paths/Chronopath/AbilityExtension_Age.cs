@@ -29,6 +29,7 @@ public class AbilityExtension_Age : AbilityExtension_AbilityMod
         if (!this.targetYears.HasValue) return true;
         if (target.Thing is not Pawn pawn) return false;
         if (!pawn.RaceProps.IsFlesh) return false;
+        if (!pawn.RaceProps.Humanlike) return false;
         return true;
     }
 
