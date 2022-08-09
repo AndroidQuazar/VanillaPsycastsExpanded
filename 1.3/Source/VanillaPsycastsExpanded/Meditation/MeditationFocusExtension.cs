@@ -9,7 +9,7 @@ public class MeditationFocusExtension : DefModExtension
     public string               icon;
     public List<StatPart_Focus> statParts;
     public bool                 pointsOnly;
-    public bool                 canBeUnlocked;
+    public bool                 canBeUnlocked = true;
 }
 
 public abstract class StatPart_Focus : StatPart
