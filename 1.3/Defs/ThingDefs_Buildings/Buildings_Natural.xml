@@ -16,8 +16,10 @@
     </statBases>
     <building>
       <isResourceRock>true</isResourceRock>
+	  <isNaturalRock>false</isNaturalRock>
       <mineableThing>VPE_Eltex</mineableThing>
       <mineableYield>3</mineableYield>
+	  <claimable>false</claimable>
     </building>
   </ThingDef>
 

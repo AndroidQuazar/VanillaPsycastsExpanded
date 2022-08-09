@@ -230,6 +230,8 @@
 				<endSound>VPE_PsychicDrone_End</endSound>
 				<sustainer>VPE_PsychicDrone_Sustainer</sustainer>
 			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
 		</comps>
 	</HediffDef>
 
@@ -243,6 +245,8 @@
 				<endSound>VPE_IceShield_End</endSound>
 				<sustainer>VPE_IceShield_Sustainer</sustainer>
 			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
 		</comps>
 	</HediffDef>
 
@@ -283,6 +287,8 @@
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_PlaySound">
 				<sustainer>Tornado</sustainer>
 			</li>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
 		</comps>
 	</HediffDef>
 
@@ -438,6 +444,10 @@
 		<description>Psychically-induced link between several entities. Any 'word of' psycast will resonate between all linked individuals.</description>
 		<hediffClass>VanillaPsycastsExpanded.Hediff_GroupLink</hediffClass>
 		<isBad>false</isBad>
+		<comps>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
+		</comps>
 	</HediffDef>
 
 	<HediffDef ParentName="PsycastHediffBase">

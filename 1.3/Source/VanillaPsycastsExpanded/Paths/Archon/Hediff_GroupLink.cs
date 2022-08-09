@@ -42,6 +42,18 @@
             }
         }
 
+        private void UnlinkAll()
+        {
+            for (var i = linkedPawns.Count - 1; i >= 0; i--)
+            {
+                linkedPawns.RemoveAt(i);
+            }
+        }
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            UnlinkAll();
+        }
         public override void Tick()
         {
             base.Tick();

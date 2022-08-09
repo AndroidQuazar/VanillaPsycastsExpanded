@@ -15,7 +15,6 @@
             base.DestroyProjectile(projectile);
             AddEntropy();
         }
-
         public override void PostTick()
         {
             base.PostTick();

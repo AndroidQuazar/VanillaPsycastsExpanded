@@ -10,6 +10,6 @@
     }
     public class HediffComp_DisappearsOnDowned : HediffComp
     {
-
+        public override bool CompShouldRemove => this.Pawn.Downed;
     }
 }

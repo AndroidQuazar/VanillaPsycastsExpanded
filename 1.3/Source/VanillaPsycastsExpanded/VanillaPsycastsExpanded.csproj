@@ -57,6 +57,7 @@
     <Compile Include="AI\JobGivers\JobGiver_Flee.cs" />
     <Compile Include="AI\JobGivers\JobGiver_Flick.cs" />
     <Compile Include="Common\AbilityExtension_JoinFaction.cs" />
+    <Compile Include="Common\HediffComp_DisappearsOnDespawn.cs" />
     <Compile Include="Common\HediffComp_SpawnMote.cs" />
     <Compile Include="Common\HediffComp_DisappearsOnDowned.cs" />
     <Compile Include="Common\HediffComp_SpawnFilth.cs" />
@@ -71,7 +72,6 @@
     <Compile Include="Events\PawnGroupMaker_PsycasterRaid.cs" />
     <Compile Include="HarmonyPatches\PawnGroupMaker_CanGenerateFrom_Patch.cs" />
     <Compile Include="HarmonyPatches\PawnUtility_ShouldSendNotificationAbout_Patch.cs" />
-    <Compile Include="HarmonyPatches\Pawn_HealthTracker_MakeDowned_Patch.cs" />
     <Compile Include="Comps\CompFleckEmitter.cs" />
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />

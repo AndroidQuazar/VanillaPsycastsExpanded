@@ -42,6 +42,7 @@
 		<hediffClass>VanillaPsycastsExpanded.Hediff_Overshield</hediffClass>
 		<comps>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
 		</comps>
 	</HediffDef>
 
@@ -58,7 +59,9 @@
 			</li>
 		</stages>
 		<comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
 			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDespawn"/>
 		</comps>
 	</HediffDef>
 

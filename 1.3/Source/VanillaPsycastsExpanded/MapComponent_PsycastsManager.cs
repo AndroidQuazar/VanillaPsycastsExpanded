@@ -50,9 +50,14 @@
         public override void MapComponentUpdate()
         {
             base.MapComponentUpdate();
-            foreach (Hediff_Overlay hediff in this.hediffsToDraw)
-                if (hediff.pawn?.MapHeld != null)
+            for (var i = this.hediffsToDraw.Count - 1; i >= 0; i--)
+            {
+                var hediff = this.hediffsToDraw[i];
+                if (hediff.pawn is null || hediff.pawn.health.hediffSet.hediffs.Contains(hediff) is false)
+                    this.hediffsToDraw.RemoveAt(i);
+                else if (hediff.pawn?.MapHeld != null)
                     hediff.Draw();
+            }
         }
 
         public override void ExposeData()
