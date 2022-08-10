@@ -44,6 +44,7 @@ public class PsycastsMod : Mod
         Settings.additionalAbilityChance = listing.Slider(Settings.additionalAbilityChance, 0, 1f);
         listing.CheckboxLabeled("VPE.AllowShrink".Translate(), ref Settings.shrink, "VPE.AllowShrink.Desc".Translate());
         listing.CheckboxMultiLabeled("VPE.SmallMode".Translate(), ref Settings.smallMode, "VPE.SmallMode.Desc".Translate());
+        listing.CheckboxLabeled("VPE.MuteSkipdoor".Translate(), ref Settings.muteSkipdoor);
         listing.End();
     }
 
@@ -60,6 +61,7 @@ public class PsycastSettings : ModSettings
     public float              additionalAbilityChance = 0.1f;
     public MultiCheckboxState smallMode               = MultiCheckboxState.Partial;
     public bool               shrink                  = true;
+    public bool               muteSkipdoor;
 
     public override void ExposeData()
     {
@@ -68,6 +70,7 @@ public class PsycastSettings : ModSettings
         Scribe_Values.Look(ref this.baseSpawnChance,         nameof(this.baseSpawnChance),         0.1f);
         Scribe_Values.Look(ref this.additionalAbilityChance, nameof(this.additionalAbilityChance), 0.1f);
         Scribe_Values.Look(ref this.shrink,                  nameof(this.shrink),                  true);
-        Scribe_Values.Look(ref this.smallMode,               nameof(this.smallMode),               MultiCheckboxState.Partial);
+        Scribe_Values.Look(ref this.muteSkipdoor,            nameof(this.muteSkipdoor));
+        Scribe_Values.Look(ref this.smallMode,               nameof(this.smallMode), MultiCheckboxState.Partial);
     }
 }

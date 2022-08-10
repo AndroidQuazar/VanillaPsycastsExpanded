@@ -118,7 +118,8 @@ public class Skipdoor : ThingWithComps
 
     public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
     {
-        this.sustainer.End();
+        this.sustainer?.End();
+        this.sustainer = null;
         this.Pawn?.Psycasts()?.OffsetMinHeat(-50f);
         WorldComponent_SkipdoorManager.Instance.Skipdoors.Remove(this);
         base.DeSpawn(mode);
@@ -171,8 +172,17 @@ public class Skipdoor : ThingWithComps
         if (this.distortAmount >= 3f) this.distortAmount = 1.5f;
         this.backgroundOffset += Vector2.one * 0.001f;
         this.RecacheBackground();
-        this.sustainer ??= VPE_DefOf.VPE_Skipdoor_Sustainer.TrySpawnSustainer(this);
-        this.sustainer.Maintain();
+        if (PsycastsMod.Settings.muteSkipdoor)
+        {
+            this.sustainer?.End();
+            this.sustainer = null;
+        }
+        else
+        {
+            this.sustainer ??= VPE_DefOf.VPE_Skipdoor_Sustainer.TrySpawnSustainer(this);
+            this.sustainer.Maintain();
+        }
+
         if (this.IsHashIntervalTick(30) && this.HitPoints < this.MaxHitPoints) this.HitPoints += 1;
     }
 
