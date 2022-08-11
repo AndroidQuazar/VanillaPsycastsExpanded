@@ -44,6 +44,12 @@ public class GameComponent_PsycastsManager : GameComponent
         }
     }
 
+    public override void StartedNewGame()
+    {
+        base.StartedNewGame();
+        this.inited = true;
+    }
+
     public override void LoadedGame()
     {
         base.LoadedGame();
