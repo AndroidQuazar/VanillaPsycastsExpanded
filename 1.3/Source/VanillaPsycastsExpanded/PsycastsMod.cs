@@ -27,6 +27,10 @@ public class PsycastsMod : Mod
         List<BackCompatibilityConverter> conversionChain =
             (List<BackCompatibilityConverter>)AccessTools.Field(typeof(BackCompatibility), "conversionChain").GetValue(null);
         conversionChain.Add(psytrainerConverter = new BackCompatibilityConverter_Psytrainers());
+        if (ModsConfig.IsActive("GhostRolly.Rim73"))
+        {
+            Log.Warning("Vanilla Psycasts Expanded detected Rim73 mod. The mod is throttling hediff ticking which breaks psycast hediffs. You can turn off Rim73 hediff optimization in its mod settings to ensure proper work of Vanilla Psycasts Expanded.");
+        }
     }
 
     public override string SettingsCategory() => "VanillaPsycastsExpanded".Translate();
