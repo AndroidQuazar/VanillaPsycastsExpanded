@@ -195,7 +195,7 @@ public class Hediff_PsycastAbilities : Hediff_Abilities
         Scribe_References.Look(ref this.psylink,             nameof(this.psylink));
         Scribe_References.Look(ref this.currentlyChanneling, nameof(this.currentlyChanneling));
 
-        if (Scribe.mode == LoadSaveMode.PostLoadInit) this.minHeatGivers ??= new List<IMinHeatGiver>();
+        this.minHeatGivers ??= new List<IMinHeatGiver>();
     }
 
     public void SpentPoints(int count = 1)
