@@ -9,7 +9,7 @@ using Verse.AI;
 using Verse.Sound;
 
 [StaticConstructorOnStartup]
-public class Skipdoor : ThingWithComps
+public class Skipdoor : ThingWithComps, IMinHeatGiver
 {
     private const           string    SKIPGATE_TEXPATH = "Textures/Effects/Skipmaster/Skipgate";
     private const           float     MASK_THRESHOLD   = 0.13f;
@@ -33,6 +33,9 @@ public class Skipdoor : ThingWithComps
     private Sustainer     sustainer;
 
     public string Name { get; set; }
+
+    public bool IsActive => this.Spawned;
+    public int  MinHeat  => 50;
 
     private static Pair<Texture2D, Texture2D> GetBackgroundTextures(ModContentPack content)
     {
@@ -110,9 +113,9 @@ public class Skipdoor : ThingWithComps
             this.backgroundMat = new Material(ShaderDatabase.TransparentPostLight);
         });
         this.RecacheBackground();
+        this.Pawn.Psycasts().AddMinHeatGiver(this);
         if (respawningAfterLoad) return;
         WorldComponent_SkipdoorManager.Instance.Skipdoors.Add(this);
-        this.Pawn.Psycasts().OffsetMinHeat(50f);
         this.Pawn.psychicEntropy.TryAddEntropy(50f, this, true, true);
     }
 
@@ -120,7 +123,6 @@ public class Skipdoor : ThingWithComps
     {
         this.sustainer?.End();
         this.sustainer = null;
-        this.Pawn?.Psycasts()?.OffsetMinHeat(-50f);
         WorldComponent_SkipdoorManager.Instance.Skipdoors.Remove(this);
         base.DeSpawn(mode);
         Object.Destroy(this.background1);

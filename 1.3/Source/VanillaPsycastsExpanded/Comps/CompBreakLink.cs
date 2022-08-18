@@ -21,16 +21,16 @@ public class CompBreakLink : ThingComp, PawnGizmoProvider
         };
     }
 
+    public override void PostSpawnSetup(bool respawningAfterLoad)
+    {
+        base.PostSpawnSetup(respawningAfterLoad);
+        if (this.parent is IMinHeatGiver giver) this.Pawn.Psycasts().AddMinHeatGiver(giver);
+    }
+
     public override void CompTick()
     {
         base.CompTick();
         if (this.Pawn is { Dead: true } or { Destroyed: true } or null) this.parent.Kill();
-    }
-
-    public override void PostDeSpawn(Map map)
-    {
-        base.PostDeSpawn(map);
-        if (this.parent is Pawn { Dead: true } or { Destroyed: true }) this.Pawn?.Psycasts()?.OffsetMinHeat(-20f);
     }
 
     public override void PostExposeData()

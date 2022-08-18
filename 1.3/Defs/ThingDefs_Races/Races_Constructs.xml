@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="AnimalThingBase" Name="VPE_ConstructBase" Abstract="True">
+		<thingClass>VanillaPsycastsExpanded.Technomancer.Pawn_Construct</thingClass>
 		<statBases>
 			<ToxicSensitivity>0</ToxicSensitivity>
 			<PsychicSensitivity>0</PsychicSensitivity>
@@ -22,7 +23,6 @@
 			<showTrainables>false</showTrainables>
 			<playerCanChangeMaster>false</playerCanChangeMaster>
 			<hideTrainingTab>true</hideTrainingTab>
-			<disableAreaControl>true</disableAreaControl>
 			<wildness>0</wildness>
 			<useMeatFrom>Pig</useMeatFrom>
 			<petness>0</petness>

@@ -61,6 +61,8 @@
     <Compile Include="Common\HediffComp_SpawnMote.cs" />
     <Compile Include="Common\HediffComp_DisappearsOnDowned.cs" />
     <Compile Include="Common\HediffComp_SpawnFilth.cs" />
+    <Compile Include="Common\IChannelledPsycast.cs" />
+    <Compile Include="Common\IMinHeatGiver.cs" />
     <Compile Include="Events\RaidStrategyWorker_ImmediateAttack_Psycasters.cs" />
     <Compile Include="Graphics\IAnimationOneTime.cs" />
     <Compile Include="Graphics\MoteAttachedMovingAround.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Events\GenStep_EltexMeteor.cs" />
     <Compile Include="HarmonyPatches\Pawn_HealthTracker_ShouldBeDeadFromLethalDamageThreshold_Patch.cs" />
     <Compile Include="Misc\BackCompatabilityConverter_Psytrainers.cs" />
+    <Compile Include="Misc\BackCompatibilityConverter_Constructs.cs" />
     <Compile Include="Misc\GenRadialCached.cs" />
     <Compile Include="Misc\WoundWithShader.cs" />
     <Compile Include="ModCompatibility.cs" />
@@ -164,6 +167,7 @@
     <Compile Include="Paths\Technomancer\Ability_ReverseEngineer.cs" />
     <Compile Include="Paths\Technomancer\DamageWorker_NeuralHeatBlast.cs" />
     <Compile Include="Paths\Technomancer\HaywireManager.cs" />
+    <Compile Include="Paths\Technomancer\Pawn_Construct.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_Animal.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_ShrineShield.cs" />
     <Compile Include="Paths\Wildspeaker\Ability_SummonPack.cs" />

@@ -14,7 +14,6 @@ public class Ability_Construct_Steel : Ability
         {
             Pawn construct = PawnGenerator.GeneratePawn(VPE_DefOf.VPE_SteelConstruct, this.pawn.Faction);
             construct.TryGetComp<CompBreakLink>().Pawn = this.pawn;
-            this.pawn.Psycasts().OffsetMinHeat(20f);
             Thing thing = target.Thing;
             GenSpawn.Spawn(construct, thing.Position, thing.Map, thing.Rotation);
             thing.Destroy();

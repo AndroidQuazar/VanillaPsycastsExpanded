@@ -1,10 +1,15 @@
-﻿namespace VanillaPsycastsExpanded
-{
-    using Verse;
+﻿namespace VanillaPsycastsExpanded;
 
-    public static class PsycastUtility
+using Verse;
+
+public static class PsycastUtility
+{
+    public static Hediff_PsycastAbilities Psycasts(this Pawn pawn) =>
+        (Hediff_PsycastAbilities)pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+
+    [DebugAction("Pawns", "Reset Psycasts", true, actionType = DebugActionType.ToolMapForPawns, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    public static void ResetPsycasts(Pawn p)
     {
-        public static Hediff_PsycastAbilities Psycasts(this Pawn pawn) =>
-            (Hediff_PsycastAbilities) pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
+        p.Psycasts()?.Reset();
     }
 }

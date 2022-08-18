@@ -75,9 +75,9 @@ public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
                 return false;
             }
 
-            if (hediff.currentlyChanneling != null)
+            if (hediff.CurrentlyChanneling != null)
             {
-                reason = "VPE.CurrentChanneling".Translate(hediff.currentlyChanneling.def.LabelCap);
+                reason = "VPE.CurrentChanneling".Translate(hediff.CurrentlyChanneling.def.LabelCap);
                 return false;
             }
 
@@ -102,6 +102,7 @@ public class AbilityExtension_Psycast : AbilityExtension_AbilityMod
         Hediff_PsycastAbilities psycastHediff =
             (Hediff_PsycastAbilities)ability.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant);
         psycastHediff.UseAbility(this.GetPsyfocusUsedByPawn(ability.pawn), this.GetEntropyUsedByPawn(ability.pawn));
+        if (ability is IChannelledPsycast channelled) psycastHediff.BeginChannelling(channelled);
     }
 
     public override string GetDescription(Ability ability)

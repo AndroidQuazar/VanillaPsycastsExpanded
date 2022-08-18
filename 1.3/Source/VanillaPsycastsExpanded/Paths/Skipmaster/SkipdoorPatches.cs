@@ -48,15 +48,6 @@ public static class SkipdoorPatches
     [HarmonyPrefix]
     public static void Deinit_Prefix(Map map)
     {
-        WorldComponent_SkipdoorManager.Instance.Skipdoors.RemoveAll(skipdoor =>
-        {
-            if (skipdoor.Map == map)
-            {
-                skipdoor.Pawn?.Psycasts()?.OffsetMinHeat(-50f);
-                return true;
-            }
-
-            return false;
-        });
+        WorldComponent_SkipdoorManager.Instance.Skipdoors.RemoveAll(skipdoor => skipdoor.Map == map);
     }
 }
