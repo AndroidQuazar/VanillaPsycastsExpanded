@@ -51,12 +51,11 @@ public class Ability_WorldTeleport : Ability
 
     public override bool CanHitTargetTile(GlobalTargetInfo target)
     {
-        Caravan caravan = this.pawn.GetCaravan();
-        if (caravan is { ImmobilizedByMass: true }) return false;
-        Caravan caravan1 = target.WorldObject as Caravan;
-
-        return (caravan == null || caravan != caravan1) && (this.ShouldEnterMap(target) || (caravan1 != null && caravan1.Faction == this.pawn.Faction)) &&
-               base.CanHitTargetTile(target);
+        int distanceBetweenTargets = Find.WorldGrid.TraversalDistanceBetween((this.CasterPawn.GetCaravan() != null) ? (this.CasterPawn.GetCaravan().Tile) : (this.Caster.Map.Tile), target.Tile);
+            if (distanceBetweenTargets < this.GetRangeForPawn() + 1 && distanceBetweenTargets > -1)
+                return true;
+            else
+                return false;
     }
 
     public override bool IsEnabledForPawn(out string reason)
@@ -162,8 +161,9 @@ public class Ability_WorldTeleport : Ability
         base.Cast(targets);
     }
 
-    public override void DrawHighlight(LocalTargetInfo target)
+    public override void GizmoUpdateOnMouseover()
     {
-        GenDraw.DrawRadiusRing(this.pawn.Position, this.GetRadiusForPawn(), Color.blue);
+        float radiusForPawn = this.GetRadiusForPawn();
+        GenDraw.DrawRadiusRing(this.pawn.Position, radiusForPawn, this.def.radiusRingColor);
     }
 }
