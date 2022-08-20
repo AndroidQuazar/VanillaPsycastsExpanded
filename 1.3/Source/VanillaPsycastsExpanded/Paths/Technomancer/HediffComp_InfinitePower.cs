@@ -4,6 +4,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
+using VFECore.Abilities;
 using VFECore.Shields;
 using Ability = VFECore.Abilities.Ability;
 
@@ -14,6 +15,8 @@ public class HediffComp_InfinitePower : HediffComp_Draw
 
     private Thing           target;
     private CompPowerTrader compPower;
+
+    public override bool CompShouldRemove => this.target is null or { Spawned: false };
 
     public void Begin(Thing t)
     {
@@ -54,11 +57,27 @@ public class Ability_Power : Ability
     public override void Cast(params GlobalTargetInfo[] targets)
     {
         base.Cast(targets);
-        foreach (GlobalTargetInfo target in targets)
-        {
-            this.ApplyHediffs(new GlobalTargetInfo(this.pawn));
-            this.pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_InfinitePower)?.TryGetComp<HediffComp_InfinitePower>().Begin(target.Thing);
-        }
+        foreach (GlobalTargetInfo target in targets) this.ApplyHediff(this.pawn)?.TryGetComp<HediffComp_InfinitePower>().Begin(target.Thing);
+    }
+
+    public override Hediff ApplyHediff(Pawn targetPawn, HediffDef hediffDef, BodyPartRecord bodyPart, int duration, float severity)
+    {
+        Hediff localHediff = HediffMaker.MakeHediff(hediffDef, targetPawn, bodyPart);
+        if (localHediff is Hediff_Ability hediffAbility)
+            hediffAbility.ability = this;
+        if (severity > float.Epsilon)
+            localHediff.Severity = severity;
+        if (localHediff is HediffWithComps hwc)
+            foreach (HediffComp hediffComp in hwc.comps)
+            {
+                if (hediffComp is HediffComp_Ability hca)
+                    hca.ability = this;
+                if (hediffComp is HediffComp_Disappears hcd)
+                    hcd.ticksToDisappear = duration;
+            }
+
+        targetPawn.health.AddHediff(localHediff);
+        return localHediff;
     }
 
     public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)

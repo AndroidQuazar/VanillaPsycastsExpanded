@@ -61,6 +61,7 @@
     <Compile Include="Common\HediffComp_SpawnMote.cs" />
     <Compile Include="Common\HediffComp_DisappearsOnDowned.cs" />
     <Compile Include="Common\HediffComp_SpawnFilth.cs" />
+    <Compile Include="Common\Hediff_NoMerge.cs" />
     <Compile Include="Common\IChannelledPsycast.cs" />
     <Compile Include="Common\IMinHeatGiver.cs" />
     <Compile Include="Events\RaidStrategyWorker_ImmediateAttack_Psycasters.cs" />

@@ -340,6 +340,7 @@
 		<defName>VPE_InfinitePower</defName>
 		<label>powering</label>
 		<description>Generating infinite electricity supply to a given structure.</description>
+		<hediffClass>VanillaPsycastsExpanded.Hediff_NoMerge</hediffClass>
 		<stages>
 			<li>
 				<becomeVisible>false</becomeVisible>
