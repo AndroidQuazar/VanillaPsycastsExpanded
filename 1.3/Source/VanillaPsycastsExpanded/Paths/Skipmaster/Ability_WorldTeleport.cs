@@ -162,8 +162,9 @@ public class Ability_WorldTeleport : Ability
         base.Cast(targets);
     }
 
-    public override void DrawHighlight(LocalTargetInfo target)
+    public override void GizmoUpdateOnMouseover()
     {
+        base.GizmoUpdateOnMouseover();
         GenDraw.DrawRadiusRing(this.pawn.Position, this.GetRadiusForPawn(), Color.blue);
     }
 }

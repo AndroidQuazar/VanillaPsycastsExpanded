@@ -217,6 +217,7 @@
         <thingClass>VanillaPsycastsExpanded.Nightstalker.Decoy</thingClass>
         <tickerType>Normal</tickerType>
         <drawerType>RealtimeOnly</drawerType>
+        <category>Building</category>
         <comps>
             <li>
                 <compClass>VFECore.Abilities.CompDuration</compClass>

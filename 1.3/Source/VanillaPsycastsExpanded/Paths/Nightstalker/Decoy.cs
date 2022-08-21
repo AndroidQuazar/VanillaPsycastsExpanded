@@ -58,10 +58,6 @@ public class Decoy : ThingWithComps, IAttackTarget
         if (!mapsWithDecoys.Contains(searcher.Thing.MapHeld)) return true;
         List<IAttackTarget> list1 = searcher.Thing.Map.attackTargetsCache.GetPotentialTargetsFor(searcher);
         List<Decoy>         list2 = list1.OfType<Decoy>().ToList();
-        // Log.Message("Stuff:");
-        // GenDebug.LogList(list1);
-        // Log.Message("Decoys:");
-        // GenDebug.LogList(list2);
         if (list2.NullOrEmpty()) return true;
         __result = list2.RandomElement();
         return false;
@@ -72,22 +68,6 @@ public class Decoy : ThingWithComps, IAttackTarget
     public static void UpdateEnemyTarget_Prefix(Pawn pawn)
     {
         if (pawn.mindState.enemyTarget is { } and not Decoy && mapsWithDecoys.Contains(pawn.MapHeld)) pawn.mindState.enemyTarget = null;
-    }
-
-    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Faction))]
-    [HarmonyPostfix]
-    public static void HostileTo_Postfix(Thing t, Faction fac, ref bool __result)
-    {
-        if (!__result && t is Decoy { pawn: { } p }) __result = p.HostileTo(fac);
-    }
-
-    [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), typeof(Thing), typeof(Thing))]
-    [HarmonyPostfix]
-    public static void HostileTo_Postfix(Thing a, Thing b, ref bool __result)
-    {
-        if (__result) return;
-        if (a is Decoy { pawn: { } p1 }) __result = p1.HostileTo(b);
-        if (b is Decoy { pawn: { } p2 }) __result = a.HostileTo(p2);
     }
 }
 
