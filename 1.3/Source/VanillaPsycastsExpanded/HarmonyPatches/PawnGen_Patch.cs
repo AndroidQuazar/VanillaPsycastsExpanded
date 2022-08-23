@@ -52,7 +52,7 @@ public class PawnGen_Patch
                         for (int level = unlockedPath.unlockedAbilityLevelRange.min;
                              level < unlockedPath.unlockedAbilityLevelRange.max && level < unlockedPath.path.MaxLevel;
                              level++)
-                            abilitySelection = abilitySelection.Concat(unlockedPath.path.abilityLevelsInOrder[level].Except(PsycasterPathDef.Blank));
+                            abilitySelection = abilitySelection.Concat(unlockedPath.path.abilityLevelsInOrder[level-1].Except(PsycasterPathDef.Blank));
 
                         List<AbilityDef> abilitySelectionList = abilitySelection.ToList();
                         List<AbilityDef> abilitySelectionListFiltered;
