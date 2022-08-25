@@ -42,7 +42,7 @@
     <iconPath>Abilities/Wildspeaker/CropBurst</iconPath>
     <abilityClass>VFECore.Abilities.Ability_Spawn</abilityClass>
     <castTime>120</castTime>
-	<cooldownTime>60000</cooldownTime>
+    <cooldownTime>60000</cooldownTime>
     <range>25</range>
     <targetMode>Location</targetMode>
     <radius>6</radius>
@@ -81,7 +81,8 @@
     <abilityClass>VanillaPsycastsExpanded.Wildspeaker.Ability_Animal</abilityClass>
     <castSound>PsychicSoothePulserCast</castSound>
     <distanceToTarget>6.9</distanceToTarget>
-	<showUndrafted>true</showUndrafted>
+    <showUndrafted>true</showUndrafted>
+    <goodwillImpact>-15</goodwillImpact>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
@@ -314,7 +315,7 @@
     <castTime>720</castTime>
     <range>3</range>
     <radius>99999999</radius>
-	<showUndrafted>true</showUndrafted>
+    <showUndrafted>true</showUndrafted>
     <castSound>VPE_EssenceTransfer_Cast</castSound>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
@@ -345,7 +346,7 @@
       <PsychicSensitivity>100</PsychicSensitivity>
     </powerStatFactors>
     <castSound>VPE_SummonPack_Cast</castSound>
-	<showUndrafted>true</showUndrafted>
+    <showUndrafted>true</showUndrafted>
     <modExtensions>
       <li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
         <path>VPE_Wildspeaker</path>
