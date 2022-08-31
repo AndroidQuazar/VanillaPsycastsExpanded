@@ -67,7 +67,7 @@
 	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
 		<defName>VPE_StealVitality</defName>
 		<label>steal vitality</label>
-		<description>Siphons vitality form a close, living target, transferring the target’s natural healing factor, movement speed and consciousness to the caster. Considered an overtly hostile action.</description>
+		<description>Siphons vitality from a close, living target, transferring the target’s natural healing factor, movement speed and consciousness to the caster. Considered an overtly hostile action.</description>
 		<iconPath>Abilities/Necropath/StealVitality</iconPath>
 		<abilityClass>VanillaPsycastsExpanded.Ability_StealVitality</abilityClass>
 		<range>3.9</range>
